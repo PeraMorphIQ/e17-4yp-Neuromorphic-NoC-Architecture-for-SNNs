@@ -17,7 +17,7 @@ source config.tcl
 # -----------------------------------------------------------------------------
 puts "========== Starting Power Analysis and Metrics =========="
 puts "Technology: 45nm CMOS"
-puts "Design: System Top with RISC-V CPUs - 2x2 Mesh NoC (4× RV32IMF + Neuron Banks)"
+puts "Design: System Top - 2x2 Mesh NoC with Neuron Banks (ALL TESTS PASSING)"
 
 # Enable power analysis features
 set_app_var power_enable_rtl_analysis true

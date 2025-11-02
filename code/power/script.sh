@@ -153,7 +153,7 @@ if [ -z "$RUN_DESCRIPTION" ]; then
 fi
 
 # Define paths as variables
-RTL_BLACKBOX_PATH="../../../../rtl/neuron_accelerator"
+RTL_SYSTEM_TOP_PATH="../cpu"
 
 # Exit on any error and enable error trapping
 set -e
@@ -198,8 +198,8 @@ create_run_metadata() {
     local metadata_file="$TEMP_RESULTS_DIR/run_metadata.txt"
     
     cat > "$metadata_file" << EOF
-# Blackbox Design Synthesis and Power Analysis Run Metadata
-# ==========================================================
+# System Top (2x2 Mesh NoC) Synthesis and Power Analysis Run Metadata
+# =====================================================================
 
 Run Description: $RUN_DESCRIPTION
 Timestamp: $TIMESTAMP
@@ -215,7 +215,7 @@ Git Status: $(git status --porcelain 2>/dev/null | wc -l) modified files
 # -----------------------
 Shell: $SHELL
 PATH: $PATH
-RTL_BLACKBOX_PATH: $RTL_BLACKBOX_PATH
+RTL_SYSTEM_TOP_PATH: $RTL_SYSTEM_TOP_PATH
 TEMP_RESULTS_DIR: $TEMP_RESULTS_DIR
 
 # Tool Versions
@@ -225,10 +225,12 @@ Synopsys Tools: $(which rtl_shell 2>/dev/null || echo "rtl_shell not found")
 
 # Directory Structure
 # -------------------
-Blackbox Directory Exists: $([ -d "$RTL_BLACKBOX_PATH" ] && echo "Yes" || echo "No")
+System Top Directory Exists: $([ -d "$RTL_SYSTEM_TOP_PATH" ] && echo "Yes" || echo "No")
 Config File Exists: $([ -f "config.tcl" ] && echo "Yes" || echo "No")
 RTLA Script Exists: $([ -f "rtla.tcl" ] && echo "Yes" || echo "No")
 Restore Script Exists: $([ -f "restore_new.tcl" ] && echo "Yes" || echo "No")
+System Top Source Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/system_top.v" ] && echo "Yes" || echo "No")
+System Top Testbench Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/testbench/system_top_tb.v" ] && echo "Yes" || echo "No")
 
 # Execution Plan
 # --------------
@@ -243,7 +245,7 @@ EOF
     echo "Run metadata created: $metadata_file"
 }
 
-echo "========== Blackbox Design Synthesis and Power Analysis =========="
+echo "========== System Top (2x2 Mesh NoC) Synthesis and Power Analysis =========="
 echo "Description: $RUN_DESCRIPTION"
 echo "Using temporary results directory: $TEMP_RESULTS_DIR"
 echo "Environment variable TEMP_RESULTS_DIR exported for TCL scripts"
@@ -295,16 +297,17 @@ else
     echo "========== STEP 0: Git Pull (SKIPPED) =========="
 fi
 
-# Step 1: VCS Compile (for blackbox design)
+# Step 1: VCS Compile (for System Top design)
 if [ "$RUN_VCS" = true ]; then
-    echo "========== STEP 1: VCS Compile (Blackbox) =========="
-    if [ -d "$RTL_BLACKBOX_PATH" ]; then
-        pushd "$RTL_BLACKBOX_PATH" > /dev/null
-        vcs -sverilog -full64 -kdb -debug_access+all neuron_accelerator_tb.v +vcs+fsdbon -o simv | tee "../../synopsys/primepower/tech_45nCMOS/neuron_accelerator/$TEMP_RESULTS_DIR/vcs_compile.log"
+    echo "========== STEP 1: VCS Compile (System Top) =========="
+    if [ -d "$RTL_SYSTEM_TOP_PATH" ]; then
+        pushd "$RTL_SYSTEM_TOP_PATH" > /dev/null
+        echo "Compiling System Top (2x2 Mesh NoC with Neuron Banks)..."
+        vcs -sverilog -full64 -kdb -debug_access+all testbench/system_top_tb.v -f ../power/system_top_src.f +vcs+fsdbon -o simv | tee "../power/$TEMP_RESULTS_DIR/vcs_compile.log"
         echo "VCS compilation completed successfully"
         popd > /dev/null
     else
-        echo "Warning: Blackbox RTL directory not found, skipping VCS compilation"
+        echo "Warning: System Top RTL directory not found, skipping VCS compilation"
     fi
 else
     echo "========== STEP 1: VCS Compile (SKIPPED) =========="
@@ -313,14 +316,14 @@ fi
 # Step 2: Run Simulation
 if [ "$RUN_SIMV" = true ]; then
     echo "========== STEP 2: Run Simulation =========="
-    if [ -d "$RTL_BLACKBOX_PATH" ]; then
-        pushd "$RTL_BLACKBOX_PATH" > /dev/null
+    if [ -d "$RTL_SYSTEM_TOP_PATH" ]; then
+        pushd "$RTL_SYSTEM_TOP_PATH" > /dev/null
         # Uncomment the next line when ready to run simulation
         ./simv +fsdb+all=on +fsdb+delta | tee "../../synopsys/primepower/tech_45nCMOS/neuron_accelerator/$TEMP_RESULTS_DIR/simulation.log"
         echo "Simulation completed successfully"
         popd > /dev/null
     else
-        echo "Warning: Blackbox RTL directory not found, skipping simulation"
+        echo "Warning: System Top RTL directory not found, skipping simulation"
     fi
 else
     echo "========== STEP 2: Run Simulation (SKIPPED) =========="

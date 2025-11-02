@@ -22,12 +22,12 @@ set_clock_groups -asynchronous \
     -group [get_clocks net_clk]
 
 # Input delays (assuming external signals arrive mid-cycle relative to cpu_clk)
-set_input_delay -clock cpu_clk -max 10.0 [get_ports {node_select[*] address[*] write_enable read_enable write_data[*]}]
-set_input_delay -clock cpu_clk -min 2.0 [get_ports {node_select[*] address[*] write_enable read_enable write_data[*]}]
+set_input_delay -clock cpu_clk -max 10.0 [get_ports {ext_node_select[*] ext_addr[*] ext_write_en ext_read_en ext_write_data[*]}]
+set_input_delay -clock cpu_clk -min 2.0 [get_ports {ext_node_select[*] ext_addr[*] ext_write_en ext_read_en ext_write_data[*]}]
 
 # Output delays (assuming external logic samples mid-cycle relative to cpu_clk)
-set_output_delay -clock cpu_clk -max 10.0 [get_ports {read_data[*] ready interrupt[*] spike_out[*]}]
-set_output_delay -clock cpu_clk -min 2.0 [get_ports {read_data[*] ready interrupt[*] spike_out[*]}]
+set_output_delay -clock cpu_clk -max 10.0 [get_ports {ext_read_data[*] ext_ready node_interrupts[*] node_spike_detected[*] debug_router_00_north_out_packet[*] debug_router_00_north_out_valid}]
+set_output_delay -clock cpu_clk -min 2.0 [get_ports {ext_read_data[*] ext_ready node_interrupts[*] node_spike_detected[*] debug_router_00_north_out_packet[*] debug_router_00_north_out_valid}]
 
 # Reset is asynchronous - no timing constraints needed
 set_false_path -from [get_ports rst_n]
