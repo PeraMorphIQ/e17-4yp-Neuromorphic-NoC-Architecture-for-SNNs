@@ -1,3 +1,5 @@
+`ifndef ITERATION_V
+`define ITERATION_V
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //File Name: Iteration.v
 //Created By: Sheetal Swaroop Burada
@@ -23,3 +25,5 @@ Addition_Subtraction A1(32'h4000_0000,{1'b1,Intermediate_Value1[30:0]},1'b0,,Int
 Multiplication M2(operand_1,Intermediate_Value2,,,,solution);
 
 endmodule
+`endif // ITERATION_V
+

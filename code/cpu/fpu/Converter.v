@@ -1,3 +1,5 @@
+`ifndef CONVERTER_V
+`define CONVERTER_V
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //File Name: Converter.v
 //Created By: Sheetal Swaroop Burada
@@ -169,3 +171,5 @@ end
 assign Integer = {a_operand[31:23],Integer_Value[23:1]};
 
 endmodule
+`endif // CONVERTER_V
+

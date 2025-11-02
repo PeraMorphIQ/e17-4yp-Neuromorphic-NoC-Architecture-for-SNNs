@@ -1,3 +1,5 @@
+`ifndef ADDITION_SUBTRACTION_V
+`define ADDITION_SUBTRACTION_V
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //File Name: Additon_Subtraction.v
 //Created By: Sheetal Swaroop Burada
@@ -99,3 +101,5 @@ assign sub_diff[22:0] = subtraction_diff[22:0];
 assign result = Exception ? 32'b0 : ((!operation_sub_addBar) ? {output_sign,sub_diff} : {output_sign,add_sum});
 
 endmodule
+`endif // ADDITION_SUBTRACTION_V
+

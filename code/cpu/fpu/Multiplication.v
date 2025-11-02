@@ -1,3 +1,5 @@
+`ifndef MULTIPLICATION_V
+`define MULTIPLICATION_V
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //File Name: Multiplication.v
 //Created By: Sheetal Swaroop Burada
@@ -60,3 +62,5 @@ assign result = Exception ? 32'd0 : zero ? {sign,31'd0} : Overflow ? {sign,8'hFF
 
 
 endmodule
+`endif // MULTIPLICATION_V
+

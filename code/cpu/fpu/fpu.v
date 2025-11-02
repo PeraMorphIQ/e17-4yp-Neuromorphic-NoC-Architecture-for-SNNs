@@ -1,3 +1,5 @@
+`ifndef FPU_V
+`define FPU_V
 `include "fpu/Addition-Subtraction.v"
 `include "fpu/Multiplication.v"
 `include "fpu/Division.v"
@@ -157,3 +159,5 @@ module fpu (DATA1, DATA2, DATA3, RESULT, SELECT);
     end
 
 endmodule
+`endif // FPU_V
+

@@ -20,8 +20,9 @@ set CORES 8
 # Design Configuration
 # -----------------------------------------------------------------------------
 # Design names and top module
-set DESIGN_NAME "neuron_accelerator"
-set TOP_MODULE  "neuron_accelerator"
+# Options: "system_top" (NoC without CPUs) or "system_top_with_cpu" (complete design with RV32IMF)
+set DESIGN_NAME "system_top_with_cpu"
+set TOP_MODULE  "system_top_with_cpu"
 
 # -----------------------------------------------------------------------------
 # Library Configuration
@@ -34,7 +35,7 @@ set TECH_TF    "/tech/45nm/cltrls/saed32nm_1p9m_mw.tf"
 # Path configurations
 set LIBS_PATH   "/tech/45nm/libs"
 set CLTRLS_PATH "/tech/45nm/cltrls"
-set RTL_BLACKBOX_PATH "../../../../rtl/neuron_accelerator"
+set RTL_SYSTEM_TOP_PATH "../cpu"
 
 # Search paths for libraries and source files
 set SEARCH_PATHS "* ./ ${LIBS_PATH}/NangateOpenCellLibrary.ndm"
@@ -42,12 +43,13 @@ set SEARCH_PATHS "* ./ ${LIBS_PATH}/NangateOpenCellLibrary.ndm"
 # -----------------------------------------------------------------------------
 # File Locations
 # -----------------------------------------------------------------------------
-# Source files
-set FILELIST "src.f"
+# Source files (choose appropriate file list)
+# set FILELIST "system_top_src.f"              # NoC without CPUs
+set FILELIST "system_top_with_cpu_src.f"      # Complete design with RV32IMF CPUs
 
 # Power analysis inputs
-set FSDB_FILE  "../../../../rtl/neuron_accelerator/novas.fsdb"
-set STRIP_PATH "neuron_accelerator_tb/uut"
+set FSDB_FILE  "../cpu/build/system_top_with_cpu.fsdb"
+set STRIP_PATH "system_top_with_cpu_tb/dut"
 
 # -----------------------------------------------------------------------------
 # Technology Setup Configuration

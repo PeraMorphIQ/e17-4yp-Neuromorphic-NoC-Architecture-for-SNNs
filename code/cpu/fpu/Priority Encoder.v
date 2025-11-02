@@ -5,6 +5,9 @@
 //Project Name: Design of 32 Bit Floating Point ALU Based on Standard IEEE-754 in Verilog and its implementation on FPGA.
 //University: Dayalbagh Educational Institute
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+`ifndef PRIORITY_ENCODER_V
+`define PRIORITY_ENCODER_V
+
 `timescale 1ns/100ps
 
 module priority_encoder(
@@ -152,3 +155,5 @@ end
 assign Exponent_sub = Exponent_a - shift;
 
 endmodule
+
+`endif // PRIORITY_ENCODER_V

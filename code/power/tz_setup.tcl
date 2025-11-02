@@ -3,7 +3,8 @@
 # Technology Setup Script for 45nm CMOS Process
 # =============================================================================
 # Description: Technology-specific setup for synthesis and optimization
-#              targeting 45nm CMOS process technology for Blackbox design
+#              targeting 45nm CMOS process technology for System Top
+#              (2x2 Mesh NoC with Neuron Banks)
 # Author: Neuromorphic Accelerator Team
 # Technology: 45nm CMOS Process
 # =============================================================================

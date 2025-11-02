@@ -1,9 +1,11 @@
 #!/bin/tcsh -f
 # =============================================================================
-# Blackbox Design RTL Analysis and Synthesis Script for 45nm CMOS
+# System Top with RISC-V CPUs RTL Analysis and Synthesis Script for 45nm CMOS
 # =============================================================================
 # Description: This script performs RTL analysis, synthesis, and power 
-#              analysis for the Blackbox design using 45nm CMOS technology
+#              analysis for the complete System Top design with integrated
+#              RV32IMF RISC-V processors (2x2 Mesh NoC with CPUs and Neuron Banks)
+#              using 45nm CMOS technology
 # Author: Neuromorphic Accelerator Team
 # Technology: 45nm CMOS Process
 # =============================================================================
@@ -16,7 +18,7 @@ source config.tcl
 # -----------------------------------------------------------------------------
 puts "========== Starting RTL Analysis and Synthesis =========="
 puts "Technology: 45nm CMOS"
-puts "Design: Blackbox Neuromorphic Accelerator"
+puts "Design: System Top with RISC-V CPUs - 2x2 Mesh NoC (4× RV32IMF + Neuron Banks)"
 
 # Configure mismatch handling
 set_current_mismatch_config auto_fix
@@ -269,7 +271,7 @@ puts "========== Generating Publication Summary =========="
 set summary_file [open "$TEMP_RESULTS_DIR/publication_summary.txt" w]
 
 puts $summary_file "================================================================================"
-puts $summary_file "Blackbox Neuromorphic Accelerator - 45nm CMOS - Performance Characterization"
+puts $summary_file "System Top with RV32IMF CPUs - 45nm CMOS - Performance Characterization"
 puts $summary_file "================================================================================"
 puts $summary_file ""
 puts $summary_file "DESIGN INFORMATION:"

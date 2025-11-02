@@ -1,3 +1,5 @@
+`ifndef COMPARISON_V
+`define COMPARISON_V
 // this module is used to compare two floating point numbers 
 
 // results 
@@ -64,3 +66,5 @@ module Comparison (
 
 
 endmodule
+`endif // COMPARISON_V
+

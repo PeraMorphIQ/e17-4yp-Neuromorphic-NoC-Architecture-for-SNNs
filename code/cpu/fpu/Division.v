@@ -1,3 +1,5 @@
+`ifndef DIVISION_V
+`define DIVISION_V
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //File Name: Division.v
 //Created By: Sheetal Swaroop Burada
@@ -63,3 +65,5 @@ Multiplication END(Iteration_X3,operand_a,,,,solution);
 
 assign result = {sign,solution[30:0]};
 endmodule
+`endif // DIVISION_V
+
