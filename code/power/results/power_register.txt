@@ -1,0 +1,27 @@
+****************************************
+Report : Averaged Power
+	-groups register
+Design : blackbox
+Version: W-2024.09-SP2
+Date   : Sun Oct 19 03:33:12 2025
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+register                4.637e-05 4.052e-05    0.7358    0.7359 (100.00%) 
+
+  Net Switching Power  = 4.052e-05   ( 0.01%)
+  Cell Internal Power  = 4.637e-05   ( 0.01%)
+  Cell Leakage Power   =    0.7358   (99.99%)
+                         ---------
+Total Power            =    0.7359  (100.00%)
+
+1

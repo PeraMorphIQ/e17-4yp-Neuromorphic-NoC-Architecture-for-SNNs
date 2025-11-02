@@ -1,0 +1,157 @@
+# Makefile for NoC and Neuron testbenches
+# Usage:
+#   make router          - Test router module
+#   make neuron          - Test neuron core with FPU
+#   make mesh            - Test full 2x2 mesh
+#   make network_if      - Test network interface
+#   make all             - Run all tests
+#   make clean           - Remove generated files
+
+IVERILOG = iverilog
+VVP = vvp
+GTKWAVE = gtkwave
+
+# Source directories
+SRC_DIR = .
+NOC_DIR = noc
+NEURON_DIR = neuron_bank
+TB_DIR = testbench
+
+# Include paths
+INCLUDES = -I$(SRC_DIR)
+
+# Compiler flags
+IFLAGS = -g2012 $(INCLUDES)
+WFLAGS = -Wall
+
+# Output directory
+BUILD_DIR = build
+
+# Create build directory if it doesn't exist
+$(BUILD_DIR):
+	mkdir -p $(BUILD_DIR)
+
+# ============== Router Testbench ==============
+router: $(BUILD_DIR)
+	@echo "========================================="
+	@echo "Building Router Testbench..."
+	@echo "========================================="
+	$(IVERILOG) $(IFLAGS) $(WFLAGS) \
+		-o $(BUILD_DIR)/router_tb.out \
+		$(TB_DIR)/noc/router_tb.v
+	@echo "\nRunning Router Testbench..."
+	cd $(BUILD_DIR) && $(VVP) router_tb.out
+	@echo "\nRouter test completed. VCD file: $(BUILD_DIR)/router_tb.vcd"
+
+router_wave: router
+	$(GTKWAVE) $(BUILD_DIR)/router_tb.vcd &
+
+# ============== Neuron Core Testbench ==============
+neuron: $(BUILD_DIR)
+	@echo "========================================="
+	@echo "Building Neuron Core Testbench..."
+	@echo "========================================="
+	$(IVERILOG) $(IFLAGS) $(WFLAGS) \
+		-o $(BUILD_DIR)/neuron_core_tb.out \
+		$(TB_DIR)/neuron_bank/neuron_core_tb.v
+	@echo "\nRunning Neuron Core Testbench..."
+	cd $(BUILD_DIR) && $(VVP) neuron_core_tb.out
+	@echo "\nNeuron Core test completed. VCD file: $(BUILD_DIR)/neuron_core_tb.vcd"
+
+neuron_wave: neuron
+	$(GTKWAVE) $(BUILD_DIR)/neuron_core_tb.vcd &
+
+# ============== Full Mesh Testbench ==============
+mesh: $(BUILD_DIR)
+	@echo "========================================="
+	@echo "Building Full Mesh Testbench..."
+	@echo "========================================="
+	$(IVERILOG) $(IFLAGS) $(WFLAGS) \
+		-o $(BUILD_DIR)/noc_top_tb.out \
+		$(TB_DIR)/noc/noc_top_tb.v
+	@echo "\nRunning Full Mesh Testbench..."
+	cd $(BUILD_DIR) && $(VVP) noc_top_tb.out
+	@echo "\nMesh test completed. VCD file: $(BUILD_DIR)/noc_top_tb.vcd"
+
+mesh_wave: mesh
+	$(GTKWAVE) $(BUILD_DIR)/noc_top_tb.vcd &
+
+# ============== Network Interface Testbench ==============
+network_if: $(BUILD_DIR)
+	@echo "========================================="
+	@echo "Building Network Interface Testbench..."
+	@echo "========================================="
+	$(IVERILOG) $(IFLAGS) $(WFLAGS) \
+		-o $(BUILD_DIR)/network_interface_tb.out \
+		$(TB_DIR)/noc/network_interface_tb.v
+	@echo "\nRunning Network Interface Testbench..."
+	cd $(BUILD_DIR) && $(VVP) network_interface_tb.out
+	@echo "\nNetwork Interface test completed. VCD file: $(BUILD_DIR)/network_interface_tb.vcd"
+
+network_if_wave: network_if
+	$(GTKWAVE) $(BUILD_DIR)/network_interface_tb.vcd &
+
+# ============== System Top Testbench ==============
+system: $(BUILD_DIR)
+	@echo "========================================="
+	@echo "Building System Top Testbench..."
+	@echo "========================================="
+	$(IVERILOG) $(IFLAGS) $(WFLAGS) \
+		-o $(BUILD_DIR)/system_top_tb.out \
+		$(TB_DIR)/system_top_tb.v
+	@echo "\nRunning System Top Testbench..."
+	cd $(BUILD_DIR) && $(VVP) system_top_tb.out
+	@echo "\nSystem Top test completed. VCD file: $(BUILD_DIR)/system_top_tb.vcd"
+
+system_wave: system
+	$(GTKWAVE) $(BUILD_DIR)/system_top_tb.vcd &
+
+# ============== Run All Tests ==============
+all: router neuron mesh network_if system
+	@echo "\n========================================="
+	@echo "All testbenches completed successfully!"
+	@echo "========================================="
+	@echo "Results available in $(BUILD_DIR)/"
+
+# ============== Syntax Check ==============
+syntax_check:
+	@echo "Checking syntax for all modules..."
+	$(IVERILOG) $(IFLAGS) -t null \
+		$(NOC_DIR)/*.v \
+		$(NEURON_DIR)/*.v
+	@echo "Syntax check completed successfully!"
+
+# ============== Clean ==============
+clean:
+	@echo "Cleaning build directory..."
+	rm -rf $(BUILD_DIR)
+	rm -f *.vcd *.out
+	@echo "Clean completed."
+
+# ============== Help ==============
+help:
+	@echo "NoC and Neuron Bank Test Suite"
+	@echo "==============================="
+	@echo ""
+	@echo "Available targets:"
+	@echo "  make router       - Test router module"
+	@echo "  make neuron       - Test neuron core with IEEE 754 FPU"
+	@echo "  make mesh         - Test full 2x2 mesh topology"
+	@echo "  make network_if   - Test network interface"
+	@echo "  make system       - Test complete system (recommended)"
+	@echo "  make all          - Run all tests"
+	@echo "  make syntax_check - Check Verilog syntax"
+	@echo "  make clean        - Remove generated files"
+	@echo ""
+	@echo "Waveform viewing:"
+	@echo "  make router_wave  - View router waveform"
+	@echo "  make neuron_wave  - View neuron waveform"
+	@echo "  make mesh_wave    - View mesh waveform"
+	@echo "  make system_wave  - View system waveform"
+	@echo ""
+	@echo "Requirements:"
+	@echo "  - Icarus Verilog (iverilog)"
+	@echo "  - GTKWave (optional, for waveform viewing)"
+
+.PHONY: all router neuron mesh network_if system clean help syntax_check \
+        router_wave neuron_wave mesh_wave network_if_wave system_wave

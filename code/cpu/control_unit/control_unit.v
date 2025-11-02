@@ -52,11 +52,12 @@ module control_unit (
     (opcode == 7'b0000011) |    // LOAD
     (opcode == 7'b1100011) |    // BRANCH
     (opcode == 7'b0000111) |    // FLW
-    (opcode == 7'b0100111);     // FSW
-    // Added
-    // 7'b0101111       // I AM CONFUSION: What are these? (FIFO custom instructions...?)
-    // 7'b0000001
-    // 7'b0111111
+    (opcode == 7'b0100111) |    // FSW
+    (opcode == 7'b0101111) |    // SWNET
+    (opcode == 7'b0101011);     // LWNET
+    // Added custom network instructions
+    // 7'b0101111       // SWNET - Store word to network
+    // 7'b0101011       // LWNET - Load word from network
 
     // For instructions where ALU_SELECT should be ADD, set ALU_SELECT[2:0] to 3'b000
     // For other instructions ALU_SELECT[2:0] is funct3
@@ -149,9 +150,11 @@ module control_unit (
     /*************************** Data memory write signal generation ***************************/
     // DATA_MEM_WRITE[2] enables writing
     // DATA_MEM_WRITE[1:0] determines bit width of written value based on Funct3[1:0]
+    // NOTE: SWNET uses data memory write signals but routes to network interface
     assign #3 DATA_MEM_WRITE[2] = 
         (opcode == 7'b0100011) |    // S-Type (SB, SH, SW)
-        (opcode == 7'b0100111);     // FSW
+        (opcode == 7'b0100111) |    // FSW
+        (opcode == 7'b0101111);     // SWNET
     assign #3 DATA_MEM_WRITE[1:0] = funct3[1:0];
 
     // DATA_MEM_WRITE_DATA_SELECT determines which data gets written to the data memory
@@ -161,9 +164,11 @@ module control_unit (
     /*************************** Data memory read signal generation ***************************/
     // DATA_MEM_READ[3] enables reading
     // DATA_MEM_READ[2:0] determines bit width and related settings based on Funct3
+    // NOTE: LWNET uses data memory read signals but routes to network interface
     assign #3 DATA_MEM_READ[3] = 
         (opcode == 7'b0000011) |    // LB, LH, LW, LBU, LHU
-        (opcode == 7'b0000111);
+        (opcode == 7'b0000111) |    // FLW
+        (opcode == 7'b0101011);     // LWNET
     assign #3 DATA_MEM_READ[2:0] = funct3;
 
     /*************************** Branch control signal generation ***************************/
@@ -190,8 +195,8 @@ module control_unit (
     (opcode == 7'b1100011) ? 3'b011 :   // BEQ, BNE, BLT, BGE, BLTU, BGEU
     (opcode == 7'b0100011) ? 3'b100 :   // SB, SH, SW 
 
-    (opcode == 7'b0111111) ? 3'b010 :   // I AM CONFUSION: WHAT ARE YOU????
-    (opcode == 7'b0101111) ? 3'b100 :   // I AM CONFUSION: WHO ARE YOU???
+    (opcode == 7'b0101111) ? 3'b100 :   // SWNET - S-Type immediate
+    (opcode == 7'b0101011) ? 3'b010 :   // LWNET - I-Type immediate
 
     (opcode == 7'b0010011) ? 3'b010: 3'bxxx;    // All other I-Type instructions (ADDI, SLTI, etc.)
 
@@ -203,7 +208,7 @@ module control_unit (
         (opcode == 7'b1100011);     // BRANCH (BEQ, BNE, BLT, BGE, BLTU, BGEU)
 
 
-    // NOTE: don't care conditions not tested (I AM CONFUSION: WHAT DOES THIS MEANNN???)
+    // NOTE: don't care conditions not tested
     assign #3 OPERAND2_SELECT =
         (opcode == 7'b0000011) |    // LOAD instructions 
         (opcode == 7'b0010011) |    // I-Type instructions (ADDI, SLTI, etc.)
@@ -214,13 +219,15 @@ module control_unit (
         (opcode == 7'b1101111) |    // JAL
         (opcode == 7'b1100011) |    // BRANCH instructions
         (opcode == 7'b0000111) |    // FLW
-        (opcode == 7'b0100111);     // FSW
+        (opcode == 7'b0100111) |    // FSW
+        (opcode == 7'b0101111) |    // SWNET
+        (opcode == 7'b0101011);     // LWNET
         
     /*************************** Writeback mux select signal generation ***************************/
     // 00 = WB_PC, 01 = WB_MEM_READ_DATA, 10 = WB_ALU_OUT, 11 = FPU_OUT
     assign #3 WRITEBACK_VALUE_SELECT =
         ((opcode == 7'b1101111) | (opcode == 7'b1100111)) ? 2'b00 :     // JAL, JALR
-        ((opcode == 7'b0000011) | (opcode == 7'b0000111)) ? 2'b01 :     // LOAD, FLW
+        ((opcode == 7'b0000011) | (opcode == 7'b0000111) | (opcode == 7'b0101011)) ? 2'b01 :     // LOAD, FLW, LWNET
         (
             (opcode == 7'b1000011) |    // FMADD
             (opcode == 7'b1000111) |    // FMSUB

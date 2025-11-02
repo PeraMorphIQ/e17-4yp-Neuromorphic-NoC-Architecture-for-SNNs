@@ -1,0 +1,16 @@
+****************************************
+Report : report_rtl_metrics
+      -view hier
+Design : blackbox
+Version: W-2024.09-SP2
+Date   : Sun Oct 19 03:35:02 2025
+****************************************
+
+INFO : The power information is reported in RRM format because the variable power_enable_new_rrm_view is set true.
+
+gated_registers   icg_cells   latch_cells   reg_cells   sequential_cells   combinational_cells   total_power   cell_name
+---------------   ---------   -----------   ---------   ----------------   -------------------   -----------   -----------------------------------
+4275417             8790          45        4275949     45                 4702590               1.27e+00      blackbox
+4275130             8769          19        4275652     19                 4701418               1.27e+00      blackbox/uut
+   287                21          26        297         26                 1170                  2.79e-04      blackbox/accc
+1

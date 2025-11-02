@@ -1,0 +1,1246 @@
+****************************************
+Report : Averaged Power
+	-hierarchy
+	-levels 3
+	-verbose
+Design : blackbox
+Version: W-2024.09-SP2
+Date   : Sun Oct 19 03:34:39 2025
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /tech/45nm/libs/NangateOpenCellLibrary.ndm/NangateOpenCellLibrary/NangateOpenCellLibrary.db)
+
+
+Operating Conditions: fast   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+Cell               Design       Wire_model  Library       Selection_type
+--------------------------------------------------------------------------------
+                   blackbox     5K_hvratio_1_1
+                                            NangateOpenCellLibrary
+                                                          library default
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+                                      Int      Switch   Leak     Total
+Hierarchy                             Power    Power    Power    Power    %
+----------------------------------------------------------------------------------
+blackbox                                 0.227 2.59e-03    1.042    1.272 100.0
+  accc (accelerator_controller_64_8_11_01)
+                                      1.19e-04 3.92e-05 1.21e-04 2.79e-04   0.0
+    C4263 (accelerator_controller_64_8_11_01_muxgrp_m2m137)
+                                      7.76e-09 3.73e-09 1.02e-07 1.14e-07   0.0
+    C4265 (accelerator_controller_64_8_11_01_muxgrp_m2m136)
+                                         0.000    0.000 6.70e-08 6.70e-08   0.0
+    C4266 (accelerator_controller_64_8_11_01_muxgrp_m2m47)
+                                      8.75e-08 1.64e-07 1.90e-07 4.41e-07   0.0
+    C4267 (accelerator_controller_64_8_11_01_muxgrp_m2m46)
+                                      8.24e-07 5.21e-07 5.19e-07 1.86e-06   0.0
+    C4268 (accelerator_controller_64_8_11_01_muxgrp_m2m48)
+                                      3.16e-08 1.01e-08 1.27e-07 1.69e-07   0.0
+    C4269 (accelerator_controller_64_8_11_01_muxgrp_m2m50)
+                                         0.000    0.000 9.23e-08 9.23e-08   0.0
+    C4270 (accelerator_controller_64_8_11_01_muxgrp_m2m49)
+                                         0.000    0.000 1.43e-07 1.43e-07   0.0
+    C4274 (accelerator_controller_64_8_11_01_muxgrp_m2m132)
+                                         0.000    0.000 1.98e-07 1.98e-07   0.0
+    C4275 (accelerator_controller_64_8_11_01_muxgrp_m2m22)
+                                         0.000    0.000 7.90e-08 7.90e-08   0.0
+    C4276 (accelerator_controller_64_8_11_01_muxgrp_m2m24)
+                                         0.000    0.000 6.19e-08 6.19e-08   0.0
+    C4277 (accelerator_controller_64_8_11_01_muxgrp_m2m25)
+                                         0.000    0.000 3.31e-07 3.31e-07   0.0
+    C4278 (accelerator_controller_64_8_11_01_muxgrp_m2m26)
+                                      4.63e-13 1.89e-13 1.65e-07 1.65e-07   0.0
+    C4279 (accelerator_controller_64_8_11_01_muxgrp_m2m134)
+                                         0.000    0.000 6.89e-08 6.89e-08   0.0
+    gte_430 (DW01_cmp2_J1072_H4_D1)   7.62e-07 3.65e-07 1.95e-07 1.32e-06   0.0
+    lt_603 (DW01_cmp2_J1072_H2_D1)    2.04e-08 1.38e-08 2.42e-07 2.76e-07   0.0
+    C4280 (accelerator_controller_64_8_11_01_muxgrp_m2m133)
+                                         0.000    0.000 2.30e-07 2.30e-07   0.0
+    C4281 (accelerator_controller_64_8_11_01_muxgrp_m2m144)
+                                         0.000    0.000 2.19e-07 2.19e-07   0.0
+    C4282 (accelerator_controller_64_8_11_01_muxgrp_m2m145)
+                                         0.000    0.000 4.84e-08 4.84e-08   0.0
+    C4283 (accelerator_controller_64_8_11_01_muxgrp_m2m36)
+                                      1.94e-07 6.50e-08 4.26e-07 6.85e-07   0.0
+    C4284 (accelerator_controller_64_8_11_01_muxgrp_m2m35)
+                                      1.80e-07 8.62e-08 1.25e-06 1.52e-06   0.0
+    C4285 (accelerator_controller_64_8_11_01_muxgrp_m2m40)
+                                      3.60e-08 2.10e-08 3.78e-07 4.35e-07   0.0
+    C4286 (accelerator_controller_64_8_11_01_muxgrp_m2m42)
+                                      4.13e-07 2.06e-07 3.62e-07 9.81e-07   0.0
+    C4287 (accelerator_controller_64_8_11_01_muxgrp_m2m38)
+                                      1.53e-07 8.69e-08 5.72e-07 8.12e-07   0.0
+    C4288 (accelerator_controller_64_8_11_01_muxgrp_m2m41)
+                                      9.12e-08 2.02e-08 2.52e-07 3.63e-07   0.0
+    C4289 (accelerator_controller_64_8_11_01_muxgrp_m2m37)
+                                      6.78e-08 3.52e-08 2.38e-07 3.41e-07   0.0
+    C4290 (accelerator_controller_64_8_11_01_muxgrp_m2m39)
+                                      5.16e-08 1.51e-08 1.58e-07 2.24e-07   0.0
+    C4291 (accelerator_controller_64_8_11_01_muxgrp_m2m13)
+                                      3.64e-08 7.02e-09 6.61e-08 1.10e-07   0.0
+    C4292 (accelerator_controller_64_8_11_01_muxgrp_m2m12)
+                                      5.01e-08 1.26e-08 2.91e-07 3.53e-07   0.0
+    C4293 (accelerator_controller_64_8_11_01_muxgrp_m2m11)
+                                      7.52e-09 1.45e-09 6.14e-08 7.03e-08   0.0
+    C4294 (accelerator_controller_64_8_11_01_muxgrp_m2m15)
+                                      2.06e-07 5.16e-08 1.92e-07 4.49e-07   0.0
+    C4295 (accelerator_controller_64_8_11_01_muxgrp_m2m10)
+                                      3.10e-08 1.56e-08 1.69e-07 2.15e-07   0.0
+    C4296 (accelerator_controller_64_8_11_01_muxgrp_m2m9)
+                                      1.44e-08 5.00e-09 6.14e-08 8.09e-08   0.0
+    C4297 (accelerator_controller_64_8_11_01_muxgrp_m2m21)
+                                      2.48e-08 7.68e-09 1.02e-07 1.34e-07   0.0
+    C4298 (accelerator_controller_64_8_11_01_muxgrp_m2m5)
+                                         0.000    0.000 7.90e-08 7.90e-08   0.0
+    C4299 (accelerator_controller_64_8_11_01_muxgrp_m2m7)
+                                      1.17e-13 5.92e-13 1.35e-08 1.35e-08   0.0
+    C4301 (accelerator_controller_64_8_11_01_muxgrp_m2m6)
+                                         0.000    0.000 1.03e-07 1.03e-07   0.0
+    C4302 (accelerator_controller_64_8_11_01_muxgrp_m2m4)
+                                         0.000    0.000 2.07e-07 2.07e-07   0.0
+    C4303 (accelerator_controller_64_8_11_01_muxgrp_m2m3)
+                                         0.000    0.000 2.07e-07 2.07e-07   0.0
+    C4305 (accelerator_controller_64_8_11_01_muxgrp_m2m120)
+                                      3.08e-07 1.83e-07 8.62e-08 5.77e-07   0.0
+    C4306 (accelerator_controller_64_8_11_01_muxgrp_m2m122)
+                                      6.99e-07 3.34e-07 8.55e-08 1.12e-06   0.0
+    C4307 (accelerator_controller_64_8_11_01_muxgrp_m2m121)
+                                      5.64e-08 1.88e-08 7.42e-08 1.49e-07   0.0
+    C4308 (accelerator_controller_64_8_11_01_muxgrp_m2m107)
+                                      3.04e-07 2.78e-07 9.46e-08 6.76e-07   0.0
+    C4309 (accelerator_controller_64_8_11_01_muxgrp_m2m108)
+                                      2.74e-08 1.76e-08 1.02e-07 1.47e-07   0.0
+    C4310 (accelerator_controller_64_8_11_01_muxgrp_m2m106)
+                                      2.74e-08 1.81e-08 1.02e-07 1.48e-07   0.0
+    C4312 (accelerator_controller_64_8_11_01_muxgrp_m2m31)
+                                      1.79e-06 7.52e-07 9.05e-07 3.44e-06   0.0
+    C4313 (accelerator_controller_64_8_11_01_muxgrp_m2m29)
+                                      2.81e-07 1.81e-07 6.31e-07 1.09e-06   0.0
+    C4314 (accelerator_controller_64_8_11_01_muxgrp_m2m27)
+                                         0.000    0.000 5.20e-07 5.20e-07   0.0
+    C4315 (accelerator_controller_64_8_11_01_muxgrp_m2m55)
+                                      1.00e-07 2.99e-08 2.13e-07 3.43e-07   0.0
+    C4316 (accelerator_controller_64_8_11_01_muxgrp_m2m54)
+                                      7.86e-08 3.37e-08 1.65e-07 2.77e-07   0.0
+    C4317 (accelerator_controller_64_8_11_01_muxgrp_m2m56)
+                                      1.05e-07 2.83e-08 1.00e-07 2.33e-07   0.0
+    C4318 (accelerator_controller_64_8_11_01_muxgrp_m2m116)
+                                      9.24e-07 2.37e-07 2.57e-07 1.42e-06   0.0
+    C4319 (accelerator_controller_64_8_11_01_muxgrp_m2m124)
+                                      6.96e-07 2.59e-07 8.55e-08 1.04e-06   0.0
+    C4320 (accelerator_controller_64_8_11_01_muxgrp_m2m105)
+                                         0.000    0.000 7.53e-09 7.53e-09   0.0
+    C4321 (accelerator_controller_64_8_11_01_muxgrp_m2m118)
+                                      1.00e-06 4.35e-07 1.81e-07 1.62e-06   0.0
+    C4322 (accelerator_controller_64_8_11_01_muxgrp_m2m111)
+                                      1.00e-06 2.88e-07 1.87e-07 1.47e-06   0.0
+    C4323 (accelerator_controller_64_8_11_01_muxgrp_m2m109)
+                                      1.75e-06 1.03e-06 6.15e-07 3.39e-06   0.0
+    C4324 (accelerator_controller_64_8_11_01_muxgrp_m2m113)
+                                      1.48e-07 2.78e-08 1.30e-07 3.07e-07   0.0
+    C4325 (accelerator_controller_64_8_11_01_muxgrp_m2m119)
+                                         0.000    0.000 9.23e-08 9.23e-08   0.0
+    C4326 (accelerator_controller_64_8_11_01_muxgrp_m2m114)
+                                      1.97e-06 2.54e-07 3.89e-07 2.61e-06   0.0
+    C4327 (accelerator_controller_64_8_11_01_muxgrp_m2m117)
+                                      1.74e-07 1.62e-08 1.61e-07 3.52e-07   0.0
+    C4328 (accelerator_controller_64_8_11_01_muxgrp_m2m112)
+                                      1.63e-07 2.09e-08 2.60e-07 4.43e-07   0.0
+    C4329 (accelerator_controller_64_8_11_01_muxgrp_m2m123)
+                                      2.69e-07 1.75e-07 9.60e-09 4.54e-07   0.0
+    C4330 (accelerator_controller_64_8_11_01_muxgrp_m2m110)
+                                      3.21e-07 5.59e-08 6.26e-07 1.00e-06   0.0
+    C4331 (accelerator_controller_64_8_11_01_muxgrp_m2m115)
+                                      3.21e-07 5.59e-08 2.26e-07 6.03e-07   0.0
+    C4342 (accelerator_controller_64_8_11_01_muxgrp_m2m23)
+                                         0.000    0.000 6.27e-08 6.27e-08   0.0
+    C4343 (accelerator_controller_64_8_11_01_muxgrp_m2m139)
+                                         0.000    0.000 7.56e-07 7.56e-07   0.0
+    C4344 (accelerator_controller_64_8_11_01_muxgrp_m2m141)
+                                         0.000    0.000 4.84e-07 4.84e-07   0.0
+    C4345 (accelerator_controller_64_8_11_01_muxgrp_m2m130)
+                                         0.000    0.000 3.14e-07 3.14e-07   0.0
+    C4346 (accelerator_controller_64_8_11_01_muxgrp_m2m138)
+                                         0.000    0.000 7.56e-07 7.56e-07   0.0
+    C4347 (accelerator_controller_64_8_11_01_muxgrp_m2m140)
+                                         0.000    0.000 4.84e-07 4.84e-07   0.0
+    C4348 (accelerator_controller_64_8_11_01_muxgrp_m2m131)
+                                         0.000    0.000 3.14e-07 3.14e-07   0.0
+    C4349 (accelerator_controller_64_8_11_01_muxgrp_m2m128)
+                                      8.90e-08 1.01e-08 1.62e-07 2.61e-07   0.0
+    C4350 (accelerator_controller_64_8_11_01_muxgrp_m2m129)
+                                         0.000    0.000 7.57e-08 7.57e-08   0.0
+    C4352 (accelerator_controller_64_8_11_01_muxgrp_m2m126)
+                                         0.000    0.000 6.02e-08 6.02e-08   0.0
+    C4353 (accelerator_controller_64_8_11_01_muxgrp_m2m125)
+                                         0.000    0.000 3.01e-07 3.01e-07   0.0
+    C4354 (accelerator_controller_64_8_11_01_muxgrp_m2m127)
+                                         0.000    0.000 2.04e-07 2.04e-07   0.0
+    C4356 (accelerator_controller_64_8_11_01_muxgrp_m2m82)
+                                      4.07e-07 3.28e-08 2.08e-07 6.48e-07   0.0
+    C4357 (accelerator_controller_64_8_11_01_muxgrp_m2m101)
+                                      1.03e-05 3.78e-07 1.03e-05 2.10e-05   0.0
+    C4358 (accelerator_controller_64_8_11_01_muxgrp_m2m73)
+                                      4.90e-07 4.52e-08 2.37e-07 7.73e-07   0.0
+    C4359 (accelerator_controller_64_8_11_01_muxgrp_m2m97)
+                                      8.55e-07 2.87e-08 4.36e-07 1.32e-06   0.0
+    C4360 (accelerator_controller_64_8_11_01_muxgrp_m2m76)
+                                      4.80e-07 4.52e-08 2.07e-07 7.32e-07   0.0
+    C4361 (accelerator_controller_64_8_11_01_muxgrp_m2m104)
+                                         0.000    0.000 9.41e-08 9.41e-08   0.0
+    C4362 (accelerator_controller_64_8_11_01_muxgrp_m2m70)
+                                      4.34e-07 1.04e-07 4.87e-07 1.03e-06   0.0
+    C4363 (accelerator_controller_64_8_11_01_muxgrp_m2m99)
+                                      8.37e-07 3.23e-07 1.97e-07 1.36e-06   0.0
+    C4364 (accelerator_controller_64_8_11_01_muxgrp_m2m71)
+                                      4.33e-07 1.22e-07 4.76e-07 1.03e-06   0.0
+    C4365 (accelerator_controller_64_8_11_01_muxgrp_m2m98)
+                                      4.11e-07 8.44e-09 1.28e-07 5.47e-07   0.0
+    C4366 (accelerator_controller_64_8_11_01_muxgrp_m2m72)
+                                      3.16e-07 3.66e-08 4.90e-07 8.42e-07   0.0
+    C4367 (accelerator_controller_64_8_11_01_muxgrp_m2m74)
+                                      2.76e-07 3.89e-08 2.55e-07 5.70e-07   0.0
+    C4368 (accelerator_controller_64_8_11_01_muxgrp_m2m93)
+                                      6.88e-08 3.69e-09 4.89e-08 1.21e-07   0.0
+    C4369 (accelerator_controller_64_8_11_01_muxgrp_m2m65)
+                                      4.00e-07 1.35e-07 1.24e-06 1.77e-06   0.0
+    C4370 (accelerator_controller_64_8_11_01_muxgrp_m2m89)
+                                         0.000    0.000 5.34e-07 5.34e-07   0.0
+    C4371 (accelerator_controller_64_8_11_01_muxgrp_m2m66)
+                                      3.17e-07 1.06e-07 9.69e-07 1.39e-06   0.0
+    C4372 (accelerator_controller_64_8_11_01_muxgrp_m2m57)
+                                         0.000    0.000 9.12e-07 9.12e-07   0.0
+    C4373 (accelerator_controller_64_8_11_01_muxgrp_m2m68)
+                                      1.68e-06 8.83e-07 6.29e-07 3.19e-06   0.0
+    C4374 (accelerator_controller_64_8_11_01_muxgrp_m2m67)
+                                      1.94e-06 2.91e-07 1.33e-06 3.55e-06   0.0
+    C4375 (accelerator_controller_64_8_11_01_muxgrp_m2m60)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+    C4376 (accelerator_controller_64_8_11_01_muxgrp_m2m69)
+                                      1.42e-06 6.71e-07 4.64e-07 2.56e-06   0.0
+    C4377 (accelerator_controller_64_8_11_01_muxgrp_m2m94)
+                                      9.01e-07 1.78e-07 7.66e-07 1.84e-06   0.0
+    C4378 (accelerator_controller_64_8_11_01_muxgrp_m2m78)
+                                      2.38e-07 4.33e-08 2.93e-07 5.74e-07   0.0
+    C4379 (accelerator_controller_64_8_11_01_muxgrp_m2m61)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+    add_542 (DW01_add_J1072_H5_D1)       0.000    0.000 5.86e-08 5.86e-08   0.0
+    add_543 (DW01_add_J1072_H6_D1)       0.000    0.000 1.07e-07 1.07e-07   0.0
+    lt_515 (DW01_cmp2_J1072_H1_D1)    8.40e-08 2.55e-07 3.46e-08 3.74e-07   0.0
+    C4380 (accelerator_controller_64_8_11_01_muxgrp_m2m79)
+                                      4.81e-07 4.53e-08 2.07e-07 7.33e-07   0.0
+    C4381 (accelerator_controller_64_8_11_01_muxgrp_m2m103)
+                                         0.000    0.000 9.41e-08 9.41e-08   0.0
+    C4382 (accelerator_controller_64_8_11_01_muxgrp_m2m80)
+                                      2.76e-07 3.89e-08 2.55e-07 5.70e-07   0.0
+    C4383 (accelerator_controller_64_8_11_01_muxgrp_m2m90)
+                                      1.79e-08 2.37e-09 5.36e-08 7.39e-08   0.0
+    C4384 (accelerator_controller_64_8_11_01_muxgrp_m2m81)
+                                      2.75e-07 3.31e-08 2.56e-07 5.64e-07   0.0
+    C4385 (accelerator_controller_64_8_11_01_muxgrp_m2m91)
+                                         0.000    0.000 6.67e-08 6.67e-08   0.0
+    C4386 (accelerator_controller_64_8_11_01_muxgrp_m2m83)
+                                      2.74e-07 2.69e-08 2.08e-07 5.09e-07   0.0
+    C4387 (accelerator_controller_64_8_11_01_muxgrp_m2m75)
+                                      2.09e-07 1.98e-08 2.40e-07 4.69e-07   0.0
+    C4388 (accelerator_controller_64_8_11_01_muxgrp_m2m100)
+                                      1.60e-07 3.86e-09 8.04e-08 2.44e-07   0.0
+    C4389 (accelerator_controller_64_8_11_01_muxgrp_m2m77)
+                                      2.37e-07 4.51e-08 2.87e-07 5.70e-07   0.0
+    C4390 (accelerator_controller_64_8_11_01_muxgrp_m2m64)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+    C4391 (accelerator_controller_64_8_11_01_muxgrp_m2m95)
+                                      1.74e-07 6.62e-09 7.49e-08 2.56e-07   0.0
+    C4392 (accelerator_controller_64_8_11_01_muxgrp_m2m62)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+    C4393 (accelerator_controller_64_8_11_01_muxgrp_m2m88)
+                                      3.13e-07 2.14e-08 2.90e-07 6.25e-07   0.0
+    C4394 (accelerator_controller_64_8_11_01_muxgrp_m2m143)
+                                         0.000    0.000 9.57e-08 9.57e-08   0.0
+    C4396 (accelerator_controller_64_8_11_01_muxgrp_m2m142)
+                                         0.000    0.000 6.19e-08 6.19e-08   0.0
+    C4397 (accelerator_controller_64_8_11_01_muxgrp_m2m87)
+                                      2.33e-07 5.15e-08 2.83e-07 5.68e-07   0.0
+    C4398 (accelerator_controller_64_8_11_01_muxgrp_m2m59)
+                                         0.000    0.000 2.48e-07 2.48e-07   0.0
+    C4399 (accelerator_controller_64_8_11_01_muxgrp_m2m84)
+                                      2.17e-07 4.67e-08 3.01e-07 5.65e-07   0.0
+    C4400 (accelerator_controller_64_8_11_01_muxgrp_m2m58)
+                                         0.000    0.000 6.14e-07 6.14e-07   0.0
+    C4401 (accelerator_controller_64_8_11_01_muxgrp_m2m96)
+                                      1.73e-07 1.56e-08 7.49e-08 2.64e-07   0.0
+    C4402 (accelerator_controller_64_8_11_01_muxgrp_m2m63)
+                                         0.000    0.000 4.84e-08 4.84e-08   0.0
+    C4403 (accelerator_controller_64_8_11_01_muxgrp_m2m86)
+                                      6.09e-08 3.73e-09 2.84e-07 3.49e-07   0.0
+    C4404 (accelerator_controller_64_8_11_01_muxgrp_m2m102)
+                                      1.70e-07 9.27e-09 7.12e-08 2.50e-07   0.0
+    C4405 (accelerator_controller_64_8_11_01_muxgrp_m2m85)
+                                      2.35e-07 1.56e-08 2.13e-07 4.64e-07   0.0
+    C4406 (accelerator_controller_64_8_11_01_muxgrp_m2m92)
+                                      7.98e-08 1.47e-08 9.42e-08 1.89e-07   0.0
+    C4407 (accelerator_controller_64_8_11_01_muxgrp_m2m14)
+                                      1.25e-11 6.51e-12 6.64e-08 6.64e-08   0.0
+    C4408 (accelerator_controller_64_8_11_01_muxgrp_m2m16)
+                                      8.20e-09 1.77e-09 1.02e-07 1.12e-07   0.0
+    C4409 (accelerator_controller_64_8_11_01_muxgrp_m2m8)
+                                      1.25e-11 6.51e-12 6.64e-08 6.64e-08   0.0
+    C4410 (accelerator_controller_64_8_11_01_muxgrp_m2m17)
+                                      1.58e-08 3.50e-09 9.45e-08 1.14e-07   0.0
+    C4411 (accelerator_controller_64_8_11_01_muxgrp_m2m18)
+                                      1.78e-08 5.96e-09 1.02e-07 1.25e-07   0.0
+    C4412 (accelerator_controller_64_8_11_01_muxgrp_m2m19)
+                                      1.78e-08 7.57e-09 1.02e-07 1.27e-07   0.0
+    C4413 (accelerator_controller_64_8_11_01_muxgrp_m2m20)
+                                      1.82e-08 7.44e-09 1.02e-07 1.27e-07   0.0
+    C4249 (accelerator_controller_64_8_11_01_muxgrp_m2m32)
+                                         0.000    0.000 4.43e-06 4.43e-06   0.0
+    add_607 (DW01_add_J1072_H3_D1)       0.000    0.000 1.52e-07 1.52e-07   0.0
+    C4250 (accelerator_controller_64_8_11_01_muxgrp_m2m28)
+                                      9.55e-07 2.91e-07 1.17e-05 1.30e-05   0.0
+    C4251 (accelerator_controller_64_8_11_01_muxgrp_m2m30)
+                                      2.76e-05 1.54e-06 8.41e-06 3.75e-05   0.0
+    C4252 (accelerator_controller_64_8_11_01_muxgrp_m2m34)
+                                         0.000    0.000 1.77e-07 1.77e-07   0.0
+    C4253 (accelerator_controller_64_8_11_01_muxgrp_m2m33)
+                                         0.000    0.000 7.53e-09 7.53e-09   0.0
+    C4254 (accelerator_controller_64_8_11_01_muxgrp_m2m2)
+                                         0.000    0.000 6.05e-07 6.05e-07   0.0
+    C4255 (accelerator_controller_64_8_11_01_muxgrp_m2m1)
+                                      1.17e-13 5.54e-13 7.05e-07 7.05e-07   0.0
+    C4256 (accelerator_controller_64_8_11_01_muxgrp_m2m51)
+                                      9.74e-08 1.70e-07 8.64e-08 3.54e-07   0.0
+    C4257 (accelerator_controller_64_8_11_01_muxgrp_m2m53)
+                                      3.43e-07 2.02e-07 8.73e-08 6.32e-07   0.0
+    C4258 (accelerator_controller_64_8_11_01_muxgrp_m2m52)
+                                      1.14e-08 8.88e-09 7.57e-08 9.60e-08   0.0
+    C4259 (accelerator_controller_64_8_11_01_muxgrp_m2m45)
+                                      9.44e-09 2.39e-09 1.02e-07 1.14e-07   0.0
+    add_420 (DW01_add_J1072_H0_D1)    1.22e-06 1.06e-06 1.78e-07 2.46e-06   0.0
+    C4260 (accelerator_controller_64_8_11_01_muxgrp_m2m43)
+                                      8.33e-09 2.39e-09 6.64e-08 7.71e-08   0.0
+    C4261 (accelerator_controller_64_8_11_01_muxgrp_m2m44)
+                                      8.67e-09 2.33e-09 1.03e-07 1.14e-07   0.0
+    C4262 (accelerator_controller_64_8_11_01_muxgrp_m2m135)
+                                      6.29e-09 1.09e-08 1.02e-07 1.19e-07   0.0
+  uut (neuron_accelerator_packet_width11_main_fifo_depth32_forwarder_8_fifo_depth16_forwarder_4_fifo_depth8_number_of_clusters64_neurons_per_cluster32_incoming_weight_table_rows1024_max_weight_table_rows2048_flit_size8_cluster_group_count2)
+                                         0.227 2.55e-03    1.042    1.272 100.0
+    gen_spike_forwarder_4[1].spike_forwarder_4_inst (spike_forwarder_4_data_width11_fifo_depth8_main_fifo_depth16)
+                                      2.17e-04 2.78e-05 2.85e-04 5.30e-04   0.0
+      spike_forwarder_controller_inst (spike_forwarder_controller_4)
+                                      1.53e-06 1.72e-10 2.28e-06 3.81e-06   0.0
+      spike_forwarder_inst (spike_forwarder_num_ports4_data_width11_fifo_depth8_main_fifo_depth16)
+                                      2.16e-04 2.78e-05 2.83e-04 5.26e-04   0.0
+    init_router_upper (init_router_8_8_a0_1_4)
+                                      2.42e-04 5.73e-05 7.44e-05 3.74e-04   0.0
+      C2840 (init_router_8_8_a0_1_4_muxgrp_m2m65)
+                                      3.82e-08 9.44e-09 2.88e-07 3.36e-07   0.0
+      C2841 (init_router_8_8_a0_1_4_muxgrp_m2m75)
+                                      1.09e-06 1.18e-07 5.78e-07 1.78e-06   0.0
+      C2842 (init_router_8_8_a0_1_4_muxgrp_m2m64)
+                                      4.39e-08 1.14e-08 3.05e-07 3.60e-07   0.0
+      C2843 (init_router_8_8_a0_1_4_muxgrp_m2m70)
+                                         0.000    0.000 2.00e-07 2.00e-07   0.0
+      C2844 (init_router_8_8_a0_1_4_muxgrp_m2m63)
+                                      3.88e-08 1.11e-08 3.23e-07 3.73e-07   0.0
+      C2845 (init_router_8_8_a0_1_4_muxgrp_m2m61)
+                                      3.67e-06 3.02e-07 2.11e-07 4.18e-06   0.0
+      C2846 (init_router_8_8_a0_1_4_muxgrp_m2m54)
+                                      5.87e-06 5.61e-07 5.85e-07 7.02e-06   0.0
+      C2847 (init_router_8_8_a0_1_4_muxgrp_m2m76)
+                                      9.30e-09 8.18e-10 7.57e-08 8.58e-08   0.0
+      C2751 (init_router_8_8_a0_1_4_muxgrp_m2m19)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      C2752 (init_router_8_8_a0_1_4_muxgrp_m2m17)
+                                         0.000 3.37e-11 7.19e-08 7.20e-08   0.0
+      C2753 (init_router_8_8_a0_1_4_muxgrp_m2m18)
+                                         0.000    0.000 9.13e-08 9.13e-08   0.0
+      C2754 (init_router_8_8_a0_1_4_muxgrp_m2m16)
+                                      1.11e-10 3.37e-11 7.09e-08 7.10e-08   0.0
+      C2755 (init_router_8_8_a0_1_4_muxgrp_m2m15)
+                                         0.000 8.78e-11 1.35e-07 1.35e-07   0.0
+      C2756 (init_router_8_8_a0_1_4_muxgrp_m2m13)
+                                      1.11e-10 3.37e-11 7.09e-08 7.10e-08   0.0
+      C2757 (init_router_8_8_a0_1_4_muxgrp_m2m14)
+                                      1.88e-10 8.22e-11 1.63e-07 1.64e-07   0.0
+      C2758 (init_router_8_8_a0_1_4_muxgrp_m2m12)
+                                      1.11e-10 3.37e-11 7.09e-08 7.10e-08   0.0
+      C2759 (init_router_8_8_a0_1_4_muxgrp_m2m11)
+                                      1.14e-10 8.78e-11 2.50e-07 2.50e-07   0.0
+      C2760 (init_router_8_8_a0_1_4_muxgrp_m2m10)
+                                      1.11e-10 3.37e-11 7.09e-08 7.10e-08   0.0
+      C2761 (init_router_8_8_a0_1_4_muxgrp_m2m9)
+                                      1.88e-10 8.22e-11 2.18e-07 2.19e-07   0.0
+      C2762 (init_router_8_8_a0_1_4_muxgrp_m2m2)
+                                      1.11e-10 2.17e-11 7.09e-08 7.10e-08   0.0
+      C2763 (init_router_8_8_a0_1_4_muxgrp_m2m1)
+                                      1.15e-10 3.20e-11 2.23e-07 2.23e-07   0.0
+      C2764 (init_router_8_8_a0_1_4_muxgrp_m2m8)
+                                      2.57e-06 1.64e-07 5.88e-07 3.32e-06   0.0
+      C2766 (init_router_8_8_a0_1_4_muxgrp_m2m48)
+                                      7.70e-09 2.84e-09 8.67e-08 9.72e-08   0.0
+      C2767 (init_router_8_8_a0_1_4_muxgrp_m2m49)
+                                      6.97e-08 6.32e-08 2.45e-07 3.78e-07   0.0
+      C2768 (init_router_8_8_a0_1_4_muxgrp_m2m84)
+                                      5.87e-08 1.66e-07 7.76e-08 3.03e-07   0.0
+      C2769 (init_router_8_8_a0_1_4_muxgrp_m2m83)
+                                      3.32e-07 4.17e-07 2.33e-07 9.82e-07   0.0
+      add_214 (DW01_add_J1078_H1_D1)  5.62e-07 2.86e-07 3.75e-07 1.22e-06   0.0
+      C2770 (init_router_8_8_a0_1_4_muxgrp_m2m47)
+                                      1.30e-08 5.41e-09 1.59e-07 1.77e-07   0.0
+      C2771 (init_router_8_8_a0_1_4_muxgrp_m2m46)
+                                      1.18e-07 1.73e-07 2.28e-07 5.19e-07   0.0
+      C2772 (init_router_8_8_a0_1_4_muxgrp_m2m45)
+                                      2.58e-06 1.32e-06 1.60e-06 5.51e-06   0.0
+      C2773 (init_router_8_8_a0_1_4_muxgrp_m2m31)
+                                         0.000 5.39e-10 2.29e-06 2.29e-06   0.0
+      C2774 (init_router_8_8_a0_1_4_muxgrp_m2m35)
+                                         0.000    0.000 8.78e-07 8.78e-07   0.0
+      C2775 (init_router_8_8_a0_1_4_muxgrp_m2m41)
+                                         0.000    0.000 4.55e-07 4.55e-07   0.0
+      C2776 (init_router_8_8_a0_1_4_muxgrp_m2m32)
+                                         0.000 5.39e-10 2.29e-06 2.29e-06   0.0
+      C2777 (init_router_8_8_a0_1_4_muxgrp_m2m37)
+                                         0.000    0.000 8.78e-07 8.78e-07   0.0
+      C2778 (init_router_8_8_a0_1_4_muxgrp_m2m44)
+                                         0.000    0.000 4.55e-07 4.55e-07   0.0
+      add_220 (DW01_add_J1078_H3_D1)     0.000    0.000 3.24e-07 3.24e-07   0.0
+      gt_128 (DW01_cmp2_J1078_H4_D1)  1.98e-08 6.25e-09 5.20e-08 7.81e-08   0.0
+      C2780 (init_router_8_8_a0_1_4_muxgrp_m2m7)
+                                      2.57e-06 1.63e-07 5.88e-07 3.32e-06   0.0
+      C2781 (init_router_8_8_a0_1_4_muxgrp_m2m21)
+                                      1.28e-05 6.97e-07 5.91e-07 1.41e-05   0.0
+      C2782 (init_router_8_8_a0_1_4_muxgrp_m2m20)
+                                      1.29e-05 2.68e-07 5.91e-07 1.37e-05   0.0
+      C2783 (init_router_8_8_a0_1_4_muxgrp_m2m3)
+                                      1.22e-06 5.65e-08 8.24e-07 2.10e-06   0.0
+      C2785 (init_router_8_8_a0_1_4_muxgrp_m2m80)
+                                      2.36e-09 1.22e-09 9.56e-08 9.92e-08   0.0
+      C2786 (init_router_8_8_a0_1_4_muxgrp_m2m81)
+                                         0.000    0.000 9.50e-08 9.50e-08   0.0
+      C2787 (init_router_8_8_a0_1_4_muxgrp_m2m34)
+                                         0.000 5.39e-10 2.29e-06 2.29e-06   0.0
+      C2788 (init_router_8_8_a0_1_4_muxgrp_m2m39)
+                                         0.000    0.000 8.78e-07 8.78e-07   0.0
+      C2789 (init_router_8_8_a0_1_4_muxgrp_m2m40)
+                                         0.000    0.000 4.55e-07 4.55e-07   0.0
+      gt_234 (DW01_cmp2_J1078_H0_D1)  2.16e-08 1.93e-08 4.28e-08 8.37e-08   0.0
+      C2790 (init_router_8_8_a0_1_4_muxgrp_m2m30)
+                                         0.000 5.39e-10 2.29e-06 2.29e-06   0.0
+      C2791 (init_router_8_8_a0_1_4_muxgrp_m2m36)
+                                         0.000    0.000 8.78e-07 8.78e-07   0.0
+      C2792 (init_router_8_8_a0_1_4_muxgrp_m2m42)
+                                         0.000    0.000 4.55e-07 4.55e-07   0.0
+      C2793 (init_router_8_8_a0_1_4_muxgrp_m2m22)
+                                      1.29e-05 2.23e-07 5.91e-07 1.37e-05   0.0
+      C2794 (init_router_8_8_a0_1_4_muxgrp_m2m23)
+                                      1.23e-05 7.31e-07 5.91e-07 1.36e-05   0.0
+      C2795 (init_router_8_8_a0_1_4_muxgrp_m2m5)
+                                      1.22e-06 5.65e-08 8.24e-07 2.10e-06   0.0
+      C2796 (init_router_8_8_a0_1_4_muxgrp_m2m33)
+                                         0.000 5.39e-10 2.29e-06 2.29e-06   0.0
+      C2797 (init_router_8_8_a0_1_4_muxgrp_m2m38)
+                                         0.000    0.000 8.78e-07 8.78e-07   0.0
+      C2798 (init_router_8_8_a0_1_4_muxgrp_m2m43)
+                                         0.000    0.000 4.55e-07 4.55e-07   0.0
+      C2799 (init_router_8_8_a0_1_4_muxgrp_m2m24)
+                                      1.28e-05 6.97e-07 5.91e-07 1.41e-05   0.0
+      C2800 (init_router_8_8_a0_1_4_muxgrp_m2m6)
+                                      3.70e-06 6.63e-08 1.22e-06 4.99e-06   0.0
+      C2801 (init_router_8_8_a0_1_4_muxgrp_m2m25)
+                                      3.50e-06 3.36e-07 5.67e-07 4.40e-06   0.0
+      C2802 (init_router_8_8_a0_1_4_muxgrp_m2m4)
+                                      1.22e-06 5.65e-08 8.24e-07 2.10e-06   0.0
+      C2803 (init_router_8_8_a0_1_4_muxgrp_m2m85)
+                                      6.59e-07 5.67e-07 5.02e-07 1.73e-06   0.0
+      C2805 (init_router_8_8_a0_1_4_muxgrp_m2m29)
+                                      8.64e-11 5.49e-11 9.57e-08 9.59e-08   0.0
+      C2807 (init_router_8_8_a0_1_4_muxgrp_m2m90)
+                                      2.39e-07 2.36e-07 8.35e-08 5.58e-07   0.0
+      C2808 (init_router_8_8_a0_1_4_muxgrp_m2m86)
+                                         0.000    0.000 4.84e-08 4.84e-08   0.0
+      C2809 (init_router_8_8_a0_1_4_muxgrp_m2m87)
+                                      4.48e-09 3.16e-09 7.80e-08 8.56e-08   0.0
+      C2810 (init_router_8_8_a0_1_4_muxgrp_m2m89)
+                                      5.21e-07 2.29e-07 1.76e-07 9.25e-07   0.0
+      C2811 (init_router_8_8_a0_1_4_muxgrp_m2m88)
+                                      5.50e-07 6.93e-07 7.76e-07 2.02e-06   0.0
+      C2814 (init_router_8_8_a0_1_4_muxgrp_m2m77)
+                                      2.50e-07 5.54e-08 7.53e-07 1.06e-06   0.0
+      C2815 (init_router_8_8_a0_1_4_muxgrp_m2m27)
+                                      2.00e-07 6.66e-08 6.87e-08 3.35e-07   0.0
+      C2816 (init_router_8_8_a0_1_4_muxgrp_m2m82)
+                                         0.000    0.000 9.50e-08 9.50e-08   0.0
+      C2817 (init_router_8_8_a0_1_4_muxgrp_m2m79)
+                                      2.59e-07 6.66e-08 8.80e-08 4.13e-07   0.0
+      C2818 (init_router_8_8_a0_1_4_muxgrp_m2m78)
+                                      2.47e-07 1.74e-07 8.80e-08 5.09e-07   0.0
+      C2819 (init_router_8_8_a0_1_4_muxgrp_m2m28)
+                                      1.33e-09 4.14e-10 8.00e-08 8.17e-08   0.0
+      C2820 (init_router_8_8_a0_1_4_muxgrp_m2m26)
+                                      1.33e-09 4.14e-10 1.46e-07 1.48e-07   0.0
+      C2821 (init_router_8_8_a0_1_4_muxgrp_m2m57)
+                                      2.26e-06 3.30e-07 3.56e-07 2.94e-06   0.0
+      C2822 (init_router_8_8_a0_1_4_muxgrp_m2m66)
+                                      6.67e-06 1.81e-06 1.83e-06 1.03e-05   0.0
+      C2823 (init_router_8_8_a0_1_4_muxgrp_m2m67)
+                                      2.80e-08 2.84e-09 9.76e-08 1.28e-07   0.0
+      C2824 (init_router_8_8_a0_1_4_muxgrp_m2m53)
+                                      6.87e-06 8.61e-07 6.03e-07 8.33e-06   0.0
+      C2825 (init_router_8_8_a0_1_4_muxgrp_m2m69)
+                                      3.79e-06 1.80e-07 2.96e-07 4.27e-06   0.0
+      C2826 (init_router_8_8_a0_1_4_muxgrp_m2m56)
+                                      2.97e-06 1.05e-07 2.39e-07 3.31e-06   0.0
+      C2827 (init_router_8_8_a0_1_4_muxgrp_m2m71)
+                                      3.21e-06 6.78e-07 9.51e-08 3.99e-06   0.0
+      C2828 (init_router_8_8_a0_1_4_muxgrp_m2m62)
+                                      5.76e-08 5.98e-09 2.70e-07 3.34e-07   0.0
+      C2829 (init_router_8_8_a0_1_4_muxgrp_m2m73)
+                                      5.21e-06 2.59e-07 5.32e-07 6.00e-06   0.0
+      sub_235 (DW01_sub_J1078_H2_D1)  3.73e-07 3.45e-07 4.42e-07 1.16e-06   0.0
+      C2830 (init_router_8_8_a0_1_4_muxgrp_m2m52)
+                                      5.75e-06 8.96e-07 5.71e-07 7.22e-06   0.0
+      C2831 (init_router_8_8_a0_1_4_muxgrp_m2m68)
+                                      3.79e-06 7.24e-07 2.96e-07 4.81e-06   0.0
+      C2832 (init_router_8_8_a0_1_4_muxgrp_m2m58)
+                                      1.36e-06 1.78e-07 2.47e-07 1.79e-06   0.0
+      C2833 (init_router_8_8_a0_1_4_muxgrp_m2m59)
+                                      2.97e-06 1.05e-07 2.39e-07 3.31e-06   0.0
+      C2834 (init_router_8_8_a0_1_4_muxgrp_m2m51)
+                                      6.20e-06 2.08e-06 1.35e-06 9.64e-06   0.0
+      C2835 (init_router_8_8_a0_1_4_muxgrp_m2m72)
+                                      4.99e-06 2.39e-06 5.32e-07 7.91e-06   0.0
+      C2836 (init_router_8_8_a0_1_4_muxgrp_m2m60)
+                                      6.98e-08 7.20e-09 2.70e-07 3.47e-07   0.0
+      C2837 (init_router_8_8_a0_1_4_muxgrp_m2m74)
+                                      5.21e-06 2.59e-07 5.32e-07 6.00e-06   0.0
+      C2838 (init_router_8_8_a0_1_4_muxgrp_m2m55)
+                                      5.47e-06 4.08e-07 5.50e-07 6.43e-06   0.0
+      C2839 (init_router_8_8_a0_1_4_muxgrp_m2m50)
+                                      8.85e-06 1.67e-06 2.34e-06 1.29e-05   0.0
+    gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst (neuron_cluster_11_06_64_32_1024_2048)
+                                      2.78e-02 2.87e-04 4.27e-03 3.23e-02   2.5
+      C11 (neuron_cluster_11_06_64_32_1024_2048_muxgrp_m2m1)
+                                         0.000    0.000 4.73e-08 4.73e-08   0.0
+      controller (cluster_controller_number_of_clusters64_neurons_per_cluster32_max_weight_table_rows2048_6)
+                                      1.04e-05 5.33e-05 3.52e-05 9.90e-05   0.0
+      outgoing_enc (outgoing_enc_32_11_06)
+                                      2.91e-04 2.20e-09 3.23e-05 3.23e-04   0.0
+      incoming_forwarder (incoming_forwarder_incoming_weight_table_rows1024_max_weight_table_rows2048_weight_address_buffer_depth8_6)
+                                      5.06e-03 1.72e-08 1.07e-04 5.16e-03   0.4
+      neuron_layer_inst (neuron_layer_neuron_bank_size32_6)
+                                      2.24e-02 2.34e-04 4.10e-03 2.68e-02   2.1
+    gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst (neuron_cluster_11_05_64_32_1024_2048)
+                                      2.78e-02 2.87e-04 4.27e-03 3.23e-02   2.5
+      C11 (neuron_cluster_11_05_64_32_1024_2048_muxgrp_m2m1)
+                                         0.000    0.000 4.73e-08 4.73e-08   0.0
+      controller (cluster_controller_number_of_clusters64_neurons_per_cluster32_max_weight_table_rows2048_5)
+                                      1.04e-05 5.33e-05 3.52e-05 9.90e-05   0.0
+      outgoing_enc (outgoing_enc_32_11_05)
+                                      2.91e-04 2.61e-09 3.23e-05 3.23e-04   0.0
+      incoming_forwarder (incoming_forwarder_incoming_weight_table_rows1024_max_weight_table_rows2048_weight_address_buffer_depth8_5)
+                                      5.06e-03 1.76e-08 1.07e-04 5.16e-03   0.4
+      neuron_layer_inst (neuron_layer_neuron_bank_size32_5)
+                                      2.24e-02 2.34e-04 4.10e-03 2.68e-02   2.1
+    gen_spike_forwarder_4[0].init_router_lower (init_router_4_8_00000080_0_4)
+                                      1.82e-04 3.60e-05 5.20e-05 2.70e-04   0.0
+      C1740 (init_router_4_8_00000080_0_4_muxgrp_m2m70)
+                                      3.23e-11 4.54e-11 9.46e-08 9.47e-08   0.0
+      C1741 (init_router_4_8_00000080_0_4_muxgrp_m2m71)
+                                      2.25e-09 4.68e-10 9.55e-08 9.82e-08   0.0
+      C1742 (init_router_4_8_00000080_0_4_muxgrp_m2m66)
+                                      3.23e-09 2.18e-09 8.77e-08 9.31e-08   0.0
+      C1743 (init_router_4_8_00000080_0_4_muxgrp_m2m20)
+                                      2.66e-09 2.91e-09 6.21e-08 6.77e-08   0.0
+      C1744 (init_router_4_8_00000080_0_4_muxgrp_m2m18)
+                                      4.25e-09 1.25e-09 1.11e-07 1.16e-07   0.0
+      C1745 (init_router_4_8_00000080_0_4_muxgrp_m2m46)
+                                      1.91e-06 3.42e-07 3.66e-07 2.62e-06   0.0
+      C1746 (init_router_4_8_00000080_0_4_muxgrp_m2m55)
+                                      4.61e-06 1.27e-06 1.83e-06 7.71e-06   0.0
+      C1747 (init_router_4_8_00000080_0_4_muxgrp_m2m56)
+                                      2.19e-08 2.13e-09 9.59e-08 1.20e-07   0.0
+      C1748 (init_router_4_8_00000080_0_4_muxgrp_m2m42)
+                                      4.67e-06 5.23e-07 6.08e-07 5.80e-06   0.0
+      C1749 (init_router_4_8_00000080_0_4_muxgrp_m2m58)
+                                      2.74e-06 1.32e-07 2.91e-07 3.17e-06   0.0
+      C1750 (init_router_4_8_00000080_0_4_muxgrp_m2m45)
+                                      2.14e-06 7.74e-08 2.41e-07 2.45e-06   0.0
+      C1751 (init_router_4_8_00000080_0_4_muxgrp_m2m60)
+                                      2.36e-06 3.29e-07 9.61e-08 2.78e-06   0.0
+      C1752 (init_router_4_8_00000080_0_4_muxgrp_m2m53)
+                                      4.58e-08 4.39e-09 2.71e-07 3.21e-07   0.0
+      C1753 (init_router_4_8_00000080_0_4_muxgrp_m2m62)
+                                      2.27e-06 1.21e-07 5.42e-07 2.93e-06   0.0
+      C1754 (init_router_4_8_00000080_0_4_muxgrp_m2m41)
+                                      3.83e-06 5.53e-07 5.61e-07 4.94e-06   0.0
+      C1755 (init_router_4_8_00000080_0_4_muxgrp_m2m57)
+                                      2.74e-06 2.93e-07 2.91e-07 3.33e-06   0.0
+      C1756 (init_router_4_8_00000080_0_4_muxgrp_m2m47)
+                                      1.47e-06 5.40e-08 2.40e-07 1.76e-06   0.0
+      C1757 (init_router_4_8_00000080_0_4_muxgrp_m2m48)
+                                      2.12e-06 7.68e-08 2.41e-07 2.43e-06   0.0
+      C1758 (init_router_4_8_00000080_0_4_muxgrp_m2m40)
+                                      4.42e-06 9.51e-07 8.67e-07 6.24e-06   0.0
+      C1759 (init_router_4_8_00000080_0_4_muxgrp_m2m61)
+                                      2.21e-06 5.24e-07 5.42e-07 3.28e-06   0.0
+      C1760 (init_router_4_8_00000080_0_4_muxgrp_m2m50)
+                                      7.09e-08 5.72e-09 2.71e-07 3.48e-07   0.0
+      C1761 (init_router_4_8_00000080_0_4_muxgrp_m2m63)
+                                      2.27e-06 1.21e-07 5.42e-07 2.93e-06   0.0
+      C1762 (init_router_4_8_00000080_0_4_muxgrp_m2m43)
+                                      3.45e-06 6.22e-07 5.26e-07 4.59e-06   0.0
+      C1763 (init_router_4_8_00000080_0_4_muxgrp_m2m39)
+                                      8.51e-06 1.68e-06 2.37e-06 1.26e-05   0.0
+      C1764 (init_router_4_8_00000080_0_4_muxgrp_m2m54)
+                                      1.79e-08 4.07e-09 2.97e-07 3.19e-07   0.0
+      C1765 (init_router_4_8_00000080_0_4_muxgrp_m2m64)
+                                      9.60e-07 1.17e-07 5.58e-07 1.63e-06   0.0
+      C1766 (init_router_4_8_00000080_0_4_muxgrp_m2m49)
+                                      3.06e-08 7.82e-09 3.04e-07 3.42e-07   0.0
+      C1767 (init_router_4_8_00000080_0_4_muxgrp_m2m59)
+                                      6.97e-09 6.38e-10 1.14e-07 1.22e-07   0.0
+      C1768 (init_router_4_8_00000080_0_4_muxgrp_m2m51)
+                                      2.66e-08 6.52e-09 3.21e-07 3.54e-07   0.0
+      C1769 (init_router_4_8_00000080_0_4_muxgrp_m2m52)
+                                      1.75e-06 2.07e-07 2.06e-07 2.16e-06   0.0
+      add_214 (DW01_add_J1083_H1_D1)  5.38e-07 2.76e-07 3.78e-07 1.19e-06   0.0
+      C1770 (init_router_4_8_00000080_0_4_muxgrp_m2m44)
+                                      3.81e-06 4.25e-07 5.33e-07 4.77e-06   0.0
+      C1771 (init_router_4_8_00000080_0_4_muxgrp_m2m65)
+                                      6.18e-09 4.15e-10 7.33e-08 7.99e-08   0.0
+      add_220 (DW01_add_J1083_H3_D1)     0.000    0.000 3.24e-07 3.24e-07   0.0
+      gt_128 (DW01_cmp2_J1083_H4_D1)  7.45e-09 2.37e-09 5.28e-08 6.27e-08   0.0
+      C1686 (init_router_4_8_00000080_0_4_muxgrp_m2m11)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      C1687 (init_router_4_8_00000080_0_4_muxgrp_m2m9)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      C1688 (init_router_4_8_00000080_0_4_muxgrp_m2m10)
+                                         0.000    0.000 1.03e-07 1.03e-07   0.0
+      C1689 (init_router_4_8_00000080_0_4_muxgrp_m2m2)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      gt_234 (DW01_cmp2_J1083_H0_D1)  7.78e-09 4.44e-09 4.30e-08 5.52e-08   0.0
+      C1690 (init_router_4_8_00000080_0_4_muxgrp_m2m1)
+                                         0.000    0.000 1.33e-07 1.33e-07   0.0
+      C1691 (init_router_4_8_00000080_0_4_muxgrp_m2m7)
+                                      3.10e-06 1.26e-06 2.76e-07 4.63e-06   0.0
+      C1693 (init_router_4_8_00000080_0_4_muxgrp_m2m37)
+                                      2.02e-09 1.03e-09 8.68e-08 8.98e-08   0.0
+      C1694 (init_router_4_8_00000080_0_4_muxgrp_m2m38)
+                                      4.30e-08 4.29e-08 2.44e-07 3.30e-07   0.0
+      C1695 (init_router_4_8_00000080_0_4_muxgrp_m2m73)
+                                      3.37e-08 1.18e-07 7.63e-08 2.28e-07   0.0
+      C1696 (init_router_4_8_00000080_0_4_muxgrp_m2m72)
+                                      2.29e-07 2.96e-07 2.33e-07 7.59e-07   0.0
+      C1697 (init_router_4_8_00000080_0_4_muxgrp_m2m36)
+                                      3.67e-09 1.46e-09 1.58e-07 1.63e-07   0.0
+      C1698 (init_router_4_8_00000080_0_4_muxgrp_m2m35)
+                                      7.33e-08 1.22e-07 2.32e-07 4.27e-07   0.0
+      C1699 (init_router_4_8_00000080_0_4_muxgrp_m2m34)
+                                      1.95e-06 9.72e-07 1.60e-06 4.52e-06   0.0
+      C1700 (init_router_4_8_00000080_0_4_muxgrp_m2m26)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1701 (init_router_4_8_00000080_0_4_muxgrp_m2m31)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1702 (init_router_4_8_00000080_0_4_muxgrp_m2m25)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1703 (init_router_4_8_00000080_0_4_muxgrp_m2m30)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1705 (init_router_4_8_00000080_0_4_muxgrp_m2m8)
+                                      3.10e-06 5.76e-07 2.76e-07 3.95e-06   0.0
+      C1706 (init_router_4_8_00000080_0_4_muxgrp_m2m15)
+                                      1.35e-05 7.23e-07 5.95e-07 1.48e-05   0.0
+      C1707 (init_router_4_8_00000080_0_4_muxgrp_m2m16)
+                                      1.35e-05 2.77e-07 5.95e-07 1.44e-05   0.0
+      C1708 (init_router_4_8_00000080_0_4_muxgrp_m2m5)
+                                      1.57e-06 4.19e-07 3.95e-07 2.38e-06   0.0
+      C1710 (init_router_4_8_00000080_0_4_muxgrp_m2m68)
+                                      2.20e-09 1.22e-09 9.51e-08 9.85e-08   0.0
+      C1711 (init_router_4_8_00000080_0_4_muxgrp_m2m69)
+                                      1.69e-11 1.10e-11 9.46e-08 9.46e-08   0.0
+      C1712 (init_router_4_8_00000080_0_4_muxgrp_m2m24)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1713 (init_router_4_8_00000080_0_4_muxgrp_m2m29)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1714 (init_router_4_8_00000080_0_4_muxgrp_m2m23)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1715 (init_router_4_8_00000080_0_4_muxgrp_m2m28)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1716 (init_router_4_8_00000080_0_4_muxgrp_m2m17)
+                                      1.35e-05 2.31e-07 5.95e-07 1.43e-05   0.0
+      C1717 (init_router_4_8_00000080_0_4_muxgrp_m2m14)
+                                      1.27e-05 7.46e-07 5.93e-07 1.41e-05   0.0
+      C1718 (init_router_4_8_00000080_0_4_muxgrp_m2m4)
+                                      1.57e-06 4.20e-07 3.95e-07 2.39e-06   0.0
+      C1719 (init_router_4_8_00000080_0_4_muxgrp_m2m22)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1720 (init_router_4_8_00000080_0_4_muxgrp_m2m27)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1721 (init_router_4_8_00000080_0_4_muxgrp_m2m13)
+                                      1.35e-05 7.23e-07 5.95e-07 1.48e-05   0.0
+      C1722 (init_router_4_8_00000080_0_4_muxgrp_m2m6)
+                                      3.72e-06 6.64e-08 6.21e-07 4.41e-06   0.0
+      C1723 (init_router_4_8_00000080_0_4_muxgrp_m2m12)
+                                      1.50e-06 1.14e-07 5.73e-07 2.18e-06   0.0
+      C1724 (init_router_4_8_00000080_0_4_muxgrp_m2m3)
+                                      1.57e-06 4.20e-07 3.95e-07 2.38e-06   0.0
+      C1725 (init_router_4_8_00000080_0_4_muxgrp_m2m74)
+                                         0.000    0.000 2.58e-07 2.58e-07   0.0
+      C1727 (init_router_4_8_00000080_0_4_muxgrp_m2m21)
+                                      3.60e-09 2.15e-09 9.52e-08 1.01e-07   0.0
+      C1728 (init_router_4_8_00000080_0_4_muxgrp_m2m32)
+                                      8.92e-09 8.19e-09 4.56e-07 4.73e-07   0.0
+      C1729 (init_router_4_8_00000080_0_4_muxgrp_m2m33)
+                                      6.37e-09 4.02e-09 1.89e-07 2.00e-07   0.0
+      sub_235 (DW01_sub_J1083_H2_D1)  1.19e-07 1.24e-07 4.38e-07 6.80e-07   0.0
+      C1731 (init_router_4_8_00000080_0_4_muxgrp_m2m79)
+                                         0.000    0.000 7.81e-08 7.81e-08   0.0
+      C1732 (init_router_4_8_00000080_0_4_muxgrp_m2m75)
+                                      4.68e-11 2.20e-11 4.90e-08 4.91e-08   0.0
+      C1733 (init_router_4_8_00000080_0_4_muxgrp_m2m76)
+                                      1.88e-09 1.33e-09 7.81e-08 8.14e-08   0.0
+      C1734 (init_router_4_8_00000080_0_4_muxgrp_m2m78)
+                                      1.87e-09 1.31e-09 1.90e-07 1.93e-07   0.0
+      C1735 (init_router_4_8_00000080_0_4_muxgrp_m2m77)
+                                      4.52e-09 3.19e-09 4.58e-07 4.66e-07   0.0
+      C1738 (init_router_4_8_00000080_0_4_muxgrp_m2m67)
+                                      6.07e-09 1.29e-09 3.56e-07 3.63e-07   0.0
+      C1739 (init_router_4_8_00000080_0_4_muxgrp_m2m19)
+                                         0.000    0.000 9.56e-08 9.56e-08   0.0
+    gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst (neuron_cluster_11_00_64_32_1024_2048)
+                                      2.78e-02 2.90e-04 4.27e-03 3.24e-02   2.5
+      C11 (neuron_cluster_11_00_64_32_1024_2048_muxgrp_m2m1)
+                                      3.01e-09 4.74e-08 4.75e-08 9.79e-08   0.0
+      controller (cluster_controller_number_of_clusters64_neurons_per_cluster32_max_weight_table_rows2048_0)
+                                      1.45e-05 5.54e-05 3.52e-05 1.05e-04   0.0
+      outgoing_enc (outgoing_enc_32_11_00)
+                                      2.90e-04 2.13e-09 3.21e-05 3.23e-04   0.0
+      incoming_forwarder (incoming_forwarder_incoming_weight_table_rows1024_max_weight_table_rows2048_weight_address_buffer_depth8_0)
+                                      5.06e-03 2.35e-08 1.07e-04 5.16e-03   0.4
+      neuron_layer_inst (neuron_layer_neuron_bank_size32_0)
+                                      2.24e-02 2.34e-04 4.10e-03 2.68e-02   2.1
+    gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst (neuron_cluster_11_01_64_32_1024_2048)
+                                      2.78e-02 2.90e-04 4.27e-03 3.24e-02   2.5
+      C11 (neuron_cluster_11_01_64_32_1024_2048_muxgrp_m2m1)
+                                      9.16e-09 1.45e-07 4.78e-08 2.02e-07   0.0
+      controller (cluster_controller_number_of_clusters64_neurons_per_cluster32_max_weight_table_rows2048_1)
+                                      1.25e-05 5.50e-05 3.51e-05 1.03e-04   0.0
+      outgoing_enc (outgoing_enc_32_11_01)
+                                      2.90e-04 2.36e-09 3.23e-05 3.23e-04   0.0
+      incoming_forwarder (incoming_forwarder_incoming_weight_table_rows1024_max_weight_table_rows2048_weight_address_buffer_depth8_1)
+                                      5.06e-03 1.91e-08 1.07e-04 5.16e-03   0.4
+      neuron_layer_inst (neuron_layer_neuron_bank_size32_1)
+                                      2.24e-02 2.35e-04 4.10e-03 2.68e-02   2.1
+    main_fifo_out (fifo_WIDTH11_DEPTH32)
+                                      3.57e-05 1.12e-08 8.94e-05 1.25e-04   0.0
+      add_44 (DW01_add_J1071_H3_D1)      0.000    0.000 1.86e-07 1.86e-07   0.0
+      add_52 (DW01_add_J1071_H0_D1)      0.000    0.000 1.86e-07 1.86e-07   0.0
+      add_58 (DW01_add_J1071_H2_D1)      0.000    0.000 2.44e-07 2.44e-07   0.0
+      sub_57 (DW01_sub_J1071_H1_D1)      0.000    0.000 2.45e-07 2.45e-07   0.0
+      C1721 (fifo_WIDTH11_DEPTH32_muxgrp_m2m5)
+                                      2.22e-08 1.12e-08 2.61e-05 2.61e-05   0.0
+      C1722 (fifo_WIDTH11_DEPTH32_muxgrp_m2m6)
+                                         0.000    0.000 7.49e-07 7.49e-07   0.0
+      C1723 (fifo_WIDTH11_DEPTH32_muxgrp_m2m3)
+                                         0.000    0.000 5.32e-07 5.32e-07   0.0
+      C1724 (fifo_WIDTH11_DEPTH32_muxgrp_m2m4)
+                                         0.000    0.000 7.49e-07 7.49e-07   0.0
+      C1725 (fifo_WIDTH11_DEPTH32_muxgrp_m2m1)
+                                         0.000    0.000 2.11e-06 2.11e-06   0.0
+      C1726 (fifo_WIDTH11_DEPTH32_muxgrp_m2m2)
+                                         0.000    0.000 5.53e-07 5.53e-07   0.0
+    spike_forwarder (spike_forwarder_8_data_width11_fifo_depth16_main_fifo_depth32)
+                                      5.17e-04 4.89e-05 9.59e-04 1.53e-03   0.1
+      spike_forwarder_controller_inst (spike_forwarder_controller_8)
+                                      1.05e-05 2.03e-06 4.25e-06 1.68e-05   0.0
+      spike_forwarder_inst (spike_forwarder_num_ports8_data_width11_fifo_depth16_main_fifo_depth32)
+                                      5.07e-04 4.68e-05 9.55e-04 1.51e-03   0.1
+    gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst (neuron_cluster_11_04_64_32_1024_2048)
+                                      2.78e-02 2.87e-04 4.27e-03 3.23e-02   2.5
+      C11 (neuron_cluster_11_04_64_32_1024_2048_muxgrp_m2m1)
+                                         0.000    0.000 4.73e-08 4.73e-08   0.0
+      controller (cluster_controller_number_of_clusters64_neurons_per_cluster32_max_weight_table_rows2048_4)
+                                      1.04e-05 5.33e-05 3.52e-05 9.90e-05   0.0
+      outgoing_enc (outgoing_enc_32_11_04)
+                                      2.91e-04 2.20e-09 3.23e-05 3.23e-04   0.0
+      incoming_forwarder (incoming_forwarder_incoming_weight_table_rows1024_max_weight_table_rows2048_weight_address_buffer_depth8_4)
+                                      5.06e-03 1.90e-08 1.07e-04 5.16e-03   0.4
+      neuron_layer_inst (neuron_layer_neuron_bank_size32_4)
+                                      2.24e-02 2.34e-04 4.10e-03 2.68e-02   2.1
+    main_fifo_in (fifo_WIDTH11_DEPTH32_0)
+                                      3.57e-05 1.12e-08 8.94e-05 1.25e-04   0.0
+      add_44 (DW01_add_J1071_H3_D1_0)    0.000    0.000 1.86e-07 1.86e-07   0.0
+      add_52 (DW01_add_J1071_H0_D1_0)    0.000    0.000 1.86e-07 1.86e-07   0.0
+      add_58 (DW01_add_J1071_H2_D1_0)    0.000    0.000 2.44e-07 2.44e-07   0.0
+      sub_57 (DW01_sub_J1071_H1_D1_0)    0.000    0.000 2.45e-07 2.45e-07   0.0
+      C1721 (fifo_WIDTH11_DEPTH32_muxgrp_m2m5_0)
+                                      2.22e-08 1.12e-08 2.61e-05 2.61e-05   0.0
+      C1722 (fifo_WIDTH11_DEPTH32_muxgrp_m2m6_0)
+                                         0.000    0.000 7.49e-07 7.49e-07   0.0
+      C1723 (fifo_WIDTH11_DEPTH32_muxgrp_m2m3_0)
+                                         0.000    0.000 5.32e-07 5.32e-07   0.0
+      C1724 (fifo_WIDTH11_DEPTH32_muxgrp_m2m4_0)
+                                         0.000    0.000 7.49e-07 7.49e-07   0.0
+      C1725 (fifo_WIDTH11_DEPTH32_muxgrp_m2m1_0)
+                                         0.000    0.000 2.11e-06 2.11e-06   0.0
+      C1726 (fifo_WIDTH11_DEPTH32_muxgrp_m2m2_0)
+                                         0.000    0.000 5.53e-07 5.53e-07   0.0
+    gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst (neuron_cluster_11_07_64_32_1024_2048)
+                                      2.78e-02 2.87e-04 4.27e-03 3.23e-02   2.5
+      C11 (neuron_cluster_11_07_64_32_1024_2048_muxgrp_m2m1)
+                                         0.000    0.000 4.73e-08 4.73e-08   0.0
+      controller (cluster_controller_number_of_clusters64_neurons_per_cluster32_max_weight_table_rows2048)
+                                      1.04e-05 5.33e-05 3.52e-05 9.90e-05   0.0
+      outgoing_enc (outgoing_enc_32_11_07)
+                                      2.91e-04 2.20e-09 3.23e-05 3.23e-04   0.0
+      incoming_forwarder (incoming_forwarder_incoming_weight_table_rows1024_max_weight_table_rows2048_weight_address_buffer_depth8)
+                                      5.06e-03 1.73e-08 1.07e-04 5.16e-03   0.4
+      neuron_layer_inst (neuron_layer_neuron_bank_size32)
+                                      2.24e-02 2.34e-04 4.10e-03 2.68e-02   2.1
+    gen_spike_forwarder_4[0].weight_resolver_inst (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_0)
+                                      1.71e-03 3.43e-06    0.503    0.505  39.7
+      buffer_gen[0].buffer_inst (fifo_WIDTH11_DEPTH8_0)
+                                      1.79e-05 1.78e-07 2.55e-05 4.36e-05   0.0
+      weight_memory_inst (weight_memory_max_weight_rows2048_0)
+                                      1.53e-03 1.02e-06    0.502    0.504  39.6
+      add_140 (DW01_add_J45_H0_D1_0)  1.54e-11 4.05e-11 8.74e-07 8.74e-07   0.0
+      buffer_gen[3].buffer_inst (fifo_WIDTH11_DEPTH8_3)
+                                      1.80e-05 1.79e-07 2.55e-05 4.36e-05   0.0
+      DP_OP_9_41210_23215_J2 (DP_OP_9_41210_23215_J45_H1_D0_0)
+                                      2.46e-11 4.66e-12 8.27e-07 8.27e-07   0.0
+      buffer_gen[1].buffer_inst (fifo_WIDTH11_DEPTH8_1)
+                                      1.80e-05 1.80e-07 2.55e-05 4.36e-05   0.0
+      C8936 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m6_0)
+                                      8.55e-08 4.41e-10 1.02e-07 1.88e-07   0.0
+      C8937 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m2_0)
+                                      9.65e-08 9.86e-10 1.33e-07 2.30e-07   0.0
+      C8938 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m3_0)
+                                      1.59e-07 1.49e-08 3.31e-07 5.05e-07   0.0
+      C8939 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m31_0)
+                                         0.000    0.000 1.57e-06 1.57e-06   0.0
+      C8940 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m4_0)
+                                      6.82e-08 1.84e-09 3.46e-06 3.53e-06   0.0
+      C8941 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m8_0)
+                                         0.000    0.000 6.83e-05 6.83e-05   0.0
+      C8942 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m7_0)
+                                         0.000    0.000 6.83e-05 6.83e-05   0.0
+      C8943 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m5_0)
+                                         0.000    0.000 6.83e-05 6.83e-05   0.0
+      C8944 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m1_0)
+                                         0.000    0.000 6.83e-05 6.83e-05   0.0
+      C8945 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m26_0)
+                                      1.07e-10 8.36e-12 1.75e-07 1.75e-07   0.0
+      C8946 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m27_0)
+                                      7.60e-11 9.82e-12 6.94e-08 6.94e-08   0.0
+      C8947 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m29_0)
+                                      7.52e-11 2.74e-11 1.33e-06 1.33e-06   0.0
+      C8948 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m25_0)
+                                      4.76e-11 1.03e-11 2.87e-07 2.87e-07   0.0
+      C8949 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m22_0)
+                                      9.71e-09 9.59e-10 1.66e-05 1.66e-05   0.0
+      C8950 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m30_0)
+                                         0.000    0.000 5.38e-07 5.38e-07   0.0
+      C8951 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m23_0)
+                                      9.72e-11 3.47e-11 1.87e-07 1.87e-07   0.0
+      C8952 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m24_0)
+                                      9.08e-11 3.34e-11 1.01e-07 1.01e-07   0.0
+      C8953 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m28_0)
+                                      9.05e-11 8.76e-12 1.01e-07 1.01e-07   0.0
+      C8954 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m14_0)
+                                      1.77e-09 6.68e-10 2.07e-05 2.07e-05   0.0
+      C8955 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m10_0)
+                                      1.28e-13 3.76e-12 1.53e-06 1.53e-06   0.0
+      C8956 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m20_0)
+                                      7.47e-10 2.27e-13 1.79e-07 1.80e-07   0.0
+      C8957 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m12_0)
+                                      1.96e-09 4.43e-10 3.86e-07 3.89e-07   0.0
+      C8958 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m17_0)
+                                      5.97e-11 1.88e-11 2.09e-07 2.10e-07   0.0
+      C8959 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m13_0)
+                                      4.97e-11 9.15e-12 1.97e-07 1.97e-07   0.0
+      C8960 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m16_0)
+                                      7.39e-10 1.08e-11 2.44e-07 2.45e-07   0.0
+      C8961 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m21_0)
+                                      1.65e-09 7.43e-12 2.19e-07 2.20e-07   0.0
+      C8962 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m19_0)
+                                      2.78e-11 1.62e-11 2.11e-07 2.11e-07   0.0
+      C8963 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m9_0)
+                                      4.16e-11 1.48e-11 1.91e-06 1.91e-06   0.0
+      C8964 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m18_0)
+                                      1.25e-09 1.62e-11 1.81e-07 1.82e-07   0.0
+      C8965 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m11_0)
+                                      1.24e-13 1.78e-12 7.68e-07 7.68e-07   0.0
+      C8966 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m15_0)
+                                      2.77e-11 1.04e-11 3.88e-07 3.89e-07   0.0
+      buffer_gen[2].buffer_inst (fifo_WIDTH11_DEPTH8_2)
+                                      1.80e-05 1.80e-07 2.55e-05 4.36e-05   0.0
+    gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst (neuron_cluster_11_02_64_32_1024_2048)
+                                      2.78e-02 2.90e-04 4.27e-03 3.24e-02   2.5
+      C11 (neuron_cluster_11_02_64_32_1024_2048_muxgrp_m2m1)
+                                      2.23e-09 3.50e-08 4.74e-08 8.47e-08   0.0
+      controller (cluster_controller_number_of_clusters64_neurons_per_cluster32_max_weight_table_rows2048_2)
+                                      1.24e-05 5.50e-05 3.51e-05 1.03e-04   0.0
+      outgoing_enc (outgoing_enc_32_11_02)
+                                      2.90e-04 2.28e-09 3.23e-05 3.23e-04   0.0
+      incoming_forwarder (incoming_forwarder_incoming_weight_table_rows1024_max_weight_table_rows2048_weight_address_buffer_depth8_2)
+                                      5.06e-03 1.99e-08 1.07e-04 5.16e-03   0.4
+      neuron_layer_inst (neuron_layer_neuron_bank_size32_2)
+                                      2.24e-02 2.34e-04 4.10e-03 2.68e-02   2.1
+    gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst (neuron_cluster_11_03_64_32_1024_2048)
+                                      2.78e-02 2.90e-04 4.27e-03 3.24e-02   2.5
+      C11 (neuron_cluster_11_03_64_32_1024_2048_muxgrp_m2m1)
+                                      4.57e-09 7.21e-08 4.76e-08 1.24e-07   0.0
+      controller (cluster_controller_number_of_clusters64_neurons_per_cluster32_max_weight_table_rows2048_3)
+                                      1.31e-05 5.56e-05 3.51e-05 1.04e-04   0.0
+      outgoing_enc (outgoing_enc_32_11_03)
+                                      2.90e-04 2.30e-09 3.23e-05 3.23e-04   0.0
+      incoming_forwarder (incoming_forwarder_incoming_weight_table_rows1024_max_weight_table_rows2048_weight_address_buffer_depth8_3)
+                                      5.06e-03 2.06e-08 1.07e-04 5.16e-03   0.4
+      neuron_layer_inst (neuron_layer_neuron_bank_size32_3)
+                                      2.25e-02 2.35e-04 4.10e-03 2.68e-02   2.1
+    gen_spike_forwarder_4[0].spike_forwarder_4_inst (spike_forwarder_4_data_width11_fifo_depth8_main_fifo_depth16_0)
+                                      2.17e-04 2.78e-05 2.85e-04 5.30e-04   0.0
+      spike_forwarder_controller_inst (spike_forwarder_controller_4_0)
+                                      1.54e-06 8.37e-09 2.28e-06 3.83e-06   0.0
+      spike_forwarder_inst (spike_forwarder_num_ports4_data_width11_fifo_depth8_main_fifo_depth16_0)
+                                      2.16e-04 2.78e-05 2.83e-04 5.26e-04   0.0
+    gen_spike_forwarder_4[1].init_router_lower (init_router_4_8_00000084_0_4)
+                                      8.72e-05 2.39e-05 5.10e-05 1.62e-04   0.0
+      C1740 (init_router_4_8_00000084_0_4_muxgrp_m2m19)
+                                         0.000    0.000 7.80e-08 7.80e-08   0.0
+      C1741 (init_router_4_8_00000084_0_4_muxgrp_m2m70)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      C1742 (init_router_4_8_00000084_0_4_muxgrp_m2m71)
+                                         0.000    0.000 4.84e-08 4.84e-08   0.0
+      C1743 (init_router_4_8_00000084_0_4_muxgrp_m2m66)
+                                         0.000    0.000 4.84e-08 4.84e-08   0.0
+      C1744 (init_router_4_8_00000084_0_4_muxgrp_m2m20)
+                                         0.000    0.000 1.03e-07 1.03e-07   0.0
+      C1745 (init_router_4_8_00000084_0_4_muxgrp_m2m18)
+                                         0.000    0.000 1.99e-07 1.99e-07   0.0
+      C1746 (init_router_4_8_00000084_0_4_muxgrp_m2m46)
+                                         0.000    0.000 4.13e-07 4.13e-07   0.0
+      C1747 (init_router_4_8_00000084_0_4_muxgrp_m2m55)
+                                         0.000    0.000 1.53e-06 1.53e-06   0.0
+      C1748 (init_router_4_8_00000084_0_4_muxgrp_m2m56)
+                                         0.000    0.000 7.39e-08 7.39e-08   0.0
+      C1749 (init_router_4_8_00000084_0_4_muxgrp_m2m42)
+                                         0.000    0.000 5.73e-07 5.73e-07   0.0
+      C1750 (init_router_4_8_00000084_0_4_muxgrp_m2m58)
+                                         0.000    0.000 2.68e-07 2.68e-07   0.0
+      C1751 (init_router_4_8_00000084_0_4_muxgrp_m2m45)
+                                         0.000    0.000 2.20e-07 2.20e-07   0.0
+      C1752 (init_router_4_8_00000084_0_4_muxgrp_m2m60)
+                                         0.000    0.000 1.03e-07 1.03e-07   0.0
+      C1753 (init_router_4_8_00000084_0_4_muxgrp_m2m53)
+                                         0.000    0.000 2.21e-07 2.21e-07   0.0
+      C1754 (init_router_4_8_00000084_0_4_muxgrp_m2m62)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1755 (init_router_4_8_00000084_0_4_muxgrp_m2m41)
+                                         0.000    0.000 5.89e-07 5.89e-07   0.0
+      C1756 (init_router_4_8_00000084_0_4_muxgrp_m2m57)
+                                         0.000    0.000 2.68e-07 2.68e-07   0.0
+      C1757 (init_router_4_8_00000084_0_4_muxgrp_m2m47)
+                                         0.000    0.000 2.38e-07 2.38e-07   0.0
+      C1758 (init_router_4_8_00000084_0_4_muxgrp_m2m48)
+                                         0.000    0.000 2.38e-07 2.38e-07   0.0
+      C1759 (init_router_4_8_00000084_0_4_muxgrp_m2m40)
+                                         0.000    0.000 8.20e-07 8.20e-07   0.0
+      C1760 (init_router_4_8_00000084_0_4_muxgrp_m2m61)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1761 (init_router_4_8_00000084_0_4_muxgrp_m2m50)
+                                         0.000    0.000 2.39e-07 2.39e-07   0.0
+      C1762 (init_router_4_8_00000084_0_4_muxgrp_m2m63)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1763 (init_router_4_8_00000084_0_4_muxgrp_m2m43)
+                                         0.000    0.000 5.94e-07 5.94e-07   0.0
+      C1764 (init_router_4_8_00000084_0_4_muxgrp_m2m39)
+                                         0.000    0.000 2.23e-06 2.23e-06   0.0
+      C1765 (init_router_4_8_00000084_0_4_muxgrp_m2m54)
+                                         0.000    0.000 3.22e-07 3.22e-07   0.0
+      C1766 (init_router_4_8_00000084_0_4_muxgrp_m2m64)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1767 (init_router_4_8_00000084_0_4_muxgrp_m2m49)
+                                         0.000    0.000 3.22e-07 3.22e-07   0.0
+      C1768 (init_router_4_8_00000084_0_4_muxgrp_m2m59)
+                                         0.000    0.000 1.33e-07 1.33e-07   0.0
+      C1769 (init_router_4_8_00000084_0_4_muxgrp_m2m51)
+                                         0.000    0.000 3.22e-07 3.22e-07   0.0
+      add_214 (DW01_add_J1082_H1_D1)     0.000    0.000 3.24e-07 3.24e-07   0.0
+      C1770 (init_router_4_8_00000084_0_4_muxgrp_m2m52)
+                                         0.000    0.000 2.39e-07 2.39e-07   0.0
+      C1771 (init_router_4_8_00000084_0_4_muxgrp_m2m44)
+                                         0.000    0.000 5.10e-07 5.10e-07   0.0
+      C1772 (init_router_4_8_00000084_0_4_muxgrp_m2m65)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      add_220 (DW01_add_J1082_H3_D1)     0.000    0.000 3.24e-07 3.24e-07   0.0
+      gt_128 (DW01_cmp2_J1082_H4_D1)     0.000    0.000 8.79e-08 8.79e-08   0.0
+      C1687 (init_router_4_8_00000084_0_4_muxgrp_m2m11)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      C1688 (init_router_4_8_00000084_0_4_muxgrp_m2m9)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      C1689 (init_router_4_8_00000084_0_4_muxgrp_m2m10)
+                                         0.000    0.000 1.03e-07 1.03e-07   0.0
+      gt_234 (DW01_cmp2_J1082_H0_D1)     0.000    0.000 9.58e-08 9.58e-08   0.0
+      C1690 (init_router_4_8_00000084_0_4_muxgrp_m2m2)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      C1691 (init_router_4_8_00000084_0_4_muxgrp_m2m1)
+                                         0.000    0.000 1.33e-07 1.33e-07   0.0
+      C1692 (init_router_4_8_00000084_0_4_muxgrp_m2m7)
+                                         0.000    0.000 2.66e-07 2.66e-07   0.0
+      C1694 (init_router_4_8_00000084_0_4_muxgrp_m2m37)
+                                         0.000    0.000 1.03e-07 1.03e-07   0.0
+      C1695 (init_router_4_8_00000084_0_4_muxgrp_m2m38)
+                                         0.000    0.000 2.35e-07 2.35e-07   0.0
+      C1696 (init_router_4_8_00000084_0_4_muxgrp_m2m73)
+                                         0.000    0.000 8.65e-08 8.65e-08   0.0
+      C1697 (init_router_4_8_00000084_0_4_muxgrp_m2m72)
+                                         0.000    0.000 2.32e-07 2.32e-07   0.0
+      C1698 (init_router_4_8_00000084_0_4_muxgrp_m2m36)
+                                         0.000    0.000 1.40e-07 1.40e-07   0.0
+      C1699 (init_router_4_8_00000084_0_4_muxgrp_m2m35)
+                                         0.000    0.000 2.85e-07 2.85e-07   0.0
+      C1700 (init_router_4_8_00000084_0_4_muxgrp_m2m34)
+                                      6.78e-10 1.68e-10 1.72e-06 1.72e-06   0.0
+      C1701 (init_router_4_8_00000084_0_4_muxgrp_m2m26)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1702 (init_router_4_8_00000084_0_4_muxgrp_m2m31)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1703 (init_router_4_8_00000084_0_4_muxgrp_m2m25)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1704 (init_router_4_8_00000084_0_4_muxgrp_m2m30)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1706 (init_router_4_8_00000084_0_4_muxgrp_m2m8)
+                                         0.000    0.000 2.66e-07 2.66e-07   0.0
+      C1707 (init_router_4_8_00000084_0_4_muxgrp_m2m15)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1708 (init_router_4_8_00000084_0_4_muxgrp_m2m16)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1709 (init_router_4_8_00000084_0_4_muxgrp_m2m5)
+                                         0.000    0.000 3.99e-07 3.99e-07   0.0
+      C1711 (init_router_4_8_00000084_0_4_muxgrp_m2m68)
+                                         0.000    0.000 4.84e-08 4.84e-08   0.0
+      C1712 (init_router_4_8_00000084_0_4_muxgrp_m2m69)
+                                         0.000    0.000 6.64e-08 6.64e-08   0.0
+      C1713 (init_router_4_8_00000084_0_4_muxgrp_m2m24)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1714 (init_router_4_8_00000084_0_4_muxgrp_m2m29)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1715 (init_router_4_8_00000084_0_4_muxgrp_m2m23)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1716 (init_router_4_8_00000084_0_4_muxgrp_m2m28)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1717 (init_router_4_8_00000084_0_4_muxgrp_m2m17)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1718 (init_router_4_8_00000084_0_4_muxgrp_m2m14)
+                                         0.000    0.000 5.43e-07 5.43e-07   0.0
+      C1719 (init_router_4_8_00000084_0_4_muxgrp_m2m4)
+                                         0.000    0.000 3.99e-07 3.99e-07   0.0
+      C1720 (init_router_4_8_00000084_0_4_muxgrp_m2m22)
+                                         0.000    0.000 1.06e-06 1.06e-06   0.0
+      C1721 (init_router_4_8_00000084_0_4_muxgrp_m2m27)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1722 (init_router_4_8_00000084_0_4_muxgrp_m2m13)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1723 (init_router_4_8_00000084_0_4_muxgrp_m2m6)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      C1724 (init_router_4_8_00000084_0_4_muxgrp_m2m12)
+                                         0.000    0.000 6.24e-07 6.24e-07   0.0
+      C1725 (init_router_4_8_00000084_0_4_muxgrp_m2m3)
+                                         0.000    0.000 3.99e-07 3.99e-07   0.0
+      C1726 (init_router_4_8_00000084_0_4_muxgrp_m2m74)
+                                         0.000    0.000 2.34e-07 2.34e-07   0.0
+      C1728 (init_router_4_8_00000084_0_4_muxgrp_m2m21)
+                                         0.000    0.000 9.57e-08 9.57e-08   0.0
+      C1729 (init_router_4_8_00000084_0_4_muxgrp_m2m32)
+                                      8.25e-10 5.27e-10 4.67e-07 4.69e-07   0.0
+      sub_235 (DW01_sub_J1082_H2_D1)     0.000    0.000 3.45e-07 3.45e-07   0.0
+      C1730 (init_router_4_8_00000084_0_4_muxgrp_m2m33)
+                                         0.000    0.000 1.82e-07 1.82e-07   0.0
+      C1732 (init_router_4_8_00000084_0_4_muxgrp_m2m79)
+                                         0.000    0.000 7.80e-08 7.80e-08   0.0
+      C1733 (init_router_4_8_00000084_0_4_muxgrp_m2m75)
+                                         0.000    0.000 4.84e-08 4.84e-08   0.0
+      C1734 (init_router_4_8_00000084_0_4_muxgrp_m2m76)
+                                         0.000    0.000 7.80e-08 7.80e-08   0.0
+      C1735 (init_router_4_8_00000084_0_4_muxgrp_m2m78)
+                                         0.000    0.000 1.99e-07 1.99e-07   0.0
+      C1736 (init_router_4_8_00000084_0_4_muxgrp_m2m77)
+                                      7.47e-10 5.27e-10 4.84e-07 4.85e-07   0.0
+      C1739 (init_router_4_8_00000084_0_4_muxgrp_m2m67)
+                                         0.000    0.000 2.48e-07 2.48e-07   0.0
+    gen_spike_forwarder_4[0].self_data_mng_forwarder_4 (self_data_mng_0)
+                                      1.75e-05 4.89e-06 1.33e-05 3.57e-05   0.0
+      C250 (self_data_mng_muxgrp_m2m1_0)
+                                      1.49e-09 3.75e-10 7.63e-07 7.65e-07   0.0
+      add_40 (DW01_add_J1106_H0_D1_0) 8.20e-10 1.59e-09 3.25e-07 3.27e-07   0.0
+      C251 (self_data_mng_muxgrp_m2m8_0)
+                                      7.01e-11 2.33e-11 1.60e-07 1.60e-07   0.0
+      C252 (self_data_mng_muxgrp_m2m6_0)
+                                      1.39e-09 1.01e-09 1.66e-07 1.68e-07   0.0
+      C253 (self_data_mng_muxgrp_m2m5_0)
+                                      6.80e-09 3.90e-09 6.34e-07 6.44e-07   0.0
+      C254 (self_data_mng_muxgrp_m2m4_0)
+                                      4.01e-09 3.13e-09 6.34e-07 6.41e-07   0.0
+      C255 (self_data_mng_muxgrp_m2m11_0)
+                                      2.86e-09 3.75e-10 1.69e-07 1.72e-07   0.0
+      C256 (self_data_mng_muxgrp_m2m12_0)
+                                      1.10e-13 1.89e-13 1.69e-07 1.69e-07   0.0
+      C240 (self_data_mng_muxgrp_m2m17_0)
+                                      1.57e-09 1.04e-09 7.63e-07 7.65e-07   0.0
+      C241 (self_data_mng_muxgrp_m2m16_0)
+                                      3.72e-11 3.53e-11 7.44e-08 7.45e-08   0.0
+      C242 (self_data_mng_muxgrp_m2m13_0)
+                                      7.56e-11 3.73e-11 1.36e-07 1.36e-07   0.0
+      C243 (self_data_mng_muxgrp_m2m15_0)
+                                      5.45e-11 4.26e-11 1.01e-07 1.01e-07   0.0
+      C244 (self_data_mng_muxgrp_m2m14_0)
+                                      3.88e-11 2.07e-11 1.01e-07 1.01e-07   0.0
+      C245 (self_data_mng_muxgrp_m2m10_0)
+                                      1.27e-10 3.62e-11 1.61e-07 1.61e-07   0.0
+      C246 (self_data_mng_muxgrp_m2m3_0)
+                                      7.26e-11 1.82e-11 1.95e-07 1.95e-07   0.0
+      C247 (self_data_mng_muxgrp_m2m7_0)
+                                      5.66e-11 2.07e-11 1.34e-07 1.34e-07   0.0
+      C248 (self_data_mng_muxgrp_m2m2_0)
+                                      1.94e-09 4.02e-10 7.67e-07 7.70e-07   0.0
+      C249 (self_data_mng_muxgrp_m2m9_0)
+                                      4.08e-09 1.45e-09 1.34e-07 1.39e-07   0.0
+      C238 (self_data_mng_muxgrp_m2m19_0)
+                                      1.92e-09 1.02e-09 7.67e-07 7.70e-07   0.0
+      C239 (self_data_mng_muxgrp_m2m18_0)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      DP_OP_9_61058_38539_J1063 (DP_OP_9_61058_38539_J1106_H1_D0_0)
+                                      1.40e-09 3.62e-10 7.27e-07 7.29e-07   0.0
+    gen_spike_forwarder_4[1].self_data_mng_forwarder_4 (self_data_mng)
+                                      1.75e-05 4.86e-06 1.33e-05 3.56e-05   0.0
+      C250 (self_data_mng_muxgrp_m2m1)
+                                      5.61e-11 1.56e-11 7.68e-07 7.68e-07   0.0
+      add_40 (DW01_add_J1106_H0_D1)   2.48e-11 5.31e-11 3.24e-07 3.24e-07   0.0
+      C251 (self_data_mng_muxgrp_m2m8)
+                                      1.39e-11 6.51e-12 1.61e-07 1.61e-07   0.0
+      C252 (self_data_mng_muxgrp_m2m6)
+                                         0.000    0.000 1.65e-07 1.65e-07   0.0
+      C253 (self_data_mng_muxgrp_m2m5)
+                                      1.10e-13 1.89e-13 6.34e-07 6.34e-07   0.0
+      C254 (self_data_mng_muxgrp_m2m4)
+                                      1.10e-13 1.89e-13 6.34e-07 6.34e-07   0.0
+      C255 (self_data_mng_muxgrp_m2m11)
+                                      7.96e-12 1.94e-12 1.69e-07 1.69e-07   0.0
+      C256 (self_data_mng_muxgrp_m2m12)
+                                      1.10e-13 1.89e-13 1.69e-07 1.69e-07   0.0
+      C240 (self_data_mng_muxgrp_m2m17)
+                                      5.79e-11 3.84e-11 7.68e-07 7.68e-07   0.0
+      C241 (self_data_mng_muxgrp_m2m16)
+                                      2.71e-11 2.64e-11 7.44e-08 7.45e-08   0.0
+      C242 (self_data_mng_muxgrp_m2m13)
+                                      4.76e-11 2.31e-11 1.35e-07 1.35e-07   0.0
+      C243 (self_data_mng_muxgrp_m2m15)
+                                      3.32e-11 2.59e-11 1.02e-07 1.02e-07   0.0
+      C244 (self_data_mng_muxgrp_m2m14)
+                                      2.52e-11 1.32e-11 1.02e-07 1.02e-07   0.0
+      C245 (self_data_mng_muxgrp_m2m10)
+                                      1.39e-11 5.22e-12 1.61e-07 1.61e-07   0.0
+      C246 (self_data_mng_muxgrp_m2m3)
+                                      4.77e-11 1.22e-11 1.96e-07 1.96e-07   0.0
+      C247 (self_data_mng_muxgrp_m2m7)
+                                      1.39e-11 5.22e-12 1.34e-07 1.34e-07   0.0
+      C248 (self_data_mng_muxgrp_m2m2)
+                                      1.24e-13 1.78e-12 7.68e-07 7.68e-07   0.0
+      C249 (self_data_mng_muxgrp_m2m9)
+                                      1.39e-11 5.22e-12 1.33e-07 1.33e-07   0.0
+      C238 (self_data_mng_muxgrp_m2m19)
+                                         0.000    0.000 7.68e-07 7.68e-07   0.0
+      C239 (self_data_mng_muxgrp_m2m18)
+                                         0.000    0.000 5.31e-07 5.31e-07   0.0
+      DP_OP_9_61058_38539_J1063 (DP_OP_9_61058_38539_J1106_H1_D0)
+                                      6.04e-11 1.45e-11 7.30e-07 7.30e-07   0.0
+    gen_spike_forwarder_4[1].weight_resolver_inst (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32)
+                                      1.71e-03 3.43e-06    0.503    0.505  39.7
+      buffer_gen[0].buffer_inst (fifo_WIDTH11_DEPTH8_4)
+                                      1.79e-05 1.78e-07 2.55e-05 4.36e-05   0.0
+      weight_memory_inst (weight_memory_max_weight_rows2048)
+                                      1.53e-03 1.02e-06    0.502    0.504  39.6
+      add_140 (DW01_add_J45_H0_D1)    1.54e-11 4.05e-11 8.74e-07 8.74e-07   0.0
+      buffer_gen[3].buffer_inst (fifo_WIDTH11_DEPTH8_7)
+                                      1.80e-05 1.79e-07 2.55e-05 4.36e-05   0.0
+      DP_OP_9_41210_23215_J2 (DP_OP_9_41210_23215_J45_H1_D0)
+                                      2.46e-11 4.66e-12 8.27e-07 8.27e-07   0.0
+      buffer_gen[1].buffer_inst (fifo_WIDTH11_DEPTH8_5)
+                                      1.80e-05 1.80e-07 2.55e-05 4.36e-05   0.0
+      C8936 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m6)
+                                      8.55e-08 4.41e-10 1.02e-07 1.88e-07   0.0
+      C8937 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m2)
+                                      9.65e-08 9.86e-10 1.33e-07 2.30e-07   0.0
+      C8938 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m3)
+                                      1.59e-07 1.49e-08 3.31e-07 5.05e-07   0.0
+      C8939 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m31)
+                                         0.000    0.000 1.57e-06 1.57e-06   0.0
+      C8940 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m4)
+                                      6.82e-08 1.84e-09 3.46e-06 3.53e-06   0.0
+      C8941 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m8)
+                                         0.000    0.000 6.83e-05 6.83e-05   0.0
+      C8942 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m7)
+                                         0.000    0.000 6.83e-05 6.83e-05   0.0
+      C8943 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m5)
+                                         0.000    0.000 6.83e-05 6.83e-05   0.0
+      C8944 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m1)
+                                         0.000    0.000 6.83e-05 6.83e-05   0.0
+      C8945 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m26)
+                                      1.07e-10 8.36e-12 1.75e-07 1.75e-07   0.0
+      C8946 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m27)
+                                      7.60e-11 9.82e-12 6.94e-08 6.94e-08   0.0
+      C8947 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m29)
+                                      7.52e-11 2.74e-11 1.33e-06 1.33e-06   0.0
+      C8948 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m25)
+                                      4.76e-11 1.03e-11 2.87e-07 2.87e-07   0.0
+      C8949 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m22)
+                                      9.71e-09 9.59e-10 1.66e-05 1.66e-05   0.0
+      C8950 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m30)
+                                         0.000    0.000 5.38e-07 5.38e-07   0.0
+      C8951 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m23)
+                                      9.72e-11 3.47e-11 1.87e-07 1.87e-07   0.0
+      C8952 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m24)
+                                      9.08e-11 3.34e-11 1.01e-07 1.01e-07   0.0
+      C8953 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m28)
+                                      9.05e-11 8.76e-12 1.01e-07 1.01e-07   0.0
+      C8954 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m14)
+                                      1.77e-09 6.68e-10 2.07e-05 2.07e-05   0.0
+      C8955 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m10)
+                                      1.28e-13 3.76e-12 1.53e-06 1.53e-06   0.0
+      C8956 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m20)
+                                      7.47e-10 2.27e-13 1.79e-07 1.80e-07   0.0
+      C8957 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m12)
+                                      1.96e-09 4.43e-10 3.86e-07 3.89e-07   0.0
+      C8958 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m17)
+                                      5.97e-11 1.88e-11 2.09e-07 2.10e-07   0.0
+      C8959 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m13)
+                                      4.97e-11 9.15e-12 1.97e-07 1.97e-07   0.0
+      C8960 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m16)
+                                      7.39e-10 1.08e-11 2.44e-07 2.45e-07   0.0
+      C8961 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m21)
+                                      1.65e-09 7.43e-12 2.19e-07 2.20e-07   0.0
+      C8962 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m19)
+                                      2.78e-11 1.62e-11 2.11e-07 2.11e-07   0.0
+      C8963 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m9)
+                                      4.16e-11 1.48e-11 1.91e-06 1.91e-06   0.0
+      C8964 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m18)
+                                      1.25e-09 1.62e-11 1.81e-07 1.82e-07   0.0
+      C8965 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m11)
+                                      1.24e-13 1.78e-12 7.68e-07 7.68e-07   0.0
+      C8966 (weight_resolver_max_weight_rows2048_buffer_depth8_neurons_per_cluster32_muxgrp_m2m15)
+                                      2.77e-11 1.04e-11 3.88e-07 3.89e-07   0.0
+      buffer_gen[2].buffer_inst (fifo_WIDTH11_DEPTH8_6)
+                                      1.80e-05 1.80e-07 2.55e-05 4.36e-05   0.0
+1

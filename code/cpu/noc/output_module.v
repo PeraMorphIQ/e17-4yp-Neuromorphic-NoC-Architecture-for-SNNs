@@ -1,8 +1,6 @@
 `timescale 1ns/100ps
 
-`include "noc/virtual_channel.v"
-`include "noc/rr_arbiter.v"
-
+// Note: virtual_channel.v and rr_arbiter.v included by input_module.v
 // Output Module - manages outgoing packets with virtual channels
 module output_module #(
     parameter VC_DEPTH = 4,

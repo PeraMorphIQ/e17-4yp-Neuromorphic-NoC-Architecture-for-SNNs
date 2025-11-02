@@ -1,0 +1,23 @@
+****************************************
+Report : area
+Design : blackbox
+Version: V-2023.12-SP5-3
+Date   : Sun Oct 19 02:39:30 2025
+****************************************
+
+Number of ports:                      4865466
+Number of nets:                      13841357
+Number of cells:                      8985951
+Number of combinational cells:        4701419
+Number of sequential cells:           4284532
+Number of macros/black boxes:               0
+Number of buf/inv:                      83997
+Number of references:                      32
+
+Combinational area:                8191470.29
+Buf/Inv area:                        42694.67
+Noncombinational area:            23860356.46
+Macro/Black Box area:                    0.00
+
+Total cell area:                  32051826.75
+1

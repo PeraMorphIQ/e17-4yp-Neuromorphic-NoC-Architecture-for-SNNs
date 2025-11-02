@@ -1,0 +1,1802 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 10
+        -report_by design
+Design : blackbox
+Version: V-2023.12-SP5-3
+Date   : Thu Oct  9 08:57:47 2025
+****************************************
+Information: Timer using 'Estimated Delay Calculation'. (TIM-050)
+
+  Startpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1981/A1159/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1983/A1148/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1988/A1195/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1981/A1159/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1983/A1148/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1988/A1195/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1981/A1159/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1983/A1148/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1988/A1195/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1981/A1159/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1983/A1148/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1988/A1195/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1981/A1159/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1983/A1148/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1988/A1195/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1981/A1159/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1983/A1148/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/C1988/A1195/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[1].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1981/A1159/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1983/A1148/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/C1988/A1195/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[2].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1981/A1159/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1983/A1148/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/C1988/A1195/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[1].gen_neuron_cluster[3].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[10]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[0] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1981/A1169/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1983/A1158/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1988/A1205/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[0]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[0]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+
+  Startpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[1] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: Cmax
+  Scenario: func@Cmax
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/CK (DFF_X1)
+                                                   0.00      0.00 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/cluster_id_table_reg[1][2]/Q (DFF_X1)
+                                                   0.10      0.10 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1461/Z (MUX2_X1)
+                                                   0.06      0.16 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1462/Z (MUX2_X1)
+                                                   0.06      0.22 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1463/Z (MUX2_X1)
+                                                   0.06      0.28 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1464/Z (MUX2_X1)
+                                                   0.04      0.32 r
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1465/ZN (INV_X1)
+                                                   0.01      0.32 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1466/Z (MUX2_X1)
+                                                   0.06      0.39 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1467/Z (MUX2_X1)
+                                                   0.06      0.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1918/A1468/Z (MUX2_X1)
+                                                   0.06      0.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1919/A1337/Z (MUX2_X1)
+                                                   0.05      0.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1919/A1338/Z (MUX2_X1)
+                                                   0.06      0.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1921/A1347/Z (MUX2_X1)
+                                                   0.05      0.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1921/A1348/Z (MUX2_X1)
+                                                   0.06      0.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1923/A1357/Z (MUX2_X1)
+                                                   0.05      0.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1923/A1358/Z (MUX2_X1)
+                                                   0.06      0.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1925/A1367/Z (MUX2_X1)
+                                                   0.05      0.89 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1925/A1368/Z (MUX2_X1)
+                                                   0.06      0.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1927/A1377/Z (MUX2_X1)
+                                                   0.05      1.00 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1927/A1378/Z (MUX2_X1)
+                                                   0.06      1.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1929/A1387/Z (MUX2_X1)
+                                                   0.05      1.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1929/A1388/Z (MUX2_X1)
+                                                   0.06      1.17 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1931/A1397/Z (MUX2_X1)
+                                                   0.05      1.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1931/A1398/Z (MUX2_X1)
+                                                   0.06      1.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1933/A1417/Z (MUX2_X1)
+                                                   0.05      1.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1933/A1418/Z (MUX2_X1)
+                                                   0.06      1.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1935/A1427/Z (MUX2_X1)
+                                                   0.05      1.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1935/A1428/Z (MUX2_X1)
+                                                   0.06      1.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1937/A1437/Z (MUX2_X1)
+                                                   0.05      1.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1937/A1438/Z (MUX2_X1)
+                                                   0.06      1.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1939/A1517/Z (MUX2_X1)
+                                                   0.05      1.67 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1939/A1518/Z (MUX2_X1)
+                                                   0.06      1.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1941/A1447/Z (MUX2_X1)
+                                                   0.05      1.78 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1941/A1448/Z (MUX2_X1)
+                                                   0.06      1.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1943/A1527/Z (MUX2_X1)
+                                                   0.05      1.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1943/A1528/Z (MUX2_X1)
+                                                   0.06      1.95 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1945/A1507/Z (MUX2_X1)
+                                                   0.05      2.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1945/A1508/Z (MUX2_X1)
+                                                   0.06      2.06 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1947/A1537/Z (MUX2_X1)
+                                                   0.05      2.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1947/A1538/Z (MUX2_X1)
+                                                   0.06      2.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1949/A1547/Z (MUX2_X1)
+                                                   0.05      2.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1949/A1548/Z (MUX2_X1)
+                                                   0.06      2.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1951/A1497/Z (MUX2_X1)
+                                                   0.05      2.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1951/A1498/Z (MUX2_X1)
+                                                   0.06      2.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1953/A1487/Z (MUX2_X1)
+                                                   0.05      2.45 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1953/A1488/Z (MUX2_X1)
+                                                   0.06      2.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1955/A1477/Z (MUX2_X1)
+                                                   0.05      2.56 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1955/A1478/Z (MUX2_X1)
+                                                   0.06      2.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1957/A1317/Z (MUX2_X1)
+                                                   0.05      2.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1957/A1318/Z (MUX2_X1)
+                                                   0.06      2.73 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1959/A1327/Z (MUX2_X1)
+                                                   0.05      2.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1959/A1328/Z (MUX2_X1)
+                                                   0.06      2.84 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1961/A1457/Z (MUX2_X1)
+                                                   0.05      2.90 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1961/A1458/Z (MUX2_X1)
+                                                   0.06      2.96 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1963/A1307/Z (MUX2_X1)
+                                                   0.05      3.01 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1963/A1308/Z (MUX2_X1)
+                                                   0.06      3.07 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1965/A1277/Z (MUX2_X1)
+                                                   0.05      3.12 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1965/A1278/Z (MUX2_X1)
+                                                   0.06      3.18 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1967/A1247/Z (MUX2_X1)
+                                                   0.05      3.23 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1967/A1248/Z (MUX2_X1)
+                                                   0.06      3.29 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1969/A1257/Z (MUX2_X1)
+                                                   0.05      3.34 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1969/A1258/Z (MUX2_X1)
+                                                   0.06      3.40 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1971/A1267/Z (MUX2_X1)
+                                                   0.05      3.46 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1971/A1268/Z (MUX2_X1)
+                                                   0.06      3.51 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1973/A1287/Z (MUX2_X1)
+                                                   0.05      3.57 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1973/A1288/Z (MUX2_X1)
+                                                   0.06      3.62 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1975/A1237/Z (MUX2_X1)
+                                                   0.05      3.68 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1975/A1238/Z (MUX2_X1)
+                                                   0.06      3.74 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1977/A1297/Z (MUX2_X1)
+                                                   0.05      3.79 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1977/A1298/Z (MUX2_X1)
+                                                   0.06      3.85 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1979/A1586/Z (MUX2_X1)
+                                                   0.08      3.93 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1981/A1168/Z (MUX2_X1)
+                                                   0.06      3.99 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1983/A1157/Z (MUX2_X1)
+                                                   0.06      4.05 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/C1988/A1204/Z (MUX2_X1)
+                                                   0.05      4.11 f
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[1]/D (DFF_X1)
+                                                   0.00      4.11 f
+  data arrival time                                          4.11
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  uut/gen_spike_forwarder_4[0].gen_neuron_cluster[0].neuron_cluster_inst/incoming_forwarder/weight_addr_out_reg[1]/CK (DFF_X1)
+                                                   0.00     10.00 r
+  library setup time                              -0.02      9.98
+  data required time                                         9.98
+  ------------------------------------------------------------------------
+  data required time                                         9.98
+  data arrival time                                         -4.11
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.88
+
+
+1
