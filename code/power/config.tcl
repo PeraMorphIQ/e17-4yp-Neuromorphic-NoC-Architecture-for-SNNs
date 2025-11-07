@@ -20,9 +20,9 @@ set CORES 8
 # Design Configuration
 # -----------------------------------------------------------------------------
 # Design names and top module
-# Options: "system_top" (NoC with neuron banks - WORKING) or "system_top_with_cpu" (with CPUs - pending)
-set DESIGN_NAME "system_top"
-set TOP_MODULE  "system_top"
+# Options: "system_top" (NoC with neuron banks - WORKING) or "system_top_with_cpu" (with CPUs - 12/14 tests passing)
+set DESIGN_NAME "system_top_with_cpu"
+set TOP_MODULE  "system_top_with_cpu"
 
 # -----------------------------------------------------------------------------
 # Library Configuration
@@ -44,12 +44,12 @@ set SEARCH_PATHS "* ./ ${LIBS_PATH}/NangateOpenCellLibrary.ndm"
 # File Locations
 # -----------------------------------------------------------------------------
 # Source files (choose appropriate file list)
-set FILELIST "system_top_src.f"                  # NoC with neuron banks (WORKING - ALL TESTS PASS)
-# set FILELIST "system_top_with_cpu_src.f"      # Complete design with RV32IMF CPUs (pending full integration)
+# set FILELIST "system_top_src.f"                  # NoC with neuron banks (WORKING - ALL TESTS PASS)
+set FILELIST "system_top_with_cpu_src.f"      # Complete design with RV32IMF CPUs (12/14 tests passing - 85%)
 
 # Power analysis inputs
-set FSDB_FILE  "../cpu/build/system_top_tb.fsdb"
-set STRIP_PATH "system_top_tb/dut"
+set FSDB_FILE  "../cpu/build/system_top_with_cpu_tb.fsdb"
+set STRIP_PATH "system_top_with_cpu_tb/dut"
 
 # -----------------------------------------------------------------------------
 # Technology Setup Configuration
@@ -75,7 +75,7 @@ set CORNER_CMIN   "Cmin"
 set SCENARIO_NAME "func@cworst"
 
 # Constraints
-set SDC_FILE "./sdc/clocks.sdc"
+set SDC_FILE "./sdc/clocks_with_cpu.sdc"
 
 # -----------------------------------------------------------------------------
 # Output Configuration

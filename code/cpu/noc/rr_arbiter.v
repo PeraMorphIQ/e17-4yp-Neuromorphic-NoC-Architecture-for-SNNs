@@ -16,57 +16,39 @@ module rr_arbiter #(
 );
 
     // Priority pointer - indicates which port has highest priority
-    reg [1:0] priority_ptr;
+    reg [2:0] priority_ptr;  // Changed to 3 bits to support up to 5 ports
     
     // Internal grant decision
     wire [NUM_PORTS-1:0] grant_next;
     
     // Calculate grants based on round-robin priority
+    integer i, j;
     always @(*) begin
-        grant = 4'b0000;
+        grant = {NUM_PORTS{1'b0}};
         
-        // Priority 0: Check from priority_ptr to end
-        case (priority_ptr)
-            2'd0: begin
-                if (request[0]) grant = 4'b0001;
-                else if (request[1]) grant = 4'b0010;
-                else if (request[2]) grant = 4'b0100;
-                else if (request[3]) grant = 4'b1000;
+        // Round-robin priority arbitration
+        for (i = 0; i < NUM_PORTS; i = i + 1) begin
+            j = (priority_ptr + i) % NUM_PORTS;
+            if (request[j]) begin
+                grant = {NUM_PORTS{1'b0}};
+                grant[j] = 1'b1;
+                i = NUM_PORTS; // Break loop
             end
-            
-            2'd1: begin
-                if (request[1]) grant = 4'b0010;
-                else if (request[2]) grant = 4'b0100;
-                else if (request[3]) grant = 4'b1000;
-                else if (request[0]) grant = 4'b0001;
-            end
-            
-            2'd2: begin
-                if (request[2]) grant = 4'b0100;
-                else if (request[3]) grant = 4'b1000;
-                else if (request[0]) grant = 4'b0001;
-                else if (request[1]) grant = 4'b0010;
-            end
-            
-            2'd3: begin
-                if (request[3]) grant = 4'b1000;
-                else if (request[0]) grant = 4'b0001;
-                else if (request[1]) grant = 4'b0010;
-                else if (request[2]) grant = 4'b0100;
-            end
-        endcase
+        end
     end
     
     // Update priority pointer on each grant
+    integer k;
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
-            priority_ptr <= 2'd0;
+            priority_ptr <= 3'd0;
         end else if (|grant) begin  // If any grant was given
-            // Move priority to next port
-            if (grant[0]) priority_ptr <= 2'd1;
-            else if (grant[1]) priority_ptr <= 2'd2;
-            else if (grant[2]) priority_ptr <= 2'd3;
-            else if (grant[3]) priority_ptr <= 2'd0;
+            // Move priority to next port after the granted one
+            for (k = 0; k < NUM_PORTS; k = k + 1) begin
+                if (grant[k]) begin
+                    priority_ptr <= (k + 1) % NUM_PORTS;
+                end
+            end
         end
     end
 

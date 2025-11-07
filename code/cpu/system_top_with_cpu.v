@@ -12,6 +12,50 @@
 // Architecture: 2x2 Mesh NoC (scalable to larger meshes)
 // =============================================================================
 
+`timescale 1ns/100ps
+
+// Include all required modules (using _no_includes versions to avoid duplication)
+`include "support_modules/mux_2to1_32bit.v"
+`include "support_modules/mux_2to1_3bit.v"
+`include "support_modules/mux_4to1_32bit.v"
+`include "support_modules/plus_4_adder.v"
+`include "fpu/Priority Encoder.v"
+`include "fpu/Addition-Subtraction_no_includes.v"
+`include "fpu/Multiplication_no_includes.v"
+`include "fpu/Division_no_includes.v"
+`include "fpu/Iteration.v"
+`include "fpu/Comparison.v"
+`include "fpu/Converter.v"
+`include "fpu/fpu_no_includes.v"
+`include "f_alu/f_alu.v"
+`include "alu/alu.v"
+`include "reg_file/reg_file.v"
+`include "f_reg_file/f_reg_file.v"
+`include "immediate_generation_unit/immediate_generation_unit.v"
+`include "immediate_select_unit/immediate_select_unit.v"
+`include "control_unit/control_unit_no_includes.v"
+`include "branch_control_unit/branch_control_unit.v"
+`include "forwarding_units/ex_forward_unit.v"
+`include "forwarding_units/mem_forward_unit.v"
+`include "hazard_detection_unit/hazard_detection_unit.v"
+`include "pipeline_flush_unit/pipeline_flush_unit.v"
+`include "pipeline_registers/pr_if_id.v"
+`include "pipeline_registers/pr_id_ex.v"
+`include "pipeline_registers/pr_ex_mem.v"
+`include "pipeline_registers/pr_mem_wb.v"
+`include "cpu/cpu_no_includes.v"
+`include "noc/async_fifo.v"
+`include "noc/input_router.v"
+`include "noc/rr_arbiter.v"
+`include "noc/virtual_channel.v"
+`include "noc/input_module_no_includes.v"
+`include "noc/output_module_no_includes.v"
+`include "noc/router_no_includes.v"
+`include "noc/network_interface_no_includes.v"
+`include "neuron_bank/rng.v"
+`include "neuron_bank/neuron_core.v"
+`include "neuron_bank/neuron_bank_no_includes.v"
+
 module system_top_with_cpu #(
     parameter MESH_SIZE_X = 2,
     parameter MESH_SIZE_Y = 2,
@@ -42,7 +86,6 @@ module system_top_with_cpu #(
     // Debug outputs
     output wire [MESH_SIZE_X*MESH_SIZE_Y-1:0] cpu_interrupt,
     output wire [MESH_SIZE_X*MESH_SIZE_Y*NUM_NEURONS_PER_BANK-1:0] spike_out,
-    output wire [MESH_SIZE_X*MESH_SIZE_Y-1:0] cpu_halted,
     
     // Router monitoring (for debugging)
     output wire [MESH_SIZE_X*MESH_SIZE_Y*5-1:0] router_input_valid,
@@ -180,15 +223,18 @@ module system_top_with_cpu #(
                     assign west_out_ready = 1'b1;
                 end
                 
+                // Calculate router address: {Y[1:0], X[1:0]}
+                wire [3:0] router_address;
+                assign router_address = {y[1:0], x[1:0]};
+                
                 router #(
-                    .PACKET_WIDTH(PACKET_WIDTH),
-                    .X_COORD(x),
-                    .Y_COORD(y),
-                    .NUM_VC(NUM_VC),
+                    .ROUTER_ADDR_WIDTH(4),
+                    .ROUTING_ALGORITHM(0),  // XY routing
                     .VC_DEPTH(VC_DEPTH)
                 ) router_inst (
                     .clk(net_clk),
                     .rst_n(rst_n),
+                    .router_addr(router_address),
                     
                     // North port
                     .north_in_packet(north_in_pkt),
@@ -249,132 +295,188 @@ module system_top_with_cpu #(
                 wire [1:0]  axi_rresp;
                 
                 network_interface #(
-                    .DATA_WIDTH(DATA_WIDTH),
-                    .ADDR_WIDTH(16),
-                    .X_COORD(x),
-                    .Y_COORD(y)
+                    .ROUTER_ADDR_WIDTH(4),
+                    .NEURON_ADDR_WIDTH(12),
+                    .FIFO_DEPTH(4)
                 ) ni_inst (
                     .cpu_clk(cpu_clk),
+                    .cpu_rst_n(rst_n),
                     .net_clk(net_clk),
-                    .rst_n(rst_n),
+                    .net_rst_n(rst_n),
                     
                     // AXI4-Lite interface (CPU side)
-                    .s_axi_awaddr(axi_awaddr),
-                    .s_axi_awvalid(axi_awvalid),
-                    .s_axi_awready(axi_awready),
-                    .s_axi_wdata(axi_wdata),
-                    .s_axi_wvalid(axi_wvalid),
-                    .s_axi_wready(axi_wready),
-                    .s_axi_bresp(axi_bresp),
-                    .s_axi_bvalid(axi_bvalid),
-                    .s_axi_bready(axi_bready),
-                    .s_axi_araddr(axi_araddr),
-                    .s_axi_arvalid(axi_arvalid),
-                    .s_axi_arready(axi_arready),
-                    .s_axi_rdata(axi_rdata),
-                    .s_axi_rresp(axi_rresp),
-                    .s_axi_rvalid(axi_rvalid),
-                    .s_axi_rready(axi_rready),
+                    .axi_awaddr(axi_awaddr),
+                    .axi_awvalid(axi_awvalid),
+                    .axi_awready(axi_awready),
+                    .axi_wdata(axi_wdata),
+                    .axi_wstrb(4'hF),
+                    .axi_wvalid(axi_wvalid),
+                    .axi_wready(axi_wready),
+                    .axi_bresp(axi_bresp),
+                    .axi_bvalid(axi_bvalid),
+                    .axi_bready(axi_bready),
+                    .axi_araddr(axi_araddr),
+                    .axi_arvalid(axi_arvalid),
+                    .axi_arready(axi_arready),
+                    .axi_rdata(axi_rdata),
+                    .axi_rresp(axi_rresp),
+                    .axi_rvalid(axi_rvalid),
+                    .axi_rready(axi_rready),
                     
-                    // NoC interface (Router side)
-                    .noc_in_packet(router_to_local_packet[x][y]),
-                    .noc_in_valid(router_to_local_valid[x][y]),
-                    .noc_in_ready(router_to_local_ready[x][y]),
-                    .noc_out_packet(local_to_router_packet[x][y]),
-                    .noc_out_valid(local_to_router_valid[x][y]),
-                    .noc_out_ready(local_to_router_ready[x][y]),
+                    // Network Interface (Router side)
+                    .net_tx_packet(local_to_router_packet[x][y]),
+                    .net_tx_valid(local_to_router_valid[x][y]),
+                    .net_tx_ready(local_to_router_ready[x][y]),
+                    .net_rx_packet(router_to_local_packet[x][y]),
+                    .net_rx_valid(router_to_local_valid[x][y]),
+                    .net_rx_ready(router_to_local_ready[x][y]),
                     
                     // Interrupt to CPU
-                    .interrupt(nb_cpu_interrupt[x][y])
+                    .cpu_interrupt(nb_cpu_interrupt[x][y])
                 );
                 
                 // =============================================================
                 // RISC-V CPU Instantiation
                 // =============================================================
                 
-                wire [31:0] cpu_inst_addr;
+                wire [31:0] cpu_pc;
                 wire [31:0] cpu_instruction;
-                wire        cpu_mem_read, cpu_mem_write;
+                wire [3:0]  cpu_mem_read;
+                wire [2:0]  cpu_mem_write;
                 wire [31:0] cpu_mem_addr, cpu_mem_write_data, cpu_mem_read_data;
-                wire        cpu_mem_ready;
-                wire        cpu_net_read, cpu_net_write;
-                wire [31:0] cpu_net_write_data, cpu_net_read_data;
-                wire        cpu_net_ready;
+                wire        cpu_mem_busywait;
+                wire        cpu_instr_busywait;
                 
-                cpu #(
-                    .NODE_X(x),
-                    .NODE_Y(y)
-                ) cpu_inst (
+                cpu cpu_inst (
                     .CLK(cpu_clk),
                     .RESET(~rst_n),
                     
                     // Instruction memory interface
-                    .INSTRUCTION_ADDRESS(cpu_inst_addr),
+                    .PC(cpu_pc),
                     .INSTRUCTION(cpu_instruction),
+                    .INSTR_MEM_BUSYWAIT(cpu_instr_busywait),
                     
                     // Data memory interface (for neuron bank access)
-                    .MEM_READ(cpu_mem_read),
-                    .MEM_WRITE(cpu_mem_write),
-                    .MEM_ADDRESS(cpu_mem_addr),
-                    .MEM_WRITE_DATA(cpu_mem_write_data),
-                    .MEM_READ_DATA(cpu_mem_read_data),
-                    .MEM_READY(cpu_mem_ready),
-                    
-                    // Network interface (custom instructions: LWNET, SWNET)
-                    .NET_READ(cpu_net_read),
-                    .NET_WRITE(cpu_net_write),
-                    .NET_WRITE_DATA(cpu_net_write_data),
-                    .NET_READ_DATA(cpu_net_read_data),
-                    .NET_READY(cpu_net_ready),
-                    
-                    // Interrupt from network interface
-                    .NET_INTERRUPT(nb_cpu_interrupt[x][y]),
-                    
-                    // Debug
-                    .HALTED(cpu_halted[y*MESH_SIZE_X + x])
+                    .DATA_MEM_READ(cpu_mem_read),
+                    .DATA_MEM_WRITE(cpu_mem_write),
+                    .DATA_MEM_ADDR(cpu_mem_addr),
+                    .DATA_MEM_WRITE_DATA(cpu_mem_write_data),
+                    .DATA_MEM_READ_DATA(cpu_mem_read_data),
+                    .DATA_MEM_BUSYWAIT(cpu_mem_busywait)
                 );
                 
-                // Connect CPU memory interface to neuron bank
-                assign cpu_nb_address[x][y] = cpu_mem_addr[ADDR_WIDTH-1:0];
-                assign cpu_nb_read[x][y] = cpu_mem_read;
-                assign cpu_nb_write[x][y] = cpu_mem_write;
-                assign cpu_nb_write_data[x][y] = cpu_mem_write_data;
-                assign cpu_mem_read_data = nb_cpu_read_data[x][y];
-                assign cpu_mem_ready = nb_cpu_ready[x][y];
+                // Memory access logic - route to neuron bank or network interface
+                // Address space:
+                //   0x80000000-0x8000FFFF: Neuron Bank (memory-mapped)
+                //   0x90000000-0x9000FFFF: Network Interface (for LWNET/SWNET)
                 
-                // Connect CPU network interface to AXI4-Lite
-                // (Simplified - in real design, use proper AXI adapter)
-                assign axi_awaddr = {16'h0, cpu_net_write_data[31:16]};
-                assign axi_awvalid = cpu_net_write;
-                assign axi_wdata = cpu_net_write_data;
-                assign axi_wvalid = cpu_net_write;
+                wire accessing_neuron_bank;
+                wire accessing_network;
+                assign accessing_neuron_bank = (cpu_mem_addr[31:16] == 16'h8000);
+                assign accessing_network = (cpu_mem_addr[31:16] == 16'h9000);
+                
+                // Connect CPU to Neuron Bank
+                assign cpu_nb_address[x][y] = cpu_mem_addr[ADDR_WIDTH-1:0];
+                assign cpu_nb_read[x][y] = (|cpu_mem_read) && accessing_neuron_bank;
+                assign cpu_nb_write[x][y] = (|cpu_mem_write) && accessing_neuron_bank;
+                assign cpu_nb_write_data[x][y] = cpu_mem_write_data;
+                
+                // Connect CPU to Network Interface via AXI4-Lite
+                assign axi_awaddr = cpu_mem_addr;
+                assign axi_awvalid = (|cpu_mem_write) && accessing_network;
+                assign axi_wdata = cpu_mem_write_data;
+                assign axi_wvalid = (|cpu_mem_write) && accessing_network;
                 assign axi_bready = 1'b1;
-                assign axi_araddr = 32'h0;
-                assign axi_arvalid = cpu_net_read;
+                assign axi_araddr = cpu_mem_addr;
+                assign axi_arvalid = (|cpu_mem_read) && accessing_network;
                 assign axi_rready = 1'b1;
-                assign cpu_net_read_data = axi_rdata;
-                assign cpu_net_ready = (cpu_net_read && axi_rvalid) || (cpu_net_write && axi_bvalid);
+                
+                // Multiplex read data back to CPU
+                assign cpu_mem_read_data = accessing_neuron_bank ? nb_cpu_read_data[x][y] :
+                                          accessing_network ? axi_rdata :
+                                          32'h0;
+                
+                // Generate busywait signal
+                assign cpu_mem_busywait = accessing_neuron_bank ? ~nb_cpu_ready[x][y] :
+                                         accessing_network ? ~(axi_rvalid || axi_bvalid) :
+                                         1'b0;
                 
                 // =============================================================
                 // Instruction Memory Instantiation
                 // =============================================================
                 
-                instruction_memory #(
-                    .MEM_SIZE(1024),  // 1K instructions
-                    .INIT_FILE("")    // Can specify initialization file per node
-                ) imem_inst (
-                    .CLK(cpu_clk),
-                    .RESET(~rst_n),
-                    
-                    // Read port (CPU fetch)
-                    .READ_ADDRESS(cpu_inst_addr[11:2]),  // Word-aligned
-                    .READ_DATA(cpu_instruction),
-                    
-                    // Write port (for loading programs)
-                    .WRITE_ENABLE(prog_load_enable[y*MESH_SIZE_X + x] && prog_load_write[y*MESH_SIZE_X + x]),
-                    .WRITE_ADDRESS(prog_load_addr[11:2]),
-                    .WRITE_DATA(prog_load_data)
-                );
+                // Instruction memory with external loading capability
+                reg [7:0] imem_array [1023:0];
+                
+                // Program loading logic
+                always @(posedge cpu_clk) begin
+                    if (~rst_n) begin
+                        // Reset - can initialize with NOP instructions
+                        // NOP = 0x00000013 (addi x0, x0, 0)
+                    end else if (prog_load_enable[y*MESH_SIZE_X + x] && prog_load_write[y*MESH_SIZE_X + x]) begin
+                        // Load instruction from external interface
+                        imem_array[{prog_load_addr[9:2], 2'b00}] <= prog_load_data[7:0];
+                        imem_array[{prog_load_addr[9:2], 2'b01}] <= prog_load_data[15:8];
+                        imem_array[{prog_load_addr[9:2], 2'b10}] <= prog_load_data[23:16];
+                        imem_array[{prog_load_addr[9:2], 2'b11}] <= prog_load_data[31:24];
+                    end
+                end
+                
+                // Instruction fetch
+                assign cpu_instruction = {
+                    imem_array[{cpu_pc[9:2], 2'b11}],
+                    imem_array[{cpu_pc[9:2], 2'b10}],
+                    imem_array[{cpu_pc[9:2], 2'b01}],
+                    imem_array[{cpu_pc[9:2], 2'b00}]
+                };
+                
+                assign cpu_instr_busywait = 1'b0;  // No wait states for instruction fetch
+                
+                // =============================================================
+                // External Input Injection Logic
+                // =============================================================
+                // Allow testbench to inject current to neurons via external interface
+                // This routes external writes to the neuron bank
+                // ext_neuron_id can be:
+                //   - Neuron ID (0-3) for input injection: address = 0x80 + neuron_id*4
+                //   - Full address (>= 0x80) for direct register access
+                
+                wire ext_target_match;
+                wire [7:0] ext_nb_address;
+                wire ext_nb_write;
+                reg ext_write_latched;
+                
+                assign ext_target_match = (ext_node_select == {y[1:0], x[1:0]}) && ext_input_valid;
+                
+                // If ext_neuron_id < 4, treat as neuron ID and compute input address
+                // Otherwise, treat as full address
+                assign ext_nb_address = (ext_neuron_id < 8'd4) ? 
+                                       (8'h80 + (ext_neuron_id[1:0] * 4)) :  // Input register
+                                       ext_neuron_id[7:0];                    // Direct address
+                
+                assign ext_nb_write = ext_target_match && !ext_write_latched;
+                
+                // Latch external write for one cycle to prevent multiple writes
+                always @(posedge cpu_clk or negedge rst_n) begin
+                    if (!rst_n) begin
+                        ext_write_latched <= 1'b0;
+                    end else begin
+                        if (ext_target_match) begin
+                            ext_write_latched <= 1'b1;
+                        end else if (!ext_input_valid) begin
+                            ext_write_latched <= 1'b0;
+                        end
+                    end
+                end
+                
+                // Multiplex CPU and external writes to neuron bank
+                wire [7:0] nb_address_mux;
+                wire nb_write_enable_mux;
+                wire [31:0] nb_write_data_mux;
+                
+                assign nb_address_mux = ext_nb_write ? ext_nb_address : cpu_nb_address[x][y];
+                assign nb_write_enable_mux = ext_nb_write ? 1'b1 : cpu_nb_write[x][y];
+                assign nb_write_data_mux = ext_nb_write ? ext_input_current : cpu_nb_write_data[x][y];
                 
                 // =============================================================
                 // Neuron Bank Instantiation
@@ -384,29 +486,47 @@ module system_top_with_cpu #(
                 
                 neuron_bank #(
                     .NUM_NEURONS(NUM_NEURONS_PER_BANK),
-                    .DATA_WIDTH(DATA_WIDTH),
                     .ADDR_WIDTH(ADDR_WIDTH)
                 ) nb_inst (
                     .clk(cpu_clk),
                     .rst_n(rst_n),
                     
-                    // CPU interface
-                    .address(cpu_nb_address[x][y]),
+                    // CPU interface (multiplexed with external injection)
+                    .address(nb_address_mux),
                     .read_enable(cpu_nb_read[x][y]),
-                    .write_enable(cpu_nb_write[x][y]),
-                    .write_data(cpu_nb_write_data[x][y]),
+                    .write_enable(nb_write_enable_mux),
+                    .write_data(nb_write_data_mux),
                     .read_data(nb_cpu_read_data[x][y]),
                     .ready(nb_cpu_ready[x][y]),
                     
-                    // External input injection (for testing/training)
-                    .ext_input_valid((ext_node_select == {y[3:0], x[3:0]}) && ext_input_valid),
-                    .ext_neuron_id(ext_neuron_id[3:0]),
-                    .ext_input_current(ext_input_current),
-                    
-                    // Spike outputs
-                    .spike_out(neuron_spikes),
-                    .interrupt(nb_cpu_interrupt[x][y])
+                    // RNG Control (optional - can be tied off or controlled)
+                    .rng_enable(1'b0),
+                    .rng_seed_load(1'b0),
+                    .rng_seed(32'h0)
                 );
+                
+                // Spike monitoring - read spike status from neuron bank
+                // Note: In real implementation, spikes would be monitored by reading
+                // the spike status register (0xC2) from neuron bank. For now, we
+                // track spike interrupts as an indication of spike activity.
+                reg [NUM_NEURONS_PER_BANK-1:0] spike_status;
+                
+                always @(posedge cpu_clk or negedge rst_n) begin
+                    if (~rst_n) begin
+                        spike_status <= {NUM_NEURONS_PER_BANK{1'b0}};
+                    end else begin
+                        // Spike interrupt indicates spike activity
+                        if (nb_cpu_interrupt[x][y]) begin
+                            // In real system, CPU would read spike status register
+                            // For monitoring, we pulse the spike output
+                            spike_status <= {NUM_NEURONS_PER_BANK{1'b1}};
+                        end else begin
+                            spike_status <= {NUM_NEURONS_PER_BANK{1'b0}};
+                        end
+                    end
+                end
+                
+                assign neuron_spikes = spike_status;
                 
                 // Connect neuron spikes to output
                 assign spike_out[(y*MESH_SIZE_X + x + 1)*NUM_NEURONS_PER_BANK - 1 -: NUM_NEURONS_PER_BANK] = neuron_spikes;
