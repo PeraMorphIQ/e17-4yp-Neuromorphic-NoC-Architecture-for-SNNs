@@ -326,9 +326,21 @@ if [ "$RUN_SIMV" = true ]; then
     echo "========== STEP 2: Run Simulation =========="
     if [ -d "$RTL_SYSTEM_TOP_PATH" ]; then
         pushd "$RTL_SYSTEM_TOP_PATH" > /dev/null
-        # Uncomment the next line when ready to run simulation
-        ./simv +fsdb+all=on +fsdb+delta | tee "../../synopsys/primepower/tech_45nCMOS/neuron_accelerator/$TEMP_RESULTS_DIR/simulation.log"
-        echo "Simulation completed successfully"
+        echo "Running simulation with FSDB waveform dump..."
+        # Create build directory if it doesn't exist
+        mkdir -p build
+        # Run simulation and save FSDB in build directory
+        ./simv +fsdb+all=on +fsdb+delta 2>&1 | tee "../power/$TEMP_RESULTS_DIR/simulation.log"
+        # Check if FSDB file was created
+        if [ -f "build/system_top_with_cpu_tb.fsdb" ] || [ -f "system_top_with_cpu_tb.fsdb" ]; then
+            echo "Simulation completed successfully - FSDB file generated"
+            # Move FSDB to build directory if it's in current directory
+            if [ -f "system_top_with_cpu_tb.fsdb" ]; then
+                mv system_top_with_cpu_tb.fsdb build/
+            fi
+        else
+            echo "Warning: FSDB file not found, but simulation ran"
+        fi
         popd > /dev/null
     else
         echo "Warning: System Top RTL directory not found, skipping simulation"
