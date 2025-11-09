@@ -105,7 +105,7 @@ puts "========== Starting RTL Optimization =========="
 # Options:
 #   -initial_map_only: Quick mapping only (for debug/fast iteration)
 #   rtl_opt: Full optimization (for final results/power analysis)
-rtl_opt -initial_map_onl
+rtl_opt -initial_map_only
 puts "RTL optimization completed"
 
 # Save the optimized design
