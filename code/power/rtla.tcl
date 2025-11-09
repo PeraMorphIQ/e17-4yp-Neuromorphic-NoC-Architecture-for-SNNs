@@ -214,15 +214,15 @@ if {$current_period == "" || $current_period == 0} {
 # set Tmin_formatted [format "%.4f" $Tmin]
 # set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
 
-puts "================================================"
-puts "MAXIMUM FREQUENCY CHARACTERIZATION RESULTS"
-puts "================================================"
-puts "Timing Status: $timing_status at current period"
-puts "Critical Path Delay: $Tmin_formatted ns"
-puts "Maximum Frequency: $Fmax_formatted MHz"
-puts "Maximum Frequency (with ${MARGIN_PERCENT}% margin): $Fmax_margin_formatted MHz"
-puts "Recommended Clock Period: $Tmin_margin_formatted ns"
-puts "================================================"
+# puts "================================================"
+# puts "MAXIMUM FREQUENCY CHARACTERIZATION RESULTS"
+# puts "================================================"
+# puts "Timing Status: $timing_status at current period"
+# puts "Critical Path Delay: $Tmin_formatted ns"
+# puts "Maximum Frequency: $Fmax_formatted MHz"
+# puts "Maximum Frequency (with ${MARGIN_PERCENT}% margin): $Fmax_margin_formatted MHz"
+# puts "Recommended Clock Period: $Tmin_margin_formatted ns"
+# puts "================================================"
 
 # -----------------------------------------------------------------------------
 # Generate Comprehensive Reports
@@ -261,75 +261,75 @@ report_design > "$TEMP_RESULTS_DIR/report_design_stats.txt"
 # Process corner information
 report_pvt > "$TEMP_RESULTS_DIR/report_pvt.txt"
 
-# -----------------------------------------------------------------------------
-# Generate Publication-Ready Summary
-# -----------------------------------------------------------------------------
-puts "========== Generating Publication Summary =========="
+# # -----------------------------------------------------------------------------
+# # Generate Publication-Ready Summary
+# # -----------------------------------------------------------------------------
+# puts "========== Generating Publication Summary =========="
 
-set summary_file [open "$TEMP_RESULTS_DIR/publication_summary.txt" w]
+# set summary_file [open "$TEMP_RESULTS_DIR/publication_summary.txt" w]
 
-puts $summary_file "================================================================================"
-puts $summary_file "Blackbox Neuromorphic Accelerator - 45nm CMOS - Performance Characterization"
-puts $summary_file "================================================================================"
-puts $summary_file ""
-puts $summary_file "DESIGN INFORMATION:"
-puts $summary_file "  Design Name:           $DESIGN_NAME"
-puts $summary_file "  Top Module:            $TOP_MODULE"
-puts $summary_file "  Technology:            45nm CMOS"
-puts $summary_file "  Analysis Date:         [clock format [clock seconds] -format "%Y-%m-%d %H:%M:%S"]"
-puts $summary_file ""
-puts $summary_file "TIMING ANALYSIS:"
-puts $summary_file "  Current Clock Period:  $current_period ns"
-puts $summary_file "  Timing Status:         $timing_status"
-puts $summary_file "  Worst Slack (WNS):     $slack ns"
-puts $summary_file ""
-puts $summary_file "MAXIMUM FREQUENCY CHARACTERIZATION:"
-puts $summary_file "  Critical Path Delay:   $Tmin_formatted ns"
-puts $summary_file "  Maximum Frequency:     $Fmax_formatted MHz"
-puts $summary_file ""
-puts $summary_file "RECOMMENDED OPERATING POINT (${MARGIN_PERCENT}% margin):"
-puts $summary_file "  Clock Period:          $Tmin_margin_formatted ns"
-puts $summary_file "  Operating Frequency:   $Fmax_margin_formatted MHz"
-puts $summary_file ""
+# puts $summary_file "================================================================================"
+# puts $summary_file "Blackbox Neuromorphic Accelerator - 45nm CMOS - Performance Characterization"
+# puts $summary_file "================================================================================"
+# puts $summary_file ""
+# puts $summary_file "DESIGN INFORMATION:"
+# puts $summary_file "  Design Name:           $DESIGN_NAME"
+# puts $summary_file "  Top Module:            $TOP_MODULE"
+# puts $summary_file "  Technology:            45nm CMOS"
+# puts $summary_file "  Analysis Date:         [clock format [clock seconds] -format "%Y-%m-%d %H:%M:%S"]"
+# puts $summary_file ""
+# puts $summary_file "TIMING ANALYSIS:"
+# puts $summary_file "  Current Clock Period:  $current_period ns"
+# puts $summary_file "  Timing Status:         $timing_status"
+# puts $summary_file "  Worst Slack (WNS):     $slack ns"
+# puts $summary_file ""
+# puts $summary_file "MAXIMUM FREQUENCY CHARACTERIZATION:"
+# puts $summary_file "  Critical Path Delay:   $Tmin_formatted ns"
+# puts $summary_file "  Maximum Frequency:     $Fmax_formatted MHz"
+# puts $summary_file ""
+# puts $summary_file "RECOMMENDED OPERATING POINT (${MARGIN_PERCENT}% margin):"
+# puts $summary_file "  Clock Period:          $Tmin_margin_formatted ns"
+# puts $summary_file "  Operating Frequency:   $Fmax_margin_formatted MHz"
+# puts $summary_file ""
 
-# Get critical path details
-if {[llength $critical_paths] > 0} {
-    set startpoint [get_attribute $critical_paths startpoint]
-    set endpoint [get_attribute $critical_paths endpoint]
-    puts $summary_file "CRITICAL PATH:"
-    puts $summary_file "  Startpoint:            [get_object_name $startpoint]"
-    puts $summary_file "  Endpoint:              [get_object_name $endpoint]"
-    puts $summary_file ""
-}
+# # Get critical path details
+# if {[llength $critical_paths] > 0} {
+#     set startpoint [get_attribute $critical_paths startpoint]
+#     set endpoint [get_attribute $critical_paths endpoint]
+#     puts $summary_file "CRITICAL PATH:"
+#     puts $summary_file "  Startpoint:            [get_object_name $startpoint]"
+#     puts $summary_file "  Endpoint:              [get_object_name $endpoint]"
+#     puts $summary_file ""
+# }
 
-puts $summary_file ""
-puts $summary_file "PROCESS CORNER:"
-puts $summary_file "  Scenario:              $SCENARIO_NAME"
-puts $summary_file "  Corner:                Cmax (Worst Case)"
-puts $summary_file ""
-puts $summary_file "================================================================================"
-puts $summary_file "For detailed timing analysis, see:"
-puts $summary_file "  - report_timing_critical_path.txt (Critical path breakdown)"
-puts $summary_file "  - report_timing_top10_paths.txt (Top 10 critical paths)"
-puts $summary_file "  - report_timing_detailed.txt (Full timing details with nets)"
-puts $summary_file "================================================================================"
+# puts $summary_file ""
+# puts $summary_file "PROCESS CORNER:"
+# puts $summary_file "  Scenario:              $SCENARIO_NAME"
+# puts $summary_file "  Corner:                Cmax (Worst Case)"
+# puts $summary_file ""
+# puts $summary_file "================================================================================"
+# puts $summary_file "For detailed timing analysis, see:"
+# puts $summary_file "  - report_timing_critical_path.txt (Critical path breakdown)"
+# puts $summary_file "  - report_timing_top10_paths.txt (Top 10 critical paths)"
+# puts $summary_file "  - report_timing_detailed.txt (Full timing details with nets)"
+# puts $summary_file "================================================================================"
 
-close $summary_file
+# close $summary_file
 
-# Also create a simple CSV for easy import
-set csv_file [open "$TEMP_RESULTS_DIR/timing_metrics.csv" w]
-puts $csv_file "Metric,Value,Unit"
-puts $csv_file "Critical_Path_Delay,$Tmin_formatted,ns"
-puts $csv_file "Maximum_Frequency,$Fmax_formatted,MHz"
-puts $csv_file "Recommended_Frequency,$Fmax_margin_formatted,MHz"
-puts $csv_file "Worst_Slack,$slack,ns"
-puts $csv_file "Current_Period,$current_period,ns"
-close $csv_file
+# # Also create a simple CSV for easy import
+# set csv_file [open "$TEMP_RESULTS_DIR/timing_metrics.csv" w]
+# puts $csv_file "Metric,Value,Unit"
+# puts $csv_file "Critical_Path_Delay,$Tmin_formatted,ns"
+# puts $csv_file "Maximum_Frequency,$Fmax_formatted,MHz"
+# puts $csv_file "Recommended_Frequency,$Fmax_margin_formatted,MHz"
+# puts $csv_file "Worst_Slack,$slack,ns"
+# puts $csv_file "Current_Period,$current_period,ns"
+# close $csv_file
 
-puts "All reports generated in $TEMP_RESULTS_DIR/ directory"
-puts ""
-puts "KEY RESULT: Maximum Operating Frequency = $Fmax_formatted MHz"
-puts "RECOMMENDED: Use $Fmax_margin_formatted MHz (with ${MARGIN_PERCENT}% margin)"
+# puts "All reports generated in $TEMP_RESULTS_DIR/ directory"
+# puts ""
+# puts "KEY RESULT: Maximum Operating Frequency = $Fmax_formatted MHz"
+# puts "RECOMMENDED: Use $Fmax_margin_formatted MHz (with ${MARGIN_PERCENT}% margin)"
 puts ""
 puts "========== RTL Analysis and Synthesis Complete =========="
 
