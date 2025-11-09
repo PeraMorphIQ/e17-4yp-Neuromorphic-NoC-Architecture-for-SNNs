@@ -1056,4 +1056,8 @@ Extended error info:
 "set_top_module $TOP_MODULE"
     (file "/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/rtla.tcl" line 59)
  -- End Extended Error Info
-rtl_shell> 
+rtl_shell> exit
+Maximum memory usage for this session: 3126.46 MB
+CPU usage for this session:     86 seconds (  0.02 hours)
+Elapsed time for this session:    210 seconds (  0.06 hours)
+Thank you for using RTL Architect.
