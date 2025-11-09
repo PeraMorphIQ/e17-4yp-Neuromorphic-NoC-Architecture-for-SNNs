@@ -1,0 +1,38 @@
+================================================================================
+System Top with RV32IMF CPUs - 45nm CMOS - Performance Characterization
+================================================================================
+
+DESIGN INFORMATION:
+  Design Name:           system_top_with_cpu
+  Top Module:            system_top_with_cpu
+  Technology:            45nm CMOS
+  Analysis Date:         2025-11-09 21:21:12
+
+TIMING ANALYSIS:
+  Current Clock Period:  20.0 ns
+  Timing Status:         VIOLATED
+  Worst Slack (WNS):     -1115.827515 ns
+
+MAXIMUM FREQUENCY CHARACTERIZATION:
+  Critical Path Delay:   1135.8275 ns
+  Maximum Frequency:     0.88 MHz
+
+RECOMMENDED OPERATING POINT (2.0% margin):
+  Clock Period:          1158.5441 ns
+  Operating Frequency:   0.86 MHz
+
+CRITICAL PATH:
+  Startpoint:            prog_load_data[0]
+  Endpoint:              gen_y[1].gen_x[1].imem_array_reg[8][0]/D
+
+
+PROCESS CORNER:
+  Scenario:              func@cworst
+  Corner:                Cmax (Worst Case)
+
+================================================================================
+For detailed timing analysis, see:
+  - report_timing_critical_path.txt (Critical path breakdown)
+  - report_timing_top10_paths.txt (Top 10 critical paths)
+  - report_timing_detailed.txt (Full timing details with nets)
+================================================================================
