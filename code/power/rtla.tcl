@@ -168,19 +168,23 @@ if {[llength $critical_paths] == 0} {
     set slack 0.0
     set data_arrival 0.0
 } else {
-    set slack [get_attribute $critical_paths slack]
-    set data_arrival [get_attribute $critical_paths arrival]
+    set slack_raw [get_attribute $critical_paths slack]
+    set data_arrival_raw [get_attribute $critical_paths arrival]
+    
+    # Extract numeric value from the string (handles cases like "5.23 ns" or other formats)
+    if {[catch {scan $slack_raw "%f" slack}]} {
+        puts "WARNING: Could not parse slack value: '$slack_raw', defaulting to 0.0"
+        set slack 0.0
+    }
+    if {[catch {scan $data_arrival_raw "%f" data_arrival}]} {
+        puts "WARNING: Could not parse data_arrival value: '$data_arrival_raw', defaulting to current_period"
+        set data_arrival $current_period
+    }
 }
 
-# Validate and convert slack to numeric value
-if {$slack == "" || ![string is double -strict $slack]} {
-    puts "WARNING: Invalid slack value retrieved: '$slack', defaulting to 0.0"
-    set slack 0.0
-}
-if {$data_arrival == "" || ![string is double -strict $data_arrival]} {
-    puts "WARNING: Invalid data_arrival value retrieved: '$data_arrival', defaulting to current_period"
-    set data_arrival $current_period
-}
+# Ensure numeric values are properly formatted
+set slack [expr {double($slack)}]
+set data_arrival [expr {double($data_arrival)}]
 
 puts "Current WNS (Worst Negative Slack): $slack ns"
 puts "Data Arrival Time: $data_arrival ns"
