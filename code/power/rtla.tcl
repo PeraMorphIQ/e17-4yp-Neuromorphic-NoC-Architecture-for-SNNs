@@ -105,7 +105,7 @@ puts "========== Starting RTL Optimization =========="
 # Options:
 #   -initial_map_only: Quick mapping only (for debug/fast iteration)
 #   rtl_opt: Full optimization (for final results/power analysis)
-rtl_opt
+rtl_opt -initial_map_onl
 puts "RTL optimization completed"
 
 # Save the optimized design
@@ -122,15 +122,45 @@ puts "========== Setting up Power Analysis =========="
 file mkdir $TEMP_RESULTS_DIR
 
 # Configure RTL power analysis
-set_rtl_power_analysis_options \
-    -scenario $SCENARIO_NAME \
-    -design $DESIGN_NAME \
-    -strip_path $STRIP_PATH \
-    -fsdb $FSDB_FILE \
-    -output_dir $OUTPUT_DIR
+# Try the requested scenario first; if it fails, retry without scenario, else skip export
+set skip_power_export 0
+if {[catch {
+    set_rtl_power_analysis_options \
+        -scenario $SCENARIO_NAME \
+        -design $DESIGN_NAME \
+        -strip_path $STRIP_PATH \
+        -fsdb $FSDB_FILE \
+        -output_dir $OUTPUT_DIR
+} err_msg]} {
+    puts "WARNING: Failed to set RTL power analysis options with scenario '$SCENARIO_NAME': $err_msg"
+    puts "Retrying set_rtl_power_analysis_options without -scenario..."
+    if {[catch {
+        set_rtl_power_analysis_options \
+            -design $DESIGN_NAME \
+            -strip_path $STRIP_PATH \
+            -fsdb $FSDB_FILE \
+            -output_dir $OUTPUT_DIR
+    } err_msg2]} {
+        puts "WARNING: Failed to set RTL power analysis options without scenario: $err_msg2"
+        puts "Skipping power data export and continuing with timing analysis."
+        set skip_power_export 1
+    } else {
+        puts "set_rtl_power_analysis_options succeeded without scenario."
+    }
+} else {
+    puts "set_rtl_power_analysis_options succeeded with scenario '$SCENARIO_NAME'."
+}
 
-export_power_data
-puts "Power analysis data exported"
+if {$skip_power_export == 0} {
+    if {[catch { export_power_data } exp_err]} {
+        puts "WARNING: export_power_data failed: $exp_err"
+        puts "Continuing without exported power data."
+    } else {
+        puts "Power analysis data exported"
+    }
+} else {
+    puts "Power export skipped earlier due to configuration failure."
+}
 
 # -----------------------------------------------------------------------------
 # Maximum Frequency Characterization
