@@ -149,6 +149,7 @@ if {[llength $all_clocks] == 0} {
 }
 
 # Get the first clock (or find specific clock pattern)
+# Important: lindex returns a single element, not a collection
 set current_clk [lindex $all_clocks 0]
 set clock_name [get_object_name $current_clk]
 puts "Found clock: $clock_name"
@@ -157,18 +158,38 @@ puts "Found clock: $clock_name"
 if {[llength $all_clocks] > 1} {
     puts "Multiple clocks found in design:"
     foreach clk $all_clocks {
-        puts "  - [get_object_name $clk]"
+        set clk_name [get_object_name $clk]
+        set clk_period [get_attribute $clk period]
+        puts "  - $clk_name (period: $clk_period ns)"
     }
-    puts "Using first clock: $clock_name for analysis"
+    puts "Using first clock: $clock_name for frequency analysis"
 }
 
+# Get period for the single selected clock
 set current_period [get_attribute $current_clk period]
 puts "Current clock period: $current_period ns"
 
-# Get worst negative slack (WNS) and critical path information
-set critical_paths [get_timing_paths -delay_type max -max_paths 1]
+# Validate that current_period is a single numeric value
+if {[catch {expr {double($current_period)}} current_period_num]} {
+    puts "WARNING: Clock period is not a single numeric value: '$current_period'"
+    # Try to extract first number
+    if {[catch {scan $current_period "%f" current_period_num}]} {
+        puts "ERROR: Unable to parse clock period"
+        exit 1
+    }
+    set current_period $current_period_num
+    puts "Using first clock period value: $current_period ns"
+}
+
+# Get worst negative slack (WNS) and critical path information for the selected clock
+set critical_paths [get_timing_paths -delay_type max -max_paths 1 -through [get_clocks $clock_name]]
 if {[llength $critical_paths] == 0} {
-    puts "WARNING: No timing paths found"
+    puts "WARNING: No timing paths found for clock $clock_name, trying all paths"
+    set critical_paths [get_timing_paths -delay_type max -max_paths 1]
+}
+
+if {[llength $critical_paths] == 0} {
+    puts "WARNING: No timing paths found at all"
     set slack 0.0
     set data_arrival 0.0
 } else {
