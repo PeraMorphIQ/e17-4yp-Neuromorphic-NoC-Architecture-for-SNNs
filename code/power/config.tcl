@@ -74,7 +74,7 @@ set CG_MIN_BITWIDTH 1
 set MODE_NAME     "func"
 set CORNER_CMAX   "Cmax"
 set CORNER_CMIN   "Cmin"
-set SCENARIO_NAME "func@cworst"
+set SCENARIO_NAME "func@cnormal"
 
 # Constraints
 set SDC_FILE "./sdc/clocks_with_cpu.sdc"
