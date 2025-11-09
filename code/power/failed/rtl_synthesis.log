@@ -1,0 +1,155 @@
+
+
+
+                               RTL Architect (TM)
+
+               Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
+                           Base build date 11/18/2024
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+#!/bin/tcsh -f
+# =============================================================================
+# System Top with RISC-V CPUs RTL Analysis and Synthesis Script for 45nm CMOS
+# =============================================================================
+# Description: This script performs RTL analysis, synthesis, and power 
+#              analysis for the complete System Top design with integrated
+#              RV32IMF RISC-V processors (2x2 Mesh NoC with CPUs and Neuron Banks)
+#              using 45nm CMOS technology
+# Author: Neuromorphic Accelerator Team
+# Technology: 45nm CMOS Process
+# =============================================================================
+# Load shared configuration
+source config.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: temp_results_20251109_184247
+Configuration loaded successfully
+  Design: system_top_with_cpu
+  Technology: 45nm CMOS
+  Cores: 8
+  Results directory: temp_results_20251109_184247
+# -----------------------------------------------------------------------------
+# Configuration and Setup
+# -----------------------------------------------------------------------------
+puts "========== Starting RTL Analysis and Synthesis =========="
+========== Starting RTL Analysis and Synthesis ==========
+puts "Technology: 45nm CMOS"
+Technology: 45nm CMOS
+puts "Design: System Top with RISC-V CPUs - 2x2 Mesh NoC (4× RV32IMF + Neuron Banks)"
+Design: System Top with RISC-V CPUs - 2x2 Mesh NoC (4× RV32IMF + Neuron Banks)
+# Configure mismatch handling
+set_current_mismatch_config auto_fix
+1
+set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
+Warning: Changing current repair(handler) for a mismatch type in between a flow is not recommended. (DMM-011)
+{missing_logical_reference}
+# Set host options for parallel processing
+set_host_options -max_cores $CORES
+1
+puts "Using $CORES cores for parallel processing"
+Using 8 cores for parallel processing
+# Application options
+set_app_options -list {plan.macro.allow_unmapped_design true}
+plan.macro.allow_unmapped_design true
+# -----------------------------------------------------------------------------
+# Library Setup
+# -----------------------------------------------------------------------------
+puts "========== Setting up 45nm CMOS Libraries =========="
+========== Setting up 45nm CMOS Libraries ==========
+# Search paths for libraries and source files
+set search_path $SEARCH_PATHS
+* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm
+# Create design library with 45nm CMOS reference libraries
+create_lib $LIB_NAME \
+    -ref_libs "$REF_LIBS" \
+    -technology $TECH_TF
+Information: The command 'create_lib' cleared the undo history. (UNDO-016)
+Information: Loading technology file '/tech/45nm/cltrls/saed32nm_1p9m_mw.tf' (FILE-007)
+Information: The fusion_lib NangateOpenCellLibrary needs a refresh. 8 file(s) have modified timestamps. (FLIB-11)
+{LIB}
+puts "45nm CMOS libraries loaded successfully"
+45nm CMOS libraries loaded successfully
+# -----------------------------------------------------------------------------
+# Design Analysis and Elaboration
+# -----------------------------------------------------------------------------
+puts "========== Analyzing and Elaborating Design =========="
+========== Analyzing and Elaborating Design ==========
+# Analyze RTL source files
+analyze -f sv -vcs "-f $FILELIST"
+Information: By default, the HDL template library is 'WORK' (LBR-??).
+Running PRESTO HDLC
+Parsing vcs commands file -f system_top_with_cpu_src.f
+Error: File '../cpu/noc/router/router.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/router/input_port.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/router/output_port.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/router/vc_allocator.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/router/switch_allocator.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/router/crossbar_5x5.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/router/routing_computation.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/router/rr_arbiter.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/network_interface/network_interface.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/network_interface/axi_to_noc.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/network_interface/noc_to_axi.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/noc/network_interface/cdc_fifo.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File '../cpu/fpu/Priority' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Error: File 'Encoder.v' cannot be found using search_path of: '* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm'. (FILE-002)
+Compiling source file ../cpu/system_top_with_cpu.v
+Opening include file ../cpu/support_modules/mux_2to1_32bit.v
+Opening include file ../cpu/support_modules/mux_2to1_3bit.v
+Opening include file ../cpu/support_modules/mux_4to1_32bit.v
+Opening include file ../cpu/support_modules/plus_4_adder.v
+Warning:  ../cpu/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../cpu/fpu/Priority Encoder.v
+Opening include file ../cpu/fpu/Addition-Subtraction_no_includes.v
+Warning:  ../cpu/fpu/Addition-Subtraction_no_includes.v:45: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../cpu/fpu/Addition-Subtraction_no_includes.v:46: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../cpu/fpu/Addition-Subtraction_no_includes.v:69: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
+Opening include file ../cpu/fpu/Multiplication_no_includes.v
+Opening include file ../cpu/fpu/Division_no_includes.v
+Opening include file ../cpu/fpu/Iteration.v
+Opening include file ../cpu/fpu/Comparison.v
+Opening include file ../cpu/fpu/Converter.v
+Opening include file ../cpu/fpu/fpu_no_includes.v
+Opening include file ../cpu/f_alu/f_alu.v
+Error:  ../cpu/fpu/fpu_no_includes.v:102: Variable 'RESULT' is the target of both blocking and nonblocking assignments in the same always block. (VER-134)
+Error:  Cannot recover from previous errors. (VER-518)
+Error:  Too many errors; can't continue. (VER-40)
+*** Presto compilation terminated with 2 errors. ***
+Error: Presto analyze failed 
+Elapsed = 00:00:00.02, CPU = 00:00:00.02
+0
+# Elaborate the design
+elaborate $DESIGN_NAME
+Error: In elaborate -hdl_library WORK: Module 'system_top_with_cpu' cannot be found for elaboration. (ELAB-357)
+Elapsed = 00:00:00.05, CPU = 00:00:00.05
+0
+set_top_module $TOP_MODULE
+Error: Current block is not defined. (DES-001)
+Error: Current block is not defined. (DES-001)
+Elapsed = 00:00:00.00, CPU = 00:00:00.00
+Error: 0
+      	Use error_info for more info. (CMD-013)
+Information: script '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/rtla.tcl'
+            	stopped at line 59 due to error. (CMD-081)
+Extended error info:
+0
+    while executing
+"set_top_module $TOP_MODULE"
+    (file "/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/rtla.tcl" line 59)
+ -- End Extended Error Info
+rtl_shell> rtl_shell> b[rtl_shell> b[exit
+? 
