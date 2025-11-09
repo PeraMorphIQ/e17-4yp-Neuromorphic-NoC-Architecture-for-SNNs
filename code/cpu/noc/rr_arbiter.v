@@ -23,16 +23,18 @@ module rr_arbiter #(
     
     // Calculate grants based on round-robin priority
     integer i, j;
+    reg found;
+    
     always @(*) begin
         grant = {NUM_PORTS{1'b0}};
+        found = 1'b0;
         
         // Round-robin priority arbitration
-        for (i = 0; i < NUM_PORTS; i = i + 1) begin
+        for (i = 0; i < NUM_PORTS && !found; i = i + 1) begin
             j = (priority_ptr + i) % NUM_PORTS;
-            if (request[j]) begin
-                grant = {NUM_PORTS{1'b0}};
+            if (request[j] && !found) begin
                 grant[j] = 1'b1;
-                i = NUM_PORTS; // Break loop
+                found = 1'b1;
             end
         end
     end
