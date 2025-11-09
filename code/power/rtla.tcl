@@ -172,7 +172,18 @@ if {[llength $critical_paths] == 0} {
     set data_arrival [get_attribute $critical_paths arrival]
 }
 
+# Validate and convert slack to numeric value
+if {$slack == "" || ![string is double -strict $slack]} {
+    puts "WARNING: Invalid slack value retrieved: '$slack', defaulting to 0.0"
+    set slack 0.0
+}
+if {$data_arrival == "" || ![string is double -strict $data_arrival]} {
+    puts "WARNING: Invalid data_arrival value retrieved: '$data_arrival', defaulting to current_period"
+    set data_arrival $current_period
+}
+
 puts "Current WNS (Worst Negative Slack): $slack ns"
+puts "Data Arrival Time: $data_arrival ns"
 
 # Calculate minimum period and maximum frequency
 # Validate that we have the necessary data
