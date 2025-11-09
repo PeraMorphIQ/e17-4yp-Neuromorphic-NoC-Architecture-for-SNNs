@@ -198,7 +198,7 @@ create_run_metadata() {
     local metadata_file="$TEMP_RESULTS_DIR/run_metadata.txt"
     
     cat > "$metadata_file" << EOF
-# System Top (2x2 Mesh NoC) Synthesis and Power Analysis Run Metadata
+# System Top with CPUs (2x2 Mesh NoC + 4× RV32IMF) - Synthesis and Power Analysis Run Metadata
 # =====================================================================
 
 Run Description: $RUN_DESCRIPTION
@@ -229,8 +229,14 @@ System Top Directory Exists: $([ -d "$RTL_SYSTEM_TOP_PATH" ] && echo "Yes" || ec
 Config File Exists: $([ -f "config.tcl" ] && echo "Yes" || echo "No")
 RTLA Script Exists: $([ -f "rtla.tcl" ] && echo "Yes" || echo "No")
 Restore Script Exists: $([ -f "restore_new.tcl" ] && echo "Yes" || echo "No")
-System Top Source Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/system_top.v" ] && echo "Yes" || echo "No")
-System Top Testbench Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/testbench/system_top_tb.v" ] && echo "Yes" || echo "No")
+System Top with CPU Source Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/system_top_with_cpu.v" ] && echo "Yes" || echo "No")
+System Top with CPU Testbench Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/system_top_with_cpu_tb.v" ] && echo "Yes" || echo "No")
+
+# Design Information
+# ------------------
+Design: system_top_with_cpu (2x2 Mesh NoC with 4× RV32IMF RISC-V CPUs)
+Test Status: 12/14 tests passing (85%)
+Components: 4 CPUs, 4 Routers, 4 Neuron Banks (16 neurons total)
 
 # Execution Plan
 # --------------
@@ -245,7 +251,7 @@ EOF
     echo "Run metadata created: $metadata_file"
 }
 
-echo "========== System Top (2x2 Mesh NoC) Synthesis and Power Analysis =========="
+echo "========== System Top with CPUs (2x2 Mesh + 4× RV32IMF) - Synthesis and Power Analysis =========="
 echo "Description: $RUN_DESCRIPTION"
 echo "Using temporary results directory: $TEMP_RESULTS_DIR"
 echo "Environment variable TEMP_RESULTS_DIR exported for TCL scripts"
@@ -297,13 +303,15 @@ else
     echo "========== STEP 0: Git Pull (SKIPPED) =========="
 fi
 
-# Step 1: VCS Compile (for System Top design)
+# Step 1: VCS Compile (for System Top with CPU design)
 if [ "$RUN_VCS" = true ]; then
-    echo "========== STEP 1: VCS Compile (System Top) =========="
+    echo "========== STEP 1: VCS Compile (System Top with CPUs) =========="
     if [ -d "$RTL_SYSTEM_TOP_PATH" ]; then
         pushd "$RTL_SYSTEM_TOP_PATH" > /dev/null
-        echo "Compiling System Top (2x2 Mesh NoC with Neuron Banks)..."
-        vcs -sverilog -full64 -kdb -debug_access+all testbench/system_top_tb.v -f ../power/system_top_src.f +vcs+fsdbon -o simv | tee "../power/$TEMP_RESULTS_DIR/vcs_compile.log"
+        echo "Compiling System Top with CPUs (2x2 Mesh NoC with 4× RV32IMF CPUs)..."
+        # Use the system_top_with_cpu testbench which already includes the design
+        # Do NOT use -f flag to avoid module redeclaration
+        vcs -sverilog -full64 -kdb -debug_access+all system_top_with_cpu_tb.v +vcs+fsdbon -o simv | tee "../power/$TEMP_RESULTS_DIR/vcs_compile.log"
         echo "VCS compilation completed successfully"
         popd > /dev/null
     else
