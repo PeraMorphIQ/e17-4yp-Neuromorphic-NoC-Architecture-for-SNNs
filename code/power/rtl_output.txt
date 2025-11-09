@@ -34,12 +34,12 @@
 # Load shared configuration
 source config.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251109_200457
+Using environment TEMP_RESULTS_DIR: temp_results_20251109_210139
 Configuration loaded successfully
   Design: system_top_with_cpu
   Technology: 45nm CMOS
   Cores: 8
-  Results directory: temp_results_20251109_200457
+  Results directory: temp_results_20251109_210139
 # -----------------------------------------------------------------------------
 # Configuration and Setup
 # -----------------------------------------------------------------------------
@@ -282,7 +282,7 @@ Opening include file ../cpu/fpu/Addition-Subtraction.v
 Opening include file ../cpu/fpu/Multiplication.v
 Opening include file ../cpu/neuron_bank/neuron_bank_no_includes.v
 Presto compilation completed successfully.
-Elapsed = 00:00:00.09, CPU = 00:00:00.07
+Elapsed = 00:00:00.09, CPU = 00:00:00.08
 1
 # Elaborate the design
 elaborate $DESIGN_NAME
@@ -459,7 +459,7 @@ Inferred memory devices in process
 | gen_y[1].gen_x[1].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ==============================================================================================
 Presto compilation completed successfully. (system_top_with_cpu)
-Module: system_top_with_cpu, Elapsed Time: 00:00:12, CPU Time: 00:00:12, Total Mem: 997.16 MB, Mem: 601.85 MB, Time: Sun Nov  9 20:05:28 2025
+Module: system_top_with_cpu, Elapsed Time: 00:00:12, CPU Time: 00:00:12, Total Mem: 993.05 MB, Mem: 597.88 MB, Time: Sun Nov  9 21:02:09 2025
 Information: Elaborating HDL template WORK:router instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0,VC_DEPTH=4}. (ELAB-193)
 Presto compilation completed successfully. (router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4)
 Information: Elaborating HDL template WORK:network_interface instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,NEURON_ADDR_WIDTH=12,FIFO_DEPTH=4}. (ELAB-193)
@@ -1032,13 +1032,13 @@ Total in all modules
   Nets:                 145980
   Instances:            71181
 Design summary end. (FLW-8551)
-Elapsed = 00:00:17.00, CPU = 00:00:16.62
+Elapsed = 00:00:17.03, CPU = 00:00:16.64
 1
 set_top_module $TOP_MODULE
 Information: User units loaded from library 'NangateOpenCellLibrary' (LNK-040)
 Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
 Gensys attachment is created: presto_gensys.attach:LIB:system_top_with_cpu.design 
-Elapsed = 00:00:20.21, CPU = 00:00:20.06
+Elapsed = 00:00:20.26, CPU = 00:00:20.04
 1
 puts "Design elaboration completed"
 Design elaboration completed
@@ -1049,12 +1049,12 @@ puts "========== Loading Technology Setup =========="
 ========== Loading Technology Setup ==========
 source tz_setup.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251109_200457
+Using environment TEMP_RESULTS_DIR: temp_results_20251109_210139
 Configuration loaded successfully
   Design: system_top_with_cpu
   Technology: 45nm CMOS
   Cores: 8
-  Results directory: temp_results_20251109_200457
+  Results directory: temp_results_20251109_210139
 ========== 45nm CMOS Technology Setup ==========
 Configuring synthesis flow options...
 The following clock gating options are applied to: top-level (design)
@@ -1092,7 +1092,7 @@ Clock constraints loaded from ./sdc/clocks_with_cpu.sdc
 Report : scenario
 Design : system_top_with_cpu
 Version: V-2023.12-SP5-3
-Date   : Sun Nov  9 20:05:57 2025
+Date   : Sun Nov  9 21:02:38 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -1105,9 +1105,9 @@ func@Cmin *     func            Cmin            true    true   false true     tr
 # Force timing update after loading constraints
 update_timing
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-11-09 20:05:57 / Session:  00:00:49 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1639 MB (FLW-8100)
-Information: Corner Cmin: no PVT mismatches. (PVT-032)
+Information: Time: 2025-11-09 21:02:38 / Session:  00:00:49 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1636 MB (FLW-8100)
 Information: Corner Cmax: no PVT mismatches. (PVT-032)
+Information: Corner Cmin: no PVT mismatches. (PVT-032)
 Information: The stitching and editing of coupling caps is turned OFF for design 'LIB:system_top_with_cpu.design'. (TIM-125)
 Warning: No physical information exists for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-101)
 Warning: The extractor can not be initialized for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-102)
@@ -1128,7 +1128,7 @@ ML Acceleration:                           off
 Smart Arc Optimization:                    disabled
 ************************************************************
 Information: Ending   'update_timing' (FLW-8001)
-Information: Time: 2025-11-09 20:06:37 / Session:  00:01:29 / Command:  00:00:40 / CPU:  00:02:26 / Memory: 2806 MB (FLW-8100)
+Information: Time: 2025-11-09 21:03:18 / Session:  00:01:29 / Command:  00:00:40 / CPU:  00:02:25 / Memory: 2805 MB (FLW-8100)
 1
 # Verify clock constraints were loaded
 puts "========== Verifying Clock Constraints =========="
@@ -1170,11 +1170,11 @@ puts "========== Starting RTL Optimization =========="
 # Options:
 #   -initial_map_only: Quick mapping only (for debug/fast iteration)
 #   rtl_opt: Full optimization (for final results/power analysis)
-rtl_opt
+rtl_opt -initial_map_only
 Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
 Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
-Information: Starting 'rtl_opt' (FLW-8000)
-Information: Time: 2025-11-09 20:06:40 / Session:  00:01:33 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 2919 MB (FLW-8100)
+Information: Starting 'rtl_opt -from conditioning -to conditioning' (FLW-8000)
+Information: Time: 2025-11-09 21:03:22 / Session:  00:01:33 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 2919 MB (FLW-8100)
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
 INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
@@ -1182,7 +1182,7 @@ Information: Structural Congestion Optimization technology (Early SCO) has been 
 ****************************************
 Report : report_tbcs
 Version: V-2023.12-SP5-3
-Date   : Sun Nov  9 20:06:40 2025
+Date   : Sun Nov  9 21:03:22 2025
 ****************************************
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
@@ -1191,19 +1191,19 @@ INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning (FLW-8000)
-Information: Time: 2025-11-09 20:07:03 / Session:  00:01:55 / Command:  00:00:22 / CPU:  00:00:22 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:03:44 / Session:  00:01:55 / Command:  00:00:22 / CPU:  00:00:22 / Memory: 2939 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
-Information: Time: 2025-11-09 20:07:03 / Session:  00:01:56 / Command:  00:00:23 / CPU:  00:00:23 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:03:45 / Session:  00:01:56 / Command:  00:00:23 / CPU:  00:00:23 / Memory: 2939 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
-Information: Time: 2025-11-09 20:07:07 / Session:  00:01:59 / Command:  00:00:26 / CPU:  00:00:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:03:48 / Session:  00:01:59 / Command:  00:00:26 / CPU:  00:00:26 / Memory: 2939 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-11-09 20:07:07 / Session:  00:01:59 / Command:  00:00:26 / CPU:  00:00:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:03:48 / Session:  00:01:59 / Command:  00:00:26 / CPU:  00:00:26 / Memory: 2939 MB (FLW-8100)
 MV related app options set by user:
 Information: Ending   rtl_opt / conditioning / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-11-09 20:07:07 / Session:  00:01:59 / Command:  00:00:26 / CPU:  00:00:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:03:48 / Session:  00:01:59 / Command:  00:00:26 / CPU:  00:00:26 / Memory: 2939 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8000)
-Information: Time: 2025-11-09 20:07:07 / Session:  00:01:59 / Command:  00:00:26 / CPU:  00:00:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:03:48 / Session:  00:01:59 / Command:  00:00:26 / CPU:  00:00:26 / Memory: 2939 MB (FLW-8100)
 Information: The register gen_y[0].gen_x[0].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
 Information: The register gen_y[1].gen_x[1].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
 Information: The register gen_y[1].gen_x[0].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
@@ -1231,14 +1231,558 @@ Information: 28 registers were merged. Use report_transformed_registers for a li
 Information: 138 out of 148 SQM-4100 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:108) (MSG-3913)
 Information: 18 out of 28 SQM-4102 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:108) (MSG-3913)
 Information: Ending   rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8001)
-Information: Time: 2025-11-09 20:08:59 / Session:  00:03:52 / Command:  00:02:19 / CPU:  00:02:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:05:42 / Session:  00:03:53 / Command:  00:02:20 / CPU:  00:02:28 / Memory: 2939 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Register Merging (FLW-8000)
-Information: Time: 2025-11-09 20:08:59 / Session:  00:03:52 / Command:  00:02:19 / CPU:  00:02:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:05:42 / Session:  00:03:53 / Command:  00:02:20 / CPU:  00:02:28 / Memory: 2939 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Register Merging (FLW-8001)
-Information: Time: 2025-11-09 20:08:59 / Session:  00:03:52 / Command:  00:02:19 / CPU:  00:02:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:05:42 / Session:  00:03:53 / Command:  00:02:20 / CPU:  00:02:28 / Memory: 2939 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-11-09 20:08:59 / Session:  00:03:52 / Command:  00:02:19 / CPU:  00:02:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:05:42 / Session:  00:03:53 / Command:  00:02:20 / CPU:  00:02:28 / Memory: 2939 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-11-09 20:09:03 / Session:  00:03:55 / Command:  00:02:22 / CPU:  00:02:38 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:05:46 / Session:  00:03:57 / Command:  00:02:24 / CPU:  00:02:39 / Memory: 2939 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8000)
-Information: Time: 2025-11-09 20:09:10 / Session:  00:04:02 / Command:  00:02:29 / CPU:  00:02:45 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-09 21:05:53 / Session:  00:04:04 / Command:  00:02:31 / CPU:  00:02:46 / Memory: 2939 MB (FLW-8100)
+Information: For the module "system_top_with_cpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 237368 mux gate(s) with total area 415742.47. (MUX-1021)
+Information: For the module "f_reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3073 mux gate(s) with total area 5465.54. (MUX-1021)
+Information: For the module "reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 2147 mux gate(s) with total area 3815.79. (MUX-1021)
+Information: For the module "neuron_bank_NUM_NEURONS4_ADDR_WIDTH8", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1329 mux gate(s) with total area 2322.40. (MUX-1021)
+Information: For the module "neuron_core", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1745 mux gate(s) with total area 3037.07. (MUX-1021)
+Information: For the module "async_fifo_DATA_WIDTH32_ADDR_WIDTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 498 mux gate(s) with total area 884.67. (MUX-1021)
+Information: For the module "pr_id_ex", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 298 mux gate(s) with total area 500.92. (MUX-1021)
+Information: For the module "alu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 776 mux gate(s) with total area 1375.43. (MUX-1021)
+Information: For the module "pr_ex_mem", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 198 mux gate(s) with total area 334.45. (MUX-1021)
+Information: For the module "pr_mem_wb", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 147 mux gate(s) with total area 250.08. (MUX-1021)
+Information: For the module "virtual_channel_DATA_WIDTH32_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 110 mux gate(s) with total area 194.42. (MUX-1021)
+Information: For the module "Floating_Point_to_Integer", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 145 mux gate(s) with total area 245.25. (MUX-1021)
+Information: For the module "control_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 31 mux gate(s) with total area 50.07. (MUX-1021)
+Information: For the module "fpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1231 mux gate(s) with total area 2181.09. (MUX-1021)
+Information: For the module "Addition_Subtraction", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 239 mux gate(s) with total area 422.64. (MUX-1021)
+Information: For the module "pr_if_id", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 68 mux gate(s) with total area 117.16. (MUX-1021)
+Information: For the module "cpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 37 mux gate(s) with total area 62.01. (MUX-1021)
+Information: For the module "rr_arbiter_NUM_PORTS5", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 207 mux gate(s) with total area 339.03. (MUX-1021)
+Information: For the module "network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 63 mux gate(s) with total area 99.37. (MUX-1021)
+Information: For the module "output_module_VC_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 132 mux gate(s) with total area 234.83. (MUX-1021)
+Information: For the module "rng", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 33 mux gate(s) with total area 58.71. (MUX-1021)
+Information: For the module "Multiplication", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 166.97. (MUX-1021)
+Information: For the module "rr_arbiter_NUM_PORTS4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 156.81. (MUX-1021)
+Information: For the module "branch_control_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 8 mux gate(s) with total area 12.96. (MUX-1021)
+Information: For the module "Comparison", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 29 mux gate(s) with total area 38.88. (MUX-1021)
+Information: For the module "immediate_generation_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 98 mux gate(s) with total area 170.53. (MUX-1021)
+Information: For the module "input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 11 mux gate(s) with total area 15.76. (MUX-1021)
+Information: For the module "mux_4to1_32bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 170.78. (MUX-1021)
+Information: For the module "hazard_detection_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 10 mux gate(s) with total area 15.25. (MUX-1021)
+Information: For the module "ex_forward_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 16 mux gate(s) with total area 24.65. (MUX-1021)
+Information: For the module "input_router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 15 mux gate(s) with total area 21.60. (MUX-1021)
+Information: For the module "mux_2to1_32bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 32 mux gate(s) with total area 56.93. (MUX-1021)
+Information: For the module "mem_forward_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1 mux gate(s) with total area 1.78. (MUX-1021)
+Information: For the module "mux_2to1_3bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3 mux gate(s) with total area 5.34. (MUX-1021)
+Information: Timer using 8 threads
+Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8001)
+Information: Time: 2025-11-09 21:14:19 / Session:  00:12:30 / Command:  00:10:56 / CPU:  00:11:58 / Memory: 3479 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8000)
+Information: Time: 2025-11-09 21:14:19 / Session:  00:12:30 / Command:  00:10:56 / CPU:  00:11:58 / Memory: 3479 MB (FLW-8100)
+Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
+Information: 3 register's output was inverted. Use report_transformed_registers for a list. (SQM-2014)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Information: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: 5378 out of 5379 SQM-1040 messages were not printed due to limit 1  (MSG-3913)
+Information: 5378 out of 5379 SQM-1074 messages were not printed due to limit 1  (MSG-3913)
+Information: 8 out of 9 SQM-2014 messages were not printed due to limit 1  (MSG-3913)
+Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
+Information: Time: 2025-11-09 21:15:54 / Session:  00:14:05 / Command:  00:12:32 / CPU:  00:15:58 / Memory: 6087 MB (FLW-8100)
+Information: RTL multibit banking summary. (SQM-2008)
+        Total candidates in design:87280
+        Total candidates ignored:  87132
+        Total candidates banked:   0
+        Banking Ratio of this pass:0.00%
+        Banking ratio             :0.00% (Before banking 0.00%)
+        Use report_multibit for details.
+Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
+Information: Time: 2025-11-09 21:15:55 / Session:  00:14:06 / Command:  00:12:32 / CPU:  00:15:58 / Memory: 6087 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
+Information: Time: 2025-11-09 21:15:55 / Session:  00:14:06 / Command:  00:12:32 / CPU:  00:15:58 / Memory: 6087 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-11-09 21:16:09 / Session:  00:14:20 / Command:  00:12:47 / CPU:  00:16:12 / Memory: 6087 MB (FLW-8100)
+Information: 6088 registers were found constant but could not be removed due to restrictions. (SQM-3103)
+Information: Register Bits Before Sharing = 87280, After Sharing = 87280, Savings = 0 (SQM-2000)
+Information: Starting rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8000)
+Information: Time: 2025-11-09 21:16:19 / Session:  00:14:30 / Command:  00:12:57 / CPU:  00:16:23 / Memory: 6087 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8001)
+Information: Time: 2025-11-09 21:16:29 / Session:  00:14:40 / Command:  00:13:07 / CPU:  00:16:50 / Memory: 6087 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-11-09 21:16:29 / Session:  00:14:40 / Command:  00:13:07 / CPU:  00:16:50 / Memory: 6087 MB (FLW-8100)
+Information: Result of rtl_opt / conditioning / Clock Gate Insertion (FLW-8500)
+--------------------------------------------------------------------------------
+|                             Clock Gating Options                             |
+--------------------------------------------------------------------------------
+|         Objects         |    Minimum Bitwidth     |      Maximum Fanout      |
+--------------------------+-------------------------+---------------------------
+|   top-level (design)    |          3 (d)          |      Unlimited (d)       |
+--------------------------------------------------------------------------------
+
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 4
+---------------------------------------------------------------------------------------------
+                          Tool Gated Register Summary                                        
+---------------------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent | % of Gated 
+                                    | Clock Gates |                | Bitwidth   | Bits       
+---------------------------------------------------------------------------------------------
+Regular Clock Gating                |        6280 |          84456 |      84456 |    96.87%
+---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                 Regular Clock Gating Ungated Register Summary                  
+--------------------------------------------------------------------------------
+ Ungated Reason                                            | Count | Bitwidth   
+--------------------------------------------------------------------------------
+ Enable is Constant One.                                   |  2628 |     2628
+ Minimum Bitwidth Not Met.                                 |   100 |      100
+ Not Processed.                                            |    96 |       96
+--------------------------------------------------------------------------------
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -    1331864.00           -      647417              0.25      6086
+Information: Ending   rtl_opt / conditioning (FLW-8001)
+Information: Time: 2025-11-09 21:16:39 / Session:  00:14:50 / Command:  00:13:17 / CPU:  00:17:00 / Memory: 6087 MB (FLW-8100)
+Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'MRDL' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'MRDL' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'MRDL' setting 'routing-direction' is not valid (NEX-001)
+Information: Summary of UPF Cells (UPF-532)
+*******************************************************************************
+                            Summary of UPF Cells                               
+*******************************************************************************
+This is NOT a UPF design.
+UPF is NOT loaded.
+UPF is NOT committed.
+-------------------------------------------------------------------------------
+*******************************************************************************
+                        End of Summary of UPF Cells                            
+*******************************************************************************
+Information: Timer using 8 threads
+INFO: End environment monitoring: recipes
+INFO: Restored 0 timer status, 7 app options, 0 tcl gvars, 0 env vars
+Information: >>>>>>> 2 unique error and warning message tags while observing fast: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     1     1  1 SQM-1040  WARNING   No cell bus will be mapped to multibit because there is no m... (MSG-3032)
+Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'MRDL' setting 'routing-direction'... (MSG-3032)
+Information:    31    31  1        2  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 31 error&warning MSGs observed during fast (MSG-3103)
+Info: FAST compile completed.
+Information: Ending   'rtl_opt -from conditioning -to conditioning' (FLW-8001)
+Information: Time: 2025-11-09 21:16:45 / Session:  00:14:56 / Command:  00:13:23 / CPU:  00:17:06 / Memory: 6087 MB (FLW-8100)
+1
+puts "RTL optimization completed"
+RTL optimization completed
+# Save the optimized design
+save_block
+Information: Saving block 'LIB:system_top_with_cpu.design'
+1
+save_lib
+Saving library 'LIB'
+1
+puts "Design saved successfully"
+Design saved successfully
+# -----------------------------------------------------------------------------
+# Power Analysis Setup
+# -----------------------------------------------------------------------------
+puts "========== Setting up Power Analysis =========="
+========== Setting up Power Analysis ==========
+# Create temp results directory if it doesn't exist
+file mkdir $TEMP_RESULTS_DIR
+# Configure RTL power analysis
+# Try the requested scenario first; if it fails, retry without scenario, else skip export
+set skip_power_export 0
+0
+if {[catch {
+    set_rtl_power_analysis_options \
+        -scenario $SCENARIO_NAME \
+        -design $DESIGN_NAME \
+        -strip_path $STRIP_PATH \
+        -fsdb $FSDB_FILE \
+        -output_dir $OUTPUT_DIR
+} err_msg]} {
+    puts "WARNING: Failed to set RTL power analysis options with scenario '$SCENARIO_NAME': $err_msg"
+    puts "Retrying set_rtl_power_analysis_options without -scenario..."
+    if {[catch {
+        set_rtl_power_analysis_options \
+            -design $DESIGN_NAME \
+            -strip_path $STRIP_PATH \
+            -fsdb $FSDB_FILE \
+            -output_dir $OUTPUT_DIR
+    } err_msg2]} {
+        puts "WARNING: Failed to set RTL power analysis options without scenario: $err_msg2"
+        puts "Skipping power data export and continuing with timing analysis."
+        set skip_power_export 1
+    } else {
+        puts "set_rtl_power_analysis_options succeeded without scenario."
+    }
+} else {
+    puts "set_rtl_power_analysis_options succeeded with scenario '$SCENARIO_NAME'."
+}
+Error: Cannot find scenario 'func@cworst'. Please specify valid scenario name.
+set_rtl_power_analysis_options succeeded with scenario 'func@cworst'.
+if {$skip_power_export == 0} {
+    if {[catch { export_power_data } exp_err]} {
+        puts "WARNING: export_power_data failed: $exp_err"
+        puts "Continuing without exported power data."
+    } else {
+        puts "Power analysis data exported"
+    }
+} else {
+    puts "Power export skipped earlier due to configuration failure."
+}
+Information: exporting data
+Information: Starting 'update_timing' (FLW-8000)
+Information: Time: 2025-11-09 21:17:08 / Session:  00:15:19 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6087 MB (FLW-8100)
+Information: Corner Cmax: no PVT mismatches. (PVT-032)
+Information: Corner Cmin: no PVT mismatches. (PVT-032)
+Information: The stitching and editing of coupling caps is turned OFF for design 'LIB:system_top_with_cpu.design'. (TIM-125)
+Warning: No physical information exists for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "system_top_with_cpu"
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 662845, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   estimated
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+Smart Arc Optimization:                    disabled
+************************************************************
+Information: Ending   'update_timing' (FLW-8001)
+Information: Time: 2025-11-09 21:17:54 / Session:  00:16:05 / Command:  00:00:46 / CPU:  00:03:45 / Memory: 6087 MB (FLW-8100)
+Information: Exporting non-essential name map file
+NEX:ERROR write_parasitics command failed, core area is not valid
+Information: Explicit supply net connections to isolation and retention cells will be written out. Use mv.upf.save_upf_include_supply_exceptions_for_iso_retn to control this. (UPF-450)
+
+Warning: Multiply cell derates are skipped!
+
+Warning: Multiply net derates are skipped!
+
+Warning: Multiply cell derates are skipped!
+
+Warning: Multiply net derates are skipped!
+Information: RTL Architect run completed
+Information: Gathering logical hierarchical data
+Power analysis data exported
+# -----------------------------------------------------------------------------
+# Maximum Frequency Characterization
+# -----------------------------------------------------------------------------
+puts "========== Characterizing Maximum Operating Frequency =========="
+========== Characterizing Maximum Operating Frequency ==========
+# Update timing for accurate analysis
+update_timing
+Information: Starting 'update_timing' (FLW-8000)
+Information: Time: 2025-11-09 21:20:36 / Session:  00:18:47 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6087 MB (FLW-8100)
+Information: Ending   'update_timing' (FLW-8001)
+Information: Time: 2025-11-09 21:20:36 / Session:  00:18:47 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6087 MB (FLW-8100)
+1
+# Find all clocks in the design
+set all_clocks [get_clocks *]
+{cpu_clk net_clk}
+if {[llength $all_clocks] == 0} {
+    puts "ERROR: No clocks found in design. Please check your constraints."
+    puts "Available ports: [get_object_name [get_ports *clk*]]"
+    exit 1
+}
+# Get the first clock (or find specific clock pattern)
+# Important: lindex returns a single element, not a collection
+set current_clk [lindex $all_clocks 0]
+_sel175495
+set clock_name [get_object_name $current_clk]
+cpu_clk net_clk
+puts "Found clock: $clock_name"
+Found clock: cpu_clk net_clk
+# If there are multiple clocks, list them
+if {[llength $all_clocks] > 1} {
+    puts "Multiple clocks found in design:"
+    foreach clk $all_clocks {
+        set clk_name [get_object_name $clk]
+        set clk_period [get_attribute $clk period]
+        puts "  - $clk_name (period: $clk_period ns)"
+    }
+    puts "Using first clock: $clock_name for frequency analysis"
+}
+# Get period for the single selected clock
+set current_period [get_attribute $current_clk period]
+20.000000 10.000000
+puts "Current clock period: $current_period ns"
+Current clock period: 20.000000 10.000000 ns
+# Validate that current_period is a single numeric value
+if {[catch {expr {double($current_period)}} current_period_num]} {
+    puts "WARNING: Clock period is not a single numeric value: '$current_period'"
+    # Try to extract first number
+    if {[catch {scan $current_period "%f" current_period_num}]} {
+        puts "ERROR: Unable to parse clock period"
+        exit 1
+    }
+    set current_period $current_period_num
+    puts "Using first clock period value: $current_period ns"
+}
+WARNING: Clock period is not a single numeric value: '20.000000 10.000000'
+Using first clock period value: 20.0 ns
+# Get worst negative slack (WNS) and critical path information for the selected clock
+set critical_paths [get_timing_paths -delay_type max -max_paths 1 -through [get_clocks $clock_name]]
+Warning: Collection '_sel175496 (cpu_clk net_clk)' has inappropriate type (clock). (SEL-002)
+Error: Nothing matched for through_list (SEL-005)
+Error: problem in get_timing_paths command
+        Use error_info for more info. (CMD-013)
+if {[llength $critical_paths] == 0} {
+    puts "WARNING: No timing paths found for clock $clock_name, trying all paths"
+    set critical_paths [get_timing_paths -delay_type max -max_paths 1]
+}
+WARNING: No timing paths found for clock cpu_clk net_clk, trying all paths
+{{path_to_gen_y[1].gen_x[1].imem_array_reg[8][0]/D_slack_-1115.83}}
+if {[llength $critical_paths] == 0} {
+    puts "WARNING: No timing paths found at all"
+    set slack 0.0
+    set data_arrival 0.0
+} else {
+    set slack_raw [get_attribute $critical_paths slack]
+    set data_arrival_raw [get_attribute $critical_paths arrival]
+    
+    # Extract numeric value from the string (handles cases like "5.23 ns" or other formats)
+    if {[catch {scan $slack_raw "%f" slack}]} {
+        puts "WARNING: Could not parse slack value: '$slack_raw', defaulting to 0.0"
+        set slack 0.0
+    }
+    if {[catch {scan $data_arrival_raw "%f" data_arrival}]} {
+        puts "WARNING: Could not parse data_arrival value: '$data_arrival_raw', defaulting to current_period"
+        set data_arrival $current_period
+    }
+}
+# Ensure numeric values are properly formatted
+set slack [expr {double($slack)}]
+-1115.827515
+set data_arrival [expr {double($data_arrival)}]
+1010.0
+puts "Current WNS (Worst Negative Slack): $slack ns"
+Current WNS (Worst Negative Slack): -1115.827515 ns
+puts "Data Arrival Time: $data_arrival ns"
+Data Arrival Time: 1010.0 ns
+# Calculate minimum period and maximum frequency
+# Wrap in try-catch to handle any timing extraction errors gracefully
+if {[catch {
+    # Validate that we have the necessary data
+    if {$current_period == "" || $current_period == 0} {
+        error "Invalid clock period retrieved"
+    }
+
+    # Tmin = Current_Period - Slack (if slack is negative, this adds the violation)
+    # If slack is positive, Tmin = Data_Arrival_Time (critical path delay)
+    if {$slack >= 0} {
+        # Timing is met - use actual critical path delay
+        set Tmin $data_arrival
+        set timing_status "MET"
+    } else {
+        # Timing violated - need to increase period
+        set Tmin [expr {$current_period - $slack}]
+        set timing_status "VIOLATED"
+    }
+
+    # Sanity check on calculated values
+    if {$Tmin <= 0} {
+        error "Invalid critical path delay calculated: $Tmin ns"
+    }
+
+    # Add safety margin (typically 2-5% for publication)
+    set MARGIN_PERCENT 2.0
+    set Tmin_with_margin [expr {$Tmin * (1.0 + $MARGIN_PERCENT/100.0)}]
+
+    # Calculate frequencies (convert from ns to Hz, then to MHz)
+    # Fmax in MHz: 1/ns = 1000 MHz
+    set Fmax [expr {1000.0 / $Tmin}]
+    set Fmax_with_margin [expr {1000.0 / $Tmin_with_margin}]
+
+    # Format results
+    set Fmax_formatted [format "%.2f" $Fmax]
+    set Fmax_margin_formatted [format "%.2f" $Fmax_with_margin]
+    set Tmin_formatted [format "%.4f" $Tmin]
+    set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
+    
+} timing_error]} {
+    # Frequency calculation failed - use defaults and continue
+    puts "WARNING: Frequency characterization failed: $timing_error"
+    puts "Using default timing values to continue..."
+    set Tmin $current_period
+    set Tmin_with_margin $current_period
+    set Fmax [expr {1000.0 / $current_period}]
+    set Fmax_with_margin $Fmax
+    set Fmax_formatted [format "%.2f" $Fmax]
+    set Fmax_margin_formatted [format "%.2f" $Fmax_with_margin]
+    set Tmin_formatted [format "%.4f" $Tmin]
+    set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
+    set timing_status "UNKNOWN"
+    set slack "N/A"
+}
+set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
+1158.5441
+puts "================================================"
+================================================
+puts "MAXIMUM FREQUENCY CHARACTERIZATION RESULTS"
+MAXIMUM FREQUENCY CHARACTERIZATION RESULTS
+puts "================================================"
+================================================
+puts "Timing Status: $timing_status at current period"
+Timing Status: VIOLATED at current period
+puts "Critical Path Delay: $Tmin_formatted ns"
+Critical Path Delay: 1135.8275 ns
+puts "Maximum Frequency: $Fmax_formatted MHz"
+Maximum Frequency: 0.88 MHz
+puts "Maximum Frequency (with ${MARGIN_PERCENT}% margin): $Fmax_margin_formatted MHz"
+Maximum Frequency (with 2.0% margin): 0.86 MHz
+puts "Recommended Clock Period: $Tmin_margin_formatted ns"
+Recommended Clock Period: 1158.5441 ns
+puts "================================================"
+================================================
+# -----------------------------------------------------------------------------
+# Generate Comprehensive Reports
+# -----------------------------------------------------------------------------
+puts "========== Generating Reports =========="
+========== Generating Reports ==========
+# Basic reports
+report_power > "$TEMP_RESULTS_DIR/report_power.txt"
+report_area > "$TEMP_RESULTS_DIR/report_area.txt" 
+report_qor > "$TEMP_RESULTS_DIR/report_qor.txt"
+# Detailed timing reports
+report_timing -delay_type max -max_paths 1 -path_type full \
+    > "$TEMP_RESULTS_DIR/report_timing_critical_path.txt"
+report_timing -delay_type max -max_paths 10 -path_type full \
+    > "$TEMP_RESULTS_DIR/report_timing_top10_paths.txt"
+report_timing -delay_type max -max_paths 1 -nets -transition_time \
+    -capacitance -input_pins -significant_digits 4 \
+    > "$TEMP_RESULTS_DIR/report_timing_detailed.txt"
+# Constraint and violation reports
+report_constraint -all_violators > "$TEMP_RESULTS_DIR/report_violations.txt"
+# Clock reports
+report_clock -skew > "$TEMP_RESULTS_DIR/report_clock.txt"
+# Additional useful reports for 45nm CMOS
+report_reference > "$TEMP_RESULTS_DIR/report_reference.txt"
+report_hierarchy > "$TEMP_RESULTS_DIR/report_hierarchy.txt"
+# Design statistics
+report_design > "$TEMP_RESULTS_DIR/report_design_stats.txt"
+# Process corner information
+report_pvt > "$TEMP_RESULTS_DIR/report_pvt.txt"
+# -----------------------------------------------------------------------------
+# Generate Publication-Ready Summary
+# -----------------------------------------------------------------------------
+puts "========== Generating Publication Summary =========="
+========== Generating Publication Summary ==========
+set summary_file [open "$TEMP_RESULTS_DIR/publication_summary.txt" w]
+file27
+puts $summary_file "================================================================================"
+puts $summary_file "System Top with RV32IMF CPUs - 45nm CMOS - Performance Characterization"
+puts $summary_file "================================================================================"
+puts $summary_file ""
+puts $summary_file "DESIGN INFORMATION:"
+puts $summary_file "  Design Name:           $DESIGN_NAME"
+puts $summary_file "  Top Module:            $TOP_MODULE"
+puts $summary_file "  Technology:            45nm CMOS"
+puts $summary_file "  Analysis Date:         [clock format [clock seconds] -format "%Y-%m-%d %H:%M:%S"]"
+puts $summary_file ""
+puts $summary_file "TIMING ANALYSIS:"
+puts $summary_file "  Current Clock Period:  $current_period ns"
+puts $summary_file "  Timing Status:         $timing_status"
+puts $summary_file "  Worst Slack (WNS):     $slack ns"
+puts $summary_file ""
+puts $summary_file "MAXIMUM FREQUENCY CHARACTERIZATION:"
+puts $summary_file "  Critical Path Delay:   $Tmin_formatted ns"
+puts $summary_file "  Maximum Frequency:     $Fmax_formatted MHz"
+puts $summary_file ""
+puts $summary_file "RECOMMENDED OPERATING POINT (${MARGIN_PERCENT}% margin):"
+puts $summary_file "  Clock Period:          $Tmin_margin_formatted ns"
+puts $summary_file "  Operating Frequency:   $Fmax_margin_formatted MHz"
+puts $summary_file ""
+# Get critical path details
+if {[llength $critical_paths] > 0} {
+    set startpoint [get_attribute $critical_paths startpoint]
+    set endpoint [get_attribute $critical_paths endpoint]
+    puts $summary_file "CRITICAL PATH:"
+    puts $summary_file "  Startpoint:            [get_object_name $startpoint]"
+    puts $summary_file "  Endpoint:              [get_object_name $endpoint]"
+    puts $summary_file ""
+}
+puts $summary_file ""
+puts $summary_file "PROCESS CORNER:"
+puts $summary_file "  Scenario:              $SCENARIO_NAME"
+puts $summary_file "  Corner:                Cmax (Worst Case)"
+puts $summary_file ""
+puts $summary_file "================================================================================"
+puts $summary_file "For detailed timing analysis, see:"
+puts $summary_file "  - report_timing_critical_path.txt (Critical path breakdown)"
+puts $summary_file "  - report_timing_top10_paths.txt (Top 10 critical paths)"
+puts $summary_file "  - report_timing_detailed.txt (Full timing details with nets)"
+puts $summary_file "================================================================================"
+close $summary_file
+# Also create a simple CSV for easy import
+set csv_file [open "$TEMP_RESULTS_DIR/timing_metrics.csv" w]
+file27
+puts $csv_file "Metric,Value,Unit"
+puts $csv_file "Critical_Path_Delay,$Tmin_formatted,ns"
+puts $csv_file "Maximum_Frequency,$Fmax_formatted,MHz"
+puts $csv_file "Recommended_Frequency,$Fmax_margin_formatted,MHz"
+puts $csv_file "Worst_Slack,$slack,ns"
+puts $csv_file "Current_Period,$current_period,ns"
+close $csv_file
+puts "All reports generated in $TEMP_RESULTS_DIR/ directory"
+All reports generated in temp_results_20251109_210139/ directory
+puts ""
+
+puts "KEY RESULT: Maximum Operating Frequency = $Fmax_formatted MHz"
+KEY RESULT: Maximum Operating Frequency = 0.88 MHz
+puts "RECOMMENDED: Use $Fmax_margin_formatted MHz (with ${MARGIN_PERCENT}% margin)"
+RECOMMENDED: Use 0.86 MHz (with 2.0% margin)
+puts ""
+
+puts "========== RTL Analysis and Synthesis Complete =========="
+========== RTL Analysis and Synthesis Complete ==========
+exit
+Maximum memory usage for this session: 6086.94 MB
+CPU usage for this session:   1681 seconds (  0.47 hours)
+Elapsed time for this session:   1163 seconds (  0.32 hours)
+Thank you for using RTL Architect.
+
