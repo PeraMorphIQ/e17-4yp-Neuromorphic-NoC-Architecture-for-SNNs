@@ -179,40 +179,40 @@ if {$current_period == "" || $current_period == 0} {
     exit 1
 }
 
-# Tmin = Current_Period - Slack (if slack is negative, this adds the violation)
-# If slack is positive, Tmin = Data_Arrival_Time (critical path delay)
-if {$slack >= 0} {
-    # Timing is met - use actual critical path delay
-    set Tmin $data_arrival
-    set timing_status "MET"
-} else {
-    # Timing violated - need to increase period
-    set Tmin [expr {$current_period - $slack}]
-    set timing_status "VIOLATED"
-}
+# # Tmin = Current_Period - Slack (if slack is negative, this adds the violation)
+# # If slack is positive, Tmin = Data_Arrival_Time (critical path delay)
+# if {$slack >= 0} {
+#     # Timing is met - use actual critical path delay
+#     set Tmin $data_arrival
+#     set timing_status "MET"
+# } else {
+#     # Timing violated - need to increase period
+#     set Tmin [expr {$current_period - $slack}]
+#     set timing_status "VIOLATED"
+# }
 
-# Sanity check on calculated values
-if {$Tmin <= 0} {
-    puts "ERROR: Invalid critical path delay calculated: $Tmin ns"
-    puts "Current period: $current_period ns"
-    puts "Slack: $slack ns"
-    exit 1
-}
+# # Sanity check on calculated values
+# if {$Tmin <= 0} {
+#     puts "ERROR: Invalid critical path delay calculated: $Tmin ns"
+#     puts "Current period: $current_period ns"
+#     puts "Slack: $slack ns"
+#     exit 1
+# }
 
-# Add safety margin (typically 2-5% for publication)
-set MARGIN_PERCENT 2.0
-set Tmin_with_margin [expr {$Tmin * (1.0 + $MARGIN_PERCENT/100.0)}]
+# # Add safety margin (typically 2-5% for publication)
+# set MARGIN_PERCENT 2.0
+# set Tmin_with_margin [expr {$Tmin * (1.0 + $MARGIN_PERCENT/100.0)}]
 
-# Calculate frequencies (convert from ns to Hz, then to MHz)
-# Fmax in MHz: 1/ns = 1000 MHz
-set Fmax [expr {1000.0 / $Tmin}]
-set Fmax_with_margin [expr {1000.0 / $Tmin_with_margin}]
+# # Calculate frequencies (convert from ns to Hz, then to MHz)
+# # Fmax in MHz: 1/ns = 1000 MHz
+# set Fmax [expr {1000.0 / $Tmin}]
+# set Fmax_with_margin [expr {1000.0 / $Tmin_with_margin}]
 
-# Format results
-set Fmax_formatted [format "%.2f" $Fmax]
-set Fmax_margin_formatted [format "%.2f" $Fmax_with_margin]
-set Tmin_formatted [format "%.4f" $Tmin]
-set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
+# # Format results
+# set Fmax_formatted [format "%.2f" $Fmax]
+# set Fmax_margin_formatted [format "%.2f" $Fmax_with_margin]
+# set Tmin_formatted [format "%.4f" $Tmin]
+# set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
 
 puts "================================================"
 puts "MAXIMUM FREQUENCY CHARACTERIZATION RESULTS"
