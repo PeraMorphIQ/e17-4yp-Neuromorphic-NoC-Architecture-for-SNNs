@@ -17,7 +17,7 @@ source config.tcl
 # -----------------------------------------------------------------------------
 puts "========== Starting Power Analysis and Metrics =========="
 puts "Technology: 45nm CMOS"
-puts "Design: System Top with CPUs - 2x2 Mesh NoC with 4× RV32IMF CPUs (12/14 TESTS PASSING)"
+puts "Design: Blackbox Neuromorphic Accelerator"
 
 # Enable power analysis features
 set_app_var power_enable_rtl_analysis true
@@ -88,16 +88,6 @@ report_rtl_metrics -view hier \
 report_rtl_metrics -view register \
     -reg_attributes {dynamic_power switching_power leakage_power total_power register_gated root_clk_name} \
     > "$TEMP_RESULTS_DIR/rtl_metrics_register.txt"
-
-# -----------------------------------------------------------------------------
-# Power Analysis Verification
-# -----------------------------------------------------------------------------
-puts "========== Performing Power Analysis Checks =========="
-# check_rtl_power > "$TEMP_RESULTS_DIR/check_rtl_power.txt"
-
-# Additional analysis reports for 45nm CMOS
-report_switching_activity > "$TEMP_RESULTS_DIR/switching_activity.txt"
-report_clock_gating > "$TEMP_RESULTS_DIR/clock_gating.txt"
 
 puts "========== Power Analysis and Metrics Complete =========="
 puts "All reports generated in: $TEMP_RESULTS_DIR"

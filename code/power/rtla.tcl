@@ -1,11 +1,9 @@
 #!/bin/tcsh -f
 # =============================================================================
-# System Top with RISC-V CPUs RTL Analysis and Synthesis Script for 45nm CMOS
+# Blackbox Design RTL Analysis and Synthesis Script for 45nm CMOS
 # =============================================================================
 # Description: This script performs RTL analysis, synthesis, and power 
-#              analysis for the complete System Top design with integrated
-#              RV32IMF RISC-V processors (2x2 Mesh NoC with CPUs and Neuron Banks)
-#              using 45nm CMOS technology
+#              analysis for the Blackbox design using 45nm CMOS technology
 # Author: Neuromorphic Accelerator Team
 # Technology: 45nm CMOS Process
 # =============================================================================
@@ -18,7 +16,7 @@ source config.tcl
 # -----------------------------------------------------------------------------
 puts "========== Starting RTL Analysis and Synthesis =========="
 puts "Technology: 45nm CMOS"
-puts "Design: System Top with RISC-V CPUs - 2x2 Mesh NoC (4× RV32IMF + Neuron Banks)"
+puts "Design: Blackbox Neuromorphic Accelerator"
 
 # Configure mismatch handling
 set_current_mismatch_config auto_fix
@@ -101,10 +99,6 @@ puts "=============================================="
 # RTL Optimization
 # -----------------------------------------------------------------------------
 puts "========== Starting RTL Optimization =========="
-# Full RTL optimization for accurate power and timing analysis
-# Options:
-#   -initial_map_only: Quick mapping only (for debug/fast iteration)
-#   rtl_opt: Full optimization (for final results/power analysis)
 rtl_opt -initial_map_only
 puts "RTL optimization completed"
 
@@ -122,45 +116,15 @@ puts "========== Setting up Power Analysis =========="
 file mkdir $TEMP_RESULTS_DIR
 
 # Configure RTL power analysis
-# Try the requested scenario first; if it fails, retry without scenario, else skip export
-set skip_power_export 0
-if {[catch {
-    set_rtl_power_analysis_options \
-        -scenario $SCENARIO_NAME \
-        -design $DESIGN_NAME \
-        -strip_path $STRIP_PATH \
-        -fsdb $FSDB_FILE \
-        -output_dir $OUTPUT_DIR
-} err_msg]} {
-    puts "WARNING: Failed to set RTL power analysis options with scenario '$SCENARIO_NAME': $err_msg"
-    puts "Retrying set_rtl_power_analysis_options without -scenario..."
-    if {[catch {
-        set_rtl_power_analysis_options \
-            -design $DESIGN_NAME \
-            -strip_path $STRIP_PATH \
-            -fsdb $FSDB_FILE \
-            -output_dir $OUTPUT_DIR
-    } err_msg2]} {
-        puts "WARNING: Failed to set RTL power analysis options without scenario: $err_msg2"
-        puts "Skipping power data export and continuing with timing analysis."
-        set skip_power_export 1
-    } else {
-        puts "set_rtl_power_analysis_options succeeded without scenario."
-    }
-} else {
-    puts "set_rtl_power_analysis_options succeeded with scenario '$SCENARIO_NAME'."
-}
+set_rtl_power_analysis_options \
+    -scenario $SCENARIO_NAME \
+    -design $DESIGN_NAME \
+    -strip_path $STRIP_PATH \
+    -fsdb $FSDB_FILE \
+    -output_dir $OUTPUT_DIR
 
-if {$skip_power_export == 0} {
-    if {[catch { export_power_data } exp_err]} {
-        puts "WARNING: export_power_data failed: $exp_err"
-        puts "Continuing without exported power data."
-    } else {
-        puts "Power analysis data exported"
-    }
-} else {
-    puts "Power export skipped earlier due to configuration failure."
-}
+export_power_data
+puts "Power analysis data exported"
 
 # -----------------------------------------------------------------------------
 # Maximum Frequency Characterization
@@ -179,7 +143,6 @@ if {[llength $all_clocks] == 0} {
 }
 
 # Get the first clock (or find specific clock pattern)
-# Important: lindex returns a single element, not a collection
 set current_clk [lindex $all_clocks 0]
 set clock_name [get_object_name $current_clk]
 puts "Found clock: $clock_name"
@@ -188,118 +151,67 @@ puts "Found clock: $clock_name"
 if {[llength $all_clocks] > 1} {
     puts "Multiple clocks found in design:"
     foreach clk $all_clocks {
-        set clk_name [get_object_name $clk]
-        set clk_period [get_attribute $clk period]
-        puts "  - $clk_name (period: $clk_period ns)"
+        puts "  - [get_object_name $clk]"
     }
-    puts "Using first clock: $clock_name for frequency analysis"
+    puts "Using first clock: $clock_name for analysis"
 }
 
-# Get period for the single selected clock
 set current_period [get_attribute $current_clk period]
 puts "Current clock period: $current_period ns"
 
-# Validate that current_period is a single numeric value
-if {[catch {expr {double($current_period)}} current_period_num]} {
-    puts "WARNING: Clock period is not a single numeric value: '$current_period'"
-    # Try to extract first number
-    if {[catch {scan $current_period "%f" current_period_num}]} {
-        puts "ERROR: Unable to parse clock period"
-        exit 1
-    }
-    set current_period $current_period_num
-    puts "Using first clock period value: $current_period ns"
-}
-
-# Get worst negative slack (WNS) and critical path information for the selected clock
-set critical_paths [get_timing_paths -delay_type max -max_paths 1 -through [get_clocks $clock_name]]
+# Get worst negative slack (WNS) and critical path information
+set critical_paths [get_timing_paths -delay_type max -max_paths 1]
 if {[llength $critical_paths] == 0} {
-    puts "WARNING: No timing paths found for clock $clock_name, trying all paths"
-    set critical_paths [get_timing_paths -delay_type max -max_paths 1]
-}
-
-if {[llength $critical_paths] == 0} {
-    puts "WARNING: No timing paths found at all"
+    puts "WARNING: No timing paths found"
     set slack 0.0
     set data_arrival 0.0
 } else {
-    set slack_raw [get_attribute $critical_paths slack]
-    set data_arrival_raw [get_attribute $critical_paths arrival]
-    
-    # Extract numeric value from the string (handles cases like "5.23 ns" or other formats)
-    if {[catch {scan $slack_raw "%f" slack}]} {
-        puts "WARNING: Could not parse slack value: '$slack_raw', defaulting to 0.0"
-        set slack 0.0
-    }
-    if {[catch {scan $data_arrival_raw "%f" data_arrival}]} {
-        puts "WARNING: Could not parse data_arrival value: '$data_arrival_raw', defaulting to current_period"
-        set data_arrival $current_period
-    }
+    set slack [get_attribute $critical_paths slack]
+    set data_arrival [get_attribute $critical_paths arrival]
 }
-
-# Ensure numeric values are properly formatted
-set slack [expr {double($slack)}]
-set data_arrival [expr {double($data_arrival)}]
 
 puts "Current WNS (Worst Negative Slack): $slack ns"
-puts "Data Arrival Time: $data_arrival ns"
 
 # Calculate minimum period and maximum frequency
-# Wrap in try-catch to handle any timing extraction errors gracefully
-if {[catch {
-    # Validate that we have the necessary data
-    if {$current_period == "" || $current_period == 0} {
-        error "Invalid clock period retrieved"
-    }
-
-    # Tmin = Current_Period - Slack (if slack is negative, this adds the violation)
-    # If slack is positive, Tmin = Data_Arrival_Time (critical path delay)
-    if {$slack >= 0} {
-        # Timing is met - use actual critical path delay
-        set Tmin $data_arrival
-        set timing_status "MET"
-    } else {
-        # Timing violated - need to increase period
-        set Tmin [expr {$current_period - $slack}]
-        set timing_status "VIOLATED"
-    }
-
-    # Sanity check on calculated values
-    if {$Tmin <= 0} {
-        error "Invalid critical path delay calculated: $Tmin ns"
-    }
-
-    # Add safety margin (typically 2-5% for publication)
-    set MARGIN_PERCENT 2.0
-    set Tmin_with_margin [expr {$Tmin * (1.0 + $MARGIN_PERCENT/100.0)}]
-
-    # Calculate frequencies (convert from ns to Hz, then to MHz)
-    # Fmax in MHz: 1/ns = 1000 MHz
-    set Fmax [expr {1000.0 / $Tmin}]
-    set Fmax_with_margin [expr {1000.0 / $Tmin_with_margin}]
-
-    # Format results
-    set Fmax_formatted [format "%.2f" $Fmax]
-    set Fmax_margin_formatted [format "%.2f" $Fmax_with_margin]
-    set Tmin_formatted [format "%.4f" $Tmin]
-    set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
-    
-} timing_error]} {
-    # Frequency calculation failed - use defaults and continue
-    puts "WARNING: Frequency characterization failed: $timing_error"
-    puts "Using default timing values to continue..."
-    set Tmin $current_period
-    set Tmin_with_margin $current_period
-    set Fmax [expr {1000.0 / $current_period}]
-    set Fmax_with_margin $Fmax
-    set Fmax_formatted [format "%.2f" $Fmax]
-    set Fmax_margin_formatted [format "%.2f" $Fmax_with_margin]
-    set Tmin_formatted [format "%.4f" $Tmin]
-    set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
-    set timing_status "UNKNOWN"
-    set slack "N/A"
+# Validate that we have the necessary data
+if {$current_period == "" || $current_period == 0} {
+    puts "ERROR: Invalid clock period retrieved"
+    exit 1
 }
 
+# Tmin = Current_Period - Slack (if slack is negative, this adds the violation)
+# If slack is positive, Tmin = Data_Arrival_Time (critical path delay)
+if {$slack >= 0} {
+    # Timing is met - use actual critical path delay
+    set Tmin $data_arrival
+    set timing_status "MET"
+} else {
+    # Timing violated - need to increase period
+    set Tmin [expr {$current_period - $slack}]
+    set timing_status "VIOLATED"
+}
+
+# Sanity check on calculated values
+if {$Tmin <= 0} {
+    puts "ERROR: Invalid critical path delay calculated: $Tmin ns"
+    puts "Current period: $current_period ns"
+    puts "Slack: $slack ns"
+    exit 1
+}
+
+# Add safety margin (typically 2-5% for publication)
+set MARGIN_PERCENT 2.0
+set Tmin_with_margin [expr {$Tmin * (1.0 + $MARGIN_PERCENT/100.0)}]
+
+# Calculate frequencies (convert from ns to Hz, then to MHz)
+# Fmax in MHz: 1/ns = 1000 MHz
+set Fmax [expr {1000.0 / $Tmin}]
+set Fmax_with_margin [expr {1000.0 / $Tmin_with_margin}]
+
+# Format results
+set Fmax_formatted [format "%.2f" $Fmax]
+set Fmax_margin_formatted [format "%.2f" $Fmax_with_margin]
+set Tmin_formatted [format "%.4f" $Tmin]
 set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
 
 puts "================================================"
@@ -357,7 +269,7 @@ puts "========== Generating Publication Summary =========="
 set summary_file [open "$TEMP_RESULTS_DIR/publication_summary.txt" w]
 
 puts $summary_file "================================================================================"
-puts $summary_file "System Top with RV32IMF CPUs - 45nm CMOS - Performance Characterization"
+puts $summary_file "Blackbox Neuromorphic Accelerator - 45nm CMOS - Performance Characterization"
 puts $summary_file "================================================================================"
 puts $summary_file ""
 puts $summary_file "DESIGN INFORMATION:"
