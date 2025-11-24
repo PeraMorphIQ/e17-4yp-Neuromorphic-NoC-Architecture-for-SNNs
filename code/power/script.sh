@@ -227,7 +227,7 @@ Synopsys Tools: $(which rtl_shell 2>/dev/null || echo "rtl_shell not found")
 # -------------------
 System Top Directory Exists: $([ -d "$RTL_SYSTEM_TOP_PATH" ] && echo "Yes" || echo "No")
 Config File Exists: $([ -f "config.tcl" ] && echo "Yes" || echo "No")
-RTLA Script Exists: $([ -f "rtla.tcl" ] && echo "Yes" || echo "No")
+RTLA Script Exists: $([ -f "rtla_new.tcl" ] && echo "Yes" || echo "No")
 Restore Script Exists: $([ -f "restore_new.tcl" ] && echo "Yes" || echo "No")
 System Top with CPU Source Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/system_top_with_cpu.v" ] && echo "Yes" || echo "No")
 System Top with CPU Testbench Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/system_top_with_cpu_tb.v" ] && echo "Yes" || echo "No")
@@ -362,7 +362,7 @@ if [ "$RUN_RTLA" = true ]; then
     fi
     
     echo "Running with proper PrimeTime shell command..."
-    rtl_shell -f rtla.tcl | tee "$TEMP_RESULTS_DIR/rtl_synthesis.log"
+    rtl_shell -f rtla_new.tcl | tee "$TEMP_RESULTS_DIR/rtl_synthesis.log"
     if [ $? -eq 0 ]; then
         echo "RTL synthesis completed successfully"
     else
