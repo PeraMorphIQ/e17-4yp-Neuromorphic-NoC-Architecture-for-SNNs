@@ -353,6 +353,8 @@ if [ "$RUN_RTLA" = true ]; then
     
     # Check and optionally remove existing library directory
     LIB_DIR="LIB"
+    WORKSPACE_DIR="RTLA_WORKSPACE"
+    
     if [ "$USE_RESTORE" = true ]; then
         echo "Using restore mode - skipping fresh synthesis"
         echo "Will restore from saved design in restore_and_analyze.tcl"
@@ -361,6 +363,12 @@ if [ "$RUN_RTLA" = true ]; then
             echo "Library directory '$LIB_DIR' already exists."
             echo "Removing existing library directory before synthesis to avoid errors..."
             rm -rf "$LIB_DIR"
+        fi
+        
+        if [ -d "$WORKSPACE_DIR" ]; then
+            echo "Workspace directory '$WORKSPACE_DIR' already exists."
+            echo "Removing existing workspace directory before synthesis to avoid errors..."
+            rm -rf "$WORKSPACE_DIR"
         fi
         
         echo "Running with proper PrimeTime shell command..."
