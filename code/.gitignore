@@ -93,3 +93,11 @@ combined.v
 **/simulation.log
 
 .venv/
+
+*.vcd
+*.fsdb
+*.syn*
+*.attach
+work/
+csrc/
+simv*
