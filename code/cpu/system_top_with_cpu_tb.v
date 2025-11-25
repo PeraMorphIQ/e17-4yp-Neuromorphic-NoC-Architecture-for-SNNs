@@ -73,7 +73,7 @@ module system_top_with_cpu_tb;
         .NUM_NEURONS_PER_BANK(NUM_NEURONS_PER_BANK)
     ) dut (
         .cpu_clk(cpu_clk),
-        .net_clk(net_clk),
+        .net_clk(cpu_clk),
         .rst_n(rst_n),
         .prog_load_enable(prog_load_enable),
         .prog_load_addr(prog_load_addr),
