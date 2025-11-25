@@ -321,7 +321,7 @@ if [ "$RUN_VCS" = true ]; then
     echo "========== STEP 1: VCS Compile (System Top with CPU) =========="
     if [ -d "$RTL_CPU_PATH" ]; then
         pushd "$RTL_CPU_PATH" > /dev/null
-        vcs -sverilog -full64 -kdb -debug_access+all  system_top_with_cpu_tb.v +vcs+fsdbon -o simv | tee "../power/$TEMP_RESULTS_DIR/vcs_compile.log"
+        vcs -sverilog -full64 -kdb -debug_access+all -f ../power/system_top_with_cpu_tb_src.f system_top_with_cpu_tb.v +vcs+fsdbon -o simv | tee "../power/$TEMP_RESULTS_DIR/vcs_compile.log"
         echo "VCS compilation completed successfully"
         popd > /dev/null
     else

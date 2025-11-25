@@ -47,7 +47,7 @@ set SEARCH_PATHS "* ./ ${LIBS_PATH}/NangateOpenCellLibrary.ndm"
 # set FILELIST "system_top_src.f"                  # NoC with neuron banks (WORKING - ALL TESTS PASS)
 
 # Complete design with RV32IMF CPUs (12/14 tests passing - 85%)
-set FILELIST "system_top_src.f"
+set FILELIST "system_top_with_cpu_src.f"
 
 # Power analysis inputs
 set FSDB_FILE  "../cpu/novas.fsdb"
