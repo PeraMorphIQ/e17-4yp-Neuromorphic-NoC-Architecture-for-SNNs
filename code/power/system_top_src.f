@@ -38,7 +38,7 @@
 ../cpu/fpu/Comparison.v
 ../cpu/fpu/Converter.v
 ../cpu/fpu/Iteration.v
-../cpu/fpu/Priority Encoder.v
+"../cpu/fpu/Priority Encoder.v"
 
 # =============================================================================
 # Instruction Memory

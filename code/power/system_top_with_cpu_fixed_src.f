@@ -11,7 +11,7 @@
 # =============================================================================
 # FPU Components (IEEE 754) - WITH INCLUDE GUARDS
 # =============================================================================
-../cpu/fpu/Priority Encoder.v
+"../cpu/fpu/Priority Encoder.v"
 ../cpu/fpu/Addition-Subtraction.v
 ../cpu/fpu/Multiplication.v
 ../cpu/fpu/Division.v
