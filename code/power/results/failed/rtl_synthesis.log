@@ -1,4 +1,6 @@
- 
+
+
+
                                RTL Architect (TM)
 
                Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
@@ -19,16 +21,16 @@
  Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
-
+ 
 # Load shared configuration
 source config.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: results/temp_results_20251125_194459
+Using environment TEMP_RESULTS_DIR: results/temp_results_20251125_191807
 Configuration loaded successfully
   Design: system_top_with_cpu
   Technology: 45nm CMOS
   Cores: 8
-  Results directory: results/temp_results_20251125_194459
+  Results directory: results/temp_results_20251125_191807
 set_current_mismatch_config auto_fix
 1
 set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
@@ -240,7 +242,7 @@ Opening include file ../cpu/fpu/Addition-Subtraction.v
 Opening include file ../cpu/fpu/Multiplication.v
 Opening include file ../cpu/neuron_bank/neuron_bank_no_includes.v
 Presto compilation completed successfully.
-Elapsed = 00:00:00.09, CPU = 00:00:00.08
+Elapsed = 00:00:00.09, CPU = 00:00:00.07
 1
 elaborate $DESIGN_NAME
 Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
@@ -381,8 +383,8 @@ Warning:  ../cpu/system_top_with_cpu.v:222: Net ew_valid[0][1] or a directly con
   state register: gen_y[1].gen_x[1].spike_status
 
 Inferred memory devices in process
-        in routine system_top_with_cpu line 412 in file
-                '../cpu/system_top_with_cpu.v'.
+	in routine system_top_with_cpu line 412 in file
+		'../cpu/system_top_with_cpu.v'.
 ============================================================================================
 |          Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ============================================================================================
@@ -393,8 +395,8 @@ Inferred memory devices in process
 ============================================================================================
 
 Inferred memory devices in process
-        in routine system_top_with_cpu line 460 in file
-                '../cpu/system_top_with_cpu.v'.
+	in routine system_top_with_cpu line 460 in file
+		'../cpu/system_top_with_cpu.v'.
 ===================================================================================================
 |              Register Name              |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===================================================================================================
@@ -405,8 +407,8 @@ Inferred memory devices in process
 ===================================================================================================
 
 Inferred memory devices in process
-        in routine system_top_with_cpu line 514 in file
-                '../cpu/system_top_with_cpu.v'.
+	in routine system_top_with_cpu line 514 in file
+		'../cpu/system_top_with_cpu.v'.
 ==============================================================================================
 |           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ==============================================================================================
@@ -416,13 +418,13 @@ Inferred memory devices in process
 | gen_y[1].gen_x[1].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ==============================================================================================
 Presto compilation completed successfully. (system_top_with_cpu)
-Module: system_top_with_cpu, Elapsed Time: 00:00:12, CPU Time: 00:00:13, Total Mem: 993.08 MB, Mem: 597.90 MB, Time: Tue Nov 25 19:45:30 2025
+Module: system_top_with_cpu, Elapsed Time: 00:00:12, CPU Time: 00:00:12, Total Mem: 993.21 MB, Mem: 597.90 MB, Time: Tue Nov 25 19:18:37 2025
 Information: Elaborating HDL template WORK:router instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0,VC_DEPTH=4}. (ELAB-193)
 Presto compilation completed successfully. (router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4)
 Information: Elaborating HDL template WORK:network_interface instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,NEURON_ADDR_WIDTH=12,FIFO_DEPTH=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 111 in file
-        '../cpu/noc/network_interface_no_includes.v'
+	'../cpu/noc/network_interface_no_includes.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -430,7 +432,7 @@ Statistics for case statements in always block at line 111 in file
 ===============================================
 
 Statistics for case statements in always block at line 169 in file
-        '../cpu/noc/network_interface_no_includes.v'
+	'../cpu/noc/network_interface_no_includes.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -439,8 +441,8 @@ Statistics for case statements in always block at line 169 in file
   state register: wr_state
 
 Inferred memory devices in process
-        in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 111 in file
-                '../cpu/noc/network_interface_no_includes.v'.
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 111 in file
+		'../cpu/noc/network_interface_no_includes.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -452,8 +454,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 169 in file
-                '../cpu/noc/network_interface_no_includes.v'.
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 169 in file
+		'../cpu/noc/network_interface_no_includes.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -465,8 +467,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 227 in file
-                '../cpu/noc/network_interface_no_includes.v'.
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 227 in file
+		'../cpu/noc/network_interface_no_includes.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -476,8 +478,8 @@ Presto compilation completed successfully. (network_interface_ROUTER_ADDR_WIDTH4
 Information: Elaborating HDL template WORK:cpu instantiated from 'system_top_with_cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine cpu line 254 in file
-                '../cpu/cpu/cpu_no_includes.v'.
+	in routine cpu line 254 in file
+		'../cpu/cpu/cpu_no_includes.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -495,7 +497,7 @@ Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:214: signed to unsigned c
 Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:229: unsigned to signed assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 117 in file
-        '../cpu/neuron_bank/neuron_bank_no_includes.v'
+	'../cpu/neuron_bank/neuron_bank_no_includes.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -504,8 +506,8 @@ Statistics for case statements in always block at line 117 in file
 ===============================================
 
 Inferred memory devices in process
-        in routine neuron_bank_NUM_NEURONS4_ADDR_WIDTH8 line 117 in file
-                '../cpu/neuron_bank/neuron_bank_no_includes.v'.
+	in routine neuron_bank_NUM_NEURONS4_ADDR_WIDTH8 line 117 in file
+		'../cpu/neuron_bank/neuron_bank_no_includes.v'.
 =====================================================================================
 |       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =====================================================================================
@@ -535,8 +537,8 @@ Presto compilation completed successfully. (input_module_ROUTER_ADDR_WIDTH4_ROUT
 Information: Elaborating HDL template WORK:output_module instantiated from 'router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {VC_DEPTH=4}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine output_module_VC_DEPTH4 line 187 in file
-                '../cpu/noc/output_module_no_includes.v'.
+	in routine output_module_VC_DEPTH4 line 187 in file
+		'../cpu/noc/output_module_no_includes.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -547,8 +549,8 @@ Presto compilation completed successfully. (output_module_VC_DEPTH4)
 Information: Elaborating HDL template WORK:async_fifo instantiated from 'network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4' with the parameters {DATA_WIDTH=32,ADDR_WIDTH=4}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 65 in file
-                '../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 65 in file
+		'../cpu/noc/async_fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -557,8 +559,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 76 in file
-                '../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 76 in file
+		'../cpu/noc/async_fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -566,8 +568,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 83 in file
-                '../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 83 in file
+		'../cpu/noc/async_fifo.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =================================================================================
@@ -576,8 +578,8 @@ Inferred memory devices in process
 =================================================================================
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 101 in file
-                '../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 101 in file
+		'../cpu/noc/async_fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -586,8 +588,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 115 in file
-                '../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 115 in file
+		'../cpu/noc/async_fifo.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =================================================================================
@@ -602,8 +604,8 @@ Presto compilation completed successfully. (mux_2to1_32bit)
 Information: Elaborating HDL template WORK:pr_if_id instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_if_id line 13 in file
-                '../cpu/pipeline_registers/pr_if_id.v'.
+	in routine pr_if_id line 13 in file
+		'../cpu/pipeline_registers/pr_if_id.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -616,8 +618,8 @@ Presto compilation completed successfully. (control_unit)
 Information: Elaborating HDL template WORK:reg_file instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine reg_file line 19 in file
-                '../cpu/reg_file/reg_file.v'.
+	in routine reg_file line 19 in file
+		'../cpu/reg_file/reg_file.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -627,8 +629,8 @@ Presto compilation completed successfully. (reg_file)
 Information: Elaborating HDL template WORK:f_reg_file instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine f_reg_file line 20 in file
-                '../cpu/f_reg_file/f_reg_file.v'.
+	in routine f_reg_file line 20 in file
+		'../cpu/f_reg_file/f_reg_file.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -638,7 +640,7 @@ Presto compilation completed successfully. (f_reg_file)
 Information: Elaborating HDL template WORK:immediate_generation_unit instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 18 in file
-        '../cpu/immediate_generation_unit/immediate_generation_unit.v'
+	'../cpu/immediate_generation_unit/immediate_generation_unit.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -648,8 +650,8 @@ Presto compilation completed successfully. (immediate_generation_unit)
 Information: Elaborating HDL template WORK:hazard_detection_unit instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine hazard_detection_unit line 22 in file
-                '../cpu/hazard_detection_unit/hazard_detection_unit.v'.
+	in routine hazard_detection_unit line 22 in file
+		'../cpu/hazard_detection_unit/hazard_detection_unit.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -661,8 +663,8 @@ Presto compilation completed successfully. (pipeline_flush_unit)
 Information: Elaborating HDL template WORK:pr_id_ex instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_id_ex line 45 in file
-                '../cpu/pipeline_registers/pr_id_ex.v'.
+	in routine pr_id_ex line 45 in file
+		'../cpu/pipeline_registers/pr_id_ex.v'.
 =============================================================================================
 |           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =============================================================================================
@@ -702,7 +704,7 @@ Warning:  ../cpu/alu/alu.v:94: signed to unsigned assignment occurs. (VER-318)
 Warning:  ../cpu/alu/alu.v:98: signed to unsigned assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 72 in file
-        '../cpu/alu/alu.v'
+	'../cpu/alu/alu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -710,7 +712,7 @@ Statistics for case statements in always block at line 72 in file
 ===============================================
 
 Statistics for case statements in always block at line 102 in file
-        '../cpu/alu/alu.v'
+	'../cpu/alu/alu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -720,7 +722,7 @@ Presto compilation completed successfully. (alu)
 Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 102 in file
-        '../cpu/fpu/fpu_no_includes.v'
+	'../cpu/fpu/fpu_no_includes.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -730,7 +732,7 @@ Presto compilation completed successfully. (fpu)
 Information: Elaborating HDL template WORK:branch_control_unit instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 20 in file
-        '../cpu/branch_control_unit/branch_control_unit.v'
+	'../cpu/branch_control_unit/branch_control_unit.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -742,8 +744,8 @@ Presto compilation completed successfully. (ex_forward_unit)
 Information: Elaborating HDL template WORK:pr_ex_mem instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_ex_mem line 37 in file
-                '../cpu/pipeline_registers/pr_ex_mem.v'.
+	in routine pr_ex_mem line 37 in file
+		'../cpu/pipeline_registers/pr_ex_mem.v'.
 ==============================================================================================
 |           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ==============================================================================================
@@ -766,8 +768,8 @@ Presto compilation completed successfully. (pr_ex_mem)
 Information: Elaborating HDL template WORK:mem_forward_unit instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine mem_forward_unit line 17 in file
-                '../cpu/forwarding_units/mem_forward_unit.v'.
+	in routine mem_forward_unit line 17 in file
+		'../cpu/forwarding_units/mem_forward_unit.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -777,8 +779,8 @@ Presto compilation completed successfully. (mem_forward_unit)
 Information: Elaborating HDL template WORK:pr_mem_wb instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_mem_wb line 31 in file
-                '../cpu/pipeline_registers/pr_mem_wb.v'.
+	in routine pr_mem_wb line 31 in file
+		'../cpu/pipeline_registers/pr_mem_wb.v'.
 =====================================================================================
 |       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =====================================================================================
@@ -796,8 +798,8 @@ Presto compilation completed successfully. (pr_mem_wb)
 Information: Elaborating HDL template WORK:rng instantiated from 'neuron_bank_NUM_NEURONS4_ADDR_WIDTH8'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine rng line 25 in file
-                '../cpu/neuron_bank/rng.v'.
+	in routine rng line 25 in file
+		'../cpu/neuron_bank/rng.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -808,7 +810,7 @@ Presto compilation completed successfully. (rng)
 Information: Elaborating HDL template WORK:neuron_core instantiated from 'neuron_bank_NUM_NEURONS4_ADDR_WIDTH8'. (ELAB-193)
 
 Statistics for case statements in always block at line 60 in file
-        '../cpu/neuron_bank/neuron_core.v'
+	'../cpu/neuron_bank/neuron_core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -816,7 +818,7 @@ Statistics for case statements in always block at line 60 in file
 ===============================================
 
 Statistics for case statements in always block at line 81 in file
-        '../cpu/neuron_bank/neuron_core.v'
+	'../cpu/neuron_bank/neuron_core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -833,8 +835,8 @@ Warning:  ../cpu/neuron_bank/neuron_core.v:222: Statement unreachable (Branch co
   state register: state
 
 Inferred memory devices in process
-        in routine neuron_core line 60 in file
-                '../cpu/neuron_bank/neuron_core.v'.
+	in routine neuron_core line 60 in file
+		'../cpu/neuron_bank/neuron_core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -852,8 +854,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine neuron_core line 81 in file
-                '../cpu/neuron_bank/neuron_core.v'.
+	in routine neuron_core line 81 in file
+		'../cpu/neuron_bank/neuron_core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -878,7 +880,7 @@ Presto compilation completed successfully. (input_router_ROUTER_ADDR_WIDTH4_ROUT
 Information: Elaborating HDL template WORK:virtual_channel instantiated from 'input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {DATA_WIDTH=32,DEPTH=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 61 in file
-        '../cpu/noc/virtual_channel.v'
+	'../cpu/noc/virtual_channel.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -886,8 +888,8 @@ Statistics for case statements in always block at line 61 in file
 ===============================================
 
 Inferred memory devices in process
-        in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 42 in file
-                '../cpu/noc/virtual_channel.v'.
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 42 in file
+		'../cpu/noc/virtual_channel.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -896,8 +898,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 52 in file
-                '../cpu/noc/virtual_channel.v'.
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 52 in file
+		'../cpu/noc/virtual_channel.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -905,8 +907,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 61 in file
-                '../cpu/noc/virtual_channel.v'.
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 61 in file
+		'../cpu/noc/virtual_channel.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -918,8 +920,8 @@ Warning:  ../cpu/noc/rr_arbiter.v:34: signed to unsigned conversion occurs. (VER
 Warning:  ../cpu/noc/rr_arbiter.v:51: signed to unsigned assignment occurs. (VER-318)
 
 Inferred memory devices in process
-        in routine rr_arbiter_NUM_PORTS4 line 44 in file
-                '../cpu/noc/rr_arbiter.v'.
+	in routine rr_arbiter_NUM_PORTS4 line 44 in file
+		'../cpu/noc/rr_arbiter.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -931,8 +933,8 @@ Warning:  ../cpu/noc/rr_arbiter.v:34: signed to unsigned conversion occurs. (VER
 Warning:  ../cpu/noc/rr_arbiter.v:51: signed to unsigned assignment occurs. (VER-318)
 
 Inferred memory devices in process
-        in routine rr_arbiter_NUM_PORTS5 line 44 in file
-                '../cpu/noc/rr_arbiter.v'.
+	in routine rr_arbiter_NUM_PORTS5 line 44 in file
+		'../cpu/noc/rr_arbiter.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -950,8 +952,8 @@ Presto compilation completed successfully. (Division)
 Information: Elaborating HDL template WORK:Comparison instantiated from 'fpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine Comparison line 17 in file
-                '../cpu/fpu/Comparison.v'.
+	in routine Comparison line 17 in file
+		'../cpu/fpu/Comparison.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -961,8 +963,8 @@ Presto compilation completed successfully. (Comparison)
 Information: Elaborating HDL template WORK:Floating_Point_to_Integer instantiated from 'fpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine Floating_Point_to_Integer line 19 in file
-                '../cpu/fpu/Converter.v'.
+	in routine Floating_Point_to_Integer line 19 in file
+		'../cpu/fpu/Converter.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -972,7 +974,7 @@ Presto compilation completed successfully. (Floating_Point_to_Integer)
 Information: Elaborating HDL template WORK:priority_encoder instantiated from 'Addition_Subtraction'. (ELAB-193)
 
 Statistics for case statements in always block at line 22 in file
-        '../cpu/fpu/Priority Encoder.v'
+	'../cpu/fpu/Priority Encoder.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -989,22 +991,22 @@ Total in all modules
   Nets:                 145980
   Instances:            71181
 Design summary end. (FLW-8551)
-Elapsed = 00:00:17.82, CPU = 00:00:17.41
+Elapsed = 00:00:17.08, CPU = 00:00:16.68
 1
 set_top_module $TOP_MODULE
 Information: User units loaded from library 'NangateOpenCellLibrary' (LNK-040)
 Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
 Gensys attachment is created: presto_gensys.attach:LIB:system_top_with_cpu.design 
-Elapsed = 00:00:20.20, CPU = 00:00:20.03
+Elapsed = 00:00:20.17, CPU = 00:00:20.02
 1
 source ./tz_setup.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: results/temp_results_20251125_194459
+Using environment TEMP_RESULTS_DIR: results/temp_results_20251125_191807
 Configuration loaded successfully
   Design: system_top_with_cpu
   Technology: 45nm CMOS
   Cores: 8
-  Results directory: results/temp_results_20251125_194459
+  Results directory: results/temp_results_20251125_191807
 ========== 45nm CMOS Technology Setup ==========
 Configuring synthesis flow options...
 The following clock gating options are applied to: top-level (design)
@@ -1042,7 +1044,7 @@ Clock constraints loaded from ./sdc/clocks_with_cpu.sdc
 Report : scenario
 Design : system_top_with_cpu
 Version: V-2023.12-SP5-3
-Date   : Tue Nov 25 19:46:00 2025
+Date   : Tue Nov 25 19:19:06 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -1056,7 +1058,7 @@ rtl_opt -initial_map_only
 Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
 Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
 Information: Starting 'rtl_opt -from conditioning -to conditioning' (FLW-8000)
-Information: Time: 2025-11-25 19:46:03 / Session:  00:00:53 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1766 MB (FLW-8100)
+Information: Time: 2025-11-25 19:19:09 / Session:  00:00:52 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1764 MB (FLW-8100)
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
 INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
@@ -1064,8 +1066,291 @@ Information: Structural Congestion Optimization technology (Early SCO) has been 
 ****************************************
 Report : report_tbcs
 Version: V-2023.12-SP5-3
-Date   : Tue Nov 25 19:46:03 2025
+Date   : Tue Nov 25 19:19:10 2025
 ****************************************
 INFO: Start environment monitoring: recipes
+Information: Corner Cmin: no PVT mismatches. (PVT-032)
+Information: Corner Cmax: no PVT mismatches. (PVT-032)
+INFO: compile_fusion is running in balanced flow mode.
+INFO: EIO v2 is enabled
+INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / conditioning (FLW-8000)
+Information: Time: 2025-11-25 19:19:59 / Session:  00:01:42 / Command:  00:00:49 / CPU:  00:01:06 / Memory: 2358 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
+Information: Time: 2025-11-25 19:19:59 / Session:  00:01:42 / Command:  00:00:49 / CPU:  00:01:06 / Memory: 2358 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
+Information: Time: 2025-11-25 19:20:02 / Session:  00:01:45 / Command:  00:00:52 / CPU:  00:01:09 / Memory: 2358 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / MV Cell Insertion (FLW-8000)
+Information: Time: 2025-11-25 19:20:02 / Session:  00:01:45 / Command:  00:00:52 / CPU:  00:01:09 / Memory: 2358 MB (FLW-8100)
+MV related app options set by user:
+Information: Ending   rtl_opt / conditioning / MV Cell Insertion (FLW-8001)
+Information: Time: 2025-11-25 19:20:02 / Session:  00:01:45 / Command:  00:00:52 / CPU:  00:01:09 / Memory: 2358 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8000)
+Information: Time: 2025-11-25 19:20:02 / Session:  00:01:45 / Command:  00:00:52 / CPU:  00:01:09 / Memory: 2358 MB (FLW-8100)
+Information: The register gen_y[0].gen_x[0].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[1].gen_x[1].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[1].gen_x[0].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[0].gen_x[1].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[0].gen_x[0].ni_inst/axi_rresp_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[1].gen_x[1].ni_inst/axi_rresp_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[1].gen_x[0].ni_inst/axi_rresp_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[0].gen_x[1].ni_inst/axi_rresp_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[0].gen_x[0].ni_inst/rd_state_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[1].gen_x[1].ni_inst/rd_state_reg[0] is removed as constant '0'. (SQM-4100)
+Information: The register gen_y[0].gen_x[1].spike_status_reg[2] is removed because it is merged to register gen_y[0].gen_x[1].spike_status_reg[3]. (SQM-4102)
+Information: The register gen_y[0].gen_x[1].spike_status_reg[1] is removed because it is merged to register gen_y[0].gen_x[1].spike_status_reg[3]. (SQM-4102)
+Information: The register gen_y[0].gen_x[1].spike_status_reg[0] is removed because it is merged to register gen_y[0].gen_x[1].spike_status_reg[3]. (SQM-4102)
+Information: The register gen_y[0].gen_x[0].spike_status_reg[2] is removed because it is merged to register gen_y[0].gen_x[0].spike_status_reg[3]. (SQM-4102)
+Information: The register gen_y[0].gen_x[0].spike_status_reg[1] is removed because it is merged to register gen_y[0].gen_x[0].spike_status_reg[3]. (SQM-4102)
+Information: The register gen_y[0].gen_x[0].spike_status_reg[0] is removed because it is merged to register gen_y[0].gen_x[0].spike_status_reg[3]. (SQM-4102)
+Information: The register gen_y[0].gen_x[0].ni_inst/write_fifo/rd_ptr_bin_reg[4] is removed because it is merged to register gen_y[0].gen_x[0].ni_inst/write_fifo/rd_ptr_gray_reg[4]. (SQM-4102)
+Information: The register gen_y[1].gen_x[1].ni_inst/read_fifo/rd_ptr_bin_reg[4] is removed because it is merged to register gen_y[1].gen_x[1].ni_inst/read_fifo/rd_ptr_gray_reg[4]. (SQM-4102)
+Information: The register gen_y[1].gen_x[1].ni_inst/write_fifo/rd_ptr_bin_reg[4] is removed because it is merged to register gen_y[1].gen_x[1].ni_inst/write_fifo/rd_ptr_gray_reg[4]. (SQM-4102)
+Information: The register gen_y[1].gen_x[0].ni_inst/read_fifo/rd_ptr_bin_reg[4] is removed because it is merged to register gen_y[1].gen_x[0].ni_inst/read_fifo/rd_ptr_gray_reg[4]. (SQM-4102)
+Information: 148 registers were removed as constant. Use report_transformed_registers for a list. (SQM-3100)
+Information: 22854 registers were found constant but could not be removed due to restrictions. (SQM-3103)
+Information: Register Bits Before Sharing = 87312, After Sharing = 87284, Savings = 28 (SQM-2000)
+Information: 28 registers were merged. Use report_transformed_registers for a list. (SQM-4106)
+Information: 138 out of 148 SQM-4100 messages were not printed due to limit 10 (after 'rtl_opt' at rtla_new.tcl:17) (MSG-3913)
+Information: 18 out of 28 SQM-4102 messages were not printed due to limit 10 (after 'rtl_opt' at rtla_new.tcl:17) (MSG-3913)
+Information: Ending   rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8001)
+Information: Time: 2025-11-25 19:21:53 / Session:  00:03:36 / Command:  00:02:43 / CPU:  00:03:08 / Memory: 2433 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Register Merging (FLW-8000)
+Information: Time: 2025-11-25 19:21:53 / Session:  00:03:36 / Command:  00:02:43 / CPU:  00:03:08 / Memory: 2433 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Register Merging (FLW-8001)
+Information: Time: 2025-11-25 19:21:53 / Session:  00:03:36 / Command:  00:02:43 / CPU:  00:03:08 / Memory: 2433 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8000)
+Information: Time: 2025-11-25 19:21:53 / Session:  00:03:36 / Command:  00:02:43 / CPU:  00:03:08 / Memory: 2433 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8001)
+Information: Time: 2025-11-25 19:21:57 / Session:  00:03:40 / Command:  00:02:47 / CPU:  00:03:19 / Memory: 2433 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8000)
+Information: Time: 2025-11-25 19:22:04 / Session:  00:03:47 / Command:  00:02:54 / CPU:  00:03:27 / Memory: 2433 MB (FLW-8100)
+Information: For the module "system_top_with_cpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 237368 mux gate(s) with total area 415742.47. (MUX-1021)
+Information: For the module "f_reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3073 mux gate(s) with total area 5465.54. (MUX-1021)
+Information: For the module "reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 2147 mux gate(s) with total area 3815.79. (MUX-1021)
+Information: For the module "neuron_bank_NUM_NEURONS4_ADDR_WIDTH8", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1329 mux gate(s) with total area 2322.40. (MUX-1021)
+Information: For the module "neuron_core", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1745 mux gate(s) with total area 3037.07. (MUX-1021)
+Information: For the module "async_fifo_DATA_WIDTH32_ADDR_WIDTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 498 mux gate(s) with total area 884.67. (MUX-1021)
+Information: For the module "pr_id_ex", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 298 mux gate(s) with total area 500.92. (MUX-1021)
+Information: For the module "alu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 776 mux gate(s) with total area 1375.43. (MUX-1021)
+Information: For the module "pr_ex_mem", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 198 mux gate(s) with total area 334.45. (MUX-1021)
+Information: For the module "pr_mem_wb", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 147 mux gate(s) with total area 250.08. (MUX-1021)
+Information: For the module "virtual_channel_DATA_WIDTH32_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 110 mux gate(s) with total area 194.42. (MUX-1021)
+Information: For the module "Floating_Point_to_Integer", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 145 mux gate(s) with total area 245.25. (MUX-1021)
+Information: For the module "control_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 31 mux gate(s) with total area 50.07. (MUX-1021)
+Information: For the module "fpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1231 mux gate(s) with total area 2181.09. (MUX-1021)
+Information: For the module "Addition_Subtraction", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 239 mux gate(s) with total area 422.64. (MUX-1021)
+Information: For the module "pr_if_id", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 68 mux gate(s) with total area 117.16. (MUX-1021)
+Information: For the module "cpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 37 mux gate(s) with total area 62.01. (MUX-1021)
+Information: For the module "rr_arbiter_NUM_PORTS5", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 207 mux gate(s) with total area 339.03. (MUX-1021)
+Information: For the module "network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 63 mux gate(s) with total area 99.37. (MUX-1021)
+Information: For the module "output_module_VC_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 132 mux gate(s) with total area 234.83. (MUX-1021)
+Information: For the module "rng", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 33 mux gate(s) with total area 58.71. (MUX-1021)
+Information: For the module "Multiplication", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 166.97. (MUX-1021)
+Information: For the module "rr_arbiter_NUM_PORTS4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 156.81. (MUX-1021)
+Information: For the module "branch_control_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 8 mux gate(s) with total area 12.96. (MUX-1021)
+Information: For the module "Comparison", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 29 mux gate(s) with total area 38.88. (MUX-1021)
+Information: For the module "immediate_generation_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 98 mux gate(s) with total area 170.53. (MUX-1021)
+Information: For the module "input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 11 mux gate(s) with total area 15.76. (MUX-1021)
+Information: For the module "mux_4to1_32bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 170.78. (MUX-1021)
+Information: For the module "hazard_detection_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 10 mux gate(s) with total area 15.25. (MUX-1021)
+Information: For the module "ex_forward_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 16 mux gate(s) with total area 24.65. (MUX-1021)
+Information: For the module "input_router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 15 mux gate(s) with total area 21.60. (MUX-1021)
+Information: For the module "mux_2to1_32bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 32 mux gate(s) with total area 56.93. (MUX-1021)
+Information: For the module "mem_forward_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1 mux gate(s) with total area 1.78. (MUX-1021)
+Information: For the module "mux_2to1_3bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3 mux gate(s) with total area 5.34. (MUX-1021)
+Information: Timer using 8 threads
+Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8001)
+Information: Time: 2025-11-25 19:30:32 / Session:  00:12:15 / Command:  00:11:22 / CPU:  00:12:42 / Memory: 3008 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8000)
+Information: Time: 2025-11-25 19:30:32 / Session:  00:12:15 / Command:  00:11:22 / CPU:  00:12:42 / Memory: 3008 MB (FLW-8100)
+Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
+Information: 3 register's output was inverted. Use report_transformed_registers for a list. (SQM-2014)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Information: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: 5378 out of 5379 SQM-1040 messages were not printed due to limit 1  (MSG-3913)
+Information: 5378 out of 5379 SQM-1074 messages were not printed due to limit 1  (MSG-3913)
+Information: 8 out of 9 SQM-2014 messages were not printed due to limit 1  (MSG-3913)
+Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
+Information: Time: 2025-11-25 19:32:28 / Session:  00:14:11 / Command:  00:13:18 / CPU:  00:17:00 / Memory: 5616 MB (FLW-8100)
+Information: RTL multibit banking summary. (SQM-2008)
+	Total candidates in design:87280
+	Total candidates ignored:  87132
+	Total candidates banked:   0
+	Banking Ratio of this pass:0.00%
+	Banking ratio             :0.00% (Before banking 0.00%)
+	Use report_multibit for details.
+Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
+Information: Time: 2025-11-25 19:32:28 / Session:  00:14:11 / Command:  00:13:18 / CPU:  00:17:00 / Memory: 5616 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
+Information: Time: 2025-11-25 19:32:28 / Session:  00:14:11 / Command:  00:13:18 / CPU:  00:17:00 / Memory: 5616 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-11-25 19:32:43 / Session:  00:14:26 / Command:  00:13:33 / CPU:  00:17:15 / Memory: 5616 MB (FLW-8100)
+Information: 6088 registers were found constant but could not be removed due to restrictions. (SQM-3103)
+Information: Register Bits Before Sharing = 87280, After Sharing = 87280, Savings = 0 (SQM-2000)
+Information: Starting rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8000)
+Information: Time: 2025-11-25 19:32:53 / Session:  00:14:36 / Command:  00:13:43 / CPU:  00:17:25 / Memory: 5616 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8001)
+Information: Time: 2025-11-25 19:33:04 / Session:  00:14:47 / Command:  00:13:54 / CPU:  00:17:53 / Memory: 5616 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-11-25 19:33:04 / Session:  00:14:47 / Command:  00:13:54 / CPU:  00:17:53 / Memory: 5616 MB (FLW-8100)
+Information: Result of rtl_opt / conditioning / Clock Gate Insertion (FLW-8500)
+--------------------------------------------------------------------------------
+|                             Clock Gating Options                             |
+--------------------------------------------------------------------------------
+|         Objects         |    Minimum Bitwidth     |      Maximum Fanout      |
+--------------------------+-------------------------+---------------------------
+|   top-level (design)    |          3 (d)          |      Unlimited (d)       |
+--------------------------------------------------------------------------------
+
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 4
+---------------------------------------------------------------------------------------------
+                          Tool Gated Register Summary                                        
+---------------------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent | % of Gated 
+                                    | Clock Gates |                | Bitwidth   | Bits       
+---------------------------------------------------------------------------------------------
+Regular Clock Gating                |        6280 |          84456 |      84456 |    96.87%
+---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                 Regular Clock Gating Ungated Register Summary                  
+--------------------------------------------------------------------------------
+ Ungated Reason                                            | Count | Bitwidth   
+--------------------------------------------------------------------------------
+ Enable is Constant One.                                   |  2628 |     2628
+ Minimum Bitwidth Not Met.                                 |   100 |      100
+ Not Processed.                                            |    96 |       96
+--------------------------------------------------------------------------------
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -    1331864.00           -      647417              0.25      5616
+Information: Ending   rtl_opt / conditioning (FLW-8001)
+Information: Time: 2025-11-25 19:33:13 / Session:  00:14:56 / Command:  00:14:03 / CPU:  00:18:03 / Memory: 5616 MB (FLW-8100)
+Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'MRDL' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'MRDL' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'MRDL' setting 'routing-direction' is not valid (NEX-001)
+Information: Summary of UPF Cells (UPF-532)
+*******************************************************************************
+                            Summary of UPF Cells                               
+*******************************************************************************
+This is NOT a UPF design.
+UPF is NOT loaded.
+UPF is NOT committed.
+-------------------------------------------------------------------------------
+*******************************************************************************
+                        End of Summary of UPF Cells                            
+*******************************************************************************
+Information: Timer using 8 threads
+INFO: End environment monitoring: recipes
+INFO: Restored 0 timer status, 9 app options, 0 tcl gvars, 0 env vars
+Information: >>>>>>> 2 unique error and warning message tags while observing fast: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     1     1  1 SQM-1040  WARNING   No cell bus will be mapped to multibit because there is no m... (MSG-3032)
+Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'MRDL' setting 'routing-direction'... (MSG-3032)
+Information:    31    31  1        2  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 31 error&warning MSGs observed during fast (MSG-3103)
+Info: FAST compile completed.
+Information: Ending   'rtl_opt -from conditioning -to conditioning' (FLW-8001)
+Information: Time: 2025-11-25 19:33:20 / Session:  00:15:03 / Command:  00:14:10 / CPU:  00:18:09 / Memory: 5616 MB (FLW-8100)
+1
+set_rtl_power_analysis_options -scenario $SCENARIO_NAME -design $DESIGN_NAME -strip_path $STRIP_PATH -fsdb $FSDB_FILE -output_dir $OUTPUT_DIR
+Error: Cannot find scenario 'func@cworst'. Please specify valid scenario name.
+0
+save_block
+Information: Saving block 'LIB:system_top_with_cpu.design'
+1
+save_lib
+Saving library 'LIB'
+1
+export_power_data
+Information: exporting data
+Information: Created output directory RTLA_WORKSPACE
+Information: Starting 'update_timing' (FLW-8000)
+Information: Time: 2025-11-25 19:33:42 / Session:  00:15:25 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 5616 MB (FLW-8100)
 Information: Corner Cmax: no PVT mismatches. (PVT-032)
 Information: Corner Cmin: no PVT mismatches. (PVT-032)
+Information: The stitching and editing of coupling caps is turned OFF for design 'LIB:system_top_with_cpu.design'. (TIM-125)
+Warning: No physical information exists for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "system_top_with_cpu"
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 662845, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   estimated
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+Smart Arc Optimization:                    disabled
+************************************************************
+Information: Ending   'update_timing' (FLW-8001)
+Information: Time: 2025-11-25 19:34:37 / Session:  00:16:20 / Command:  00:00:54 / CPU:  00:03:46 / Memory: 5616 MB (FLW-8100)
+Information: Exporting non-essential name map file
+NEX:ERROR write_parasitics command failed, core area is not valid
+Information: Explicit supply net connections to isolation and retention cells will be written out. Use mv.upf.save_upf_include_supply_exceptions_for_iso_retn to control this. (UPF-450)
+
+Warning: Multiply cell derates are skipped!
+
+Warning: Multiply net derates are skipped!
+
+Warning: Multiply cell derates are skipped!
+
+Warning: Multiply net derates are skipped!
+Information: RTL Architect run completed
+Information: Gathering logical hierarchical data
+1
+report_timing > "$TEMP_RESULTS_DIR/timing_report.txt"
+report_timing -max_paths 10 > "$TEMP_RESULTS_DIR/timing_report_10.txt"
+report_area  > "$TEMP_RESULTS_DIR/area_register.txt"
+exit
+Maximum memory usage for this session: 5616.13 MB
+CPU usage for this session:   1556 seconds (  0.43 hours)
+Elapsed time for this session:   1170 seconds (  0.33 hours)
+Thank you for using RTL Architect.
