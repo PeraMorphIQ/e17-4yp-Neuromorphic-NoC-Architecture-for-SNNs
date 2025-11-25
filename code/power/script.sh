@@ -6,6 +6,7 @@ RUN_SIMV=true
 RUN_RTLA=true
 RUN_PRIMEPOWER=true
 RUN_GIT=true
+USE_RESTORE=false
 
 # Function to show usage
 show_usage() {
@@ -15,6 +16,7 @@ show_usage() {
     echo "  --vcs         Run VCS compilation only"
     echo "  --simv        Run simulation only"
     echo "  --rtla        Run RTL synthesis only"
+    echo "  --restore     Use restore_and_analyze.tcl (skip rtla, continue from saved design)"
     echo "  --primepower  Run power analysis only"
     echo "  --git         Run git operations only"
     echo "  --no-vcs      Skip VCS compilation"
@@ -29,9 +31,11 @@ show_usage() {
     echo "  $0 --vcs --rtla \"Run VCS and RTL synthesis only\""
     echo "  $0 --no-git \"Run everything except git operations\""
     echo "  $0 --rtla \"Run only RTL synthesis\""
+    echo "  $0 --restore \"Restore from saved design and run power analysis (skip VCS/simv, use restore instead of fresh synthesis)\""
     echo ""
     echo "Note: If any specific step flag is used (--vcs, --simv, etc.), only those steps will run."
     echo "      Use --no-* flags to exclude specific steps from a full run."
+    echo "      --restore flag skips VCS/simv and uses restore_and_analyze.tcl instead of fresh rtla.tcl synthesis."
 }
 
 # Parse command line arguments
@@ -75,6 +79,22 @@ while [[ $# -gt 0 ]]; do
                 SELECTIVE_RUN=true
             fi
             RUN_RTLA=true
+            shift
+            ;;
+        --restore)
+            if [ "$SELECTIVE_RUN" = false ]; then
+                RUN_VCS=false
+                RUN_SIMV=false
+                RUN_RTLA=false
+                RUN_PRIMEPOWER=false
+                RUN_GIT=false
+                SELECTIVE_RUN=true
+            fi
+            USE_RESTORE=true
+            RUN_VCS=false
+            RUN_SIMV=false
+            RUN_RTLA=false
+            RUN_PRIMEPOWER=true
             shift
             ;;
         --primepower)
@@ -153,7 +173,7 @@ if [ -z "$RUN_DESCRIPTION" ]; then
 fi
 
 # Define paths as variables
-RTL_SYSTEM_TOP_PATH="../cpu"
+RTL_CPU_PATH="../cpu"
 
 # Exit on any error and enable error trapping
 set -e
@@ -162,8 +182,8 @@ trap 'cleanup_on_error' ERR
 # Prepare directories
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 RESULTS_BASE_DIR="results"
-TEMP_RESULTS_DIR="temp_results_$TIMESTAMP"
-FAILED_DIR="failed"
+TEMP_RESULTS_DIR="$RESULTS_BASE_DIR/temp_results_$TIMESTAMP"
+FAILED_DIR="$RESULTS_BASE_DIR/failed"
 
 # Function to cleanup on error
 cleanup_on_error() {
@@ -198,8 +218,8 @@ create_run_metadata() {
     local metadata_file="$TEMP_RESULTS_DIR/run_metadata.txt"
     
     cat > "$metadata_file" << EOF
-# System Top with CPUs (2x2 Mesh NoC + 4× RV32IMF) - Synthesis and Power Analysis Run Metadata
-# =====================================================================
+# System Top Design Synthesis and Power Analysis Run Metadata
+# ==========================================================
 
 Run Description: $RUN_DESCRIPTION
 Timestamp: $TIMESTAMP
@@ -215,7 +235,7 @@ Git Status: $(git status --porcelain 2>/dev/null | wc -l) modified files
 # -----------------------
 Shell: $SHELL
 PATH: $PATH
-RTL_SYSTEM_TOP_PATH: $RTL_SYSTEM_TOP_PATH
+RTL_CPU_PATH: $RTL_CPU_PATH
 TEMP_RESULTS_DIR: $TEMP_RESULTS_DIR
 
 # Tool Versions
@@ -225,18 +245,10 @@ Synopsys Tools: $(which rtl_shell 2>/dev/null || echo "rtl_shell not found")
 
 # Directory Structure
 # -------------------
-System Top Directory Exists: $([ -d "$RTL_SYSTEM_TOP_PATH" ] && echo "Yes" || echo "No")
+CPU Directory Exists: $([ -d "$RTL_CPU_PATH" ] && echo "Yes" || echo "No")
 Config File Exists: $([ -f "config.tcl" ] && echo "Yes" || echo "No")
-RTLA Script Exists: $([ -f "rtla_new.tcl" ] && echo "Yes" || echo "No")
+RTLA Script Exists: $([ -f "rtla.tcl" ] && echo "Yes" || echo "No")
 Restore Script Exists: $([ -f "restore_new.tcl" ] && echo "Yes" || echo "No")
-System Top with CPU Source Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/system_top_with_cpu.v" ] && echo "Yes" || echo "No")
-System Top with CPU Testbench Exists: $([ -f "$RTL_SYSTEM_TOP_PATH/system_top_with_cpu_tb.v" ] && echo "Yes" || echo "No")
-
-# Design Information
-# ------------------
-Design: system_top_with_cpu (2x2 Mesh NoC with 4× RV32IMF RISC-V CPUs)
-Test Status: 12/14 tests passing (85%)
-Components: 4 CPUs, 4 Routers, 4 Neuron Banks (16 neurons total)
 
 # Execution Plan
 # --------------
@@ -245,13 +257,14 @@ VCS Compilation: $RUN_VCS
 Simulation (simv): $RUN_SIMV
 RTL Synthesis (rtla): $RUN_RTLA
 Power Analysis (PrimePower): $RUN_PRIMEPOWER
+Use Restore Mode: $USE_RESTORE
 
 EOF
     
     echo "Run metadata created: $metadata_file"
 }
 
-echo "========== System Top with CPUs (2x2 Mesh + 4× RV32IMF) - Synthesis and Power Analysis =========="
+echo "========== System Top Design Synthesis and Power Analysis =========="
 echo "Description: $RUN_DESCRIPTION"
 echo "Using temporary results directory: $TEMP_RESULTS_DIR"
 echo "Environment variable TEMP_RESULTS_DIR exported for TCL scripts"
@@ -303,19 +316,16 @@ else
     echo "========== STEP 0: Git Pull (SKIPPED) =========="
 fi
 
-# Step 1: VCS Compile (for System Top with CPU design)
+# Step 1: VCS Compile (for system_top_with_cpu design)
 if [ "$RUN_VCS" = true ]; then
-    echo "========== STEP 1: VCS Compile (System Top with CPUs) =========="
-    if [ -d "$RTL_SYSTEM_TOP_PATH" ]; then
-        pushd "$RTL_SYSTEM_TOP_PATH" > /dev/null
-        echo "Compiling System Top with CPUs (2x2 Mesh NoC with 4× RV32IMF CPUs)..."
-        # Use the system_top_with_cpu testbench which already includes the design
-        # Do NOT use -f flag to avoid module redeclaration
-        vcs -sverilog -full64 -kdb -debug_access+all system_top_with_cpu_tb.v +vcs+fsdbon -o simv | tee "../power/$TEMP_RESULTS_DIR/vcs_compile.log"
+    echo "========== STEP 1: VCS Compile (System Top with CPU) =========="
+    if [ -d "$RTL_CPU_PATH" ]; then
+        pushd "$RTL_CPU_PATH" > /dev/null
+        vcs -sverilog -full64 -kdb -debug_access+all  system_top_with_cpu_tb.v +vcs+fsdbon -o simv | tee "../power/$TEMP_RESULTS_DIR/vcs_compile.log"
         echo "VCS compilation completed successfully"
         popd > /dev/null
     else
-        echo "Warning: System Top RTL directory not found, skipping VCS compilation"
+        echo "Warning: CPU RTL directory not found, skipping VCS compilation"
     fi
 else
     echo "========== STEP 1: VCS Compile (SKIPPED) =========="
@@ -324,26 +334,14 @@ fi
 # Step 2: Run Simulation
 if [ "$RUN_SIMV" = true ]; then
     echo "========== STEP 2: Run Simulation =========="
-    if [ -d "$RTL_SYSTEM_TOP_PATH" ]; then
-        pushd "$RTL_SYSTEM_TOP_PATH" > /dev/null
-        echo "Running simulation with FSDB waveform dump..."
-        # Create build directory if it doesn't exist
-        mkdir -p build
-        # Run simulation and save FSDB in build directory
-        ./simv +fsdb+all=on +fsdb+delta 2>&1 | tee "../power/$TEMP_RESULTS_DIR/simulation.log"
-        # Check if FSDB file was created
-        if [ -f "build/system_top_with_cpu_tb.fsdb" ] || [ -f "system_top_with_cpu_tb.fsdb" ]; then
-            echo "Simulation completed successfully - FSDB file generated"
-            # Move FSDB to build directory if it's in current directory
-            if [ -f "system_top_with_cpu_tb.fsdb" ]; then
-                mv system_top_with_cpu_tb.fsdb build/
-            fi
-        else
-            echo "Warning: FSDB file not found, but simulation ran"
-        fi
+    if [ -d "$RTL_CPU_PATH" ]; then
+        pushd "$RTL_CPU_PATH" > /dev/null
+        # Run simulation with VCD output for power analysis
+        ./simv +fsdb+all=on +fsdb+delta | tee "../power/$TEMP_RESULTS_DIR/simulation.log"
+        echo "Simulation completed successfully"
         popd > /dev/null
     else
-        echo "Warning: System Top RTL directory not found, skipping simulation"
+        echo "Warning: CPU RTL directory not found, skipping simulation"
     fi
 else
     echo "========== STEP 2: Run Simulation (SKIPPED) =========="
@@ -355,37 +353,75 @@ if [ "$RUN_RTLA" = true ]; then
     
     # Check and optionally remove existing library directory
     LIB_DIR="LIB"
-    if [ -d "$LIB_DIR" ]; then
-        echo "Library directory '$LIB_DIR' already exists."
-        echo "Removing existing library directory before synthesis to avoid errors..."
-        rm -rf "$LIB_DIR"
-    fi
-    
-    echo "Running with proper PrimeTime shell command..."
-    rtl_shell -f rtla_new.tcl | tee "$TEMP_RESULTS_DIR/rtl_synthesis.log"
-    if [ $? -eq 0 ]; then
-        echo "RTL synthesis completed successfully"
+    if [ "$USE_RESTORE" = true ]; then
+        echo "Using restore mode - skipping fresh synthesis"
+        echo "Will restore from saved design in restore_and_analyze.tcl"
     else
-        echo "ERROR: RTL synthesis failed - check $TEMP_RESULTS_DIR/rtl_synthesis.log"
-        exit 1
+        if [ -d "$LIB_DIR" ]; then
+            echo "Library directory '$LIB_DIR' already exists."
+            echo "Removing existing library directory before synthesis to avoid errors..."
+            rm -rf "$LIB_DIR"
+        fi
+        
+        echo "Running with proper PrimeTime shell command..."
+        rtl_shell -f rtla.tcl | tee "$TEMP_RESULTS_DIR/rtl_synthesis.log"
+        if [ $? -eq 0 ]; then
+            echo "RTL synthesis completed successfully"
+        else
+            echo "ERROR: RTL synthesis failed - check $TEMP_RESULTS_DIR/rtl_synthesis.log"
+            exit 1
+        fi
     fi
 else
     echo "========== STEP 3: RTL Synthesis (SKIPPED) =========="
 fi
 
-# Step 4: Power Analysis (using pwr_shell for power restoration)
+# Step 4: Power Analysis (using pwr_shell for power restoration OR restore_and_analyze)
 if [ "$RUN_PRIMEPOWER" = true ]; then
     echo "========== STEP 4: Power Analysis =========="
-    if [ -f "restore_new.tcl" ]; then
-        pwr_shell -f restore_new.tcl | tee "$TEMP_RESULTS_DIR/power_restore.log"
-        if [ $? -eq 0 ]; then
-            echo "Power analysis completed successfully"
+    
+    if [ "$USE_RESTORE" = true ]; then
+        # Use restore_and_analyze.tcl for continuing from saved design
+        if [ -f "restore_and_analyze.tcl" ]; then
+            echo "Step 4a: Restoring saved design with rtl_shell..."
+            rtl_shell -f restore_and_analyze.tcl | tee "$TEMP_RESULTS_DIR/restore_and_analyze.log"
+            if [ $? -eq 0 ]; then
+                echo "Design restored and timing analysis completed successfully"
+            else
+                echo "ERROR: Restore and analysis failed - check $TEMP_RESULTS_DIR/restore_and_analyze.log"
+                exit 1
+            fi
         else
-            echo "ERROR: Power analysis failed - check $TEMP_RESULTS_DIR/power_restore.log"
+            echo "ERROR: restore_and_analyze.tcl not found!"
             exit 1
         fi
+        
+        # Now run pwr_shell for detailed power analysis (same as full flow)
+        if [ -f "restore_new.tcl" ]; then
+            echo "Step 4b: Running detailed power analysis with pwr_shell..."
+            pwr_shell -f restore_new.tcl | tee "$TEMP_RESULTS_DIR/power_restore.log"
+            if [ $? -eq 0 ]; then
+                echo "Power analysis completed successfully"
+            else
+                echo "ERROR: Power analysis failed - check $TEMP_RESULTS_DIR/power_restore.log"
+                exit 1
+            fi
+        else
+            echo "Warning: restore_new.tcl not found, skipping power analysis"
+        fi
     else
-        echo "Warning: restore_new.tcl not found, skipping power analysis"
+        # Use regular power analysis flow (after full rtla.tcl synthesis)
+        if [ -f "restore_new.tcl" ]; then
+            pwr_shell -f restore_new.tcl | tee "$TEMP_RESULTS_DIR/power_restore.log"
+            if [ $? -eq 0 ]; then
+                echo "Power analysis completed successfully"
+            else
+                echo "ERROR: Power analysis failed - check $TEMP_RESULTS_DIR/power_restore.log"
+                exit 1
+            fi
+        else
+            echo "Warning: restore_new.tcl not found, skipping power analysis"
+        fi
     fi
 else
     echo "========== STEP 4: Power Analysis (SKIPPED) =========="
