@@ -1,0 +1,1073 @@
+
+
+
+                               RTL Architect (TM)
+
+               Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
+                           Base build date 11/18/2024
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+# Load shared configuration
+source config.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: results/temp_results_20251125_194459
+Configuration loaded successfully
+  Design: system_top_with_cpu
+  Technology: 45nm CMOS
+  Cores: 8
+  Results directory: results/temp_results_20251125_194459
+set_current_mismatch_config auto_fix
+1
+set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
+Warning: Changing current repair(handler) for a mismatch type in between a flow is not recommended. (DMM-011)
+{missing_logical_reference}
+set_host_options -max_cores $CORES
+1
+set_app_options -list { plan.macro.allow_unmapped_design true}
+plan.macro.allow_unmapped_design true
+set search_path $SEARCH_PATHS
+* ./ /tech/45nm/libs/NangateOpenCellLibrary.ndm
+create_lib $LIB_NAME -ref_libs "$REF_LIBS" -technology $TECH_TF
+Information: The command 'create_lib' cleared the undo history. (UNDO-016)
+Information: Loading technology file '/tech/45nm/cltrls/saed32nm_1p9m_mw.tf' (FILE-007)
+Information: The fusion_lib NangateOpenCellLibrary needs a refresh. 8 file(s) have modified timestamps. (FLIB-11)
+{LIB}
+analyze -f sv -vcs "-f $FILELIST"
+Information: By default, the HDL template library is 'WORK' (LBR-??).
+Running PRESTO HDLC
+Parsing vcs commands file -f system_top_with_cpu_src.f
+Compiling source file ../cpu/system_top_with_cpu.v
+Opening include file ../cpu/support_modules/mux_2to1_32bit.v
+Opening include file ../cpu/support_modules/mux_2to1_3bit.v
+Opening include file ../cpu/support_modules/mux_4to1_32bit.v
+Opening include file ../cpu/support_modules/plus_4_adder.v
+Warning:  ../cpu/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../cpu/fpu/Priority Encoder.v
+Opening include file ../cpu/fpu/Addition-Subtraction_no_includes.v
+Warning:  ../cpu/fpu/Addition-Subtraction_no_includes.v:45: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../cpu/fpu/Addition-Subtraction_no_includes.v:46: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../cpu/fpu/Addition-Subtraction_no_includes.v:69: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
+Opening include file ../cpu/fpu/Multiplication_no_includes.v
+Opening include file ../cpu/fpu/Division_no_includes.v
+Opening include file ../cpu/fpu/Iteration.v
+Opening include file ../cpu/fpu/Comparison.v
+Opening include file ../cpu/fpu/Converter.v
+Opening include file ../cpu/fpu/fpu_no_includes.v
+Opening include file ../cpu/f_alu/f_alu.v
+Opening include file ../cpu/alu/alu.v
+Warning:  ../cpu/alu/alu.v:47: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:48: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:49: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:50: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:51: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:54: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:55: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:58: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:61: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:62: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:65: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:68: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:90: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:94: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:95: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:98: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../cpu/reg_file/reg_file.v
+Warning:  ../cpu/alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
+Warning:  ../cpu/reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../cpu/f_reg_file/f_reg_file.v
+Warning:  ../cpu/reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../cpu/immediate_generation_unit/immediate_generation_unit.v
+Warning:  ../cpu/f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../cpu/immediate_select_unit/immediate_select_unit.v
+Opening include file ../cpu/control_unit/control_unit_no_includes.v
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:57: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:73: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:78: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:105: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:120: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:137: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:148: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:157: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:158: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:162: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:171: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:172: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:179: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:184: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:201: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:208: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:224: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../cpu/control_unit/control_unit_no_includes.v:238: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../cpu/branch_control_unit/branch_control_unit.v
+Opening include file ../cpu/forwarding_units/ex_forward_unit.v
+Warning:  ../cpu/branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
+Opening include file ../cpu/forwarding_units/mem_forward_unit.v
+Opening include file ../cpu/hazard_detection_unit/hazard_detection_unit.v
+Opening include file ../cpu/pipeline_flush_unit/pipeline_flush_unit.v
+Opening include file ../cpu/pipeline_registers/pr_if_id.v
+Opening include file ../cpu/pipeline_registers/pr_id_ex.v
+Warning:  ../cpu/pipeline_registers/pr_if_id.v:17: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_if_id.v:18: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_if_id.v:22: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_if_id.v:23: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../cpu/pipeline_registers/pr_ex_mem.v
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:57: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:76: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:77: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:78: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:79: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:80: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:81: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:82: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:83: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:84: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:85: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:86: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:87: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:88: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:89: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:90: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:91: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:92: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:93: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:94: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:96: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_id_ex.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../cpu/pipeline_registers/pr_mem_wb.v
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:44: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:45: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:46: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_ex_mem.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../cpu/cpu/cpu_no_includes.v
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:35: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:37: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:38: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:39: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:40: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/pipeline_registers/pr_mem_wb.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../cpu/cpu/cpu_no_includes.v:217: the undeclared symbol 'MEM_WRITE_DATA_SEL' assumed to have the default net type, which is 'wire'. (VER-936)
+Opening include file ../cpu/noc/async_fifo.v
+Opening include file ../cpu/noc/input_router.v
+Opening include file ../cpu/noc/rr_arbiter.v
+Opening include file ../cpu/noc/virtual_channel.v
+Opening include file ../cpu/noc/input_module_no_includes.v
+Opening include file ../cpu/noc/output_module_no_includes.v
+Opening include file ../cpu/noc/router_no_includes.v
+Opening include file ../cpu/noc/network_interface_no_includes.v
+Opening include file ../cpu/neuron_bank/rng.v
+Opening include file ../cpu/neuron_bank/neuron_core.v
+Opening include file ../cpu/fpu/Addition-Subtraction.v
+Opening include file ../cpu/fpu/Multiplication.v
+Opening include file ../cpu/neuron_bank/neuron_bank_no_includes.v
+Presto compilation completed successfully.
+Elapsed = 00:00:00.09, CPU = 00:00:00.08
+1
+elaborate $DESIGN_NAME
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[0][0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:190: Net ns_valid[0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:222: Net ew_valid[0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:189: Net ns_packet[1][0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:190: Net ns_valid[1][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:221: Net ew_packet[0][1][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+Warning:  ../cpu/system_top_with_cpu.v:222: Net ew_valid[0][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
+  state register: gen_y[0].gen_x[0].spike_status
+  state register: gen_y[0].gen_x[1].spike_status
+  state register: gen_y[1].gen_x[0].spike_status
+  state register: gen_y[1].gen_x[1].spike_status
+
+Inferred memory devices in process
+	in routine system_top_with_cpu line 412 in file
+		'../cpu/system_top_with_cpu.v'.
+============================================================================================
+|          Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+============================================================================================
+| gen_y[0].gen_x[0].imem_array_reg | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
+| gen_y[0].gen_x[1].imem_array_reg | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
+| gen_y[1].gen_x[0].imem_array_reg | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
+| gen_y[1].gen_x[1].imem_array_reg | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
+============================================================================================
+
+Inferred memory devices in process
+	in routine system_top_with_cpu line 460 in file
+		'../cpu/system_top_with_cpu.v'.
+===================================================================================================
+|              Register Name              |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===================================================================================================
+| gen_y[0].gen_x[0].ext_write_latched_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| gen_y[0].gen_x[1].ext_write_latched_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| gen_y[1].gen_x[0].ext_write_latched_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| gen_y[1].gen_x[1].ext_write_latched_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===================================================================================================
+
+Inferred memory devices in process
+	in routine system_top_with_cpu line 514 in file
+		'../cpu/system_top_with_cpu.v'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+| gen_y[0].gen_x[0].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| gen_y[0].gen_x[1].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| gen_y[1].gen_x[0].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| gen_y[1].gen_x[1].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+==============================================================================================
+Presto compilation completed successfully. (system_top_with_cpu)
+Module: system_top_with_cpu, Elapsed Time: 00:00:12, CPU Time: 00:00:13, Total Mem: 993.08 MB, Mem: 597.90 MB, Time: Tue Nov 25 19:45:30 2025
+Information: Elaborating HDL template WORK:router instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0,VC_DEPTH=4}. (ELAB-193)
+Presto compilation completed successfully. (router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4)
+Information: Elaborating HDL template WORK:network_interface instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,NEURON_ADDR_WIDTH=12,FIFO_DEPTH=4}. (ELAB-193)
+
+Statistics for case statements in always block at line 111 in file
+	'../cpu/noc/network_interface_no_includes.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           120            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 169 in file
+	'../cpu/noc/network_interface_no_includes.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           177            |    auto/auto     |
+===============================================
+  state register: wr_state
+
+Inferred memory devices in process
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 111 in file
+		'../cpu/noc/network_interface_no_includes.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    axi_bresp_reg    | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    wr_state_reg     | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|   axi_awready_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   axi_wready_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   axi_bvalid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 169 in file
+		'../cpu/noc/network_interface_no_includes.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    axi_rresp_reg    | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    rd_state_reg     | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|   axi_arready_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   axi_rvalid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    axi_rdata_reg    | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 227 in file
+		'../cpu/noc/network_interface_no_includes.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  cpu_interrupt_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4)
+Information: Elaborating HDL template WORK:cpu instantiated from 'system_top_with_cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine cpu line 254 in file
+		'../cpu/cpu/cpu_no_includes.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PC_reg        | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (cpu)
+Information: Elaborating HDL template WORK:neuron_bank instantiated from 'system_top_with_cpu' with the parameters {NUM_NEURONS=4,ADDR_WIDTH=8}. (ELAB-193)
+Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:146: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:147: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:150: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:199: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:210: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:211: unsigned to signed assignment occurs. (VER-318)
+Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:214: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../cpu/neuron_bank/neuron_bank_no_includes.v:229: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 117 in file
+	'../cpu/neuron_bank/neuron_bank_no_includes.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           150            |    auto/auto     |
+|           214            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine neuron_bank_NUM_NEURONS4_ADDR_WIDTH8 line 117 in file
+		'../cpu/neuron_bank/neuron_bank_no_includes.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+|       neuron_c_reg        | Flip-flop |  20   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|       neuron_c_reg        | Flip-flop |  108  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|         ready_reg         |   Latch   |   1   |  N  | N  | N  | Y  | -  | -  | -  |
+|       read_data_reg       | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|       neuron_d_reg        | Flip-flop |  124  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|       neuron_d_reg        | Flip-flop |   4   |  Y  | Y  | N  | Y  | N  | N  | N  |
+| neuron_config_enable_reg  | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|  neuron_config_data_reg   | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|  neuron_config_addr_reg   | Flip-flop |  12   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|     neuron_start_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| neuron_spike_resolved_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|     neuron_input_reg      | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    neuron_type_reg_reg    | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      neuron_v_th_reg      | Flip-flop |  116  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      neuron_v_th_reg      | Flip-flop |  12   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|       neuron_a_reg        | Flip-flop |  64   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|       neuron_a_reg        | Flip-flop |  64   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|       neuron_b_reg        | Flip-flop |  116  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|       neuron_b_reg        | Flip-flop |  12   |  Y  | Y  | N  | Y  | N  | N  | N  |
+=====================================================================================
+Presto compilation completed successfully. (neuron_bank_NUM_NEURONS4_ADDR_WIDTH8)
+Information: Elaborating HDL template WORK:input_module instantiated from 'router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0,VC_DEPTH=4}. (ELAB-193)
+Presto compilation completed successfully. (input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4)
+Information: Elaborating HDL template WORK:output_module instantiated from 'router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {VC_DEPTH=4}. (ELAB-193)
+
+Inferred memory devices in process
+	in routine output_module_VC_DEPTH4 line 187 in file
+		'../cpu/noc/output_module_no_includes.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    out_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   out_packet_reg    | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (output_module_VC_DEPTH4)
+Information: Elaborating HDL template WORK:async_fifo instantiated from 'network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4' with the parameters {DATA_WIDTH=32,ADDR_WIDTH=4}. (ELAB-193)
+
+Inferred memory devices in process
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 65 in file
+		'../cpu/noc/async_fifo.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   wr_ptr_gray_reg   | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|   wr_ptr_bin_reg    | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 76 in file
+		'../cpu/noc/async_fifo.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop |  512  |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 83 in file
+		'../cpu/noc/async_fifo.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| rd_ptr_gray_sync2_reg | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| rd_ptr_gray_sync1_reg | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+=================================================================================
+
+Inferred memory devices in process
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 101 in file
+		'../cpu/noc/async_fifo.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   rd_ptr_gray_reg   | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|   rd_ptr_bin_reg    | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 115 in file
+		'../cpu/noc/async_fifo.v'.
+=================================================================================
+|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=================================================================================
+| wr_ptr_gray_sync2_reg | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| wr_ptr_gray_sync1_reg | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+=================================================================================
+Presto compilation completed successfully. (async_fifo_DATA_WIDTH32_ADDR_WIDTH4)
+Information: Elaborating HDL template WORK:plus_4_adder instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (plus_4_adder)
+Information: Elaborating HDL template WORK:mux_2to1_32bit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (mux_2to1_32bit)
+Information: Elaborating HDL template WORK:pr_if_id instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine pr_if_id line 13 in file
+		'../cpu/pipeline_registers/pr_if_id.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| ID_INSTRUCTION_reg  | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      ID_PC_reg      | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (pr_if_id)
+Information: Elaborating HDL template WORK:control_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (control_unit)
+Information: Elaborating HDL template WORK:reg_file instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine reg_file line 19 in file
+		'../cpu/reg_file/reg_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (reg_file)
+Information: Elaborating HDL template WORK:f_reg_file instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine f_reg_file line 20 in file
+		'../cpu/f_reg_file/f_reg_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (f_reg_file)
+Information: Elaborating HDL template WORK:immediate_generation_unit instantiated from 'cpu'. (ELAB-193)
+
+Statistics for case statements in always block at line 18 in file
+	'../cpu/immediate_generation_unit/immediate_generation_unit.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            20            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (immediate_generation_unit)
+Information: Elaborating HDL template WORK:hazard_detection_unit instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine hazard_detection_unit line 22 in file
+		'../cpu/hazard_detection_unit/hazard_detection_unit.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   LU_HAZ_SIG_reg    | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (hazard_detection_unit)
+Information: Elaborating HDL template WORK:pipeline_flush_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (pipeline_flush_unit)
+Information: Elaborating HDL template WORK:pr_id_ex instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine pr_id_ex line 45 in file
+		'../cpu/pipeline_registers/pr_id_ex.v'.
+=============================================================================================
+|           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=============================================================================================
+|      EX_WB_VALUE_SELECT_reg       | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|             EX_PC_reg             | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_REG_DATA1_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_REG_DATA2_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA1_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA2_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA3_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_IMMEDIATE_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_WRITE_ADDR_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR1_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR2_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR3_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_ALU_SELECT_reg         | Flip-flop |   6   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      EX_OPERAND1_SELECT_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      EX_OPERAND2_SELECT_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         EX_FPU_SELECT_reg         | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          EX_REG_TYPE_reg          | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        EX_REG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       EX_FREG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EX_DATA_MEM_WRITE_DATA_SELECT_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       EX_DATA_MEM_WRITE_reg       | Flip-flop |   3   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_DATA_MEM_READ_reg        | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        EX_BRANCH_CTRL_reg         | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+=============================================================================================
+Presto compilation completed successfully. (pr_id_ex)
+Information: Elaborating HDL template WORK:mux_4to1_32bit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (mux_4to1_32bit)
+Information: Elaborating HDL template WORK:alu instantiated from 'cpu'. (ELAB-193)
+Warning:  ../cpu/alu/alu.v:58: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../cpu/alu/alu.v:68: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../cpu/alu/alu.v:81: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../cpu/alu/alu.v:84: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../cpu/alu/alu.v:94: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../cpu/alu/alu.v:98: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 72 in file
+	'../cpu/alu/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            75            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 102 in file
+	'../cpu/alu/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           104            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (alu)
+Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
+
+Statistics for case statements in always block at line 102 in file
+	'../cpu/fpu/fpu_no_includes.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           104            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (fpu)
+Information: Elaborating HDL template WORK:branch_control_unit instantiated from 'cpu'. (ELAB-193)
+
+Statistics for case statements in always block at line 20 in file
+	'../cpu/branch_control_unit/branch_control_unit.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            25            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (branch_control_unit)
+Information: Elaborating HDL template WORK:ex_forward_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (ex_forward_unit)
+Information: Elaborating HDL template WORK:pr_ex_mem instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine pr_ex_mem line 37 in file
+		'../cpu/pipeline_registers/pr_ex_mem.v'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+|      MEM_WB_VALUE_SELECT_reg       | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|             MEM_PC_reg             | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_ALU_OUT_reg           | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         MEM_REG_DATA2_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_FPU_OUT_reg           | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         MEM_FREG_DATA2_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_REG_WRITE_ADDR_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_REG_READ_ADDR2_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_REG_TYPE_reg          | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        MEM_REG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       MEM_FREG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| MEM_DATA_MEM_WRITE_DATA_SELECT_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       MEM_DATA_MEM_WRITE_reg       | Flip-flop |   3   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_DATA_MEM_READ_reg        | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+==============================================================================================
+Presto compilation completed successfully. (pr_ex_mem)
+Information: Elaborating HDL template WORK:mem_forward_unit instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine mem_forward_unit line 17 in file
+		'../cpu/forwarding_units/mem_forward_unit.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   MEM_FWD_SEL_reg   | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (mem_forward_unit)
+Information: Elaborating HDL template WORK:pr_mem_wb instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine pr_mem_wb line 31 in file
+		'../cpu/pipeline_registers/pr_mem_wb.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+|  WB_WB_VALUE_SELECT_reg   | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         WB_PC_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      WB_ALU_OUT_reg       | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+| WB_DATA_MEM_READ_DATA_reg | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      WB_FPU_OUT_reg       | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|   WB_REG_WRITE_ADDR_reg   | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|    WB_REG_WRITE_EN_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   WB_FREG_WRITE_EN_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   WB_DATA_MEM_READ_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+=====================================================================================
+Presto compilation completed successfully. (pr_mem_wb)
+Information: Elaborating HDL template WORK:rng instantiated from 'neuron_bank_NUM_NEURONS4_ADDR_WIDTH8'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine rng line 25 in file
+		'../cpu/neuron_bank/rng.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      lfsr_reg       | Flip-flop |  16   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|      lfsr_reg       | Flip-flop |  16   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (rng)
+Information: Elaborating HDL template WORK:neuron_core instantiated from 'neuron_bank_NUM_NEURONS4_ADDR_WIDTH8'. (ELAB-193)
+
+Statistics for case statements in always block at line 60 in file
+	'../cpu/neuron_bank/neuron_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            69            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 81 in file
+	'../cpu/neuron_bank/neuron_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            93            |    auto/auto     |
+|           109            |     no/auto      |
+|           185            |    auto/auto     |
+===============================================
+Warning:  ../cpu/neuron_bank/neuron_core.v:206: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../cpu/neuron_bank/neuron_core.v:206: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../cpu/neuron_bank/neuron_core.v:206: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../cpu/neuron_bank/neuron_core.v:222: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../cpu/neuron_bank/neuron_core.v:222: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../cpu/neuron_bank/neuron_core.v:222: Statement unreachable (Branch condition impossible to meet). (VER-61)
+  state register: state
+
+Inferred memory devices in process
+	in routine neuron_core line 60 in file
+		'../cpu/neuron_bank/neuron_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        d_reg        | Flip-flop |  31   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        d_reg        | Flip-flop |   1   |  N  | Y  | N  | Y  | N  | N  | N  |
+|   neuron_type_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      v_th_reg       | Flip-flop |  29   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      v_th_reg       | Flip-flop |   3   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|        a_reg        | Flip-flop |  16   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        a_reg        | Flip-flop |  16   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|        b_reg        | Flip-flop |  29   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        b_reg        | Flip-flop |   3   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|        c_reg        | Flip-flop |   5   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|        c_reg        | Flip-flop |  27   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine neuron_core line 81 in file
+		'../cpu/neuron_bank/neuron_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      temp2_reg      | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        v_reg        | Flip-flop |   5   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|        v_reg        | Flip-flop |  27   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        u_reg        | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        I_reg        | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| spike_detected_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      busy_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   cycle_count_reg   | Flip-flop |   3   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      v_out_reg      | Flip-flop |   5   |  Y  | Y  | N  | Y  | N  | N  | N  |
+|      v_out_reg      | Flip-flop |  27   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      u_out_reg      | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      temp1_reg      | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (neuron_core)
+Information: Elaborating HDL template WORK:input_router instantiated from 'input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0}. (ELAB-193)
+Warning:  ../cpu/noc/input_router.v:59: Statement unreachable (Prior branch conditions are always met). (VER-61)
+Presto compilation completed successfully. (input_router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0)
+Information: Elaborating HDL template WORK:virtual_channel instantiated from 'input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {DATA_WIDTH=32,DEPTH=4}. (ELAB-193)
+
+Statistics for case statements in always block at line 61 in file
+	'../cpu/noc/virtual_channel.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            65            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 42 in file
+		'../cpu/noc/virtual_channel.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop |  128  |  Y  | Y  | N  | N  | N  | N  | N  |
+|     wr_ptr_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 52 in file
+		'../cpu/noc/virtual_channel.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rd_ptr_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 61 in file
+		'../cpu/noc/virtual_channel.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    pkt_count_reg    | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (virtual_channel_DATA_WIDTH32_DEPTH4)
+Information: Elaborating HDL template WORK:rr_arbiter instantiated from 'input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {NUM_PORTS=4}. (ELAB-193)
+Warning:  ../cpu/noc/rr_arbiter.v:34: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../cpu/noc/rr_arbiter.v:51: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine rr_arbiter_NUM_PORTS4 line 44 in file
+		'../cpu/noc/rr_arbiter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  priority_ptr_reg   | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (rr_arbiter_NUM_PORTS4)
+Information: Elaborating HDL template WORK:rr_arbiter instantiated from 'output_module_VC_DEPTH4' with the parameters {NUM_PORTS=5}. (ELAB-193)
+Warning:  ../cpu/noc/rr_arbiter.v:34: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../cpu/noc/rr_arbiter.v:51: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process
+	in routine rr_arbiter_NUM_PORTS5 line 44 in file
+		'../cpu/noc/rr_arbiter.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  priority_ptr_reg   | Flip-flop |   3   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (rr_arbiter_NUM_PORTS5)
+Information: Elaborating HDL template WORK:mux_2to1_3bit instantiated from 'control_unit'. (ELAB-193)
+Presto compilation completed successfully. (mux_2to1_3bit)
+Information: Elaborating HDL template WORK:Addition_Subtraction instantiated from 'fpu'. (ELAB-193)
+Presto compilation completed successfully. (Addition_Subtraction)
+Information: Elaborating HDL template WORK:Multiplication instantiated from 'fpu'. (ELAB-193)
+Presto compilation completed successfully. (Multiplication)
+Information: Elaborating HDL template WORK:Division instantiated from 'fpu'. (ELAB-193)
+Presto compilation completed successfully. (Division)
+Information: Elaborating HDL template WORK:Comparison instantiated from 'fpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine Comparison line 17 in file
+		'../cpu/fpu/Comparison.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     result_reg      | Latch |   1   |  N  | Y  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (Comparison)
+Information: Elaborating HDL template WORK:Floating_Point_to_Integer instantiated from 'fpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine Floating_Point_to_Integer line 19 in file
+		'../cpu/fpu/Converter.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|  Integer_Value_reg  | Latch |  23   |  Y  | Y  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (Floating_Point_to_Integer)
+Information: Elaborating HDL template WORK:priority_encoder instantiated from 'Addition_Subtraction'. (ELAB-193)
+
+Statistics for case statements in always block at line 22 in file
+	'../cpu/fpu/Priority Encoder.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            24            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (priority_encoder)
+Information: Elaborating HDL template WORK:Iteration instantiated from 'Division'. (ELAB-193)
+Presto compilation completed successfully. (Iteration)
+Information: Design elaboration summary: (FLW-8550)
+Number of modules read: 40
+Top level ports:        224
+Total in all modules
+  Ports:                4939
+  Nets:                 145980
+  Instances:            71181
+Design summary end. (FLW-8551)
+Elapsed = 00:00:17.82, CPU = 00:00:17.41
+1
+set_top_module $TOP_MODULE
+Information: User units loaded from library 'NangateOpenCellLibrary' (LNK-040)
+Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
+Gensys attachment is created: presto_gensys.attach:LIB:system_top_with_cpu.design 
+Elapsed = 00:00:20.20, CPU = 00:00:20.03
+1
+source ./tz_setup.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: results/temp_results_20251125_194459
+Configuration loaded successfully
+  Design: system_top_with_cpu
+  Technology: 45nm CMOS
+  Cores: 8
+  Results directory: results/temp_results_20251125_194459
+========== 45nm CMOS Technology Setup ==========
+Configuring synthesis flow options...
+The following clock gating options are applied to: top-level (design)
+Minimum bitwidth: 1
+Maximum fanout: Unlimited
+Loading 45nm CMOS parasitic technology files...
+45nm CMOS parasitic models loaded
+Setting up clock gating options for 45nm CMOS...
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: This option -max_number_of_levels will be ignored during clock gating insertion/optimizations. (CGT-3003)
+The following clock gating options are applied to: top-level (design)
+Minimum bitwidth: 3
+Maximum fanout: 8
+The following clock gating style is applied to: top-level (design)
+Target: pos_edge_flip_flop 
+Test control position: before
+Observation output: false
+Clock gating configured for 45nm CMOS
+Setting optimization controls...
+Creating operating scenarios...
+Information: The command 'create_mode' cleared the undo history. (UNDO-016)
+Created scenario func@Cmax for mode func and corner Cmax
+All analysis types are activated.
+Created scenario func@Cmin for mode func and corner Cmin
+All analysis types are activated.
+Scenario func@Cmax (mode func corner Cmax) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+Scenario func@Cmin (mode func corner Cmin) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+Operating scenarios created and set
+Loading design constraints...
+Information: Timer using 8 threads
+Clock constraints loaded from ./sdc/clocks_with_cpu.sdc
+========== Setup Status Report ==========
+****************************************
+Report : scenario
+Design : system_top_with_cpu
+Version: V-2023.12-SP5-3
+Date   : Tue Nov 25 19:46:00 2025
+****************************************
+
+                                                                     Leakage  Dynamic                              Cell  Signal
+Name            Mode            Corner          Active  Setup  Hold  Power    Power    Max_tran  Max_cap  Min_cap  EM    EM
+----------------------------------------------------------------------------------------------------------------------------------
+func@Cmax *     func            Cmax            true    true   false true     true     true      true     true     false false
+func@Cmin *     func            Cmin            true    true   false true     true     true      true     true     false false
+
+========== 45nm CMOS Technology Setup Complete ==========
+rtl_opt -initial_map_only
+Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
+Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
+Information: Starting 'rtl_opt -from conditioning -to conditioning' (FLW-8000)
+Information: Time: 2025-11-25 19:46:03 / Session:  00:00:53 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1766 MB (FLW-8100)
+INFO: compile_fusion is running in balanced flow mode.
+INFO: EIO v2 is enabled
+INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
+Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
+****************************************
+Report : report_tbcs
+Version: V-2023.12-SP5-3
+Date   : Tue Nov 25 19:46:03 2025
+****************************************
+INFO: Start environment monitoring: recipes
+Information: Corner Cmax: no PVT mismatches. (PVT-032)
+Information: Corner Cmin: no PVT mismatches. (PVT-032)

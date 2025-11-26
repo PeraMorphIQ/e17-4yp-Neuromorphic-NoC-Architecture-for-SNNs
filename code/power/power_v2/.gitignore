@@ -1,0 +1,10 @@
+/INPUT
+/TZ_OUTDIR
+/HDL_LIBRARIES
+/neuron_LIB
+
+*.svf
+
+check_name_mapping.txt
+
+pwr_shell_command.log
