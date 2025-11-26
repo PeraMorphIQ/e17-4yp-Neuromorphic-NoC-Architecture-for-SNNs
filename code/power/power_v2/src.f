@@ -31,12 +31,13 @@
 ../../cpu/forwarding_units/ex_forward_unit.v
 ../../cpu/forwarding_units/mem_forward_unit.v
 ../../cpu/pipeline_flush_unit/pipeline_flush_unit.v
-../../cpu/zicsr/zicsr.v
 
 ../../cpu/pipeline_registers/pr_if_id.v
 ../../cpu/pipeline_registers/pr_id_ex.v
 ../../cpu/pipeline_registers/pr_ex_mem.v
 ../../cpu/pipeline_registers/pr_mem_wb.v
+
+../../cpu/zicsr/zicsr.v
 
 ../../cpu/instruction_memory/instruction_memory.v
 

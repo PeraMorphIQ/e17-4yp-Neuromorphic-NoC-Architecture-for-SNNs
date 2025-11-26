@@ -542,3 +542,5 @@ module rv32i_csr #(parameter TRAP_ADDRESS = 0) (
    end
     
 endmodule
+
+`default_nettype wire
