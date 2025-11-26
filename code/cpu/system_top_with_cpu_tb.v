@@ -9,12 +9,10 @@ module system_top_with_cpu_tb;
     parameter NUM_NEURONS_PER_BANK = 4;
     parameter NUM_NODES = MESH_SIZE_X * MESH_SIZE_Y;
     
-    parameter CPU_CLK_PERIOD = 20;  // 50 MHz
-    parameter NET_CLK_PERIOD = 10;  // 100 MHz
+    parameter CLK_PERIOD = 20;  // 50 MHz
     
     // Signals
-    reg cpu_clk;
-    reg net_clk;
+    reg clk;
     reg rst_n;
     
     reg [NUM_NODES-1:0] prog_load_enable;
@@ -42,8 +40,7 @@ module system_top_with_cpu_tb;
         .MESH_SIZE_Y(MESH_SIZE_Y),
         .NUM_NEURONS_PER_BANK(NUM_NEURONS_PER_BANK)
     ) dut (
-        .cpu_clk(cpu_clk),
-        .net_clk(cpu_clk), // Using same clock for simplicity or as per original
+        .clk(clk),
         .rst_n(rst_n),
         .prog_load_enable(prog_load_enable),
         .prog_load_addr(prog_load_addr),
@@ -61,15 +58,10 @@ module system_top_with_cpu_tb;
         .router_output_ready(router_output_ready)
     );
     
-    // Clocks
+    // Clock
     initial begin
-        cpu_clk = 0;
-        forever #(CPU_CLK_PERIOD/2) cpu_clk = ~cpu_clk;
-    end
-    
-    initial begin
-        net_clk = 0;
-        forever #(NET_CLK_PERIOD/2) net_clk = ~net_clk;
+        clk = 0;
+        forever #(CLK_PERIOD/2) clk = ~clk;
     end
 
     // VCD
@@ -84,12 +76,12 @@ module system_top_with_cpu_tb;
         input [31:0] addr;
         input [31:0] instruction;
     begin
-        @(posedge cpu_clk);
+        @(posedge clk);
         prog_load_enable = (1 << node_id);
         prog_load_addr = addr;
         prog_load_data = instruction;
         prog_load_write = (1 << node_id);
-        @(posedge cpu_clk);
+        @(posedge clk);
         prog_load_write = 0;
         prog_load_enable = 0;
     end
@@ -101,12 +93,12 @@ module system_top_with_cpu_tb;
         input [3:0] neuron_id;
         input [31:0] current;
     begin
-        @(posedge cpu_clk);
+        @(posedge clk);
         ext_node_select = {node_y, node_x};
         ext_neuron_id = {4'h0, neuron_id};
         ext_input_current = current;
         ext_input_valid = 1;
-        @(posedge cpu_clk);
+        @(posedge clk);
         ext_input_valid = 0;
     end
     endtask
@@ -116,12 +108,12 @@ module system_top_with_cpu_tb;
         input [3:0] node_y;
         input [3:0] neuron_id;
     begin
-        @(posedge cpu_clk);
+        @(posedge clk);
         ext_node_select = {node_y, node_x};
         ext_neuron_id = (neuron_id * 8) + 8'h06;
         ext_input_current = 32'h00000001;
         ext_input_valid = 1;
-        @(posedge cpu_clk);
+        @(posedge clk);
         ext_input_valid = 0;
     end
     endtask

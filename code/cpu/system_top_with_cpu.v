@@ -66,9 +66,8 @@ module system_top_with_cpu #(
     parameter NUM_VC = 4,
     parameter VC_DEPTH = 4
 )(
-    // System clocks and reset
-    input wire                          cpu_clk,        // CPU clock domain (50 MHz)
-    input wire                          net_clk,        // Network clock domain (100 MHz)
+    // System clock and reset
+    input wire                          clk,            // System clock
     input wire                          rst_n,          // Active-low reset
     
     // External memory interface for loading programs (optional)
@@ -232,7 +231,7 @@ module system_top_with_cpu #(
                     .ROUTING_ALGORITHM(0),  // XY routing
                     .VC_DEPTH(VC_DEPTH)
                 ) router_inst (
-                    .clk(net_clk),
+                    .clk(clk),
                     .rst_n(rst_n),
                     .router_addr(router_address),
                     
@@ -299,9 +298,9 @@ module system_top_with_cpu #(
                     .NEURON_ADDR_WIDTH(12),
                     .FIFO_DEPTH(4)
                 ) ni_inst (
-                    .cpu_clk(cpu_clk),
+                    .cpu_clk(clk),
                     .cpu_rst_n(rst_n),
-                    .net_clk(net_clk),
+                    .net_clk(clk),
                     .net_rst_n(rst_n),
                     
                     // AXI4-Lite interface (CPU side)
@@ -348,7 +347,7 @@ module system_top_with_cpu #(
                 wire        cpu_instr_busywait;
                 
                 cpu cpu_inst (
-                    .CLK(cpu_clk),
+                    .CLK(clk),
                     .RESET(~rst_n),
                     
                     // Instruction memory interface
@@ -409,7 +408,7 @@ module system_top_with_cpu #(
                 reg [7:0] imem_array [1023:0];
                 
                 // Program loading logic
-                always @(posedge cpu_clk) begin
+                always @(posedge clk) begin
                     if (~rst_n) begin
                         // Reset - can initialize with NOP instructions
                         // NOP = 0x00000013 (addi x0, x0, 0)
@@ -457,7 +456,7 @@ module system_top_with_cpu #(
                 assign ext_nb_write = ext_target_match && !ext_write_latched;
                 
                 // Latch external write for one cycle to prevent multiple writes
-                always @(posedge cpu_clk or negedge rst_n) begin
+                always @(posedge clk or negedge rst_n) begin
                     if (!rst_n) begin
                         ext_write_latched <= 1'b0;
                     end else begin
@@ -488,7 +487,7 @@ module system_top_with_cpu #(
                     .NUM_NEURONS(NUM_NEURONS_PER_BANK),
                     .ADDR_WIDTH(ADDR_WIDTH)
                 ) nb_inst (
-                    .clk(cpu_clk),
+                    .clk(clk),
                     .rst_n(rst_n),
                     
                     // CPU interface (multiplexed with external injection)
@@ -511,7 +510,7 @@ module system_top_with_cpu #(
                 // track spike interrupts as an indication of spike activity.
                 reg [NUM_NEURONS_PER_BANK-1:0] spike_status;
                 
-                always @(posedge cpu_clk or negedge rst_n) begin
+                always @(posedge clk or negedge rst_n) begin
                     if (~rst_n) begin
                         spike_status <= {NUM_NEURONS_PER_BANK{1'b0}};
                     end else begin

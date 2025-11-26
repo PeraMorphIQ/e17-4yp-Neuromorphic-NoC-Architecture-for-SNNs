@@ -11,7 +11,7 @@ set_top_module system_top_with_cpu
 
 source ./tz_setup.tcl
 
-rtl_opt -initial_map_only
+rtl_opt
 
 set_rtl_power_analysis_options -scenario func@Cmax -design system_top_with_cpu -strip_path system_top_with_cpu_tb/dut -fsdb "../../cpu/novas.fsdb" -output_dir RTLA_WORKSPACE
 
