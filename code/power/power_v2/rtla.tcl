@@ -3,17 +3,17 @@ set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto
 set_host_options -max_cores 8
 set_app_options -list { plan.macro.allow_unmapped_design true}
 
-set search_path "* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu"
+set search_path "* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh"
 create_lib LIB -ref_libs "NangateOpenCellLibrary" -technology /tech/45nm/cltrls/saed32nm_1p9m_mw.tf
 analyze -f sv -vcs "-f src.f "
-elaborate system_top_with_cpu
-set_top_module system_top_with_cpu
+elaborate mesh
+set_top_module mesh
 
 source ./tz_setup.tcl
 
 rtl_opt -initial_map_only
 
-set_rtl_power_analysis_options -scenario func@Cmax -design system_top_with_cpu -strip_path system_top_with_cpu_tb/dut -fsdb "../../cpu/novas.fsdb" -output_dir RTLA_WORKSPACE
+set_rtl_power_analysis_options -scenario func@Cmax -design mesh -strip_path mesh_tb/u_mesh -vcd "../../accelerator/mesh/novas.fsdb" -output_dir RTLA_WORKSPACE
 
 save_block
 save_lib

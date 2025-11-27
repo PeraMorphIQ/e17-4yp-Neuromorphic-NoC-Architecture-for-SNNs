@@ -4,7 +4,7 @@ set_app_var power_enable_new_rrm_view true
 set_host_options -max_cores 8
 
 read_design_data RTLA_WORKSPACE
-read_fsdb -strip_path system_top_with_cpu_tb/dut ../../cpu/novas.fsdb
+read_fsdb -strip_path mesh_tb/u_mesh ../../accelerator/mesh/novas.fsdb
 read_name_mapping
 update_power
 update_metrics

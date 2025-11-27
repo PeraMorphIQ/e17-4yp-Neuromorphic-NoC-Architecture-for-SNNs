@@ -33,12 +33,12 @@ echo "$PURPOSE" > "$RESULTS_DIR/purpose.txt"
 
 # Step 1: VCS Compile
 echo "========== STEP 1: VCS Compile =========="
-pushd "../../cpu" > /dev/null
-vcs -sverilog -full64 -kdb -debug_access+all system_top_with_cpu_tb.v +vcs+fsdbon -o simv | tee "../power/power_v2/$RESULTS_DIR/vcs_compile.log"
+pushd "../../accelerator/mesh" > /dev/null
+vcs -sverilog -full64 -kdb -debug_access+all mesh_tb.v +vcs+fsdbon -o simv | tee "../../power/power_v2/$RESULTS_DIR/vcs_compile.log"
 
 # Step 2: Run Simulation
 echo "========== STEP 2: Run Simulation =========="
-./simv +fsdb+all=on +fsdb+delta | tee "../power/power_v2/$RESULTS_DIR/simulation.log"
+./simv +fsdb+all=on +fsdb+delta | tee "../../power/power_v2/$RESULTS_DIR/simulation.log"
 popd > /dev/null
 
 # Check and optionally remove existing library directory
