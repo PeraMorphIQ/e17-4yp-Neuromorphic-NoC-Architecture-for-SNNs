@@ -34,7 +34,7 @@ echo "$PURPOSE" > "$RESULTS_DIR/purpose.txt"
 # Step 1: VCS Compile
 echo "========== STEP 1: VCS Compile =========="
 pushd "../../accelerator/mesh" > /dev/null
-vcs -sverilog -full64 -kdb -debug_access+all mesh_tb.v +vcs+fsdbon -o simv | tee "../../power/power_v2/$RESULTS_DIR/vcs_compile.log"
+vcs -sverilog -full64 -kdb -debug_access+all -f ../../power/power_v2/mesh_sim.f mesh_tb.v +vcs+fsdbon -o simv | tee "../../power/power_v2/$RESULTS_DIR/vcs_compile.log"
 
 # Step 2: Run Simulation
 echo "========== STEP 2: Run Simulation =========="
