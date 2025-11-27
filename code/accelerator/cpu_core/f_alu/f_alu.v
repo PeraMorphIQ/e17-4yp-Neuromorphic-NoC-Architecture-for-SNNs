@@ -2,7 +2,7 @@
 
 module f_alu (DATA1, DATA2, DATA3, RESULT, SELECT);
 
-    input [31:0] DATA1, DATA2;
+    input [31:0] DATA1, DATA2, DATA3;
     input [5:0] SELECT;
     output reg [31:0] RESULT;
 
