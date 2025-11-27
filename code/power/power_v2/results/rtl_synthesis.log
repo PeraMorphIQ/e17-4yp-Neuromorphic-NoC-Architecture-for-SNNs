@@ -289,7 +289,7 @@ Inferred memory devices in process
 |       mem_reg       | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (data_memory)
-Module: data_memory, Elapsed Time: 00:00:07, CPU Time: 00:00:06, Total Mem: 701.17 MB, Mem: 282.73 MB, Time: Thu Nov 27 14:30:51 2025
+Module: data_memory, Elapsed Time: 00:00:07, CPU Time: 00:00:07, Total Mem: 701.30 MB, Mem: 282.73 MB, Time: Thu Nov 27 15:34:03 2025
 Information: Elaborating HDL template WORK:neuron_bank instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {NUM_NEURONS=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 82 in file
@@ -681,13 +681,13 @@ Total in all modules
   Nets:                 113196
   Instances:            60638
 Design summary end. (FLW-8551)
-Elapsed = 00:00:11.75, CPU = 00:00:11.51
+Elapsed = 00:00:11.84, CPU = 00:00:11.62
 1
 set_top_module mesh
 Information: User units loaded from library 'NangateOpenCellLibrary' (LNK-040)
 Information: Added key list 'DesignWare' to design 'mesh'. (DWS-0216)
 Gensys attachment is created: presto_gensys.attach:LIB:mesh.design 
-Elapsed = 00:00:23.77, CPU = 00:00:23.54
+Elapsed = 00:00:23.66, CPU = 00:00:23.41
 1
 source ./tz_setup.tcl
 The following clock gating options are applied to: top-level (design)
@@ -714,7 +714,7 @@ Scenario func@Cmin (mode func corner Cmin) is active for setup/leakage_power/dyn
 Report : scenario
 Design : mesh
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 14:31:19 2025
+Date   : Thu Nov 27 15:34:32 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -728,7 +728,7 @@ rtl_opt -initial_map_only
 Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
 Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
 Information: Starting 'rtl_opt -from conditioning -to conditioning' (FLW-8000)
-Information: Time: 2025-11-27 14:31:23 / Session:  00:00:48 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1485 MB (FLW-8100)
+Information: Time: 2025-11-27 15:34:36 / Session:  00:00:48 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1485 MB (FLW-8100)
 Information: Timer using 8 threads
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
@@ -737,11 +737,11 @@ Information: Structural Congestion Optimization technology (Early SCO) has been 
 ****************************************
 Report : report_tbcs
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 14:31:27 2025
+Date   : Thu Nov 27 15:34:40 2025
 ****************************************
 INFO: Start environment monitoring: recipes
-Information: Corner Cmin: no PVT mismatches. (PVT-032)
 Information: Corner Cmax: no PVT mismatches. (PVT-032)
+Information: Corner Cmin: no PVT mismatches. (PVT-032)
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
 INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
@@ -844,19 +844,19 @@ Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_34/B1'
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning (FLW-8000)
-Information: Time: 2025-11-27 14:32:19 / Session:  00:01:43 / Command:  00:00:55 / CPU:  00:01:14 / Memory: 2393 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:32 / Session:  00:01:44 / Command:  00:00:56 / CPU:  00:01:15 / Memory: 2399 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
-Information: Time: 2025-11-27 14:32:19 / Session:  00:01:44 / Command:  00:00:55 / CPU:  00:01:15 / Memory: 2393 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:33 / Session:  00:01:45 / Command:  00:00:56 / CPU:  00:01:15 / Memory: 2399 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
-Information: Time: 2025-11-27 14:32:23 / Session:  00:01:48 / Command:  00:00:59 / CPU:  00:01:19 / Memory: 2393 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:37 / Session:  00:01:49 / Command:  00:01:00 / CPU:  00:01:20 / Memory: 2399 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-11-27 14:32:23 / Session:  00:01:48 / Command:  00:00:59 / CPU:  00:01:19 / Memory: 2393 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:37 / Session:  00:01:49 / Command:  00:01:00 / CPU:  00:01:20 / Memory: 2399 MB (FLW-8100)
 MV related app options set by user:
 Information: Ending   rtl_opt / conditioning / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-11-27 14:32:23 / Session:  00:01:48 / Command:  00:00:59 / CPU:  00:01:19 / Memory: 2393 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:37 / Session:  00:01:49 / Command:  00:01:00 / CPU:  00:01:20 / Memory: 2399 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8000)
-Information: Time: 2025-11-27 14:32:23 / Session:  00:01:48 / Command:  00:00:59 / CPU:  00:01:19 / Memory: 2393 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:37 / Session:  00:01:49 / Command:  00:01:00 / CPU:  00:01:20 / Memory: 2399 MB (FLW-8100)
 Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
 Information: The register ROW_LOOP[1].COL_LOOP[1].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
 Information: The register ROW_LOOP[1].COL_LOOP[0].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
@@ -872,19 +872,19 @@ Information: 53908 registers were found constant but could not be removed due to
 Information: Register Bits Before Sharing = 57204, After Sharing = 57204, Savings = 0 (SQM-2000)
 Information: 6 out of 16 SQM-4100 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:14) (MSG-3913)
 Information: Ending   rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8001)
-Information: Time: 2025-11-27 14:32:44 / Session:  00:02:08 / Command:  00:01:20 / CPU:  00:01:49 / Memory: 2508 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:58 / Session:  00:02:10 / Command:  00:01:21 / CPU:  00:01:51 / Memory: 2514 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Register Merging (FLW-8000)
-Information: Time: 2025-11-27 14:32:44 / Session:  00:02:08 / Command:  00:01:20 / CPU:  00:01:49 / Memory: 2508 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:58 / Session:  00:02:10 / Command:  00:01:21 / CPU:  00:01:51 / Memory: 2514 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Register Merging (FLW-8001)
-Information: Time: 2025-11-27 14:32:44 / Session:  00:02:08 / Command:  00:01:20 / CPU:  00:01:49 / Memory: 2508 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:58 / Session:  00:02:10 / Command:  00:01:21 / CPU:  00:01:51 / Memory: 2514 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-11-27 14:32:44 / Session:  00:02:08 / Command:  00:01:20 / CPU:  00:01:49 / Memory: 2508 MB (FLW-8100)
+Information: Time: 2025-11-27 15:35:58 / Session:  00:02:10 / Command:  00:01:21 / CPU:  00:01:51 / Memory: 2514 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-11-27 14:32:48 / Session:  00:02:13 / Command:  00:01:24 / CPU:  00:02:04 / Memory: 2508 MB (FLW-8100)
+Information: Time: 2025-11-27 15:36:03 / Session:  00:02:15 / Command:  00:01:26 / CPU:  00:02:05 / Memory: 2514 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8000)
-Information: Time: 2025-11-27 14:32:59 / Session:  00:02:24 / Command:  00:01:35 / CPU:  00:02:15 / Memory: 2508 MB (FLW-8100)
-Still running [1] (Session: 0.21 hr / Command: 0.20 hr / Memory: 2803.84 MB) (MSG-3999)
-Information: CPU Load: 41%, Ram Free: 46 GB, Swap Free: 473 GB, Work Disk Free: 648 GB, Tmp Disk Free: 4 GB (MSG-3995)
+Information: Time: 2025-11-27 15:36:14 / Session:  00:02:26 / Command:  00:01:37 / CPU:  00:02:16 / Memory: 2514 MB (FLW-8100)
+Still running [1] (Session: 0.21 hr / Command: 0.20 hr / Memory: 2774.57 MB) (MSG-3999)
+Information: CPU Load: 53%, Ram Free: 35 GB, Swap Free: 473 GB, Work Disk Free: 648 GB, Tmp Disk Free: 4 GB (MSG-3995)
 Information: For the module "data_memory", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 535128 mux gate(s) with total area 935301.31. (MUX-1021)
 Information: For the module "f_reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3073 mux gate(s) with total area 5465.54. (MUX-1021)
 Information: For the module "reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 2079 mux gate(s) with total area 3697.35. (MUX-1021)
@@ -921,25 +921,25 @@ Information: For the module "mem_forward_unit", SELECT_OPs marked with infer_mux
 Information: For the module "mux_2to1_3bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3 mux gate(s) with total area 5.34. (MUX-1021)
 Information: Timer using 8 threads
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8001)
-Information: Time: 2025-11-27 14:47:05 / Session:  00:16:29 / Command:  00:15:41 / CPU:  00:17:27 / Memory: 6462 MB (FLW-8100)
+Information: Time: 2025-11-27 15:51:40 / Session:  00:17:52 / Command:  00:17:04 / CPU:  00:18:22 / Memory: 6453 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8000)
-Information: Time: 2025-11-27 14:47:05 / Session:  00:16:29 / Command:  00:15:41 / CPU:  00:17:27 / Memory: 6462 MB (FLW-8100)
+Information: Time: 2025-11-27 15:51:40 / Session:  00:17:52 / Command:  00:17:04 / CPU:  00:18:22 / Memory: 6453 MB (FLW-8100)
 Information: Added key list 'DesignWare' to design 'mesh'. (DWS-0216)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
 Information: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
 Information: 2 register's output was inverted. Use report_transformed_registers for a list. (SQM-2014)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
 Warning: Warning while mapping restricted inst: Can not swap restricted cell ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/C3028 since library does not have any suitable one-to-one replacement.  (CTM-1018)
 Warning: Warning while mapping restricted inst: Can not swap restricted cell ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/C2955 since library does not have any suitable one-to-one replacement.  (CTM-1018)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
 Warning: Warning while mapping restricted inst: Can not swap restricted cell ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/C2918 since library does not have any suitable one-to-one replacement.  (CTM-1018)
 Warning: Warning while mapping restricted inst: Can not swap restricted cell ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/C2927 since library does not have any suitable one-to-one replacement.  (CTM-1018)
 Information: 8757 out of 8758 SQM-1040 messages were not printed due to limit 1  (MSG-3913)
@@ -947,7 +947,7 @@ Information: 8757 out of 8758 SQM-1074 messages were not printed due to limit 1 
 Information: 1 out of 2 SQM-2014 messages were not printed due to limit 1  (MSG-3913)
 Information: 64 out of 74 UNG-1002 messages were not printed due to limit 10  (MSG-3913)
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
-Information: Time: 2025-11-27 14:49:03 / Session:  00:18:27 / Command:  00:17:39 / CPU:  00:22:51 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 15:54:43 / Session:  00:20:56 / Command:  00:20:07 / CPU:  00:24:35 / Memory: 9338 MB (FLW-8100)
 Information: RTL multibit banking summary. (SQM-2008)
 	Total candidates in design:57184
 	Total candidates ignored:  57072
@@ -956,19 +956,19 @@ Information: RTL multibit banking summary. (SQM-2008)
 	Banking ratio             :0.00% (Before banking 0.00%)
 	Use report_multibit for details.
 Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
-Information: Time: 2025-11-27 14:49:04 / Session:  00:18:28 / Command:  00:17:40 / CPU:  00:22:52 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 15:54:46 / Session:  00:20:58 / Command:  00:20:09 / CPU:  00:24:36 / Memory: 9338 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
-Information: Time: 2025-11-27 14:49:04 / Session:  00:18:28 / Command:  00:17:40 / CPU:  00:22:52 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 15:54:46 / Session:  00:20:58 / Command:  00:20:09 / CPU:  00:24:36 / Memory: 9338 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-11-27 14:50:01 / Session:  00:19:26 / Command:  00:18:37 / CPU:  00:23:50 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 15:56:45 / Session:  00:22:57 / Command:  00:22:08 / CPU:  00:26:06 / Memory: 9338 MB (FLW-8100)
 Information: 12 registers were found constant but could not be removed due to restrictions. (SQM-3103)
 Information: Register Bits Before Sharing = 57184, After Sharing = 57184, Savings = 0 (SQM-2000)
 Information: Starting rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-11-27 14:50:21 / Session:  00:19:45 / Command:  00:18:57 / CPU:  00:24:09 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 15:57:30 / Session:  00:23:42 / Command:  00:22:53 / CPU:  00:26:37 / Memory: 9338 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-11-27 14:50:54 / Session:  00:20:19 / Command:  00:19:30 / CPU:  00:25:38 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 15:58:45 / Session:  00:24:57 / Command:  00:24:08 / CPU:  00:28:21 / Memory: 9338 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-11-27 14:50:54 / Session:  00:20:19 / Command:  00:19:30 / CPU:  00:25:38 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 15:58:45 / Session:  00:24:57 / Command:  00:24:08 / CPU:  00:28:21 / Memory: 9338 MB (FLW-8100)
 Information: Result of rtl_opt / conditioning / Clock Gate Insertion (FLW-8500)
 --------------------------------------------------------------------------------
 |                             Clock Gating Options                             |
@@ -998,9 +998,9 @@ Regular Clock Gating                |        4728 |          54608 |      54608 
  Not Processed.                                            |    92 |       92
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -    4454557.00           -     2467451              0.35      9327
+Compile-fusion                                          -           -         -         -    4454557.00           -     2467451              0.43      9338
 Information: Ending   rtl_opt / conditioning (FLW-8001)
-Information: Time: 2025-11-27 14:51:25 / Session:  00:20:49 / Command:  00:20:01 / CPU:  00:26:09 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 15:59:44 / Session:  00:25:56 / Command:  00:25:08 / CPU:  00:29:06 / Memory: 9338 MB (FLW-8100)
 Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
 Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
 Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
@@ -1048,14 +1048,14 @@ INFO: End environment monitoring: recipes
 INFO: Restored 0 timer status, 9 app options, 0 tcl gvars, 0 env vars
 Information: >>>>>>> 3 unique error and warning message tags while observing fast: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
-Information:     1   656  1 SQM-1040  WARNING   No cell bus will be mapped to multibit because there is no m... (MSG-3032)
+Information:     1   676  1 SQM-1040  WARNING   No cell bus will be mapped to multibit because there is no m... (MSG-3032)
 Information:    96    96  0 CSTR-013  WARNING   Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/... (MSG-3032)
 Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'MRDL' setting 'routing-direction'... (MSG-3032)
-Information:   127   782  1        3  <------   Total sum of messages (MSG-3038)
-Information: >>>>>>> Summary: 782 error&warning MSGs observed during fast (MSG-3103)
+Information:   127   802  1        3  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 802 error&warning MSGs observed during fast (MSG-3103)
 Info: FAST compile completed.
 Information: Ending   'rtl_opt -from conditioning -to conditioning' (FLW-8001)
-Information: Time: 2025-11-27 14:51:42 / Session:  00:21:07 / Command:  00:20:18 / CPU:  00:26:26 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 16:00:15 / Session:  00:26:27 / Command:  00:25:38 / CPU:  00:29:31 / Memory: 9338 MB (FLW-8100)
 1
 set_rtl_power_analysis_options -scenario func@Cmax -design mesh -strip_path mesh_tb/u_mesh -fsdb "../../accelerator/mesh/novas.fsdb" -output_dir RTLA_WORKSPACE
 1
@@ -1067,8 +1067,9 @@ Saving library 'LIB'
 1
 export_power_data
 Information: exporting data
+Information: Created output directory RTLA_WORKSPACE
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-11-27 14:53:04 / Session:  00:22:29 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 16:01:37 / Session:  00:27:50 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 9338 MB (FLW-8100)
 Information: Corner Cmin: no PVT mismatches. (PVT-032)
 Information: Corner Cmax: no PVT mismatches. (PVT-032)
 Information: The stitching and editing of coupling caps is turned OFF for design 'LIB:mesh.design'. (TIM-125)
@@ -1095,7 +1096,7 @@ ML Acceleration:                           off
 Smart Arc Optimization:                    disabled
 ************************************************************
 Information: Ending   'update_timing' (FLW-8001)
-Information: Time: 2025-11-27 14:56:36 / Session:  00:26:01 / Command:  00:03:31 / CPU:  00:14:15 / Memory: 9328 MB (FLW-8100)
+Information: Time: 2025-11-27 16:05:01 / Session:  00:31:14 / Command:  00:03:23 / CPU:  00:14:17 / Memory: 9338 MB (FLW-8100)
 Information: Exporting essential name map file
 Warning: Option '-essential' for command 'saif_map' is deprecated. See the command's man page for alternatives. (CMD-110)
 Warning: '-essential' option should not be specified as it has been deprecated and is enabled by default. (POW-120)
@@ -1116,7 +1117,7 @@ report_timing > "results/timing_report.txt"
 report_timing -max_paths 10 > "results/timing_report_10.txt"
 report_area  > "results/area_register.txt"
 exit
-Maximum memory usage for this session: 9327.79 MB
-CPU usage for this session:   3120 seconds (  0.87 hours)
-Elapsed time for this session:   2201 seconds (  0.61 hours)
+Maximum memory usage for this session: 9338.10 MB
+CPU usage for this session:   3269 seconds (  0.91 hours)
+Elapsed time for this session:   2442 seconds (  0.68 hours)
 Thank you for using RTL Architect.
