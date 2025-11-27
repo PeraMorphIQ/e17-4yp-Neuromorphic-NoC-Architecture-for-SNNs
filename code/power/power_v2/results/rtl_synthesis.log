@@ -42,415 +42,17 @@ analyze -f sv -vcs "-f src.f "
 Information: By default, the HDL template library is 'WORK' (LBR-??).
 Running PRESTO HDLC
 Parsing vcs commands file -f src.f 
-Error: File '"../../cpu/fpu/Priority' cannot be found using search_path of: '../../cpu/fpu ../../cpu/noc ../../cpu/neuron_bank ../../cpu/cpu ../../cpu/zicsr ../../cpu * /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu'. (FILE-002)
-Error: File 'Encoder.v"' cannot be found using search_path of: '../../cpu/fpu ../../cpu/noc ../../cpu/neuron_bank ../../cpu/cpu ../../cpu/zicsr ../../cpu * /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu'. (FILE-002)
-Compiling source file ../../cpu/support_modules/mux_2to1_32bit.v
-Compiling source file ../../cpu/support_modules/mux_2to1_3bit.v
-Compiling source file ../../cpu/support_modules/mux_4to1_32bit.v
-Compiling source file ../../cpu/support_modules/plus_4_adder.v
-Warning:  ../../cpu/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
-Compiling source file ../../cpu/fpu/Addition-Subtraction.v
-Opening include file ../../cpu/fpu/Priority Encoder.v
-Warning:  ../../cpu/fpu/Addition-Subtraction.v:45: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  ../../cpu/fpu/Addition-Subtraction.v:46: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  ../../cpu/fpu/Addition-Subtraction.v:69: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
-Compiling source file ../../cpu/fpu/Multiplication.v
-Compiling source file ../../cpu/fpu/Division.v
-Opening include file ../../cpu/fpu/Iteration.v
-Compiling source file ../../cpu/fpu/Comparison.v
-Compiling source file ../../cpu/fpu/Converter.v
-Compiling source file ../../cpu/fpu/Iteration.v
-Compiling source file ../../cpu/fpu/fpu.v
-Opening include file ../../cpu/fpu/Addition-Subtraction.v
-Opening include file ../../cpu/fpu/Multiplication.v
-Opening include file ../../cpu/fpu/Division.v
-Opening include file ../../cpu/fpu/Comparison.v
-Opening include file ../../cpu/fpu/Converter.v
-Compiling source file ../../cpu/alu/alu.v
-Warning:  ../../cpu/alu/alu.v:47: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:48: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:49: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:50: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:51: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:54: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:55: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:58: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:61: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:62: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:65: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:68: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:90: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:94: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:95: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:98: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
-Compiling source file ../../cpu/reg_file/reg_file.v
-Warning:  ../../cpu/alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
-Warning:  ../../cpu/reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
-Compiling source file ../../cpu/f_reg_file/f_reg_file.v
-Warning:  ../../cpu/reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
-Compiling source file ../../cpu/f_alu/f_alu.v
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Compiling source file ../../cpu/immediate_generation_unit/immediate_generation_unit.v
-Compiling source file ../../cpu/immediate_select_unit/immediate_select_unit.v
-Compiling source file ../../cpu/control_unit/control_unit.v
-Opening include file ../../cpu/support_modules/mux_2to1_3bit.v
-Warning:  ../../cpu/support_modules/mux_2to1_3bit.v:3: Overwriting existing design element 'mux_2to1_3bit' with newer version. (VER-64)
-Warning:  ../../cpu/control_unit/control_unit.v:57: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:73: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:78: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:105: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:120: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:137: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:148: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:157: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:158: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:162: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:171: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:172: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:179: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:184: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:201: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:208: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:224: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:238: delays for continuous assignment are ignored. (VER-173)
-Compiling source file ../../cpu/branch_control_unit/branch_control_unit.v
-Compiling source file ../../cpu/hazard_detection_unit/hazard_detection_unit.v
-Warning:  ../../cpu/branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
-Compiling source file ../../cpu/forwarding_units/ex_forward_unit.v
-Compiling source file ../../cpu/forwarding_units/mem_forward_unit.v
-Compiling source file ../../cpu/pipeline_flush_unit/pipeline_flush_unit.v
-Compiling source file ../../cpu/pipeline_registers/pr_if_id.v
-Compiling source file ../../cpu/pipeline_registers/pr_id_ex.v
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:17: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:18: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:22: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:23: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Compiling source file ../../cpu/pipeline_registers/pr_ex_mem.v
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:57: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:76: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:77: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:78: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:79: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:80: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:81: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:82: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:83: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:84: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:85: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:86: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:87: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:88: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:89: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:90: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:91: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:92: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:93: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:94: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:96: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Compiling source file ../../cpu/pipeline_registers/pr_mem_wb.v
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:44: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:45: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:46: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Compiling source file ../../cpu/zicsr/zicsr.v
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:35: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:37: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:38: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:39: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:40: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../cpu/zicsr/rv32i_header.vh
-Warning:  ../../cpu/zicsr/zicsr.v:99: The construct 'declaration initial assignment' is not supported in synthesis; it is ignored. (VER-708)
-Compiling source file ../../cpu/instruction_memory/instruction_memory.v
-Compiling source file ../../cpu/neuron_bank/neuron_bank.v
-Opening include file ../../cpu/neuron_bank/neuron_core.v
-Opening include file ../../cpu/fpu/Addition-Subtraction.v
-Opening include file ../../cpu/fpu/Multiplication.v
-Opening include file ../../cpu/neuron_bank/rng.v
-Compiling source file ../../cpu/neuron_bank/neuron_core.v
-Opening include file ../../cpu/fpu/Addition-Subtraction.v
-Opening include file ../../cpu/fpu/Multiplication.v
-Warning:  ../../cpu/neuron_bank/neuron_core.v:8: Overwriting existing design element 'neuron_core' with newer version. (VER-64)
-Compiling source file ../../cpu/neuron_bank/rng.v
-Warning:  ../../cpu/neuron_bank/rng.v:5: Overwriting existing design element 'rng' with newer version. (VER-64)
-Compiling source file ../../cpu/noc/router.v
-Opening include file ../../cpu/noc/input_module.v
-Opening include file ../../cpu/noc/input_router.v
-Opening include file ../../cpu/noc/virtual_channel.v
-Opening include file ../../cpu/noc/rr_arbiter.v
-Opening include file ../../cpu/noc/output_module.v
-Compiling source file ../../cpu/noc/rr_arbiter.v
-Warning:  ../../cpu/noc/rr_arbiter.v:5: Overwriting existing design element 'rr_arbiter' with newer version. (VER-64)
-Compiling source file ../../cpu/noc/network_interface.v
-Opening include file ../../cpu/noc/async_fifo.v
-Compiling source file ../../cpu/noc/async_fifo.v
-Warning:  ../../cpu/noc/async_fifo.v:5: Overwriting existing design element 'async_fifo' with newer version. (VER-64)
-Compiling source file ../../cpu/cpu/cpu.v
-Opening include file ../../cpu/alu/alu.v
-Warning:  ../../cpu/alu/alu.v:3: Overwriting existing design element 'alu' with newer version. (VER-64)
-Warning:  ../../cpu/alu/alu.v:47: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:48: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:49: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:50: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:51: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:54: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:55: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:58: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:61: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:62: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:65: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:68: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:90: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:94: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:95: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:98: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/fpu/fpu.v
-Opening include file ../../cpu/reg_file/reg_file.v
-Warning:  ../../cpu/alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
-Warning:  ../../cpu/reg_file/reg_file.v:3: Overwriting existing design element 'reg_file' with newer version. (VER-64)
-Warning:  ../../cpu/reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/f_reg_file/f_reg_file.v
-Warning:  ../../cpu/reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:3: Overwriting existing design element 'f_reg_file' with newer version. (VER-64)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/immediate_generation_unit/immediate_generation_unit.v
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/immediate_generation_unit/immediate_generation_unit.v:3: Overwriting existing design element 'immediate_generation_unit' with newer version. (VER-64)
-Opening include file ../../cpu/control_unit/control_unit.v
-Opening include file ../../cpu/support_modules/mux_2to1_3bit.v
-Warning:  ../../cpu/support_modules/mux_2to1_3bit.v:3: Overwriting existing design element 'mux_2to1_3bit' with newer version. (VER-64)
-Warning:  ../../cpu/control_unit/control_unit.v:4: Overwriting existing design element 'control_unit' with newer version. (VER-64)
-Warning:  ../../cpu/control_unit/control_unit.v:57: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:73: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:78: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:105: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:120: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:137: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:148: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:157: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:158: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:162: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:171: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:172: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:179: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:184: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:201: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:208: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:224: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit.v:238: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/branch_control_unit/branch_control_unit.v
-Warning:  ../../cpu/branch_control_unit/branch_control_unit.v:3: Overwriting existing design element 'branch_control_unit' with newer version. (VER-64)
-Opening include file ../../cpu/forwarding_units/ex_forward_unit.v
-Warning:  ../../cpu/branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
-Warning:  ../../cpu/forwarding_units/ex_forward_unit.v:6: Overwriting existing design element 'ex_forward_unit' with newer version. (VER-64)
-Opening include file ../../cpu/forwarding_units/mem_forward_unit.v
-Warning:  ../../cpu/forwarding_units/mem_forward_unit.v:6: Overwriting existing design element 'mem_forward_unit' with newer version. (VER-64)
-Opening include file ../../cpu/hazard_detection_unit/hazard_detection_unit.v
-Warning:  ../../cpu/hazard_detection_unit/hazard_detection_unit.v:8: Overwriting existing design element 'hazard_detection_unit' with newer version. (VER-64)
-Opening include file ../../cpu/pipeline_flush_unit/pipeline_flush_unit.v
-Warning:  ../../cpu/pipeline_flush_unit/pipeline_flush_unit.v:3: Overwriting existing design element 'pipeline_flush_unit' with newer version. (VER-64)
-Opening include file ../../cpu/pipeline_registers/pr_if_id.v
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:3: Overwriting existing design element 'pr_if_id' with newer version. (VER-64)
-Opening include file ../../cpu/pipeline_registers/pr_id_ex.v
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:17: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:18: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:22: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:23: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:3: Overwriting existing design element 'pr_id_ex' with newer version. (VER-64)
-Opening include file ../../cpu/pipeline_registers/pr_ex_mem.v
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:57: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:76: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:77: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:78: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:79: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:80: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:81: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:82: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:83: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:84: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:85: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:86: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:87: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:88: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:89: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:90: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:91: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:92: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:93: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:94: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:96: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:3: Overwriting existing design element 'pr_ex_mem' with newer version. (VER-64)
-Opening include file ../../cpu/pipeline_registers/pr_mem_wb.v
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:44: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:45: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:46: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:3: Overwriting existing design element 'pr_mem_wb' with newer version. (VER-64)
-Opening include file ../../cpu/support_modules/plus_4_adder.v
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:35: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:37: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:38: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:39: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:40: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/support_modules/plus_4_adder.v:3: Overwriting existing design element 'plus_4_adder' with newer version. (VER-64)
-Warning:  ../../cpu/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/support_modules/mux_4to1_32bit.v
-Warning:  ../../cpu/support_modules/mux_4to1_32bit.v:3: Overwriting existing design element 'mux_4to1_32bit' with newer version. (VER-64)
-Opening include file ../../cpu/support_modules/mux_2to1_32bit.v
-Warning:  ../../cpu/support_modules/mux_2to1_32bit.v:3: Overwriting existing design element 'mux_2to1_32bit' with newer version. (VER-64)
-Warning:  ../../cpu/cpu/cpu.v:178: the undeclared symbol 'EX_FPU_DATA1' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  ../../cpu/cpu/cpu.v:179: the undeclared symbol 'EX_FPU_DATA2' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  ../../cpu/cpu/cpu.v:180: the undeclared symbol 'EX_FPU_DATA3' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  ../../cpu/cpu/cpu.v:183: the undeclared symbol 'EX_FPU_OUT' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  ../../cpu/cpu/cpu.v:216: the undeclared symbol 'MEM_WRITE_DATA_SEL' assumed to have the default net type, which is 'wire'. (VER-936)
 Compiling source file ../../cpu/system_top_with_cpu.v
 Opening include file ../../cpu/support_modules/mux_2to1_32bit.v
-Warning:  ../../cpu/support_modules/mux_2to1_32bit.v:3: Overwriting existing design element 'mux_2to1_32bit' with newer version. (VER-64)
 Opening include file ../../cpu/support_modules/mux_2to1_3bit.v
-Warning:  ../../cpu/support_modules/mux_2to1_3bit.v:3: Overwriting existing design element 'mux_2to1_3bit' with newer version. (VER-64)
 Opening include file ../../cpu/support_modules/mux_4to1_32bit.v
-Warning:  ../../cpu/support_modules/mux_4to1_32bit.v:3: Overwriting existing design element 'mux_4to1_32bit' with newer version. (VER-64)
 Opening include file ../../cpu/support_modules/plus_4_adder.v
-Warning:  ../../cpu/support_modules/plus_4_adder.v:3: Overwriting existing design element 'plus_4_adder' with newer version. (VER-64)
 Warning:  ../../cpu/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
 Opening include file ../../cpu/fpu/Priority Encoder.v
 Opening include file ../../cpu/fpu/Addition-Subtraction_no_includes.v
+Warning:  ../../cpu/fpu/Addition-Subtraction_no_includes.v:45: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../cpu/fpu/Addition-Subtraction_no_includes.v:46: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../cpu/fpu/Addition-Subtraction_no_includes.v:69: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
 Opening include file ../../cpu/fpu/Multiplication_no_includes.v
 Opening include file ../../cpu/fpu/Division_no_includes.v
 Opening include file ../../cpu/fpu/Iteration.v
@@ -458,9 +60,7 @@ Opening include file ../../cpu/fpu/Comparison.v
 Opening include file ../../cpu/fpu/Converter.v
 Opening include file ../../cpu/fpu/fpu_no_includes.v
 Opening include file ../../cpu/f_alu/f_alu.v
-Warning:  ../../cpu/f_alu/f_alu.v:3: Overwriting existing design element 'f_alu' with newer version. (VER-64)
 Opening include file ../../cpu/alu/alu.v
-Warning:  ../../cpu/alu/alu.v:3: Overwriting existing design element 'alu' with newer version. (VER-64)
 Warning:  ../../cpu/alu/alu.v:47: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../cpu/alu/alu.v:48: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../cpu/alu/alu.v:49: delays for continuous assignment are ignored. (VER-173)
@@ -480,24 +80,19 @@ Warning:  ../../cpu/alu/alu.v:98: delays for continuous assignment are ignored. 
 Warning:  ../../cpu/alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
 Opening include file ../../cpu/reg_file/reg_file.v
 Warning:  ../../cpu/alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
-Warning:  ../../cpu/reg_file/reg_file.v:3: Overwriting existing design element 'reg_file' with newer version. (VER-64)
 Warning:  ../../cpu/reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../cpu/reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
 Opening include file ../../cpu/f_reg_file/f_reg_file.v
 Warning:  ../../cpu/reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:3: Overwriting existing design element 'f_reg_file' with newer version. (VER-64)
 Warning:  ../../cpu/f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../cpu/f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../cpu/f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
 Opening include file ../../cpu/immediate_generation_unit/immediate_generation_unit.v
 Warning:  ../../cpu/f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/immediate_generation_unit/immediate_generation_unit.v:3: Overwriting existing design element 'immediate_generation_unit' with newer version. (VER-64)
 Opening include file ../../cpu/immediate_select_unit/immediate_select_unit.v
-Warning:  ../../cpu/immediate_select_unit/immediate_select_unit.v:3: Overwriting existing design element 'immediate_select_unit' with newer version. (VER-64)
 Opening include file ../../cpu/control_unit/control_unit_no_includes.v
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:4: Overwriting existing design element 'control_unit' with newer version. (VER-64)
 Warning:  ../../cpu/control_unit/control_unit_no_includes.v:57: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../cpu/control_unit/control_unit_no_includes.v:73: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../cpu/control_unit/control_unit_no_includes.v:78: delays for continuous assignment are ignored. (VER-173)
@@ -517,24 +112,17 @@ Warning:  ../../cpu/control_unit/control_unit_no_includes.v:208: delays for cont
 Warning:  ../../cpu/control_unit/control_unit_no_includes.v:224: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../cpu/control_unit/control_unit_no_includes.v:238: delays for continuous assignment are ignored. (VER-173)
 Opening include file ../../cpu/branch_control_unit/branch_control_unit.v
-Warning:  ../../cpu/branch_control_unit/branch_control_unit.v:3: Overwriting existing design element 'branch_control_unit' with newer version. (VER-64)
 Opening include file ../../cpu/forwarding_units/ex_forward_unit.v
 Warning:  ../../cpu/branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
-Warning:  ../../cpu/forwarding_units/ex_forward_unit.v:6: Overwriting existing design element 'ex_forward_unit' with newer version. (VER-64)
 Opening include file ../../cpu/forwarding_units/mem_forward_unit.v
-Warning:  ../../cpu/forwarding_units/mem_forward_unit.v:6: Overwriting existing design element 'mem_forward_unit' with newer version. (VER-64)
 Opening include file ../../cpu/hazard_detection_unit/hazard_detection_unit.v
-Warning:  ../../cpu/hazard_detection_unit/hazard_detection_unit.v:8: Overwriting existing design element 'hazard_detection_unit' with newer version. (VER-64)
 Opening include file ../../cpu/pipeline_flush_unit/pipeline_flush_unit.v
-Warning:  ../../cpu/pipeline_flush_unit/pipeline_flush_unit.v:3: Overwriting existing design element 'pipeline_flush_unit' with newer version. (VER-64)
 Opening include file ../../cpu/pipeline_registers/pr_if_id.v
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:3: Overwriting existing design element 'pr_if_id' with newer version. (VER-64)
 Opening include file ../../cpu/pipeline_registers/pr_id_ex.v
 Warning:  ../../cpu/pipeline_registers/pr_if_id.v:17: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_if_id.v:18: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_if_id.v:22: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_if_id.v:23: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:3: Overwriting existing design element 'pr_id_ex' with newer version. (VER-64)
 Opening include file ../../cpu/pipeline_registers/pr_ex_mem.v
 Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
@@ -582,7 +170,6 @@ Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:94: Intraassignment delays for
 Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:96: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:3: Overwriting existing design element 'pr_ex_mem' with newer version. (VER-64)
 Opening include file ../../cpu/pipeline_registers/pr_mem_wb.v
 Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
@@ -612,7 +199,6 @@ Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:68: Intraassignment delays fo
 Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:3: Overwriting existing design element 'pr_mem_wb' with newer version. (VER-64)
 Opening include file ../../cpu/cpu/cpu_no_includes.v
 Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:35: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
@@ -632,34 +218,22 @@ Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:52: Intraassignment delays fo
 Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/cpu/cpu_no_includes.v:26: Overwriting existing design element 'cpu' with newer version. (VER-64)
 Warning:  ../../cpu/cpu/cpu_no_includes.v:217: the undeclared symbol 'MEM_WRITE_DATA_SEL' assumed to have the default net type, which is 'wire'. (VER-936)
 Opening include file ../../cpu/noc/async_fifo.v
-Warning:  ../../cpu/noc/async_fifo.v:5: Overwriting existing design element 'async_fifo' with newer version. (VER-64)
 Opening include file ../../cpu/noc/input_router.v
-Warning:  ../../cpu/noc/input_router.v:4: Overwriting existing design element 'input_router' with newer version. (VER-64)
 Opening include file ../../cpu/noc/rr_arbiter.v
-Warning:  ../../cpu/noc/rr_arbiter.v:5: Overwriting existing design element 'rr_arbiter' with newer version. (VER-64)
 Opening include file ../../cpu/noc/virtual_channel.v
-Warning:  ../../cpu/noc/virtual_channel.v:4: Overwriting existing design element 'virtual_channel' with newer version. (VER-64)
 Opening include file ../../cpu/noc/input_module_no_includes.v
-Warning:  ../../cpu/noc/input_module_no_includes.v:9: Overwriting existing design element 'input_module' with newer version. (VER-64)
 Opening include file ../../cpu/noc/output_module_no_includes.v
-Warning:  ../../cpu/noc/output_module_no_includes.v:5: Overwriting existing design element 'output_module' with newer version. (VER-64)
 Opening include file ../../cpu/noc/router_no_includes.v
-Warning:  ../../cpu/noc/router_no_includes.v:8: Overwriting existing design element 'router' with newer version. (VER-64)
 Opening include file ../../cpu/noc/network_interface_no_includes.v
-Warning:  ../../cpu/noc/network_interface_no_includes.v:7: Overwriting existing design element 'network_interface' with newer version. (VER-64)
 Opening include file ../../cpu/neuron_bank/rng.v
-Warning:  ../../cpu/neuron_bank/rng.v:5: Overwriting existing design element 'rng' with newer version. (VER-64)
 Opening include file ../../cpu/neuron_bank/neuron_core.v
 Opening include file ../../cpu/fpu/Addition-Subtraction.v
 Opening include file ../../cpu/fpu/Multiplication.v
-Warning:  ../../cpu/neuron_bank/neuron_core.v:8: Overwriting existing design element 'neuron_core' with newer version. (VER-64)
 Opening include file ../../cpu/neuron_bank/neuron_bank_no_includes.v
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:8: Overwriting existing design element 'neuron_bank' with newer version. (VER-64)
 Presto compilation completed successfully.
-Elapsed = 00:00:00.19, CPU = 00:00:00.17
+Elapsed = 00:00:00.09, CPU = 00:00:00.08
 1
 elaborate system_top_with_cpu
 Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
@@ -835,7 +409,7 @@ Inferred memory devices in process
 | gen_y[1].gen_x[1].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ==============================================================================================
 Presto compilation completed successfully. (system_top_with_cpu)
-Module: system_top_with_cpu, Elapsed Time: 00:00:13, CPU Time: 00:00:12, Total Mem: 993.49 MB, Mem: 597.92 MB, Time: Thu Nov 27 09:02:48 2025
+Module: system_top_with_cpu, Elapsed Time: 00:00:12, CPU Time: 00:00:12, Total Mem: 993.24 MB, Mem: 598.20 MB, Time: Thu Nov 27 09:29:19 2025
 Information: Elaborating HDL template WORK:router instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0,VC_DEPTH=4}. (ELAB-193)
 Presto compilation completed successfully. (router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4)
 Information: Elaborating HDL template WORK:network_interface instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,NEURON_ADDR_WIDTH=12,FIFO_DEPTH=4}. (ELAB-193)
@@ -1139,7 +713,7 @@ Presto compilation completed successfully. (alu)
 Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 102 in file
-	'../../cpu/fpu/fpu.v'
+	'../../cpu/fpu/fpu_no_includes.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -1408,13 +982,13 @@ Total in all modules
   Nets:                 145979
   Instances:            71181
 Design summary end. (FLW-8551)
-Elapsed = 00:00:16.96, CPU = 00:00:16.56
+Elapsed = 00:00:17.03, CPU = 00:00:16.66
 1
 set_top_module system_top_with_cpu
 Information: User units loaded from library 'NangateOpenCellLibrary' (LNK-040)
 Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
 Gensys attachment is created: presto_gensys.attach:LIB:system_top_with_cpu.design 
-Elapsed = 00:00:20.14, CPU = 00:00:19.96
+Elapsed = 00:00:20.13, CPU = 00:00:19.96
 1
 source ./tz_setup.tcl
 The following clock gating options are applied to: top-level (design)
@@ -1441,7 +1015,7 @@ Scenario func@Cmin (mode func corner Cmin) is active for setup/leakage_power/dyn
 Report : scenario
 Design : system_top_with_cpu
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 09:03:13 2025
+Date   : Thu Nov 27 09:29:45 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -1455,7 +1029,7 @@ rtl_opt -initial_map_only
 Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
 Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
 Information: Starting 'rtl_opt -from conditioning -to conditioning' (FLW-8000)
-Information: Time: 2025-11-27 09:03:16 / Session:  00:00:49 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1409 MB (FLW-8100)
+Information: Time: 2025-11-27 09:29:48 / Session:  00:00:49 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1409 MB (FLW-8100)
 Information: Timer using 8 threads
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
@@ -1464,7 +1038,7 @@ Information: Structural Congestion Optimization technology (Early SCO) has been 
 ****************************************
 Report : report_tbcs
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 09:03:20 2025
+Date   : Thu Nov 27 09:29:52 2025
 ****************************************
 INFO: Start environment monitoring: recipes
 Information: Corner Cmax: no PVT mismatches. (PVT-032)
@@ -1475,19 +1049,19 @@ INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning (FLW-8000)
-Information: Time: 2025-11-27 09:04:09 / Session:  00:01:41 / Command:  00:00:52 / CPU:  00:01:08 / Memory: 2334 MB (FLW-8100)
+Information: Time: 2025-11-27 09:30:41 / Session:  00:01:42 / Command:  00:00:53 / CPU:  00:01:09 / Memory: 2329 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
-Information: Time: 2025-11-27 09:04:09 / Session:  00:01:42 / Command:  00:00:52 / CPU:  00:01:09 / Memory: 2334 MB (FLW-8100)
+Information: Time: 2025-11-27 09:30:42 / Session:  00:01:42 / Command:  00:00:53 / CPU:  00:01:09 / Memory: 2329 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
-Information: Time: 2025-11-27 09:04:12 / Session:  00:01:45 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2334 MB (FLW-8100)
+Information: Time: 2025-11-27 09:30:45 / Session:  00:01:46 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2329 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-11-27 09:04:12 / Session:  00:01:45 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2334 MB (FLW-8100)
+Information: Time: 2025-11-27 09:30:45 / Session:  00:01:46 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2329 MB (FLW-8100)
 MV related app options set by user:
 Information: Ending   rtl_opt / conditioning / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-11-27 09:04:12 / Session:  00:01:45 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2334 MB (FLW-8100)
+Information: Time: 2025-11-27 09:30:45 / Session:  00:01:46 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2329 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8000)
-Information: Time: 2025-11-27 09:04:12 / Session:  00:01:45 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2334 MB (FLW-8100)
+Information: Time: 2025-11-27 09:30:45 / Session:  00:01:46 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2329 MB (FLW-8100)
 Information: The register gen_y[0].gen_x[0].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
 Information: The register gen_y[1].gen_x[1].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
 Information: The register gen_y[1].gen_x[0].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
@@ -1515,17 +1089,17 @@ Information: 28 registers were merged. Use report_transformed_registers for a li
 Information: 138 out of 148 SQM-4100 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:14) (MSG-3913)
 Information: 18 out of 28 SQM-4102 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:14) (MSG-3913)
 Information: Ending   rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8001)
-Information: Time: 2025-11-27 09:06:04 / Session:  00:03:37 / Command:  00:02:47 / CPU:  00:03:11 / Memory: 2522 MB (FLW-8100)
+Information: Time: 2025-11-27 09:32:36 / Session:  00:03:37 / Command:  00:02:48 / CPU:  00:03:12 / Memory: 2413 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Register Merging (FLW-8000)
-Information: Time: 2025-11-27 09:06:04 / Session:  00:03:37 / Command:  00:02:47 / CPU:  00:03:11 / Memory: 2522 MB (FLW-8100)
+Information: Time: 2025-11-27 09:32:36 / Session:  00:03:37 / Command:  00:02:48 / CPU:  00:03:12 / Memory: 2413 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Register Merging (FLW-8001)
-Information: Time: 2025-11-27 09:06:04 / Session:  00:03:37 / Command:  00:02:47 / CPU:  00:03:11 / Memory: 2522 MB (FLW-8100)
+Information: Time: 2025-11-27 09:32:36 / Session:  00:03:37 / Command:  00:02:48 / CPU:  00:03:12 / Memory: 2413 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-11-27 09:06:04 / Session:  00:03:37 / Command:  00:02:47 / CPU:  00:03:11 / Memory: 2522 MB (FLW-8100)
+Information: Time: 2025-11-27 09:32:36 / Session:  00:03:37 / Command:  00:02:48 / CPU:  00:03:12 / Memory: 2413 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-11-27 09:06:08 / Session:  00:03:40 / Command:  00:02:51 / CPU:  00:03:22 / Memory: 2522 MB (FLW-8100)
+Information: Time: 2025-11-27 09:32:40 / Session:  00:03:41 / Command:  00:02:52 / CPU:  00:03:23 / Memory: 2413 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8000)
-Information: Time: 2025-11-27 09:06:15 / Session:  00:03:47 / Command:  00:02:58 / CPU:  00:03:30 / Memory: 2522 MB (FLW-8100)
+Information: Time: 2025-11-27 09:32:47 / Session:  00:03:48 / Command:  00:02:59 / CPU:  00:03:30 / Memory: 2413 MB (FLW-8100)
 Information: For the module "system_top_with_cpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 237368 mux gate(s) with total area 415742.47. (MUX-1021)
 Information: For the module "f_reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3073 mux gate(s) with total area 5465.54. (MUX-1021)
 Information: For the module "reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 2147 mux gate(s) with total area 3815.79. (MUX-1021)
@@ -1562,9 +1136,9 @@ Information: For the module "mem_forward_unit", SELECT_OPs marked with infer_mux
 Information: For the module "mux_2to1_3bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3 mux gate(s) with total area 5.34. (MUX-1021)
 Information: Timer using 8 threads
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8001)
-Information: Time: 2025-11-27 09:14:39 / Session:  00:12:11 / Command:  00:11:22 / CPU:  00:12:39 / Memory: 3041 MB (FLW-8100)
+Information: Time: 2025-11-27 09:42:09 / Session:  00:13:09 / Command:  00:12:20 / CPU:  00:13:26 / Memory: 2939 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8000)
-Information: Time: 2025-11-27 09:14:39 / Session:  00:12:11 / Command:  00:11:22 / CPU:  00:12:39 / Memory: 3041 MB (FLW-8100)
+Information: Time: 2025-11-27 09:42:09 / Session:  00:13:09 / Command:  00:12:20 / CPU:  00:13:26 / Memory: 2939 MB (FLW-8100)
 Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
 Information: 3 register's output was inverted. Use report_transformed_registers for a list. (SQM-2014)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
@@ -1580,7 +1154,7 @@ Information: 5378 out of 5379 SQM-1040 messages were not printed due to limit 1 
 Information: 5378 out of 5379 SQM-1074 messages were not printed due to limit 1  (MSG-3913)
 Information: 8 out of 9 SQM-2014 messages were not printed due to limit 1  (MSG-3913)
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
-Information: Time: 2025-11-27 09:16:13 / Session:  00:13:46 / Command:  00:12:57 / CPU:  00:16:34 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:43:54 / Session:  00:14:55 / Command:  00:14:06 / CPU:  00:17:40 / Memory: 5431 MB (FLW-8100)
 Information: RTL multibit banking summary. (SQM-2008)
 	Total candidates in design:87280
 	Total candidates ignored:  87132
@@ -1589,19 +1163,19 @@ Information: RTL multibit banking summary. (SQM-2008)
 	Banking ratio             :0.00% (Before banking 0.00%)
 	Use report_multibit for details.
 Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
-Information: Time: 2025-11-27 09:16:14 / Session:  00:13:47 / Command:  00:12:57 / CPU:  00:16:34 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:43:55 / Session:  00:14:55 / Command:  00:14:06 / CPU:  00:17:40 / Memory: 5431 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
-Information: Time: 2025-11-27 09:16:14 / Session:  00:13:47 / Command:  00:12:57 / CPU:  00:16:34 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:43:55 / Session:  00:14:55 / Command:  00:14:06 / CPU:  00:17:40 / Memory: 5431 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-11-27 09:16:28 / Session:  00:14:01 / Command:  00:13:12 / CPU:  00:16:49 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:44:10 / Session:  00:15:10 / Command:  00:14:21 / CPU:  00:17:55 / Memory: 5431 MB (FLW-8100)
 Information: 6088 registers were found constant but could not be removed due to restrictions. (SQM-3103)
 Information: Register Bits Before Sharing = 87280, After Sharing = 87280, Savings = 0 (SQM-2000)
 Information: Starting rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-11-27 09:16:38 / Session:  00:14:11 / Command:  00:13:22 / CPU:  00:16:59 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:44:20 / Session:  00:15:20 / Command:  00:14:31 / CPU:  00:18:05 / Memory: 5431 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-11-27 09:16:48 / Session:  00:14:21 / Command:  00:13:32 / CPU:  00:17:27 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:44:30 / Session:  00:15:31 / Command:  00:14:42 / CPU:  00:18:33 / Memory: 5431 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-11-27 09:16:48 / Session:  00:14:21 / Command:  00:13:32 / CPU:  00:17:27 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:44:30 / Session:  00:15:31 / Command:  00:14:42 / CPU:  00:18:33 / Memory: 5431 MB (FLW-8100)
 Information: Result of rtl_opt / conditioning / Clock Gate Insertion (FLW-8500)
 --------------------------------------------------------------------------------
 |                             Clock Gating Options                             |
@@ -1631,9 +1205,9 @@ Regular Clock Gating                |        6280 |          84456 |      84456 
  Not Processed.                                            |    96 |       96
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -    1331864.00           -      647417              0.24      5625
+Compile-fusion                                          -           -         -         -    1331864.00           -      647417              0.26      5430
 Information: Ending   rtl_opt / conditioning (FLW-8001)
-Information: Time: 2025-11-27 09:16:58 / Session:  00:14:31 / Command:  00:13:42 / CPU:  00:17:37 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:44:45 / Session:  00:15:46 / Command:  00:14:57 / CPU:  00:18:48 / Memory: 5431 MB (FLW-8100)
 Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
 Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
 Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
@@ -1687,7 +1261,7 @@ Information:    31    31  1        2  <------   Total sum of messages (MSG-3038)
 Information: >>>>>>> Summary: 31 error&warning MSGs observed during fast (MSG-3103)
 Info: FAST compile completed.
 Information: Ending   'rtl_opt -from conditioning -to conditioning' (FLW-8001)
-Information: Time: 2025-11-27 09:17:04 / Session:  00:14:37 / Command:  00:13:48 / CPU:  00:17:43 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:44:54 / Session:  00:15:54 / Command:  00:15:05 / CPU:  00:18:55 / Memory: 5431 MB (FLW-8100)
 1
 set_rtl_power_analysis_options -scenario func@Cmax -design system_top_with_cpu -strip_path system_top_with_cpu_tb/dut -fsdb "../../cpu/novas.fsdb" -output_dir RTLA_WORKSPACE
 1
@@ -1700,9 +1274,9 @@ Saving library 'LIB'
 export_power_data
 Information: exporting data
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-11-27 09:17:27 / Session:  00:15:00 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 5625 MB (FLW-8100)
-Information: Corner Cmax: no PVT mismatches. (PVT-032)
+Information: Time: 2025-11-27 09:45:16 / Session:  00:16:16 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 5431 MB (FLW-8100)
 Information: Corner Cmin: no PVT mismatches. (PVT-032)
+Information: Corner Cmax: no PVT mismatches. (PVT-032)
 Information: The stitching and editing of coupling caps is turned OFF for design 'LIB:system_top_with_cpu.design'. (TIM-125)
 Warning: No physical information exists for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-101)
 Warning: The extractor can not be initialized for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-102)
@@ -1727,7 +1301,7 @@ ML Acceleration:                           off
 Smart Arc Optimization:                    disabled
 ************************************************************
 Information: Ending   'update_timing' (FLW-8001)
-Information: Time: 2025-11-27 09:18:12 / Session:  00:15:45 / Command:  00:00:45 / CPU:  00:03:29 / Memory: 5625 MB (FLW-8100)
+Information: Time: 2025-11-27 09:46:05 / Session:  00:17:05 / Command:  00:00:48 / CPU:  00:03:34 / Memory: 5431 MB (FLW-8100)
 Information: Exporting essential name map file
 Warning: Option '-essential' for command 'saif_map' is deprecated. See the command's man page for alternatives. (CMD-110)
 Warning: '-essential' option should not be specified as it has been deprecated and is enabled by default. (POW-120)
@@ -1748,7 +1322,7 @@ report_timing > "results/timing_report.txt"
 report_timing -max_paths 10 > "results/timing_report_10.txt"
 report_area  > "results/area_register.txt"
 exit
-Maximum memory usage for this session: 5625.34 MB
-CPU usage for this session:   1490 seconds (  0.41 hours)
-Elapsed time for this session:   1111 seconds (  0.31 hours)
+Maximum memory usage for this session: 5430.56 MB
+CPU usage for this session:   1567 seconds (  0.44 hours)
+Elapsed time for this session:   1189 seconds (  0.33 hours)
 Thank you for using RTL Architect.

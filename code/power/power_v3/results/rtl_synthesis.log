@@ -1,4 +1,6 @@
- 
+
+
+
                                RTL Architect (TM)
 
                Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
@@ -19,7 +21,7 @@
  Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
-
+ 
 set_current_mismatch_config auto_fix
 1
 set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
@@ -66,8 +68,8 @@ elaborate system_top
 Warning:  ../../cpu/system_top.v:330: signed to unsigned part selection occurs. (VER-318)
 
 Inferred memory devices in process
-        in routine system_top line 255 in file
-                '../../cpu/system_top.v'.
+	in routine system_top line 255 in file
+		'../../cpu/system_top.v'.
 ===================================================================================================
 |              Register Name              |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===================================================================================================
@@ -82,7 +84,7 @@ Presto compilation completed successfully. (router_ROUTER_ADDR_WIDTH8_ROUTING_AL
 Information: Elaborating HDL template WORK:network_interface instantiated from 'system_top' with the parameters {ROUTER_ADDR_WIDTH=4,NEURON_ADDR_WIDTH=12,FIFO_DEPTH=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 111 in file
-        '../../cpu/noc/network_interface.v'
+	'../../cpu/noc/network_interface.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -90,7 +92,7 @@ Statistics for case statements in always block at line 111 in file
 ===============================================
 
 Statistics for case statements in always block at line 169 in file
-        '../../cpu/noc/network_interface.v'
+	'../../cpu/noc/network_interface.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -99,8 +101,8 @@ Statistics for case statements in always block at line 169 in file
   state register: wr_state
 
 Inferred memory devices in process
-        in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 111 in file
-                '../../cpu/noc/network_interface.v'.
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 111 in file
+		'../../cpu/noc/network_interface.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -112,8 +114,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 169 in file
-                '../../cpu/noc/network_interface.v'.
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 169 in file
+		'../../cpu/noc/network_interface.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -125,8 +127,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 227 in file
-                '../../cpu/noc/network_interface.v'.
+	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 227 in file
+		'../../cpu/noc/network_interface.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -144,7 +146,7 @@ Warning:  ../../cpu/neuron_bank/neuron_bank.v:212: signed to unsigned conversion
 Warning:  ../../cpu/neuron_bank/neuron_bank.v:227: unsigned to signed assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 115 in file
-        '../../cpu/neuron_bank/neuron_bank.v'
+	'../../cpu/neuron_bank/neuron_bank.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -153,8 +155,8 @@ Statistics for case statements in always block at line 115 in file
 ===============================================
 
 Inferred memory devices in process
-        in routine neuron_bank_NUM_NEURONS4_ADDR_WIDTH8 line 115 in file
-                '../../cpu/neuron_bank/neuron_bank.v'.
+	in routine neuron_bank_NUM_NEURONS4_ADDR_WIDTH8 line 115 in file
+		'../../cpu/neuron_bank/neuron_bank.v'.
 =====================================================================================
 |       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =====================================================================================
@@ -184,8 +186,8 @@ Presto compilation completed successfully. (input_module_ROUTER_ADDR_WIDTH8_ROUT
 Information: Elaborating HDL template WORK:output_module instantiated from 'router_ROUTER_ADDR_WIDTH8_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {VC_DEPTH=4}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine output_module_VC_DEPTH4 line 187 in file
-                '../../cpu/noc/output_module.v'.
+	in routine output_module_VC_DEPTH4 line 187 in file
+		'../../cpu/noc/output_module.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -196,8 +198,8 @@ Presto compilation completed successfully. (output_module_VC_DEPTH4)
 Information: Elaborating HDL template WORK:async_fifo instantiated from 'network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4' with the parameters {DATA_WIDTH=32,ADDR_WIDTH=4}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 65 in file
-                '../../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 65 in file
+		'../../cpu/noc/async_fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -206,8 +208,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 76 in file
-                '../../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 76 in file
+		'../../cpu/noc/async_fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -215,8 +217,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 83 in file
-                '../../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 83 in file
+		'../../cpu/noc/async_fifo.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =================================================================================
@@ -225,8 +227,8 @@ Inferred memory devices in process
 =================================================================================
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 101 in file
-                '../../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 101 in file
+		'../../cpu/noc/async_fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -235,8 +237,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 115 in file
-                '../../cpu/noc/async_fifo.v'.
+	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 115 in file
+		'../../cpu/noc/async_fifo.v'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =================================================================================
@@ -247,8 +249,8 @@ Presto compilation completed successfully. (async_fifo_DATA_WIDTH32_ADDR_WIDTH4)
 Information: Elaborating HDL template WORK:rng instantiated from 'neuron_bank_NUM_NEURONS4_ADDR_WIDTH8'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine rng line 25 in file
-                '../../cpu/neuron_bank/rng.v'.
+	in routine rng line 25 in file
+		'../../cpu/neuron_bank/rng.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -259,7 +261,7 @@ Presto compilation completed successfully. (rng)
 Information: Elaborating HDL template WORK:neuron_core instantiated from 'neuron_bank_NUM_NEURONS4_ADDR_WIDTH8'. (ELAB-193)
 
 Statistics for case statements in always block at line 60 in file
-        '../../cpu/neuron_bank/neuron_core.v'
+	'../../cpu/neuron_bank/neuron_core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -267,7 +269,7 @@ Statistics for case statements in always block at line 60 in file
 ===============================================
 
 Statistics for case statements in always block at line 81 in file
-        '../../cpu/neuron_bank/neuron_core.v'
+	'../../cpu/neuron_bank/neuron_core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -284,8 +286,8 @@ Warning:  ../../cpu/neuron_bank/neuron_core.v:222: Statement unreachable (Branch
   state register: state
 
 Inferred memory devices in process
-        in routine neuron_core line 60 in file
-                '../../cpu/neuron_bank/neuron_core.v'.
+	in routine neuron_core line 60 in file
+		'../../cpu/neuron_bank/neuron_core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -303,8 +305,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine neuron_core line 81 in file
-                '../../cpu/neuron_bank/neuron_core.v'.
+	in routine neuron_core line 81 in file
+		'../../cpu/neuron_bank/neuron_core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -329,7 +331,7 @@ Presto compilation completed successfully. (input_router_ROUTER_ADDR_WIDTH8_ROUT
 Information: Elaborating HDL template WORK:virtual_channel instantiated from 'input_module_ROUTER_ADDR_WIDTH8_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {DATA_WIDTH=32,DEPTH=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 61 in file
-        '../../cpu/noc/virtual_channel.v'
+	'../../cpu/noc/virtual_channel.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -337,8 +339,8 @@ Statistics for case statements in always block at line 61 in file
 ===============================================
 
 Inferred memory devices in process
-        in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 42 in file
-                '../../cpu/noc/virtual_channel.v'.
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 42 in file
+		'../../cpu/noc/virtual_channel.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -347,8 +349,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 52 in file
-                '../../cpu/noc/virtual_channel.v'.
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 52 in file
+		'../../cpu/noc/virtual_channel.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -356,8 +358,8 @@ Inferred memory devices in process
 ===============================================================================
 
 Inferred memory devices in process
-        in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 61 in file
-                '../../cpu/noc/virtual_channel.v'.
+	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 61 in file
+		'../../cpu/noc/virtual_channel.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -369,8 +371,8 @@ Warning:  ../../cpu/noc/rr_arbiter.v:34: signed to unsigned conversion occurs. (
 Warning:  ../../cpu/noc/rr_arbiter.v:51: signed to unsigned assignment occurs. (VER-318)
 
 Inferred memory devices in process
-        in routine rr_arbiter_NUM_PORTS4 line 44 in file
-                '../../cpu/noc/rr_arbiter.v'.
+	in routine rr_arbiter_NUM_PORTS4 line 44 in file
+		'../../cpu/noc/rr_arbiter.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -382,8 +384,8 @@ Warning:  ../../cpu/noc/rr_arbiter.v:34: signed to unsigned conversion occurs. (
 Warning:  ../../cpu/noc/rr_arbiter.v:51: signed to unsigned assignment occurs. (VER-318)
 
 Inferred memory devices in process
-        in routine rr_arbiter_NUM_PORTS5 line 44 in file
-                '../../cpu/noc/rr_arbiter.v'.
+	in routine rr_arbiter_NUM_PORTS5 line 44 in file
+		'../../cpu/noc/rr_arbiter.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -397,7 +399,7 @@ Presto compilation completed successfully. (Multiplication)
 Information: Elaborating HDL template WORK:priority_encoder instantiated from 'Addition_Subtraction'. (ELAB-193)
 
 Statistics for case statements in always block at line 22 in file
-        '../../cpu/fpu/Priority Encoder.v'
+	'../../cpu/fpu/Priority Encoder.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -511,9 +513,9 @@ Saving library 'LIB'
 export_power_data
 Information: exporting data
 Error: Issue detected during rtl_opt see logfile for details. Aborting export_data.
-        Use error_info for more info. (CMD-013)
+      	Use error_info for more info. (CMD-013)
 Information: script '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v3/rtla.tcl'
-                stopped at line 20 due to error. (CMD-081)
+            	stopped at line 20 due to error. (CMD-081)
 Extended error info:
 Issue detected during rtl_opt see logfile for details. Aborting export_data.
     invoked from within
@@ -526,3 +528,4 @@ Issue detected during rtl_opt see logfile for details. Aborting export_data.
 "export_power_data"
     (file "/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v3/rtla.tcl" line 20)
  -- End Extended Error Info
+rtl_shell> 

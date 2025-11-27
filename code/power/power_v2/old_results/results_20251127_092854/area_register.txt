@@ -2,7 +2,7 @@
 Report : area
 Design : system_top_with_cpu
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 09:48:48 2025
+Date   : Thu Nov 27 09:20:57 2025
 ****************************************
 
 Number of ports:                       462509
