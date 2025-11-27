@@ -1,23 +1,23 @@
 ****************************************
 Report : area
-Design : system_top_with_cpu
+Design : mesh
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 09:48:48 2025
+Date   : Thu Nov 27 15:07:15 2025
 ****************************************
 
-Number of ports:                       462509
-Number of nets:                       1107952
-Number of cells:                       647417
-Number of combinational cells:         553857
-Number of sequential cells:             93560
+Number of ports:                      1454736
+Number of nets:                       3927862
+Number of cells:                      2467451
+Number of combinational cells:        2405539
+Number of sequential cells:             61912
 Number of macros/black boxes:               0
-Number of buf/inv:                      46055
-Number of references:                      35
+Number of buf/inv:                      66657
+Number of references:                      34
 
-Combinational area:                 894523.85
-Buf/Inv area:                        23409.20
-Noncombinational area:              437340.14
+Combinational area:                4168195.92
+Buf/Inv area:                        33880.95
+Noncombinational area:              286361.33
 Macro/Black Box area:                    0.00
 
-Total cell area:                   1331864.00
+Total cell area:                   4454557.25
 1
