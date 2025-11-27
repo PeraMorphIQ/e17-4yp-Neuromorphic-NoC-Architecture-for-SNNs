@@ -11,6 +11,10 @@ set_top_module system_top
 
 source ./tz_setup.tcl
 
+# Disable constant-connected output checks for boundary router ports
+set_app_options -name opt.common.allow_constant_outputs -value true
+set_app_options -name compile.constant_propagation_with_no_boundary_opt -value true
+
 rtl_opt -initial_map_only
 
 set_rtl_power_analysis_options -scenario func@Cmax -design system_top -strip_path system_top_tb/dut -fsdb "../../cpu/novas.fsdb" -output_dir RTLA_WORKSPACE
