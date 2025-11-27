@@ -1,0 +1,162 @@
+
+
+
+                               RTL Architect (TM)
+
+               Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
+                           Base build date 11/18/2024
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+set_current_mismatch_config auto_fix
+1
+set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
+Warning: Changing current repair(handler) for a mismatch type in between a flow is not recommended. (DMM-011)
+{missing_logical_reference}
+set_host_options -max_cores 8
+1
+set_app_options -list { plan.macro.allow_unmapped_design true}
+plan.macro.allow_unmapped_design true
+set search_path "* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu"
+* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu
+create_lib LIB -ref_libs "NangateOpenCellLibrary" -technology /tech/45nm/cltrls/saed32nm_1p9m_mw.tf
+Information: The command 'create_lib' cleared the undo history. (UNDO-016)
+Information: Loading technology file '/tech/45nm/cltrls/saed32nm_1p9m_mw.tf' (FILE-007)
+Information: The fusion_lib NangateOpenCellLibrary needs a refresh. 8 file(s) have modified timestamps. (FLIB-11)
+{LIB}
+analyze -f sv -vcs "-f src.f "
+Information: By default, the HDL template library is 'WORK' (LBR-??).
+Running PRESTO HDLC
+Parsing vcs commands file -f src.f 
+Error: File '"../../cpu/fpu/Priority' cannot be found using search_path of: '../../cpu/fpu ../../cpu/noc ../../cpu/neuron_bank ../../cpu/cpu ../../cpu/zicsr ../../cpu * /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu'. (FILE-002)
+Error: File 'Encoder.v"' cannot be found using search_path of: '../../cpu/fpu ../../cpu/noc ../../cpu/neuron_bank ../../cpu/cpu ../../cpu/zicsr ../../cpu * /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu'. (FILE-002)
+Compiling source file ../../cpu/support_modules/mux_2to1_32bit.v
+Compiling source file ../../cpu/support_modules/mux_2to1_3bit.v
+Compiling source file ../../cpu/support_modules/mux_4to1_32bit.v
+Compiling source file ../../cpu/support_modules/plus_4_adder.v
+Warning:  ../../cpu/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
+Compiling source file ../../cpu/fpu/Addition-Subtraction.v
+Opening include file ../../cpu/fpu/Priority Encoder.v
+Warning:  ../../cpu/fpu/Addition-Subtraction.v:45: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../cpu/fpu/Addition-Subtraction.v:46: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../cpu/fpu/Addition-Subtraction.v:69: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file ../../cpu/fpu/Multiplication.v
+Compiling source file ../../cpu/fpu/Division.v
+Opening include file ../../cpu/fpu/Iteration.v
+Compiling source file ../../cpu/fpu/Comparison.v
+Compiling source file ../../cpu/fpu/Converter.v
+Compiling source file ../../cpu/fpu/Iteration.v
+Compiling source file ../../cpu/fpu/fpu.v
+Opening include file ../../cpu/fpu/Addition-Subtraction.v
+Opening include file ../../cpu/fpu/Multiplication.v
+Opening include file ../../cpu/fpu/Division.v
+Opening include file ../../cpu/fpu/Comparison.v
+Opening include file ../../cpu/fpu/Converter.v
+Compiling source file ../../cpu/alu/alu.v
+Warning:  ../../cpu/alu/alu.v:47: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:48: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:49: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:50: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:51: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:54: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:55: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:58: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:61: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:62: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:65: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:68: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:90: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:94: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:95: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:98: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
+Compiling source file ../../cpu/reg_file/reg_file.v
+Warning:  ../../cpu/alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
+Warning:  ../../cpu/reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
+Compiling source file ../../cpu/f_reg_file/f_reg_file.v
+Warning:  ../../cpu/reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu/reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu/f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
+Compiling source file ../../cpu/f_alu/f_alu.v
+Warning:  ../../cpu/f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu/f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Compiling source file ../../cpu/immediate_generation_unit/immediate_generation_unit.v
+Compiling source file ../../cpu/immediate_select_unit/immediate_select_unit.v
+Compiling source file ../../cpu/control_unit/control_unit.v
+Opening include file ../../cpu/support_modules/mux_2to1_3bit.v
+Warning:  ../../cpu/support_modules/mux_2to1_3bit.v:3: Overwriting existing design element 'mux_2to1_3bit' with newer version. (VER-64)
+Warning:  ../../cpu/control_unit/control_unit.v:57: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:73: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:78: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:105: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:120: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:137: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:148: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:157: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:158: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:162: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:171: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:172: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:179: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:184: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:201: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:208: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:224: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/control_unit/control_unit.v:238: delays for continuous assignment are ignored. (VER-173)
+Compiling source file ../../cpu/branch_control_unit/branch_control_unit.v
+Compiling source file ../../cpu/hazard_detection_unit/hazard_detection_unit.v
+Warning:  ../../cpu/branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
+Compiling source file ../../cpu/forwarding_units/ex_forward_unit.v
+Compiling source file ../../cpu/forwarding_units/mem_forward_unit.v
+Compiling source file ../../cpu/pipeline_flush_unit/pipeline_flush_unit.v
+Compiling source file ../../cpu/zicsr/zicsr.v
+Opening include file ../../cpu/zicsr/rv32i_header.vh
+Warning:  ../../cpu/zicsr/zicsr.v:99: The construct 'declaration initial assignment' is not supported in synthesis; it is ignored. (VER-708)
+Compiling source file ../../cpu/pipeline_registers/pr_if_id.v
+Compiling source file ../../cpu/pipeline_registers/pr_id_ex.v
+Error:  ../../cpu/pipeline_registers/pr_if_id.v:3: Implicit net declaration for 'CLK' prohibited by '`default_nettype none' compiler directive. (VER-943)
+Error:  ../../cpu/pipeline_registers/pr_if_id.v:3: Implicit net declaration for 'RESET' prohibited by '`default_nettype none' compiler directive. (VER-943)
+Error:  ../../cpu/pipeline_registers/pr_if_id.v:3: Implicit net declaration for 'HOLD' prohibited by '`default_nettype none' compiler directive. (VER-943)
+Error:  ../../cpu/pipeline_registers/pr_if_id.v:3: Implicit net declaration for 'IF_PC' prohibited by '`default_nettype none' compiler directive. (VER-943)
+Error:  ../../cpu/pipeline_registers/pr_if_id.v:3: Implicit net declaration for 'IF_INSTRUCTION' prohibited by '`default_nettype none' compiler directive. (VER-943)
+Error:  Cannot recover from previous errors. (VER-518)
+*** Presto compilation terminated with 6 errors. ***
+Error: Presto analyze failed 
+Elapsed = 00:00:00.04, CPU = 00:00:00.03
+0
+elaborate system_top_with_cpu
+Error: In elaborate -hdl_library WORK: Module 'system_top_with_cpu' cannot be found for elaboration. (ELAB-357)
+Elapsed = 00:00:00.05, CPU = 00:00:00.05
+0
+set_top_module system_top_with_cpu
+Error: Current block is not defined. (DES-001)
+Error: Current block is not defined. (DES-001)
+Elapsed = 00:00:00.00, CPU = 00:00:00.00
+Error: 0
+      	Use error_info for more info. (CMD-013)
+Information: script '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v2/rtla.tcl'
+            	stopped at line 10 due to error. (CMD-081)
+Extended error info:
+0
+    while executing
+"set_top_module system_top_with_cpu"
+    (file "/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v2/rtla.tcl" line 10)
+ -- End Extended Error Info
+rtl_shell> 
