@@ -1,6 +1,6 @@
 // FPU files
 ../../accelerator/cpu_core/fpu/Addition-Subtraction.v
-../../accelerator/cpu_core/fpu/Priority Encoder.v
+"../../accelerator/cpu_core/fpu/Priority Encoder.v"
 ../../accelerator/cpu_core/fpu/Multiplication.v
 ../../accelerator/cpu_core/fpu/Iteration.v
 ../../accelerator/cpu_core/fpu/Division.v
