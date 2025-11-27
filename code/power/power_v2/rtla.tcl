@@ -3,7 +3,7 @@ set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto
 set_host_options -max_cores 8
 set_app_options -list { plan.macro.allow_unmapped_design true}
 
-set search_path "* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh"
+set search_path "* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh ../../accelerator/cpu_core/fpu ../../accelerator/cpu_core ../../accelerator/network_interface"
 create_lib LIB -ref_libs "NangateOpenCellLibrary" -technology /tech/45nm/cltrls/saed32nm_1p9m_mw.tf
 analyze -f sv -vcs "-f src.f "
 elaborate mesh
