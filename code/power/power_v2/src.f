@@ -47,6 +47,6 @@
 ../../accelerator/neuron_core/neuron_core.v
 ../../accelerator/neuron_bank/neuron_bank.v
 
-// Node and mesh
-../../accelerator/node/node.v
-../../accelerator/mesh/mesh.v
+// Node (mesh.v will include node.v, so we don't compile them separately)
+// ../../accelerator/node/node.v
+// ../../accelerator/mesh/mesh.v
