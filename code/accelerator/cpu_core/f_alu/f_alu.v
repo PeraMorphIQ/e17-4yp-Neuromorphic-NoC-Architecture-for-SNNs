@@ -17,8 +17,7 @@ module f_alu (DATA1, DATA2, DATA3, RESULT, SELECT);
                 INTER_FMADD,
                 INTER_FMSUB,
                 INTER_FNMADD,
-                INTER_FNMSUB,
-                ;
+                INTER_FNMSUB;
 
     // 64-bit intermediates to hold results of multiplications
     wire [63:0] INTER_MULH64,
