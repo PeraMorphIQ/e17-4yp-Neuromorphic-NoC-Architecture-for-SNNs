@@ -1,0 +1,15 @@
+/INPUT
+/TZ_OUTDIR
+/HDL_LIBRARIES
+/neuron_LIB
+/LIB
+
+*.svf
+
+check_name_mapping.txt
+
+pwr_shell_command.log
+
+# Synopsys synthesis generated files
+presto_gensys_json_file_location
+*.presto_gensys.attach
