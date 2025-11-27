@@ -41,12 +41,18 @@ echo "========== STEP 2: Run Simulation =========="
 ./simv +fsdb+all=on +fsdb+delta | tee "../../power/power_v2/$RESULTS_DIR/simulation.log"
 popd > /dev/null
 
-# Check and optionally remove existing library directory
+# Check and optionally remove existing library and workspace directories
 LIB_DIR="LIB"
+WORK_DIR="RTLA_WORKSPACE"
+
 if [ -d "$LIB_DIR" ]; then
-    echo "Library directory '$LIB_DIR' already exists."
-    echo "Removing existing library directory before synthesis to avoid errors..."
+    echo "Removing existing library directory '$LIB_DIR'..."
     rm -rf "$LIB_DIR"
+fi
+
+if [ -d "$WORK_DIR" ]; then
+    echo "Removing existing workspace directory '$WORK_DIR'..."
+    rm -rf "$WORK_DIR"
 fi
 
 echo "========== STEP 1: RTL Synthesis =========="
