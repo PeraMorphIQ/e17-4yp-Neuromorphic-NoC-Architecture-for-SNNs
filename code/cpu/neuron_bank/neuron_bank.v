@@ -105,6 +105,12 @@ module neuron_bank #(
     
     /********************* CPU Read/Write Logic *********************/
     integer j;
+    integer neuron_id;
+    integer reg_offset;
+    integer inp_neuron_id;
+    integer rd_neuron_id;
+    integer rd_reg_offset;
+    integer rd_inp_id;
     
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -135,8 +141,6 @@ module neuron_bank #(
             if (write_enable) begin
                 if (address < INPUT_BASE) begin
                     // Configuration registers
-                    integer neuron_id;
-                    integer reg_offset;
                     neuron_id = address[7:3];  // Which neuron (divide by 8)
                     reg_offset = address[2:0]; // Which register within neuron config
                     
@@ -190,7 +194,6 @@ module neuron_bank #(
                     end
                 end else if (address >= INPUT_BASE && address < RNG_SEED_ADDR) begin
                     // Input buffer writes
-                    integer inp_neuron_id;
                     inp_neuron_id = address - INPUT_BASE;
                     if (inp_neuron_id < NUM_NEURONS) begin
                         neuron_input[inp_neuron_id] <= write_data;
@@ -202,8 +205,6 @@ module neuron_bank #(
             if (read_enable) begin
                 if (address < INPUT_BASE) begin
                     // Read neuron configuration/status
-                    integer rd_neuron_id;
-                    integer rd_reg_offset;
                     rd_neuron_id = address[7:3];
                     rd_reg_offset = address[2:0];
                     
@@ -223,7 +224,6 @@ module neuron_bank #(
                     end
                 end else if (address >= INPUT_BASE && address < RNG_SEED_ADDR) begin
                     // Read input buffer
-                    integer rd_inp_id;
                     rd_inp_id = address - INPUT_BASE;
                     if (rd_inp_id < NUM_NEURONS) begin
                         read_data <= neuron_input[rd_inp_id];
