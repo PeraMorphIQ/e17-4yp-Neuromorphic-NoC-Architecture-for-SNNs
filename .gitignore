@@ -37,6 +37,7 @@
 **/HDL_LIBRARIES
 **/neuron_LIB
 **/blackbox_LIB
+**/mesh_LIB
 **/LIB
 **/cltrls
 
