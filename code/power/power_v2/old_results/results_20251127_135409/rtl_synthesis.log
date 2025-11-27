@@ -1,0 +1,79 @@
+
+
+
+                               RTL Architect (TM)
+
+               Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
+                           Base build date 11/18/2024
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+set_current_mismatch_config auto_fix
+1
+set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
+Warning: Changing current repair(handler) for a mismatch type in between a flow is not recommended. (DMM-011)
+{missing_logical_reference}
+set_host_options -max_cores 8
+1
+set_app_options -list { plan.macro.allow_unmapped_design true}
+plan.macro.allow_unmapped_design true
+set search_path "* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh"
+* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh
+create_lib LIB -ref_libs "NangateOpenCellLibrary" -technology /tech/45nm/cltrls/saed32nm_1p9m_mw.tf
+Information: The command 'create_lib' cleared the undo history. (UNDO-016)
+Information: Loading technology file '/tech/45nm/cltrls/saed32nm_1p9m_mw.tf' (FILE-007)
+Information: The fusion_lib NangateOpenCellLibrary needs a refresh. 8 file(s) have modified timestamps. (FLIB-11)
+{LIB}
+analyze -f sv -vcs "-f src.f "
+Information: By default, the HDL template library is 'WORK' (LBR-??).
+Running PRESTO HDLC
+Parsing vcs commands file -f src.f 
+Error: File '../../accelerator/cpu_core/fpu/Priority' cannot be found using search_path of: '* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh'. (FILE-002)
+Error: File 'Encoder.v' cannot be found using search_path of: '* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh'. (FILE-002)
+Compiling source file ../../accelerator/cpu_core/fpu/Addition-Subtraction.v
+Opening include file ../../accelerator/cpu_core/fpu/Priority Encoder.v
+Warning:  ../../accelerator/cpu_core/fpu/Addition-Subtraction.v:43: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../accelerator/cpu_core/fpu/Addition-Subtraction.v:44: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../accelerator/cpu_core/fpu/Addition-Subtraction.v:67: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file ../../accelerator/cpu_core/fpu/Multiplication.v
+Compiling source file ../../accelerator/cpu_core/fpu/Iteration.v
+Compiling source file ../../accelerator/cpu_core/fpu/Division.v
+Opening include file fpu/Iteration.v
+Error:  ../../accelerator/cpu_core/fpu/Division.v:8: Unable to open file `fpu/Iteration.v': No such file or directory. (VER-41)
+*** Presto compilation terminated with 1 errors. ***
+Error: Presto analyze failed 
+Elapsed = 00:00:00.01, CPU = 00:00:00.01
+0
+elaborate mesh
+Error: In elaborate -hdl_library WORK: Module 'mesh' cannot be found for elaboration. (ELAB-357)
+Elapsed = 00:00:00.06, CPU = 00:00:00.05
+0
+set_top_module mesh
+Error: Current block is not defined. (DES-001)
+Error: Current block is not defined. (DES-001)
+Elapsed = 00:00:00.00, CPU = 00:00:00.00
+Error: 0
+      	Use error_info for more info. (CMD-013)
+Information: script '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v2/rtla.tcl'
+            	stopped at line 10 due to error. (CMD-081)
+Extended error info:
+0
+    while executing
+"set_top_module mesh"
+    (file "/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v2/rtla.tcl" line 10)
+ -- End Extended Error Info
+rtl_shell> 

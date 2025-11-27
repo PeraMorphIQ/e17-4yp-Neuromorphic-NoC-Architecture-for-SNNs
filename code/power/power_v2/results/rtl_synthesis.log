@@ -31,8 +31,8 @@ set_host_options -max_cores 8
 1
 set_app_options -list { plan.macro.allow_unmapped_design true}
 plan.macro.allow_unmapped_design true
-set search_path "* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu"
-* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../cpu
+set search_path "* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh ../../accelerator/cpu_core/fpu ../../accelerator/cpu_core ../../accelerator/network_interface"
+* /tech/45nm/libs/NangateOpenCellLibrary.ndm ../../accelerator/mesh ../../accelerator/cpu_core/fpu ../../accelerator/cpu_core ../../accelerator/network_interface
 create_lib LIB -ref_libs "NangateOpenCellLibrary" -technology /tech/45nm/cltrls/saed32nm_1p9m_mw.tf
 Information: The command 'create_lib' cleared the undo history. (UNDO-016)
 Information: Loading technology file '/tech/45nm/cltrls/saed32nm_1p9m_mw.tf' (FILE-007)
@@ -42,552 +42,355 @@ analyze -f sv -vcs "-f src.f "
 Information: By default, the HDL template library is 'WORK' (LBR-??).
 Running PRESTO HDLC
 Parsing vcs commands file -f src.f 
-Compiling source file ../../cpu/system_top_with_cpu.v
-Opening include file ../../cpu/support_modules/mux_2to1_32bit.v
-Opening include file ../../cpu/support_modules/mux_2to1_3bit.v
-Opening include file ../../cpu/support_modules/mux_4to1_32bit.v
-Opening include file ../../cpu/support_modules/plus_4_adder.v
-Warning:  ../../cpu/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/fpu/Priority Encoder.v
-Opening include file ../../cpu/fpu/Addition-Subtraction_no_includes.v
-Warning:  ../../cpu/fpu/Addition-Subtraction_no_includes.v:45: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  ../../cpu/fpu/Addition-Subtraction_no_includes.v:46: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
-Warning:  ../../cpu/fpu/Addition-Subtraction_no_includes.v:69: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
-Opening include file ../../cpu/fpu/Multiplication_no_includes.v
-Opening include file ../../cpu/fpu/Division_no_includes.v
-Opening include file ../../cpu/fpu/Iteration.v
-Opening include file ../../cpu/fpu/Comparison.v
-Opening include file ../../cpu/fpu/Converter.v
-Opening include file ../../cpu/fpu/fpu_no_includes.v
-Opening include file ../../cpu/f_alu/f_alu.v
-Opening include file ../../cpu/alu/alu.v
-Warning:  ../../cpu/alu/alu.v:47: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:48: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:49: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:50: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:51: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:54: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:55: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:58: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:61: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:62: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:65: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:68: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:90: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:94: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:95: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:98: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/reg_file/reg_file.v
-Warning:  ../../cpu/alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
-Warning:  ../../cpu/reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/f_reg_file/f_reg_file.v
-Warning:  ../../cpu/reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/immediate_generation_unit/immediate_generation_unit.v
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../cpu/immediate_select_unit/immediate_select_unit.v
-Opening include file ../../cpu/control_unit/control_unit_no_includes.v
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:57: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:73: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:78: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:105: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:120: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:137: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:148: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:157: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:158: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:162: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:171: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:172: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:179: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:184: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:201: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:208: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:224: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../cpu/control_unit/control_unit_no_includes.v:238: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../cpu/branch_control_unit/branch_control_unit.v
-Opening include file ../../cpu/forwarding_units/ex_forward_unit.v
-Warning:  ../../cpu/branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
-Opening include file ../../cpu/forwarding_units/mem_forward_unit.v
-Opening include file ../../cpu/hazard_detection_unit/hazard_detection_unit.v
-Opening include file ../../cpu/pipeline_flush_unit/pipeline_flush_unit.v
-Opening include file ../../cpu/pipeline_registers/pr_if_id.v
-Opening include file ../../cpu/pipeline_registers/pr_id_ex.v
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:17: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:18: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:22: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_if_id.v:23: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../cpu/pipeline_registers/pr_ex_mem.v
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:57: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:76: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:77: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:78: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:79: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:80: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:81: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:82: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:83: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:84: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:85: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:86: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:87: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:88: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:89: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:90: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:91: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:92: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:93: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:94: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:96: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_id_ex.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../cpu/pipeline_registers/pr_mem_wb.v
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:44: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:45: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:46: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_ex_mem.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../cpu/cpu/cpu_no_includes.v
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:35: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:37: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:38: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:39: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:40: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/pipeline_registers/pr_mem_wb.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../cpu/cpu/cpu_no_includes.v:217: the undeclared symbol 'MEM_WRITE_DATA_SEL' assumed to have the default net type, which is 'wire'. (VER-936)
-Opening include file ../../cpu/noc/async_fifo.v
-Opening include file ../../cpu/noc/input_router.v
-Opening include file ../../cpu/noc/rr_arbiter.v
-Opening include file ../../cpu/noc/virtual_channel.v
-Opening include file ../../cpu/noc/input_module_no_includes.v
-Opening include file ../../cpu/noc/output_module_no_includes.v
-Opening include file ../../cpu/noc/router_no_includes.v
-Opening include file ../../cpu/noc/network_interface_no_includes.v
-Opening include file ../../cpu/neuron_bank/rng.v
-Opening include file ../../cpu/neuron_bank/neuron_core.v
-Opening include file ../../cpu/fpu/Addition-Subtraction.v
-Opening include file ../../cpu/fpu/Multiplication.v
-Opening include file ../../cpu/neuron_bank/neuron_bank_no_includes.v
+Compiling source file ../../accelerator/mesh/mesh.v
+Opening include file ../../accelerator/mesh/../node/node.v
+Opening include file ../../accelerator/mesh/../cpu_core/cpu/cpu.v
+Opening include file ../../accelerator/mesh/../cpu_core/alu/alu.v
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:47: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:48: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:49: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:50: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:51: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:54: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:55: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:58: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:61: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:62: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:65: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:68: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:90: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:94: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:95: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:98: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../accelerator/mesh/../cpu_core/fpu/fpu.v
+Opening include file ../../accelerator/cpu_core/fpu/Addition-Subtraction.v
+Opening include file ../../accelerator/cpu_core/fpu/Priority Encoder.v
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
+Warning:  ../../accelerator/cpu_core/fpu/Addition-Subtraction.v:43: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../accelerator/cpu_core/fpu/Addition-Subtraction.v:44: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../accelerator/cpu_core/fpu/Addition-Subtraction.v:67: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
+Opening include file ../../accelerator/cpu_core/fpu/Multiplication.v
+Opening include file ../../accelerator/cpu_core/fpu/Division.v
+Opening include file ../../accelerator/cpu_core/fpu/Iteration.v
+Opening include file ../../accelerator/cpu_core/fpu/Comparison.v
+Opening include file ../../accelerator/cpu_core/fpu/Converter.v
+Opening include file ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v
+Warning:  ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v
+Warning:  ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../accelerator/mesh/../cpu_core/immediate_generation_unit/immediate_generation_unit.v
+Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v
+Opening include file ../../accelerator/cpu_core/fpu/../support_modules/mux_2to1_3bit.v
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:59: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:66: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:67: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:76: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:81: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:108: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:123: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:141: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:152: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:159: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:160: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:164: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:171: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:172: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:179: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:184: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:201: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:208: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:222: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:236: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v
+Opening include file ../../accelerator/mesh/../cpu_core/forwarding_units/ex_forward_unit.v
+Warning:  ../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
+Opening include file ../../accelerator/mesh/../cpu_core/forwarding_units/mem_forward_unit.v
+Opening include file ../../accelerator/mesh/../cpu_core/hazard_detection_unit/hazard_detection_unit.v
+Opening include file ../../accelerator/mesh/../cpu_core/pipeline_flush_unit/pipeline_flush_unit.v
+Opening include file ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v
+Opening include file ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v:17: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v:18: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v:22: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v:23: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:57: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:72: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:73: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:74: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:79: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:80: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:81: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:82: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:83: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:84: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:85: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:86: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:87: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:88: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:89: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:90: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:91: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:92: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:93: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:94: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:96: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:98: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:99: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:100: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:101: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:102: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:103: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:44: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:45: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:46: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:72: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:73: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:74: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../../accelerator/mesh/../cpu_core/support_modules/plus_4_adder.v
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:35: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:37: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:38: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:39: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:40: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../accelerator/mesh/../cpu_core/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../accelerator/mesh/../cpu_core/support_modules/mux_4to1_32bit.v
+Opening include file ../../accelerator/mesh/../cpu_core/support_modules/mux_2to1_32bit.v
+Opening include file ../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v
+Opening include file ../../accelerator/mesh/../cpu_core/data_memory/data_memory.v
+Opening include file ../../accelerator/mesh/../network_interface/network_interface.v
+Opening include file ../../accelerator/network_interface/fifo.v
+Opening include file ../../accelerator/mesh/../router/router.v
+Opening include file ../../accelerator/mesh/../neuron_bank/neuron_bank.v
+Opening include file ../../accelerator/mesh/../neuron_core/neuron_core.v
 Presto compilation completed successfully.
-Elapsed = 00:00:00.09, CPU = 00:00:00.08
+Elapsed = 00:00:00.07, CPU = 00:00:00.06
 1
-elaborate system_top_with_cpu
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[0][0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:189: Net ns_valid[0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:221: Net ew_valid[0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:188: Net ns_packet[1][0][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:189: Net ns_valid[1][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][31] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][30] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][29] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][28] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][27] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][26] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][25] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][24] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][23] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][22] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][21] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][20] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][19] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][18] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][17] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][16] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][15] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][14] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][13] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][12] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][11] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][10] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][9] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][8] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][7] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][6] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][5] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][4] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][3] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][2] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:220: Net ew_packet[0][1][0] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-Warning:  ../../cpu/system_top_with_cpu.v:221: Net ew_valid[0][1] or a directly connected net may be driven by more than one process or block. (ELAB-405)
-  state register: gen_y[0].gen_x[0].spike_status
-  state register: gen_y[0].gen_x[1].spike_status
-  state register: gen_y[1].gen_x[0].spike_status
-  state register: gen_y[1].gen_x[1].spike_status
+elaborate mesh
+Presto compilation completed successfully. (mesh)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=0}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y0)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=0}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y0)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=1}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y1)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y1)
+Information: Elaborating HDL template WORK:cpu instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
 
 Inferred memory devices in process
-	in routine system_top_with_cpu line 411 in file
-		'../../cpu/system_top_with_cpu.v'.
-============================================================================================
-|          Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-============================================================================================
-| gen_y[0].gen_x[0].imem_array_reg | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
-| gen_y[0].gen_x[1].imem_array_reg | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
-| gen_y[1].gen_x[0].imem_array_reg | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
-| gen_y[1].gen_x[1].imem_array_reg | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
-============================================================================================
-
-Inferred memory devices in process
-	in routine system_top_with_cpu line 459 in file
-		'../../cpu/system_top_with_cpu.v'.
-===================================================================================================
-|              Register Name              |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===================================================================================================
-| gen_y[0].gen_x[0].ext_write_latched_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-| gen_y[0].gen_x[1].ext_write_latched_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-| gen_y[1].gen_x[0].ext_write_latched_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-| gen_y[1].gen_x[1].ext_write_latched_reg | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-===================================================================================================
-
-Inferred memory devices in process
-	in routine system_top_with_cpu line 513 in file
-		'../../cpu/system_top_with_cpu.v'.
-==============================================================================================
-|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-==============================================================================================
-| gen_y[0].gen_x[0].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-| gen_y[0].gen_x[1].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-| gen_y[1].gen_x[0].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-| gen_y[1].gen_x[1].spike_status_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-==============================================================================================
-Presto compilation completed successfully. (system_top_with_cpu)
-Module: system_top_with_cpu, Elapsed Time: 00:00:12, CPU Time: 00:00:12, Total Mem: 993.24 MB, Mem: 598.20 MB, Time: Thu Nov 27 09:29:19 2025
-Information: Elaborating HDL template WORK:router instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0,VC_DEPTH=4}. (ELAB-193)
-Presto compilation completed successfully. (router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4)
-Information: Elaborating HDL template WORK:network_interface instantiated from 'system_top_with_cpu' with the parameters {ROUTER_ADDR_WIDTH=4,NEURON_ADDR_WIDTH=12,FIFO_DEPTH=4}. (ELAB-193)
-
-Statistics for case statements in always block at line 111 in file
-	'../../cpu/noc/network_interface_no_includes.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           120            |    auto/auto     |
-===============================================
-
-Statistics for case statements in always block at line 169 in file
-	'../../cpu/noc/network_interface_no_includes.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|           177            |    auto/auto     |
-===============================================
-  state register: wr_state
-
-Inferred memory devices in process
-	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 111 in file
-		'../../cpu/noc/network_interface_no_includes.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|    axi_bresp_reg    | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|    wr_state_reg     | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|   axi_awready_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|   axi_wready_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|   axi_bvalid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-===============================================================================
-
-Inferred memory devices in process
-	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 169 in file
-		'../../cpu/noc/network_interface_no_includes.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|    axi_rresp_reg    | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|    rd_state_reg     | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|   axi_arready_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|   axi_rvalid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|    axi_rdata_reg    | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-
-Inferred memory devices in process
-	in routine network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4 line 227 in file
-		'../../cpu/noc/network_interface_no_includes.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|  cpu_interrupt_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4)
-Information: Elaborating HDL template WORK:cpu instantiated from 'system_top_with_cpu'. (ELAB-193)
-
-Inferred memory devices in process
-	in routine cpu line 254 in file
-		'../../cpu/cpu/cpu_no_includes.v'.
+	in routine cpu line 308 in file
+		'../../accelerator/mesh/../cpu_core/cpu/cpu.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
 |       PC_reg        | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (cpu)
-Information: Elaborating HDL template WORK:neuron_bank instantiated from 'system_top_with_cpu' with the parameters {NUM_NEURONS=4,ADDR_WIDTH=8}. (ELAB-193)
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:146: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:147: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:150: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:199: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:210: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:211: unsigned to signed assignment occurs. (VER-318)
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:214: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../../cpu/neuron_bank/neuron_bank_no_includes.v:229: unsigned to signed assignment occurs. (VER-318)
+Information: Elaborating HDL template WORK:instruction_memory instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Warning:  ../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v:13: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully. (instruction_memory)
+Information: Elaborating HDL template WORK:data_memory instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Warning:  ../../accelerator/mesh/../cpu_core/data_memory/data_memory.v:29: The statements in initial blocks are ignored. (VER-281)
 
-Statistics for case statements in always block at line 117 in file
-	'../../cpu/neuron_bank/neuron_bank_no_includes.v'
+Statistics for case statements in always block at line 33 in file
+	'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           150            |    auto/auto     |
-|           214            |    auto/auto     |
+|            35            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 59 in file
+	'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            61            |    auto/auto     |
 ===============================================
 
 Inferred memory devices in process
-	in routine neuron_bank_NUM_NEURONS4_ADDR_WIDTH8 line 117 in file
-		'../../cpu/neuron_bank/neuron_bank_no_includes.v'.
-=====================================================================================
-|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-=====================================================================================
-|       neuron_c_reg        | Flip-flop |  20   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|       neuron_c_reg        | Flip-flop |  108  |  Y  | Y  | Y  | N  | N  | N  | N  |
-|         ready_reg         |   Latch   |   1   |  N  | N  | N  | Y  | -  | -  | -  |
-|       read_data_reg       | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|       neuron_d_reg        | Flip-flop |  124  |  Y  | Y  | Y  | N  | N  | N  | N  |
-|       neuron_d_reg        | Flip-flop |   4   |  Y  | Y  | N  | Y  | N  | N  | N  |
-| neuron_config_enable_reg  | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|  neuron_config_data_reg   | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
-|  neuron_config_addr_reg   | Flip-flop |  12   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|     neuron_start_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-| neuron_spike_resolved_reg | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|     neuron_input_reg      | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
-|    neuron_type_reg_reg    | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|      neuron_v_th_reg      | Flip-flop |  116  |  Y  | Y  | Y  | N  | N  | N  | N  |
-|      neuron_v_th_reg      | Flip-flop |  12   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|       neuron_a_reg        | Flip-flop |  64   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|       neuron_a_reg        | Flip-flop |  64   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|       neuron_b_reg        | Flip-flop |  116  |  Y  | Y  | Y  | N  | N  | N  | N  |
-|       neuron_b_reg        | Flip-flop |  12   |  Y  | Y  | N  | Y  | N  | N  | N  |
-=====================================================================================
-Presto compilation completed successfully. (neuron_bank_NUM_NEURONS4_ADDR_WIDTH8)
-Information: Elaborating HDL template WORK:input_module instantiated from 'router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0,VC_DEPTH=4}. (ELAB-193)
-Presto compilation completed successfully. (input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4)
-Information: Elaborating HDL template WORK:output_module instantiated from 'router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {VC_DEPTH=4}. (ELAB-193)
-
-Inferred memory devices in process
-	in routine output_module_VC_DEPTH4 line 187 in file
-		'../../cpu/noc/output_module_no_includes.v'.
+	in routine data_memory line 33 in file
+		'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|    out_valid_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|   out_packet_reg    | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
 ===============================================================================
-Presto compilation completed successfully. (output_module_VC_DEPTH4)
-Information: Elaborating HDL template WORK:async_fifo instantiated from 'network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4' with the parameters {DATA_WIDTH=32,ADDR_WIDTH=4}. (ELAB-193)
+Presto compilation completed successfully. (data_memory)
+Module: data_memory, Elapsed Time: 00:00:07, CPU Time: 00:00:06, Total Mem: 701.17 MB, Mem: 282.73 MB, Time: Thu Nov 27 14:30:51 2025
+Information: Elaborating HDL template WORK:neuron_bank instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {NUM_NEURONS=4}. (ELAB-193)
+
+Statistics for case statements in always block at line 82 in file
+	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           101            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 119 in file
+	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           122            |    auto/auto     |
+===============================================
 
 Inferred memory devices in process
-	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 65 in file
-		'../../cpu/noc/async_fifo.v'.
+	in routine neuron_bank_NUM_NEURONS4 line 82 in file
+		'../../accelerator/mesh/../neuron_bank/neuron_bank.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|   wr_ptr_gray_reg   | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|   wr_ptr_bin_reg    | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|  start_updates_reg  | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|  start_resets_reg   | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    params_a_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    params_b_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    params_c_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    params_d_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|   params_vth_reg    | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    inputs_i_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      modes_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
+Presto compilation completed successfully. (neuron_bank_NUM_NEURONS4)
+Information: Elaborating HDL template WORK:network_interface instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Presto compilation completed successfully. (network_interface)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {ADDR_X=0,ADDR_Y=0}. (ELAB-193)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 76 in file
-		'../../cpu/noc/async_fifo.v'.
+	in routine router_ADDR_X0_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|       mem_reg       | Flip-flop |  512  |  Y  | Y  | N  | N  | N  | N  | N  |
+|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
+Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y0)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y0' with the parameters {ADDR_X=1,ADDR_Y=0}. (ELAB-193)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 83 in file
-		'../../cpu/noc/async_fifo.v'.
-=================================================================================
-|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-=================================================================================
-| rd_ptr_gray_sync2_reg | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
-| rd_ptr_gray_sync1_reg | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
-=================================================================================
-
-Inferred memory devices in process
-	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 101 in file
-		'../../cpu/noc/async_fifo.v'.
+	in routine router_ADDR_X1_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|   rd_ptr_gray_reg   | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|   rd_ptr_bin_reg    | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
+Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y0)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y1' with the parameters {ADDR_X=0,ADDR_Y=1}. (ELAB-193)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-	in routine async_fifo_DATA_WIDTH32_ADDR_WIDTH4 line 115 in file
-		'../../cpu/noc/async_fifo.v'.
-=================================================================================
-|     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-=================================================================================
-| wr_ptr_gray_sync2_reg | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
-| wr_ptr_gray_sync1_reg | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
-=================================================================================
-Presto compilation completed successfully. (async_fifo_DATA_WIDTH32_ADDR_WIDTH4)
+	in routine router_ADDR_X0_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y1)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y1' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
+
+Inferred memory devices in process
+	in routine router_ADDR_X1_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y1)
 Information: Elaborating HDL template WORK:plus_4_adder instantiated from 'cpu'. (ELAB-193)
 Presto compilation completed successfully. (plus_4_adder)
 Information: Elaborating HDL template WORK:mux_2to1_32bit instantiated from 'cpu'. (ELAB-193)
@@ -596,7 +399,7 @@ Information: Elaborating HDL template WORK:pr_if_id instantiated from 'cpu'. (EL
 
 Inferred memory devices in process
 	in routine pr_if_id line 13 in file
-		'../../cpu/pipeline_registers/pr_if_id.v'.
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -610,7 +413,7 @@ Information: Elaborating HDL template WORK:reg_file instantiated from 'cpu'. (EL
 
 Inferred memory devices in process
 	in routine reg_file line 19 in file
-		'../../cpu/reg_file/reg_file.v'.
+		'../../accelerator/mesh/../cpu_core/reg_file/reg_file.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -621,7 +424,7 @@ Information: Elaborating HDL template WORK:f_reg_file instantiated from 'cpu'. (
 
 Inferred memory devices in process
 	in routine f_reg_file line 20 in file
-		'../../cpu/f_reg_file/f_reg_file.v'.
+		'../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -631,7 +434,7 @@ Presto compilation completed successfully. (f_reg_file)
 Information: Elaborating HDL template WORK:immediate_generation_unit instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 18 in file
-	'../../cpu/immediate_generation_unit/immediate_generation_unit.v'
+	'../../accelerator/mesh/../cpu_core/immediate_generation_unit/immediate_generation_unit.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -639,29 +442,22 @@ Statistics for case statements in always block at line 18 in file
 ===============================================
 Presto compilation completed successfully. (immediate_generation_unit)
 Information: Elaborating HDL template WORK:hazard_detection_unit instantiated from 'cpu'. (ELAB-193)
-
-Inferred memory devices in process
-	in routine hazard_detection_unit line 22 in file
-		'../../cpu/hazard_detection_unit/hazard_detection_unit.v'.
-===========================================================================
-|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
-===========================================================================
-|   LU_HAZ_SIG_reg    | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
-===========================================================================
 Presto compilation completed successfully. (hazard_detection_unit)
 Information: Elaborating HDL template WORK:pipeline_flush_unit instantiated from 'cpu'. (ELAB-193)
 Presto compilation completed successfully. (pipeline_flush_unit)
 Information: Elaborating HDL template WORK:pr_id_ex instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-	in routine pr_id_ex line 45 in file
-		'../../cpu/pipeline_registers/pr_id_ex.v'.
+	in routine pr_id_ex line 47 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v'.
 =============================================================================================
 |           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =============================================================================================
 |      EX_WB_VALUE_SELECT_reg       | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
 |             EX_PC_reg             | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
 |         EX_REG_DATA1_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_NET_WRITE_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          EX_NET_READ_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |         EX_REG_DATA2_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
 |         EX_FREG_DATA1_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
 |         EX_FREG_DATA2_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
@@ -687,15 +483,15 @@ Presto compilation completed successfully. (pr_id_ex)
 Information: Elaborating HDL template WORK:mux_4to1_32bit instantiated from 'cpu'. (ELAB-193)
 Presto compilation completed successfully. (mux_4to1_32bit)
 Information: Elaborating HDL template WORK:alu instantiated from 'cpu'. (ELAB-193)
-Warning:  ../../cpu/alu/alu.v:58: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../../cpu/alu/alu.v:68: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../../cpu/alu/alu.v:81: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../../cpu/alu/alu.v:84: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../../cpu/alu/alu.v:94: signed to unsigned assignment occurs. (VER-318)
-Warning:  ../../cpu/alu/alu.v:98: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:58: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:68: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:81: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:84: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:94: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:98: signed to unsigned assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 72 in file
-	'../../cpu/alu/alu.v'
+	'../../accelerator/mesh/../cpu_core/alu/alu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -703,7 +499,7 @@ Statistics for case statements in always block at line 72 in file
 ===============================================
 
 Statistics for case statements in always block at line 102 in file
-	'../../cpu/alu/alu.v'
+	'../../accelerator/mesh/../cpu_core/alu/alu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -712,18 +508,18 @@ Statistics for case statements in always block at line 102 in file
 Presto compilation completed successfully. (alu)
 Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
 
-Statistics for case statements in always block at line 102 in file
-	'../../cpu/fpu/fpu_no_includes.v'
+Statistics for case statements in always block at line 100 in file
+	'../../accelerator/mesh/../cpu_core/fpu/fpu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|           104            |    auto/auto     |
+|           102            |    auto/auto     |
 ===============================================
 Presto compilation completed successfully. (fpu)
 Information: Elaborating HDL template WORK:branch_control_unit instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 20 in file
-	'../../cpu/branch_control_unit/branch_control_unit.v'
+	'../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -736,7 +532,7 @@ Information: Elaborating HDL template WORK:pr_ex_mem instantiated from 'cpu'. (E
 
 Inferred memory devices in process
 	in routine pr_ex_mem line 37 in file
-		'../../cpu/pipeline_registers/pr_ex_mem.v'.
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v'.
 ==============================================================================================
 |           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ==============================================================================================
@@ -751,6 +547,8 @@ Inferred memory devices in process
 |          MEM_REG_TYPE_reg          | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
 |        MEM_REG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |       MEM_FREG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         MEM_NET_WRITE_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          MEM_NET_READ_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 | MEM_DATA_MEM_WRITE_DATA_SELECT_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 |       MEM_DATA_MEM_WRITE_reg       | Flip-flop |   3   |  Y  | Y  | N  | N  | N  | N  | N  |
 |       MEM_DATA_MEM_READ_reg        | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
@@ -760,7 +558,7 @@ Information: Elaborating HDL template WORK:mem_forward_unit instantiated from 'c
 
 Inferred memory devices in process
 	in routine mem_forward_unit line 17 in file
-		'../../cpu/forwarding_units/mem_forward_unit.v'.
+		'../../accelerator/mesh/../cpu_core/forwarding_units/mem_forward_unit.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -771,7 +569,7 @@ Information: Elaborating HDL template WORK:pr_mem_wb instantiated from 'cpu'. (E
 
 Inferred memory devices in process
 	in routine pr_mem_wb line 31 in file
-		'../../cpu/pipeline_registers/pr_mem_wb.v'.
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v'.
 =====================================================================================
 |       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =====================================================================================
@@ -786,152 +584,53 @@ Inferred memory devices in process
 |   WB_DATA_MEM_READ_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
 =====================================================================================
 Presto compilation completed successfully. (pr_mem_wb)
-Information: Elaborating HDL template WORK:rng instantiated from 'neuron_bank_NUM_NEURONS4_ADDR_WIDTH8'. (ELAB-193)
+Information: Elaborating HDL template WORK:neuron_core instantiated from 'neuron_bank_NUM_NEURONS4'. (ELAB-193)
 
-Inferred memory devices in process
-	in routine rng line 25 in file
-		'../../cpu/neuron_bank/rng.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|      lfsr_reg       | Flip-flop |  16   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|      lfsr_reg       | Flip-flop |  16   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (rng)
-Information: Elaborating HDL template WORK:neuron_core instantiated from 'neuron_bank_NUM_NEURONS4_ADDR_WIDTH8'. (ELAB-193)
-
-Statistics for case statements in always block at line 60 in file
-	'../../cpu/neuron_bank/neuron_core.v'
+Statistics for case statements in always block at line 91 in file
+	'../../accelerator/mesh/../neuron_core/neuron_core.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            69            |     no/auto      |
+|           101            |     no/auto      |
 ===============================================
-
-Statistics for case statements in always block at line 81 in file
-	'../../cpu/neuron_bank/neuron_core.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|            93            |    auto/auto     |
-|           109            |     no/auto      |
-|           185            |    auto/auto     |
-===============================================
-Warning:  ../../cpu/neuron_bank/neuron_core.v:206: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../cpu/neuron_bank/neuron_core.v:206: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../cpu/neuron_bank/neuron_core.v:206: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../cpu/neuron_bank/neuron_core.v:222: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../cpu/neuron_bank/neuron_core.v:222: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../cpu/neuron_bank/neuron_core.v:222: Statement unreachable (Branch condition impossible to meet). (VER-61)
-  state register: state
 
 Inferred memory devices in process
-	in routine neuron_core line 60 in file
-		'../../cpu/neuron_bank/neuron_core.v'.
+	in routine neuron_core line 91 in file
+		'../../accelerator/mesh/../neuron_core/neuron_core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|        d_reg        | Flip-flop |  31   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|        d_reg        | Flip-flop |   1   |  N  | Y  | N  | Y  | N  | N  | N  |
-|   neuron_type_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|      v_th_reg       | Flip-flop |  29   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|      v_th_reg       | Flip-flop |   3   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|        a_reg        | Flip-flop |  16   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|        a_reg        | Flip-flop |  16   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|        b_reg        | Flip-flop |  29   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|        b_reg        | Flip-flop |   3   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|        c_reg        | Flip-flop |   5   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|        c_reg        | Flip-flop |  27   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-
-Inferred memory devices in process
-	in routine neuron_core line 81 in file
-		'../../cpu/neuron_bank/neuron_core.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|      temp2_reg      | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
-|      state_reg      | Flip-flop |   3   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|        v_reg        | Flip-flop |   5   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|        v_reg        | Flip-flop |  27   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|   fadd_sub_op_reg   | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        v_reg        | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
 |        u_reg        | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|        I_reg        | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
-| spike_detected_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |      busy_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
-|   cycle_count_reg   | Flip-flop |   3   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|      v_out_reg      | Flip-flop |   5   |  Y  | Y  | N  | Y  | N  | N  | N  |
-|      v_out_reg      | Flip-flop |  27   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| spike_detected_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      v_out_reg      | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
 |      u_out_reg      | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    fcomp_op1_reg    | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|    fcomp_op2_reg    | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|    fmul_op1_reg     | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|    fmul_op2_reg     | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
 |      temp1_reg      | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|    fadd_op1_reg     | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|    fadd_op2_reg     | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (neuron_core)
-Information: Elaborating HDL template WORK:input_router instantiated from 'input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {ROUTER_ADDR_WIDTH=4,ROUTING_ALGORITHM=0}. (ELAB-193)
-Warning:  ../../cpu/noc/input_router.v:59: Statement unreachable (Prior branch conditions are always met). (VER-61)
-Presto compilation completed successfully. (input_router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0)
-Information: Elaborating HDL template WORK:virtual_channel instantiated from 'input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {DATA_WIDTH=32,DEPTH=4}. (ELAB-193)
-
-Statistics for case statements in always block at line 61 in file
-	'../../cpu/noc/virtual_channel.v'
-===============================================
-|           Line           |  full/ parallel  |
-===============================================
-|            65            |    auto/auto     |
-===============================================
+Information: Elaborating HDL template WORK:fifo instantiated from 'network_interface' with the parameters {DEPTH=16,DATA_WIDTH=32}. (ELAB-193)
 
 Inferred memory devices in process
-	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 42 in file
-		'../../cpu/noc/virtual_channel.v'.
+	in routine fifo_DEPTH16_DATA_WIDTH32 line 22 in file
+		'../../accelerator/network_interface/fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|       mem_reg       | Flip-flop |  128  |  Y  | Y  | N  | N  | N  | N  | N  |
-|     wr_ptr_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|       mem_reg       | Flip-flop |  512  |  Y  | Y  | N  | N  | N  | N  | N  |
+|     wr_ptr_reg      | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|     rd_ptr_reg      | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      dout_reg       | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
-
-Inferred memory devices in process
-	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 52 in file
-		'../../cpu/noc/virtual_channel.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|     rd_ptr_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-
-Inferred memory devices in process
-	in routine virtual_channel_DATA_WIDTH32_DEPTH4 line 61 in file
-		'../../cpu/noc/virtual_channel.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|    pkt_count_reg    | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (virtual_channel_DATA_WIDTH32_DEPTH4)
-Information: Elaborating HDL template WORK:rr_arbiter instantiated from 'input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4' with the parameters {NUM_PORTS=4}. (ELAB-193)
-Warning:  ../../cpu/noc/rr_arbiter.v:34: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../../cpu/noc/rr_arbiter.v:51: signed to unsigned assignment occurs. (VER-318)
-
-Inferred memory devices in process
-	in routine rr_arbiter_NUM_PORTS4 line 44 in file
-		'../../cpu/noc/rr_arbiter.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|  priority_ptr_reg   | Flip-flop |   2   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (rr_arbiter_NUM_PORTS4)
-Information: Elaborating HDL template WORK:rr_arbiter instantiated from 'output_module_VC_DEPTH4' with the parameters {NUM_PORTS=5}. (ELAB-193)
-Warning:  ../../cpu/noc/rr_arbiter.v:34: signed to unsigned conversion occurs. (VER-318)
-Warning:  ../../cpu/noc/rr_arbiter.v:51: signed to unsigned assignment occurs. (VER-318)
-
-Inferred memory devices in process
-	in routine rr_arbiter_NUM_PORTS5 line 44 in file
-		'../../cpu/noc/rr_arbiter.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|  priority_ptr_reg   | Flip-flop |   3   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (rr_arbiter_NUM_PORTS5)
+Presto compilation completed successfully. (fifo_DEPTH16_DATA_WIDTH32)
 Information: Elaborating HDL template WORK:mux_2to1_3bit instantiated from 'control_unit'. (ELAB-193)
 Presto compilation completed successfully. (mux_2to1_3bit)
 Information: Elaborating HDL template WORK:Addition_Subtraction instantiated from 'fpu'. (ELAB-193)
@@ -943,8 +642,8 @@ Presto compilation completed successfully. (Division)
 Information: Elaborating HDL template WORK:Comparison instantiated from 'fpu'. (ELAB-193)
 
 Inferred memory devices in process
-	in routine Comparison line 17 in file
-		'../../cpu/fpu/Comparison.v'.
+	in routine Comparison line 15 in file
+		'../../accelerator/cpu_core/fpu/Comparison.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -954,8 +653,8 @@ Presto compilation completed successfully. (Comparison)
 Information: Elaborating HDL template WORK:Floating_Point_to_Integer instantiated from 'fpu'. (ELAB-193)
 
 Inferred memory devices in process
-	in routine Floating_Point_to_Integer line 19 in file
-		'../../cpu/fpu/Converter.v'.
+	in routine Floating_Point_to_Integer line 17 in file
+		'../../accelerator/cpu_core/fpu/Converter.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -964,31 +663,31 @@ Inferred memory devices in process
 Presto compilation completed successfully. (Floating_Point_to_Integer)
 Information: Elaborating HDL template WORK:priority_encoder instantiated from 'Addition_Subtraction'. (ELAB-193)
 
-Statistics for case statements in always block at line 22 in file
-	'../../cpu/fpu/Priority Encoder.v'
+Statistics for case statements in always block at line 19 in file
+	'../../accelerator/cpu_core/fpu/Priority Encoder.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
-|            24            |    auto/auto     |
+|            21            |    auto/auto     |
 ===============================================
 Presto compilation completed successfully. (priority_encoder)
 Information: Elaborating HDL template WORK:Iteration instantiated from 'Division'. (ELAB-193)
 Presto compilation completed successfully. (Iteration)
 Information: Design elaboration summary: (FLW-8550)
-Number of modules read: 40
-Top level ports:        223
+Number of modules read: 42
+Top level ports:        2
 Total in all modules
-  Ports:                4938
-  Nets:                 145979
-  Instances:            71181
+  Ports:                6496
+  Nets:                 113196
+  Instances:            60638
 Design summary end. (FLW-8551)
-Elapsed = 00:00:17.03, CPU = 00:00:16.66
+Elapsed = 00:00:11.75, CPU = 00:00:11.51
 1
-set_top_module system_top_with_cpu
+set_top_module mesh
 Information: User units loaded from library 'NangateOpenCellLibrary' (LNK-040)
-Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
-Gensys attachment is created: presto_gensys.attach:LIB:system_top_with_cpu.design 
-Elapsed = 00:00:20.13, CPU = 00:00:19.96
+Information: Added key list 'DesignWare' to design 'mesh'. (DWS-0216)
+Gensys attachment is created: presto_gensys.attach:LIB:mesh.design 
+Elapsed = 00:00:23.77, CPU = 00:00:23.54
 1
 source ./tz_setup.tcl
 The following clock gating options are applied to: top-level (design)
@@ -1013,9 +712,9 @@ Scenario func@Cmax (mode func corner Cmax) is active for setup/leakage_power/dyn
 Scenario func@Cmin (mode func corner Cmin) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
 ****************************************
 Report : scenario
-Design : system_top_with_cpu
+Design : mesh
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 09:29:45 2025
+Date   : Thu Nov 27 14:31:19 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -1029,7 +728,7 @@ rtl_opt -initial_map_only
 Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
 Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
 Information: Starting 'rtl_opt -from conditioning -to conditioning' (FLW-8000)
-Information: Time: 2025-11-27 09:29:48 / Session:  00:00:49 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1409 MB (FLW-8100)
+Information: Time: 2025-11-27 14:31:23 / Session:  00:00:48 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1485 MB (FLW-8100)
 Information: Timer using 8 threads
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
@@ -1038,111 +737,200 @@ Information: Structural Congestion Optimization technology (Early SCO) has been 
 ****************************************
 Report : report_tbcs
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 09:29:52 2025
+Date   : Thu Nov 27 14:31:27 2025
 ****************************************
 INFO: Start environment monitoring: recipes
-Information: Corner Cmax: no PVT mismatches. (PVT-032)
 Information: Corner Cmin: no PVT mismatches. (PVT-032)
+Information: Corner Cmax: no PVT mismatches. (PVT-032)
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
 INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_131' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_131/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_131' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_131/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/B2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/ZN' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_70' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_70/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_74/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_74/B2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_74/ZN' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_76/B2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_76/ZN' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_8710' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_8710/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_131' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_131/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_131' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_131/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_50' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_50/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_74/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_14/A' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_74/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_74/B2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_74/ZN' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_76/B2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_76/ZN' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_131' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_131/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34/B2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34/ZN' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_74/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_74/B2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_74/ZN' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_8710' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_8710/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_14/A' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_131' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_131/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G2/U0/U_131' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G2/U0/U_131/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G2/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G2/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G2/U0/U_14/A' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G2/U0/U_14/ZN' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G2/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G2/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_131' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_131/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_70' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_70/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_14/A' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_14/A' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_30' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_30/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_74/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning (FLW-8000)
-Information: Time: 2025-11-27 09:30:41 / Session:  00:01:42 / Command:  00:00:53 / CPU:  00:01:09 / Memory: 2329 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:19 / Session:  00:01:43 / Command:  00:00:55 / CPU:  00:01:14 / Memory: 2393 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
-Information: Time: 2025-11-27 09:30:42 / Session:  00:01:42 / Command:  00:00:53 / CPU:  00:01:09 / Memory: 2329 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:19 / Session:  00:01:44 / Command:  00:00:55 / CPU:  00:01:15 / Memory: 2393 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
-Information: Time: 2025-11-27 09:30:45 / Session:  00:01:46 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2329 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:23 / Session:  00:01:48 / Command:  00:00:59 / CPU:  00:01:19 / Memory: 2393 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-11-27 09:30:45 / Session:  00:01:46 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2329 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:23 / Session:  00:01:48 / Command:  00:00:59 / CPU:  00:01:19 / Memory: 2393 MB (FLW-8100)
 MV related app options set by user:
 Information: Ending   rtl_opt / conditioning / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-11-27 09:30:45 / Session:  00:01:46 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2329 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:23 / Session:  00:01:48 / Command:  00:00:59 / CPU:  00:01:19 / Memory: 2393 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8000)
-Information: Time: 2025-11-27 09:30:45 / Session:  00:01:46 / Command:  00:00:56 / CPU:  00:01:12 / Memory: 2329 MB (FLW-8100)
-Information: The register gen_y[0].gen_x[0].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[1].gen_x[1].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[1].gen_x[0].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[0].gen_x[1].ni_inst/axi_bresp_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[0].gen_x[0].ni_inst/axi_rresp_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[1].gen_x[1].ni_inst/axi_rresp_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[1].gen_x[0].ni_inst/axi_rresp_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[0].gen_x[1].ni_inst/axi_rresp_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[0].gen_x[0].ni_inst/rd_state_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[1].gen_x[1].ni_inst/rd_state_reg[0] is removed as constant '0'. (SQM-4100)
-Information: The register gen_y[0].gen_x[1].spike_status_reg[2] is removed because it is merged to register gen_y[0].gen_x[1].spike_status_reg[3]. (SQM-4102)
-Information: The register gen_y[0].gen_x[1].spike_status_reg[1] is removed because it is merged to register gen_y[0].gen_x[1].spike_status_reg[3]. (SQM-4102)
-Information: The register gen_y[0].gen_x[1].spike_status_reg[0] is removed because it is merged to register gen_y[0].gen_x[1].spike_status_reg[3]. (SQM-4102)
-Information: The register gen_y[0].gen_x[0].spike_status_reg[2] is removed because it is merged to register gen_y[0].gen_x[0].spike_status_reg[3]. (SQM-4102)
-Information: The register gen_y[0].gen_x[0].spike_status_reg[1] is removed because it is merged to register gen_y[0].gen_x[0].spike_status_reg[3]. (SQM-4102)
-Information: The register gen_y[0].gen_x[0].spike_status_reg[0] is removed because it is merged to register gen_y[0].gen_x[0].spike_status_reg[3]. (SQM-4102)
-Information: The register gen_y[0].gen_x[0].ni_inst/write_fifo/rd_ptr_bin_reg[4] is removed because it is merged to register gen_y[0].gen_x[0].ni_inst/write_fifo/rd_ptr_gray_reg[4]. (SQM-4102)
-Information: The register gen_y[1].gen_x[1].ni_inst/read_fifo/rd_ptr_bin_reg[4] is removed because it is merged to register gen_y[1].gen_x[1].ni_inst/read_fifo/rd_ptr_gray_reg[4]. (SQM-4102)
-Information: The register gen_y[1].gen_x[1].ni_inst/write_fifo/rd_ptr_bin_reg[4] is removed because it is merged to register gen_y[1].gen_x[1].ni_inst/write_fifo/rd_ptr_gray_reg[4]. (SQM-4102)
-Information: The register gen_y[1].gen_x[0].ni_inst/read_fifo/rd_ptr_bin_reg[4] is removed because it is merged to register gen_y[1].gen_x[0].ni_inst/read_fifo/rd_ptr_gray_reg[4]. (SQM-4102)
-Information: 148 registers were removed as constant. Use report_transformed_registers for a list. (SQM-3100)
-Information: 22854 registers were found constant but could not be removed due to restrictions. (SQM-3103)
-Information: Register Bits Before Sharing = 87312, After Sharing = 87284, Savings = 28 (SQM-2000)
-Information: 28 registers were merged. Use report_transformed_registers for a list. (SQM-4106)
-Information: 138 out of 148 SQM-4100 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:14) (MSG-3913)
-Information: 18 out of 28 SQM-4102 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:14) (MSG-3913)
+Information: Time: 2025-11-27 14:32:23 / Session:  00:01:48 / Command:  00:00:59 / CPU:  00:01:19 / Memory: 2393 MB (FLW-8100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[1].COL_LOOP[1].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[1].COL_LOOP[0].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[1].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr_reg[4][2] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr_reg[4][1] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr_reg[4][0] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr_reg[1][2] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr_reg[1][1] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr_reg[1][0] is removed as constant '0'. (SQM-4100)
+Information: 16 registers were removed as constant. Use report_transformed_registers for a list. (SQM-3100)
+Information: 53908 registers were found constant but could not be removed due to restrictions. (SQM-3103)
+Information: Register Bits Before Sharing = 57204, After Sharing = 57204, Savings = 0 (SQM-2000)
+Information: 6 out of 16 SQM-4100 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:14) (MSG-3913)
 Information: Ending   rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8001)
-Information: Time: 2025-11-27 09:32:36 / Session:  00:03:37 / Command:  00:02:48 / CPU:  00:03:12 / Memory: 2413 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:44 / Session:  00:02:08 / Command:  00:01:20 / CPU:  00:01:49 / Memory: 2508 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Register Merging (FLW-8000)
-Information: Time: 2025-11-27 09:32:36 / Session:  00:03:37 / Command:  00:02:48 / CPU:  00:03:12 / Memory: 2413 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:44 / Session:  00:02:08 / Command:  00:01:20 / CPU:  00:01:49 / Memory: 2508 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Register Merging (FLW-8001)
-Information: Time: 2025-11-27 09:32:36 / Session:  00:03:37 / Command:  00:02:48 / CPU:  00:03:12 / Memory: 2413 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:44 / Session:  00:02:08 / Command:  00:01:20 / CPU:  00:01:49 / Memory: 2508 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-11-27 09:32:36 / Session:  00:03:37 / Command:  00:02:48 / CPU:  00:03:12 / Memory: 2413 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:44 / Session:  00:02:08 / Command:  00:01:20 / CPU:  00:01:49 / Memory: 2508 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-11-27 09:32:40 / Session:  00:03:41 / Command:  00:02:52 / CPU:  00:03:23 / Memory: 2413 MB (FLW-8100)
+Information: Time: 2025-11-27 14:32:48 / Session:  00:02:13 / Command:  00:01:24 / CPU:  00:02:04 / Memory: 2508 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8000)
-Information: Time: 2025-11-27 09:32:47 / Session:  00:03:48 / Command:  00:02:59 / CPU:  00:03:30 / Memory: 2413 MB (FLW-8100)
-Information: For the module "system_top_with_cpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 237368 mux gate(s) with total area 415742.47. (MUX-1021)
+Information: Time: 2025-11-27 14:32:59 / Session:  00:02:24 / Command:  00:01:35 / CPU:  00:02:15 / Memory: 2508 MB (FLW-8100)
+Still running [1] (Session: 0.21 hr / Command: 0.20 hr / Memory: 2803.84 MB) (MSG-3999)
+Information: CPU Load: 41%, Ram Free: 46 GB, Swap Free: 473 GB, Work Disk Free: 648 GB, Tmp Disk Free: 4 GB (MSG-3995)
+Information: For the module "data_memory", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 535128 mux gate(s) with total area 935301.31. (MUX-1021)
 Information: For the module "f_reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3073 mux gate(s) with total area 5465.54. (MUX-1021)
-Information: For the module "reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 2147 mux gate(s) with total area 3815.79. (MUX-1021)
-Information: For the module "neuron_bank_NUM_NEURONS4_ADDR_WIDTH8", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1329 mux gate(s) with total area 2322.40. (MUX-1021)
-Information: For the module "neuron_core", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1745 mux gate(s) with total area 3037.07. (MUX-1021)
-Information: For the module "async_fifo_DATA_WIDTH32_ADDR_WIDTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 498 mux gate(s) with total area 884.67. (MUX-1021)
-Information: For the module "pr_id_ex", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 298 mux gate(s) with total area 500.92. (MUX-1021)
+Information: For the module "reg_file", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 2079 mux gate(s) with total area 3697.35. (MUX-1021)
+Information: For the module "neuron_bank_NUM_NEURONS4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1469 mux gate(s) with total area 2582.90. (MUX-1021)
+Information: For the module "fifo_DEPTH16_DATA_WIDTH32", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 498 mux gate(s) with total area 884.67. (MUX-1021)
+Information: For the module "neuron_core", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1644 mux gate(s) with total area 2861.20. (MUX-1021)
+Information: For the module "router_ADDR_X1_ADDR_Y1", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1556 mux gate(s) with total area 2737.68. (MUX-1021)
+Information: For the module "router_ADDR_X1_ADDR_Y0", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1202 mux gate(s) with total area 2115.52. (MUX-1021)
+Information: For the module "pr_id_ex", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 302 mux gate(s) with total area 505.49. (MUX-1021)
+Information: For the module "router_ADDR_X0_ADDR_Y1", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1088 mux gate(s) with total area 1915.25. (MUX-1021)
+Information: For the module "router_ADDR_X0_ADDR_Y0", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 834 mux gate(s) with total area 1469.72. (MUX-1021)
 Information: For the module "alu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 776 mux gate(s) with total area 1375.43. (MUX-1021)
-Information: For the module "pr_ex_mem", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 198 mux gate(s) with total area 334.45. (MUX-1021)
+Information: For the module "pr_ex_mem", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 202 mux gate(s) with total area 339.03. (MUX-1021)
 Information: For the module "pr_mem_wb", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 147 mux gate(s) with total area 250.08. (MUX-1021)
-Information: For the module "virtual_channel_DATA_WIDTH32_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 110 mux gate(s) with total area 194.42. (MUX-1021)
 Information: For the module "Floating_Point_to_Integer", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 145 mux gate(s) with total area 245.25. (MUX-1021)
-Information: For the module "control_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 31 mux gate(s) with total area 50.07. (MUX-1021)
+Information: For the module "control_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 50 mux gate(s) with total area 80.06. (MUX-1021)
 Information: For the module "fpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1231 mux gate(s) with total area 2181.09. (MUX-1021)
 Information: For the module "Addition_Subtraction", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 239 mux gate(s) with total area 422.64. (MUX-1021)
 Information: For the module "pr_if_id", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 68 mux gate(s) with total area 117.16. (MUX-1021)
-Information: For the module "cpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 37 mux gate(s) with total area 62.01. (MUX-1021)
-Information: For the module "rr_arbiter_NUM_PORTS5", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 207 mux gate(s) with total area 339.03. (MUX-1021)
-Information: For the module "network_interface_ROUTER_ADDR_WIDTH4_NEURON_ADDR_WIDTH12_FIFO_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 63 mux gate(s) with total area 99.37. (MUX-1021)
-Information: For the module "output_module_VC_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 132 mux gate(s) with total area 234.83. (MUX-1021)
-Information: For the module "rng", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 33 mux gate(s) with total area 58.71. (MUX-1021)
+Information: For the module "cpu", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 36 mux gate(s) with total area 61.50. (MUX-1021)
 Information: For the module "Multiplication", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 166.97. (MUX-1021)
-Information: For the module "rr_arbiter_NUM_PORTS4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 156.81. (MUX-1021)
 Information: For the module "branch_control_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 8 mux gate(s) with total area 12.96. (MUX-1021)
 Information: For the module "Comparison", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 29 mux gate(s) with total area 38.88. (MUX-1021)
+Information: For the module "node_ADDR_X1_ADDR_Y1", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 40 mux gate(s) with total area 71.16. (MUX-1021)
+Information: For the module "node_ADDR_X0_ADDR_Y1", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 40 mux gate(s) with total area 71.16. (MUX-1021)
+Information: For the module "node_ADDR_X1_ADDR_Y0", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 40 mux gate(s) with total area 71.16. (MUX-1021)
+Information: For the module "node_ADDR_X0_ADDR_Y0", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 40 mux gate(s) with total area 71.16. (MUX-1021)
 Information: For the module "immediate_generation_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 98 mux gate(s) with total area 170.53. (MUX-1021)
-Information: For the module "input_module_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0_VC_DEPTH4", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 11 mux gate(s) with total area 15.76. (MUX-1021)
 Information: For the module "mux_4to1_32bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 96 mux gate(s) with total area 170.78. (MUX-1021)
-Information: For the module "hazard_detection_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 10 mux gate(s) with total area 15.25. (MUX-1021)
+Information: For the module "hazard_detection_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 11 mux gate(s) with total area 17.03. (MUX-1021)
 Information: For the module "ex_forward_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 16 mux gate(s) with total area 24.65. (MUX-1021)
-Information: For the module "input_router_ROUTER_ADDR_WIDTH4_ROUTING_ALGORITHM0", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 15 mux gate(s) with total area 21.60. (MUX-1021)
 Information: For the module "mux_2to1_32bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 32 mux gate(s) with total area 56.93. (MUX-1021)
 Information: For the module "mem_forward_unit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 1 mux gate(s) with total area 1.78. (MUX-1021)
 Information: For the module "mux_2to1_3bit", SELECT_OPs marked with infer_mux_override pragma or map_to_mux attribute have been synthesized to 3 mux gate(s) with total area 5.34. (MUX-1021)
 Information: Timer using 8 threads
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8001)
-Information: Time: 2025-11-27 09:42:09 / Session:  00:13:09 / Command:  00:12:20 / CPU:  00:13:26 / Memory: 2939 MB (FLW-8100)
+Information: Time: 2025-11-27 14:47:05 / Session:  00:16:29 / Command:  00:15:41 / CPU:  00:17:27 / Memory: 6462 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8000)
-Information: Time: 2025-11-27 09:42:09 / Session:  00:13:09 / Command:  00:12:20 / CPU:  00:13:26 / Memory: 2939 MB (FLW-8100)
-Information: Added key list 'DesignWare' to design 'system_top_with_cpu'. (DWS-0216)
-Information: 3 register's output was inverted. Use report_transformed_registers for a list. (SQM-2014)
+Information: Time: 2025-11-27 14:47:05 / Session:  00:16:29 / Command:  00:15:41 / CPU:  00:17:27 / Memory: 6462 MB (FLW-8100)
+Information: Added key list 'DesignWare' to design 'mesh'. (DWS-0216)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
 Information: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: 2 register's output was inverted. Use report_transformed_registers for a list. (SQM-2014)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Warning: Warning while mapping restricted inst: Can not swap restricted cell ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/C3028 since library does not have any suitable one-to-one replacement.  (CTM-1018)
+Warning: Warning while mapping restricted inst: Can not swap restricted cell ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/C2955 since library does not have any suitable one-to-one replacement.  (CTM-1018)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
@@ -1150,32 +938,37 @@ Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
-Information: 5378 out of 5379 SQM-1040 messages were not printed due to limit 1  (MSG-3913)
-Information: 5378 out of 5379 SQM-1074 messages were not printed due to limit 1  (MSG-3913)
-Information: 8 out of 9 SQM-2014 messages were not printed due to limit 1  (MSG-3913)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Warning: Warning while mapping restricted inst: Can not swap restricted cell ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/C2918 since library does not have any suitable one-to-one replacement.  (CTM-1018)
+Warning: Warning while mapping restricted inst: Can not swap restricted cell ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/C2927 since library does not have any suitable one-to-one replacement.  (CTM-1018)
+Information: 8757 out of 8758 SQM-1040 messages were not printed due to limit 1  (MSG-3913)
+Information: 8757 out of 8758 SQM-1074 messages were not printed due to limit 1  (MSG-3913)
+Information: 1 out of 2 SQM-2014 messages were not printed due to limit 1  (MSG-3913)
+Information: 64 out of 74 UNG-1002 messages were not printed due to limit 10  (MSG-3913)
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
-Information: Time: 2025-11-27 09:43:54 / Session:  00:14:55 / Command:  00:14:06 / CPU:  00:17:40 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:49:03 / Session:  00:18:27 / Command:  00:17:39 / CPU:  00:22:51 / Memory: 9328 MB (FLW-8100)
 Information: RTL multibit banking summary. (SQM-2008)
-	Total candidates in design:87280
-	Total candidates ignored:  87132
+	Total candidates in design:57184
+	Total candidates ignored:  57072
 	Total candidates banked:   0
 	Banking Ratio of this pass:0.00%
 	Banking ratio             :0.00% (Before banking 0.00%)
 	Use report_multibit for details.
 Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
-Information: Time: 2025-11-27 09:43:55 / Session:  00:14:55 / Command:  00:14:06 / CPU:  00:17:40 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:49:04 / Session:  00:18:28 / Command:  00:17:40 / CPU:  00:22:52 / Memory: 9328 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
-Information: Time: 2025-11-27 09:43:55 / Session:  00:14:55 / Command:  00:14:06 / CPU:  00:17:40 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:49:04 / Session:  00:18:28 / Command:  00:17:40 / CPU:  00:22:52 / Memory: 9328 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-11-27 09:44:10 / Session:  00:15:10 / Command:  00:14:21 / CPU:  00:17:55 / Memory: 5431 MB (FLW-8100)
-Information: 6088 registers were found constant but could not be removed due to restrictions. (SQM-3103)
-Information: Register Bits Before Sharing = 87280, After Sharing = 87280, Savings = 0 (SQM-2000)
+Information: Time: 2025-11-27 14:50:01 / Session:  00:19:26 / Command:  00:18:37 / CPU:  00:23:50 / Memory: 9328 MB (FLW-8100)
+Information: 12 registers were found constant but could not be removed due to restrictions. (SQM-3103)
+Information: Register Bits Before Sharing = 57184, After Sharing = 57184, Savings = 0 (SQM-2000)
 Information: Starting rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-11-27 09:44:20 / Session:  00:15:20 / Command:  00:14:31 / CPU:  00:18:05 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:50:21 / Session:  00:19:45 / Command:  00:18:57 / CPU:  00:24:09 / Memory: 9328 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-11-27 09:44:30 / Session:  00:15:31 / Command:  00:14:42 / CPU:  00:18:33 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:50:54 / Session:  00:20:19 / Command:  00:19:30 / CPU:  00:25:38 / Memory: 9328 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-11-27 09:44:30 / Session:  00:15:31 / Command:  00:14:42 / CPU:  00:18:33 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:50:54 / Session:  00:20:19 / Command:  00:19:30 / CPU:  00:25:38 / Memory: 9328 MB (FLW-8100)
 Information: Result of rtl_opt / conditioning / Clock Gate Insertion (FLW-8500)
 --------------------------------------------------------------------------------
 |                             Clock Gating Options                             |
@@ -1193,21 +986,21 @@ Number of ICG library cells with CTS purpose: 4
 Clock Gating Type                   | Number of   | Register Count | Equivalent | % of Gated 
                                     | Clock Gates |                | Bitwidth   | Bits       
 ---------------------------------------------------------------------------------------------
-Regular Clock Gating                |        6280 |          84456 |      84456 |    96.87%
+Regular Clock Gating                |        4728 |          54608 |      54608 |    95.65%
 ---------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
                  Regular Clock Gating Ungated Register Summary                  
 --------------------------------------------------------------------------------
  Ungated Reason                                            | Count | Bitwidth   
 --------------------------------------------------------------------------------
- Enable is Constant One.                                   |  2628 |     2628
- Minimum Bitwidth Not Met.                                 |   100 |      100
- Not Processed.                                            |    96 |       96
+ Enable is Constant One.                                   |  2436 |     2436
+ Minimum Bitwidth Not Met.                                 |    48 |       48
+ Not Processed.                                            |    92 |       92
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -    1331864.00           -      647417              0.26      5430
+Compile-fusion                                          -           -         -         -    4454557.00           -     2467451              0.35      9327
 Information: Ending   rtl_opt / conditioning (FLW-8001)
-Information: Time: 2025-11-27 09:44:45 / Session:  00:15:46 / Command:  00:14:57 / CPU:  00:18:48 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:51:25 / Session:  00:20:49 / Command:  00:20:01 / CPU:  00:26:09 / Memory: 9328 MB (FLW-8100)
 Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
 Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
 Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
@@ -1253,20 +1046,21 @@ UPF is NOT committed.
 Information: Timer using 8 threads
 INFO: End environment monitoring: recipes
 INFO: Restored 0 timer status, 9 app options, 0 tcl gvars, 0 env vars
-Information: >>>>>>> 2 unique error and warning message tags while observing fast: (MSG-3100)
+Information: >>>>>>> 3 unique error and warning message tags while observing fast: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
-Information:     1     1  1 SQM-1040  WARNING   No cell bus will be mapped to multibit because there is no m... (MSG-3032)
+Information:     1   656  1 SQM-1040  WARNING   No cell bus will be mapped to multibit because there is no m... (MSG-3032)
+Information:    96    96  0 CSTR-013  WARNING   Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/... (MSG-3032)
 Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'MRDL' setting 'routing-direction'... (MSG-3032)
-Information:    31    31  1        2  <------   Total sum of messages (MSG-3038)
-Information: >>>>>>> Summary: 31 error&warning MSGs observed during fast (MSG-3103)
+Information:   127   782  1        3  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 782 error&warning MSGs observed during fast (MSG-3103)
 Info: FAST compile completed.
 Information: Ending   'rtl_opt -from conditioning -to conditioning' (FLW-8001)
-Information: Time: 2025-11-27 09:44:54 / Session:  00:15:54 / Command:  00:15:05 / CPU:  00:18:55 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:51:42 / Session:  00:21:07 / Command:  00:20:18 / CPU:  00:26:26 / Memory: 9328 MB (FLW-8100)
 1
-set_rtl_power_analysis_options -scenario func@Cmax -design system_top_with_cpu -strip_path system_top_with_cpu_tb/dut -fsdb "../../cpu/novas.fsdb" -output_dir RTLA_WORKSPACE
+set_rtl_power_analysis_options -scenario func@Cmax -design mesh -strip_path mesh_tb/u_mesh -fsdb "../../accelerator/mesh/novas.fsdb" -output_dir RTLA_WORKSPACE
 1
 save_block
-Information: Saving block 'LIB:system_top_with_cpu.design'
+Information: Saving block 'LIB:mesh.design'
 1
 save_lib
 Saving library 'LIB'
@@ -1274,19 +1068,19 @@ Saving library 'LIB'
 export_power_data
 Information: exporting data
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-11-27 09:45:16 / Session:  00:16:16 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:53:04 / Session:  00:22:29 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 9328 MB (FLW-8100)
 Information: Corner Cmin: no PVT mismatches. (PVT-032)
 Information: Corner Cmax: no PVT mismatches. (PVT-032)
-Information: The stitching and editing of coupling caps is turned OFF for design 'LIB:system_top_with_cpu.design'. (TIM-125)
-Warning: No physical information exists for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-101)
-Warning: The extractor can not be initialized for design 'system_top_with_cpu'. Zero interconnect delay is used in timing analysis. (TIM-102)
-Warning: Batch extraction is skipped for block "system_top_with_cpu"
+Information: The stitching and editing of coupling caps is turned OFF for design 'LIB:mesh.design'. (TIM-125)
+Warning: No physical information exists for design 'mesh'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'mesh'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "mesh"
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
-Information: Net estimation statistics: timing graph nets = 662844, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+Information: Net estimation statistics: timing graph nets = 2482833, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
 ************************************************************
 Timer Settings:
 Delay Calculation Style:                   estimated
@@ -1301,7 +1095,7 @@ ML Acceleration:                           off
 Smart Arc Optimization:                    disabled
 ************************************************************
 Information: Ending   'update_timing' (FLW-8001)
-Information: Time: 2025-11-27 09:46:05 / Session:  00:17:05 / Command:  00:00:48 / CPU:  00:03:34 / Memory: 5431 MB (FLW-8100)
+Information: Time: 2025-11-27 14:56:36 / Session:  00:26:01 / Command:  00:03:31 / CPU:  00:14:15 / Memory: 9328 MB (FLW-8100)
 Information: Exporting essential name map file
 Warning: Option '-essential' for command 'saif_map' is deprecated. See the command's man page for alternatives. (CMD-110)
 Warning: '-essential' option should not be specified as it has been deprecated and is enabled by default. (POW-120)
@@ -1322,7 +1116,7 @@ report_timing > "results/timing_report.txt"
 report_timing -max_paths 10 > "results/timing_report_10.txt"
 report_area  > "results/area_register.txt"
 exit
-Maximum memory usage for this session: 5430.56 MB
-CPU usage for this session:   1567 seconds (  0.44 hours)
-Elapsed time for this session:   1189 seconds (  0.33 hours)
+Maximum memory usage for this session: 9327.79 MB
+CPU usage for this session:   3120 seconds (  0.87 hours)
+Elapsed time for this session:   2201 seconds (  0.61 hours)
 Thank you for using RTL Architect.
