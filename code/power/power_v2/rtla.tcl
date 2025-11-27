@@ -13,7 +13,7 @@ source ./tz_setup.tcl
 
 rtl_opt -initial_map_only
 
-set_rtl_power_analysis_options -scenario func@Cmax -design mesh -strip_path mesh_tb/u_mesh -vcd "../../accelerator/mesh/novas.fsdb" -output_dir RTLA_WORKSPACE
+set_rtl_power_analysis_options -scenario func@Cmax -design mesh -strip_path mesh_tb/u_mesh -fsdb "../../accelerator/mesh/novas.fsdb" -output_dir RTLA_WORKSPACE
 
 save_block
 save_lib
