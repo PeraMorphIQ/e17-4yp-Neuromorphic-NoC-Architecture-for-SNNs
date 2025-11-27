@@ -10,6 +10,7 @@
 +incdir+../../accelerator/cpu_core/f_reg_file
 +incdir+../../accelerator/cpu_core/forwarding_units
 +incdir+../../accelerator/cpu_core/fpu
++incdir+../../accelerator/cpu_core
 +incdir+../../accelerator/cpu_core/hazard_detection_unit
 +incdir+../../accelerator/cpu_core/immediate_generation_unit
 +incdir+../../accelerator/cpu_core/immediate_select_unit
