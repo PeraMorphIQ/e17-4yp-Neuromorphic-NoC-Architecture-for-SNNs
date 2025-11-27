@@ -2,6 +2,7 @@
 /TZ_OUTDIR
 /HDL_LIBRARIES
 /neuron_LIB
+/LIB
 
 *.svf
 
