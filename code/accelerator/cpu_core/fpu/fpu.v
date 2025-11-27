@@ -1,8 +1,9 @@
-`include "Addition-Subtraction.v"
-`include "Multiplication.v"
-`include "Division.v"
-`include "Comparison.v"
-`include "Converter.v"
+// FPU sub-modules are compiled separately via src.f
+// `include "Addition-Subtraction.v"
+// `include "Multiplication.v"
+// `include "Division.v"
+// `include "Comparison.v"
+// `include "Converter.v"
 
 `timescale 1ns/100ps
 
