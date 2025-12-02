@@ -1,0 +1,306 @@
+
+                                  PrimePower 
+
+               Version W-2024.09-SP2 for linux64 - Nov 27, 2024 
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+#!/bin/tcsh -f
+# =============================================================================
+# Power Analysis and Metrics Reporting Script for SKY130
+# =============================================================================
+# Description: This script performs detailed power analysis and generates
+#              comprehensive power and RTL metrics reports for the Mesh design
+# Author: Neuromorphic Accelerator Team  
+# Technology: SKY130 130nm Process
+# Prerequisites: Run after rtla.tcl synthesis completion
+# =============================================================================
+# Load shared configuration
+source config.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: temp_results_20251128_000451
+Configuration loaded successfully
+  Design: mesh
+  Technology: SKY130 130nm
+  Cores: 4
+  Results directory: temp_results_20251128_000451
+# -----------------------------------------------------------------------------
+# Power Analysis Configuration
+# -----------------------------------------------------------------------------
+puts "========== Starting Power Analysis and Metrics =========="
+========== Starting Power Analysis and Metrics ==========
+puts "Technology: SKY130 130nm"
+Technology: SKY130 130nm
+puts "Design: Mesh Neuromorphic NoC Architecture"
+Design: Mesh Neuromorphic NoC Architecture
+# Enable power analysis features with memory optimizations
+set_app_var power_enable_rtl_analysis true
+Information: Checked out license 'PrimePower-RTL' (PT-019)
+true
+set_app_var power_enable_analysis true
+true
+set_app_var power_enable_multi_rtl_to_gate_mapping true
+true
+set_app_var power_enable_advanced_fsdb_reader false  ;# Disabled to save memory
+false
+# Memory optimization settings
+set_app_var power_enable_memory_optimization true
+Error: Variable 'power_enable_memory_optimization' is not an application variable. Using Tcl global variable. (CMD-104)
+true
+set_app_var power_rtl_analysis_memory_limit 45000    ;# Limit to 45GB
+Error: Variable 'power_rtl_analysis_memory_limit' is not an application variable. Using Tcl global variable. (CMD-104)
+45000
+set_app_var power_enable_incremental_analysis true
+Error: Variable 'power_enable_incremental_analysis' is not an application variable. Using Tcl global variable. (CMD-104)
+true
+set_app_var power_analysis_effort medium              ;# Reduced from high to medium
+Error: Variable 'power_analysis_effort' is not an application variable. Using Tcl global variable. (CMD-104)
+medium
+# Clock gating analysis settings (disable to avoid crashes)
+set_app_var power_enable_clock_gating_analysis false
+Error: Variable 'power_enable_clock_gating_analysis' is not an application variable. Using Tcl global variable. (CMD-104)
+false
+set_app_var power_clock_gating_inference false
+Error: Variable 'power_clock_gating_inference' is not an application variable. Using Tcl global variable. (CMD-104)
+false
+set_app_var power_clock_gating_propagate_enable false
+Error: Variable 'power_clock_gating_propagate_enable' is not an application variable. Using Tcl global variable. (CMD-104)
+false
+# Hierarchical analysis for large designs
+set_app_var power_hierarchical_analysis true
+Error: Variable 'power_hierarchical_analysis' is not an application variable. Using Tcl global variable. (CMD-104)
+true
+# Configure parallel processing (reduced to avoid memory pressure)
+set_host_options -max_cores 4  ;# Reduced from 8 to 4
+0
+puts "Using 4 cores for power analysis (reduced for memory optimization)"
+Using 4 cores for power analysis (reduced for memory optimization)
+# Set search paths for SKY130 libraries
+set search_path $SEARCH_PATHS
+* ./ ../../accelerator/mesh ../../accelerator/cpu_core/fpu ../../accelerator/cpu_core ../../accelerator/network_interface /tech/sky130/libs/sky130_library/ndm
+# Enable clock gating logic clustering for registers
+set_app_var power_rtl_report_register_use_cg_logic_clustering true
+true
+# -----------------------------------------------------------------------------
+# Load Analysis Data
+# -----------------------------------------------------------------------------
+puts "========== Loading Analysis Data =========="
+========== Loading Analysis Data ==========
+# Create temp results directory if it doesn't exist
+file mkdir $TEMP_RESULTS_DIR
+# Compute metrics from previous synthesis run with error handling
+puts "Starting compute_metrics with memory-optimized settings..."
+Starting compute_metrics with memory-optimized settings...
+if {[catch {compute_metrics -reuse $OUTPUT_DIR} result]} {
+    puts "WARNING: compute_metrics encountered an error: $result"
+    puts "Attempting recovery with simplified analysis..."
+    # Try a simpler approach if full analysis fails
+    set_app_var power_analysis_effort low
+    compute_metrics -reuse $OUTPUT_DIR
+}
+1
+
+Information : PT Additional Black-Box Check set to true
+
+setConf REF_LIBS [list   sky130_fd_sc_hd.ndm ]
+lappend ::search_path .
+lappend ::search_path /tech/sky130/libs/sky130_library/ndm
+set ::link_library *
+lappend ::link_library *
+lappend ::link_library sky130_fd_sc_hd__ff_100C_1v65
+# process_label : (none)
+# process : 1
+# voltage : 1.6500
+# temperature : 100.0000
+setConf MODE "func"
+setConf CORNER "nominal"
+1
+Reading CLIB file /tech/sky130/libs/sky130_library/ndm/sky130_fd_sc_hd.ndm
+Information: read_ndm /storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB:mesh.design
+Information: current_design won't return any data before link (DES-071)
+Information: Loading NDM design 'mesh'. (PTNDM-003)
+Linking design mesh...
+Information: Removing 1555 unneeded designs..... (LNK-034)
+Information: Module 'DW_div_uns_a_width4_b_width3_J4_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_div_a_width4_b_width3_tc_mode0_rem_mode1_J4_D3_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J4_D3_D3_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J4_D3_D4_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J4_D3_D5_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_div_tc_a_width32_b_width32_J16_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_div_a_width32_b_width32_tc_mode1_rem_mode1_J16_D3_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_absval_width32_J16_D3_D3_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_inc_J16_D3_D3_D3_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D4_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D5_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D6_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D7_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D8_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D9_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D10_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D11_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D12_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D13_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D14_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D15_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D16_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D17_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D18_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D19_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D20_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D21_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D22_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D23_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D24_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D25_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D26_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D27_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D28_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D29_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D30_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D31_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D32_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D33_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J16_D3_D34_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_inc_J16_D3_D35_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_inc_J16_D3_D36_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_div_uns_a_width32_b_width32_J17_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_div_a_width32_b_width32_tc_mode0_rem_mode1_J17_D3_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D3_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D4_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D5_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D6_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D7_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D8_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D9_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D10_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D11_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D12_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D13_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D14_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D15_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D16_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D17_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D18_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D19_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D20_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D21_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D22_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D23_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D24_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D25_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D26_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D27_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D28_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D29_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D30_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D31_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D32_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J17_D3_D33_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_div_tc_a_width32_b_width32_J22_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW_div_a_width32_b_width32_tc_mode1_rem_mode1_J22_D3_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_absval_width32_J22_D3_D3_D2' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_inc_J22_D3_D3_D3_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D4_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D5_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D6_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D7_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D8_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D9_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D10_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D11_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D12_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D13_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D14_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D15_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D16_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D17_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D18_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D19_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D20_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D21_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D22_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D23_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Information: Module 'DW01_add_J22_D3_D24_D1' in file '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v4/mesh_LIB' is not used in the current design.  (LNK-039)
+Note - message 'LNK-039' default limit (100) exceeded.  Remainder will be suppressed.
+Information: 156 (36.45%) library cells are unused in library sky130_fd_sc_hd__ff_100C_1v65..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ff_100C_1v95..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ff_n40C_1v56..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ff_n40C_1v65..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ff_n40C_1v76..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ss_100C_1v40..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ss_100C_1v60..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ss_n40C_1v28..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ss_n40C_1v35..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ss_n40C_1v40..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ss_n40C_1v44..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__ss_n40C_1v76..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__tt_025C_1v80..... (LNK-045)
+Information: 428 (100.00%) library cells are unused in library sky130_fd_sc_hd__tt_100C_1v80..... (LNK-045)
+Information: total 5720 library cells are unused (LNK-046)
+Warning: Some timing arcs have been disabled for breaking timing loops or because of constant propagation. Use the 'report_disable_timing' command to get the list of these disabled timing arcs. (PTE-003)
+Design 'mesh' was successfully linked.
+Information: There are 635110 leaf cells, ports, hiers and 758082 nets in the design (LNK-047)
+Error: Invalid xref data found during import
+WARNING: compute_metrics encountered an error: 0
+Attempting recovery with simplified analysis...
+Error: Variable 'power_analysis_effort' is not an application variable. Using Tcl global variable. (CMD-104)
+Error: Design/library data already loaded please start a new session to run this command again.
+	Use error_info for more info. (CMD-013)
+Information: script 'restore_new.tcl'
+	stopped at line 67 due to error. (CMD-081)
+Extended error info:
+Design/library data already loaded please start a new session to run this command again.
+    invoked from within
+"::pprtl_common::_return "Design/library data already loaded please start a new session to run this command again." -msg_type hard_error"
+    (procedure "compute_metrics" line 13)
+    invoked from within
+"compute_metrics -reuse $OUTPUT_DIR"
+    (file "restore_new.tcl" line 67)
+ -- End Extended Error Info
+Information: Defining new variable 'FILELIST'. (CMD-041)
+Information: Defining new variable 'power_analysis_effort'. (CMD-041)
+Information: Defining new variable 'CORNER_NAME'. (CMD-041)
+Information: Defining new variable 'power_enable_memory_optimization'. (CMD-041)
+Information: Defining new variable 'power_enable_clock_gating_analysis'. (CMD-041)
+Information: Defining new variable 'SEARCH_PATHS'. (CMD-041)
+Information: Defining new variable 'CORES'. (CMD-041)
+Information: Defining new variable 'OUTPUT_DIR'. (CMD-041)
+Information: Defining new variable 'power_enable_incremental_analysis'. (CMD-041)
+Information: Defining new variable 'STRIP_PATH'. (CMD-041)
+Information: Defining new variable 'SCENARIO_NAME'. (CMD-041)
+Information: Defining new variable 'result'. (CMD-041)
+Information: Defining new variable 'power_hierarchical_analysis'. (CMD-041)
+Information: Defining new variable 'CG_MAX_FANOUT'. (CMD-041)
+Information: Defining new variable 'TOP_MODULE'. (CMD-041)
+Information: Defining new variable 'CG_TEST_POINT'. (CMD-041)
+Information: Defining new variable 'SDC_FILE'. (CMD-041)
+Information: Defining new variable 'CG_TARGET'. (CMD-041)
+Information: Defining new variable 'RESULT_DIR'. (CMD-041)
+Information: Defining new variable 'CG_MAX_LEVELS'. (CMD-041)
+Information: Defining new variable 'MODE_NAME'. (CMD-041)
+Information: Defining new variable 'HIERARCHY_LEVELS'. (CMD-041)
+Information: Defining new variable 'TLU_NOMINAL'. (CMD-041)
+Information: Defining new variable 'TECH_TF'. (CMD-041)
+Information: Defining new variable 'DESIGN_NAME'. (CMD-041)
+Information: Defining new variable 'power_clock_gating_inference'. (CMD-041)
+Information: Defining new variable 'FSDB_FILE'. (CMD-041)
+Information: Defining new variable 'REF_LIBS'. (CMD-041)
+Information: Defining new variable 'power_rtl_analysis_memory_limit'. (CMD-041)
+Information: Defining new variable 'TEMP_RESULTS_DIR'. (CMD-041)
+Information: Defining new variable 'power_clock_gating_propagate_enable'. (CMD-041)
+Information: Defining new variable 'TLU_NAME'. (CMD-041)
+Information: Defining new variable 'LIB_NAME'. (CMD-041)
+pwr_shell> 
