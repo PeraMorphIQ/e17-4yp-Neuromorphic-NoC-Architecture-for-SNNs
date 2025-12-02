@@ -1,12 +1,11 @@
 #!/bin/tcsh -f
 # =============================================================================
-# Alternative Power Analysis Script for SKY130 - Workaround for compute_metrics crash
+# Power Analysis Script for SKY130 - Using read_power_data
 # =============================================================================
-# Description: This script uses an alternative approach to power analysis that
-#              avoids the compute_metrics bug causing segmentation faults
+# Description: This script uses read_power_data to restore synthesis results
+#              and perform power analysis
 # Author: Neuromorphic Accelerator Team  
 # Technology: SKY130 130nm Process
-# Note: This script DOES NOT use compute_metrics to avoid tool crashes
 # =============================================================================
 
 # Load shared configuration
@@ -15,225 +14,230 @@ source config.tcl
 # -----------------------------------------------------------------------------
 # Power Analysis Configuration
 # -----------------------------------------------------------------------------
-puts "========== Starting Alternative Power Analysis (No compute_metrics) =========="
+puts "========== Starting Power Analysis =========="
 puts "Technology: SKY130 130nm"
 puts "Design: Mesh Neuromorphic NoC Architecture"
-puts "Note: Using alternative flow to avoid compute_metrics crash"
 
-# Aggressive memory optimization settings
-set_app_var power_enable_rtl_analysis false              ;# Disable RTL analysis
+# Basic settings - only use valid pwr_shell app_vars
 set_app_var power_enable_analysis true
-set_app_var power_enable_multi_rtl_to_gate_mapping false ;# Disable to save memory
-set_app_var power_enable_advanced_fsdb_reader false      ;# Disabled to save memory
 
-# Memory optimization settings
-set_app_var power_enable_memory_optimization true
-set_app_var power_rtl_analysis_memory_limit 40000    ;# Limit to 40GB
-set_app_var power_enable_incremental_analysis false  ;# Disable incremental
-set_app_var power_analysis_effort low                ;# Use lowest effort
-
-# Clock gating analysis settings (disable to avoid crashes)
-set_app_var power_enable_clock_gating_analysis false
-set_app_var power_clock_gating_inference false
-set_app_var power_clock_gating_propagate_enable false
-
-# Hierarchical analysis for large designs  
-set_app_var power_hierarchical_analysis true
-
-# Configure parallel processing (minimal to avoid memory pressure)
-set_host_options -max_cores 2  ;# Reduced to 2 cores
-puts "Using 2 cores for power analysis (minimal to avoid crashes)"
+# Configure parallel processing
+set_host_options -max_cores $CORES
+puts "Using $CORES cores for power analysis"
 
 # Set search paths for SKY130 libraries
 set search_path $SEARCH_PATHS
 
-# Disable problematic features
-set_app_var power_rtl_report_register_use_cg_logic_clustering false
-
 # -----------------------------------------------------------------------------
-# Restore Design Data from Synthesis (Supported in pwr_shell)
+# Restore Design Data from Synthesis
 # -----------------------------------------------------------------------------
-puts "========== Restoring Design from Synthesis Output =========="
+puts "========== Restoring Design from RTL Synthesis Output =========="
 
 # Create temp results directory if it doesn't exist
 file mkdir $TEMP_RESULTS_DIR
 
-# Restore design using Netlist (Alternative flow)
-if {[catch {
-    puts "Restoring design from netlist: $OUTPUT_DIR/${DESIGN_NAME}.v"
-    
-    # Read the netlist
-    read_verilog $OUTPUT_DIR/${DESIGN_NAME}.v
-    
-    # Set top design
-    current_design $DESIGN_NAME
-    
-    # Link the design
-    link
-    
-} result]} {
-    puts "ERROR: Netlist restore failed: $result"
-    puts "This script requires a completed synthesis run (rtla.tcl) with netlist generation."
-    puts "Output directory attempted: ${OUTPUT_DIR}"
-    puts "\nAvailable files in output directory:"
-    catch {
-        foreach f [glob -nocomplain ${OUTPUT_DIR}/*] { puts "  [file tail $f]" }
+# Check what files are available in OUTPUT_DIR
+puts "Checking available files in $OUTPUT_DIR..."
+if {[file exists $OUTPUT_DIR]} {
+    foreach f [glob -nocomplain ${OUTPUT_DIR}/*] { 
+        puts "  Found: [file tail $f]" 
     }
+} else {
+    puts "ERROR: Output directory $OUTPUT_DIR does not exist!"
+    puts "Please run rtla.tcl first to generate synthesis data."
     exit 1
 }
 
-# Try to read constraints (prefer synthesized SDC)
-if {[file exists $OUTPUT_DIR/${DESIGN_NAME}.sdc]} {
-    puts "Reading synthesized SDC: $OUTPUT_DIR/${DESIGN_NAME}.sdc"
-    if {[catch {read_sdc $OUTPUT_DIR/${DESIGN_NAME}.sdc} result]} {
-        puts "WARNING: read_sdc failed: $result"
+# Try to restore using read_power_data with the .pp file
+set pp_file "${OUTPUT_DIR}/run_${SCENARIO_NAME}.pp"
+set pp_file_alt "${OUTPUT_DIR}/run.pp"
+
+if {[file exists $pp_file]} {
+    puts "Restoring power data from: $pp_file"
+    if {[catch {read_power_data $pp_file} result]} {
+        puts "ERROR: read_power_data failed: $result"
+        puts "Trying alternative .pp file..."
+        if {[file exists $pp_file_alt]} {
+            if {[catch {read_power_data $pp_file_alt} result2]} {
+                puts "ERROR: Alternative read_power_data also failed: $result2"
+                exit 1
+            }
+        } else {
+            exit 1
+        }
     }
-} elseif {[file exists $SDC_FILE]} {
-    if {[catch {read_sdc $SDC_FILE} result]} {
-        puts "WARNING: read_sdc failed: $result"
-    } else {
-        puts "Constraints loaded from: $SDC_FILE"
+} elseif {[file exists $pp_file_alt]} {
+    puts "Restoring power data from: $pp_file_alt"
+    if {[catch {read_power_data $pp_file_alt} result]} {
+        puts "ERROR: read_power_data failed: $result"
+        exit 1
     }
 } else {
-    puts "WARNING: No SDC file found"
+    puts "ERROR: No .pp file found in $OUTPUT_DIR"
+    puts "Expected: $pp_file or $pp_file_alt"
+    exit 1
 }
 
-# Load activity: prefer FSDB; otherwise fall back to vectorless defaults
+puts "Power data restored successfully"
+
+# -----------------------------------------------------------------------------
+# Load Switching Activity from FSDB
+# -----------------------------------------------------------------------------
+puts "========== Loading Switching Activity =========="
+
 if {[file exists $FSDB_FILE]} {
     puts "Reading FSDB activity: $FSDB_FILE"
+    puts "Strip path: $STRIP_PATH"
     if {[catch {read_fsdb -strip_path $STRIP_PATH $FSDB_FILE} result]} {
         puts "WARNING: read_fsdb failed: $result"
-        puts "Falling back to vectorless activity (default rates)"
-        catch {set_switching_activity -default_toggle_rate 0.2 -default_static_probability 0.5 [current_design]}
+        puts "Continuing with default switching activity..."
     } else {
         puts "FSDB activity loaded successfully"
     }
 } else {
-    puts "WARNING: FSDB not found at $FSDB_FILE"
-    puts "Using vectorless activity defaults (toggle=0.2, static_prob=0.5)"
-    catch {set_switching_activity -default_toggle_rate 0.2 -default_static_probability 0.5 [current_design]}
+    puts "WARNING: FSDB file not found at $FSDB_FILE"
+    puts "Continuing with default switching activity..."
 }
 
 # -----------------------------------------------------------------------------
-# Basic Power Analysis WITHOUT compute_metrics
+# Update and Analyze Power
 # -----------------------------------------------------------------------------
-puts "========== Performing Basic Power Analysis =========="
+puts "========== Performing Power Analysis =========="
 
-# Update power using restored design and activity
-if {[catch {
-    update_power
-    puts "Power data updated successfully"
-} result]} {
-    puts "ERROR: update_power failed: $result"
-    puts "Cannot proceed with power analysis"
+# Update power calculations
+if {[catch {update_power} result]} {
+    puts "WARNING: update_power failed: $result"
+    puts "Continuing to generate reports..."
 }
 
 # -----------------------------------------------------------------------------
-# Generate Basic Power Reports
+# Generate Power Reports
 # -----------------------------------------------------------------------------
-puts "========== Generating Basic Power Reports =========="
+puts "========== Generating Power Reports =========="
 
 # Generate basic power report
-if {[catch {
-    report_power > "$TEMP_RESULTS_DIR/power_basic.txt"
-    puts "Basic power report generated"
-} result]} {
+puts "Generating basic power report..."
+if {[catch {report_power > "$TEMP_RESULTS_DIR/power_basic.txt"} result]} {
     puts "WARNING: Basic power report failed: $result"
+} else {
+    puts "  - power_basic.txt generated"
 }
 
-# Generate power by hierarchy (minimal depth)
-if {[catch {
-    report_power -hierarchy -levels 2 > "$TEMP_RESULTS_DIR/power_hierarchy_level2.txt"
-    puts "Hierarchical power report (level 2) generated"
-} result]} {
-    puts "WARNING: Hierarchical power report failed: $result"
+# Generate detailed power report
+puts "Generating detailed power report..."
+if {[catch {report_power -verbose > "$TEMP_RESULTS_DIR/power_detailed.txt"} result]} {
+    puts "WARNING: Detailed power report failed: $result"
+} else {
+    puts "  - power_detailed.txt generated"
 }
 
-# Generate power by instance
-if {[catch {
-    report_power -instances > "$TEMP_RESULTS_DIR/power_by_instance.txt"
-    puts "Power by instance report generated"
-} result]} {
-    puts "WARNING: Power by instance report failed: $result"
+# Generate hierarchical power reports
+puts "Generating hierarchical power reports..."
+foreach level {2 3 5} {
+    if {[catch {report_power -hierarchy -levels $level > "$TEMP_RESULTS_DIR/power_hierarchy_L${level}.txt"} result]} {
+        puts "WARNING: Hierarchical power report (level $level) failed: $result"
+    } else {
+        puts "  - power_hierarchy_L${level}.txt generated"
+    }
 }
 
-# Generate power by net
-if {[catch {
-    report_power -nets > "$TEMP_RESULTS_DIR/power_by_net.txt"
-    puts "Power by net report generated"
-} result]} {
-    puts "WARNING: Power by net report failed: $result"
+# Generate power by cell type
+puts "Generating power by cell type..."
+if {[catch {report_power -cell_type > "$TEMP_RESULTS_DIR/power_by_cell_type.txt"} result]} {
+    puts "WARNING: Power by cell type report failed: $result"
+} else {
+    puts "  - power_by_cell_type.txt generated"
 }
 
-# Try component group reports
-puts "Generating component group reports..."
-foreach group {register sequential combinational} {
-    if {[catch {
-        report_power -group $group > "$TEMP_RESULTS_DIR/power_${group}.txt"
-        puts "  - ${group} power report generated"
-    } result]} {
-        puts "  WARNING: ${group} power report failed: $result"
+# Generate power by group
+puts "Generating power by component groups..."
+foreach group {register sequential combinational memory clock_network} {
+    if {[catch {report_power -groups $group > "$TEMP_RESULTS_DIR/power_${group}.txt"} result]} {
+        # Try alternative syntax
+        if {[catch {report_power -group $group > "$TEMP_RESULTS_DIR/power_${group}.txt"} result2]} {
+            puts "  WARNING: $group power report failed"
+        } else {
+            puts "  - power_${group}.txt generated"
+        }
+    } else {
+        puts "  - power_${group}.txt generated"
     }
 }
 
 # -----------------------------------------------------------------------------
-# Generate Summary Statistics
+# Extract and Display Power Summary
 # -----------------------------------------------------------------------------
-puts "========== Generating Summary Statistics =========="
+puts "========== Power Analysis Summary =========="
 
-set summary_file [open "$TEMP_RESULTS_DIR/power_analysis_summary.txt" w]
-puts $summary_file "# Alternative Power Analysis Summary"
-puts $summary_file "# Mesh Neuromorphic NoC Architecture - SKY130 130nm"
-puts $summary_file "# Generated: [clock format [clock seconds]]"
-puts $summary_file "# Method: Direct power analysis (compute_metrics bypassed)"
+# Create summary file
+set summary_file [open "$TEMP_RESULTS_DIR/power_summary.txt" w]
+puts $summary_file "=============================================="
+puts $summary_file "Power Analysis Summary"
+puts $summary_file "=============================================="
+puts $summary_file "Design: $DESIGN_NAME"
+puts $summary_file "Technology: SKY130 130nm"
+puts $summary_file "Generated: [clock format [clock seconds]]"
+puts $summary_file "=============================================="
 puts $summary_file ""
 
-# Try to get basic power information
+# Try to extract power values
 if {[catch {
-    set total_power [get_attribute [current_design] total_power]
-    set dynamic_power [get_attribute [current_design] dynamic_power]  
-    set leakage_power [get_attribute [current_design] leakage_power]
+    # Get the current design
+    set design [current_design]
+    puts $summary_file "Design: $design"
+    puts "Design: $design"
     
-    if {$total_power != ""} {
-        puts $summary_file "Total Power: $total_power W"
-        puts "Total Power: $total_power W"
+    # Try different methods to get power
+    if {[catch {set total [get_attribute $design total_power]} err]} {
+        puts "Could not get total_power attribute: $err"
+    } else {
+        puts $summary_file "Total Power: $total W"
+        puts "Total Power: $total W"
     }
-    if {$dynamic_power != ""} {
-        puts $summary_file "Dynamic Power: $dynamic_power W"
-        puts "Dynamic Power: $dynamic_power W"
+    
+    if {[catch {set dynamic [get_attribute $design dynamic_power]} err]} {
+        puts "Could not get dynamic_power attribute"  
+    } else {
+        puts $summary_file "Dynamic Power: $dynamic W"
+        puts "Dynamic Power: $dynamic W"
     }
-    if {$leakage_power != ""} {
-        puts $summary_file "Leakage Power: $leakage_power W"
-        puts "Leakage Power: $leakage_power W"
+    
+    if {[catch {set leakage [get_attribute $design leakage_power]} err]} {
+        puts "Could not get leakage_power attribute"
+    } else {
+        puts $summary_file "Leakage Power: $leakage W"
+        puts "Leakage Power: $leakage W"
     }
+    
 } result]} {
-    puts $summary_file "WARNING: Could not extract power values: $result"
-    puts "WARNING: Power value extraction incomplete"
+    puts $summary_file "Note: Could not extract all power attributes"
+    puts "Note: Power extraction incomplete - check report files"
 }
 
 puts $summary_file ""
-puts $summary_file "Note: This analysis uses an alternative method that bypasses"
-puts $summary_file "compute_metrics to avoid tool crashes. RTL-level metrics are"
-puts $summary_file "not available with this method."
-
+puts $summary_file "Detailed reports available in: $TEMP_RESULTS_DIR/"
 close $summary_file
+
+# Also print the basic power report to console
+puts ""
+puts "=============================================="
+puts "Basic Power Report:"
+puts "=============================================="
+if {[catch {report_power} result]} {
+    puts "Could not generate console power report"
+}
 
 # -----------------------------------------------------------------------------
 # Completion Message
 # -----------------------------------------------------------------------------
-puts "========== Alternative Power Analysis Complete =========="
-puts "Reports generated in $TEMP_RESULTS_DIR/ directory:"
-puts "  - Basic power reports"
-puts "  - Hierarchical power reports (limited depth)"
-puts "  - Component group power reports"
-puts "  - Summary statistics"
 puts ""
-puts "NOTE: This analysis used an alternative method to avoid tool crashes."
-puts "      RTL metrics and detailed analysis are not available."
-puts "      For full analysis, consider:"
-puts "      1. Reducing design size"
-puts "      2. Using a different technology node (16nm/45nm)"
-puts "      3. Contacting Synopsys support about compute_metrics bug"
-puts "========== Analysis Session Complete =========="
+puts "========== Power Analysis Complete =========="
+puts "Reports generated in $TEMP_RESULTS_DIR/:"
+puts "  - power_basic.txt"
+puts "  - power_detailed.txt"  
+puts "  - power_hierarchy_L*.txt"
+puts "  - power_by_cell_type.txt"
+puts "  - power_summary.txt"
+puts "========== Done =========="
 
 exit
