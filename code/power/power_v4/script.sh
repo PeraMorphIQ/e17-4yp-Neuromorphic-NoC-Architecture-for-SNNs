@@ -321,8 +321,20 @@ if [ "$RUN_SIMV" = true ]; then
     echo "========== STEP 2: Run Simulation =========="
     if [ -d "$RTL_MESH_PATH" ]; then
         pushd "$RTL_MESH_PATH" > /dev/null
+        
+        # Remove old FSDB file if it exists
+        if [ -f "novas.fsdb" ]; then
+            rm "novas.fsdb"
+        fi
+        
         ./simv +fsdb+all=on +fsdb+delta | tee "../../power/power_v4/$TEMP_RESULTS_DIR/simulation.log"
-        echo "Simulation completed successfully"
+        
+        if [ -f "novas.fsdb" ]; then
+            echo "Simulation completed successfully, novas.fsdb generated"
+        else
+            echo "WARNING: novas.fsdb was not generated!"
+        fi
+        
         popd > /dev/null
     else
         echo "Warning: Mesh RTL directory not found at $RTL_MESH_PATH, skipping simulation"
@@ -342,6 +354,12 @@ if [ "$RUN_RTLA" = true ]; then
         echo "Removing existing library directory before synthesis to avoid errors..."
         rm -rf "$LIB_DIR"
     fi
+
+    # Remove TZ_OUTDIR to ensure clean power analysis data
+    if [ -d "TZ_OUTDIR" ]; then
+        echo "Removing existing TZ_OUTDIR to ensure clean power analysis data..."
+        rm -rf "TZ_OUTDIR"
+    fi
     
     echo "Running with proper PrimeTime shell command..."
     rtl_shell -f rtla.tcl | tee "$TEMP_RESULTS_DIR/rtl_synthesis.log"
@@ -358,9 +376,9 @@ fi
 # Step 4: Power Analysis (using proper command)
 if [ "$RUN_PRIMEPOWER" = true ]; then
     echo "========== STEP 4: Power Analysis =========="
-    if [ -f "restore_new.tcl" ]; then
-        echo "Running multi-corner power analysis..."
-        pwr_shell -f restore_new.tcl | tee "$TEMP_RESULTS_DIR/power_restore.log" 
+    if [ -f "restore_alternative.tcl" ]; then
+        echo "Running alternative power analysis (skipping compute_metrics)..."
+        pwr_shell -f restore_alternative.tcl | tee "$TEMP_RESULTS_DIR/power_restore.log" 
         if [ $? -eq 0 ]; then
             echo "Power analysis completed successfully"
         else
@@ -368,7 +386,7 @@ if [ "$RUN_PRIMEPOWER" = true ]; then
             exit 1
         fi
     else
-        echo "Warning: restore_new.tcl not found, skipping power analysis"
+        echo "Warning: restore_alternative.tcl not found, skipping power analysis"
     fi
 else
     echo "========== STEP 4: Power Analysis (SKIPPED) =========="
