@@ -58,13 +58,22 @@ puts "========== Restoring Design from Synthesis Output =========="
 # Create temp results directory if it doesn't exist
 file mkdir $TEMP_RESULTS_DIR
 
-# Restore design using PrimePower-supported reuse API
+# Restore design using Netlist (Alternative flow)
 if {[catch {
-    puts "Restoring design with: read_design_data $OUTPUT_DIR"
-    read_design_data $OUTPUT_DIR
+    puts "Restoring design from netlist: $OUTPUT_DIR/${DESIGN_NAME}.v"
+    
+    # Read the netlist
+    read_verilog $OUTPUT_DIR/${DESIGN_NAME}.v
+    
+    # Set top design
+    current_design $DESIGN_NAME
+    
+    # Link the design
+    link
+    
 } result]} {
-    puts "ERROR: read_design_data failed: $result"
-    puts "This script requires a completed synthesis run (rtla.tcl)."
+    puts "ERROR: Netlist restore failed: $result"
+    puts "This script requires a completed synthesis run (rtla.tcl) with netlist generation."
     puts "Output directory attempted: ${OUTPUT_DIR}"
     puts "\nAvailable files in output directory:"
     catch {
@@ -73,15 +82,20 @@ if {[catch {
     exit 1
 }
 
-# Try to read constraints if available
-if {[file exists $SDC_FILE]} {
+# Try to read constraints (prefer synthesized SDC)
+if {[file exists $OUTPUT_DIR/${DESIGN_NAME}.sdc]} {
+    puts "Reading synthesized SDC: $OUTPUT_DIR/${DESIGN_NAME}.sdc"
+    if {[catch {read_sdc $OUTPUT_DIR/${DESIGN_NAME}.sdc} result]} {
+        puts "WARNING: read_sdc failed: $result"
+    }
+} elseif {[file exists $SDC_FILE]} {
     if {[catch {read_sdc $SDC_FILE} result]} {
         puts "WARNING: read_sdc failed: $result"
     } else {
         puts "Constraints loaded from: $SDC_FILE"
     }
 } else {
-    puts "WARNING: No SDC file found at $SDC_FILE"
+    puts "WARNING: No SDC file found"
 }
 
 # Load activity: prefer FSDB; otherwise fall back to vectorless defaults
