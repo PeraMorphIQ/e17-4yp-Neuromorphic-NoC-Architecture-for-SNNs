@@ -412,13 +412,13 @@ Total in all modules
   Nets:                 9985
   Instances:            3897
 Design summary end. (FLW-8551)
-Elapsed = 00:00:01.11, CPU = 00:00:01.07
+Elapsed = 00:00:01.14, CPU = 00:00:01.09
 1
 set_top_module system_top
 Information: User units loaded from library 'NangateOpenCellLibrary' (LNK-040)
 Information: Added key list 'DesignWare' to design 'system_top'. (DWS-0216)
 Gensys attachment is created: presto_gensys.attach:LIB:system_top.design 
-Elapsed = 00:00:06.07, CPU = 00:00:05.98
+Elapsed = 00:00:09.02, CPU = 00:00:08.57
 1
 source ./tz_setup.tcl
 The following clock gating options are applied to: top-level (design)
@@ -445,7 +445,7 @@ Scenario func@Cmin (mode func corner Cmin) is active for setup/leakage_power/dyn
 Report : scenario
 Design : system_top
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 10:29:23 2025
+Date   : Thu Nov 27 12:06:04 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -455,18 +455,16 @@ func@Cmax *     func            Cmax            true    true   false true     tr
 func@Cmin *     func            Cmin            true    true   false true     true     true      true     true     false false
 
 1
-# Disable constant-connected output checks for boundary router ports
-set_app_options -name opt.common.allow_constant_outputs -value true
-Error: Invalid option name 'opt.common.allow_constant_outputs'
-        Use error_info for more info. (CMD-013)
-set_app_options -name compile.constant_propagation_with_no_boundary_opt -value true
-Error: Invalid option name 'compile.constant_propagation_with_no_boundary_opt'
-        Use error_info for more info. (CMD-013)
+# Suppress constant-connected output errors for boundary ports
+set_app_options -name opt.common.user_instance_name_prefix boundary_
+Error: Cannot specify -name without -value. (CMD-003)
+set_message_info -id DCHK-036 -limit 0
+1
 rtl_opt -initial_map_only
 Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
 Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
 Information: Starting 'rtl_opt -from conditioning -to conditioning' (FLW-8000)
-Information: Time: 2025-11-27 10:29:25 / Session:  00:00:17 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 732 MB (FLW-8100)
+Information: Time: 2025-11-27 12:06:07 / Session:  00:00:27 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 732 MB (FLW-8100)
 Information: Timer using 8 threads
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
@@ -475,7 +473,7 @@ Information: Structural Congestion Optimization technology (Early SCO) has been 
 ****************************************
 Report : report_tbcs
 Version: V-2023.12-SP5-3
-Date   : Thu Nov 27 10:29:26 2025
+Date   : Thu Nov 27 12:06:09 2025
 ****************************************
 INFO: Start environment monitoring: recipes
 Information: Corner Cmin: no PVT mismatches. (PVT-032)
@@ -506,7 +504,7 @@ Information:    11    11  0        4  <------   Total sum of messages (MSG-3038)
 Information: >>>>>>> Summary: 11 error&warning MSGs observed during fast (MSG-3103)
 Error: FAST compile failed.
 Information: Ending   'rtl_opt -from conditioning -to conditioning' (FLW-8001)
-Information: Time: 2025-11-27 10:29:38 / Session:  00:00:30 / Command:  00:00:13 / CPU:  00:00:20 / Memory: 1144 MB (FLW-8100)
+Information: Time: 2025-11-27 12:06:27 / Session:  00:00:47 / Command:  00:00:20 / CPU:  00:00:25 / Memory: 1141 MB (FLW-8100)
 set_rtl_power_analysis_options -scenario func@Cmax -design system_top -strip_path system_top_tb/dut -fsdb "../../cpu/novas.fsdb" -output_dir RTLA_WORKSPACE
 1
 save_block
@@ -533,3 +531,4 @@ Issue detected during rtl_opt see logfile for details. Aborting export_data.
 "export_power_data"
     (file "/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v3/rtla.tcl" line 24)
  -- End Extended Error Info
+rtl_shell> 
