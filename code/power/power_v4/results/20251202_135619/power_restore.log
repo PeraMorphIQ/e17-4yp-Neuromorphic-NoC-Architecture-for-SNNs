@@ -1,0 +1,192 @@
+
+                                  PrimePower 
+
+               Version W-2024.09-SP2 for linux64 - Nov 27, 2024 
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+#!/bin/tcsh -f
+# =============================================================================
+# Alternative Power Analysis Script for SKY130 - Workaround for compute_metrics crash
+# =============================================================================
+# Description: This script uses an alternative approach to power analysis that
+#              avoids the compute_metrics bug causing segmentation faults
+# Author: Neuromorphic Accelerator Team  
+# Technology: SKY130 130nm Process
+# Note: This script DOES NOT use compute_metrics to avoid tool crashes
+# =============================================================================
+# Load shared configuration
+source config.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: temp_results_20251202_135619
+Configuration loaded successfully
+  Design: mesh
+  Technology: SKY130 130nm
+  Cores: 4
+  Results directory: temp_results_20251202_135619
+# -----------------------------------------------------------------------------
+# Power Analysis Configuration
+# -----------------------------------------------------------------------------
+puts "========== Starting Alternative Power Analysis (No compute_metrics) =========="
+========== Starting Alternative Power Analysis (No compute_metrics) ==========
+puts "Technology: SKY130 130nm"
+Technology: SKY130 130nm
+puts "Design: Mesh Neuromorphic NoC Architecture"
+Design: Mesh Neuromorphic NoC Architecture
+puts "Note: Using alternative flow to avoid compute_metrics crash"
+Note: Using alternative flow to avoid compute_metrics crash
+# Aggressive memory optimization settings
+set_app_var power_enable_rtl_analysis false              ;# Disable RTL analysis
+false
+set_app_var power_enable_analysis true
+true
+set_app_var power_enable_multi_rtl_to_gate_mapping false ;# Disable to save memory
+false
+set_app_var power_enable_advanced_fsdb_reader false      ;# Disabled to save memory
+false
+# Memory optimization settings
+set_app_var power_enable_memory_optimization true
+Error: Variable 'power_enable_memory_optimization' is not an application variable. Using Tcl global variable. (CMD-104)
+true
+set_app_var power_rtl_analysis_memory_limit 40000    ;# Limit to 40GB
+Error: Variable 'power_rtl_analysis_memory_limit' is not an application variable. Using Tcl global variable. (CMD-104)
+40000
+set_app_var power_enable_incremental_analysis false  ;# Disable incremental
+Error: Variable 'power_enable_incremental_analysis' is not an application variable. Using Tcl global variable. (CMD-104)
+false
+set_app_var power_analysis_effort low                ;# Use lowest effort
+Error: Variable 'power_analysis_effort' is not an application variable. Using Tcl global variable. (CMD-104)
+low
+# Clock gating analysis settings (disable to avoid crashes)
+set_app_var power_enable_clock_gating_analysis false
+Error: Variable 'power_enable_clock_gating_analysis' is not an application variable. Using Tcl global variable. (CMD-104)
+false
+set_app_var power_clock_gating_inference false
+Error: Variable 'power_clock_gating_inference' is not an application variable. Using Tcl global variable. (CMD-104)
+false
+set_app_var power_clock_gating_propagate_enable false
+Error: Variable 'power_clock_gating_propagate_enable' is not an application variable. Using Tcl global variable. (CMD-104)
+false
+# Hierarchical analysis for large designs  
+set_app_var power_hierarchical_analysis true
+Error: Variable 'power_hierarchical_analysis' is not an application variable. Using Tcl global variable. (CMD-104)
+true
+# Configure parallel processing (minimal to avoid memory pressure)
+set_host_options -max_cores 2  ;# Reduced to 2 cores
+Information: The max_cores limit for the local (current) process has been modified by -2 to 2. (CMCR-103)
+1
+puts "Using 2 cores for power analysis (minimal to avoid crashes)"
+Using 2 cores for power analysis (minimal to avoid crashes)
+# Set search paths for SKY130 libraries
+set search_path $SEARCH_PATHS
+* ./ ../../accelerator/mesh ../../accelerator/cpu_core/fpu ../../accelerator/cpu_core ../../accelerator/network_interface /tech/sky130/libs/sky130_library/ndm
+# Disable problematic features
+set_app_var power_rtl_report_register_use_cg_logic_clustering false
+false
+# -----------------------------------------------------------------------------
+# Restore Design Data from Synthesis (Supported in pwr_shell)
+# -----------------------------------------------------------------------------
+puts "========== Restoring Design from Synthesis Output =========="
+========== Restoring Design from Synthesis Output ==========
+# Create temp results directory if it doesn't exist
+file mkdir $TEMP_RESULTS_DIR
+# Restore design using PrimePower-supported reuse API
+if {[catch {
+    puts "Restoring design with: read_design_data $OUTPUT_DIR"
+    read_design_data $OUTPUT_DIR
+} result]} {
+    puts "ERROR: read_design_data failed: $result"
+    puts "This script requires a completed synthesis run (rtla.tcl)."
+    puts "Output directory attempted: ${OUTPUT_DIR}"
+    puts "\nAvailable files in output directory:"
+    catch {
+        foreach f [glob -nocomplain ${OUTPUT_DIR}/*] { puts "  [file tail $f]" }
+    }
+    exit 1
+}
+Restoring design with: read_design_data TZ_OUTDIR
+Error: unknown command 'read_design_data' (CMD-005)
+ERROR: read_design_data failed: 
+This script requires a completed synthesis run (rtla.tcl).
+Output directory attempted: TZ_OUTDIR
+
+Available files in output directory:
+  blocks.txt
+  mesh.synlib
+  reflib.log
+  conf_func@nominal.tcl
+  conf.tcl
+  mesh.op_info
+  mesh.gpd_scenario
+  rtla_info.txt
+  hdl_hier.txt.gz
+  mesh_constraints
+  module_cell_map.txt
+  mesh.businfo
+  modules.txt
+  XREF
+  seq_removal_info.txt
+  link_path.tcl
+  mesh.gpd
+  mesh.upf
+  mesh.essential_saifmap
+  run.pp
+  ppRtlNameMapping.txt
+  link_path_func@nominal.tcl
+  run_func@nominal.pp
+Information: Defining new variable 'FILELIST'. (CMD-041)
+Information: Defining new variable 'f'. (CMD-041)
+Information: Defining new variable 'power_analysis_effort'. (CMD-041)
+Information: Defining new variable 'CORNER_NAME'. (CMD-041)
+Information: Defining new variable 'power_enable_memory_optimization'. (CMD-041)
+Information: Defining new variable 'power_enable_clock_gating_analysis'. (CMD-041)
+Information: Defining new variable 'SEARCH_PATHS'. (CMD-041)
+Information: Defining new variable 'CORES'. (CMD-041)
+Information: Defining new variable 'OUTPUT_DIR'. (CMD-041)
+Information: Defining new variable 'power_enable_incremental_analysis'. (CMD-041)
+Information: Defining new variable 'STRIP_PATH'. (CMD-041)
+Information: Defining new variable 'SCENARIO_NAME'. (CMD-041)
+Information: Defining new variable 'result'. (CMD-041)
+Information: Defining new variable 'power_hierarchical_analysis'. (CMD-041)
+Information: Defining new variable 'CG_MAX_FANOUT'. (CMD-041)
+Information: Defining new variable 'TOP_MODULE'. (CMD-041)
+Information: Defining new variable 'CG_TEST_POINT'. (CMD-041)
+Information: Defining new variable 'SDC_FILE'. (CMD-041)
+Information: Defining new variable 'CG_TARGET'. (CMD-041)
+Information: Defining new variable 'RESULT_DIR'. (CMD-041)
+Information: Defining new variable 'CG_MAX_LEVELS'. (CMD-041)
+Information: Defining new variable 'MODE_NAME'. (CMD-041)
+Information: Defining new variable 'HIERARCHY_LEVELS'. (CMD-041)
+Information: Defining new variable 'TLU_NOMINAL'. (CMD-041)
+Information: Defining new variable 'TECH_TF'. (CMD-041)
+Information: Defining new variable 'DESIGN_NAME'. (CMD-041)
+Information: Defining new variable 'power_clock_gating_inference'. (CMD-041)
+Information: Defining new variable 'FSDB_FILE'. (CMD-041)
+Information: Defining new variable 'REF_LIBS'. (CMD-041)
+Information: Defining new variable 'power_rtl_analysis_memory_limit'. (CMD-041)
+Information: Defining new variable 'TEMP_RESULTS_DIR'. (CMD-041)
+Information: Defining new variable 'power_clock_gating_propagate_enable'. (CMD-041)
+Information: Defining new variable 'TLU_NAME'. (CMD-041)
+Information: Defining new variable 'LIB_NAME'. (CMD-041)
+
+Timing updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full, 0 logical)
+Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
+Maximum memory usage for this session: 2761.41 MB
+CPU usage for this session: 4 seconds 
+Elapsed time for this session: 4 seconds
+Diagnostics summary: 9 errors, 35 informationals
+
+Thank you for using pwr_shell!
