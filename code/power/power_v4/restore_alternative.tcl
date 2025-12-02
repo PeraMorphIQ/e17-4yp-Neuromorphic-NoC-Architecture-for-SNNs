@@ -169,7 +169,7 @@ puts "========== Generating Summary Statistics =========="
 
 set summary_file [open "$TEMP_RESULTS_DIR/power_analysis_summary.txt" w]
 puts $summary_file "# Alternative Power Analysis Summary"
-puts $summary_file "# Blackbox Neuromorphic Accelerator - SKY130 130nm"
+puts $summary_file "# Mesh Neuromorphic NoC Architecture - SKY130 130nm"
 puts $summary_file "# Generated: [clock format [clock seconds]]"
 puts $summary_file "# Method: Direct power analysis (compute_metrics bypassed)"
 puts $summary_file ""
