@@ -97,8 +97,8 @@ puts "Power analysis data exported"
 
 # Export netlist and SDC for alternative power analysis
 puts "========== Exporting Netlist and SDC =========="
-write_verilog -hierarchy -output $OUTPUT_DIR/${DESIGN_NAME}.v
-write_sdc $OUTPUT_DIR/${DESIGN_NAME}.sdc
+write_verilog -hierarchy all -output $OUTPUT_DIR/${DESIGN_NAME}.v
+write_sdc -output $OUTPUT_DIR/${DESIGN_NAME}.sdc
 puts "Netlist and SDC exported to $OUTPUT_DIR"
 
 # -----------------------------------------------------------------------------
