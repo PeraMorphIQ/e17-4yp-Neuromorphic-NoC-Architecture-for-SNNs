@@ -36,6 +36,7 @@ wire [24:0] significand_sub;
 wire [30:0] sub_diff;
 wire [24:0] subtraction_diff; 
 wire [7:0] exponent_sub;
+wire [7:0] exp_a, exp_b;
 
 //for operations always operand_a must not be less than b_operand
 assign {Comp_enable,operand_a,operand_b} = (a_operand[30:0] < b_operand[30:0]) ? {1'b1,b_operand,a_operand} : {1'b0,a_operand,b_operand};
@@ -64,6 +65,7 @@ assign significand_b_add_sub = significand_b >> exponent_diff;
 assign exponent_b_add_sub = operand_b[30:23] + exponent_diff; 
 
 //Checking exponents are same or not
+wire perform;
 assign perform = (operand_a[30:23] == exponent_b_add_sub);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////

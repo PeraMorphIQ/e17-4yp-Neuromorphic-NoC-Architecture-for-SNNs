@@ -51,6 +51,8 @@ module hazard_detection_unit (
                 else
                     LU_HAZ_SIG = 1'b0;
             end
+        else
+            LU_HAZ_SIG = 1'b0;  // No hazard if not a load instruction
     end
 
 endmodule
