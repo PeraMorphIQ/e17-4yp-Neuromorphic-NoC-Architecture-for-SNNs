@@ -70,7 +70,7 @@ set SDC_FILE "./sdc/clocks.sdc"
 # -----------------------------------------------------------------------------
 # Directory configuration
 set RESULT_DIR   "results"
-set OUTPUT_DIR   "TZ_OUTDIR"                     ;# reused by restore_new.tcl
+set OUTPUT_DIR   "TZ_OUTDIR"                     # reused by restore_new.tcl
 
 # Temporary results directory for run-time outputs (can be overridden via ENV)
 set TEMP_RESULTS_DIR $RESULT_DIR
