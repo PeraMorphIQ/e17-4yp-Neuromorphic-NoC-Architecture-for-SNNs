@@ -52,12 +52,8 @@ puts "========== Analyzing and Elaborating Design =========="
 # Analyze RTL source files
 analyze -f sv -vcs "-f $FILELIST"
 
-# Elaborate the design (cpu_tb is the testbench, but we analyze cpu inside)
-elaborate $DESIGN_NAME
-
-# Set the actual CPU module as top for synthesis (not the testbench)
-set_top_module "cpu"
-current_design cpu
+# Elaborate the CPU design (not the testbench)
+elaborate cpu
 
 puts "Design elaboration completed"
 

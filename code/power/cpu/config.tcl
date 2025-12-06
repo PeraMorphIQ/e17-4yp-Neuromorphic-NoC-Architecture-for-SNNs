@@ -38,10 +38,10 @@ set SEARCH_PATHS "* ./ ../../cpu/ ../../cpu/cpu/ ../../cpu/alu/ ../../cpu/fpu/ .
 # File Locations
 # -----------------------------------------------------------------------------
 # Source files
-set FILELIST "src.f"
+set FILELIST "src_detailed.f"
 
 # Power analysis inputs
-set FSDB_FILE  "../../cpu/cpu/novas.fsdb"
+set FSDB_FILE  "../../cpu/cpu/cpu_tb.fsdb"
 set STRIP_PATH "cpu_tb/dut"
 
 # -----------------------------------------------------------------------------
