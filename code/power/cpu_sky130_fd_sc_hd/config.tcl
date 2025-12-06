@@ -41,7 +41,7 @@ set SEARCH_PATHS "* ./ ../../cpu/cpu/ ../../cpu/ /tech/sky130/libs/sky130_librar
 set FILELIST "src.f"
 
 # Power analysis inputs
-set FSDB_FILE  "../../cpu/cpu/novas.fsdb"
+set FSDB_FILE  "../../cpu/novas.fsdb"
 set STRIP_PATH "cpu_tb/cpu_inst"
 
 # -----------------------------------------------------------------------------
