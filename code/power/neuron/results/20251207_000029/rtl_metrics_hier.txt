@@ -1,0 +1,17 @@
+****************************************
+Report : report_rtl_metrics
+      -view hier
+Design : neuron
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 00:02:36 2025
+****************************************
+
+
+gated_registers   icg_cells   latch_cells   reg_cells   sequential_cells   combinational_cells   total_power   cell_name
+---------------   ---------   -----------   ---------   ----------------   -------------------   -----------   -----------------------------------
+     0                 0           0            65          65               6548                1.10e-02      neuron
+     0                 0           0             0           0               2289                4.30e-03      neuron/RS_OP_46_37583_35416_J1/DP_OP_47_6853_11629_J0
+     0                 0           0             0           0               2363                2.94e-03      neuron/mult_54
+     0                 0           0             0           0               1102                1.89e-03      neuron/mult_35
+     0                 0           0             0           0                492                9.72e-04      neuron/DP_OP_45_30583_35416_J1
+1

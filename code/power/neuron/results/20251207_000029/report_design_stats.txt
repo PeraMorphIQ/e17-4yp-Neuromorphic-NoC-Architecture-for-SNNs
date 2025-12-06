@@ -2,7 +2,7 @@
 Report : design
 Design : neuron
 Version: V-2023.12-SP5-3
-Date   : Sat Dec  6 23:34:02 2025
+Date   : Sun Dec  7 00:02:28 2025
 ****************************************
 
 Total number of std cells in library : 428
@@ -16,35 +16,35 @@ Total number of ICGs                 : 6
 
 Cell Instance Type  Count         Area
 --------------------------------------
-TOTAL LEAF CELLS    26994   184461.914
-unit                26994   184461.914
-Standard cells      26994   184461.914
-unit                26994   184461.914
+TOTAL LEAF CELLS     6612    62896.573
+unit                 6612    62896.573
+Standard cells       6612    62896.573
+unit                 6612    62896.573
 Hard macro cells        0        0.000
-unit                26994   184461.914
+unit                 6612    62896.573
 Soft macro cells        0        0.000
-unit                26994   184461.914
+unit                 6612    62896.573
 Always on cells         0        0.000
-unit                26994   184461.914
+unit                 6612    62896.573
 Physical only           0        0.000
-unit                26994   184461.914
+unit                 6612    62896.573
 Fixed cells             0        0.000
-unit                26994   184461.914
-Moveable cells      26994   184461.914
-unit                26994   184461.914
-Placed cells        26994   184461.914
-unit                26994   184461.914
-Sequential             65     1935.606
-unit                26994   184461.914
-Buffer/inverter      4872    23105.910
-unit                26994   184461.914
+unit                 6612    62896.573
+Moveable cells       6612    62896.573
+unit                 6612    62896.573
+Placed cells         6612    62896.573
+unit                 6612    62896.573
+Sequential             65     1714.144
+unit                 6612    62896.573
+Buffer/inverter       453     2351.005
+unit                 6612    62896.573
 ICG cells               0        0.000
-unit                26994   184461.914
+unit                 6612    62896.573
 
-Logic Hierarchies                    : 34
-Design Masters count                 : 196
-Total Flat nets count                : 30364
-Total FloatingNets count             : 2674
+Logic Hierarchies                    : 4
+Design Masters count                 : 91
+Total Flat nets count                : 8005
+Total FloatingNets count             : 23
 Total no of Ports                    : 163
 Number of Master Clocks in design    : 1
 Number of Generated Clocks in design : 0
@@ -54,9 +54,9 @@ List of Modes                        : func
 List of Corners                      : nominal
 List of Scenarios                    : func@nominal
 
-Core Area                            : 218864.909
-Chip Area                            : 218864.909
-Total Site Row Area                  : 218864.909
+Core Area                            : 85146.662
+Chip Area                            : 85146.662
+Total Site Row Area                  : 85146.662
 Number of Blockages                  : 0
 Total area of Blockages              : 0.000
 Number of Power Domains              : 1

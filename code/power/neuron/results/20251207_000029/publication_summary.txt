@@ -6,24 +6,24 @@ DESIGN INFORMATION:
   Design Name:           neuron
   Top Module:            neuron
   Technology:            SKY130 130nm
-  Analysis Date:         2025-12-06 23:34:02
+  Analysis Date:         2025-12-07 00:02:28
 
 TIMING ANALYSIS:
   Current Clock Period:  10.000000 ns
-  Timing Status:         VIOLATED
-  Worst Slack (WNS):     -16.278137 ns
+  Timing Status:         MET
+  Worst Slack (WNS):     1.363166 ns
 
 MAXIMUM FREQUENCY CHARACTERIZATION:
-  Critical Path Delay:   26.2781 ns
-  Maximum Frequency:     38.05 MHz
+  Critical Path Delay:   8.0221 ns
+  Maximum Frequency:     124.65 MHz
 
 RECOMMENDED OPERATING POINT (2.0% margin):
-  Clock Period:          26.8037 ns
-  Operating Frequency:   37.31 MHz
+  Clock Period:          8.1826 ns
+  Operating Frequency:   122.21 MHz
 
 CRITICAL PATH:
-  Startpoint:            V_reg[8]/CLK
-  Endpoint:              V_reg[29]/D
+  Startpoint:            b[6]
+  Endpoint:              U_reg[30]/D
 
 
 PROCESS CORNER:

@@ -1,0 +1,23 @@
+****************************************
+Report : area
+Design : neuron
+Version: V-2023.12-SP5-3
+Date   : Sun Dec  7 00:02:28 2025
+****************************************
+
+Number of ports:                          707
+Number of nets:                          8452
+Number of cells:                         6612
+Number of combinational cells:           6547
+Number of sequential cells:                65
+Number of macros/black boxes:               0
+Number of buf/inv:                        453
+Number of references:                      91
+
+Combinational area:                  61182.43
+Buf/Inv area:                         2351.00
+Noncombinational area:                1714.14
+Macro/Black Box area:                    0.00
+
+Total cell area:                     62896.57
+1

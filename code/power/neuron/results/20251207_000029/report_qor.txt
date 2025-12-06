@@ -2,7 +2,7 @@
 Report : qor
 Design : neuron
 Version: V-2023.12-SP5-3
-Date   : Sat Dec  6 23:34:02 2025
+Date   : Sun Dec  7 00:02:28 2025
 ****************************************
 Information: Timer using 'Estimated Delay Calculation'. (TIM-050)
 
@@ -10,20 +10,20 @@ Information: Timer using 'Estimated Delay Calculation'. (TIM-050)
 Scenario           'func@nominal'
 Timing Path Group  '**in2reg_default**'
 ----------------------------------------
-Levels of Logic:                    136
-Critical Path Length:             13.74
-Critical Path Slack:              -4.18
+Levels of Logic:                     54
+Critical Path Length:              8.02
+Critical Path Slack:               1.36
 Critical Path Clk Period:         10.00
-Total Negative Slack:           -129.17
-No. of Violating Paths:              32
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
 ----------------------------------------
 
 Scenario           'func@nominal'
 Timing Path Group  '**reg2out_default**'
 ----------------------------------------
-Levels of Logic:                     20
-Critical Path Length:              2.45
-Critical Path Slack:               4.89
+Levels of Logic:                      0
+Critical Path Length:              0.56
+Critical Path Slack:               6.92
 Critical Path Clk Period:         10.00
 Total Negative Slack:              0.00
 No. of Violating Paths:               0
@@ -32,24 +32,24 @@ No. of Violating Paths:               0
 Scenario           'func@nominal'
 Timing Path Group  'CLK'
 ----------------------------------------
-Levels of Logic:                    289
-Critical Path Length:             25.66
-Critical Path Slack:             -16.28
+Levels of Logic:                     57
+Critical Path Length:              6.81
+Critical Path Slack:               2.55
 Critical Path Clk Period:         10.00
-Total Negative Slack:           -605.84
-No. of Violating Paths:              64
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
 ----------------------------------------
 
 
 Cell Count
 ----------------------------------------
-Hierarchical Cell Count:             34
-Hierarchical Port Count:           2478
-Leaf Cell Count:                  26994
-Buf/Inv Cell Count:                4872
-Buf Cell Count:                     368
-Inv Cell Count:                    4504
-Combinational Cell Count:         26929
+Hierarchical Cell Count:              4
+Hierarchical Port Count:            544
+Leaf Cell Count:                   6612
+Buf/Inv Cell Count:                 453
+Buf Cell Count:                      86
+Inv Cell Count:                     367
+Combinational Cell Count:          6547
    Single-bit Isolation Cell Count:                        0
    Multi-bit Isolation Cell Count:                         0
    Isolation Cell Banking Ratio:                           0.00%
@@ -72,24 +72,24 @@ Macro Count:                          0
 
 Area
 ----------------------------------------
-Combinational Area:           182526.31
-Noncombinational Area:          1935.61
-Buf/Inv Area:                  23105.91
-Total Buffer Area:              4211.54
-Total Inverter Area:           18894.37
+Combinational Area:            61182.43
+Noncombinational Area:          1714.14
+Buf/Inv Area:                   2351.00
+Total Buffer Area:               625.60
+Total Inverter Area:            1725.40
 Macro/Black Box Area:              0.00
 Net Area:                             0
-Net XLength:                  252243.51
-Net YLength:                  253908.33
+Net XLength:                   93395.97
+Net YLength:                   95043.06
 ----------------------------------------
-Cell Area (netlist):                         184461.91
-Cell Area (netlist and physical only):       184461.91
-Net Length:                   506151.84
+Cell Area (netlist):                          62896.57
+Cell Area (netlist and physical only):        62896.57
+Net Length:                   188439.03
 
 
 Design Rules
 ----------------------------------------
-Total Number of Nets:             30364
+Total Number of Nets:              8005
 Nets with Violations:                 0
 Max Trans Violations:                 0
 Max Cap Violations:                   0

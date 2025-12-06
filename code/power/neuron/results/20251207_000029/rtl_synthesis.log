@@ -1,4 +1,6 @@
- 
+
+
+
                                RTL Architect (TM)
 
                Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
@@ -19,7 +21,7 @@
  Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
-
+ 
 #!/bin/tcsh -f
 # =============================================================================
 # RISC-V CPU RTL Analysis and Synthesis Script for SKY130
@@ -132,8 +134,8 @@ Warning:  ../../cpu/neuron/neuron.v:55: signed to unsigned part selection occurs
 Warning:  ../../cpu/neuron/neuron.v:59: signed to unsigned part selection occurs. (VER-318)
 
 Inferred memory devices in process
-        in routine neuron line 67 in file
-                '../../cpu/neuron/neuron.v'.
+	in routine neuron line 67 in file
+		'../../cpu/neuron/neuron.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -333,12 +335,12 @@ Information: Shift register Inferencing is enabled so only head flop will be rep
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
 Information: Time: 2025-12-07 00:01:02 / Session:  00:00:23 / Command:  00:00:12 / CPU:  00:00:13 / Memory: 627 MB (FLW-8100)
 Information: RTL multibit banking summary. (SQM-2008)
-        Total candidates in design:65
-        Total candidates ignored:  64
-        Total candidates banked:   0
-        Banking Ratio of this pass:0.00%
-        Banking ratio             :0.00% (Before banking 0.00%)
-        Use report_multibit for details.
+	Total candidates in design:65
+	Total candidates ignored:  64
+	Total candidates banked:   0
+	Banking Ratio of this pass:0.00%
+	Banking ratio             :0.00% (Before banking 0.00%)
+	Use report_multibit for details.
 Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
 Information: Time: 2025-12-07 00:01:02 / Session:  00:00:23 / Command:  00:00:12 / CPU:  00:00:13 / Memory: 627 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
@@ -731,12 +733,12 @@ Start Global Route ...
 [Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
 [Init] Total (MB): Used   44  Alloctr   45  Proc 4805 
 Printing options for 'route.common.*'
-common.clock_topology                                   :        normal              
-common.single_connection_to_pins                        :        off                 
+common.clock_topology                                   :	 normal              
+common.single_connection_to_pins                        :	 off                 
 
 Printing options for 'route.global.*'
-global.crosstalk_driven                                 :        false               
-global.deterministic                                    :        on                  
+global.crosstalk_driven                                 :	 false               
+global.deterministic                                    :	 on                  
 
 Begin global routing.
 Constructing data structure ...
@@ -764,32 +766,32 @@ Current Stage stats:
 [End of Build All Nets] Total (MB): Used   50  Alloctr   51  Proc 4805 
 Net length statistics: 
 Net Count(Ignore Fully Rted) 326, Total Half Perimeter Wire Length (HPWL) 61518 microns
-HPWL   0 ~   50 microns: Net Count       97     Total HPWL          248 microns
-HPWL  50 ~  100 microns: Net Count        0     Total HPWL            0 microns
-HPWL 100 ~  200 microns: Net Count       31     Total HPWL         5527 microns
-HPWL 200 ~  300 microns: Net Count      196     Total HPWL        54953 microns
-HPWL 300 ~  400 microns: Net Count        1     Total HPWL          306 microns
-HPWL 400 ~  500 microns: Net Count        1     Total HPWL          484 microns
-HPWL 500 ~  600 microns: Net Count        0     Total HPWL            0 microns
-HPWL 600 ~  700 microns: Net Count        0     Total HPWL            0 microns
-HPWL 700 ~  800 microns: Net Count        0     Total HPWL            0 microns
-HPWL 800 ~  900 microns: Net Count        0     Total HPWL            0 microns
-HPWL 900 ~ 1000 microns: Net Count        0     Total HPWL            0 microns
-HPWL     > 1000 microns: Net Count        0     Total HPWL            0 microns
+HPWL   0 ~   50 microns: Net Count       97	Total HPWL          248 microns
+HPWL  50 ~  100 microns: Net Count        0	Total HPWL            0 microns
+HPWL 100 ~  200 microns: Net Count       31	Total HPWL         5527 microns
+HPWL 200 ~  300 microns: Net Count      196	Total HPWL        54953 microns
+HPWL 300 ~  400 microns: Net Count        1	Total HPWL          306 microns
+HPWL 400 ~  500 microns: Net Count        1	Total HPWL          484 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL            0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL            0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL            0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL            0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL            0 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL            0 microns
 Number of partitions: 1 (1 x 1)
 Size of partitions: 57 gCells x 56 gCells
-Average gCell capacity  11.48    on layer (1)    li1
-Average gCell capacity  15.35    on layer (2)    met1
-Average gCell capacity  11.48    on layer (3)    met2
-Average gCell capacity  7.67     on layer (4)    met3
-Average gCell capacity  5.73     on layer (5)    met4
-Average gCell capacity  1.51     on layer (6)    met5
-Average number of tracks per gCell 11.52         on layer (1)    li1
-Average number of tracks per gCell 15.39         on layer (2)    met1
-Average number of tracks per gCell 11.52         on layer (3)    met2
-Average number of tracks per gCell 7.70  on layer (4)    met3
-Average number of tracks per gCell 5.77  on layer (5)    met4
-Average number of tracks per gCell 1.54  on layer (6)    met5
+Average gCell capacity  11.48	 on layer (1)	 li1
+Average gCell capacity  15.35	 on layer (2)	 met1
+Average gCell capacity  11.48	 on layer (3)	 met2
+Average gCell capacity  7.67	 on layer (4)	 met3
+Average gCell capacity  5.73	 on layer (5)	 met4
+Average gCell capacity  1.51	 on layer (6)	 met5
+Average number of tracks per gCell 11.52	 on layer (1)	 li1
+Average number of tracks per gCell 15.39	 on layer (2)	 met1
+Average number of tracks per gCell 11.52	 on layer (3)	 met2
+Average number of tracks per gCell 7.70	 on layer (4)	 met3
+Average number of tracks per gCell 5.77	 on layer (5)	 met4
+Average number of tracks per gCell 1.54	 on layer (6)	 met5
 Number of gCells = 19152
 Current Stage stats:
 [End of Build Congestion Map] Elapsed real time: 0:00:00 
@@ -1033,13 +1035,13 @@ Start Global Route ...
 [Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
 [Init] Total (MB): Used    7  Alloctr    8  Proc 4901 
 Printing options for 'route.common.*'
-common.clock_topology                                   :        normal              
-common.single_connection_to_pins                        :        off                 
+common.clock_topology                                   :	 normal              
+common.single_connection_to_pins                        :	 off                 
 
 Printing options for 'route.global.*'
-global.crosstalk_driven                                 :        false               
-global.deterministic                                    :        on                  
-global.timing_driven                                    :        false               
+global.crosstalk_driven                                 :	 false               
+global.deterministic                                    :	 on                  
+global.timing_driven                                    :	 false               
 
 Begin global routing.
 Cell Min-Routing-Layer = li1
@@ -1114,32 +1116,32 @@ Current Stage stats:
 [End of Build All Nets] Total (MB): Used   35  Alloctr   37  Proc 4869 
 Net length statistics: 
 Net Count(Ignore Fully Rted) 7837, Total Half Perimeter Wire Length (HPWL) 181036 microns
-HPWL   0 ~   50 microns: Net Count     7244     Total HPWL       102272 microns
-HPWL  50 ~  100 microns: Net Count      282     Total HPWL        19959 microns
-HPWL 100 ~  200 microns: Net Count      189     Total HPWL        26768 microns
-HPWL 200 ~  300 microns: Net Count       93     Total HPWL        21940 microns
-HPWL 300 ~  400 microns: Net Count       27     Total HPWL         9119 microns
-HPWL 400 ~  500 microns: Net Count        2     Total HPWL          978 microns
-HPWL 500 ~  600 microns: Net Count        0     Total HPWL            0 microns
-HPWL 600 ~  700 microns: Net Count        0     Total HPWL            0 microns
-HPWL 700 ~  800 microns: Net Count        0     Total HPWL            0 microns
-HPWL 800 ~  900 microns: Net Count        0     Total HPWL            0 microns
-HPWL 900 ~ 1000 microns: Net Count        0     Total HPWL            0 microns
-HPWL     > 1000 microns: Net Count        0     Total HPWL            0 microns
+HPWL   0 ~   50 microns: Net Count     7244	Total HPWL       102272 microns
+HPWL  50 ~  100 microns: Net Count      282	Total HPWL        19959 microns
+HPWL 100 ~  200 microns: Net Count      189	Total HPWL        26768 microns
+HPWL 200 ~  300 microns: Net Count       93	Total HPWL        21940 microns
+HPWL 300 ~  400 microns: Net Count       27	Total HPWL         9119 microns
+HPWL 400 ~  500 microns: Net Count        2	Total HPWL          978 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL            0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL            0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL            0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL            0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL            0 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL            0 microns
 Number of partitions: 1 (1 x 1)
 Size of partitions: 54 gCells x 54 gCells
-Average gCell capacity  1.19     on layer (1)    li1
-Average gCell capacity  0.11     on layer (2)    met1
-Average gCell capacity  11.64    on layer (3)    met2
-Average gCell capacity  7.93     on layer (4)    met3
-Average gCell capacity  5.81     on layer (5)    met4
-Average gCell capacity  1.57     on layer (6)    met5
-Average number of tracks per gCell 11.72         on layer (1)    li1
-Average number of tracks per gCell 15.94         on layer (2)    met1
-Average number of tracks per gCell 11.72         on layer (3)    met2
-Average number of tracks per gCell 7.98  on layer (4)    met3
-Average number of tracks per gCell 5.87  on layer (5)    met4
-Average number of tracks per gCell 1.61  on layer (6)    met5
+Average gCell capacity  1.19	 on layer (1)	 li1
+Average gCell capacity  0.11	 on layer (2)	 met1
+Average gCell capacity  11.64	 on layer (3)	 met2
+Average gCell capacity  7.93	 on layer (4)	 met3
+Average gCell capacity  5.81	 on layer (5)	 met4
+Average gCell capacity  1.57	 on layer (6)	 met5
+Average number of tracks per gCell 11.72	 on layer (1)	 li1
+Average number of tracks per gCell 15.94	 on layer (2)	 met1
+Average number of tracks per gCell 11.72	 on layer (3)	 met2
+Average number of tracks per gCell 7.98	 on layer (4)	 met3
+Average number of tracks per gCell 5.87	 on layer (5)	 met4
+Average number of tracks per gCell 1.61	 on layer (6)	 met5
 Number of gCells = 17496
 Current Stage stats:
 [End of Build Congestion Map] Elapsed real time: 0:00:00 
@@ -1508,14 +1510,14 @@ Moveable cells: 6567; Application fixed cells: 0; Macro cells: 0; User fixed cel
 Average cell width 3.5768, cell height 2.7200, cell area 9.7290 for total 6567 placed and application fixed cells
 Disable clock slack update for ideal clocks
 Information: NO SCANCHAIN defined in SCANDEF. (DFT-011)
-                Total number of ignored cells which do not have multi-bit equivalent             : 65
-        Physical Banking Summary:
-        Total candidates in design:65
-        Total candidates ignored  :65
-        Total candidates banked   :0
-        Banking Ratio of this pass:0.00%
-        Banking ratio             :0.00% (Before banking 0.00%)
-        Use report_multibit for details
+		Total number of ignored cells which do not have multi-bit equivalent             : 65
+	Physical Banking Summary:
+	Total candidates in design:65
+	Total candidates ignored  :65
+	Total candidates banked   :0
+	Banking Ratio of this pass:0.00%
+	Banking ratio             :0.00% (Before banking 0.00%)
+	Use report_multibit for details
 Disable clock slack update for ideal clocks
  Iter  1                                             2.41        0.84         -         -      63890.03    36203.09        6567              0.03      1443
 Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
@@ -2000,4 +2002,3 @@ Maximum memory usage for this session: 1443.24 MB
 CPU usage for this session:    232 seconds (  0.06 hours)
 Elapsed time for this session:    109 seconds (  0.03 hours)
 Thank you for using RTL Architect.
-

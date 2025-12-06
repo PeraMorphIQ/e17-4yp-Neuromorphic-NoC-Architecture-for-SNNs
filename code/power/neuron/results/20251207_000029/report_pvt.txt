@@ -2,12 +2,12 @@
 Report : pvt
 Design : neuron
 Version: V-2023.12-SP5-3
-Date   : Sat Dec  6 23:34:02 2025
+Date   : Sun Dec  7 00:02:28 2025
 ****************************************
 
 --------------------------------------------------------------------------------
 Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
-Warning: 26994 cells affected for early, 26994 for late. (PVT-031)
+Warning: 6612 cells affected for early, 6612 for late. (PVT-031)
 Warning: 161 port driving_cells affected for early, 161 for late. (PVT-034)
 --------------------------------------------------------------------------------
 
@@ -28,8 +28,8 @@ Entry 70:
   Rail 7 (VGND) Voltage: specified: --            dynamic: --            effective: 0.00          static: 0.00        
   Temperature:    specified: 100.00        effective: 100.00      
   Primary rail: 3  Secondary rail: --  N-bias rail: 6  P-bias rail: 5
-  early cell refs: 26994    port refs: 0     driving_cell refs: 161   lib refs: 0   
-  late  cell refs: 26994    port refs: 0     driving_cell refs: 161   lib refs: 0   
+  early cell refs: 6612     port refs: 0     driving_cell refs: 161   lib refs: 0   
+  late  cell refs: 6612     port refs: 0     driving_cell refs: 161   lib refs: 0   
 
 
 
