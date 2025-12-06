@@ -20,19 +20,19 @@ set CORES 8
 # Design Configuration
 # -----------------------------------------------------------------------------
 # Design names and top module
-set DESIGN_NAME "cpu"
-set TOP_MODULE  "cpu"
+set DESIGN_NAME "neuron"
+set TOP_MODULE  "neuron"
 
 # -----------------------------------------------------------------------------
 # Library Configuration
 # -----------------------------------------------------------------------------
 # Library names and references
-set LIB_NAME   "cpu_LIB"
+set LIB_NAME   "neuron_LIB"
 set REF_LIBS   "sky130_fd_sc_hd.ndm"            ;# one or more NDMs (space-separated)
 set TECH_TF    "/tech/sky130/libs/sky130_fd_sc_hd/sky130_fd_sc_hd.tf"
 
 # Search paths for libraries and source files
-set SEARCH_PATHS "* ./ ../../cpu/ /tech/sky130/libs/sky130_library/ndm"
+set SEARCH_PATHS "* ./ ../../cpu/ ../../cpu/neuron/ /tech/sky130/libs/sky130_library/ndm"
 
 # -----------------------------------------------------------------------------
 # File Locations
@@ -42,7 +42,7 @@ set FILELIST "src.f"
 
 # Power analysis inputs
 set FSDB_FILE  "../../cpu/novas.fsdb"
-set STRIP_PATH "cpu_tb/cpu_inst"
+set STRIP_PATH "neuron_tb/dut"
 
 # -----------------------------------------------------------------------------
 # Technology Setup Configuration

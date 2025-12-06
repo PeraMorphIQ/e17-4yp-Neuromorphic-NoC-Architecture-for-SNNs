@@ -61,7 +61,12 @@ module neuron (CLK, RESET, SPIKED, I, a, b, c, d);
         if (RESET)
         begin
             V <= #1 c;
-            U <= #1 U_PLUS_D;
+            U <= #1 b;  // Initialize U to b parameter (typical initialization)
+        end
+        else if (SPIKED)
+        begin
+            V <= #1 c;         // Reset V to c when spiked
+            U <= #1 U_PLUS_D;  // Add d to U when spiked
         end
         else
         begin

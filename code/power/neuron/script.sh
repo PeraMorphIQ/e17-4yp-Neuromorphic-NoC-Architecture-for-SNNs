@@ -130,12 +130,12 @@ fi
 echo "========== STEP 1: VCS Compile (CPU) =========="
 if [ -d "$RTL_CPU_PATH" ]; then
     pushd "$RTL_CPU_PATH" > /dev/null
-    vcs -sverilog -full64 -kdb -debug_access+all cpu_tb.v +vcs+fsdbon -o simv | tee "../synopsys/cpu_sky130_fd_sc_hd/$TEMP_RESULTS_DIR/vcs_compile.log"
+    vcs -sverilog -full64 -kdb -debug_access+all neuron/neuron_tb.v +vcs+fsdbon -o simv | tee "../power/neuron/$TEMP_RESULTS_DIR/vcs_compile.log"
     echo "VCS compilation completed successfully"
     
     # Step 2: Run Simulation
     echo "========== STEP 2: Run Simulation =========="
-    ./simv +fsdb+all=on +fsdb+delta | tee "../synopsys/cpu_sky130_fd_sc_hd/$TEMP_RESULTS_DIR/simulation.log"
+    ./simv +fsdb+all=on +fsdb+delta | tee "../power/neuron/$TEMP_RESULTS_DIR/simulation.log"
     echo "Simulation completed successfully"
     popd > /dev/null
 else

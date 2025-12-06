@@ -1,1 +1,1 @@
-../../cpu/cpu.v
+../../cpu/neuron/neuron.v
