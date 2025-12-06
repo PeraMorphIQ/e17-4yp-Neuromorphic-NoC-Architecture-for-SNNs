@@ -42,7 +42,7 @@ set FILELIST "src.f"
 
 # Power analysis inputs
 set FSDB_FILE  "../../cpu/novas.fsdb"
-set STRIP_PATH "cpu_tb/cpu_inst"
+set STRIP_PATH "cpu_tb/dut"
 
 # -----------------------------------------------------------------------------
 # Technology Setup Configuration
