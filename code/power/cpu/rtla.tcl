@@ -52,9 +52,12 @@ puts "========== Analyzing and Elaborating Design =========="
 # Analyze RTL source files
 analyze -f sv -vcs "-f $FILELIST"
 
-# Elaborate the design
+# Elaborate the design (cpu_tb is the testbench, but we analyze cpu inside)
 elaborate $DESIGN_NAME
-set_top_module $TOP_MODULE
+
+# Set the actual CPU module as top for synthesis (not the testbench)
+set_top_module "cpu"
+current_design cpu
 
 puts "Design elaboration completed"
 

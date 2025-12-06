@@ -127,6 +127,12 @@ puts $summary_file "# Generated: [clock format [clock seconds]]"
 puts $summary_file ""
 
 # Get basic power information
+# Ensure we're analyzing the cpu design, not the testbench
+if {[current_design] == ""} {
+    puts "Setting current design to cpu"
+    current_design cpu
+}
+
 set total_power [get_attribute [current_design] total_power]
 set dynamic_power [get_attribute [current_design] dynamic_power]  
 set leakage_power [get_attribute [current_design] leakage_power]

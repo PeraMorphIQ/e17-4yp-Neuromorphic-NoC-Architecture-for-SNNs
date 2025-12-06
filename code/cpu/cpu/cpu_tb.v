@@ -38,14 +38,24 @@ module cpu_tb;
     assign INSTR_MEM_BUSYWAIT = 0;
     assign DATA_MEM_BUSYWAIT = 0;
     
-    // Dump wavedata to vcd file
-    initial 
-    begin
-        $dumpfile("cpu_tb.vcd");
-        $dumpvars(0, dut);
-        for (k = 0; k < 32; k = k + 1)
-            $dumpvars(1, dut.ID_REG_FILE.REGISTERS[k]);
-    end
+    // Dump wavedata to VCD file (for GTKWave)
+    // initial 
+    // begin
+    //     $dumpfile("cpu_tb.vcd");
+    //     $dumpvars(0, dut);
+    //     for (k = 0; k < 32; k = k + 1)
+    //         $dumpvars(1, dut.ID_REG_FILE.REGISTERS[k]);
+    // end
+
+// `ifdef FSDB
+//     // Dump wavedata to FSDB file (for power analysis with Synopsys tools)
+//     initial
+//     begin
+//         $fsdbDumpfile("cpu_tb.fsdb");
+//         $fsdbDumpvars(0, dut);
+//         $fsdbDumpMDA();  // Dump multi-dimensional arrays
+//     end
+// `endif
 
     // Clock pulse
     initial CLK = 1'b1;

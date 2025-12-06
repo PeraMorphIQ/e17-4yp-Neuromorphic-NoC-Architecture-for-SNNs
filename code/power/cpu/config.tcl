@@ -20,8 +20,8 @@ set CORES 8
 # Design Configuration
 # -----------------------------------------------------------------------------
 # Design names and top module
-set DESIGN_NAME "cpu"
-set TOP_MODULE  "cpu"
+set DESIGN_NAME "cpu_tb"
+set TOP_MODULE  "cpu_tb"
 
 # -----------------------------------------------------------------------------
 # Library Configuration
@@ -32,7 +32,7 @@ set REF_LIBS   "sky130_fd_sc_hd.ndm"            ;# one or more NDMs (space-separ
 set TECH_TF    "/tech/sky130/libs/sky130_fd_sc_hd/sky130_fd_sc_hd.tf"
 
 # Search paths for libraries and source files
-set SEARCH_PATHS "* ./ ../../cpu/ /tech/sky130/libs/sky130_library/ndm"
+set SEARCH_PATHS "* ./ ../../cpu/ ../../cpu/cpu/ ../../cpu/alu/ ../../cpu/fpu/ ../../cpu/reg_file/ ../../cpu/f_reg_file/ ../../cpu/control_unit/ ../../cpu/branch_control_unit/ ../../cpu/forwarding_units/ ../../cpu/hazard_detection_unit/ ../../cpu/pipeline_flush_unit/ ../../cpu/pipeline_registers/ ../../cpu/support_modules/ ../../cpu/immediate_generation_unit/ /tech/sky130/libs/sky130_library/ndm"
 
 # -----------------------------------------------------------------------------
 # File Locations
@@ -41,8 +41,8 @@ set SEARCH_PATHS "* ./ ../../cpu/ /tech/sky130/libs/sky130_library/ndm"
 set FILELIST "src.f"
 
 # Power analysis inputs
-set FSDB_FILE  "../../cpu/novas.fsdb"
-set STRIP_PATH "cpu_tb/cpu_inst"
+set FSDB_FILE  "../../cpu/cpu/novas.fsdb"
+set STRIP_PATH "cpu_tb/dut"
 
 # -----------------------------------------------------------------------------
 # Technology Setup Configuration

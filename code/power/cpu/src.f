@@ -1,1 +1,1 @@
-../../cpu/cpu.v
+../../cpu/cpu/cpu_tb.v
