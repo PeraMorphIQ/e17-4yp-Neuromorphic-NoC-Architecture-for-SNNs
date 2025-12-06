@@ -1,4 +1,5 @@
 `timescale 1ns/100ps
+`include "cpu/cpu.v"
 
 module cpu_tb;
     parameter CLOCK_PERIOD = 10;
