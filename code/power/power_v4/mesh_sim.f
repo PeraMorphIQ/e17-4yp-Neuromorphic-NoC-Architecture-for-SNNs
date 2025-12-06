@@ -11,14 +11,6 @@
 +incdir+../../accelerator/cpu_core/forwarding_units
 +incdir+../../accelerator/cpu_core/fpu
 +incdir+../../accelerator/cpu_core
-
-// FPU source files (needed by neuron_core)
-../../accelerator/cpu_core/fpu/Addition-Subtraction.v
-../../accelerator/cpu_core/fpu/Multiplication.v
-../../accelerator/cpu_core/fpu/Comparison.v
-../../accelerator/cpu_core/fpu/Priority\ Encoder.v
-../../accelerator/cpu_core/fpu/Iteration.v
-
 +incdir+../../accelerator/cpu_core/hazard_detection_unit
 +incdir+../../accelerator/cpu_core/immediate_generation_unit
 +incdir+../../accelerator/cpu_core/immediate_select_unit
