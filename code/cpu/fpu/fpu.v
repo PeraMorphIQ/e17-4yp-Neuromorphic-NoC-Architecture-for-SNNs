@@ -152,7 +152,7 @@ module fpu (DATA1, DATA2, DATA3, RESULT, SELECT);
                 RESULT <= INTER_FCLASS;     // Not Implemented
             
             default: 
-                RESULT = 0;
+                RESULT <= 0;
         endcase
     end
 
