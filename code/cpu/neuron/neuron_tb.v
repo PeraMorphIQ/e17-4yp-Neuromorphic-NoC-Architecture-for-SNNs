@@ -1,4 +1,4 @@
-`include "neuron/neuron.v"
+w`include "neuron/neuron.v"
 `timescale 1ns/100ps
 
 module neuron_tb;
