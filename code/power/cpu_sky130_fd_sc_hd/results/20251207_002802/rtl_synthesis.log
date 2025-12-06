@@ -34,12 +34,12 @@
 # Load shared configuration
 source config.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251207_001229
+Using environment TEMP_RESULTS_DIR: temp_results_20251207_002802
 Configuration loaded successfully
   Design: cpu
   Technology: SKY130 130nm
   Cores: 8
-  Results directory: temp_results_20251207_001229
+  Results directory: temp_results_20251207_002802
 # -----------------------------------------------------------------------------
 # Configuration and Setup
 # -----------------------------------------------------------------------------
@@ -499,13 +499,13 @@ Total in all modules
   Nets:                 9267
   Instances:            4328
 Design summary end. (FLW-8551)
-Elapsed = 00:00:00.82, CPU = 00:00:00.80
+Elapsed = 00:00:00.81, CPU = 00:00:00.78
 1
 set_top_module $TOP_MODULE
 Information: User units loaded from library 'sky130_fd_sc_hd' (LNK-040)
 Information: Added key list 'DesignWare' to design 'cpu'. (DWS-0216)
 Gensys attachment is created: presto_gensys.attach:cpu_LIB:cpu.design 
-Elapsed = 00:00:07.89, CPU = 00:00:07.76
+Elapsed = 00:00:07.95, CPU = 00:00:07.82
 1
 puts "Design elaboration completed"
 Design elaboration completed
@@ -516,12 +516,12 @@ puts "========== Loading Technology Setup =========="
 ========== Loading Technology Setup ==========
 source tz_setup.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251207_001229
+Using environment TEMP_RESULTS_DIR: temp_results_20251207_002802
 Configuration loaded successfully
   Design: cpu
   Technology: SKY130 130nm
   Cores: 8
-  Results directory: temp_results_20251207_001229
+  Results directory: temp_results_20251207_002802
 ========== SKY130 Technology Setup ==========
 Configuring synthesis flow options...
 Loading SKY130 parasitic technology files...
@@ -550,7 +550,7 @@ Clock constraints loaded from ./sdc/clocks.sdc
 Report : scenario
 Design : cpu
 Version: V-2023.12-SP5-3
-Date   : Sun Dec  7 00:12:56 2025
+Date   : Sun Dec  7 00:28:29 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -562,7 +562,7 @@ func@nominal *  func            nominal         true    true   false true     tr
 # Force timing update after loading constraints
 update_timing
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-12-07 00:12:56 / Session:  00:00:17 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 626 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:29 / Session:  00:00:17 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 626 MB (FLW-8100)
 Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
 Warning: 21480 cells affected for early, 21480 for late. (PVT-031)
 Warning: 67 port driving_cells affected for early, 67 for late. (PVT-034)
@@ -586,7 +586,7 @@ ML Acceleration:                           off
 Smart Arc Optimization:                    disabled
 ************************************************************
 Information: Ending   'update_timing' (FLW-8001)
-Information: Time: 2025-12-07 00:12:58 / Session:  00:00:19 / Command:  00:00:01 / CPU:  00:00:06 / Memory: 686 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:31 / Session:  00:00:19 / Command:  00:00:01 / CPU:  00:00:06 / Memory: 686 MB (FLW-8100)
 1
 # Verify clock constraints were loaded
 puts "========== Verifying Clock Constraints =========="
@@ -628,7 +628,7 @@ rtl_opt
 Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
 Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
 Information: Starting 'rtl_opt' (FLW-8000)
-Information: Time: 2025-12-07 00:12:58 / Session:  00:00:19 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 689 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:31 / Session:  00:00:19 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 689 MB (FLW-8100)
 INFO: compile_fusion is running in balanced flow mode.
 INFO: EIO v2 is enabled
 INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
@@ -636,7 +636,7 @@ Information: Structural Congestion Optimization technology (Early SCO) has been 
 ****************************************
 Report : report_tbcs
 Version: V-2023.12-SP5-3
-Date   : Sun Dec  7 00:12:58 2025
+Date   : Sun Dec  7 00:28:31 2025
 ****************************************
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
@@ -645,19 +645,19 @@ INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning (FLW-8000)
-Information: Time: 2025-12-07 00:13:01 / Session:  00:00:22 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 763 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:35 / Session:  00:00:23 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 758 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
-Information: Time: 2025-12-07 00:13:02 / Session:  00:00:23 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 763 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:35 / Session:  00:00:23 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 758 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
-Information: Time: 2025-12-07 00:13:02 / Session:  00:00:23 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 773 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:35 / Session:  00:00:23 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 768 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-12-07 00:13:02 / Session:  00:00:23 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 773 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:35 / Session:  00:00:23 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 768 MB (FLW-8100)
 MV related app options set by user:
 Information: Ending   rtl_opt / conditioning / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-12-07 00:13:02 / Session:  00:00:23 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 773 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:35 / Session:  00:00:23 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 768 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8000)
-Information: Time: 2025-12-07 00:13:02 / Session:  00:00:23 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 773 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:35 / Session:  00:00:23 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 768 MB (FLW-8100)
 Information: The register ID_REG_FILE/REGISTERS_reg[0][31] is removed as constant '0'. (SQM-4100)
 Information: The register ID_REG_FILE/REGISTERS_reg[0][30] is removed as constant '0'. (SQM-4100)
 Information: The register ID_REG_FILE/REGISTERS_reg[0][29] is removed as constant '0'. (SQM-4100)
@@ -673,26 +673,26 @@ Information: 1 registers were found constant but could not be removed due to res
 Information: Register Bits Before Sharing = 2710, After Sharing = 2710, Savings = 0 (SQM-2000)
 Information: 22 out of 32 SQM-4100 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:102) (MSG-3913)
 Information: Ending   rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8001)
-Information: Time: 2025-12-07 00:13:03 / Session:  00:00:24 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 811 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:37 / Session:  00:00:24 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 807 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Register Merging (FLW-8000)
-Information: Time: 2025-12-07 00:13:03 / Session:  00:00:24 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 811 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:37 / Session:  00:00:24 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 807 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Register Merging (FLW-8001)
-Information: Time: 2025-12-07 00:13:03 / Session:  00:00:24 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 811 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:37 / Session:  00:00:24 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 807 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-12-07 00:13:03 / Session:  00:00:24 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 811 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:37 / Session:  00:00:24 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 807 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-12-07 00:13:04 / Session:  00:00:25 / Command:  00:00:06 / CPU:  00:00:06 / Memory: 811 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:37 / Session:  00:00:25 / Command:  00:00:06 / CPU:  00:00:06 / Memory: 807 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8000)
-Information: Time: 2025-12-07 00:13:04 / Session:  00:00:25 / Command:  00:00:06 / CPU:  00:00:06 / Memory: 811 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:37 / Session:  00:00:25 / Command:  00:00:06 / CPU:  00:00:06 / Memory: 807 MB (FLW-8100)
 Information: Identified 1 crossbars in module 'f_reg_file'. 0 out of 0 potentially congested crossbars amongst these are candidates for mux tree implementation. (MUX-6091)
 Information: Identified 1 crossbars in module 'reg_file'. 0 out of 0 potentially congested crossbars amongst these are candidates for mux tree implementation. (MUX-6091)
 Information: Timer using 8 threads
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8001)
-Information: Time: 2025-12-07 00:13:10 / Session:  00:00:31 / Command:  00:00:12 / CPU:  00:00:41 / Memory: 1071 MB (FLW-8100)
+Information: Time: 2025-12-07 00:28:43 / Session:  00:00:31 / Command:  00:00:12 / CPU:  00:00:41 / Memory: 1045 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8000)
-Information: Time: 2025-12-07 00:13:10 / Session:  00:00:31 / Command:  00:00:12 / CPU:  00:00:41 / Memory: 1071 MB (FLW-8100)
-Information: Added key list 'DesignWare' to design 'cpu'. (DWS-0216)
+Information: Time: 2025-12-07 00:28:43 / Session:  00:00:31 / Command:  00:00:12 / CPU:  00:00:41 / Memory: 1045 MB (FLW-8100)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
+Information: Added key list 'DesignWare' to design 'cpu'. (DWS-0216)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
 Information: The hierarchy  is ungrouped due to set_ungroup directive. (UNG-1002)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
@@ -701,7 +701,7 @@ Warning: For sequential element 'MEM_FWD_SEL_reg' of module 'mem_forward_unit' :
 Information: 19 out of 20 SQM-1040 messages were not printed due to limit 1  (MSG-3913)
 Information: 19 out of 20 SQM-1074 messages were not printed due to limit 1  (MSG-3913)
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
-Information: Time: 2025-12-07 00:13:30 / Session:  00:00:51 / Command:  00:00:32 / CPU:  00:01:30 / Memory: 1231 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:03 / Session:  00:00:51 / Command:  00:00:32 / CPU:  00:01:26 / Memory: 1201 MB (FLW-8100)
 Information: RTL multibit banking summary. (SQM-2008)
 	Total candidates in design:2710
 	Total candidates ignored:  2698
@@ -710,19 +710,19 @@ Information: RTL multibit banking summary. (SQM-2008)
 	Banking ratio             :0.00% (Before banking 0.00%)
 	Use report_multibit for details.
 Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
-Information: Time: 2025-12-07 00:13:30 / Session:  00:00:51 / Command:  00:00:32 / CPU:  00:01:30 / Memory: 1231 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:03 / Session:  00:00:51 / Command:  00:00:32 / CPU:  00:01:26 / Memory: 1201 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
-Information: Time: 2025-12-07 00:13:30 / Session:  00:00:51 / Command:  00:00:32 / CPU:  00:01:30 / Memory: 1231 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:03 / Session:  00:00:51 / Command:  00:00:32 / CPU:  00:01:26 / Memory: 1201 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-12-07 00:13:31 / Session:  00:00:52 / Command:  00:00:32 / CPU:  00:01:30 / Memory: 1231 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:03 / Session:  00:00:51 / Command:  00:00:32 / CPU:  00:01:26 / Memory: 1201 MB (FLW-8100)
 Information: 1 registers were found constant but could not be removed due to restrictions. (SQM-3103)
 Information: Register Bits Before Sharing = 2710, After Sharing = 2710, Savings = 0 (SQM-2000)
 Information: Starting rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8000)
-Information: Time: 2025-12-07 00:13:32 / Session:  00:00:53 / Command:  00:00:34 / CPU:  00:01:31 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:05 / Session:  00:00:53 / Command:  00:00:33 / CPU:  00:01:28 / Memory: 1240 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8001)
-Information: Time: 2025-12-07 00:13:32 / Session:  00:00:53 / Command:  00:00:34 / CPU:  00:01:32 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:05 / Session:  00:00:53 / Command:  00:00:34 / CPU:  00:01:29 / Memory: 1240 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-12-07 00:13:32 / Session:  00:00:53 / Command:  00:00:34 / CPU:  00:01:32 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:05 / Session:  00:00:53 / Command:  00:00:34 / CPU:  00:01:29 / Memory: 1240 MB (FLW-8100)
 Information: Result of rtl_opt / conditioning / Clock Gate Insertion (FLW-8500)
 --------------------------------------------------------------------------------
 |                             Clock Gating Options                             |
@@ -751,15 +751,15 @@ Regular Clock Gating                |          65 |           2112 |       2112 
  Not Processed.                                            |     1 |        1
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -     218157.98           -       17523              0.01      1269
+Compile-fusion                                          -           -         -         -     218157.98           -       17523              0.01      1239
 Information: Ending   rtl_opt / conditioning (FLW-8001)
-Information: Time: 2025-12-07 00:13:33 / Session:  00:00:54 / Command:  00:00:34 / CPU:  00:01:33 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:05 / Session:  00:00:53 / Command:  00:00:34 / CPU:  00:01:29 / Memory: 1240 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning (FLW-8000)
-Information: Time: 2025-12-07 00:13:33 / Session:  00:00:54 / Command:  00:00:34 / CPU:  00:01:33 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:05 / Session:  00:00:53 / Command:  00:00:34 / CPU:  00:01:29 / Memory: 1240 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
-Information: Time: 2025-12-07 00:13:33 / Session:  00:00:54 / Command:  00:00:34 / CPU:  00:01:33 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:05 / Session:  00:00:53 / Command:  00:00:34 / CPU:  00:01:29 / Memory: 1240 MB (FLW-8100)
 Warning: Auto deriving 'horizontal' routing direction for layer 'li1'. (DMM-115)
 Warning: Auto deriving 'vertical' routing direction for layer 'met1'. (DMM-115)
 Warning: Auto deriving 'horizontal' routing direction for layer 'met2'. (DMM-115)
@@ -777,9 +777,9 @@ Warning: 17431 cells affected for early, 17431 for late. (PVT-031)
 Warning: 67 port driving_cells affected for early, 67 for late. (PVT-034)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:cpu.design'. (TIM-125)
 Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
-Information: Time: 2025-12-07 00:13:34 / Session:  00:00:55 / Command:  00:00:36 / CPU:  00:01:37 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:07 / Session:  00:00:55 / Command:  00:00:35 / CPU:  00:01:34 / Memory: 1240 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8000)
-Information: Time: 2025-12-07 00:13:34 / Session:  00:00:55 / Command:  00:00:36 / CPU:  00:01:37 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:07 / Session:  00:00:55 / Command:  00:00:35 / CPU:  00:01:34 / Memory: 1240 MB (FLW-8100)
 Information: Result of rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8500)
 Number of Pre-Existing Clock Gates with dont touch attribute: 0
 Number of ICG library cells with CTS purpose: 3
@@ -800,19 +800,20 @@ Regular Clock Gating                |          65 |           2112 |       2112 
  Not Processed.                                            |     1 |        1
 --------------------------------------------------------------------------------
 Information: Ending   rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8001)
-Information: Time: 2025-12-07 00:13:34 / Session:  00:00:55 / Command:  00:00:36 / CPU:  00:01:37 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:07 / Session:  00:00:55 / Command:  00:00:36 / CPU:  00:01:34 / Memory: 1240 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Optimization (1) (FLW-8000)
-Information: Time: 2025-12-07 00:13:34 / Session:  00:00:55 / Command:  00:00:36 / CPU:  00:01:37 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:07 / Session:  00:00:55 / Command:  00:00:36 / CPU:  00:01:34 / Memory: 1240 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Optimization (1) / Logic Simplification and Register Optimization (FLW-8000)
-Information: Time: 2025-12-07 00:13:34 / Session:  00:00:55 / Command:  00:00:36 / CPU:  00:01:37 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:07 / Session:  00:00:55 / Command:  00:00:36 / CPU:  00:01:34 / Memory: 1240 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Optimization (1) / Logic Simplification and Register Optimization (FLW-8001)
-Information: Time: 2025-12-07 00:13:36 / Session:  00:00:57 / Command:  00:00:38 / CPU:  00:01:39 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:09 / Session:  00:00:57 / Command:  00:00:37 / CPU:  00:01:35 / Memory: 1240 MB (FLW-8100)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:cpu.design'. (TIM-125)
 Information: Starting rtl_opt / conditioning / Optimization (1) / Timing Optimization and DesignWare Reselection (FLW-8000)
-Information: Time: 2025-12-07 00:13:37 / Session:  00:00:58 / Command:  00:00:39 / CPU:  00:01:42 / Memory: 1269 MB (FLW-8100)
+Information: Time: 2025-12-07 00:29:10 / Session:  00:00:58 / Command:  00:00:39 / CPU:  00:01:39 / Memory: 1240 MB (FLW-8100)
+Module: DW_div_a_width32_b_width32_tc_mode1_rem_mode1, Elapsed Time: 00:00:01, CPU Time: 00:00:04, Total Mem: 1.88 GB, Mem: 185.41 MB, Time: Sun Dec  7 00:29:13 2025
 Warning: Net name 'N_407' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
 Warning: Net name 'N_416' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
 Warning: Net name 'N_410' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
@@ -959,18 +960,58 @@ Warning: Net name 'N_498' is omitted from the output file, because the net name 
 Warning: Net name 'N_581' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
 Warning: Net name 'N_581' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
 Warning: Net name 'N_581' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'quotient[29]' is renamed to 'hvoHier_quotient[29]' in module 'DW_div_a_width32_b_width24_tc_mode0_rem_mode1_J103_P4_D3_D2' in output file. (VW-010)
+Warning: Net name 'quotient[26]' is renamed to 'hvoHier_quotient[26]' in module 'DW_div_a_width32_b_width24_tc_mode0_rem_mode1_J103_P4_D3_D2' in output file. (VW-010)
+Warning: Net name 'quotient[23]' is renamed to 'hvoHier_quotient[23]' in module 'DW_div_a_width32_b_width24_tc_mode0_rem_mode1_J103_P4_D3_D2' in output file. (VW-010)
+Warning: Net name 'N_290' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_286' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_313' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_303' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_302' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_321' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_286' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_321' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_321' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_321' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_339' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_308' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_345' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_301' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_345' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_345' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_345' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_341' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_335' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_347' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_324' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_347' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_347' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_347' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_354' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_345' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_359' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_335' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_359' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_359' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_359' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_373' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_369' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_377' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_328' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_377' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_377' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_377' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_394' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_381' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_389' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_353' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_389' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_389' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_389' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_390' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_398' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
 Warning: Net name 'N_386' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_368' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_386' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_386' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_386' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_387' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_374' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_386' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_368' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_386' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_386' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
-Warning: Net name 'N_386' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_360' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
 Warning: Net name 'N_407' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
 Warning: Net name 'N_416' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
 Warning: Net name 'N_410' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
@@ -1438,34 +1479,34 @@ Warning: Net 'EX_FPU/div_97/u_div/u_add_B3/ctmn_437318' is already connected to 
 Information: 37 out of 47 POW-116 messages were not printed due to limit 10  (MSG-3913)
 Information: 42 out of 52 POW-116 messages were not printed due to limit 10  (MSG-3913)
 Information: Ending   rtl_opt / conditioning / Optimization (1) / Timing Optimization and DesignWare Reselection (FLW-8001)
-Information: Time: 2025-12-07 00:17:27 / Session:  00:04:48 / Command:  00:04:29 / CPU:  00:13:15 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:33:00 / Session:  00:04:48 / Command:  00:04:29 / CPU:  00:13:06 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Optimization (1) (FLW-8001)
-Information: Time: 2025-12-07 00:17:27 / Session:  00:04:48 / Command:  00:04:29 / CPU:  00:13:15 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:33:00 / Session:  00:04:48 / Command:  00:04:29 / CPU:  00:13:06 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Register Retiming (FLW-8000)
-Information: Time: 2025-12-07 00:17:27 / Session:  00:04:48 / Command:  00:04:29 / CPU:  00:13:15 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:33:00 / Session:  00:04:48 / Command:  00:04:29 / CPU:  00:13:06 / Memory: 6967 MB (FLW-8100)
 Information: Result of rtl_opt / conditioning / Register Retiming (FLW-8500)
 Information: No instance marked for retiming. (RTM-1031)
 Information: Ending   rtl_opt / conditioning / Register Retiming (FLW-8001)
-Information: Time: 2025-12-07 00:17:34 / Session:  00:04:55 / Command:  00:04:36 / CPU:  00:13:22 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:33:07 / Session:  00:04:54 / Command:  00:04:35 / CPU:  00:13:13 / Memory: 6967 MB (FLW-8100)
 Information: 1 registers were found constant but could not be removed due to restrictions. (SQM-3103)
 Information: Register Bits Before Sharing = 9, After Sharing = 9, Savings = 0 (SQM-2000)
 Information: Starting rtl_opt / conditioning / Optimization (2) (FLW-8000)
-Information: Time: 2025-12-07 00:17:36 / Session:  00:04:57 / Command:  00:04:38 / CPU:  00:13:24 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:33:09 / Session:  00:04:57 / Command:  00:04:38 / CPU:  00:13:15 / Memory: 6967 MB (FLW-8100)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
 Information: Ending   rtl_opt / conditioning / Optimization (2) (FLW-8001)
-Information: Time: 2025-12-07 00:18:08 / Session:  00:05:29 / Command:  00:05:10 / CPU:  00:14:16 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:33:40 / Session:  00:05:28 / Command:  00:05:09 / CPU:  00:14:07 / Memory: 6967 MB (FLW-8100)
 Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
 Information: Design has 49960 unplaced cells after preCond2Placement (FLW-5112)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:cpu.design'. (TIM-125)
 Information: Starting rtl_opt / conditioning / Optimization (3) (FLW-8000)
-Information: Time: 2025-12-07 00:18:11 / Session:  00:05:32 / Command:  00:05:13 / CPU:  00:14:28 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:33:44 / Session:  00:05:32 / Command:  00:05:12 / CPU:  00:14:18 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Optimization (3) / Timing Optimization (FLW-8000)
-Information: Time: 2025-12-07 00:18:11 / Session:  00:05:32 / Command:  00:05:13 / CPU:  00:14:28 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:33:44 / Session:  00:05:32 / Command:  00:05:12 / CPU:  00:14:18 / Memory: 6967 MB (FLW-8100)
 Warning: Net 'EX_ALU/snps_DIVREM_34/tmp_net187380' is already connected to pin 'EX_ALU/snps_DIVREM_34/A207167/Y'. It may cause loss of switching activity. (POW-116)
 Information: Ending   rtl_opt / conditioning / Optimization (3) / Timing Optimization (FLW-8001)
-Information: Time: 2025-12-07 00:19:12 / Session:  00:06:33 / Command:  00:06:14 / CPU:  00:21:30 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:34:45 / Session:  00:06:32 / Command:  00:06:13 / CPU:  00:21:21 / Memory: 6967 MB (FLW-8100)
 Warning: Net 'EX_FPU/div_97/N505329' is already connected to pin 'EX_FPU/div_97/A211976/Y'. It may cause loss of switching activity. (POW-116)
 Warning: Net 'EX_FPU/div_97/N504832' is already connected to pin 'EX_FPU/div_97/A210915/Y'. It may cause loss of switching activity. (POW-116)
 Warning: Net 'EX_FPU/div_97/N504833' is already connected to pin 'EX_FPU/div_97/A210916/Y'. It may cause loss of switching activity. (POW-116)
@@ -1478,26 +1519,26 @@ Warning: Net 'EX_FPU/div_97/ctmn_465677' is already connected to pin 'EX_FPU/div
 Warning: Net 'EX_FPU/div_97/ctmn_465431' is already connected to pin 'EX_FPU/div_97/ctmi_151320/X'. It may cause loss of switching activity. (POW-116)
 Information: 85 out of 95 POW-116 messages were not printed due to limit 10  (MSG-3913)
 Information: Ending   rtl_opt / conditioning / Optimization (3) (FLW-8001)
-Information: Time: 2025-12-07 00:19:14 / Session:  00:06:35 / Command:  00:06:16 / CPU:  00:21:37 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:34:46 / Session:  00:06:34 / Command:  00:06:15 / CPU:  00:21:28 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Optimization (4) (FLW-8000)
-Information: Time: 2025-12-07 00:19:14 / Session:  00:06:35 / Command:  00:06:16 / CPU:  00:21:37 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:34:46 / Session:  00:06:34 / Command:  00:06:15 / CPU:  00:21:28 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Optimization (4) / Logic Simplification and Register Optimization (FLW-8000)
-Information: Time: 2025-12-07 00:19:14 / Session:  00:06:35 / Command:  00:06:16 / CPU:  00:21:37 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:34:46 / Session:  00:06:34 / Command:  00:06:15 / CPU:  00:21:28 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Optimization (4) / Logic Simplification and Register Optimization (FLW-8001)
-Information: Time: 2025-12-07 00:19:21 / Session:  00:06:42 / Command:  00:06:23 / CPU:  00:21:49 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:34:54 / Session:  00:06:42 / Command:  00:06:22 / CPU:  00:21:40 / Memory: 6967 MB (FLW-8100)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:cpu.design'. (TIM-125)
 Information: Ending   rtl_opt / conditioning / Optimization (4) (FLW-8001)
-Information: Time: 2025-12-07 00:19:27 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:18 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:28 / CPU:  00:22:09 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Optimization (5) (FLW-8000)
-Information: Time: 2025-12-07 00:19:27 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:18 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:28 / CPU:  00:22:09 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Optimization (5) / Logic Simplification and Register Optimization (FLW-8000)
-Information: Time: 2025-12-07 00:19:27 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:18 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:28 / CPU:  00:22:09 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Optimization (5) / Logic Simplification and Register Optimization (FLW-8001)
-Information: Time: 2025-12-07 00:19:28 / Session:  00:06:49 / Command:  00:06:29 / CPU:  00:22:18 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:09 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / Optimization (5) (FLW-8001)
-Information: Time: 2025-12-07 00:19:28 / Session:  00:06:49 / Command:  00:06:29 / CPU:  00:22:18 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:09 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Auto-Floorplan (2) (FLW-8000)
-Information: Time: 2025-12-07 00:19:28 / Session:  00:06:49 / Command:  00:06:29 / CPU:  00:22:18 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:09 / Memory: 6967 MB (FLW-8100)
 Information: Initializing core and die (AFP-1001)
 Information: Initializing rows (AFP-1003)
 Information: Initializing tracks (AFP-1004)
@@ -1544,19 +1585,19 @@ macros                  0                 0                 0                 0
 pins                  171               171               171                 0
 -------------------------------------------------------------------------------
 Information: Ending   rtl_opt / conditioning / Auto-Floorplan (2) (FLW-8001)
-Information: Time: 2025-12-07 00:19:28 / Session:  00:06:49 / Command:  00:06:30 / CPU:  00:22:19 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:10 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / conditioning / Secondary PG connections (FLW-8000)
-Information: Time: 2025-12-07 00:19:28 / Session:  00:06:49 / Command:  00:06:30 / CPU:  00:22:19 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:10 / Memory: 6967 MB (FLW-8100)
 Information: Secondary PG:  Secondary PG connections skipped because it is not a UPF design (FLW-1247)
 Information: Ending   rtl_opt / conditioning / Secondary PG connections (FLW-8001)
-Information: Time: 2025-12-07 00:19:28 / Session:  00:06:49 / Command:  00:06:30 / CPU:  00:22:19 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:10 / Memory: 6967 MB (FLW-8100)
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -     393489.88           -       51633              0.11      6993
+Compile-fusion                                          -           -         -         -     393489.88           -       51633              0.11      6966
 Information: Ending   rtl_opt / conditioning (FLW-8001)
-Information: Time: 2025-12-07 00:19:28 / Session:  00:06:49 / Command:  00:06:30 / CPU:  00:22:19 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:10 / Memory: 6967 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / estimation (FLW-8000)
-Information: Time: 2025-12-07 00:19:28 / Session:  00:06:49 / Command:  00:06:30 / CPU:  00:22:19 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:00 / Session:  00:06:48 / Command:  00:06:29 / CPU:  00:22:10 / Memory: 6967 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Timer using 8 threads
 Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
@@ -1588,23 +1629,23 @@ Number of used supplies = 0
 Blocked VAs: 
 Information: Change threshold for extractor is reset. (FLW-1300)
 Information: Starting rtl_opt / estimation / Load Design (FLW-8000)
-Information: Time: 2025-12-07 00:19:31 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:31 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:04 / Session:  00:06:52 / Command:  00:06:32 / CPU:  00:22:22 / Memory: 6967 MB (FLW-8100)
  Information: Populating compatible release data
 Information: Populating data from multiAnalyze json.
 Information: Running as single analyze flow.
 Warning: DFT IP not instantiated successfully (DFT-2193)
 Information: Starting rtl_opt / estimation / Load Design / Incremental Auto-Floorplan (FLW-8000)
-Information: Time: 2025-12-07 00:19:31 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:31 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:04 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:22 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Load Design / Incremental Auto-Floorplan (FLW-8001)
-Information: Time: 2025-12-07 00:19:31 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:31 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:04 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:22 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Load Design (FLW-8001)
-Information: Time: 2025-12-07 00:19:32 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:31 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:04 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:22 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / pre-placement setup (FLW-8000)
-Information: Time: 2025-12-07 00:19:32 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:31 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:04 / Session:  00:06:52 / Command:  00:06:33 / CPU:  00:22:22 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / pre-placement setup (FLW-8001)
-Information: Time: 2025-12-07 00:19:33 / Session:  00:06:54 / Command:  00:06:34 / CPU:  00:22:32 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:05 / Session:  00:06:53 / Command:  00:06:34 / CPU:  00:22:23 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / Initial Placement (FLW-8000)
-Information: Time: 2025-12-07 00:19:33 / Session:  00:06:54 / Command:  00:06:34 / CPU:  00:22:32 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:05 / Session:  00:06:53 / Command:  00:06:34 / CPU:  00:22:23 / Memory: 6967 MB (FLW-8100)
 ----------------------------------------------------------------
 running create_placement
 Corner Scaling is off, multiplier is 1.000000
@@ -1700,7 +1741,7 @@ Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-9
 Non-default App Option report
 All App Options have their default value.
 Information: Ending   rtl_opt / estimation / Initial Placement (FLW-8001)
-Information: Time: 2025-12-07 00:19:59 / Session:  00:07:20 / Command:  00:07:01 / CPU:  00:23:58 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:31 / Session:  00:07:19 / Command:  00:07:00 / CPU:  00:23:49 / Memory: 6967 MB (FLW-8100)
 Information: Placing unplaced pins (AFP-1007)
 Load DB...
 CPU Time for load db: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
@@ -1745,7 +1786,7 @@ Start Global Route ...
 [Init] Elapsed real time: 0:00:00 
 [Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[Init] Total (MB): Used   46  Alloctr   47  Proc 10358 
+[Init] Total (MB): Used   46  Alloctr   47  Proc 10332 
 Printing options for 'route.common.*'
 common.clock_topology                                   :	 normal              
 common.single_connection_to_pins                        :	 off                 
@@ -1769,7 +1810,7 @@ Current Stage stats:
 [End of Build Tech Data] Elapsed real time: 0:00:00 
 [End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build Tech Data] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Build Tech Data] Total (MB): Used   51  Alloctr   51  Proc 10358 
+[End of Build Tech Data] Total (MB): Used   51  Alloctr   51  Proc 10332 
 Net statistics:
 Total number of nets to route for block pin placement     = 171
 Number of interface nets to route for block pin placement = 171
@@ -1777,7 +1818,7 @@ Current Stage stats:
 [End of Build All Nets] Elapsed real time: 0:00:00 
 [End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build All Nets] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Build All Nets] Total (MB): Used   51  Alloctr   52  Proc 10358 
+[End of Build All Nets] Total (MB): Used   51  Alloctr   52  Proc 10332 
 Net length statistics: 
 Net Count(Ignore Fully Rted) 342, Total Half Perimeter Wire Length (HPWL) 137883 microns
 HPWL   0 ~   50 microns: Net Count      105	Total HPWL          227 microns
@@ -1811,27 +1852,27 @@ Current Stage stats:
 [End of Build Congestion Map] Elapsed real time: 0:00:00 
 [End of Build Congestion Map] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build Congestion Map] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Build Congestion Map] Total (MB): Used   52  Alloctr   53  Proc 10358 
+[End of Build Congestion Map] Total (MB): Used   52  Alloctr   53  Proc 10332 
 Number of partitions: 1 (1 x 1)
 Size of partitions: 37 gCells x 37 gCells
 Current Stage stats:
 [End of Add Nets Demand] Elapsed real time: 0:00:00 
 [End of Add Nets Demand] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Add Nets Demand] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Add Nets Demand] Total (MB): Used   52  Alloctr   53  Proc 10358 
+[End of Add Nets Demand] Total (MB): Used   52  Alloctr   53  Proc 10332 
 Number of user frozen nets = 0
 Total stats:
 [End of Build Data] Elapsed real time: 0:00:00 
 [End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build Data] Stage (MB): Used    2  Alloctr    2  Proc    0 
-[End of Build Data] Total (MB): Used   52  Alloctr   53  Proc 10358 
+[End of Build Data] Total (MB): Used   52  Alloctr   53  Proc 10332 
 Number of partitions: 1 (1 x 1)
 Size of partitions: 37 gCells x 37 gCells
 Current Stage stats:
 [End of Blocked Pin Detection] Elapsed real time: 0:00:00 
 [End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Blocked Pin Detection] Stage (MB): Used   12  Alloctr   12  Proc    0 
-[End of Blocked Pin Detection] Total (MB): Used   64  Alloctr   65  Proc 10358 
+[End of Blocked Pin Detection] Total (MB): Used   64  Alloctr   65  Proc 10332 
 Information: Using 8 threads for routing. (ZRT-444)
 Information: Buffer distance is estimated to be ~4656.0000um (213 gCells)
 
@@ -1844,7 +1885,7 @@ Current Stage stats:
 [End of Initial Routing] Elapsed real time: 0:00:00 
 [End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Initial Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Initial Routing] Total (MB): Used   64  Alloctr   65  Proc 10358 
+[End of Initial Routing] Total (MB): Used   64  Alloctr   65  Proc 10332 
 Initial. Routing result:
 Initial. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
 Initial. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
@@ -1876,31 +1917,31 @@ Initial. completed.
 [End of Whole Chip Routing] Elapsed real time: 0:00:00 
 [End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Whole Chip Routing] Stage (MB): Used   14  Alloctr   14  Proc    0 
-[End of Whole Chip Routing] Total (MB): Used   64  Alloctr   65  Proc 10358 
+[End of Whole Chip Routing] Total (MB): Used   64  Alloctr   65  Proc 10332 
 [End of Global Routing] Elapsed real time: 0:00:00 
 [End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Global Routing] Stage (MB): Used   14  Alloctr   14  Proc    0 
-[End of Global Routing] Total (MB): Used   64  Alloctr   65  Proc 10358 
+[End of Global Routing] Total (MB): Used   64  Alloctr   65  Proc 10332 
 [End of dbOut] Elapsed real time: 0:00:00 
 [End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of dbOut] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of dbOut] Total (MB): Used   54  Alloctr   55  Proc 10358 
-CPU Time for Global Route: 00:00:00.59u 00:00:00.02s 00:00:00.58e: 
+[End of dbOut] Total (MB): Used   54  Alloctr   55  Proc 10332 
+CPU Time for Global Route: 00:00:00.59u 00:00:00.00s 00:00:00.57e: 
 Number of block ports: 171
 Number of block pin locations assigned from router: 171
 CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
 Number of PG ports on blocks: 0
 Number of pins created: 171
 CPU Time for Pin Creation: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
-Total Pin Placement CPU Time: 00:00:00.62u 00:00:00.02s 00:00:00.61e: 
+Total Pin Placement CPU Time: 00:00:00.63u 00:00:00.00s 00:00:00.61e: 
 Information: Ending   rtl_opt / estimation (FLW-8001)
-Information: Time: 2025-12-07 00:20:00 / Session:  00:07:21 / Command:  00:07:02 / CPU:  00:23:59 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:32 / Session:  00:07:20 / Command:  00:07:01 / CPU:  00:23:50 / Memory: 6967 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / estimation (FLW-8000)
-Information: Time: 2025-12-07 00:20:00 / Session:  00:07:21 / Command:  00:07:02 / CPU:  00:23:59 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:32 / Session:  00:07:20 / Command:  00:07:01 / CPU:  00:23:50 / Memory: 6967 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / estimation / Load Design (FLW-8000)
-Information: Time: 2025-12-07 00:20:00 / Session:  00:07:21 / Command:  00:07:02 / CPU:  00:23:59 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:32 / Session:  00:07:20 / Command:  00:07:01 / CPU:  00:23:50 / Memory: 6967 MB (FLW-8100)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:cpu.design'. (TIM-125)
 Number of Site types in the design = 1
 Setting up Chip Core
@@ -1928,27 +1969,27 @@ Information: The following app options are used in cellmap
         place.common.enable_advanced_placement_model : true
         cts.placement.cell_spacing_rule_style : maximum
 Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
-Total 0.1450 seconds to build cellmap data
+Total 0.1478 seconds to build cellmap data
 INFO: creating 92(r) x 92(c) GridCells YDim 8.16 XDim 8.16
 INFO: number of GridCells (cpu): 8464
 INFO: creating 92(r) x 92(c) GridCells YDim 8.16 XDim 8.16
 INFO: number of GridCells (cpu): 8464
-Total 0.7775 seconds to load 51628 cell instances into cellmap, 51628 cells are off site row
+Total 0.7901 seconds to load 51628 cell instances into cellmap, 51628 cells are off site row
 Moveable cells: 51628; Application fixed cells: 0; Macro cells: 0; User fixed cells: 0
 Average cell width 2.8014, cell height 2.7200, cell area 7.6199 for total 51628 placed and application fixed cells
 Information: Ending   rtl_opt / estimation / Load Design (FLW-8001)
-Information: Time: 2025-12-07 00:20:02 / Session:  00:07:23 / Command:  00:07:04 / CPU:  00:24:07 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:35 / Session:  00:07:23 / Command:  00:07:03 / CPU:  00:23:58 / Memory: 6967 MB (FLW-8100)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:cpu.design'. (TIM-125)
 Information: Starting rtl_opt / estimation / Global Route (FLW-8000)
-Information: Time: 2025-12-07 00:20:08 / Session:  00:07:29 / Command:  00:07:10 / CPU:  00:24:21 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:41 / Session:  00:07:29 / Command:  00:07:09 / CPU:  00:24:13 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Global Route (FLW-8001)
-Information: Time: 2025-12-07 00:20:08 / Session:  00:07:29 / Command:  00:07:10 / CPU:  00:24:21 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:41 / Session:  00:07:29 / Command:  00:07:09 / CPU:  00:24:13 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / Automatic Register Splitting (FLW-8000)
-Information: Time: 2025-12-07 00:20:08 / Session:  00:07:29 / Command:  00:07:10 / CPU:  00:24:21 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:41 / Session:  00:07:29 / Command:  00:07:09 / CPU:  00:24:13 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Automatic Register Splitting (FLW-8001)
-Information: Time: 2025-12-07 00:20:08 / Session:  00:07:29 / Command:  00:07:10 / CPU:  00:24:21 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:41 / Session:  00:07:29 / Command:  00:07:09 / CPU:  00:24:13 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / High Fanout Synthesis (FLW-8000)
-Information: Time: 2025-12-07 00:20:08 / Session:  00:07:29 / Command:  00:07:10 / CPU:  00:24:21 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:35:41 / Session:  00:07:29 / Command:  00:07:09 / CPU:  00:24:13 / Memory: 6967 MB (FLW-8100)
 Warning: Skipping scan synthesis: no DFT setup has been detected. (DFT-1107)
 Information: The net parasitics of block cpu are cleared. (TIM-123)
 Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
@@ -2063,19 +2104,19 @@ Number of Drivers Sized: 0 [0.00%]
                       P: 0 [0.00%]
                       N: 0 [0.00%]
 
-Zbuf-RUNTIME (Hr:Min:Sec)  CPU 0 hr : 0 min : 36.35 sec ELAPSE 0 hr : 0 min : 9.64 sec
+Zbuf-RUNTIME (Hr:Min:Sec)  CPU 0 hr : 0 min : 36.28 sec ELAPSE 0 hr : 0 min : 9.59 sec
 Zbuf-RUNTIME         (Min) CPU 0 min ELAPSE 0 min
-ZBuf-MEM(max-mem) total 7161200 K / inuse 1759808 K
+ZBuf-MEM(max-mem) total 7133768 K / inuse 1703808 K
 Information: Result of rtl_opt / estimation / High Fanout Synthesis (FLW-8500)
 Information: Top 10 transition violators after high fanout synthesis (HFS-1000)
 Slack     Fanout  Scenario    Driver                                                       
 
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                    1435.45     1435.45         -         0     402009.31   261551.47       52288              0.13      6993
+Compile-fusion                                    1435.45     1435.45         -         0     402009.31   261551.47       52288              0.13      6966
 Information: Ending   rtl_opt / estimation / High Fanout Synthesis (FLW-8001)
-Information: Time: 2025-12-07 00:20:33 / Session:  00:07:54 / Command:  00:07:35 / CPU:  00:25:34 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:36:06 / Session:  00:07:54 / Command:  00:07:34 / CPU:  00:25:25 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / Congestion/Timing Driven Placement (FLW-8000)
-Information: Time: 2025-12-07 00:20:33 / Session:  00:07:54 / Command:  00:07:35 / CPU:  00:25:34 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:36:06 / Session:  00:07:54 / Command:  00:07:34 / CPU:  00:25:25 / Memory: 6967 MB (FLW-8100)
 ----------------------------------------------------------------
 running create_placement
 Start transferring placement data.
@@ -2097,14 +2138,14 @@ Information: The following app options are used in cellmap
         place.common.enable_advanced_placement_model : true
         cts.placement.cell_spacing_rule_style : maximum
 Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
-Total 0.1501 seconds to build cellmap data
+Total 0.1499 seconds to build cellmap data
 Information: Extraction observers are detached as design net change threshold is reached.
 Snapped 52288 standard cells to the nearest cellrow to improve the accuracy of congestion analysis.
 Start Global Route ... 
 [Init] Elapsed real time: 0:00:00 
 [Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[Init] Total (MB): Used    7  Alloctr    8  Proc 10455 
+[Init] Total (MB): Used    7  Alloctr    8  Proc 10428 
 Printing options for 'route.common.*'
 common.clock_topology                                   :	 normal              
 common.single_connection_to_pins                        :	 off                 
@@ -2226,7 +2267,7 @@ Current Stage stats:
 [End of Read DB] Elapsed real time: 0:00:00 
 [End of Read DB] Elapsed cpu  time: sys=0:00:00 usr=0:00:03 total=0:00:03
 [End of Read DB] Stage (MB): Used   79  Alloctr   80  Proc  -32 
-[End of Read DB] Total (MB): Used   86  Alloctr   88  Proc 10423 
+[End of Read DB] Total (MB): Used   86  Alloctr   88  Proc 10396 
 Constructing data structure ...
 Design statistics:
 Design Bounding Box (0.00um,0.00um,749.34um,748.00um)
@@ -2241,7 +2282,7 @@ Current Stage stats:
 [End of Build Tech Data] Elapsed real time: 0:00:00 
 [End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build Tech Data] Stage (MB): Used    3  Alloctr    2  Proc    0 
-[End of Build Tech Data] Total (MB): Used   89  Alloctr   91  Proc 10423 
+[End of Build Tech Data] Total (MB): Used   89  Alloctr   91  Proc 10396 
 Net statistics:
 Total number of nets     = 53575
 Number of nets to route  = 53181
@@ -2252,7 +2293,7 @@ Current Stage stats:
 [End of Build All Nets] Elapsed real time: 0:00:00 
 [End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
 [End of Build All Nets] Stage (MB): Used   39  Alloctr   40  Proc    0 
-[End of Build All Nets] Total (MB): Used  129  Alloctr  131  Proc 10423 
+[End of Build All Nets] Total (MB): Used  129  Alloctr  131  Proc 10396 
 Net length statistics: 
 Net Count(Ignore Fully Rted) 53192, Total Half Perimeter Wire Length (HPWL) 1522362 microns
 HPWL   0 ~   50 microns: Net Count    46514	Total HPWL       602000 microns
@@ -2286,27 +2327,27 @@ Current Stage stats:
 [End of Build Congestion Map] Elapsed real time: 0:00:01 
 [End of Build Congestion Map] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
 [End of Build Congestion Map] Stage (MB): Used    1  Alloctr    1  Proc    0 
-[End of Build Congestion Map] Total (MB): Used  130  Alloctr  132  Proc 10423 
+[End of Build Congestion Map] Total (MB): Used  130  Alloctr  132  Proc 10396 
 Number of partitions: 1 (1 x 1)
 Size of partitions: 138 gCells x 138 gCells
 Current Stage stats:
 [End of Add Nets Demand] Elapsed real time: 0:00:00 
 [End of Add Nets Demand] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Add Nets Demand] Stage (MB): Used    2  Alloctr    2  Proc    0 
-[End of Add Nets Demand] Total (MB): Used  132  Alloctr  135  Proc 10423 
+[End of Add Nets Demand] Total (MB): Used  132  Alloctr  134  Proc 10396 
 Number of user frozen nets = 0
 Total stats:
 [End of Build Data] Elapsed real time: 0:00:01 
 [End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
 [End of Build Data] Stage (MB): Used   45  Alloctr   46  Proc    0 
-[End of Build Data] Total (MB): Used  132  Alloctr  135  Proc 10423 
+[End of Build Data] Total (MB): Used  132  Alloctr  134  Proc 10396 
 Number of partitions: 1 (1 x 1)
 Size of partitions: 138 gCells x 138 gCells
 Current Stage stats:
 [End of Blocked Pin Detection] Elapsed real time: 0:00:02 
 [End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
 [End of Blocked Pin Detection] Stage (MB): Used  106  Alloctr  106  Proc    0 
-[End of Blocked Pin Detection] Total (MB): Used  238  Alloctr  241  Proc 10423 
+[End of Blocked Pin Detection] Total (MB): Used  238  Alloctr  240  Proc 10396 
 Information: Using 8 threads for routing. (ZRT-444)
 Information: Placement fast mode ON
 Information: Multiple gcell levels ON
@@ -2332,7 +2373,7 @@ Current Stage stats:
 [End of Initial Routing] Elapsed real time: 0:00:07 
 [End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:07 total=0:00:07
 [End of Initial Routing] Stage (MB): Used   27  Alloctr   28  Proc    0 
-[End of Initial Routing] Total (MB): Used  266  Alloctr  269  Proc 10423 
+[End of Initial Routing] Total (MB): Used  266  Alloctr  269  Proc 10396 
 Initial. Routing result:
 Initial. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
 Initial. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =   0) GRCs =     0 (0.00%)
@@ -2365,12 +2406,12 @@ Initial. completed.
 Start GR phase 1
 Number of partitions: 1 (1 x 1)
 Size of partitions: 138 gCells x 138 gCells
-10% of nets complete Elapsed cpu time: 0:00:04 Elapsed real time: 0:00:04
+10% of nets complete Elapsed cpu time: 0:00:04 Elapsed real time: 0:00:03
 20% of nets complete Elapsed cpu time: 0:00:07 Elapsed real time: 0:00:07
 30% of nets complete Elapsed cpu time: 0:00:08 Elapsed real time: 0:00:08
 40% of nets complete Elapsed cpu time: 0:00:09 Elapsed real time: 0:00:09
 50% of nets complete Elapsed cpu time: 0:00:09 Elapsed real time: 0:00:09
-60% of nets complete Elapsed cpu time: 0:00:10 Elapsed real time: 0:00:09
+60% of nets complete Elapsed cpu time: 0:00:09 Elapsed real time: 0:00:09
 70% of nets complete Elapsed cpu time: 0:00:10 Elapsed real time: 0:00:10
 80% of nets complete Elapsed cpu time: 0:00:10 Elapsed real time: 0:00:10
 90% of nets complete Elapsed cpu time: 0:00:10 Elapsed real time: 0:00:10
@@ -2386,7 +2427,7 @@ Current Stage stats:
 [End of Phase1 Routing] Elapsed real time: 0:00:10 
 [End of Phase1 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:10 total=0:00:10
 [End of Phase1 Routing] Stage (MB): Used    2  Alloctr    2  Proc    0 
-[End of Phase1 Routing] Total (MB): Used  268  Alloctr  272  Proc 10423 
+[End of Phase1 Routing] Total (MB): Used  268  Alloctr  272  Proc 10396 
 phase1. Routing result:
 phase1. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
 phase1. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =    0) GRCs =     0 (0.00%)
@@ -2418,7 +2459,7 @@ phase1. completed.
 [End of Whole Chip Routing] Elapsed real time: 0:00:21 
 [End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:22 total=0:00:23
 [End of Whole Chip Routing] Stage (MB): Used  182  Alloctr  183  Proc    0 
-[End of Whole Chip Routing] Total (MB): Used  268  Alloctr  272  Proc 10423 
+[End of Whole Chip Routing] Total (MB): Used  268  Alloctr  272  Proc 10396 
 
 Congestion utilization per direction:
 Average vertical track utilization   = 90.44 %
@@ -2429,14 +2470,14 @@ Peak    horizontal track utilization = 171.43 %
 [End of Global Routing] Elapsed real time: 0:00:21 
 [End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:23 total=0:00:23
 [End of Global Routing] Stage (MB): Used  180  Alloctr  182  Proc    0 
-[End of Global Routing] Total (MB): Used  267  Alloctr  271  Proc 10423 
+[End of Global Routing] Total (MB): Used  267  Alloctr  271  Proc 10396 
 Writing out congestion map...
 Updating congestion ...
 Updating congestion ...
 [End of dbOut] Elapsed real time: 0:00:00 
 [End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of dbOut] Stage (MB): Used -109  Alloctr -112  Proc    0 
-[End of dbOut] Total (MB): Used   38  Alloctr   39  Proc 10423 
+[End of dbOut] Total (MB): Used   38  Alloctr   39  Proc 10396 
 Using per-layer congestion maps for congestion reduction.
 Information: 41.85% of design has horizontal routing density above target_routing_density of 0.81.
 Information: 92.50% of design has vertical routing density above target_routing_density of 0.81.
@@ -2507,12 +2548,12 @@ Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-9
 Non-default App Option report
 All App Options have their default value.
 Information: Ending   rtl_opt / estimation / Congestion/Timing Driven Placement (FLW-8001)
-Information: Time: 2025-12-07 00:21:11 / Session:  00:08:32 / Command:  00:08:13 / CPU:  00:26:33 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:36:43 / Session:  00:08:31 / Command:  00:08:12 / CPU:  00:26:24 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation (FLW-8001)
-Information: Time: 2025-12-07 00:21:11 / Session:  00:08:32 / Command:  00:08:13 / CPU:  00:26:33 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:36:44 / Session:  00:08:31 / Command:  00:08:12 / CPU:  00:26:24 / Memory: 6967 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting rtl_opt / estimation (FLW-8000)
-Information: Time: 2025-12-07 00:21:11 / Session:  00:08:32 / Command:  00:08:13 / CPU:  00:26:33 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:36:44 / Session:  00:08:31 / Command:  00:08:12 / CPU:  00:26:24 / Memory: 6967 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 flowStepUpsInPbo:: using optEnvMonitor()
 Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
@@ -2531,7 +2572,7 @@ Information: The following app options are used in cellmap
         place.common.enable_advanced_placement_model : true
         cts.placement.cell_spacing_rule_style : maximum
 Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
-Total 0.1505 seconds to build cellmap data
+Total 0.1477 seconds to build cellmap data
 INFO: compile_fusion is running in balanced flow mode
 Warning: Cannot find any default max transition constraint on the design. (OPT-070)
 INFO: Leakage Power Aware Optimization Enabled
@@ -2551,12 +2592,12 @@ Number of used supplies = 0
 Blocked VAs: 
 
 Info: Keeping LAO enabled for UPS flow
-compile command begin                   CPU:  1618 s (  0.45 hr )  ELAPSE:   514 s (  0.14 hr )  MEM-PEAK:  6993 MB
+compile command begin                   CPU:  1610 s (  0.45 hr )  ELAPSE:   513 s (  0.14 hr )  MEM-PEAK:  6966 MB
 Warning: Cannot find any default max transition constraint on the design. (OPT-070)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:cpu.design'. (TIM-125)
 Info: update em.
 
-compile timing update complete          CPU:  1634 s (  0.45 hr )  ELAPSE:   521 s (  0.14 hr )  MEM-PEAK:  6993 MB
+compile timing update complete          CPU:  1625 s (  0.45 hr )  ELAPSE:   520 s (  0.14 hr )  MEM-PEAK:  6966 MB
 
 compile initial QoR
 ___________________
@@ -2599,7 +2640,7 @@ compile initial QoR Summary       WNS        TNS   R2RTNS    NSV      WHV       
 compile initial QoR Summary   19.8592  1440.3966 1440.3966     85        -          -      -        2        4 261551.469    402009.31      52288
 Information: The netlist change observers are disabled for incremental extraction. (TIM-126)
 INFO: using 8 threads
-compile initialization complete         CPU:  1647 s (  0.46 hr )  ELAPSE:   523 s (  0.15 hr )  MEM-PEAK:  6993 MB
+compile initialization complete         CPU:  1638 s (  0.46 hr )  ELAPSE:   522 s (  0.15 hr )  MEM-PEAK:  6966 MB
 compile optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
 Warning: Cannot find any default max transition constraint on the design. (OPT-070)
 Information: The netlist change observers are enabled for incremental extraction. (TIM-127)
@@ -2620,27 +2661,27 @@ Information: The following app options are used in cellmap
         place.common.enable_advanced_placement_model : true
         cts.placement.cell_spacing_rule_style : maximum
 Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
-Total 0.1470 seconds to build cellmap data
+Total 0.1531 seconds to build cellmap data
 INFO: creating 92(r) x 92(c) GridCells YDim 8.16 XDim 8.16
 INFO: number of GridCells (cpu): 8464
 INFO: creating 92(r) x 92(c) GridCells YDim 8.16 XDim 8.16
 INFO: number of GridCells (cpu): 8464
-Total 0.8086 seconds to load 52288 cell instances into cellmap, 52288 cells are off site row
+Total 0.7900 seconds to load 52288 cell instances into cellmap, 52288 cells are off site row
 Moveable cells: 52288; Application fixed cells: 0; Macro cells: 0; User fixed cells: 0
 Average cell width 2.8266, cell height 2.7200, cell area 7.6884 for total 52288 placed and application fixed cells
 Information: Starting rtl_opt / estimation / Optimization (1) (FLW-8000)
-Information: Time: 2025-12-07 00:21:23 / Session:  00:08:44 / Command:  00:08:25 / CPU:  00:27:06 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:36:56 / Session:  00:08:43 / Command:  00:08:24 / CPU:  00:26:57 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / Optimization (1) / Timing Optimization (FLW-8000)
-Information: Time: 2025-12-07 00:21:23 / Session:  00:08:44 / Command:  00:08:25 / CPU:  00:27:06 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:36:56 / Session:  00:08:43 / Command:  00:08:24 / CPU:  00:26:57 / Memory: 6967 MB (FLW-8100)
 Disable clock slack update for ideal clocks
- Iter  1                                          1934.99     1934.99         -         -     405616.53   263002.25       52288              0.15      6993
+ Iter  1                                          1934.99     1934.99         -         -     405616.53   263002.25       52288              0.15      6966
 Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
 Disable clock slack update for ideal clocks
 Corner Scaling is off, multiplier is 1.000000
 Information: Using default layer met3 (Current) (OPT-079)
 new default layer same as orig default layer
 Information: Using default layer met3 (Inferior) (OPT-079)
- Iter  1                                          1605.11     1605.11         -         -     409891.88   265559.69       52288              0.15      6993
+ Iter  1                                          1605.11     1605.11         -         -     409891.88   265559.69       52288              0.15      6966
 Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
 
 Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
@@ -2659,12 +2700,12 @@ Information: The following app options are used in cellmap
         place.common.enable_advanced_placement_model : true
         cts.placement.cell_spacing_rule_style : maximum
 Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
-Total 0.1517 seconds to build cellmap data
+Total 0.1504 seconds to build cellmap data
 INFO: creating 92(r) x 92(c) GridCells YDim 8.16 XDim 8.16
 INFO: number of GridCells (cpu): 8464
 INFO: creating 92(r) x 92(c) GridCells YDim 8.16 XDim 8.16
 INFO: number of GridCells (cpu): 8464
-Total 0.8013 seconds to load 52975 cell instances into cellmap, 50650 cells are off site row
+Total 0.8053 seconds to load 52975 cell instances into cellmap, 50650 cells are off site row
 Moveable cells: 52975; Application fixed cells: 0; Macro cells: 0; User fixed cells: 0
 Average cell width 2.8897, cell height 2.7200, cell area 7.8601 for total 52975 placed and application fixed cells
 Disable clock slack update for ideal clocks
@@ -2678,22 +2719,22 @@ Information: NO SCANCHAIN defined in SCANDEF. (DFT-011)
 	Banking ratio             :0.00% (Before banking 0.00%)
 	Use report_multibit for details
 Disable clock slack update for ideal clocks
- Iter  1                                          1356.68     1356.68         -         -     416388.09   274459.25       52975              0.15      6993
+ Iter  1                                          1356.68     1356.68         -         -     416388.09   274459.25       52975              0.15      6966
 Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
 Disable clock slack update for ideal clocks
- Iter  1                                          1115.82     1115.82         -         -     425609.44   278191.81       54884              0.16      6993
+ Iter  1                                          1115.82     1115.82         -         -     425609.44   278191.81       54884              0.16      6966
 Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
- Iter  1                                           957.73      957.73         -         -     435151.09   282740.22       56422              0.17      6993
+ Iter  1                                           957.73      957.73         -         -     435151.09   282740.22       56422              0.17      6966
 Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
 Disable clock slack update for ideal clocks
- Iter  1                                           939.09      939.09         -         -     438954.75   285093.41       56481              0.17      6993
+ Iter  1                                           939.09      939.09         -         -     438954.75   285093.41       56481              0.17      6966
 Warning: Restoring scoped app option 'xform.commit_density_threshold' to original value 'unset' (from current value '1', which is different from the scoped value '1.0'). (FLW-2892)
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                     668.83      668.83         -         5     437980.06   283966.97       56337              0.17      6993
+Compile-fusion                                     668.83      668.83         -         5     437980.06   283966.97       56337              0.17      6966
 Information: Ending   rtl_opt / estimation / Optimization (1) / Timing Optimization (FLW-8001)
-Information: Time: 2025-12-07 00:23:03 / Session:  00:10:24 / Command:  00:10:04 / CPU:  00:37:42 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:35 / Session:  00:10:23 / Command:  00:10:04 / CPU:  00:37:34 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Optimization (1) (FLW-8001)
-Information: Time: 2025-12-07 00:23:03 / Session:  00:10:24 / Command:  00:10:05 / CPU:  00:37:42 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:35 / Session:  00:10:23 / Command:  00:10:04 / CPU:  00:37:34 / Memory: 6967 MB (FLW-8100)
 Information: CTS will work on the following scenarios. (CTS-101)
 Information: CTS will work on all clocks in active scenarios, including 1 master clocks and 0 generated clocks. (CTS-107)
 Information: 'nominal' is identified as primary corner for initial clock tree building. (CTS-103)
@@ -2715,10 +2756,10 @@ Warning: No clock routing rules were specified. Use set_clock_routing_rules to s
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
 Disable clock slack update for ideal clocks
- Iter  1                                           898.76      898.76         -         -     437980.06   283966.97       56337              0.17      6993
+ Iter  1                                           898.76      898.76         -         -     437980.06   283966.97       56337              0.17      6966
 Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
 Disable clock slack update for ideal clocks
- Iter  1                                           898.72      898.72         -         -     437935.00   283929.62       56337              0.18      6993
+ Iter  1                                           898.72      898.72         -         -     437935.00   283929.62       56337              0.17      6966
 Warning: Cannot find any default max transition constraint on the design. (OPT-070)
 INFO: Leakage Power Aware Optimization Enabled
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
@@ -2737,38 +2778,38 @@ Summary of messages during CTS:
 Disable clock slack update for ideal clocks
 
 Disable clock slack update for ideal clocks
-Compile-fusion optimization Phase 0 Iter  1        893.41      893.41         -         -     438148.97   283991.19       56337              0.18      6993
+Compile-fusion optimization Phase 0 Iter  1        893.41      893.41         -         -     438148.97   283991.19       56337              0.18      6966
 INFO: cellmap features:  adv-rules=(N), pdc=(N), clock-rules=(Y)
 
-compile optimization Phase 0 Iter  1        893.33      893.33         -         -     438016.34   283885.34       56337              0.18      6993
+compile optimization Phase 0 Iter  1        893.33      893.33         -         -     438016.34   283885.34       56337              0.18      6966
 INFO: New Levelizer turned on
-compile optimization Phase 0 Iter  2        892.52      892.52         -         -     436468.59   282682.12       56337              0.18      6993
+compile optimization Phase 0 Iter  2        892.52      892.52         -         -     436468.59   282682.12       56337              0.18      6966
 INFO: New Levelizer turned on
 Information: Starting rtl_opt / estimation / Timing and Congestion Driven Placement (FLW-8000)
-Information: Time: 2025-12-07 00:23:24 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:27 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:56 / Session:  00:10:44 / Command:  00:10:25 / CPU:  00:39:19 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Timing and Congestion Driven Placement (FLW-8001)
-Information: Time: 2025-12-07 00:23:24 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:27 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:56 / Session:  00:10:44 / Command:  00:10:25 / CPU:  00:39:19 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / Optimization (2) (FLW-8000)
-Information: Time: 2025-12-07 00:23:24 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:27 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:56 / Session:  00:10:44 / Command:  00:10:25 / CPU:  00:39:19 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Optimization (2) (FLW-8001)
-Information: Time: 2025-12-07 00:23:24 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:27 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:56 / Session:  00:10:44 / Command:  00:10:25 / CPU:  00:39:19 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / Scan Synthesis (FLW-8000)
-Information: Time: 2025-12-07 00:23:24 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:27 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:56 / Session:  00:10:44 / Command:  00:10:25 / CPU:  00:39:19 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Scan Synthesis (FLW-8001)
-Information: Time: 2025-12-07 00:23:24 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:27 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:56 / Session:  00:10:44 / Command:  00:10:25 / CPU:  00:39:19 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / Incremental High Fanout Synthesis (FLW-8000)
-Information: Time: 2025-12-07 00:23:24 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:27 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:56 / Session:  00:10:44 / Command:  00:10:25 / CPU:  00:39:19 / Memory: 6967 MB (FLW-8100)
 Isolated 0 ports, skipped 0 ports
 Already Isolated 0 ports, Deleted 0 existing Isolation cells 
 INFO: total number of constant pins: 7781
 INFO: constant pins which are scan-pins: 5418
 INFO: constant pins that are not scan-pins: 2363
 Information: Ending   rtl_opt / estimation / Incremental High Fanout Synthesis (FLW-8001)
-Information: Time: 2025-12-07 00:23:25 / Session:  00:10:46 / Command:  00:10:26 / CPU:  00:39:28 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:57 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:20 / Memory: 6967 MB (FLW-8100)
 Information: Starting rtl_opt / estimation / Timing Optimization (FLW-8000)
-Information: Time: 2025-12-07 00:23:25 / Session:  00:10:46 / Command:  00:10:26 / CPU:  00:39:28 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:57 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:20 / Memory: 6967 MB (FLW-8100)
 Information: Ending   rtl_opt / estimation / Timing Optimization (FLW-8001)
-Information: Time: 2025-12-07 00:23:25 / Session:  00:10:46 / Command:  00:10:26 / CPU:  00:39:28 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:38:57 / Session:  00:10:45 / Command:  00:10:26 / CPU:  00:39:20 / Memory: 6967 MB (FLW-8100)
 Information: Summary of UPF Cells (UPF-532)
 *******************************************************************************
                             Summary of UPF Cells                               
@@ -2819,37 +2860,36 @@ Summary of messages during CTS:
 INFO: Skipping FTB cleanup in end of npo flow.
 Enable dominated scenarios
 Co-efficient Ratio Summary:
-compile command statistics  CPU=789 sec (0.22 hr) ELAPSED=137 sec (0.04 hr) MEM-PEAK=6.829 GB
+compile command statistics  CPU=791 sec (0.22 hr) ELAPSED=138 sec (0.04 hr) MEM-PEAK=6.803 GB
 Information: Ending   rtl_opt / estimation (FLW-8001)
-Information: Time: 2025-12-07 00:23:30 / Session:  00:10:51 / Command:  00:10:32 / CPU:  00:39:44 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:39:03 / Session:  00:10:51 / Command:  00:10:32 / CPU:  00:39:37 / Memory: 6967 MB (FLW-8100)
 Information: The net parasitics of block cpu are cleared. (TIM-123)
 INFO: End environment monitoring: recipes
 INFO: Restored 0 timer status, 7 app options, 0 tcl gvars, 0 env vars
-Information: >>>>>>> 18 unique error and warning message tags while observing fast: (MSG-3100)
+Information: >>>>>>> 17 unique error and warning message tags while observing fast: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
 Information:     1     1  1 SQM-1040  WARNING   No cell bus will be mapped to multibit because there is no m... (MSG-3032)
 Information:     1     1  0 DFT-2193  WARNING   Warning: DFT IP not instantiated successfully (DFT-2193)        (MSG-3032)
 Information:     1     1  0 DFT-1107  WARNING   Warning: Skipping scan synthesis: no DFT setup has been dete... (MSG-3032)
 Information:     7     7  0 FLW-2892  WARNING   Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit... (MSG-3032)
 Information:     4     4  0 ZRT-026   WARNING   Warning: Layer met4 default pitch 0.920 may be too small to ... (MSG-3032)
-Information:   596   158  0 VW-007    WARNING   Warning: Net name 'N_581' is omitted from the output file, b... (MSG-3032)
 Information:     1     1  0 PLACE-029 WARNING   Warning: There is insufficient area available to achieve the... (MSG-3032)
 Information:     6     6  0 DMM-115   WARNING   Warning: Auto deriving 'vertical' routing direction for laye... (MSG-3032)
 Information:    31   195 10 POW-116   WARNING   Warning: Net 'EX_FPU/div_97/ctmn_465431' is already connecte... (MSG-3032)
 Information:     6     1  0 PVT-030   WARNING   Warning: Corner nominal:  0 process number, 1 process label,... (MSG-3032)
 Information:    10    10  0 ZRT-720   WARNING   Warning: Port  VGND at {{610.880,747.760} {622.380,748.240}}... (MSG-3032)
-Information:     6     1  0 PVT-031   WARNING   Warning: 51633 cells affected for early, 51633 for late. (PV... (MSG-3032)
+Information:     6     1  0 PVT-031   WARNING   Warning: 56529 cells affected for early, 56529 for late. (PV... (MSG-3032)
 Information:    86    86  0 ZRT-763   WARNING   Warning: Cell ID_REG_FILE/REGISTERS_reg[30][27] is placed ov... (MSG-3032)
 Information:     1     1  0 CTS-038   WARNING   Warning: No clock routing rule is specified. (CTS-038)          (MSG-3032)
 Information:     5     5  0 OPT-070   WARNING   Warning: Cannot find any default max transition constraint o... (MSG-3032)
 Information:     5     5  5 LGL-050   WARNING   Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro... (MSG-3032)
 Information:    12    12  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
 Information:     6     1  0 PVT-034   WARNING   Warning: 67 port driving_cells affected for early, 67 for la... (MSG-3032)
-Information:   785   496  3       18  <------   Total sum of messages (MSG-3038)
-Information: >>>>>>> Summary: 496 error&warning MSGs observed during fast (MSG-3103)
+Information:   189   338  3       17  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 338 error&warning MSGs observed during fast (MSG-3103)
 Info: FAST compile completed.
 Information: Ending   'rtl_opt' (FLW-8001)
-Information: Time: 2025-12-07 00:23:31 / Session:  00:10:52 / Command:  00:10:33 / CPU:  00:39:45 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:39:03 / Session:  00:10:51 / Command:  00:10:32 / CPU:  00:39:37 / Memory: 6967 MB (FLW-8100)
 1
 puts "RTL optimization completed"
 RTL optimization completed
@@ -2902,7 +2942,7 @@ set_rtl_power_analysis_options \
 export_power_data
 Information: exporting data
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-12-07 00:23:32 / Session:  00:10:53 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:39:05 / Session:  00:10:53 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6967 MB (FLW-8100)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:cpu.design'. (TIM-125)
 Information: Design Average RC for design cpu  (NEX-011)
 Information: r = 1.327811 ohm/um, via_r = 4.133638 ohm/cut, c = 0.139438 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
@@ -2911,7 +2951,7 @@ Information: The RC mode used is VR for design 'cpu'. (NEX-022)
 Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
 Information: Net estimation statistics: timing graph nets = 57768, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 93, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
 Information: Ending   'update_timing' (FLW-8001)
-Information: Time: 2025-12-07 00:23:35 / Session:  00:10:56 / Command:  00:00:02 / CPU:  00:00:13 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:39:07 / Session:  00:10:55 / Command:  00:00:02 / CPU:  00:00:13 / Memory: 6967 MB (FLW-8100)
 Information: save current design
 Information: Saving block 'cpu_LIB:cpu.design'
 Information: Exporting essential name map file
@@ -2941,9 +2981,9 @@ puts "========== Characterizing Maximum Operating Frequency =========="
 # Update timing for accurate analysis
 update_timing
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-12-07 00:23:50 / Session:  00:11:11 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:39:23 / Session:  00:11:10 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6967 MB (FLW-8100)
 Information: Ending   'update_timing' (FLW-8001)
-Information: Time: 2025-12-07 00:23:50 / Session:  00:11:11 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6993 MB (FLW-8100)
+Information: Time: 2025-12-07 00:39:23 / Session:  00:11:10 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6967 MB (FLW-8100)
 1
 # Find all clocks in the design
 set all_clocks [get_clocks *]
@@ -3148,7 +3188,7 @@ puts $csv_file "Current_Period,$current_period,ns"
 # puts $csv_file "Total_Area,$total_area,um2"
 close $csv_file
 puts "All reports generated in $TEMP_RESULTS_DIR/ directory"
-All reports generated in temp_results_20251207_001229/ directory
+All reports generated in temp_results_20251207_002802/ directory
 puts ""
 
 puts "KEY RESULT: Maximum Operating Frequency = $Fmax_formatted MHz"
@@ -3160,7 +3200,7 @@ puts ""
 puts "========== RTL Analysis and Synthesis Complete =========="
 ========== RTL Analysis and Synthesis Complete ==========
 exit
-Maximum memory usage for this session: 6993.36 MB
-CPU usage for this session:   2445 seconds (  0.68 hours)
+Maximum memory usage for this session: 6966.57 MB
+CPU usage for this session:   2437 seconds (  0.68 hours)
 Elapsed time for this session:    672 seconds (  0.19 hours)
 Thank you for using RTL Architect.

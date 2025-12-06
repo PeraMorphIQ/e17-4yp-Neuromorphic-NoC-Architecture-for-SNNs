@@ -1,0 +1,42 @@
+****************************************
+Report : report_rtl_metrics
+      -view hier
+Design : cpu
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 00:39:46 2025
+****************************************
+
+
+gated_registers   icg_cells   latch_cells   reg_cells   sequential_cells   combinational_cells   total_power   cell_name
+---------------   ---------   -----------   ---------   ----------------   -------------------   -----------   -----------------------------------
+  2112               132           1          2709        2842              53572                1.82e-02      cpu
+     0                 0           0             0           0              36935                1.37e-02      cpu/EX_ALU
+     0                 0           0           275         275                286                1.03e-03      cpu/PIPE_REG_ID_EX
+     0                 0           0           184         184                199                7.34e-04      cpu/PIPE_REG_EX_MEM
+   992                62           0           992        1054               1558                7.09e-04      cpu/ID_REG_FILE
+  1024                64           0          1024        1088               2381                5.33e-04      cpu/ID_FREG_FILE
+     0                 0           0           138         138                144                5.22e-04      cpu/PIPE_REG_MEM_WB
+    64                 4           0            64          68                 69                3.62e-04      cpu/PIPE_REG_IF_ID
+     0                 0           0             0           0              10166                1.33e-04      cpu/EX_FPU
+     0                 0           0             0           0                 66                6.05e-05      cpu/EX_OP1_SELECT_MUX
+     0                 0           0             0           0                 33                2.99e-05      cpu/MEM_WRITE_DATA_FWD_MUX
+     0                 0           0             0           0                 98                2.96e-05      cpu/EX_OP2_SELECT_MUX
+     0                 0           0             0           0                119                2.89e-05      cpu/EX_OP1_FWD_MUX
+     0                 0           0             0           0                141                2.68e-05      cpu/WB_WB_VALUE_SELECT_MUX
+     0                 0           0             0           0                133                1.85e-05      cpu/EX_BRANCH_CTRL_UNIT
+     0                 0           0             0           0                114                1.42e-05      cpu/EX_FOP1_FWD_MUX
+     0                 0           0             0           0                 61                1.40e-05      cpu/EX_FWD_UNIT
+     0                 0           0             0           0                 49                1.01e-05      cpu/ID_IMMEDIATE_GENERATION_UNIT
+     0                 0           0             0           0                 84                9.52e-06      cpu/BRANCH_SELECT_MUX
+     0                 0           0             0           0                101                8.08e-06      cpu/ID_CONTROL_UNIT
+     0                 0           0             0           0                 28                7.85e-06      cpu/ID_HAZ_DETECT_UNIT
+     0                 0           0             0           0                 33                6.36e-06      cpu/PC_SELECT_MUX
+     0                 0           0             0           0                182                5.60e-06      cpu/EX_OP2_FWD_MUX
+     0                 0           0             0           0                 30                5.05e-06      cpu/IF_PC_PLUS_4_ADDER
+     0                 0           0             0           0                 30                4.45e-06      cpu/MEM_PC_PLUS_4_ADDER
+     0                 0           1             0           1                 11                2.72e-06      cpu/MEM_FWD_UNIT
+     0                 0           0             0           0                 33                1.43e-06      cpu/MEM_WRITE_DATA_SEL_MUX
+     0                 0           0             0           0                149                1.02e-06      cpu/EX_FOP2_FWD_MUX
+     0                 0           0             0           0                 73                2.80e-07      cpu/EX_FOP3_FWD_MUX
+     0                 0           0             0           0                  3                9.28e-09      cpu/ID_PR_FLUSH_UNIT
+1

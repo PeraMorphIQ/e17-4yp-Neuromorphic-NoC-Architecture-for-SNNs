@@ -1,0 +1,27 @@
+****************************************
+Report : Averaged Power
+	-groups sequential
+Design : cpu
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 00:39:46 2025
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+sequential              3.552e-08    0.0000 1.259e-08 4.811e-08 (100.00%) 
+
+  Net Switching Power  =    0.0000   ( 0.00%)
+  Cell Internal Power  = 3.552e-08   (73.83%)
+  Cell Leakage Power   = 1.259e-08   (26.17%)
+                         ---------
+Total Power            = 4.811e-08  (100.00%)
+
+1

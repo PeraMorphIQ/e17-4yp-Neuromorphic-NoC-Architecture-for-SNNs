@@ -6,7 +6,7 @@ DESIGN INFORMATION:
   Design Name:           cpu
   Top Module:            cpu
   Technology:            SKY130 130nm
-  Analysis Date:         2025-12-07 00:23:51
+  Analysis Date:         2025-12-07 00:39:24
 
 TIMING ANALYSIS:
   Current Clock Period:  10.000000 ns
