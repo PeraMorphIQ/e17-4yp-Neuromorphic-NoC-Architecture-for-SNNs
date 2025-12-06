@@ -1,12 +1,28 @@
-w`include "neuron/neuron.v"
+`include "neuron/neuron.v"
 `timescale 1ns/100ps
 
 module neuron_tb;
     parameter CLOCK_PERIOD = 10;
 
+    // Convert floating point to Q16.16 fixed point
+    function [31:0] float_to_fixed;
+        input real f;
+        begin
+            float_to_fixed = $rtoi(f * 65536.0);  // Multiply by 2^16
+        end
+    endfunction
+
+    // Convert Q16.16 fixed point to floating point
+    function real fixed_to_float;
+        input [31:0] fixed;
+        begin
+            fixed_to_float = $itor($signed(fixed)) / 65536.0;
+        end
+    endfunction
+
     // Inputs
     reg CLK, RESET;
-    reg [31:0] I, a, b, c, d;
+    reg signed [31:0] I, a, b, c, d;
     
     // Outputs
     wire SPIKED;
@@ -37,18 +53,21 @@ module neuron_tb;
 
     // Test stimulus
     integer cycle;
+    real v_real, u_real;
+    
     initial begin
         $display("========================================");
         $display("   Izhikevich Neuron Model Testbench");
+        $display("   (Fixed-Point Q16.16 Implementation)");
         $display("========================================\n");
 
         // Initialize
         RESET = 1'b0;
-        I = 32'h00000000;  // 0.0
-        a = 32'h3d23d70a;  // 0.04
-        b = 32'h3e4ccccd;  // 0.2
-        c = 32'hc2480000;  // -50.0
-        d = 32'h40000000;  // 2.0
+        I = 32'd0;
+        a = 32'd0;
+        b = 32'd0;
+        c = 32'd0;
+        d = 32'd0;
         cycle = 0;
 
         // Wait for initial setup
@@ -59,12 +78,12 @@ module neuron_tb;
         $display("Input current: I=10");
         $display("----------------------------------------");
         
-        // Regular Spiking parameters
-        a = 32'h3ca3d70a;  // 0.02
-        b = 32'h3e4ccccd;  // 0.2
-        c = 32'hc2820000;  // -65.0
-        d = 32'h41000000;  // 8.0
-        I = 32'h41200000;  // 10.0
+        // Regular Spiking parameters (converted to Q16.16)
+        a = float_to_fixed(0.02);   // 0.02
+        b = float_to_fixed(0.2);    // 0.2
+        c = float_to_fixed(-65.0);  // -65.0
+        d = float_to_fixed(8.0);    // 8.0
+        I = float_to_fixed(10.0);   // 10.0
 
         // Reset neuron
         RESET = 1'b1;
@@ -74,8 +93,14 @@ module neuron_tb;
         // Simulate for 100 cycles
         for (cycle = 0; cycle < 100; cycle = cycle + 1) begin
             #CLOCK_PERIOD;
+            v_real = fixed_to_float(dut.V);
+            u_real = fixed_to_float(dut.U);
+            
             if (SPIKED) begin
-                $display("Cycle %3d: SPIKE! V=%h, U=%h", cycle, dut.V, dut.U);
+                $display("Cycle %3d: SPIKE! V=%f, U=%f", cycle, v_real, u_real);
+            end
+            else if (cycle % 10 == 0) begin
+                $display("Cycle %3d: V=%f, U=%f", cycle, v_real, u_real);
             end
         end
 
@@ -85,11 +110,11 @@ module neuron_tb;
         $display("----------------------------------------");
         
         // Fast Spiking parameters
-        a = 32'h3dcccccd;  // 0.1
-        b = 32'h3e4ccccd;  // 0.2
-        c = 32'hc2820000;  // -65.0
-        d = 32'h40000000;  // 2.0
-        I = 32'h41200000;  // 10.0
+        a = float_to_fixed(0.1);
+        b = float_to_fixed(0.2);
+        c = float_to_fixed(-65.0);
+        d = float_to_fixed(2.0);
+        I = float_to_fixed(10.0);
 
         // Reset neuron
         RESET = 1'b1;
@@ -99,8 +124,14 @@ module neuron_tb;
         // Simulate for 100 cycles
         for (cycle = 0; cycle < 100; cycle = cycle + 1) begin
             #CLOCK_PERIOD;
+            v_real = fixed_to_float(dut.V);
+            u_real = fixed_to_float(dut.U);
+            
             if (SPIKED) begin
-                $display("Cycle %3d: SPIKE! V=%h, U=%h", cycle, dut.V, dut.U);
+                $display("Cycle %3d: SPIKE! V=%f, U=%f", cycle, v_real, u_real);
+            end
+            else if (cycle % 10 == 0) begin
+                $display("Cycle %3d: V=%f, U=%f", cycle, v_real, u_real);
             end
         end
 
@@ -110,11 +141,11 @@ module neuron_tb;
         $display("----------------------------------------");
         
         // Chattering parameters
-        a = 32'h3ca3d70a;  // 0.02
-        b = 32'h3e4ccccd;  // 0.2
-        c = 32'hc2480000;  // -50.0
-        d = 32'h40000000;  // 2.0
-        I = 32'h41200000;  // 10.0
+        a = float_to_fixed(0.02);
+        b = float_to_fixed(0.2);
+        c = float_to_fixed(-50.0);
+        d = float_to_fixed(2.0);
+        I = float_to_fixed(10.0);
 
         // Reset neuron
         RESET = 1'b1;
@@ -124,8 +155,14 @@ module neuron_tb;
         // Simulate for 100 cycles
         for (cycle = 0; cycle < 100; cycle = cycle + 1) begin
             #CLOCK_PERIOD;
+            v_real = fixed_to_float(dut.V);
+            u_real = fixed_to_float(dut.U);
+            
             if (SPIKED) begin
-                $display("Cycle %3d: SPIKE! V=%h, U=%h", cycle, dut.V, dut.U);
+                $display("Cycle %3d: SPIKE! V=%f, U=%f", cycle, v_real, u_real);
+            end
+            else if (cycle % 10 == 0) begin
+                $display("Cycle %3d: V=%f, U=%f", cycle, v_real, u_real);
             end
         end
 
@@ -135,11 +172,11 @@ module neuron_tb;
         $display("----------------------------------------");
         
         // LTS parameters
-        a = 32'h3ca3d70a;  // 0.02
-        b = 32'h3e800000;  // 0.25
-        c = 32'hc2820000;  // -65.0
-        d = 32'h40000000;  // 2.0
-        I = 32'h40a00000;  // 5.0
+        a = float_to_fixed(0.02);
+        b = float_to_fixed(0.25);
+        c = float_to_fixed(-65.0);
+        d = float_to_fixed(2.0);
+        I = float_to_fixed(5.0);
 
         // Reset neuron
         RESET = 1'b1;
@@ -149,8 +186,14 @@ module neuron_tb;
         // Simulate for 100 cycles
         for (cycle = 0; cycle < 100; cycle = cycle + 1) begin
             #CLOCK_PERIOD;
+            v_real = fixed_to_float(dut.V);
+            u_real = fixed_to_float(dut.U);
+            
             if (SPIKED) begin
-                $display("Cycle %3d: SPIKE! V=%h, U=%h", cycle, dut.V, dut.U);
+                $display("Cycle %3d: SPIKE! V=%f, U=%f", cycle, v_real, u_real);
+            end
+            else if (cycle % 10 == 0) begin
+                $display("Cycle %3d: V=%f, U=%f", cycle, v_real, u_real);
             end
         end
 
@@ -160,10 +203,11 @@ module neuron_tb;
         $display("----------------------------------------");
         
         // Regular Spiking parameters
-        a = 32'h3ca3d70a;  // 0.02
-        b = 32'h3e4ccccd;  // 0.2
-        c = 32'hc2820000;  // -65.0
-        d = 32'h41000000;  // 8.0
+        a = float_to_fixed(0.02);
+        b = float_to_fixed(0.2);
+        c = float_to_fixed(-65.0);
+        d = float_to_fixed(8.0);
+        I = float_to_fixed(0.0);
 
         // Reset neuron
         RESET = 1'b1;
@@ -174,12 +218,15 @@ module neuron_tb;
         for (cycle = 0; cycle < 150; cycle = cycle + 1) begin
             // Linearly increase input current every 10 cycles
             if (cycle % 10 == 0) begin
-                I = I + 32'h3f800000;  // Add 1.0
-                $display("Cycle %3d: I increased to ~%0d", cycle, (cycle/10));
+                I = I + float_to_fixed(1.0);
+                $display("Cycle %3d: I increased to %f", cycle, fixed_to_float(I));
             end
             #CLOCK_PERIOD;
+            v_real = fixed_to_float(dut.V);
+            u_real = fixed_to_float(dut.U);
+            
             if (SPIKED) begin
-                $display("Cycle %3d: SPIKE! V=%h, U=%h", cycle, dut.V, dut.U);
+                $display("Cycle %3d: SPIKE! V=%f, U=%f, I=%f", cycle, v_real, u_real, fixed_to_float(I));
             end
         end
 
