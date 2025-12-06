@@ -129,19 +129,19 @@ fi
 # Step 1: VCS Compile (for cpu design)
 echo "========== STEP 1: VCS Compile (CPU) =========="
 if [ -d "$RTL_CPU_PATH" ]; then
-    pushd "$RTL_CPU_PATH/cpu" > /dev/null
-    vcs -sverilog -full64 -kdb -debug_access+all +lint=TFIPC-L -timescale=1ns/1ps cpu_tb.v +vcs+fsdbon +vcs+fsdb+delta=on +define+FSDB -o simv | tee "../../power/cpu/$TEMP_RESULTS_DIR/vcs_compile.log"
+    pushd "$RTL_CPU_PATH" > /dev/null
+    vcs -sverilog -full64 -kdb -debug_access+all +lint=TFIPC-L -timescale=1ns/1ps -f ../power/cpu/src_detailed.f +vcs+fsdbon +define+FSDB -o simv | tee "../power/cpu/$TEMP_RESULTS_DIR/vcs_compile.log"
     echo "VCS compilation completed successfully"
     
     # Step 2: Run Simulation
     echo "========== STEP 2: Run Simulation =========="
-    ./simv +fsdbfile+cpu_tb.fsdb | tee "../../power/cpu/$TEMP_RESULTS_DIR/simulation.log"
+    ./simv +fsdbfile+cpu_tb.fsdb | tee "../power/cpu/$TEMP_RESULTS_DIR/simulation.log"
     echo "Simulation completed successfully"
     
     # Check if FSDB file was generated
-    if [ -f "cpu_tb.fsdb" ]; then
-        echo "FSDB file generated successfully: cpu_tb.fsdb"
-        ls -lh cpu_tb.fsdb
+    if [ -f "cpu/cpu_tb.fsdb" ]; then
+        echo "FSDB file generated successfully: cpu/cpu_tb.fsdb"
+        ls -lh cpu/cpu_tb.fsdb
     else
         echo "WARNING: FSDB file not found after simulation"
     fi

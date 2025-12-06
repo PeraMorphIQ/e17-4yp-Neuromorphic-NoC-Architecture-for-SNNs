@@ -1,4 +1,3 @@
-`include "cpu/cpu.v"
 `timescale 1ns/100ps
 
 module cpu_tb;
