@@ -1,6 +1,6 @@
 `timescale 1ns/100ps
 
-module fpu (DATA1, DATA2, DATA3, RESULT, SELECT);
+module fpu_simple (DATA1, DATA2, DATA3, RESULT, SELECT);
     // Simplified FPU using basic IEEE-754 operations
     // Self-contained implementation without external module dependencies
 
