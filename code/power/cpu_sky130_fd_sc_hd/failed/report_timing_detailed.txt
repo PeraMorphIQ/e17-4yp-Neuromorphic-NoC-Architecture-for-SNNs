@@ -1,0 +1,1908 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+        -input_pins
+        -nets
+        -transition_time
+        -capacitance
+Design : cpu
+Version: V-2023.12-SP5-3
+Date   : Sat Dec  6 23:24:58 2025
+****************************************
+Information: Timer using 'Estimated Delay Calculation'. (TIM-050)
+
+  Startpoint: PIPE_REG_ID_EX/EX_REG_READ_ADDR3_reg[4] (rising edge-triggered flip-flop clocked by CLK)
+  Endpoint: PIPE_REG_EX_MEM/MEM_FPU_OUT_reg[27] (rising edge-triggered flip-flop clocked by CLK)
+  Mode: func
+  Corner: nominal
+  Scenario: func@nominal
+  Path Group: CLK
+  Path Type: max
+
+  Point                                          Fanout     Cap        Trans        Incr        Path  
+  ------------------------------------------------------------------------------------------------------------
+  clock CLK (rise edge)                                                            0.0000      0.0000
+  clock network delay (ideal)                                                      0.0000      0.0000
+
+  PIPE_REG_ID_EX/EX_REG_READ_ADDR3_reg[4]/CLK (sky130_fd_sc_hd__sdfxtp_2)
+                                                                       0.2000      0.0000      0.0000 r
+  PIPE_REG_ID_EX/EX_REG_READ_ADDR3_reg[4]/Q (sky130_fd_sc_hd__sdfxtp_2)
+                                                                       0.0613      0.3131      0.3131 r
+  PIPE_REG_ID_EX/EX_REG_READ_ADDR3[4] (net)         3      0.0139
+  EX_FWD_UNIT/ctmTdsLR_1_263758/A (sky130_fd_sc_hd__inv_2)             0.0613      0.0000      0.3131 r
+  EX_FWD_UNIT/ctmTdsLR_1_263758/Y (sky130_fd_sc_hd__inv_2)             0.0613      0.0382      0.3513 f
+  EX_FWD_UNIT/tmp_net521815 (net)                   1      0.0047
+  EX_FWD_UNIT/ctmTdsLR_3_261817/A1 (sky130_fd_sc_hd__a22oi_2)          0.0613      0.0000      0.3513 f
+  EX_FWD_UNIT/ctmTdsLR_3_261817/Y (sky130_fd_sc_hd__a22oi_2)           0.0613      0.1086      0.4599 r
+  EX_FWD_UNIT/tmp_net520494 (net)                   1      0.0051
+  EX_FWD_UNIT/ctmTdsLR_4_261818/C1 (sky130_fd_sc_hd__o221ai_2)         0.0613      0.0000      0.4599 r
+  EX_FWD_UNIT/ctmTdsLR_4_261818/Y (sky130_fd_sc_hd__o221ai_2)          0.0613      0.0596      0.5195 f
+  EX_FWD_UNIT/tmp_net519432 (net)                   2      0.0076
+  EX_FWD_UNIT/ctmTdsLR_2_258597/B (sky130_fd_sc_hd__nor2_1)            0.0613      0.0000      0.5195 f
+  EX_FWD_UNIT/ctmTdsLR_2_258597/Y (sky130_fd_sc_hd__nor2_1)            0.0613      0.0819      0.6014 r
+  EX_FWD_UNIT/N515091 (net)                         1      0.0038
+  EX_FWD_UNIT/ctmTdsLR_3_258581/B (sky130_fd_sc_hd__nand2_1)           0.0613      0.0000      0.6014 r
+  EX_FWD_UNIT/ctmTdsLR_3_258581/Y (sky130_fd_sc_hd__nand2_1)           0.0613      0.0443      0.6457 f
+  EX_FWD_UNIT/tmp_net518272 (net)                   1      0.0093
+  EX_FWD_UNIT/ctmTdsLR_5_258583/B (sky130_fd_sc_hd__nand2_4)           0.0613      0.0000      0.6457 f
+  EX_FWD_UNIT/ctmTdsLR_5_258583/Y (sky130_fd_sc_hd__nand2_4)           0.0613      0.0566      0.7022 r
+  EX_FWD_UNIT/tmp_net518274 (net)                   1      0.0275
+  EX_FWD_UNIT/ctmTdsLR_6_258584/A (sky130_fd_sc_hd__inv_12)            0.0613      0.0000      0.7022 r
+  EX_FWD_UNIT/ctmTdsLR_6_258584/Y (sky130_fd_sc_hd__inv_12)            0.0613      0.1266      0.8288 f
+  EX_FWD_UNIT/OP2_FWD_SEL[1] (net)                 23      0.1308
+  EX_FOP2_FWD_MUX/ctmTdsLR_1_266254/A (sky130_fd_sc_hd__inv_2)         0.0613      0.0000      0.8288 f
+  EX_FOP2_FWD_MUX/ctmTdsLR_1_266254/Y (sky130_fd_sc_hd__inv_2)         0.0613      0.0520      0.8809 r
+  EX_FOP2_FWD_MUX/tmp_net523504 (net)               1      0.0093
+  EX_FOP2_FWD_MUX/ctmTdsLR_1_264879/A (sky130_fd_sc_hd__nand2_4)       0.0613      0.0000      0.8809 r
+  EX_FOP2_FWD_MUX/ctmTdsLR_1_264879/Y (sky130_fd_sc_hd__nand2_4)       0.0613      0.0442      0.9251 f
+  EX_FOP2_FWD_MUX/tmp_net522567 (net)               1      0.0184
+  EX_FOP2_FWD_MUX/A255970/A (sky130_fd_sc_hd__inv_8)                   0.0613      0.0000      0.9251 f
+  EX_FOP2_FWD_MUX/A255970/Y (sky130_fd_sc_hd__inv_8)                   0.0613      0.1506      1.0757 r
+  EX_FOP2_FWD_MUX/N490123 (net)                    21      0.0840
+  EX_FOP2_FWD_MUX/ctmi_186646/B1 (sky130_fd_sc_hd__a22oi_1)            0.0613      0.0000      1.0757 r
+  EX_FOP2_FWD_MUX/ctmi_186646/Y (sky130_fd_sc_hd__a22oi_1)             0.0613      0.0485      1.1242 f
+  EX_FOP2_FWD_MUX/ctmn_482211 (net)                 1      0.0173
+  EX_FOP2_FWD_MUX/ctmTdsLR_3_263751/B (sky130_fd_sc_hd__nand2_8)       0.0613      0.0000      1.1242 f
+  EX_FOP2_FWD_MUX/ctmTdsLR_3_263751/Y (sky130_fd_sc_hd__nand2_8)       0.0613      0.0983      1.2225 r
+  EX_FOP2_FWD_MUX/RESULT[0] (net)                   6      0.0801
+  EX_FPU/DuI/HFSBUF_1724_257127/A (sky130_fd_sc_hd__buf_12)            0.0613      0.0000      1.2225 r
+  EX_FPU/DuI/HFSBUF_1724_257127/X (sky130_fd_sc_hd__buf_12)            0.0613      0.2215      1.4440 r
+  EX_FPU/DuI/HFSNET_43 (net)                       37      0.1604
+  EX_FPU/DuI/x0/mult_36/ctmi_159961/A (sky130_fd_sc_hd__nand2_2)       0.0613      0.0000      1.4440 r
+  EX_FPU/DuI/x0/mult_36/ctmi_159961/Y (sky130_fd_sc_hd__nand2_2)       0.0613      0.0560      1.5000 f
+  EX_FPU/DuI/x0/mult_36/ctmn_459409 (net)           2      0.0085
+  EX_FPU/DuI/x0/mult_36/ctmi_159982/A (sky130_fd_sc_hd__inv_2)         0.0613      0.0000      1.5000 f
+  EX_FPU/DuI/x0/mult_36/ctmi_159982/Y (sky130_fd_sc_hd__inv_2)         0.0613      0.0481      1.5481 r
+  EX_FPU/DuI/x0/mult_36/tmp_net229813 (net)         1      0.0074
+  EX_FPU/DuI/x0/mult_36/U_842/B (sky130_fd_sc_hd__fah_1)               0.0613      0.0000      1.5481 r
+  EX_FPU/DuI/x0/mult_36/U_842/SUM (sky130_fd_sc_hd__fah_1)             0.0613      0.2158      1.7639 f
+  EX_FPU/DuI/x0/mult_36/tmp_net230079 (net)         1      0.0032
+  EX_FPU/DuI/x0/mult_36/U_846/CI (sky130_fd_sc_hd__fah_1)              0.0613      0.0000      1.7639 f
+  EX_FPU/DuI/x0/mult_36/U_846/SUM (sky130_fd_sc_hd__fah_1)             0.0613      0.2428      2.0068 f
+  EX_FPU/DuI/x0/mult_36/tmp_net230087 (net)         3      0.0109
+  EX_FPU/DuI/x0/mult_36/A248299/S (sky130_fd_sc_hd__mux2i_1)           0.0613      0.0000      2.0068 f
+  EX_FPU/DuI/x0/mult_36/A248299/Y (sky130_fd_sc_hd__mux2i_1)           0.0613      0.1678      2.1746 r
+  EX_FPU/DuI/x0/mult_36/N513220 (net)               1      0.0053
+  EX_FPU/DuI/x0/mult_36/A248300/B (sky130_fd_sc_hd__xnor2_1)           0.0613      0.0000      2.1746 r
+  EX_FPU/DuI/x0/mult_36/A248300/Y (sky130_fd_sc_hd__xnor2_1)           0.0613      0.1176      2.2922 f
+  EX_FPU/DuI/x0/mult_36/N495267 (net)               2      0.0096
+  EX_FPU/DuI/x0/mult_36/A255702/A (sky130_fd_sc_hd__nor2_2)            0.0613      0.0000      2.2922 f
+  EX_FPU/DuI/x0/mult_36/A255702/Y (sky130_fd_sc_hd__nor2_2)            0.0613      0.1403      2.4325 r
+  EX_FPU/DuI/x0/mult_36/N517365 (net)               4      0.0136
+  EX_FPU/DuI/x0/mult_36/A251383/A (sky130_fd_sc_hd__inv_2)             0.0613      0.0000      2.4325 r
+  EX_FPU/DuI/x0/mult_36/A251383/Y (sky130_fd_sc_hd__inv_2)             0.0613      0.0478      2.4803 f
+  EX_FPU/DuI/x0/mult_36/N513387 (net)               2      0.0080
+  EX_FPU/DuI/x0/mult_36/A238688/A1 (sky130_fd_sc_hd__a21oi_2)          0.0613      0.0000      2.4803 f
+  EX_FPU/DuI/x0/mult_36/A238688/Y (sky130_fd_sc_hd__a21oi_2)           0.0613      0.1378      2.6181 r
+  EX_FPU/DuI/x0/mult_36/N508012 (net)               2      0.0074
+  EX_FPU/DuI/x0/mult_36/A255699/A (sky130_fd_sc_hd__inv_2)             0.0613      0.0000      2.6181 r
+  EX_FPU/DuI/x0/mult_36/A255699/Y (sky130_fd_sc_hd__inv_2)             0.0613      0.0381      2.6561 f
+  EX_FPU/DuI/x0/mult_36/N517370 (net)               1      0.0049
+  EX_FPU/DuI/x0/mult_36/A250312/A1 (sky130_fd_sc_hd__a21oi_2)          0.0613      0.0000      2.6561 f
+  EX_FPU/DuI/x0/mult_36/A250312/Y (sky130_fd_sc_hd__a21oi_2)           0.0613      0.1378      2.7939 r
+  EX_FPU/DuI/x0/mult_36/N514356 (net)               2      0.0082
+  EX_FPU/DuI/x0/mult_36/A255698/A (sky130_fd_sc_hd__inv_2)             0.0613      0.0000      2.7939 r
+  EX_FPU/DuI/x0/mult_36/A255698/Y (sky130_fd_sc_hd__inv_2)             0.0613      0.0477      2.8416 f
+  EX_FPU/DuI/x0/mult_36/N517372 (net)               2      0.0056
+  EX_FPU/DuI/x0/mult_36/A255703/B (sky130_fd_sc_hd__nand2_1)           0.0613      0.0000      2.8416 f
+  EX_FPU/DuI/x0/mult_36/A255703/Y (sky130_fd_sc_hd__nand2_1)           0.0613      0.0684      2.9101 r
+  EX_FPU/DuI/x0/mult_36/N517367 (net)               2      0.0084
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_259577/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000      2.9101 r
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_259577/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0443      2.9543 f
+  EX_FPU/DuI/x0/mult_36/tmp_net518959 (net)         1      0.0047
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_5_259580/A (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0000      2.9543 f
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_5_259580/Y (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0832      3.0376 r
+  EX_FPU/DuI/x0/mult_36/N515144 (net)               3      0.0159
+  EX_FPU/DuI/x0/mult_36/A250205/B (sky130_fd_sc_hd__nand2_1)           0.0613      0.0000      3.0376 r
+  EX_FPU/DuI/x0/mult_36/A250205/Y (sky130_fd_sc_hd__nand2_1)           0.0613      0.0547      3.0923 f
+  EX_FPU/DuI/x0/mult_36/N514280 (net)               2      0.0075
+  EX_FPU/DuI/x0/mult_36/A247548/B (sky130_fd_sc_hd__nor2_1)            0.0613      0.0000      3.0923 f
+  EX_FPU/DuI/x0/mult_36/A247548/Y (sky130_fd_sc_hd__nor2_1)            0.0613      0.0818      3.1741 r
+  EX_FPU/DuI/x0/mult_36/ctmn_459007 (net)           1      0.0051
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_259121/B (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000      3.1741 r
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_259121/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0442      3.2183 f
+  EX_FPU/DuI/x0/mult_36/tmp_net518657 (net)         1      0.0173
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_3_259123/A (sky130_fd_sc_hd__nand2_8)
+                                                                       0.0613      0.0000      3.2183 f
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_3_259123/Y (sky130_fd_sc_hd__nand2_8)
+                                                                       0.0613      0.1355      3.3538 r
+  EX_FPU/DuI/x0/mult_36/N512610 (net)              14      0.0757
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_260872/A (sky130_fd_sc_hd__nand3_1)
+                                                                       0.0613      0.0000      3.3538 r
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_260872/Y (sky130_fd_sc_hd__nand3_1)
+                                                                       0.0613      0.0620      3.4159 f
+  EX_FPU/DuI/x0/mult_36/N509093 (net)               1      0.0048
+  EX_FPU/DuI/x0/mult_36/A240739/A (sky130_fd_sc_hd__nand3_2)           0.0613      0.0000      3.4159 f
+  EX_FPU/DuI/x0/mult_36/A240739/Y (sky130_fd_sc_hd__nand3_2)           0.0613      0.0627      3.4785 r
+  EX_FPU/DuI/x0/mult_36/N509095 (net)               1      0.0068
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_261778/A (sky130_fd_sc_hd__inv_2)   0.0613      0.0000      3.4785 r
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_261778/Y (sky130_fd_sc_hd__inv_2)   0.0613      0.0383      3.5168 f
+  EX_FPU/DuI/x0/mult_36/tmp_net520468 (net)         1      0.0089
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_3_261780/A (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000      3.5168 f
+  EX_FPU/DuI/x0/mult_36/ctmTdsLR_3_261780/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0853      3.6021 r
+  EX_FPU/DuI/x0/mult_36/product[47] (net)           4      0.0347
+  EX_FPU/DuI/x0/HFSBUF_311_256428/A (sky130_fd_sc_hd__buf_12)          0.0613      0.0000      3.6021 r
+  EX_FPU/DuI/x0/HFSBUF_311_256428/X (sky130_fd_sc_hd__buf_12)          0.0613      0.2035      3.8056 r
+  EX_FPU/DuI/x0/HFSNET_2 (net)                     31      0.1117
+  EX_FPU/DuI/x0/A225193/B (sky130_fd_sc_hd__and2b_4)                   0.0613      0.0000      3.8056 r
+  EX_FPU/DuI/x0/A225193/X (sky130_fd_sc_hd__and2b_4)                   0.0613      0.1332      3.9388 r
+  EX_FPU/DuI/x0/N500424 (net)                       3      0.0119
+  EX_FPU/DuI/x0/ctmTdsLR_1_259112/A (sky130_fd_sc_hd__inv_1)           0.0613      0.0000      3.9388 r
+  EX_FPU/DuI/x0/ctmTdsLR_1_259112/Y (sky130_fd_sc_hd__inv_1)           0.0613      0.0381      3.9768 f
+  EX_FPU/DuI/x0/tmp_net518651 (net)                 1      0.0047
+  EX_FPU/DuI/x0/ctmTdsLR_2_264455/A (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      3.9768 f
+  EX_FPU/DuI/x0/ctmTdsLR_2_264455/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0565      4.0333 r
+  EX_FPU/DuI/x0/tmp_net518653 (net)                 1      0.0112
+  EX_FPU/DuI/x0/ctmTdsLR_4_259115/A (sky130_fd_sc_hd__clkinv_4)        0.0613      0.0000      4.0333 r
+  EX_FPU/DuI/x0/ctmTdsLR_4_259115/Y (sky130_fd_sc_hd__clkinv_4)        0.0613      0.0669      4.1002 f
+  EX_FPU/DuI/x0/ZBUF_88_3 (net)                     5      0.0178
+  EX_FPU/DuI/x0/ctmTdsLR_3_265024/A (sky130_fd_sc_hd__nand3_2)         0.0613      0.0000      4.1002 f
+  EX_FPU/DuI/x0/ctmTdsLR_3_265024/Y (sky130_fd_sc_hd__nand3_2)         0.0613      0.0907      4.1909 r
+  EX_FPU/DuI/x0/N497827 (net)                       4      0.0164
+  EX_FPU/DuI/x0/ctmTdsLR_1_264871/B (sky130_fd_sc_hd__xnor2_1)         0.0613      0.0000      4.1909 r
+  EX_FPU/DuI/x0/ctmTdsLR_1_264871/Y (sky130_fd_sc_hd__xnor2_1)         0.0613      0.1270      4.3179 r
+  EX_FPU/DuI/x0/tmp_net522561 (net)                 1      0.0030
+  EX_FPU/DuI/x0/ctmTdsLR_2_266246/A (sky130_fd_sc_hd__nand2_1)         0.0613      0.0000      4.3179 r
+  EX_FPU/DuI/x0/ctmTdsLR_2_266246/Y (sky130_fd_sc_hd__nand2_1)         0.0613      0.0442      4.3621 f
+  EX_FPU/DuI/x0/tmp_net523496 (net)                 1      0.0025
+  EX_FPU/DuI/x0/ctmTdsLR_3_266247/A (sky130_fd_sc_hd__inv_1)           0.0613      0.0000      4.3621 f
+  EX_FPU/DuI/x0/ctmTdsLR_3_266247/Y (sky130_fd_sc_hd__inv_1)           0.0613      0.0479      4.4101 r
+  EX_FPU/DuI/x0/tmp_net523497 (net)                 1      0.0034
+  EX_FPU/DuI/x0/ctmTdsLR_4_266248/A (sky130_fd_sc_hd__nand4_1)         0.0613      0.0000      4.4101 r
+  EX_FPU/DuI/x0/ctmTdsLR_4_266248/Y (sky130_fd_sc_hd__nand4_1)         0.0613      0.0614      4.4715 f
+  EX_FPU/DuI/x0/tmp_net523499 (net)                 1      0.0046
+  EX_FPU/DuI/x0/ctmTdsLR_5_258551/B (sky130_fd_sc_hd__nor2_2)          0.0613      0.0000      4.4715 f
+  EX_FPU/DuI/x0/ctmTdsLR_5_258551/Y (sky130_fd_sc_hd__nor2_2)          0.0613      0.1060      4.5775 r
+  EX_FPU/DuI/x0/N0 (net)                            2      0.0058
+  EX_FPU/DuI/x0/ctmi_171863/A_N (sky130_fd_sc_hd__nand2b_4)            0.0613      0.0000      4.5775 r
+  EX_FPU/DuI/x0/ctmi_171863/Y (sky130_fd_sc_hd__nand2b_4)              0.0613      0.0599      4.6374 r
+  EX_FPU/DuI/x0/ctmn_469364 (net)                   1      0.0102
+  EX_FPU/DuI/x0/ZBUF_1662_inst_257343/A (sky130_fd_sc_hd__buf_12)      0.0613      0.0000      4.6374 r
+  EX_FPU/DuI/x0/ZBUF_1662_inst_257343/X (sky130_fd_sc_hd__buf_12)      0.0613      0.1835      4.8209 r
+  EX_FPU/DuI/x0/ZBUF_1662_0 (net)                  24      0.1440
+  EX_FPU/DuI/x0/ctmi_171865/A (sky130_fd_sc_hd__inv_8)                 0.0613      0.0000      4.8209 r
+  EX_FPU/DuI/x0/ctmi_171865/Y (sky130_fd_sc_hd__inv_8)                 0.0613      0.0812      4.9021 f
+  EX_FPU/DuI/x0/ctmn_469365 (net)                   8      0.0449
+  EX_FPU/DuI/x0/ctmi_171880/A1 (sky130_fd_sc_hd__a21o_4)               0.0613      0.0000      4.9021 f
+  EX_FPU/DuI/x0/ctmi_171880/X (sky130_fd_sc_hd__a21o_4)                0.0613      0.1678      5.0699 f
+  EX_FPU/DuI/x0/result[30] (net)                    4      0.0201
+  EX_FPU/DuI/X0/ctmi_162339/B2 (sky130_fd_sc_hd__o22ai_4)              0.0613      0.0000      5.0699 f
+  EX_FPU/DuI/X0/ctmi_162339/Y (sky130_fd_sc_hd__o22ai_4)               0.0613      0.1176      5.1875 r
+  EX_FPU/DuI/X0/ctmn_461148 (net)                   2      0.0097
+  EX_FPU/DuI/X0/ctmi_162338/A (sky130_fd_sc_hd__nor2_2)                0.0613      0.0000      5.1875 r
+  EX_FPU/DuI/X0/ctmi_162338/Y (sky130_fd_sc_hd__nor2_2)                0.0613      0.0416      5.2291 f
+  EX_FPU/DuI/X0/ctmn_461149 (net)                   2      0.0147
+  EX_FPU/DuI/X0/ctmi_162337/B (sky130_fd_sc_hd__nand2_4)               0.0613      0.0000      5.2291 f
+  EX_FPU/DuI/X0/ctmi_162337/Y (sky130_fd_sc_hd__nand2_4)               0.0613      0.0777      5.3068 r
+  EX_FPU/DuI/X0/ctmn_461150 (net)                   3      0.0157
+  EX_FPU/DuI/X0/ctmTdsLR_1_264733/A (sky130_fd_sc_hd__inv_2)           0.0613      0.0000      5.3068 r
+  EX_FPU/DuI/X0/ctmTdsLR_1_264733/Y (sky130_fd_sc_hd__inv_2)           0.0613      0.0385      5.3452 f
+  EX_FPU/DuI/X0/tmp_net522472 (net)                 1      0.0025
+  EX_FPU/DuI/X0/ctmTdsLR_3_264735/A (sky130_fd_sc_hd__nand2_1)         0.0613      0.0000      5.3452 f
+  EX_FPU/DuI/X0/ctmTdsLR_3_264735/Y (sky130_fd_sc_hd__nand2_1)         0.0613      0.0565      5.4017 r
+  EX_FPU/DuI/X0/tmp_net522474 (net)                 1      0.0048
+  EX_FPU/DuI/X0/ctmTdsLR_4_264736/B (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      5.4017 r
+  EX_FPU/DuI/X0/ctmTdsLR_4_264736/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0546      5.4564 f
+  EX_FPU/DuI/X0/ctmn_461171 (net)                   2      0.0103
+  EX_FPU/DuI/X0/ctmTdsLR_2_259109/A (sky130_fd_sc_hd__clkinv_2)        0.0613      0.0000      5.4564 f
+  EX_FPU/DuI/X0/ctmTdsLR_2_259109/Y (sky130_fd_sc_hd__clkinv_2)        0.0613      0.0480      5.5043 r
+  EX_FPU/DuI/X0/tmp_net518649 (net)                 1      0.0181
+  EX_FPU/DuI/X0/ctmTdsLR_1_259108/A (sky130_fd_sc_hd__nand2_8)         0.0613      0.0000      5.5043 r
+  EX_FPU/DuI/X0/ctmTdsLR_1_259108/Y (sky130_fd_sc_hd__nand2_8)         0.0613      0.1572      5.6616 f
+  EX_FPU/DuI/X0/HFSNET_8 (net)                     30      0.1310
+  EX_FPU/DuI/X0/ctmi_198720/A1_N (sky130_fd_sc_hd__o2bb2ai_4)          0.0613      0.0000      5.6616 f
+  EX_FPU/DuI/X0/ctmi_198720/Y (sky130_fd_sc_hd__o2bb2ai_4)             0.0613      0.1499      5.8115 f
+  EX_FPU/DuI/X0/operand_a[23] (net)                13      0.0492
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_1_263745/A (sky130_fd_sc_hd__clkinv_2)
+                                                                       0.0613      0.0000      5.8115 f
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_1_263745/Y (sky130_fd_sc_hd__clkinv_2)
+                                                                       0.0613      0.0599      5.8714 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/tmp_net521807 (net)
+                                                    2      0.0052
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_1_266555/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000      5.8714 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_1_266555/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0442      5.9156 f
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/tmp_net523712 (net)
+                                                    1      0.0054
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_3_265192/A (sky130_fd_sc_hd__clkinv_2)
+                                                                       0.0613      0.0000      5.9156 f
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_3_265192/Y (sky130_fd_sc_hd__clkinv_2)
+                                                                       0.0613      0.0480      5.9635 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/tmp_net522784 (net)
+                                                    1      0.0050
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_2_265191/B1 (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0000      5.9635 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_2_265191/Y (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0471      6.0106 f
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/tmp_net522785 (net)
+                                                    2      0.0080
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_1_265190/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000      6.0106 f
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmTdsLR_1_265190/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0776      6.0883 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ZBUF_138_10 (net)
+                                                    3      0.0122
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/A209481/A (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0000      6.0883 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/A209481/Y (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0479      6.1362 f
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmn_488322 (net)
+                                                    2      0.0055
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmi_194061/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000      6.1362 f
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmi_194061/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0565      6.1927 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmn_488353 (net)
+                                                    1      0.0032
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmi_194059/B1 (sky130_fd_sc_hd__o21a_2)
+                                                                       0.0613      0.0000      6.1927 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ctmi_194059/X (sky130_fd_sc_hd__o21a_2)
+                                                                       0.0613      0.0786      6.2712 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/tmp_net233966 (net)
+                                                    1      0.0101
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ZBUF_1933_inst_257344/A (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.0000      6.2712 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/ZBUF_1933_inst_257344/X (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.2086      6.4799 r
+  EX_FPU/DuI/X0/DP_OP_42_61208_6679_J10/PO_0[2] (net)
+                                                   33      0.1317
+  EX_FPU/DuI/X0/HFSINV_2165_256371/A (sky130_fd_sc_hd__inv_8)          0.0613      0.0000      6.4799 r
+  EX_FPU/DuI/X0/HFSINV_2165_256371/Y (sky130_fd_sc_hd__inv_8)          0.0613      0.0961      6.5760 f
+  EX_FPU/DuI/X0/HFSNET_2 (net)                     12      0.0389
+  EX_FPU/DuI/X0/A212835/A (sky130_fd_sc_hd__nor2_1)                    0.0613      0.0000      6.5760 f
+  EX_FPU/DuI/X0/A212835/Y (sky130_fd_sc_hd__nor2_1)                    0.0613      0.1063      6.6823 r
+  EX_FPU/DuI/X0/N489957 (net)                       2      0.0062
+  EX_FPU/DuI/X0/ctmTdsLR_1_262719/A (sky130_fd_sc_hd__inv_1)           0.0613      0.0000      6.6823 r
+  EX_FPU/DuI/X0/ctmTdsLR_1_262719/Y (sky130_fd_sc_hd__inv_1)           0.0613      0.0381      6.7204 f
+  EX_FPU/DuI/X0/tmp_net521109 (net)                 1      0.0025
+  EX_FPU/DuI/X0/ctmTdsLR_2_262720/A (sky130_fd_sc_hd__nand3_1)         0.0613      0.0000      6.7204 f
+  EX_FPU/DuI/X0/ctmTdsLR_2_262720/Y (sky130_fd_sc_hd__nand3_1)         0.0613      0.0627      6.7831 r
+  EX_FPU/DuI/X0/tmp_net521110 (net)                 1      0.0027
+  EX_FPU/DuI/X0/ctmTdsLR_3_262721/C1 (sky130_fd_sc_hd__o211ai_1)       0.0613      0.0000      6.7831 r
+  EX_FPU/DuI/X0/ctmTdsLR_3_262721/Y (sky130_fd_sc_hd__o211ai_1)        0.0613      0.0523      6.8354 f
+  EX_FPU/DuI/X0/N512470 (net)                       1      0.0049
+  EX_FPU/DuI/X0/ctmTdsLR_1_261765/A (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      6.8354 f
+  EX_FPU/DuI/X0/ctmTdsLR_1_261765/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0565      6.8919 r
+  EX_FPU/DuI/X0/tmp_net520461 (net)                 1      0.0047
+  EX_FPU/DuI/X0/ctmTdsLR_3_261767/A (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      6.8919 r
+  EX_FPU/DuI/X0/ctmTdsLR_3_261767/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0442      6.9361 f
+  EX_FPU/DuI/X0/tmp_net520463 (net)                 1      0.0090
+  EX_FPU/DuI/X0/ctmTdsLR_4_261768/A (sky130_fd_sc_hd__inv_4)           0.0613      0.0000      6.9361 f
+  EX_FPU/DuI/X0/ctmTdsLR_4_261768/Y (sky130_fd_sc_hd__inv_4)           0.0613      0.1052      7.0413 r
+  EX_FPU/DuI/X0/ZBUF_345_3 (net)                    9      0.0384
+  EX_FPU/DuI/X0/ctmi_162775/A_N (sky130_fd_sc_hd__nand2b_1)            0.0613      0.0000      7.0413 r
+  EX_FPU/DuI/X0/ctmi_162775/Y (sky130_fd_sc_hd__nand2b_1)              0.0613      0.0607      7.1021 r
+  EX_FPU/DuI/X0/ctmn_461515 (net)                   1      0.0052
+  EX_FPU/DuI/X0/ctmi_162774/A1 (sky130_fd_sc_hd__a21oi_2)              0.0613      0.0000      7.1021 r
+  EX_FPU/DuI/X0/ctmi_162774/Y (sky130_fd_sc_hd__a21oi_2)               0.0613      0.0606      7.1627 f
+  EX_FPU/DuI/X0/ctmn_461517 (net)                   2      0.0084
+  EX_FPU/DuI/X0/A235496/B (sky130_fd_sc_hd__nor2_2)                    0.0613      0.0000      7.1627 f
+  EX_FPU/DuI/X0/A235496/Y (sky130_fd_sc_hd__nor2_2)                    0.0613      0.1247      7.2874 r
+  EX_FPU/DuI/X0/N506284 (net)                       3      0.0096
+  EX_FPU/DuI/X0/ctmTdsLR_1_260201/A2 (sky130_fd_sc_hd__o21ai_2)        0.0613      0.0000      7.2874 r
+  EX_FPU/DuI/X0/ctmTdsLR_1_260201/Y (sky130_fd_sc_hd__o21ai_2)         0.0613      0.0653      7.3527 f
+  EX_FPU/DuI/X0/tmp_net519394 (net)                 2      0.0063
+  EX_FPU/DuI/X0/ctmTdsLR_1_261288/A2 (sky130_fd_sc_hd__o21ai_1)        0.0613      0.0000      7.3527 f
+  EX_FPU/DuI/X0/ctmTdsLR_1_261288/Y (sky130_fd_sc_hd__o21ai_1)         0.0613      0.1324      7.4852 r
+  EX_FPU/DuI/X0/tmp_net520127 (net)                 2      0.0061
+  EX_FPU/DuI/X0/ctmTdsLR_1_266548/A (sky130_fd_sc_hd__nand2_1)         0.0613      0.0000      7.4852 r
+  EX_FPU/DuI/X0/ctmTdsLR_1_266548/Y (sky130_fd_sc_hd__nand2_1)         0.0613      0.0442      7.5294 f
+  EX_FPU/DuI/X0/tmp_net523707 (net)                 1      0.0032
+  EX_FPU/DuI/X0/ctmTdsLR_1_260850/A (sky130_fd_sc_hd__nand2_1)         0.0613      0.0000      7.5294 f
+  EX_FPU/DuI/X0/ctmTdsLR_1_260850/Y (sky130_fd_sc_hd__nand2_1)         0.0613      0.0566      7.5859 r
+  EX_FPU/DuI/X0/tmp_net519825 (net)                 1      0.0049
+  EX_FPU/DuI/X0/ctmTdsLR_2_262330/A (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      7.5859 r
+  EX_FPU/DuI/X0/ctmTdsLR_2_262330/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0547      7.6406 f
+  EX_FPU/DuI/X0/tmp_net518936 (net)                 2      0.0058
+  EX_FPU/DuI/X0/ctmTdsLR_3_264452/A (sky130_fd_sc_hd__nand2_1)         0.0613      0.0000      7.6406 f
+  EX_FPU/DuI/X0/ctmTdsLR_3_264452/Y (sky130_fd_sc_hd__nand2_1)         0.0613      0.0566      7.6972 r
+  EX_FPU/DuI/X0/tmp_net518937 (net)                 1      0.0055
+  EX_FPU/DuI/X0/ctmTdsLR_1_260200/A (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      7.6972 r
+  EX_FPU/DuI/X0/ctmTdsLR_1_260200/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0443      7.7414 f
+  EX_FPU/DuI/X0/tmp_net519393 (net)                 1      0.0117
+  EX_FPU/DuI/X0/A234082/A1 (sky130_fd_sc_hd__a21oi_4)                  0.0613      0.0000      7.7414 f
+  EX_FPU/DuI/X0/A234082/Y (sky130_fd_sc_hd__a21oi_4)                   0.0613      0.1901      7.9316 r
+  EX_FPU/DuI/X0/N509027 (net)                       5      0.0197
+  EX_FPU/DuI/X0/ctmTdsLR_1_262327/A2 (sky130_fd_sc_hd__o21ai_2)        0.0613      0.0000      7.9316 r
+  EX_FPU/DuI/X0/ctmTdsLR_1_262327/Y (sky130_fd_sc_hd__o21ai_2)         0.0613      0.0550      7.9866 f
+  EX_FPU/DuI/X0/tmp_net519822 (net)                 1      0.0082
+  EX_FPU/DuI/X0/ctmTdsLR_2_260847/A (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      7.9866 f
+  EX_FPU/DuI/X0/ctmTdsLR_2_260847/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0568      8.0434 r
+  EX_FPU/DuI/X0/tmp_net519823 (net)                 1      0.0095
+  EX_FPU/DuI/X0/ctmTdsLR_1_260846/A (sky130_fd_sc_hd__nand2_4)         0.0613      0.0000      8.0434 r
+  EX_FPU/DuI/X0/ctmTdsLR_1_260846/Y (sky130_fd_sc_hd__nand2_4)         0.0613      0.0947      8.1381 f
+  EX_FPU/DuI/X0/N503765 (net)                       9      0.0281
+  EX_FPU/DuI/X0/A255720/A (sky130_fd_sc_hd__inv_1)                     0.0613      0.0000      8.1381 f
+  EX_FPU/DuI/X0/A255720/Y (sky130_fd_sc_hd__inv_1)                     0.0613      0.0600      8.1981 r
+  EX_FPU/DuI/X0/N517389 (net)                       2      0.0064
+  EX_FPU/DuI/X0/A235487/A (sky130_fd_sc_hd__nand2_1)                   0.0613      0.0000      8.1981 r
+  EX_FPU/DuI/X0/A235487/Y (sky130_fd_sc_hd__nand2_1)                   0.0613      0.0443      8.2424 f
+  EX_FPU/DuI/X0/N506278 (net)                       1      0.0051
+  EX_FPU/DuI/X0/ctmTdsLR_1_261283/A (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      8.2424 f
+  EX_FPU/DuI/X0/ctmTdsLR_1_261283/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0566      8.2990 r
+  EX_FPU/DuI/X0/tmp_net520124 (net)                 1      0.0052
+  EX_FPU/DuI/X0/ctmTdsLR_4_264720/A (sky130_fd_sc_hd__nand2_2)         0.0613      0.0000      8.2990 r
+  EX_FPU/DuI/X0/ctmTdsLR_4_264720/Y (sky130_fd_sc_hd__nand2_2)         0.0613      0.0443      8.3432 f
+  EX_FPU/DuI/X0/tmp_net522464 (net)                 1      0.0130
+  EX_FPU/DuI/X0/ctmTdsLR_5_264721/A (sky130_fd_sc_hd__inv_6)           0.0613      0.0000      8.3432 f
+  EX_FPU/DuI/X0/ctmTdsLR_5_264721/Y (sky130_fd_sc_hd__inv_6)           0.0613      0.1052      8.4484 r
+  EX_FPU/DuI/X0/ZBUF_484_10 (net)                   9      0.0421
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_265828/A (sky130_fd_sc_hd__clkinv_2)     0.0613      0.0000      8.4484 r
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_265828/Y (sky130_fd_sc_hd__clkinv_2)     0.0613      0.0382      8.4867 f
+  EX_FPU/DuI/X0/pe/tmp_net523220 (net)              1      0.0045
+  EX_FPU/DuI/X0/pe/ctmTdsLR_1_266546/A (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000      8.4867 f
+  EX_FPU/DuI/X0/pe/ctmTdsLR_1_266546/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0627      8.5493 r
+  EX_FPU/DuI/X0/pe/tmp_net523706 (net)              1      0.0050
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_266547/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000      8.5493 r
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_266547/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0477      8.5970 f
+  EX_FPU/DuI/X0/pe/tmp_net520454 (net)              2      0.0083
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_261755/A (sky130_fd_sc_hd__and2_4)       0.0613      0.0000      8.5970 f
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_261755/X (sky130_fd_sc_hd__and2_4)       0.0613      0.1288      8.7258 f
+  EX_FPU/DuI/X0/pe/tmp_net520455 (net)              3      0.0159
+  EX_FPU/DuI/X0/pe/ctmTdsLR_1_264449/A (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000      8.7258 f
+  EX_FPU/DuI/X0/pe/ctmTdsLR_1_264449/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0632      8.7890 r
+  EX_FPU/DuI/X0/pe/tmp_net521803 (net)              1      0.0169
+  EX_FPU/DuI/X0/pe/ctmTdsLR_1_263735/A (sky130_fd_sc_hd__inv_6)        0.0613      0.0000      8.7890 r
+  EX_FPU/DuI/X0/pe/ctmTdsLR_1_263735/Y (sky130_fd_sc_hd__inv_6)        0.0613      0.0721      8.8611 f
+  EX_FPU/DuI/X0/pe/ZBUF_171_0 (net)                 6      0.0436
+  EX_FPU/DuI/X0/pe/ctmTdsLR_1_260840/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000      8.8611 f
+  EX_FPU/DuI/X0/pe/ctmTdsLR_1_260840/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0569      8.9181 r
+  EX_FPU/DuI/X0/pe/tmp_net519819 (net)              1      0.0141
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_260841/A (sky130_fd_sc_hd__inv_6)        0.0613      0.0000      8.9181 r
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_260841/Y (sky130_fd_sc_hd__inv_6)        0.0613      0.0988      9.0169 f
+  EX_FPU/DuI/X0/pe/N517464 (net)                   13      0.0468
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_266432/A1 (sky130_fd_sc_hd__a211oi_2)    0.0613      0.0000      9.0169 f
+  EX_FPU/DuI/X0/pe/ctmTdsLR_2_266432/Y (sky130_fd_sc_hd__a211oi_2)     0.0613      0.1762      9.1931 r
+  EX_FPU/DuI/X0/pe/tmp_net523628 (net)              1      0.0031
+  EX_FPU/DuI/X0/pe/ctmTdsLR_4_266434/C (sky130_fd_sc_hd__nand4b_1)     0.0613      0.0000      9.1931 r
+  EX_FPU/DuI/X0/pe/ctmTdsLR_4_266434/Y (sky130_fd_sc_hd__nand4b_1)     0.0613      0.0705      9.2636 f
+  EX_FPU/DuI/X0/pe/Significand[12] (net)            1      0.0070
+  EX_FPU/DuI/X0/ctmi_162990/A1 (sky130_fd_sc_hd__a21o_4)               0.0613      0.0000      9.2636 f
+  EX_FPU/DuI/X0/ctmi_162990/X (sky130_fd_sc_hd__a21o_4)                0.0613      0.1832      9.4468 f
+  EX_FPU/DuI/X0/result[12] (net)                    9      0.0493
+  EX_FPU/DuI/X1/M1/mult_36/ZBUF_624_inst_257921/A (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.0000      9.4468 f
+  EX_FPU/DuI/X1/M1/mult_36/ZBUF_624_inst_257921/X (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.1338      9.5806 f
+  EX_FPU/DuI/X1/M1/mult_36/ZBUF_624_13 (net)       17      0.0890
+  EX_FPU/DuI/X1/M1/mult_36/A226995/A (sky130_fd_sc_hd__xor2_1)         0.0613      0.0000      9.5806 f
+  EX_FPU/DuI/X1/M1/mult_36/A226995/X (sky130_fd_sc_hd__xor2_1)         0.0613      0.1042      9.6849 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmn_455485 (net)        1      0.0044
+  EX_FPU/DuI/X1/M1/mult_36/A248068/B2 (sky130_fd_sc_hd__o22ai_1)       0.0613      0.0000      9.6849 f
+  EX_FPU/DuI/X1/M1/mult_36/A248068/Y (sky130_fd_sc_hd__o22ai_1)        0.0613      0.1177      9.8025 r
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net219845 (net)      2      0.0104
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_266740/B (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.0000      9.8025 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_266740/X (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.1428      9.9453 r
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net523836 (net)      1      0.0089
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_266741/B (sky130_fd_sc_hd__xnor2_2)
+                                                                       0.0613      0.0000      9.9453 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_266741/Y (sky130_fd_sc_hd__xnor2_2)
+                                                                       0.0613      0.1462     10.0916 f
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net220408 (net)      4      0.0192
+  EX_FPU/DuI/X1/M1/mult_36/A248075/A1 (sky130_fd_sc_hd__o21ai_1)       0.0613      0.0000     10.0916 f
+  EX_FPU/DuI/X1/M1/mult_36/A248075/Y (sky130_fd_sc_hd__o21ai_1)        0.0613      0.1072     10.1988 r
+  EX_FPU/DuI/X1/M1/mult_36/N505125 (net)            1      0.0029
+  EX_FPU/DuI/X1/M1/mult_36/A233361/A (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     10.1988 r
+  EX_FPU/DuI/X1/M1/mult_36/A233361/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0627     10.2615 f
+  EX_FPU/DuI/X1/M1/mult_36/N501948 (net)            3      0.0091
+  EX_FPU/DuI/X1/M1/mult_36/A248390/A2 (sky130_fd_sc_hd__o21ai_1)       0.0613      0.0000     10.2615 f
+  EX_FPU/DuI/X1/M1/mult_36/A248390/Y (sky130_fd_sc_hd__o21ai_1)        0.0613      0.1071     10.3686 r
+  EX_FPU/DuI/X1/M1/mult_36/N513265 (net)            1      0.0033
+  EX_FPU/DuI/X1/M1/mult_36/A248391/B (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     10.3686 r
+  EX_FPU/DuI/X1/M1/mult_36/A248391/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0547     10.4233 f
+  EX_FPU/DuI/X1/M1/mult_36/N503886 (net)            2      0.0077
+  EX_FPU/DuI/X1/M1/mult_36/A235511/A (sky130_fd_sc_hd__inv_2)          0.0613      0.0000     10.4233 f
+  EX_FPU/DuI/X1/M1/mult_36/A235511/Y (sky130_fd_sc_hd__inv_2)          0.0613      0.0598     10.4831 r
+  EX_FPU/DuI/X1/M1/mult_36/N506296 (net)            2      0.0060
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_266539/A (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0000     10.4831 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_266539/Y (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0381     10.5212 f
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net523702 (net)      1      0.0026
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_266540/A2 (sky130_fd_sc_hd__o21a_2)
+                                                                       0.0613      0.0000     10.5212 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_266540/X (sky130_fd_sc_hd__o21a_2)
+                                                                       0.0613      0.1485     10.6697 f
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net523488 (net)      1      0.0056
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_266235/B (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.0000     10.6697 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_266235/X (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.1900     10.8597 r
+  EX_FPU/DuI/X1/M1/mult_36/N500481 (net)            2      0.0062
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_260814/A_N (sky130_fd_sc_hd__nand2b_1)
+                                                                       0.0613      0.0000     10.8597 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_260814/Y (sky130_fd_sc_hd__nand2b_1)
+                                                                       0.0613      0.0721     10.9318 r
+  EX_FPU/DuI/X1/M1/mult_36/N517292 (net)            2      0.0065
+  EX_FPU/DuI/X1/M1/mult_36/A248255/A (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     10.9318 r
+  EX_FPU/DuI/X1/M1/mult_36/A248255/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0628     10.9945 f
+  EX_FPU/DuI/X1/M1/mult_36/N491653 (net)            3      0.0084
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_260811/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     10.9945 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_260811/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0685     11.0630 r
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net519801 (net)      2      0.0047
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_260812/B1 (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0000     11.0630 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_260812/Y (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0383     11.1013 f
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net220465 (net)      1      0.0040
+  EX_FPU/DuI/X1/M1/mult_36/A252100/A1 (sky130_fd_sc_hd__a21o_1)        0.0613      0.0000     11.1013 f
+  EX_FPU/DuI/X1/M1/mult_36/A252100/X (sky130_fd_sc_hd__a21o_1)         0.0613      0.1660     11.2672 f
+  EX_FPU/DuI/X1/M1/mult_36/N497052 (net)            4      0.0174
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_266359/B (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     11.2672 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_266359/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0566     11.3239 r
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net523574 (net)      1      0.0028
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_264692/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     11.3239 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_264692/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0442     11.3681 f
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net522441 (net)      1      0.0046
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_264690/B (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     11.3681 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_264690/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0684     11.4365 r
+  EX_FPU/DuI/X1/M1/mult_36/N492084 (net)            2      0.0089
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_266230/B (sky130_fd_sc_hd__nor2_1)
+                                                                       0.0613      0.0000     11.4365 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_266230/Y (sky130_fd_sc_hd__nor2_1)
+                                                                       0.0613      0.0348     11.4713 f
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net523486 (net)      1      0.0086
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_266231/B (sky130_fd_sc_hd__nor2_4)
+                                                                       0.0613      0.0000     11.4713 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_266231/Y (sky130_fd_sc_hd__nor2_4)
+                                                                       0.0613      0.0818     11.5531 r
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net518611 (net)      1      0.0188
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_259055/B (sky130_fd_sc_hd__nand2_8)
+                                                                       0.0613      0.0000     11.5531 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_259055/Y (sky130_fd_sc_hd__nand2_8)
+                                                                       0.0613      0.1290     11.6821 f
+  EX_FPU/DuI/X1/M1/mult_36/N514346 (net)           19      0.0762
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_266738/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     11.6821 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_266738/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0579     11.7400 r
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net523834 (net)      1      0.0048
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_259048/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     11.7400 r
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_259048/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0442     11.7842 f
+  EX_FPU/DuI/X1/M1/mult_36/tmp_net518607 (net)      1      0.0090
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_260810/A (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000     11.7842 f
+  EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_260810/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0776     11.8618 r
+  EX_FPU/DuI/X1/M1/mult_36/product[47] (net)        3      0.0269
+  EX_FPU/DuI/X1/M1/HFSBUF_233_256378/A (sky130_fd_sc_hd__buf_12)       0.0613      0.0000     11.8618 r
+  EX_FPU/DuI/X1/M1/HFSBUF_233_256378/X (sky130_fd_sc_hd__buf_12)       0.0613      0.1925     12.0543 r
+  EX_FPU/DuI/X1/M1/HFSNET_1 (net)                  27      0.1128
+  EX_FPU/DuI/X1/M1/A240856/S (sky130_fd_sc_hd__mux2i_1)                0.0613      0.0000     12.0543 r
+  EX_FPU/DuI/X1/M1/A240856/Y (sky130_fd_sc_hd__mux2i_1)                0.0613      0.2104     12.2647 r
+  EX_FPU/DuI/X1/M1/N509190 (net)                    2      0.0071
+  EX_FPU/DuI/X1/M1/ctmTdsLR_1_264436/B (sky130_fd_sc_hd__nand2b_1)     0.0613      0.0000     12.2647 r
+  EX_FPU/DuI/X1/M1/ctmTdsLR_1_264436/Y (sky130_fd_sc_hd__nand2b_1)     0.0613      0.0481     12.3128 f
+  EX_FPU/DuI/X1/M1/tmp_net522275 (net)              1      0.0026
+  EX_FPU/DuI/X1/M1/ctmTdsLR_2_264437/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     12.3128 f
+  EX_FPU/DuI/X1/M1/ctmTdsLR_2_264437/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0479     12.3607 r
+  EX_FPU/DuI/X1/M1/tmp_net520436 (net)              1      0.0097
+  EX_FPU/DuI/X1/M1/ctmTdsLR_1_261249/A (sky130_fd_sc_hd__nand3_4)      0.0613      0.0000     12.3607 r
+  EX_FPU/DuI/X1/M1/ctmTdsLR_1_261249/Y (sky130_fd_sc_hd__nand3_4)      0.0613      0.1214     12.4821 f
+  EX_FPU/DuI/X1/M1/ctmn_466606 (net)                8      0.0227
+  EX_FPU/DuI/X1/M1/ctmTdsLR_1_258492/A (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0000     12.4821 f
+  EX_FPU/DuI/X1/M1/ctmTdsLR_1_258492/Y (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0600     12.5421 r
+  EX_FPU/DuI/X1/M1/tmp_net518206 (net)              2      0.0052
+  EX_FPU/DuI/X1/M1/ctmTdsLR_1_265001/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     12.5421 r
+  EX_FPU/DuI/X1/M1/ctmTdsLR_1_265001/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0547     12.5968 f
+  EX_FPU/DuI/X1/M1/tmp_net522654 (net)              2      0.0058
+  EX_FPU/DuI/X1/M1/ctmTdsLR_5_266427/A1 (sky130_fd_sc_hd__a21oi_1)     0.0613      0.0000     12.5968 f
+  EX_FPU/DuI/X1/M1/ctmTdsLR_5_266427/Y (sky130_fd_sc_hd__a21oi_1)      0.0613      0.1116     12.7084 r
+  EX_FPU/DuI/X1/M1/tmp_net523623 (net)              1      0.0063
+  EX_FPU/DuI/X1/M1/ctmTdsLR_3_258487/C (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     12.7084 r
+  EX_FPU/DuI/X1/M1/ctmTdsLR_3_258487/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0851     12.7935 f
+  EX_FPU/DuI/X1/M1/N516085 (net)                    3      0.0107
+  EX_FPU/DuI/X1/M1/ctmTdsLR_4_258491/A (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0000     12.7935 f
+  EX_FPU/DuI/X1/M1/ctmTdsLR_4_258491/Y (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0480     12.8416 r
+  EX_FPU/DuI/X1/M1/tmp_net518205 (net)              1      0.0025
+  EX_FPU/DuI/X1/M1/ctmTdsLR_3_263213/A (sky130_fd_sc_hd__nand3_1)      0.0613      0.0000     12.8416 r
+  EX_FPU/DuI/X1/M1/ctmTdsLR_3_263213/Y (sky130_fd_sc_hd__nand3_1)      0.0613      0.0607     12.9023 f
+  EX_FPU/DuI/X1/M1/tmp_net519362 (net)              1      0.0025
+  EX_FPU/DuI/X1/M1/ctmTdsLR_3_260153/A (sky130_fd_sc_hd__and2_4)       0.0613      0.0000     12.9023 f
+  EX_FPU/DuI/X1/M1/ctmTdsLR_3_260153/X (sky130_fd_sc_hd__and2_4)       0.0613      0.1598     13.0621 f
+  EX_FPU/DuI/X1/M1/N514369 (net)                   16      0.0445
+  EX_FPU/DuI/X1/M1/A219011/A2 (sky130_fd_sc_hd__a21o_1)                0.0613      0.0000     13.0621 f
+  EX_FPU/DuI/X1/M1/A219011/X (sky130_fd_sc_hd__a21o_1)                 0.0613      0.1561     13.2182 f
+  EX_FPU/DuI/X1/M1/result[25] (net)                 2      0.0081
+  EX_FPU/DuI/X1/A1/ctmi_163087/A1 (sky130_fd_sc_hd__a22oi_2)           0.0613      0.0000     13.2182 f
+  EX_FPU/DuI/X1/A1/ctmi_163087/Y (sky130_fd_sc_hd__a22oi_2)            0.0613      0.1442     13.3624 r
+  EX_FPU/DuI/X1/A1/lt_42/ctmn_94154 (net)           3      0.0110
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_262267/B (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     13.3624 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_262267/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0442     13.4066 f
+  EX_FPU/DuI/X1/A1/tmp_net520801 (net)              1      0.0106
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_261717/B (sky130_fd_sc_hd__nor2_4)       0.0613      0.0000     13.4066 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_261717/Y (sky130_fd_sc_hd__nor2_4)       0.0613      0.0820     13.4886 r
+  EX_FPU/DuI/X1/A1/tmp_net520427 (net)              1      0.0097
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_261715/A (sky130_fd_sc_hd__nand3_4)      0.0613      0.0000     13.4886 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_261715/Y (sky130_fd_sc_hd__nand3_4)      0.0613      0.0608     13.5494 f
+  EX_FPU/DuI/X1/A1/tmp_net518602 (net)              1      0.0171
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_259041/A (sky130_fd_sc_hd__nand2_8)      0.0613      0.0000     13.5494 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_259041/Y (sky130_fd_sc_hd__nand2_8)      0.0613      0.1957     13.7451 r
+  EX_FPU/DuI/X1/A1/HFSNET_4 (net)                  34      0.1237
+  EX_FPU/DuI/X1/A1/ctmi_198064/B1 (sky130_fd_sc_hd__o2bb2a_4)          0.0613      0.0000     13.7451 r
+  EX_FPU/DuI/X1/A1/ctmi_198064/X (sky130_fd_sc_hd__o2bb2a_4)           0.0613      0.1904     13.9355 r
+  EX_FPU/DuI/X1/A1/operand_a[24] (net)             10      0.0463
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_1_264162/A (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0000     13.9355 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_1_264162/Y (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0383     13.9737 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/tmp_net522089 (net)
+                                                    1      0.0046
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_2_264163/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     13.9737 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_2_264163/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0921     14.0658 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/N505518 (net)
+                                                    5      0.0173
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/A230491/B (sky130_fd_sc_hd__nand2b_1)
+                                                                       0.0613      0.0000     14.0658 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/A230491/Y (sky130_fd_sc_hd__nand2b_1)
+                                                                       0.0613      0.0667     14.1325 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/N503499 (net)
+                                                    3      0.0088
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_4_261246/A (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0000     14.1325 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_4_261246/Y (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0480     14.1804 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/tmp_net520097 (net)
+                                                    1      0.0025
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_3_261245/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     14.1804 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_3_261245/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0546     14.2351 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/tmp_net520098 (net)
+                                                    2      0.0061
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_1_261243/C1 (sky130_fd_sc_hd__o211ai_1)
+                                                                       0.0613      0.0000     14.2351 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_1_261243/Y (sky130_fd_sc_hd__o211ai_1)
+                                                                       0.0613      0.0658     14.3009 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/N494346 (net)
+                                                    1      0.0033
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/A215426/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     14.3009 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/A215426/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0443     14.3451 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/N494347 (net)
+                                                    1      0.0052
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_3_263200/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     14.3451 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_3_263200/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0566     14.4017 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/tmp_net521434 (net)
+                                                    1      0.0187
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_4_263201/A (sky130_fd_sc_hd__inv_8)
+                                                                       0.0613      0.0000     14.4017 r
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_4_263201/Y (sky130_fd_sc_hd__inv_8)
+                                                                       0.0613      0.1547     14.5564 f
+  EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J10/PO_0[3] (net)
+                                                   36      0.1214
+  EX_FPU/DuI/X1/A1/HFSINV_408_256380/A (sky130_fd_sc_hd__inv_8)        0.0613      0.0000     14.5564 f
+  EX_FPU/DuI/X1/A1/HFSINV_408_256380/Y (sky130_fd_sc_hd__inv_8)        0.0613      0.1103     14.6667 r
+  EX_FPU/DuI/X1/A1/HFSNET_0 (net)                  10      0.0337
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_261241/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     14.6667 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_261241/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0446     14.7113 f
+  EX_FPU/DuI/X1/A1/tmp_net520095 (net)              1      0.0018
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_266353/B1_N (sky130_fd_sc_hd__a21boi_1)
+                                                                       0.0613      0.0000     14.7113 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_266353/Y (sky130_fd_sc_hd__a21boi_1)     0.0613      0.1052     14.8165 f
+  EX_FPU/DuI/X1/A1/tmp_net520423 (net)              1      0.0055
+  EX_FPU/DuI/X1/A1/ctmTdsLR_6_261712/A2 (sky130_fd_sc_hd__o21ai_2)     0.0613      0.0000     14.8165 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_6_261712/Y (sky130_fd_sc_hd__o21ai_2)      0.0613      0.1324     14.9489 r
+  EX_FPU/DuI/X1/A1/tmp_net518600 (net)              2      0.0064
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_264996/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     14.9489 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_264996/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0443     14.9932 f
+  EX_FPU/DuI/X1/A1/tmp_net522651 (net)              1      0.0025
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_264997/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     14.9932 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_264997/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0565     15.0497 r
+  EX_FPU/DuI/X1/A1/tmp_net519781 (net)              1      0.0039
+  EX_FPU/DuI/X1/A1/ctmTdsLR_4_264998/D (sky130_fd_sc_hd__nand4_1)      0.0613      0.0000     15.0497 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_4_264998/Y (sky130_fd_sc_hd__nand4_1)      0.0613      0.0776     15.1273 f
+  EX_FPU/DuI/X1/A1/N514330 (net)                    2      0.0049
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_258469/B (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     15.1273 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_258469/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.0818     15.2091 r
+  EX_FPU/DuI/X1/A1/N509175 (net)                    1      0.0051
+  EX_FPU/DuI/X1/A1/ZBUF_525_inst_257833/A (sky130_fd_sc_hd__buf_6)     0.0613      0.0000     15.2091 r
+  EX_FPU/DuI/X1/A1/ZBUF_525_inst_257833/X (sky130_fd_sc_hd__buf_6)     0.0613      0.1530     15.3621 r
+  EX_FPU/DuI/X1/A1/ZBUF_525_11 (net)               15      0.0566
+  EX_FPU/DuI/X1/A1/A255771/A (sky130_fd_sc_hd__inv_2)                  0.0613      0.0000     15.3621 r
+  EX_FPU/DuI/X1/A1/A255771/Y (sky130_fd_sc_hd__inv_2)                  0.0613      0.0554     15.4175 f
+  EX_FPU/DuI/X1/A1/ctmn_462089 (net)                3      0.0168
+  EX_FPU/DuI/X1/A1/A249323/A (sky130_fd_sc_hd__nand2_1)                0.0613      0.0000     15.4175 f
+  EX_FPU/DuI/X1/A1/A249323/Y (sky130_fd_sc_hd__nand2_1)                0.0613      0.0566     15.4741 r
+  EX_FPU/DuI/X1/A1/ctmn_462094 (net)                1      0.0054
+  EX_FPU/DuI/X1/A1/ctmi_163481/C (sky130_fd_sc_hd__nand3_2)            0.0613      0.0000     15.4741 r
+  EX_FPU/DuI/X1/A1/ctmi_163481/Y (sky130_fd_sc_hd__nand3_2)            0.0613      0.0850     15.5592 f
+  EX_FPU/DuI/X1/A1/ctmn_462095 (net)                3      0.0109
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_260778/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     15.5592 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_260778/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0480     15.6072 r
+  EX_FPU/DuI/X1/A1/tmp_net519780 (net)              1      0.0049
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_260779/A2 (sky130_fd_sc_hd__o21ai_2)     0.0613      0.0000     15.6072 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_260779/Y (sky130_fd_sc_hd__o21ai_2)      0.0613      0.0735     15.6807 f
+  EX_FPU/DuI/X1/A1/N503666 (net)                    3      0.0087
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_265360/A2 (sky130_fd_sc_hd__o21a_2)      0.0613      0.0000     15.6807 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_265360/X (sky130_fd_sc_hd__o21a_2)       0.0613      0.1486     15.8293 f
+  EX_FPU/DuI/X1/A1/tmp_net522902 (net)              1      0.0092
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_265358/B (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     15.8293 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_265358/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.0685     15.8978 r
+  EX_FPU/DuI/X1/A1/tmp_net520787 (net)              2      0.0130
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_258462/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     15.8978 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_258462/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0445     15.9423 f
+  EX_FPU/DuI/X1/A1/tmp_net518186 (net)              1      0.0088
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_258464/A (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     15.9423 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_258464/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.1233     16.0655 r
+  EX_FPU/DuI/X1/A1/N509180 (net)                   11      0.0412
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_260115/B (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     16.0655 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_1_260115/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0448     16.1103 f
+  EX_FPU/DuI/X1/A1/tmp_net519335 (net)              1      0.0031
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_266532/A (sky130_fd_sc_hd__nand3_1)      0.0613      0.0000     16.1103 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_266532/Y (sky130_fd_sc_hd__nand3_1)      0.0613      0.0627     16.1730 r
+  EX_FPU/DuI/X1/A1/tmp_net519336 (net)              1      0.0032
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_260117/B1 (sky130_fd_sc_hd__o21ai_1)     0.0613      0.0000     16.1730 r
+  EX_FPU/DuI/X1/A1/ctmTdsLR_3_260117/Y (sky130_fd_sc_hd__o21ai_1)      0.0613      0.0383     16.2114 f
+  EX_FPU/DuI/X1/A1/tmp_net519337 (net)              1      0.0034
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_263705/A (sky130_fd_sc_hd__and2_4)       0.0613      0.0000     16.2114 f
+  EX_FPU/DuI/X1/A1/ctmTdsLR_2_263705/X (sky130_fd_sc_hd__and2_4)       0.0613      0.1461     16.3575 f
+  EX_FPU/DuI/X1/A1/significand_sub[21] (net)        9      0.0398
+  EX_FPU/DuI/X1/A1/pe/ctmTdsLR_2_264151/B (sky130_fd_sc_hd__nor2_1)    0.0613      0.0000     16.3575 f
+  EX_FPU/DuI/X1/A1/pe/ctmTdsLR_2_264151/Y (sky130_fd_sc_hd__nor2_1)    0.0613      0.0822     16.4397 r
+  EX_FPU/DuI/X1/A1/pe/tmp_net522082 (net)           1      0.0026
+  EX_FPU/DuI/X1/A1/pe/ctmTdsLR_1_264675/A (sky130_fd_sc_hd__and2_4)    0.0613      0.0000     16.4397 r
+  EX_FPU/DuI/X1/A1/pe/ctmTdsLR_1_264675/X (sky130_fd_sc_hd__and2_4)    0.0613      0.1089     16.5486 r
+  EX_FPU/DuI/X1/A1/pe/tmp_net518582 (net)           2      0.0241
+  EX_FPU/DuI/X1/A1/pe/ctmTdsLR_3_259013/A (sky130_fd_sc_hd__nand2_8)   0.0613      0.0000     16.5486 r
+  EX_FPU/DuI/X1/A1/pe/ctmTdsLR_3_259013/Y (sky130_fd_sc_hd__nand2_8)   0.0613      0.1261     16.6747 f
+  EX_FPU/DuI/X1/A1/pe/ZBUF_725_11 (net)            18      0.1253
+  EX_FPU/DuI/X1/A1/pe/ctmTdsLR_2_260109/B (sky130_fd_sc_hd__nor2_8)    0.0613      0.0000     16.6747 f
+  EX_FPU/DuI/X1/A1/pe/ctmTdsLR_2_260109/Y (sky130_fd_sc_hd__nor2_8)    0.0613      0.2646     16.9393 r
+  EX_FPU/DuI/X1/A1/pe/ctmn_464511 (net)            17      0.0663
+  EX_FPU/DuI/X1/A1/pe/A226323/A1 (sky130_fd_sc_hd__a22oi_1)            0.0613      0.0000     16.9393 r
+  EX_FPU/DuI/X1/A1/pe/A226323/Y (sky130_fd_sc_hd__a22oi_1)             0.0613      0.0610     17.0002 f
+  EX_FPU/DuI/X1/A1/pe/ctmn_464809_CDR1 (net)        1      0.0049
+  EX_FPU/DuI/X1/A1/pe/ctmi_166613/D (sky130_fd_sc_hd__nand4_2)         0.0613      0.0000     17.0002 f
+  EX_FPU/DuI/X1/A1/pe/ctmi_166613/Y (sky130_fd_sc_hd__nand4_2)         0.0613      0.0573     17.0576 r
+  EX_FPU/DuI/X1/A1/pe/Significand[9] (net)          1      0.0124
+  EX_FPU/DuI/X1/A1/ctmi_163782/A1 (sky130_fd_sc_hd__a21o_4)            0.0613      0.0000     17.0576 r
+  EX_FPU/DuI/X1/A1/ctmi_163782/X (sky130_fd_sc_hd__a21o_4)             0.0613      0.1660     17.2235 r
+  EX_FPU/DuI/X1/A1/result[9] (net)                 20      0.1102
+  EX_FPU/DuI/X1/M2/mult_36/A252862/B (sky130_fd_sc_hd__xnor2_1)        0.0613      0.0000     17.2235 r
+  EX_FPU/DuI/X1/M2/mult_36/A252862/Y (sky130_fd_sc_hd__xnor2_1)        0.0613      0.1184     17.3419 f
+  EX_FPU/DuI/X1/M2/mult_36/N515735 (net)            2      0.0078
+  EX_FPU/DuI/X1/M2/mult_36/A252865/A1 (sky130_fd_sc_hd__o22ai_1)       0.0613      0.0000     17.3419 f
+  EX_FPU/DuI/X1/M2/mult_36/A252865/Y (sky130_fd_sc_hd__o22ai_1)        0.0613      0.1420     17.4840 r
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net205666 (net)      2      0.0063
+  EX_FPU/DuI/X1/M2/mult_36/A252866/A (sky130_fd_sc_hd__inv_1)          0.0613      0.0000     17.4840 r
+  EX_FPU/DuI/X1/M2/mult_36/A252866/Y (sky130_fd_sc_hd__inv_1)          0.0613      0.0381     17.5221 f
+  EX_FPU/DuI/X1/M2/mult_36/N502698 (net)            1      0.0050
+  EX_FPU/DuI/X1/M2/mult_36/A229048/B (sky130_fd_sc_hd__nand2b_2)       0.0613      0.0000     17.5221 f
+  EX_FPU/DuI/X1/M2/mult_36/A229048/Y (sky130_fd_sc_hd__nand2b_2)       0.0613      0.0720     17.5941 r
+  EX_FPU/DuI/X1/M2/mult_36/N502699 (net)            2      0.0063
+  EX_FPU/DuI/X1/M2/mult_36/A252086/B (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     17.5941 r
+  EX_FPU/DuI/X1/M2/mult_36/A252086/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0442     17.6383 f
+  EX_FPU/DuI/X1/M2/mult_36/N515334 (net)            1      0.0086
+  EX_FPU/DuI/X1/M2/mult_36/A252087/B (sky130_fd_sc_hd__xnor2_2)        0.0613      0.0000     17.6383 f
+  EX_FPU/DuI/X1/M2/mult_36/A252087/Y (sky130_fd_sc_hd__xnor2_2)        0.0613      0.1905     17.8288 r
+  EX_FPU/DuI/X1/M2/mult_36/N502703 (net)            3      0.0165
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_266528/A (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.0000     17.8288 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_266528/X (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.1428     17.9716 r
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net523694 (net)      1      0.0049
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_266529/B (sky130_fd_sc_hd__xnor2_1)
+                                                                       0.0613      0.0000     17.9716 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_266529/Y (sky130_fd_sc_hd__xnor2_1)
+                                                                       0.0613      0.1268     18.0984 r
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net523695 (net)      1      0.0048
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_266530/B (sky130_fd_sc_hd__xnor2_1)
+                                                                       0.0613      0.0000     18.0984 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_266530/Y (sky130_fd_sc_hd__xnor2_1)
+                                                                       0.0613      0.1175     18.2159 f
+  EX_FPU/DuI/X1/M2/mult_36/N515743 (net)            2      0.0076
+  EX_FPU/DuI/X1/M2/mult_36/A252879/B (sky130_fd_sc_hd__nor2_2)         0.0613      0.0000     18.2159 f
+  EX_FPU/DuI/X1/M2/mult_36/A252879/Y (sky130_fd_sc_hd__nor2_2)         0.0613      0.1541     18.3700 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmn_453804 (net)        5      0.0162
+  EX_FPU/DuI/X1/M2/mult_36/A253619/A (sky130_fd_sc_hd__inv_2)          0.0613      0.0000     18.3700 r
+  EX_FPU/DuI/X1/M2/mult_36/A253619/Y (sky130_fd_sc_hd__inv_2)          0.0613      0.0381     18.4081 f
+  EX_FPU/DuI/X1/M2/mult_36/N516161 (net)            1      0.0030
+  EX_FPU/DuI/X1/M2/mult_36/A253620/B (sky130_fd_sc_hd__nand3b_1)       0.0613      0.0000     18.4081 f
+  EX_FPU/DuI/X1/M2/mult_36/A253620/Y (sky130_fd_sc_hd__nand3b_1)       0.0613      0.0679     18.4760 r
+  EX_FPU/DuI/X1/M2/mult_36/N503802 (net)            1      0.0058
+  EX_FPU/DuI/X1/M2/mult_36/A253621/A1 (sky130_fd_sc_hd__a41oi_2)       0.0613      0.0000     18.4760 r
+  EX_FPU/DuI/X1/M2/mult_36/A253621/Y (sky130_fd_sc_hd__a41oi_2)        0.0613      0.1126     18.5885 f
+  EX_FPU/DuI/X1/M2/mult_36/ctmn_453809 (net)        2      0.0160
+  EX_FPU/DuI/X1/M2/mult_36/A240555/A1 (sky130_fd_sc_hd__a21oi_4)       0.0613      0.0000     18.5885 f
+  EX_FPU/DuI/X1/M2/mult_36/A240555/Y (sky130_fd_sc_hd__a21oi_4)        0.0613      0.1582     18.7467 r
+  EX_FPU/DuI/X1/M2/mult_36/N508986 (net)            3      0.0154
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_263130/A1 (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0000     18.7467 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_263130/Y (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0658     18.8126 f
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net521387 (net)      2      0.0058
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_265940/A1 (sky130_fd_sc_hd__a21o_1)
+                                                                       0.0613      0.0000     18.8126 f
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_265940/X (sky130_fd_sc_hd__a21o_1)
+                                                                       0.0613      0.1488     18.9614 f
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net523298 (net)      1      0.0045
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_266516/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     18.9614 f
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_266516/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0568     19.0181 r
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net523299 (net)      1      0.0048
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_265938/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     19.0181 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_265938/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0754     19.0935 f
+  EX_FPU/DuI/X1/M2/mult_36/N504416 (net)            5      0.0228
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_265809/B (sky130_fd_sc_hd__nor2_2)
+                                                                       0.0613      0.0000     19.0935 f
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_265809/Y (sky130_fd_sc_hd__nor2_2)
+                                                                       0.0613      0.0826     19.1761 r
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net523208 (net)      1      0.0060
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_258971/A2 (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0000     19.1761 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_258971/Y (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0654     19.2415 f
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net518553 (net)      2      0.0100
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_265152/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     19.2415 f
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_265152/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0571     19.2986 r
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net522755 (net)      1      0.0050
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_260090/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     19.2986 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_260090/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0442     19.3429 f
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net519317 (net)      1      0.0145
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_258441/B (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000     19.3429 f
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_258441/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0691     19.4120 r
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net518173 (net)      2      0.0265
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_258443/A (sky130_fd_sc_hd__nand2_8)
+                                                                       0.0613      0.0000     19.4120 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_258443/Y (sky130_fd_sc_hd__nand2_8)
+                                                                       0.0613      0.1064     19.5184 f
+  EX_FPU/DuI/X1/M2/mult_36/N515199 (net)           12      0.0506
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_266419/A (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000     19.5184 f
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_266419/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0575     19.5759 r
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net523617 (net)      1      0.0095
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_266511/A (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000     19.5759 r
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_266511/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0443     19.6202 f
+  EX_FPU/DuI/X1/M2/mult_36/tmp_net518171 (net)      1      0.0090
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_258440/A (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000     19.6202 f
+  EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_258440/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0853     19.7055 r
+  EX_FPU/DuI/X1/M2/mult_36/product[47] (net)        4      0.0361
+  EX_FPU/DuI/X1/M2/HFSBUF_236_256407/A (sky130_fd_sc_hd__buf_12)       0.0613      0.0000     19.7055 r
+  EX_FPU/DuI/X1/M2/HFSBUF_236_256407/X (sky130_fd_sc_hd__buf_12)       0.0613      0.2181     19.9236 r
+  EX_FPU/DuI/X1/M2/HFSNET_1 (net)                  37      0.1551
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_260736/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     19.9236 r
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_260736/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0385     19.9621 f
+  EX_FPU/DuI/X1/M2/tmp_net519751 (net)              1      0.0046
+  EX_FPU/DuI/X1/M2/ctmTdsLR_3_260738/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     19.9621 f
+  EX_FPU/DuI/X1/M2/ctmTdsLR_3_260738/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0565     20.0186 r
+  EX_FPU/DuI/X1/M2/tmp_net519308 (net)              1      0.0091
+  EX_FPU/DuI/X1/M2/ctmTdsLR_3_260080/A (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     20.0186 r
+  EX_FPU/DuI/X1/M2/ctmTdsLR_3_260080/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.0947     20.1133 f
+  EX_FPU/DuI/X1/M2/ZBUF_111_10 (net)                9      0.0292
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_260735/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     20.1133 f
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_260735/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0484     20.1616 r
+  EX_FPU/DuI/X1/M2/tmp_net519750 (net)              1      0.0093
+  EX_FPU/DuI/X1/M2/A228819/A (sky130_fd_sc_hd__nand3_4)                0.0613      0.0000     20.1616 r
+  EX_FPU/DuI/X1/M2/A228819/Y (sky130_fd_sc_hd__nand3_4)                0.0613      0.0939     20.2555 f
+  EX_FPU/DuI/X1/M2/N502540 (net)                    4      0.0118
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_259465/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     20.2555 f
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_259465/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0600     20.3156 r
+  EX_FPU/DuI/X1/M2/tmp_net518885 (net)              2      0.0051
+  EX_FPU/DuI/X1/M2/ctmTdsLR_2_259466/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     20.3156 r
+  EX_FPU/DuI/X1/M2/ctmTdsLR_2_259466/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0546     20.3702 f
+  EX_FPU/DuI/X1/M2/N516991 (net)                    2      0.0099
+  EX_FPU/DuI/X1/M2/ctmTdsLR_4_263119/B (sky130_fd_sc_hd__xnor2_1)      0.0613      0.0000     20.3702 f
+  EX_FPU/DuI/X1/M2/ctmTdsLR_4_263119/Y (sky130_fd_sc_hd__xnor2_1)      0.0613      0.1268     20.4970 r
+  EX_FPU/DuI/X1/M2/tmp_net521378 (net)              1      0.0043
+  EX_FPU/DuI/X1/M2/ctmTdsLR_3_263118/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     20.4970 r
+  EX_FPU/DuI/X1/M2/ctmTdsLR_3_263118/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0444     20.5414 f
+  EX_FPU/DuI/X1/M2/tmp_net521379 (net)              1      0.0029
+  EX_FPU/DuI/X1/M2/ctmTdsLR_2_263117/B (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     20.5414 f
+  EX_FPU/DuI/X1/M2/ctmTdsLR_2_263117/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.0818     20.6232 r
+  EX_FPU/DuI/X1/M2/tmp_net521380 (net)              1      0.0026
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_263116/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     20.6232 r
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_263116/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0442     20.6674 f
+  EX_FPU/DuI/X1/M2/N504601_CDR1 (net)               1      0.0053
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_261205/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     20.6674 f
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_261205/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0599     20.7272 r
+  EX_FPU/DuI/X1/M2/tmp_net520077 (net)              2      0.0068
+  EX_FPU/DuI/X1/M2/ctmTdsLR_2_264527/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     20.7272 r
+  EX_FPU/DuI/X1/M2/ctmTdsLR_2_264527/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0444     20.7716 f
+  EX_FPU/DuI/X1/M2/tmp_net522336 (net)              1      0.0044
+  EX_FPU/DuI/X1/M2/ctmTdsLR_3_263110/B (sky130_fd_sc_hd__nor2_2)       0.0613      0.0000     20.7716 f
+  EX_FPU/DuI/X1/M2/ctmTdsLR_3_263110/Y (sky130_fd_sc_hd__nor2_2)       0.0613      0.0818     20.8534 r
+  EX_FPU/DuI/X1/M2/tmp_net520760 (net)              1      0.0090
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_262207/A (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     20.8534 r
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_262207/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.0546     20.9081 f
+  EX_FPU/DuI/X1/M2/tmp_net520389 (net)              2      0.0237
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_261661/A (sky130_fd_sc_hd__nand2_8)      0.0613      0.0000     20.9081 f
+  EX_FPU/DuI/X1/M2/ctmTdsLR_1_261661/Y (sky130_fd_sc_hd__nand2_8)      0.0613      0.1501     21.0582 r
+  EX_FPU/DuI/X1/M2/N517506 (net)                   18      0.1039
+  EX_FPU/DuI/X1/M2/A216310/A (sky130_fd_sc_hd__nor2b_2)                0.0613      0.0000     21.0582 r
+  EX_FPU/DuI/X1/M2/A216310/Y (sky130_fd_sc_hd__nor2b_2)                0.0613      0.0371     21.0953 f
+  EX_FPU/DuI/X1/M2/ZBUF_1592_5 (net)                1      0.0092
+  EX_FPU/DuI/X1/M2/ZBUF_1592_inst_257513/A (sky130_fd_sc_hd__buf_12)   0.0613      0.0000     21.0953 f
+  EX_FPU/DuI/X1/M2/ZBUF_1592_inst_257513/X (sky130_fd_sc_hd__buf_12)   0.0613      0.1396     21.2349 f
+  EX_FPU/DuI/X1/M2/result[20] (net)                20      0.1185
+  EX_FPU/DuI/X2/M1/mult_36/A231209/B (sky130_fd_sc_hd__xnor2_2)        0.0613      0.0000     21.2349 f
+  EX_FPU/DuI/X2/M1/mult_36/A231209/Y (sky130_fd_sc_hd__xnor2_2)        0.0613      0.1934     21.4283 r
+  EX_FPU/DuI/X2/M1/mult_36/ctmn_457520 (net)        3      0.0136
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_258421/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     21.4283 r
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_258421/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0445     21.4728 f
+  EX_FPU/DuI/X2/M1/mult_36/tmp_net518160 (net)      1      0.0046
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_258422/A (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0000     21.4728 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_258422/Y (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0743     21.5471 r
+  EX_FPU/DuI/X2/M1/mult_36/N504754 (net)            2      0.0105
+  EX_FPU/DuI/X2/M1/mult_36/A240347/S (sky130_fd_sc_hd__mux2_4)         0.0613      0.0000     21.5471 r
+  EX_FPU/DuI/X2/M1/mult_36/A240347/X (sky130_fd_sc_hd__mux2_4)         0.0613      0.2546     21.8017 f
+  EX_FPU/DuI/X2/M1/mult_36/N496382 (net)            2      0.0111
+  EX_FPU/DuI/X2/M1/mult_36/A246736/B (sky130_fd_sc_hd__xnor2_1)        0.0613      0.0000     21.8017 f
+  EX_FPU/DuI/X2/M1/mult_36/A246736/Y (sky130_fd_sc_hd__xnor2_1)        0.0613      0.1269     21.9286 r
+  EX_FPU/DuI/X2/M1/mult_36/N512387 (net)            1      0.0064
+  EX_FPU/DuI/X2/M1/mult_36/A251396/B (sky130_fd_sc_hd__xnor3_2)        0.0613      0.0000     21.9286 r
+  EX_FPU/DuI/X2/M1/mult_36/A251396/X (sky130_fd_sc_hd__xnor3_2)        0.0613      0.1731     22.1017 f
+  EX_FPU/DuI/X2/M1/mult_36/N514927 (net)            3      0.0141
+  EX_FPU/DuI/X2/M1/mult_36/A254719/B (sky130_fd_sc_hd__nand2b_1)       0.0613      0.0000     22.1017 f
+  EX_FPU/DuI/X2/M1/mult_36/A254719/Y (sky130_fd_sc_hd__nand2b_1)       0.0613      0.0725     22.1742 r
+  EX_FPU/DuI/X2/M1/mult_36/N495736 (net)            2      0.0089
+  EX_FPU/DuI/X2/M1/mult_36/A254720/B (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     22.1742 r
+  EX_FPU/DuI/X2/M1/mult_36/A254720/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0443     22.2185 f
+  EX_FPU/DuI/X2/M1/mult_36/N495740 (net)            1      0.0051
+  EX_FPU/DuI/X2/M1/mult_36/A242946/A (sky130_fd_sc_hd__xor2_1)         0.0613      0.0000     22.2185 f
+  EX_FPU/DuI/X2/M1/mult_36/A242946/X (sky130_fd_sc_hd__xor2_1)         0.0613      0.1899     22.4084 r
+  EX_FPU/DuI/X2/M1/mult_36/N510335 (net)            2      0.0075
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_259454/B (sky130_fd_sc_hd__nor2_1)
+                                                                       0.0613      0.0000     22.4084 r
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_259454/Y (sky130_fd_sc_hd__nor2_1)
+                                                                       0.0613      0.0349     22.4433 f
+  EX_FPU/DuI/X2/M1/mult_36/tmp_net518877 (net)      1      0.0046
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_259455/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     22.4433 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_259455/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0684     22.5117 r
+  EX_FPU/DuI/X2/M1/mult_36/N517341 (net)            2      0.0085
+  EX_FPU/DuI/X2/M1/mult_36/A240723/A (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     22.5117 r
+  EX_FPU/DuI/X2/M1/mult_36/A240723/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0443     22.5560 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmn_456922 (net)        1      0.0048
+  EX_FPU/DuI/X2/M1/mult_36/ctmi_243398/A (sky130_fd_sc_hd__xor2_1)     0.0613      0.0000     22.5560 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmi_243398/X (sky130_fd_sc_hd__xor2_1)     0.0613      0.1899     22.7459 r
+  EX_FPU/DuI/X2/M1/mult_36/N504594 (net)            2      0.0086
+  EX_FPU/DuI/X2/M1/mult_36/ctmi_156830/A (sky130_fd_sc_hd__nor2_2)     0.0613      0.0000     22.7459 r
+  EX_FPU/DuI/X2/M1/mult_36/ctmi_156830/Y (sky130_fd_sc_hd__nor2_2)     0.0613      0.0414     22.7873 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmn_457186 (net)        2      0.0063
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_264082/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     22.7873 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_264082/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0566     22.8440 r
+  EX_FPU/DuI/X2/M1/mult_36/tmp_net522034 (net)      1      0.0048
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_3_264083/B (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     22.8440 r
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_3_264083/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0627     22.9067 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmn_457188 (net)        3      0.0115
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_266085/A1 (sky130_fd_sc_hd__a21o_2)
+                                                                       0.0613      0.0000     22.9067 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_266085/X (sky130_fd_sc_hd__a21o_2)
+                                                                       0.0613      0.1491     23.0558 f
+  EX_FPU/DuI/X2/M1/mult_36/tmp_net522032 (net)      1      0.0046
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_4_264080/A (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0000     23.0558 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_4_264080/Y (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0689     23.1247 r
+  EX_FPU/DuI/X2/M1/mult_36/N509995 (net)            3      0.0234
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_262618/A2 (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0000     23.1247 r
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_262618/Y (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0664     23.1911 f
+  EX_FPU/DuI/X2/M1/mult_36/N513508 (net)            2      0.0120
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_263087/A1 (sky130_fd_sc_hd__a21oi_2)
+                                                                       0.0613      0.0000     23.1911 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_263087/Y (sky130_fd_sc_hd__a21oi_2)
+                                                                       0.0613      0.1381     23.3292 r
+  EX_FPU/DuI/X2/M1/mult_36/N508905 (net)            2      0.0053
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_3_265799/A (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0000     23.3292 r
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_3_265799/Y (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0380     23.3672 f
+  EX_FPU/DuI/X2/M1/mult_36/tmp_net523204 (net)      1      0.0025
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_266413/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     23.3672 f
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_266413/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0565     23.4237 r
+  EX_FPU/DuI/X2/M1/mult_36/tmp_net523611 (net)      1      0.0091
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_3_258949/A (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000     23.4237 r
+  EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_3_258949/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0627     23.4864 f
+  EX_FPU/DuI/X2/M1/mult_36/product[47] (net)        3      0.0278
+  EX_FPU/DuI/X2/M1/HFSBUF_193_256405/A (sky130_fd_sc_hd__buf_12)       0.0613      0.0000     23.4864 f
+  EX_FPU/DuI/X2/M1/HFSBUF_193_256405/X (sky130_fd_sc_hd__buf_12)       0.0613      0.1552     23.6416 f
+  EX_FPU/DuI/X2/M1/HFSNET_2 (net)                  28      0.0898
+  EX_FPU/DuI/X2/M1/A255060/A (sky130_fd_sc_hd__nor2_2)                 0.0613      0.0000     23.6416 f
+  EX_FPU/DuI/X2/M1/A255060/Y (sky130_fd_sc_hd__nor2_2)                 0.0613      0.1062     23.7478 r
+  EX_FPU/DuI/X2/M1/N516904 (net)                    2      0.0089
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_263645/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     23.7478 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_263645/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0381     23.7859 f
+  EX_FPU/DuI/X2/M1/tmp_net521744 (net)              1      0.0050
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_265664/A (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     23.7859 f
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_265664/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0743     23.8602 r
+  EX_FPU/DuI/X2/M1/tmp_net521746 (net)              2      0.0077
+  EX_FPU/DuI/X2/M1/ctmTdsLR_5_263649/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     23.8602 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_5_263649/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0614     23.9216 f
+  EX_FPU/DuI/X2/M1/ctmn_466797 (net)                4      0.0169
+  EX_FPU/DuI/X2/M1/A248852/A (sky130_fd_sc_hd__inv_2)                  0.0613      0.0000     23.9216 f
+  EX_FPU/DuI/X2/M1/A248852/Y (sky130_fd_sc_hd__inv_2)                  0.0613      0.0602     23.9818 r
+  EX_FPU/DuI/X2/M1/ctmn_466747 (net)                2      0.0062
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_258936/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     23.9818 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_258936/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0381     24.0199 f
+  EX_FPU/DuI/X2/M1/tmp_net518532 (net)              1      0.0025
+  EX_FPU/DuI/X2/M1/ctmTdsLR_2_258937/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     24.0199 f
+  EX_FPU/DuI/X2/M1/ctmTdsLR_2_258937/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0565     24.0764 r
+  EX_FPU/DuI/X2/M1/tmp_net518533 (net)              1      0.0026
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_258938/A (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     24.0764 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_258938/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.0346     24.1110 f
+  EX_FPU/DuI/X2/M1/N511166 (net)                    1      0.0055
+  EX_FPU/DuI/X2/M1/A244464/B (sky130_fd_sc_hd__xnor2_1)                0.0613      0.0000     24.1110 f
+  EX_FPU/DuI/X2/M1/A244464/Y (sky130_fd_sc_hd__xnor2_1)                0.0613      0.1906     24.3016 r
+  EX_FPU/DuI/X2/M1/N493372 (net)                    3      0.0088
+  EX_FPU/DuI/X2/M1/ctmTdsLR_2_263081/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     24.3016 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_2_263081/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0443     24.3459 f
+  EX_FPU/DuI/X2/M1/tmp_net521357 (net)              1      0.0024
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_263080/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     24.3459 f
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_263080/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0479     24.3939 r
+  EX_FPU/DuI/X2/M1/tmp_net521358 (net)              1      0.0056
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_264064/C (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     24.3939 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_264064/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0851     24.4789 f
+  EX_FPU/DuI/X2/M1/N489460 (net)                    3      0.0118
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_266410/A (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0000     24.4789 f
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_266410/Y (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0482     24.5272 r
+  EX_FPU/DuI/X2/M1/tmp_net523609 (net)              1      0.0046
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_266412/A (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     24.5272 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_266412/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0607     24.5879 f
+  EX_FPU/DuI/X2/M1/tmp_net522329 (net)              1      0.0048
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_264519/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     24.5879 f
+  EX_FPU/DuI/X2/M1/ctmTdsLR_3_264519/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0565     24.6444 r
+  EX_FPU/DuI/X2/M1/tmp_net522331 (net)              1      0.0141
+  EX_FPU/DuI/X2/M1/ctmTdsLR_4_264520/A (sky130_fd_sc_hd__inv_6)        0.0613      0.0000     24.6444 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_4_264520/Y (sky130_fd_sc_hd__inv_6)        0.0613      0.1051     24.7495 f
+  EX_FPU/DuI/X2/M1/N503709 (net)                   15      0.0484
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_263072/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     24.7495 f
+  EX_FPU/DuI/X2/M1/ctmTdsLR_1_263072/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0481     24.7976 r
+  EX_FPU/DuI/X2/M1/tmp_net521352 (net)              1      0.0049
+  EX_FPU/DuI/X2/M1/ctmTdsLR_2_263073/B (sky130_fd_sc_hd__nor2_2)       0.0613      0.0000     24.7976 r
+  EX_FPU/DuI/X2/M1/ctmTdsLR_2_263073/Y (sky130_fd_sc_hd__nor2_2)       0.0613      0.0509     24.8485 f
+  EX_FPU/DuI/X2/M1/result[17] (net)                 4      0.0145
+  EX_FPU/DuI/X2/A1/ctmi_164628/A1 (sky130_fd_sc_hd__a22oi_2)           0.0613      0.0000     24.8485 f
+  EX_FPU/DuI/X2/A1/ctmi_164628/Y (sky130_fd_sc_hd__a22oi_2)            0.0613      0.1287     24.9772 r
+  EX_FPU/DuI/X2/A1/lt_42/ctmn_93800 (net)           2      0.0058
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_258370/B (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     24.9772 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_258370/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0546     25.0318 f
+  EX_FPU/DuI/X2/A1/tmp_net518120 (net)              2      0.0052
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_266504/A (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     25.0318 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_266504/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.0818     25.1136 r
+  EX_FPU/DuI/X2/A1/tmp_net523677 (net)              1      0.0026
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_266503/B (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     25.1136 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_266503/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0442     25.1578 f
+  EX_FPU/DuI/X2/A1/tmp_net521738 (net)              1      0.0051
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_263638/A (sky130_fd_sc_hd__clkinv_2)     0.0613      0.0000     25.1578 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_263638/Y (sky130_fd_sc_hd__clkinv_2)     0.0613      0.0479     25.2057 r
+  EX_FPU/DuI/X2/A1/tmp_net520070 (net)              1      0.0129
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_261193/B (sky130_fd_sc_hd__nand3_4)      0.0613      0.0000     25.2057 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_261193/Y (sky130_fd_sc_hd__nand3_4)      0.0613      0.0611     25.2669 f
+  EX_FPU/DuI/X2/A1/tmp_net518521 (net)              1      0.0173
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_258922/A (sky130_fd_sc_hd__nand2_8)      0.0613      0.0000     25.2669 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_258922/Y (sky130_fd_sc_hd__nand2_8)      0.0613      0.1981     25.4650 r
+  EX_FPU/DuI/X2/A1/HFSNET_4 (net)                  35      0.1149
+  EX_FPU/DuI/X2/A1/ctmi_164828/S (sky130_fd_sc_hd__mux2_4)             0.0613      0.0000     25.4650 r
+  EX_FPU/DuI/X2/A1/ctmi_164828/X (sky130_fd_sc_hd__mux2_4)             0.0613      0.3066     25.7716 f
+  EX_FPU/DuI/X2/A1/operand_a[23] (net)             12      0.0504
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_1_264052/A (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0000     25.7716 f
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_1_264052/Y (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0480     25.8196 r
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/tmp_net522012 (net)
+                                                    1      0.0048
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_2_264053/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     25.8196 r
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_2_264053/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0694     25.8891 f
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmn_488410 (net)
+                                                    4      0.0142
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_3_259992/A2 (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0000     25.8891 f
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_3_259992/Y (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.1324     26.0214 r
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/tmp_net519248 (net)
+                                                    2      0.0074
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_5_259994/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     26.0214 r
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_5_259994/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0695     26.0909 f
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/N494029 (net)
+                                                    4      0.0126
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/A212741/A2 (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0000     26.0909 f
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/A212741/Y (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.1072     26.1980 r
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/N492713 (net)
+                                                    1      0.0054
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/A212742/B (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.0000     26.1980 r
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/A212742/X (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.1426     26.3406 r
+  EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J10/tmp_net235048 (net)
+                                                    1      0.0027
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_266321/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     26.3406 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_266321/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0381     26.3787 f
+  EX_FPU/DuI/X2/A1/tmp_net523551 (net)              1      0.0026
+  EX_FPU/DuI/X2/A1/ctmTdsLR_3_260677/B (sky130_fd_sc_hd__and2_4)       0.0613      0.0000     26.3787 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_3_260677/X (sky130_fd_sc_hd__and2_4)       0.0613      0.1524     26.5310 f
+  EX_FPU/DuI/X2/A1/N511879 (net)                   12      0.0550
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_263070/B1_N (sky130_fd_sc_hd__a21boi_2)
+                                                                       0.0613      0.0000     26.5310 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_263070/Y (sky130_fd_sc_hd__a21boi_2)     0.0613      0.1055     26.6366 f
+  EX_FPU/DuI/X2/A1/tmp_net521351 (net)              1      0.0046
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_263071/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     26.6366 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_263071/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0921     26.7286 r
+  EX_FPU/DuI/X2/A1/N512605 (net)                    5      0.0241
+  EX_FPU/DuI/X2/A1/A225202/A (sky130_fd_sc_hd__nand2_2)                0.0613      0.0000     26.7286 r
+  EX_FPU/DuI/X2/A1/A225202/Y (sky130_fd_sc_hd__nand2_2)                0.0613      0.0904     26.8191 f
+  EX_FPU/DuI/X2/A1/N500428 (net)                    8      0.0245
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_262585/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     26.8191 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_262585/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0481     26.8671 r
+  EX_FPU/DuI/X2/A1/tmp_net521015 (net)              1      0.0048
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_262586/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     26.8671 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_262586/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0546     26.9218 f
+  EX_FPU/DuI/X2/A1/ctmn_463381 (net)                2      0.0080
+  EX_FPU/DuI/X2/A1/ctmi_165038/B (sky130_fd_sc_hd__nand3_2)            0.0613      0.0000     26.9218 f
+  EX_FPU/DuI/X2/A1/ctmi_165038/Y (sky130_fd_sc_hd__nand3_2)            0.0613      0.0833     27.0051 r
+  EX_FPU/DuI/X2/A1/ctmn_463388 (net)                3      0.0113
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_259415/A2 (sky130_fd_sc_hd__o221ai_1)    0.0613      0.0000     27.0051 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_259415/Y (sky130_fd_sc_hd__o221ai_1)     0.0613      0.0785     27.0835 f
+  EX_FPU/DuI/X2/A1/tmp_net518852 (net)              1      0.0034
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_259416/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     27.0835 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_259416/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0685     27.1520 r
+  EX_FPU/DuI/X2/A1/tmp_net518853 (net)              2      0.0047
+  EX_FPU/DuI/X2/A1/ctmTdsLR_4_264392/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     27.1520 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_4_264392/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0380     27.1901 f
+  EX_FPU/DuI/X2/A1/tmp_net522245 (net)              1      0.0029
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_264390/A2 (sky130_fd_sc_hd__o21ai_1)     0.0613      0.0000     27.1901 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_264390/Y (sky130_fd_sc_hd__o21ai_1)      0.0613      0.1070     27.2971 r
+  EX_FPU/DuI/X2/A1/tmp_net522246 (net)              1      0.0052
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_264389/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     27.2971 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_264389/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0547     27.3518 f
+  EX_FPU/DuI/X2/A1/tmp_net518102 (net)              2      0.0085
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_265127/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     27.3518 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_265127/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0685     27.4203 r
+  EX_FPU/DuI/X2/A1/tmp_net522738 (net)              2      0.0077
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_266716/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     27.4203 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_266716/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0442     27.4646 f
+  EX_FPU/DuI/X2/A1/tmp_net523819 (net)              1      0.0080
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_264811/A1 (sky130_fd_sc_hd__a21o_1)      0.0613      0.0000     27.4646 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_1_264811/X (sky130_fd_sc_hd__a21o_1)       0.0613      0.1493     27.6138 f
+  EX_FPU/DuI/X2/A1/tmp_net522240 (net)              1      0.0050
+  EX_FPU/DuI/X2/A1/ctmTdsLR_3_264386/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     27.6138 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_3_264386/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0685     27.6823 r
+  EX_FPU/DuI/X2/A1/tmp_net522242 (net)              2      0.0139
+  EX_FPU/DuI/X2/A1/ctmTdsLR_5_264388/A (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     27.6823 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_5_264388/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.0988     27.7811 f
+  EX_FPU/DuI/X2/A1/ZBUF_491_0 (net)                10      0.0426
+  EX_FPU/DuI/X2/A1/A247516/A (sky130_fd_sc_hd__nand2_2)                0.0613      0.0000     27.7811 f
+  EX_FPU/DuI/X2/A1/A247516/Y (sky130_fd_sc_hd__nand2_2)                0.0613      0.0569     27.8380 r
+  EX_FPU/DuI/X2/A1/N512818 (net)                    1      0.0058
+  EX_FPU/DuI/X2/A1/ctmTdsLR_4_261182/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     27.8380 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_4_261182/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0547     27.8927 f
+  EX_FPU/DuI/X2/A1/N515185 (net)                    2      0.0066
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_266497/B (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     27.8927 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_266497/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.0819     27.9746 r
+  EX_FPU/DuI/X2/A1/tmp_net523672 (net)              1      0.0028
+  EX_FPU/DuI/X2/A1/ctmTdsLR_3_266498/B (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     27.9746 r
+  EX_FPU/DuI/X2/A1/ctmTdsLR_3_266498/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.0347     28.0093 f
+  EX_FPU/DuI/X2/A1/tmp_net519239 (net)              1      0.0029
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_259979/A (sky130_fd_sc_hd__and2_4)       0.0613      0.0000     28.0093 f
+  EX_FPU/DuI/X2/A1/ctmTdsLR_2_259979/X (sky130_fd_sc_hd__and2_4)       0.0613      0.1483     28.1575 f
+  EX_FPU/DuI/X2/A1/ZBUF_513_9 (net)                10      0.0496
+  EX_FPU/DuI/X2/A1/pe/A251593/B (sky130_fd_sc_hd__nor2_4)              0.0613      0.0000     28.1575 f
+  EX_FPU/DuI/X2/A1/pe/A251593/Y (sky130_fd_sc_hd__nor2_4)              0.0613      0.1672     28.3248 r
+  EX_FPU/DuI/X2/A1/pe/N515024 (net)                 6      0.0190
+  EX_FPU/DuI/X2/A1/pe/A240392/B (sky130_fd_sc_hd__nand2_1)             0.0613      0.0000     28.3248 r
+  EX_FPU/DuI/X2/A1/pe/A240392/Y (sky130_fd_sc_hd__nand2_1)             0.0613      0.0629     28.3876 f
+  EX_FPU/DuI/X2/A1/pe/N492535 (net)                 3      0.0139
+  EX_FPU/DuI/X2/A1/pe/A224940/B (sky130_fd_sc_hd__nor2_4)              0.0613      0.0000     28.3876 f
+  EX_FPU/DuI/X2/A1/pe/A224940/Y (sky130_fd_sc_hd__nor2_4)              0.0613      0.1541     28.5417 r
+  EX_FPU/DuI/X2/A1/pe/N500271 (net)                 5      0.0211
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_2_261614/A (sky130_fd_sc_hd__nand2_1)   0.0613      0.0000     28.5417 r
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_2_261614/Y (sky130_fd_sc_hd__nand2_1)   0.0613      0.0443     28.5861 f
+  EX_FPU/DuI/X2/A1/pe/tmp_net520357 (net)           1      0.0041
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_3_261615/A2 (sky130_fd_sc_hd__o21bai_1)
+                                                                       0.0613      0.0000     28.5861 f
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_3_261615/Y (sky130_fd_sc_hd__o21bai_1)
+                                                                       0.0613      0.1047     28.6907 r
+  EX_FPU/DuI/X2/A1/pe/tmp_net520358 (net)           1      0.0042
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_3_260639/B1 (sky130_fd_sc_hd__a21oi_1)
+                                                                       0.0613      0.0000     28.6907 r
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_3_260639/Y (sky130_fd_sc_hd__a21oi_1)   0.0613      0.0312     28.7219 f
+  EX_FPU/DuI/X2/A1/pe/tmp_net519684 (net)           1      0.0045
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_5_260641/A (sky130_fd_sc_hd__nand2_1)   0.0613      0.0000     28.7219 f
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_5_260641/Y (sky130_fd_sc_hd__nand2_1)   0.0613      0.0567     28.7786 r
+  EX_FPU/DuI/X2/A1/pe/tmp_net519686 (net)           1      0.0061
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_1_266183/A (sky130_fd_sc_hd__clkinv_1)
+                                                                       0.0613      0.0000     28.7786 r
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_1_266183/Y (sky130_fd_sc_hd__clkinv_1)
+                                                                       0.0613      0.0383     28.8169 f
+  EX_FPU/DuI/X2/A1/pe/tmp_net523458 (net)           1      0.0046
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_4_266186/A (sky130_fd_sc_hd__nand3_2)   0.0613      0.0000     28.8169 f
+  EX_FPU/DuI/X2/A1/pe/ctmTdsLR_4_266186/Y (sky130_fd_sc_hd__nand3_2)   0.0613      0.0627     28.8795 r
+  EX_FPU/DuI/X2/A1/pe/Significand[9] (net)          1      0.0092
+  EX_FPU/DuI/X2/A1/ctmi_165335/A1 (sky130_fd_sc_hd__a21o_1)            0.0613      0.0000     28.8795 r
+  EX_FPU/DuI/X2/A1/ctmi_165335/X (sky130_fd_sc_hd__a21o_1)             0.0613      0.0946     28.9742 r
+  EX_FPU/DuI/X2/A1/ZBUF_1330_9 (net)                1      0.0101
+  EX_FPU/DuI/X2/A1/ZBUF_1330_inst_257640/A (sky130_fd_sc_hd__buf_12)   0.0613      0.0000     28.9742 r
+  EX_FPU/DuI/X2/A1/ZBUF_1330_inst_257640/X (sky130_fd_sc_hd__buf_12)   0.0613      0.1708     29.1450 r
+  EX_FPU/DuI/X2/A1/result[9] (net)                 20      0.1066
+  EX_FPU/DuI/X2/M2/mult_36/A226763/B (sky130_fd_sc_hd__xnor2_1)        0.0613      0.0000     29.1450 r
+  EX_FPU/DuI/X2/M2/mult_36/A226763/Y (sky130_fd_sc_hd__xnor2_1)        0.0613      0.1653     29.3102 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmn_452242 (net)        2      0.0066
+  EX_FPU/DuI/X2/M2/mult_36/A226765/A2 (sky130_fd_sc_hd__o22ai_1)       0.0613      0.0000     29.3102 r
+  EX_FPU/DuI/X2/M2/mult_36/A226765/Y (sky130_fd_sc_hd__o22ai_1)        0.0613      0.0609     29.3711 f
+  EX_FPU/DuI/X2/M2/mult_36/N501367 (net)            2      0.0123
+  EX_FPU/DuI/X2/M2/mult_36/A226771/B (sky130_fd_sc_hd__maj3_1)         0.0613      0.0000     29.3711 f
+  EX_FPU/DuI/X2/M2/mult_36/A226771/X (sky130_fd_sc_hd__maj3_1)         0.0613      0.2439     29.6150 f
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net211198 (net)      2      0.0050
+  EX_FPU/DuI/X2/M2/mult_36/A226697/A_N (sky130_fd_sc_hd__nand2b_1)     0.0613      0.0000     29.6150 f
+  EX_FPU/DuI/X2/M2/mult_36/A226697/Y (sky130_fd_sc_hd__nand2b_1)       0.0613      0.0586     29.6736 f
+  EX_FPU/DuI/X2/M2/mult_36/N501332 (net)            2      0.0050
+  EX_FPU/DuI/X2/M2/mult_36/A226698/B (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     29.6736 f
+  EX_FPU/DuI/X2/M2/mult_36/A226698/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0565     29.7301 r
+  EX_FPU/DuI/X2/M2/mult_36/N501333 (net)            1      0.0055
+  EX_FPU/DuI/X2/M2/mult_36/ctmi_250992/A (sky130_fd_sc_hd__xnor2_1)    0.0613      0.0000     29.7301 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmi_250992/Y (sky130_fd_sc_hd__xnor2_1)    0.0613      0.1268     29.8569 r
+  EX_FPU/DuI/X2/M2/mult_36/N501334 (net)            1      0.0020
+  EX_FPU/DuI/X2/M2/mult_36/ZBUF_28_inst_257800/A (sky130_fd_sc_hd__buf_2)
+                                                                       0.0613      0.0000     29.8569 r
+  EX_FPU/DuI/X2/M2/mult_36/ZBUF_28_inst_257800/X (sky130_fd_sc_hd__buf_2)
+                                                                       0.0613      0.0799     29.9369 r
+  EX_FPU/DuI/X2/M2/mult_36/ZBUF_28_10 (net)         2      0.0115
+  EX_FPU/DuI/X2/M2/mult_36/A226703/A (sky130_fd_sc_hd__inv_2)          0.0613      0.0000     29.9369 r
+  EX_FPU/DuI/X2/M2/mult_36/A226703/Y (sky130_fd_sc_hd__inv_2)          0.0613      0.0381     29.9750 f
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net211220 (net)      1      0.0027
+  EX_FPU/DuI/X2/M2/mult_36/A208642/A2 (sky130_fd_sc_hd__a21bo_1)       0.0613      0.0000     29.9750 f
+  EX_FPU/DuI/X2/M2/mult_36/A208642/X (sky130_fd_sc_hd__a21bo_1)        0.0613      0.1615     30.1365 f
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net211225 (net)      2      0.0069
+  EX_FPU/DuI/X2/M2/mult_36/A208648/A (sky130_fd_sc_hd__nor2_1)         0.0613      0.0000     30.1365 f
+  EX_FPU/DuI/X2/M2/mult_36/A208648/Y (sky130_fd_sc_hd__nor2_1)         0.0613      0.1062     30.2427 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmn_451297 (net)        2      0.0057
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_266709/A (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0000     30.2427 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_266709/Y (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0381     30.2807 f
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net523815 (net)      1      0.0046
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_266710/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     30.2807 f
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_266710/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0684     30.3491 r
+  EX_FPU/DuI/X2/M2/mult_36/N502874 (net)            2      0.0075
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_4_266712/A2 (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0000     30.3491 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_4_266712/Y (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0653     30.4144 f
+  EX_FPU/DuI/X2/M2/mult_36/N502875 (net)            2      0.0101
+  EX_FPU/DuI/X2/M2/mult_36/A250612/A2 (sky130_fd_sc_hd__o21ai_2)       0.0613      0.0000     30.4144 f
+  EX_FPU/DuI/X2/M2/mult_36/A250612/Y (sky130_fd_sc_hd__o21ai_2)        0.0613      0.1517     30.5662 r
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net211249 (net)      3      0.0098
+  EX_FPU/DuI/X2/M2/mult_36/ctmi_225247/A (sky130_fd_sc_hd__xnor2_1)    0.0613      0.0000     30.5662 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmi_225247/Y (sky130_fd_sc_hd__xnor2_1)    0.0613      0.1269     30.6931 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmn_500450 (net)        1      0.0054
+  EX_FPU/DuI/X2/M2/mult_36/ctmi_225246/B (sky130_fd_sc_hd__xor2_1)     0.0613      0.0000     30.6931 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmi_225246/X (sky130_fd_sc_hd__xor2_1)     0.0613      0.2262     30.9193 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmn_451743 (net)        3      0.0112
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_266708/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     30.9193 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_266708/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0442     30.9636 f
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net523814 (net)      1      0.0054
+  EX_FPU/DuI/X2/M2/mult_36/A229281/A2 (sky130_fd_sc_hd__o21ai_2)       0.0613      0.0000     30.9636 f
+  EX_FPU/DuI/X2/M2/mult_36/A229281/Y (sky130_fd_sc_hd__o21ai_2)        0.0613      0.1517     31.1153 r
+  EX_FPU/DuI/X2/M2/mult_36/N502846 (net)            3      0.0157
+  EX_FPU/DuI/X2/M2/mult_36/A254332/A1 (sky130_fd_sc_hd__a21oi_2)       0.0613      0.0000     31.1153 r
+  EX_FPU/DuI/X2/M2/mult_36/A254332/Y (sky130_fd_sc_hd__a21oi_2)        0.0613      0.0743     31.1896 f
+  EX_FPU/DuI/X2/M2/mult_36/N510898 (net)            4      0.0150
+  EX_FPU/DuI/X2/M2/mult_36/A230755/A1 (sky130_fd_sc_hd__o21ai_1)       0.0613      0.0000     31.1896 f
+  EX_FPU/DuI/X2/M2/mult_36/A230755/Y (sky130_fd_sc_hd__o21ai_1)        0.0613      0.1072     31.2968 r
+  EX_FPU/DuI/X2/M2/mult_36/N503656 (net)            1      0.0040
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_263021/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     31.2968 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_263021/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0443     31.3411 f
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net521318 (net)      1      0.0045
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_5_263023/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     31.3411 f
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_5_263023/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0684     31.4095 r
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net521320 (net)      2      0.0100
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_264362/A (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0000     31.4095 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_264362/Y (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0381     31.4476 f
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net522224 (net)      1      0.0046
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_264363/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     31.4476 f
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_264363/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0565     31.5041 r
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net522226 (net)      1      0.0050
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_4_264364/B1 (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0000     31.5041 r
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_4_264364/Y (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0383     31.5424 f
+  EX_FPU/DuI/X2/M2/mult_36/tmp_net519217 (net)      1      0.0088
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_259944/A (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000     31.5424 f
+  EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_259944/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0776     31.6200 r
+  EX_FPU/DuI/X2/M2/mult_36/product[47] (net)        3      0.0297
+  EX_FPU/DuI/X2/M2/HFSBUF_534_256385/A (sky130_fd_sc_hd__buf_12)       0.0613      0.0000     31.6200 r
+  EX_FPU/DuI/X2/M2/HFSBUF_534_256385/X (sky130_fd_sc_hd__buf_12)       0.0613      0.2115     31.8315 r
+  EX_FPU/DuI/X2/M2/HFSNET_2 (net)                  34      0.1198
+  EX_FPU/DuI/X2/M2/ctmTdsLR_1_260601/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     31.8315 r
+  EX_FPU/DuI/X2/M2/ctmTdsLR_1_260601/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0385     31.8700 f
+  EX_FPU/DuI/X2/M2/tmp_net519658 (net)              1      0.0089
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_260602/A (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     31.8700 f
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_260602/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.0776     31.9476 r
+  EX_FPU/DuI/X2/M2/N514232 (net)                    3      0.0114
+  EX_FPU/DuI/X2/M2/ctmTdsLR_1_262551/A (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     31.9476 r
+  EX_FPU/DuI/X2/M2/ctmTdsLR_1_262551/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0940     32.0415 f
+  EX_FPU/DuI/X2/M2/N493968 (net)                    4      0.0145
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_263000/A (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     32.0415 f
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_263000/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.0820     32.1235 r
+  EX_FPU/DuI/X2/M2/tmp_net521303 (net)              1      0.0026
+  EX_FPU/DuI/X2/M2/ctmTdsLR_3_263001/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     32.1235 r
+  EX_FPU/DuI/X2/M2/ctmTdsLR_3_263001/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0442     32.1677 f
+  EX_FPU/DuI/X2/M2/N508600 (net)                    1      0.0091
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_265103/B (sky130_fd_sc_hd__xor2_2)       0.0613      0.0000     32.1677 f
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_265103/X (sky130_fd_sc_hd__xor2_2)       0.0613      0.1900     32.3577 r
+  EX_FPU/DuI/X2/M2/N494355 (net)                    2      0.0109
+  EX_FPU/DuI/X2/M2/ctmTdsLR_4_261573/C (sky130_fd_sc_hd__nand4_1)      0.0613      0.0000     32.3577 r
+  EX_FPU/DuI/X2/M2/ctmTdsLR_4_261573/Y (sky130_fd_sc_hd__nand4_1)      0.0613      0.0776     32.4353 f
+  EX_FPU/DuI/X2/M2/tmp_net520331 (net)              2      0.0054
+  EX_FPU/DuI/X2/M2/A250265/B (sky130_fd_sc_hd__nor2_1)                 0.0613      0.0000     32.4353 f
+  EX_FPU/DuI/X2/M2/A250265/Y (sky130_fd_sc_hd__nor2_1)                 0.0613      0.1060     32.5413 r
+  EX_FPU/DuI/X2/M2/N498307 (net)                    2      0.0083
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_259930/A (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     32.5413 r
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_259930/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0609     32.6022 f
+  EX_FPU/DuI/X2/M2/tmp_net519207 (net)              1      0.0088
+  EX_FPU/DuI/X2/M2/ctmTdsLR_1_259929/A (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     32.6022 f
+  EX_FPU/DuI/X2/M2/ctmTdsLR_1_259929/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.0853     32.6875 r
+  EX_FPU/DuI/X2/M2/N515206 (net)                    4      0.0342
+  EX_FPU/DuI/X2/M2/ZBUF_247_inst_257526/A (sky130_fd_sc_hd__buf_12)    0.0613      0.0000     32.6875 r
+  EX_FPU/DuI/X2/M2/ZBUF_247_inst_257526/X (sky130_fd_sc_hd__buf_12)    0.0613      0.0974     32.7849 r
+  EX_FPU/DuI/X2/M2/ZBUF_247_5 (net)                 4      0.0485
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_264789/A (sky130_fd_sc_hd__nor2b_2)      0.0613      0.0000     32.7849 r
+  EX_FPU/DuI/X2/M2/ctmTdsLR_2_264789/Y (sky130_fd_sc_hd__nor2b_2)      0.0613      0.0371     32.8221 f
+  EX_FPU/DuI/X2/M2/ZBUF_1796_10 (net)               1      0.0096
+  EX_FPU/DuI/X2/M2/ZBUF_1796_inst_257715/A (sky130_fd_sc_hd__buf_12)   0.0613      0.0000     32.8221 f
+  EX_FPU/DuI/X2/M2/ZBUF_1796_inst_257715/X (sky130_fd_sc_hd__buf_12)   0.0613      0.1513     32.9734 f
+  EX_FPU/DuI/X2/M2/result[10] (net)                26      0.1317
+  EX_FPU/DuI/X3/M1/mult_36/ctmi_195943/A (sky130_fd_sc_hd__nand2_2)    0.0613      0.0000     32.9734 f
+  EX_FPU/DuI/X3/M1/mult_36/ctmi_195943/Y (sky130_fd_sc_hd__nand2_2)    0.0613      0.1101     33.0835 r
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net247574 (net)      8      0.0284
+  EX_FPU/DuI/X3/M1/mult_36/ctmi_195945/A (sky130_fd_sc_hd__nand2_2)    0.0613      0.0000     33.0835 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmi_195945/Y (sky130_fd_sc_hd__nand2_2)    0.0613      0.0546     33.1381 f
+  EX_FPU/DuI/X3/M1/mult_36/ctmn_456630 (net)        2      0.0105
+  EX_FPU/DuI/X3/M1/mult_36/A245841/A2 (sky130_fd_sc_hd__o21ai_2)       0.0613      0.0000     33.1381 f
+  EX_FPU/DuI/X3/M1/mult_36/A245841/Y (sky130_fd_sc_hd__o21ai_2)        0.0613      0.1517     33.2898 r
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net247067 (net)      3      0.0132
+  EX_FPU/DuI/X3/M1/mult_36/A245842/B (sky130_fd_sc_hd__xor2_1)         0.0613      0.0000     33.2898 r
+  EX_FPU/DuI/X3/M1/mult_36/A245842/X (sky130_fd_sc_hd__xor2_1)         0.0613      0.1426     33.4324 r
+  EX_FPU/DuI/X3/M1/mult_36/N503365 (net)            1      0.0055
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_258279/A (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.0000     33.4324 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_258279/X (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.1426     33.5749 r
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net518061 (net)      1      0.0052
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_258280/B (sky130_fd_sc_hd__xnor2_1)
+                                                                       0.0613      0.0000     33.5749 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_258280/Y (sky130_fd_sc_hd__xnor2_1)
+                                                                       0.0613      0.1268     33.7017 r
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net518062 (net)      1      0.0055
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_3_258281/A (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.0000     33.7017 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_3_258281/X (sky130_fd_sc_hd__xor2_1)
+                                                                       0.0613      0.1899     33.8917 r
+  EX_FPU/DuI/X3/M1/mult_36/N491045 (net)            2      0.0060
+  EX_FPU/DuI/X3/M1/mult_36/A246077/A_N (sky130_fd_sc_hd__nand2b_1)     0.0613      0.0000     33.8917 r
+  EX_FPU/DuI/X3/M1/mult_36/A246077/Y (sky130_fd_sc_hd__nand2b_1)       0.0613      0.0721     33.9638 r
+  EX_FPU/DuI/X3/M1/mult_36/N491050 (net)            2      0.0059
+  EX_FPU/DuI/X3/M1/mult_36/A209932/B (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     33.9638 r
+  EX_FPU/DuI/X3/M1/mult_36/A209932/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0547     34.0185 f
+  EX_FPU/DuI/X3/M1/mult_36/N491052 (net)            2      0.0069
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_258817/A2 (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0000     34.0185 f
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_258817/Y (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.1517     34.1702 r
+  EX_FPU/DuI/X3/M1/mult_36/N503535 (net)            3      0.0111
+  EX_FPU/DuI/X3/M1/mult_36/A246158/S (sky130_fd_sc_hd__mux2i_1)        0.0613      0.0000     34.1702 r
+  EX_FPU/DuI/X3/M1/mult_36/A246158/Y (sky130_fd_sc_hd__mux2i_1)        0.0613      0.1678     34.3379 r
+  EX_FPU/DuI/X3/M1/mult_36/N490288 (net)            1      0.0053
+  EX_FPU/DuI/X3/M1/mult_36/A246160/A (sky130_fd_sc_hd__xor2_1)         0.0613      0.0000     34.3379 r
+  EX_FPU/DuI/X3/M1/mult_36/A246160/X (sky130_fd_sc_hd__xor2_1)         0.0613      0.1034     34.4414 f
+  EX_FPU/DuI/X3/M1/mult_36/N490289 (net)            1      0.0026
+  EX_FPU/DuI/X3/M1/mult_36/ZBUF_32_inst_257452/A (sky130_fd_sc_hd__buf_4)
+                                                                       0.0613      0.0000     34.4414 f
+  EX_FPU/DuI/X3/M1/mult_36/ZBUF_32_inst_257452/X (sky130_fd_sc_hd__buf_4)
+                                                                       0.0613      0.0828     34.5242 f
+  EX_FPU/DuI/X3/M1/mult_36/ZBUF_32_3 (net)          2      0.0269
+  EX_FPU/DuI/X3/M1/mult_36/A240641/B (sky130_fd_sc_hd__nor2_2)         0.0613      0.0000     34.5242 f
+  EX_FPU/DuI/X3/M1/mult_36/A240641/Y (sky130_fd_sc_hd__nor2_2)         0.0613      0.1259     34.6501 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmn_456181 (net)        3      0.0085
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_259336/A1 (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0000     34.6501 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_259336/Y (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0547     34.7048 f
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net518044 (net)      1      0.0060
+  EX_FPU/DuI/X3/M1/mult_36/A252478/A (sky130_fd_sc_hd__nand2_2)        0.0613      0.0000     34.7048 f
+  EX_FPU/DuI/X3/M1/mult_36/A252478/Y (sky130_fd_sc_hd__nand2_2)        0.0613      0.0566     34.7614 r
+  EX_FPU/DuI/X3/M1/mult_36/N515537 (net)            1      0.0066
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_258252/B (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0000     34.7614 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_258252/Y (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0610     34.8224 f
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net518041 (net)      1      0.0048
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_258253/B (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0000     34.8224 f
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_258253/Y (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0743     34.8967 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmn_456207 (net)        2      0.0062
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_263965/A (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0000     34.8967 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_263965/Y (sky130_fd_sc_hd__inv_1)
+                                                                       0.0613      0.0382     34.9349 f
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net521953 (net)      1      0.0025
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_263966/C (sky130_fd_sc_hd__nand3_1)
+                                                                       0.0613      0.0000     34.9349 f
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_263966/Y (sky130_fd_sc_hd__nand3_1)
+                                                                       0.0613      0.0627     34.9975 r
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net518791 (net)      1      0.0039
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_258243/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     34.9975 r
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_258243/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0443     35.0418 f
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net518035 (net)      1      0.0046
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_258244/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     35.0418 f
+  EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_258244/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0565     35.0983 r
+  EX_FPU/DuI/X3/M1/mult_36/tmp_net248281 (net)      1      0.0104
+  EX_FPU/DuI/X3/M1/mult_36/ZBUF_4849_inst_257457/A (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.0000     35.0983 r
+  EX_FPU/DuI/X3/M1/mult_36/ZBUF_4849_inst_257457/X (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.2175     35.3158 r
+  EX_FPU/DuI/X3/M1/mult_36/product[47] (net)       37      0.1581
+  EX_FPU/DuI/X3/M1/ctmTdsLR_1_263964/B (sky130_fd_sc_hd__nand2b_2)     0.0613      0.0000     35.3158 r
+  EX_FPU/DuI/X3/M1/ctmTdsLR_1_263964/Y (sky130_fd_sc_hd__nand2b_2)     0.0613      0.0483     35.3641 f
+  EX_FPU/DuI/X3/M1/tmp_net518030 (net)              1      0.0048
+  EX_FPU/DuI/X3/M1/ctmTdsLR_1_262923/C1 (sky130_fd_sc_hd__o211a_4)     0.0613      0.0000     35.3641 f
+  EX_FPU/DuI/X3/M1/ctmTdsLR_1_262923/X (sky130_fd_sc_hd__o211a_4)      0.0613      0.1305     35.4946 f
+  EX_FPU/DuI/X3/M1/N495136 (net)                    9      0.0376
+  EX_FPU/DuI/X3/M1/A255905/A (sky130_fd_sc_hd__inv_2)                  0.0613      0.0000     35.4946 f
+  EX_FPU/DuI/X3/M1/A255905/Y (sky130_fd_sc_hd__inv_2)                  0.0613      0.0603     35.5549 r
+  EX_FPU/DuI/X3/M1/N517528 (net)                    2      0.0063
+  EX_FPU/DuI/X3/M1/ctmTdsLR_1_264336/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     35.5549 r
+  EX_FPU/DuI/X3/M1/ctmTdsLR_1_264336/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0381     35.5930 f
+  EX_FPU/DuI/X3/M1/tmp_net522208 (net)              1      0.0029
+  EX_FPU/DuI/X3/M1/ctmTdsLR_2_264337/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     35.5930 f
+  EX_FPU/DuI/X3/M1/ctmTdsLR_2_264337/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0565     35.6495 r
+  EX_FPU/DuI/X3/M1/tmp_net522209 (net)              1      0.0026
+  EX_FPU/DuI/X3/M1/ctmTdsLR_3_264338/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     35.6495 r
+  EX_FPU/DuI/X3/M1/ctmTdsLR_3_264338/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0380     35.6875 f
+  EX_FPU/DuI/X3/M1/N514110 (net)                    1      0.0029
+  EX_FPU/DuI/X3/M1/ctmTdsLR_4_264339/B (sky130_fd_sc_hd__nand4_1)      0.0613      0.0000     35.6875 f
+  EX_FPU/DuI/X3/M1/ctmTdsLR_4_264339/Y (sky130_fd_sc_hd__nand4_1)      0.0613      0.0573     35.7448 r
+  EX_FPU/DuI/X3/M1/tmp_net522210 (net)              1      0.0036
+  EX_FPU/DuI/X3/M1/ctmTdsLR_5_264340/A (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0000     35.7448 r
+  EX_FPU/DuI/X3/M1/ctmTdsLR_5_264340/Y (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0381     35.7829 f
+  EX_FPU/DuI/X3/M1/tmp_net522211 (net)              1      0.0050
+  EX_FPU/DuI/X3/M1/ctmTdsLR_6_264341/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     35.7829 f
+  EX_FPU/DuI/X3/M1/ctmTdsLR_6_264341/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0565     35.8394 r
+  EX_FPU/DuI/X3/M1/N516200 (net)                    1      0.0087
+  EX_FPU/DuI/X3/M1/A253712/B (sky130_fd_sc_hd__xnor2_2)                0.0613      0.0000     35.8394 r
+  EX_FPU/DuI/X3/M1/A253712/Y (sky130_fd_sc_hd__xnor2_2)                0.0613      0.1628     36.0022 r
+  EX_FPU/DuI/X3/M1/ZBUF_28_3 (net)                  2      0.0108
+  EX_FPU/DuI/X3/M1/ctmTdsLR_1_264924/B (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     36.0022 r
+  EX_FPU/DuI/X3/M1/ctmTdsLR_1_264924/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0445     36.0467 f
+  EX_FPU/DuI/X3/M1/tmp_net522600 (net)              1      0.0026
+  EX_FPU/DuI/X3/M1/ctmTdsLR_2_264925/B (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     36.0467 f
+  EX_FPU/DuI/X3/M1/ctmTdsLR_2_264925/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.0818     36.1285 r
+  EX_FPU/DuI/X3/M1/tmp_net522603 (net)              1      0.0049
+  EX_FPU/DuI/X3/M1/ctmTdsLR_6_264929/A (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     36.1285 r
+  EX_FPU/DuI/X3/M1/ctmTdsLR_6_264929/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0608     36.1893 f
+  EX_FPU/DuI/X3/M1/tmp_net520290 (net)              1      0.0102
+  EX_FPU/DuI/X3/M1/ctmTdsLR_3_261514/A (sky130_fd_sc_hd__clkinv_4)     0.0613      0.0000     36.1893 f
+  EX_FPU/DuI/X3/M1/ctmTdsLR_3_261514/Y (sky130_fd_sc_hd__clkinv_4)     0.0613      0.0895     36.2787 r
+  EX_FPU/DuI/X3/M1/ZBUF_32_3 (net)                  6      0.0557
+  EX_FPU/DuI/X3/M1/A242418/A (sky130_fd_sc_hd__nand2_4)                0.0613      0.0000     36.2787 r
+  EX_FPU/DuI/X3/M1/A242418/Y (sky130_fd_sc_hd__nand2_4)                0.0613      0.0888     36.3676 f
+  EX_FPU/DuI/X3/M1/N491526 (net)                    7      0.0223
+  EX_FPU/DuI/X3/M1/ctmTdsLR_2_259310/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     36.3676 f
+  EX_FPU/DuI/X3/M1/ctmTdsLR_2_259310/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0567     36.4243 r
+  EX_FPU/DuI/X3/M1/tmp_net518777 (net)              1      0.0049
+  EX_FPU/DuI/X3/M1/ctmTdsLR_3_259311/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     36.4243 r
+  EX_FPU/DuI/X3/M1/ctmTdsLR_3_259311/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0669     36.4912 f
+  EX_FPU/DuI/X3/M1/result[29] (net)                 5      0.0183
+  EX_FPU/DuI/X3/A1/ctmi_163875/A1 (sky130_fd_sc_hd__a22oi_2)           0.0613      0.0000     36.4912 f
+  EX_FPU/DuI/X3/A1/ctmi_163875/Y (sky130_fd_sc_hd__a22oi_2)            0.0613      0.1441     36.6353 r
+  EX_FPU/DuI/X3/A1/ctmn_462424 (net)                3      0.0146
+  EX_FPU/DuI/X3/A1/ctmTdsLR_2_261989/C (sky130_fd_sc_hd__nand4_2)      0.0613      0.0000     36.6353 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_2_261989/Y (sky130_fd_sc_hd__nand4_2)      0.0613      0.0780     36.7133 f
+  EX_FPU/DuI/X3/A1/tmp_net520613 (net)              2      0.0052
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_266277/A (sky130_fd_sc_hd__inv_1)        0.0613      0.0000     36.7133 f
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_266277/Y (sky130_fd_sc_hd__inv_1)        0.0613      0.0479     36.7612 r
+  EX_FPU/DuI/X3/A1/tmp_net523518 (net)              1      0.0058
+  EX_FPU/DuI/X3/A1/ctmTdsLR_2_266576/A1 (sky130_fd_sc_hd__a21o_4)      0.0613      0.0000     36.7612 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_2_266576/X (sky130_fd_sc_hd__a21o_4)       0.0613      0.1803     36.9415 r
+  EX_FPU/DuI/X3/A1/HFSNET_5 (net)                  27      0.0930
+  EX_FPU/DuI/X3/A1/ctmi_164060/S (sky130_fd_sc_hd__mux2_4)             0.0613      0.0000     36.9415 r
+  EX_FPU/DuI/X3/A1/ctmi_164060/X (sky130_fd_sc_hd__mux2_4)             0.0613      0.3101     37.2515 f
+  EX_FPU/DuI/X3/A1/operand_a[23] (net)             13      0.0537
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_2_261508/A (sky130_fd_sc_hd__clkinv_1)
+                                                                       0.0613      0.0000     37.2515 f
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_2_261508/Y (sky130_fd_sc_hd__clkinv_1)
+                                                                       0.0613      0.0482     37.2997 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/tmp_net520286 (net)
+                                                    1      0.0048
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_1_261507/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     37.2997 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/ctmTdsLR_1_261507/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0442     37.3439 f
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/tmp_net520287 (net)
+                                                    1      0.0094
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/A226085/B (sky130_fd_sc_hd__nor2_4)
+                                                                       0.0613      0.0000     37.3439 f
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/A226085/Y (sky130_fd_sc_hd__nor2_4)
+                                                                       0.0613      0.1541     37.4980 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/N492721 (net)
+                                                    5      0.0178
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/A229539/A2 (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0000     37.4980 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/A229539/Y (sky130_fd_sc_hd__o21ai_1)
+                                                                       0.0613      0.0548     37.5528 f
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/N495036 (net)
+                                                    1      0.0028
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/A216578/A (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0000     37.5528 f
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/A216578/Y (sky130_fd_sc_hd__nand2_1)
+                                                                       0.0613      0.0565     37.6093 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/N495037 (net)
+                                                    1      0.0034
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/A216579/B1 (sky130_fd_sc_hd__o21a_2)
+                                                                       0.0613      0.0000     37.6093 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/A216579/X (sky130_fd_sc_hd__o21a_2)
+                                                                       0.0613      0.0786     37.6879 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/tmp_net235672 (net)
+                                                    1      0.0101
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/ZBUF_2937_inst_257608/A (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.0000     37.6879 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/ZBUF_2937_inst_257608/X (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.2137     37.9016 r
+  EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J10/PO_0[3] (net)
+                                                   35      0.1367
+  EX_FPU/DuI/X3/A1/HFSINV_886_256393/A (sky130_fd_sc_hd__inv_8)        0.0613      0.0000     37.9016 r
+  EX_FPU/DuI/X3/A1/HFSINV_886_256393/Y (sky130_fd_sc_hd__inv_8)        0.0613      0.0957     37.9974 f
+  EX_FPU/DuI/X3/A1/HFSNET_1 (net)                  12      0.0468
+  EX_FPU/DuI/X3/A1/A237308/B1 (sky130_fd_sc_hd__o221ai_2)              0.0613      0.0000     37.9974 f
+  EX_FPU/DuI/X3/A1/A237308/Y (sky130_fd_sc_hd__o221ai_2)               0.0613      0.1686     38.1660 r
+  EX_FPU/DuI/X3/A1/N507285 (net)                    3      0.0101
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_264493/B (sky130_fd_sc_hd__nand4_1)      0.0613      0.0000     38.1660 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_264493/Y (sky130_fd_sc_hd__nand4_1)      0.0613      0.0615     38.2275 f
+  EX_FPU/DuI/X3/A1/tmp_net522311 (net)              1      0.0028
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_261971/A (sky130_fd_sc_hd__and2_4)       0.0613      0.0000     38.2275 f
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_261971/X (sky130_fd_sc_hd__and2_4)       0.0613      0.1355     38.3630 f
+  EX_FPU/DuI/X3/A1/ZBUF_137_5 (net)                 5      0.0191
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_265241/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     38.3630 f
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_265241/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0481     38.4111 r
+  EX_FPU/DuI/X3/A1/tmp_net522821 (net)              1      0.0046
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_265243/A (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     38.4111 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_265243/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0939     38.5050 f
+  EX_FPU/DuI/X3/A1/ctmn_462770 (net)                4      0.0119
+  EX_FPU/DuI/X3/A1/ctmi_164286/B (sky130_fd_sc_hd__nand2_1)            0.0613      0.0000     38.5050 f
+  EX_FPU/DuI/X3/A1/ctmi_164286/Y (sky130_fd_sc_hd__nand2_1)            0.0613      0.0566     38.5616 r
+  EX_FPU/DuI/X3/A1/ctmn_462766 (net)                1      0.0103
+  EX_FPU/DuI/X3/A1/ctmi_164285/C (sky130_fd_sc_hd__nand3b_4)           0.0613      0.0000     38.5616 r
+  EX_FPU/DuI/X3/A1/ctmi_164285/Y (sky130_fd_sc_hd__nand3b_4)           0.0613      0.0798     38.6414 f
+  EX_FPU/DuI/X3/A1/ctmn_462767 (net)                2      0.0067
+  EX_FPU/DuI/X3/A1/A250934/A (sky130_fd_sc_hd__nand2_1)                0.0613      0.0000     38.6414 f
+  EX_FPU/DuI/X3/A1/A250934/Y (sky130_fd_sc_hd__nand2_1)                0.0613      0.0778     38.7191 r
+  EX_FPU/DuI/X3/A1/ctmn_462768 (net)                3      0.0104
+  EX_FPU/DuI/X3/A1/A211486/A (sky130_fd_sc_hd__nand2_1)                0.0613      0.0000     38.7191 r
+  EX_FPU/DuI/X3/A1/A211486/Y (sky130_fd_sc_hd__nand2_1)                0.0613      0.0445     38.7636 f
+  EX_FPU/DuI/X3/A1/N492020 (net)                    1      0.0054
+  EX_FPU/DuI/X3/A1/A219698/A1 (sky130_fd_sc_hd__o21ai_2)               0.0613      0.0000     38.7636 f
+  EX_FPU/DuI/X3/A1/A219698/Y (sky130_fd_sc_hd__o21ai_2)                0.0613      0.1517     38.9153 r
+  EX_FPU/DuI/X3/A1/ctmn_462778 (net)                3      0.0128
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_258731/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     38.9153 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_258731/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0444     38.9597 f
+  EX_FPU/DuI/X3/A1/tmp_net518383 (net)              1      0.0025
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_258733/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     38.9597 f
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_258733/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0565     39.0162 r
+  EX_FPU/DuI/X3/A1/tmp_net518385 (net)              1      0.0049
+  EX_FPU/DuI/X3/A1/ctmTdsLR_4_258734/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     39.0162 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_4_258734/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0719     39.0881 f
+  EX_FPU/DuI/X3/A1/ZBUF_302_5 (net)                 6      0.0226
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_264756/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     39.0881 f
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_264756/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0482     39.1363 r
+  EX_FPU/DuI/X3/A1/tmp_net522489 (net)              1      0.0093
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_264758/A (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     39.1363 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_264758/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.0547     39.1910 f
+  EX_FPU/DuI/X3/A1/tmp_net522491 (net)              2      0.0230
+  EX_FPU/DuI/X3/A1/ctmTdsLR_4_264759/A (sky130_fd_sc_hd__nand2_8)      0.0613      0.0000     39.1910 f
+  EX_FPU/DuI/X3/A1/ctmTdsLR_4_264759/Y (sky130_fd_sc_hd__nand2_8)      0.0613      0.1275     39.3185 r
+  EX_FPU/DuI/X3/A1/ZBUF_646_3 (net)                12      0.0452
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_258702/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     39.3185 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_258702/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0447     39.3633 f
+  EX_FPU/DuI/X3/A1/tmp_net518359 (net)              1      0.0047
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_258704/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     39.3633 f
+  EX_FPU/DuI/X3/A1/ctmTdsLR_3_258704/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0684     39.4317 r
+  EX_FPU/DuI/X3/A1/N505718 (net)                    2      0.0087
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_260431/A (sky130_fd_sc_hd__nand2_1)      0.0613      0.0000     39.4317 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_1_260431/Y (sky130_fd_sc_hd__nand2_1)      0.0613      0.0443     39.4760 f
+  EX_FPU/DuI/X3/A1/tmp_net519548 (net)              1      0.0088
+  EX_FPU/DuI/X3/A1/ctmTdsLR_5_260435/A (sky130_fd_sc_hd__nand2_4)      0.0613      0.0000     39.4760 f
+  EX_FPU/DuI/X3/A1/ctmTdsLR_5_260435/Y (sky130_fd_sc_hd__nand2_4)      0.0613      0.0565     39.5325 r
+  EX_FPU/DuI/X3/A1/tmp_net517966 (net)              1      0.0177
+  EX_FPU/DuI/X3/A1/ctmTdsLR_2_258145/A (sky130_fd_sc_hd__nand2_8)      0.0613      0.0000     39.5325 r
+  EX_FPU/DuI/X3/A1/ctmTdsLR_2_258145/Y (sky130_fd_sc_hd__nand2_8)      0.0613      0.1199     39.6525 f
+  EX_FPU/DuI/X3/A1/significand_sub[23] (net)       16      0.0703
+  EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_259803/A (sky130_fd_sc_hd__clkinv_1)
+                                                                       0.0613      0.0000     39.6525 f
+  EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_259803/Y (sky130_fd_sc_hd__clkinv_1)
+                                                                       0.0613      0.0490     39.7015 r
+  EX_FPU/DuI/X3/A1/pe/tmp_net519114 (net)           1      0.0048
+  EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_259802/B (sky130_fd_sc_hd__nand3_2)   0.0613      0.0000     39.7015 r
+  EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_259802/Y (sky130_fd_sc_hd__nand3_2)   0.0613      0.0850     39.7865 f
+  EX_FPU/DuI/X3/A1/pe/N514378 (net)                 3      0.0112
+  EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_260421/B (sky130_fd_sc_hd__nor2_1)    0.0613      0.0000     39.7865 f
+  EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_260421/Y (sky130_fd_sc_hd__nor2_1)    0.0613      0.0822     39.8687 r
+  EX_FPU/DuI/X3/A1/pe/tmp_net519541 (net)           1      0.0046
+  EX_FPU/DuI/X3/A1/pe/ctmTdsLR_4_258698/A (sky130_fd_sc_hd__nand3_2)   0.0613      0.0000     39.8687 r
+  EX_FPU/DuI/X3/A1/pe/ctmTdsLR_4_258698/Y (sky130_fd_sc_hd__nand3_2)   0.0613      0.0607     39.9294 f
+  EX_FPU/DuI/X3/A1/pe/ctmn_465273 (net)             1      0.0095
+  EX_FPU/DuI/X3/A1/pe/ZBUF_679_inst_257844/A (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.0000     39.9294 f
+  EX_FPU/DuI/X3/A1/pe/ZBUF_679_inst_257844/X (sky130_fd_sc_hd__buf_12)
+                                                                       0.0613      0.1285     40.0579 f
+  EX_FPU/DuI/X3/A1/pe/ZBUF_679_12 (net)            15      0.1038
+  EX_FPU/DuI/X3/A1/pe/A239302/B (sky130_fd_sc_hd__nor2_4)              0.0613      0.0000     40.0579 f
+  EX_FPU/DuI/X3/A1/pe/A239302/Y (sky130_fd_sc_hd__nor2_4)              0.0613      0.1792     40.2371 r
+  EX_FPU/DuI/X3/A1/pe/ZBUF_452_5 (net)              7      0.0272
+  EX_FPU/DuI/X3/A1/pe/A229450/B (sky130_fd_sc_hd__and2b_4)             0.0613      0.0000     40.2371 r
+  EX_FPU/DuI/X3/A1/pe/A229450/X (sky130_fd_sc_hd__and2b_4)             0.0613      0.1479     40.3850 r
+  EX_FPU/DuI/X3/A1/pe/ctmn_465359 (net)             4      0.0170
+  EX_FPU/DuI/X3/A1/pe/A236799/A (sky130_fd_sc_hd__inv_2)               0.0613      0.0000     40.3850 r
+  EX_FPU/DuI/X3/A1/pe/A236799/Y (sky130_fd_sc_hd__inv_2)               0.0613      0.0721     40.4570 f
+  EX_FPU/DuI/X3/A1/pe/ctmn_1909 (net)               6      0.0221
+  EX_FPU/DuI/X3/A1/pe/ctmi_199132/A2_N (sky130_fd_sc_hd__a2bb2oi_1)    0.0613      0.0000     40.4570 f
+  EX_FPU/DuI/X3/A1/pe/ctmi_199132/Y (sky130_fd_sc_hd__a2bb2oi_1)       0.0613      0.1136     40.5706 f
+  EX_FPU/DuI/X3/A1/pe/ctmn_465446_CDR1 (net)        1      0.0074
+  EX_FPU/DuI/X3/A1/pe/A244990/D (sky130_fd_sc_hd__nand4_2)             0.0613      0.0000     40.5706 f
+  EX_FPU/DuI/X3/A1/pe/A244990/Y (sky130_fd_sc_hd__nand4_2)             0.0613      0.0575     40.6281 r
+  EX_FPU/DuI/X3/A1/pe/Significand[17] (net)         1      0.0140
+  EX_FPU/DuI/X3/A1/ctmi_164549/A1 (sky130_fd_sc_hd__a21o_1)            0.0613      0.0000     40.6281 r
+  EX_FPU/DuI/X3/A1/ctmi_164549/X (sky130_fd_sc_hd__a21o_1)             0.0613      0.0950     40.7232 r
+  EX_FPU/DuI/X3/A1/ZBUF_736_13 (net)                1      0.0101
+  EX_FPU/DuI/X3/A1/ZBUF_736_inst_257901/A (sky130_fd_sc_hd__buf_12)    0.0613      0.0000     40.7232 r
+  EX_FPU/DuI/X3/A1/ZBUF_736_inst_257901/X (sky130_fd_sc_hd__buf_12)    0.0613      0.1491     40.8722 r
+  EX_FPU/DuI/X3/A1/result[17] (net)                14      0.1044
+  EX_FPU/DuI/X3/M2/mult_36/ctmi_151457/B (sky130_fd_sc_hd__xnor2_1)    0.0613      0.0000     40.8722 r
+  EX_FPU/DuI/X3/M2/mult_36/ctmi_151457/Y (sky130_fd_sc_hd__xnor2_1)    0.0613      0.1211     40.9933 f
+  EX_FPU/DuI/X3/M2/mult_36/ctmn_453183 (net)        2      0.0071
+  EX_FPU/DuI/X3/M2/mult_36/A231611/A2 (sky130_fd_sc_hd__o21a_1)        0.0613      0.0000     40.9933 f
+  EX_FPU/DuI/X3/M2/mult_36/A231611/X (sky130_fd_sc_hd__o21a_1)         0.0613      0.1616     41.1549 f
+  EX_FPU/DuI/X3/M2/mult_36/N504159 (net)            3      0.0102
+  EX_FPU/DuI/X3/M2/mult_36/A231616/A (sky130_fd_sc_hd__xnor2_1)        0.0613      0.0000     41.1549 f
+  EX_FPU/DuI/X3/M2/mult_36/A231616/Y (sky130_fd_sc_hd__xnor2_1)        0.0613      0.1270     41.2819 r
+  EX_FPU/DuI/X3/M2/mult_36/N504163 (net)            1      0.0056
+  EX_FPU/DuI/X3/M2/mult_36/A250590/A (sky130_fd_sc_hd__xnor2_1)        0.0613      0.0000     41.2819 r
+  EX_FPU/DuI/X3/M2/mult_36/A250590/Y (sky130_fd_sc_hd__xnor2_1)        0.0613      0.1629     41.4448 r
+  EX_FPU/DuI/X3/M2/mult_36/N514505 (net)            2      0.0049
+  EX_FPU/DuI/X3/M2/mult_36/A250592/A_N (sky130_fd_sc_hd__nand2b_1)     0.0613      0.0000     41.4448 r
+  EX_FPU/DuI/X3/M2/mult_36/A250592/Y (sky130_fd_sc_hd__nand2b_1)       0.0613      0.0719     41.5167 r
+  EX_FPU/DuI/X3/M2/mult_36/N504458 (net)            2      0.0087
+  EX_FPU/DuI/X3/M2/mult_36/A250593/B (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     41.5167 r
+  EX_FPU/DuI/X3/M2/mult_36/A250593/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0442     41.5609 f
+  EX_FPU/DuI/X3/M2/mult_36/N504459 (net)            1      0.0055
+  EX_FPU/DuI/X3/M2/mult_36/A238950/B (sky130_fd_sc_hd__xnor2_1)        0.0613      0.0000     41.5609 f
+  EX_FPU/DuI/X3/M2/mult_36/A238950/Y (sky130_fd_sc_hd__xnor2_1)        0.0613      0.1176     41.6786 f
+  EX_FPU/DuI/X3/M2/mult_36/N508196 (net)            2      0.0062
+  EX_FPU/DuI/X3/M2/mult_36/A255482/A (sky130_fd_sc_hd__or2_4)          0.0613      0.0000     41.6786 f
+  EX_FPU/DuI/X3/M2/mult_36/A255482/X (sky130_fd_sc_hd__or2_4)          0.0613      0.1837     41.8623 f
+  EX_FPU/DuI/X3/M2/mult_36/N517135 (net)            3      0.0089
+  EX_FPU/DuI/X3/M2/mult_36/A250637/A1 (sky130_fd_sc_hd__a21o_1)        0.0613      0.0000     41.8623 f
+  EX_FPU/DuI/X3/M2/mult_36/A250637/X (sky130_fd_sc_hd__a21o_1)         0.0613      0.1558     42.0181 f
+  EX_FPU/DuI/X3/M2/mult_36/N504438 (net)            2      0.0130
+  EX_FPU/DuI/X3/M2/mult_36/A238651/A1 (sky130_fd_sc_hd__a21oi_4)       0.0613      0.0000     42.0181 f
+  EX_FPU/DuI/X3/M2/mult_36/A238651/Y (sky130_fd_sc_hd__a21oi_4)        0.0613      0.1581     42.1762 r
+  EX_FPU/DuI/X3/M2/mult_36/ctmn_452632 (net)        3      0.0125
+  EX_FPU/DuI/X3/M2/mult_36/A232114/B (sky130_fd_sc_hd__nor2_1)         0.0613      0.0000     42.1762 r
+  EX_FPU/DuI/X3/M2/mult_36/A232114/Y (sky130_fd_sc_hd__nor2_1)         0.0613      0.0468     42.2230 f
+  EX_FPU/DuI/X3/M2/mult_36/N493756 (net)            3      0.0137
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_264911/A1 (sky130_fd_sc_hd__a21o_1)
+                                                                       0.0613      0.0000     42.2230 f
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_264911/X (sky130_fd_sc_hd__a21o_1)
+                                                                       0.0613      0.1492     42.3722 f
+  EX_FPU/DuI/X3/M2/mult_36/tmp_net522591 (net)      1      0.0053
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_2_264912/A (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0000     42.3722 f
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_2_264912/Y (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0743     42.4465 r
+  EX_FPU/DuI/X3/M2/mult_36/N506419 (net)            2      0.0120
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_3_265745/B (sky130_fd_sc_hd__nand4_2)
+                                                                       0.0613      0.0000     42.4465 r
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_3_265745/Y (sky130_fd_sc_hd__nand4_2)
+                                                                       0.0613      0.0618     42.5083 f
+  EX_FPU/DuI/X3/M2/mult_36/tmp_net517907 (net)      1      0.0052
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_4_258065/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     42.5083 f
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_4_258065/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0685     42.5768 r
+  EX_FPU/DuI/X3/M2/mult_36/tmp_net517909 (net)      2      0.0074
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_262820/A (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0000     42.5768 r
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_262820/Y (sky130_fd_sc_hd__inv_2)
+                                                                       0.0613      0.0477     42.6245 f
+  EX_FPU/DuI/X3/M2/mult_36/tmp_net521175 (net)      2      0.0160
+  EX_FPU/DuI/X3/M2/mult_36/A253410/A (sky130_fd_sc_hd__nand2_4)        0.0613      0.0000     42.6245 f
+  EX_FPU/DuI/X3/M2/mult_36/A253410/Y (sky130_fd_sc_hd__nand2_4)        0.0613      0.0926     42.7171 r
+  EX_FPU/DuI/X3/M2/mult_36/N516038 (net)            5      0.0243
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_258046/A1 (sky130_fd_sc_hd__a21oi_1)
+                                                                       0.0613      0.0000     42.7171 r
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_258046/Y (sky130_fd_sc_hd__a21oi_1)
+                                                                       0.0613      0.0513     42.7684 f
+  EX_FPU/DuI/X3/M2/mult_36/tmp_net517895 (net)      1      0.0077
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_264286/A2 (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.0000     42.7684 f
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_264286/Y (sky130_fd_sc_hd__o21ai_2)
+                                                                       0.0613      0.1073     42.8757 r
+  EX_FPU/DuI/X3/M2/mult_36/tmp_net522171 (net)      1      0.0058
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_3_266658/C (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0000     42.8757 r
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_3_266658/Y (sky130_fd_sc_hd__nand3_2)
+                                                                       0.0613      0.0608     42.9365 f
+  EX_FPU/DuI/X3/M2/mult_36/N489810 (net)            1      0.0049
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_259227/A (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0000     42.9365 f
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_259227/Y (sky130_fd_sc_hd__nand2_2)
+                                                                       0.0613      0.0565     42.9930 r
+  EX_FPU/DuI/X3/M2/mult_36/tmp_net518724 (net)      1      0.0092
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_2_259228/A (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0000     42.9930 r
+  EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_2_259228/Y (sky130_fd_sc_hd__nand2_4)
+                                                                       0.0613      0.0627     43.0557 f
+  EX_FPU/DuI/X3/M2/mult_36/product[47] (net)        3      0.0311
+  EX_FPU/DuI/X3/M2/HFSBUF_457_256423/A (sky130_fd_sc_hd__buf_12)       0.0613      0.0000     43.0557 f
+  EX_FPU/DuI/X3/M2/HFSBUF_457_256423/X (sky130_fd_sc_hd__buf_12)       0.0613      0.1379     43.1936 f
+  EX_FPU/DuI/X3/M2/HFSNET_2 (net)                  19      0.0723
+  EX_FPU/DuI/X3/M2/A235444/A2 (sky130_fd_sc_hd__o21ai_1)               0.0613      0.0000     43.1936 f
+  EX_FPU/DuI/X3/M2/A235444/Y (sky130_fd_sc_hd__o21ai_1)                0.0613      0.1072     43.3008 r
+  EX_FPU/DuI/X3/M2/N506252 (net)                    1      0.0059
+  EX_FPU/DuI/X3/M2/ctmTdsLR_2_259217/B (sky130_fd_sc_hd__nand3_2)      0.0613      0.0000     43.3008 r
+  EX_FPU/DuI/X3/M2/ctmTdsLR_2_259217/Y (sky130_fd_sc_hd__nand3_2)      0.0613      0.0940     43.3948 f
+  EX_FPU/DuI/X3/M2/N502634 (net)                    4      0.0132
+  EX_FPU/DuI/X3/M2/ctmTdsLR_3_265063/B (sky130_fd_sc_hd__nor2_1)       0.0613      0.0000     43.3948 f
+  EX_FPU/DuI/X3/M2/ctmTdsLR_3_265063/Y (sky130_fd_sc_hd__nor2_1)       0.0613      0.1063     43.5011 r
+  EX_FPU/DuI/X3/M2/tmp_net522693 (net)              2      0.0058
+  EX_FPU/DuI/X3/M2/ctmTdsLR_1_265864/A1 (sky130_fd_sc_hd__a21bo_1)     0.0613      0.0000     43.5011 r
+  EX_FPU/DuI/X3/M2/ctmTdsLR_1_265864/X (sky130_fd_sc_hd__a21bo_1)      0.0613      0.0959     43.5970 r
+  EX_FPU/DuI/X3/M2/tmp_net523247 (net)              1      0.0050
+  EX_FPU/DuI/X3/M2/ctmTdsLR_3_265866/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     43.5970 r
+  EX_FPU/DuI/X3/M2/ctmTdsLR_3_265866/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0547     43.6517 f
+  EX_FPU/DuI/X3/M2/ctmn_466352 (net)                2      0.0081
+  EX_FPU/DuI/X3/M2/ctmTdsLR_3_264897/A (sky130_fd_sc_hd__nand2_2)      0.0613      0.0000     43.6517 f
+  EX_FPU/DuI/X3/M2/ctmTdsLR_3_264897/Y (sky130_fd_sc_hd__nand2_2)      0.0613      0.0566     43.7082 r
+  EX_FPU/DuI/X3/M2/tmp_net522579 (net)              1      0.0036
+  EX_FPU/DuI/X3/M2/ctmTdsLR_4_264898/A (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0000     43.7082 r
+  EX_FPU/DuI/X3/M2/ctmTdsLR_4_264898/Y (sky130_fd_sc_hd__clkinv_1)     0.0613      0.0381     43.7463 f
+  EX_FPU/DuI/X3/M2/tmp_net522581 (net)              1      0.0030
+  EX_FPU/DuI/X3/M2/ctmTdsLR_5_264899/A (sky130_fd_sc_hd__nand4_1)      0.0613      0.0000     43.7463 f
+  EX_FPU/DuI/X3/M2/ctmTdsLR_5_264899/Y (sky130_fd_sc_hd__nand4_1)      0.0613      0.0573     43.8036 r
+  EX_FPU/DuI/X3/M2/tmp_net522582 (net)              1      0.0058
+  EX_FPU/DuI/X3/M2/ctmTdsLR_1_265214/A (sky130_fd_sc_hd__inv_2)        0.0613      0.0000     43.8036 r
+  EX_FPU/DuI/X3/M2/ctmTdsLR_1_265214/Y (sky130_fd_sc_hd__inv_2)        0.0613      0.0381     43.8417 f
+  EX_FPU/DuI/X3/M2/tmp_net522803 (net)              1      0.0093
+  EX_FPU/DuI/X3/M2/ctmTdsLR_4_265217/A (sky130_fd_sc_hd__nand3_4)      0.0613      0.0000     43.8417 f
+  EX_FPU/DuI/X3/M2/ctmTdsLR_4_265217/Y (sky130_fd_sc_hd__nand3_4)      0.0613      0.0908     43.9325 r
+  EX_FPU/DuI/X3/M2/N489849 (net)                    4      0.0296
+  EX_FPU/DuI/X3/M2/A245514/A (sky130_fd_sc_hd__nand2_4)                0.0613      0.0000     43.9325 r
+  EX_FPU/DuI/X3/M2/A245514/Y (sky130_fd_sc_hd__nand2_4)                0.0613      0.0952     44.0277 f
+  EX_FPU/DuI/X3/M2/N511716 (net)                    9      0.0318
+  EX_FPU/DuI/X3/M2/ctmTdsLR_2_266262/A (sky130_fd_sc_hd__nor2b_2)      0.0613      0.0000     44.0277 f
+  EX_FPU/DuI/X3/M2/ctmTdsLR_2_266262/Y (sky130_fd_sc_hd__nor2b_2)      0.0613      0.0924     44.1201 r
+  EX_FPU/DuI/X3/M2/ZBUF_1516_10 (net)               1      0.0118
+  EX_FPU/DuI/X3/M2/ZBUF_1516_inst_257678/A (sky130_fd_sc_hd__buf_12)   0.0613      0.0000     44.1201 r
+  EX_FPU/DuI/X3/M2/ZBUF_1516_inst_257678/X (sky130_fd_sc_hd__buf_12)   0.0613      0.1710     44.2910 r
+  EX_FPU/DuI/X3/M2/result[22] (net)                20      0.1317
+  EX_FPU/DuI/END/mult_36/ctmi_158811/A (sky130_fd_sc_hd__xnor2_2)      0.0613      0.0000     44.2910 r
+  EX_FPU/DuI/END/mult_36/ctmi_158811/Y (sky130_fd_sc_hd__xnor2_2)      0.0613      0.2143     44.5053 r
+  EX_FPU/DuI/END/mult_36/ctmn_458576 (net)          4      0.0136
+  EX_FPU/DuI/END/mult_36/A245969/A1 (sky130_fd_sc_hd__o221ai_1)        0.0613      0.0000     44.5053 r
+  EX_FPU/DuI/END/mult_36/A245969/Y (sky130_fd_sc_hd__o221ai_1)         0.0613      0.0908     44.5962 f
+  EX_FPU/DuI/END/mult_36/N493725 (net)              2      0.0085
+  EX_FPU/DuI/END/mult_36/A235672/A (sky130_fd_sc_hd__nor2_1)           0.0613      0.0000     44.5962 f
+  EX_FPU/DuI/END/mult_36/A235672/Y (sky130_fd_sc_hd__nor2_1)           0.0613      0.1063     44.7025 r
+  EX_FPU/DuI/END/mult_36/N506397 (net)              2      0.0049
+  EX_FPU/DuI/END/mult_36/A207341/A_N (sky130_fd_sc_hd__nand2b_1)       0.0613      0.0000     44.7025 r
+  EX_FPU/DuI/END/mult_36/A207341/Y (sky130_fd_sc_hd__nand2b_1)         0.0613      0.0599     44.7623 r
+  EX_FPU/DuI/END/mult_36/N489422 (net)              1      0.0100
+  EX_FPU/DuI/END/mult_36/A239408/A (sky130_fd_sc_hd__xnor2_2)          0.0613      0.0000     44.7623 r
+  EX_FPU/DuI/END/mult_36/A239408/Y (sky130_fd_sc_hd__xnor2_2)          0.0613      0.1906     44.9529 r
+  EX_FPU/DuI/END/mult_36/N489423 (net)              3      0.0136
+  EX_FPU/DuI/END/mult_36/A239409/B (sky130_fd_sc_hd__xnor2_1)          0.0613      0.0000     44.9529 r
+  EX_FPU/DuI/END/mult_36/A239409/Y (sky130_fd_sc_hd__xnor2_1)          0.0613      0.1270     45.0799 r
+  EX_FPU/DuI/END/mult_36/N508424 (net)              1      0.0055
+  EX_FPU/DuI/END/mult_36/A246223/B (sky130_fd_sc_hd__xnor2_1)          0.0613      0.0000     45.0799 r
+  EX_FPU/DuI/END/mult_36/A246223/Y (sky130_fd_sc_hd__xnor2_1)          0.0613      0.1629     45.2428 r
+  EX_FPU/DuI/END/mult_36/N512104 (net)              2      0.0077
+  EX_FPU/DuI/END/mult_36/A247196/B (sky130_fd_sc_hd__nand2b_1)         0.0613      0.0000     45.2428 r
+  EX_FPU/DuI/END/mult_36/A247196/Y (sky130_fd_sc_hd__nand2b_1)         0.0613      0.0588     45.3016 f
+  EX_FPU/DuI/END/mult_36/N489441 (net)              2      0.0083
+  EX_FPU/DuI/END/mult_36/A251738/A (sky130_fd_sc_hd__nand2_2)          0.0613      0.0000     45.3016 f
+  EX_FPU/DuI/END/mult_36/A251738/Y (sky130_fd_sc_hd__nand2_2)          0.0613      0.0685     45.3701 r
+  EX_FPU/DuI/END/mult_36/N515125 (net)              2      0.0107
+  EX_FPU/DuI/END/mult_36/A251739/A (sky130_fd_sc_hd__xnor2_1)          0.0613      0.0000     45.3701 r
+  EX_FPU/DuI/END/mult_36/A251739/Y (sky130_fd_sc_hd__xnor2_1)          0.0613      0.1269     45.4969 r
+  EX_FPU/DuI/END/mult_36/N515126 (net)              1      0.0050
+  EX_FPU/DuI/END/mult_36/A251740/B (sky130_fd_sc_hd__xor2_1)           0.0613      0.0000     45.4969 r
+  EX_FPU/DuI/END/mult_36/A251740/X (sky130_fd_sc_hd__xor2_1)           0.0613      0.1899     45.6868 r
+  EX_FPU/DuI/END/mult_36/tmp_net238349 (net)        2      0.0097
+  EX_FPU/DuI/END/mult_36/A255364/B (sky130_fd_sc_hd__nor2_2)           0.0613      0.0000     45.6868 r
+  EX_FPU/DuI/END/mult_36/A255364/Y (sky130_fd_sc_hd__nor2_2)           0.0613      0.0550     45.7417 f
+  EX_FPU/DuI/END/mult_36/N517061 (net)              5      0.0179
+  EX_FPU/DuI/END/mult_36/A250807/B (sky130_fd_sc_hd__nor2_2)           0.0613      0.0000     45.7417 f
+  EX_FPU/DuI/END/mult_36/A250807/Y (sky130_fd_sc_hd__nor2_2)           0.0613      0.0818     45.8236 r
+  EX_FPU/DuI/END/mult_36/ctmn_457913 (net)          1      0.0051
+  EX_FPU/DuI/END/mult_36/A255429/A (sky130_fd_sc_hd__inv_2)            0.0613      0.0000     45.8236 r
+  EX_FPU/DuI/END/mult_36/A255429/Y (sky130_fd_sc_hd__inv_2)            0.0613      0.0477     45.8713 f
+  EX_FPU/DuI/END/mult_36/N517118 (net)              2      0.0078
+  EX_FPU/DuI/END/mult_36/A221589/A2 (sky130_fd_sc_hd__o21ai_2)         0.0613      0.0000     45.8713 f
+  EX_FPU/DuI/END/mult_36/A221589/Y (sky130_fd_sc_hd__o21ai_2)          0.0613      0.1824     46.0537 r
+  EX_FPU/DuI/END/mult_36/ctmn_458191 (net)          5      0.0188
+  EX_FPU/DuI/END/mult_36/A255427/A (sky130_fd_sc_hd__inv_2)            0.0613      0.0000     46.0537 r
+  EX_FPU/DuI/END/mult_36/A255427/Y (sky130_fd_sc_hd__inv_2)            0.0613      0.0552     46.1089 f
+  EX_FPU/DuI/END/mult_36/ctmn_458393 (net)          3      0.0085
+  EX_FPU/DuI/END/mult_36/A249066/A1 (sky130_fd_sc_hd__o21ai_1)         0.0613      0.0000     46.1089 f
+  EX_FPU/DuI/END/mult_36/A249066/Y (sky130_fd_sc_hd__o21ai_1)          0.0613      0.1071     46.2159 r
+  EX_FPU/DuI/END/mult_36/ctmn_458400 (net)          1      0.0029
+  EX_FPU/DuI/END/mult_36/A239460/B1_N (sky130_fd_sc_hd__o21bai_1)      0.0613      0.0000     46.2159 r
+  EX_FPU/DuI/END/mult_36/A239460/Y (sky130_fd_sc_hd__o21bai_1)         0.0613      0.0852     46.3011 r
+  EX_FPU/DuI/END/mult_36/N508444 (net)              1      0.0089
+  EX_FPU/DuI/END/mult_36/A239461/B (sky130_fd_sc_hd__xnor2_2)          0.0613      0.0000     46.3011 r
+  EX_FPU/DuI/END/mult_36/A239461/Y (sky130_fd_sc_hd__xnor2_2)          0.0613      0.2139     46.5149 r
+  EX_FPU/DuI/END/mult_36/tmp_net238911 (net)        4      0.0149
+  EX_FPU/DuI/END/A227078/A (sky130_fd_sc_hd__nand2_1)                  0.0613      0.0000     46.5149 r
+  EX_FPU/DuI/END/A227078/Y (sky130_fd_sc_hd__nand2_1)                  0.0613      0.0444     46.5594 f
+  EX_FPU/DuI/END/N501540 (net)                      1      0.0038
+  EX_FPU/DuI/END/ctmTdsLR_2_263284/B (sky130_fd_sc_hd__nand2_1)        0.0613      0.0000     46.5594 f
+  EX_FPU/DuI/END/ctmTdsLR_2_263284/Y (sky130_fd_sc_hd__nand2_1)        0.0613      0.0566     46.6160 r
+  EX_FPU/DuI/END/tmp_net521489 (net)                1      0.0094
+  EX_FPU/DuI/END/ctmTdsLR_3_263285/B (sky130_fd_sc_hd__nand3_4)        0.0613      0.0000     46.6160 r
+  EX_FPU/DuI/END/ctmTdsLR_3_263285/Y (sky130_fd_sc_hd__nand3_4)        0.0613      0.1324     46.7484 f
+  EX_FPU/DuI/END/N516908 (net)                     10      0.0355
+  EX_FPU/DuI/END/ctmTdsLR_2_259142/A (sky130_fd_sc_hd__clkinv_1)       0.0613      0.0000     46.7484 f
+  EX_FPU/DuI/END/ctmTdsLR_2_259142/Y (sky130_fd_sc_hd__clkinv_1)       0.0613      0.0484     46.7968 r
+  EX_FPU/DuI/END/tmp_net518670 (net)                1      0.0048
+  EX_FPU/DuI/END/ctmTdsLR_3_259143/A (sky130_fd_sc_hd__nand2_2)        0.0613      0.0000     46.7968 r
+  EX_FPU/DuI/END/ctmTdsLR_3_259143/Y (sky130_fd_sc_hd__nand2_2)        0.0613      0.0442     46.8410 f
+  EX_FPU/DuI/END/tmp_net518671 (net)                1      0.0090
+  EX_FPU/DuI/END/ctmTdsLR_4_259144/A (sky130_fd_sc_hd__inv_4)          0.0613      0.0000     46.8410 f
+  EX_FPU/DuI/END/ctmTdsLR_4_259144/Y (sky130_fd_sc_hd__inv_4)          0.0613      0.0951     46.9361 r
+  EX_FPU/DuI/END/N505512 (net)                      7      0.0283
+  EX_FPU/DuI/END/A245437/A (sky130_fd_sc_hd__nand3_2)                  0.0613      0.0000     46.9361 r
+  EX_FPU/DuI/END/A245437/Y (sky130_fd_sc_hd__nand3_2)                  0.0613      0.0609     46.9970 f
+  EX_FPU/DuI/END/N511668 (net)                      1      0.0087
+  EX_FPU/DuI/END/ctmi_249448/B (sky130_fd_sc_hd__xnor2_2)              0.0613      0.0000     46.9970 f
+  EX_FPU/DuI/END/ctmi_249448/Y (sky130_fd_sc_hd__xnor2_2)              0.0613      0.1628     47.1598 r
+  EX_FPU/DuI/END/ctmn_467065 (net)                  2      0.0079
+  EX_FPU/DuI/END/A245439/C (sky130_fd_sc_hd__nand4_1)                  0.0613      0.0000     47.1598 r
+  EX_FPU/DuI/END/A245439/Y (sky130_fd_sc_hd__nand4_1)                  0.0613      0.0777     47.2375 f
+  EX_FPU/DuI/END/ctmn_467069 (net)                  2      0.0077
+  EX_FPU/DuI/END/ctmTdsLR_1_258598/A (sky130_fd_sc_hd__inv_1)          0.0613      0.0000     47.2375 f
+  EX_FPU/DuI/END/ctmTdsLR_1_258598/Y (sky130_fd_sc_hd__inv_1)          0.0613      0.0480     47.2856 r
+  EX_FPU/DuI/END/tmp_net518283 (net)                1      0.0052
+  EX_FPU/DuI/END/ctmTdsLR_3_265542/A (sky130_fd_sc_hd__nand3_2)        0.0613      0.0000     47.2856 r
+  EX_FPU/DuI/END/ctmTdsLR_3_265542/Y (sky130_fd_sc_hd__nand3_2)        0.0613      0.0608     47.3464 f
+  EX_FPU/DuI/END/tmp_net518284 (net)                1      0.0108
+  EX_FPU/DuI/END/ctmTdsLR_3_258600/A (sky130_fd_sc_hd__clkinv_4)       0.0613      0.0000     47.3464 f
+  EX_FPU/DuI/END/ctmTdsLR_3_258600/Y (sky130_fd_sc_hd__clkinv_4)       0.0613      0.0598     47.4062 r
+  EX_FPU/DuI/END/ZBUF_32_5 (net)                    2      0.0345
+  EX_FPU/DuI/END/ctmTdsLR_1_259138/A (sky130_fd_sc_hd__inv_6)          0.0613      0.0000     47.4062 r
+  EX_FPU/DuI/END/ctmTdsLR_1_259138/Y (sky130_fd_sc_hd__inv_6)          0.0613      0.0566     47.4628 f
+  EX_FPU/DuI/END/tmp_net518667 (net)                3      0.0139
+  EX_FPU/DuI/END/ctmTdsLR_3_259140/A (sky130_fd_sc_hd__nand2_4)        0.0613      0.0000     47.4628 f
+  EX_FPU/DuI/END/ctmTdsLR_3_259140/Y (sky130_fd_sc_hd__nand2_4)        0.0613      0.0982     47.5611 r
+  EX_FPU/DuI/END/N517548 (net)                      6      0.0177
+  EX_FPU/DuI/END/A210749/B1 (sky130_fd_sc_hd__o21ai_1)                 0.0613      0.0000     47.5611 r
+  EX_FPU/DuI/END/A210749/Y (sky130_fd_sc_hd__o21ai_1)                  0.0613      0.0386     47.5997 f
+  EX_FPU/DuI/END/result[27] (net)                   1      0.0040
+  EX_FPU/ctmi_181225/A2 (sky130_fd_sc_hd__a21o_1)                      0.0613      0.0000     47.5997 f
+  EX_FPU/ctmi_181225/X (sky130_fd_sc_hd__a21o_1)                       0.0613      0.1489     47.7485 f
+  EX_FPU/RESULT[27] (net)                           1      0.0036
+  PIPE_REG_EX_MEM/ctmTdsLR_1_257965/A (sky130_fd_sc_hd__clkinv_1)      0.0613      0.0000     47.7485 f
+  PIPE_REG_EX_MEM/ctmTdsLR_1_257965/Y (sky130_fd_sc_hd__clkinv_1)      0.0613      0.0480     47.7965 r
+  PIPE_REG_EX_MEM/tmp_net517836 (net)               1      0.0028
+  PIPE_REG_EX_MEM/ctmTdsLR_2_257966/B (sky130_fd_sc_hd__nor2_1)        0.0613      0.0000     47.7965 r
+  PIPE_REG_EX_MEM/ctmTdsLR_2_257966/Y (sky130_fd_sc_hd__nor2_1)        0.0613      0.0346     47.8311 f
+  PIPE_REG_EX_MEM/N102 (net)                        1      0.0029
+  PIPE_REG_EX_MEM/MEM_FPU_OUT_reg[27]/D (sky130_fd_sc_hd__sdfxtp_1)    0.0613      0.0000     47.8311 f
+  data arrival time                                                                           47.8311
+
+  clock CLK (rise edge)                                                           10.0000     10.0000
+  clock network delay (ideal)                                                      0.0000     10.0000
+  PIPE_REG_EX_MEM/MEM_FPU_OUT_reg[27]/CLK (sky130_fd_sc_hd__sdfxtp_1)
+                                                                       0.2000      0.0000     10.0000 r
+  clock uncertainty                                                               -0.5000      9.5000
+  library setup time                                                              -0.1347      9.3653
+  data required time                                                                           9.3653
+  ------------------------------------------------------------------------------------------------------------
+  data required time                                                                           9.3653
+  data arrival time                                                                          -47.8311
+  ------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                           -38.4658
+
+
+1

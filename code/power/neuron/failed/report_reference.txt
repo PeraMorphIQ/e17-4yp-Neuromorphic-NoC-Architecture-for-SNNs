@@ -1,0 +1,106 @@
+****************************************
+Report : reference
+Design : neuron
+Version: V-2023.12-SP5-3
+Date   : Sat Dec  6 23:34:02 2025
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model (QTM)
+    s - synthetic operator
+
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+--------------------------------------------------------------------------------
+sky130_fd_sc_hd__a21o_1
+                   sky130_fd_sc_hd
+                                      7.51      15        112.61   
+sky130_fd_sc_hd__a21oi_1
+                   sky130_fd_sc_hd
+                                      5.00       7         35.03   
+sky130_fd_sc_hd__a21oi_2
+                   sky130_fd_sc_hd
+                                      8.76      25        218.96   
+sky130_fd_sc_hd__a22o_1
+                   sky130_fd_sc_hd
+                                      8.76      43        376.61   
+sky130_fd_sc_hd__and2_1
+                   sky130_fd_sc_hd
+                                      6.26      15         93.84   
+sky130_fd_sc_hd__buf_12
+                   sky130_fd_sc_hd
+                                     20.02      50       1000.96   
+sky130_fd_sc_hd__buf_2
+                   sky130_fd_sc_hd
+                                      5.00       3         15.01   
+sky130_fd_sc_hd__buf_4
+                   sky130_fd_sc_hd
+                                      7.51       6         45.04   
+sky130_fd_sc_hd__buf_6
+                   sky130_fd_sc_hd
+                                     11.26       5         56.30   
+sky130_fd_sc_hd__buf_8
+                   sky130_fd_sc_hd
+                                     15.01      11        165.16   
+sky130_fd_sc_hd__clkbuf_1
+                   sky130_fd_sc_hd
+                                      3.75       7         26.28   
+sky130_fd_sc_hd__clkinvlp_2
+                   sky130_fd_sc_hd
+                                      5.00       8         40.04   
+sky130_fd_sc_hd__conb_1
+                   sky130_fd_sc_hd
+                                      3.75      27        101.35   
+sky130_fd_sc_hd__inv_1
+                   sky130_fd_sc_hd
+                                      3.75       2          7.51   
+sky130_fd_sc_hd__inv_4
+                   sky130_fd_sc_hd
+                                      6.26       2         12.51   
+sky130_fd_sc_hd__macro_sparecell
+                   sky130_fd_sc_hd
+                                     75.07      48       3603.46   
+sky130_fd_sc_hd__nand2b_2
+                   sky130_fd_sc_hd
+                                      8.76       1          8.76   
+sky130_fd_sc_hd__o2bb2ai_1
+                   sky130_fd_sc_hd
+                                      8.76       6         52.55   
+sky130_fd_sc_hd__or2_1
+                   sky130_fd_sc_hd
+                                      6.26       1          6.26   
+sky130_fd_sc_hd__sdfxbp_1
+                   sky130_fd_sc_hd
+                                     30.03      21        630.60   n
+sky130_fd_sc_hd__sdfxbp_2
+                   sky130_fd_sc_hd
+                                     32.53      11        357.84   n
+sky130_fd_sc_hd__sdfxtp_1
+                   sky130_fd_sc_hd
+                                     26.28       3         78.83   n
+sky130_fd_sc_hd__sdfxtp_2
+                   sky130_fd_sc_hd
+                                     27.53       7        192.68   n
+sky130_fd_sc_hd__sdfxtp_4
+                   sky130_fd_sc_hd
+                                     30.03      22        660.63   n
+Addition_Subtraction               7980.15       1       7980.15   h
+Addition_Subtraction_0            13032.50       1      13032.50   h
+Addition_Subtraction_1            13033.75       1      13033.75   h
+Addition_Subtraction_2            12679.66       1      12679.66   h
+Addition_Subtraction_3            12112.87       1      12112.87   h
+Addition_Subtraction_4            13445.40       1      13445.40   h
+Comparison                          575.55       1        575.55   h
+Multiplication                    23138.44       1      23138.44   h
+Multiplication_0                  20328.25       1      20328.25   h
+Multiplication_1                  22342.68       1      22342.68   h
+Multiplication_2                  14410.07       1      14410.07   h
+Multiplication_3                  23483.77       1      23483.77   h
+--------------------------------------------------------------------------------
+Total 36 references                                    184461.91
+1

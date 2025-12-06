@@ -1,0 +1,662 @@
+ 
+                               RTL Architect (TM)
+
+               Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
+                           Base build date 11/18/2024
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+#!/bin/tcsh -f
+# =============================================================================
+# RISC-V CPU RTL Analysis and Synthesis Script for SKY130
+# =============================================================================
+# Description: This script performs RTL analysis, synthesis, and power 
+#              analysis for the RISC-V CPU using SKY130 technology
+# Author: CO502 Group 1
+# Technology: SKY130 130nm Process
+# =============================================================================
+# Load shared configuration
+source config.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: temp_results_20251206_225538
+Configuration loaded successfully
+  Design: cpu_tb
+  Technology: SKY130 130nm
+  Cores: 8
+  Results directory: temp_results_20251206_225538
+# -----------------------------------------------------------------------------
+# Configuration and Setup
+# -----------------------------------------------------------------------------
+puts "========== Starting RTL Analysis and Synthesis =========="
+========== Starting RTL Analysis and Synthesis ==========
+puts "Technology: SKY130 130nm"
+Technology: SKY130 130nm
+puts "Design: RISC-V CPU Pipeline"
+Design: RISC-V CPU Pipeline
+# Configure mismatch handling
+set_current_mismatch_config auto_fix 
+1
+set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
+Warning: Changing current repair(handler) for a mismatch type in between a flow is not recommended. (DMM-011)
+{missing_logical_reference}
+# Set host options for parallel processing
+set_host_options -max_cores $CORES
+1
+puts "Using $CORES cores for parallel processing"
+Using 8 cores for parallel processing
+# Application options
+set_app_options -list {plan.macro.allow_unmapped_design true}
+plan.macro.allow_unmapped_design true
+# -----------------------------------------------------------------------------
+# Library Setup
+# -----------------------------------------------------------------------------
+puts "========== Setting up SKY130 Libraries =========="
+========== Setting up SKY130 Libraries ==========
+# Search paths for libraries and source files
+set search_path $SEARCH_PATHS
+* ./ ../../cpu/ ../../cpu/cpu/ ../../cpu/alu/ ../../cpu/fpu/ ../../cpu/reg_file/ ../../cpu/f_reg_file/ ../../cpu/control_unit/ ../../cpu/branch_control_unit/ ../../cpu/forwarding_units/ ../../cpu/hazard_detection_unit/ ../../cpu/pipeline_flush_unit/ ../../cpu/pipeline_registers/ ../../cpu/support_modules/ ../../cpu/immediate_generation_unit/ /tech/sky130/libs/sky130_library/ndm
+# Create design library with SKY130 reference libraries
+create_lib $LIB_NAME \
+    -ref_libs "$REF_LIBS" \
+    -technology $TECH_TF
+Information: The command 'create_lib' cleared the undo history. (UNDO-016)
+Warning: sky130_fd_sc_hd.tf line 26, unsupported syntax 'fatWireViaKeepoutMode' in 'Technology' section. It will be ignored. (TECH-002)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 846) (TECH-026)
+Warning: Layer 'via4/met4' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 846) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 854) (TECH-026)
+Warning: Layer 'via4/met5' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 854) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 862) (TECH-026)
+Warning: Layer 'via3/met3' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 862) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 870) (TECH-026)
+Warning: Layer 'via3/met4' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 870) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 878) (TECH-026)
+Warning: Layer 'via2/met2' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 878) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 886) (TECH-026)
+Warning: Layer 'via2/met3' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 886) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 894) (TECH-026)
+Warning: Layer 'via/met1' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 894) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 902) (TECH-026)
+Warning: Layer 'via/met2' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 902) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 910) (TECH-026)
+Warning: Layer 'mcon/li1' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 910) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 918) (TECH-026)
+Warning: Layer 'mcon/met1' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 918) (TECH-026)
+Warning: DesignRule is defined with non-consecutive layers 'via4' and 'met4'. (sky130_fd_sc_hd.tf line 851) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via4' and 'met5'. (sky130_fd_sc_hd.tf line 859) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via3' and 'met3'. (sky130_fd_sc_hd.tf line 867) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via3' and 'met4'. (sky130_fd_sc_hd.tf line 875) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via2' and 'met2'. (sky130_fd_sc_hd.tf line 883) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via2' and 'met3'. (sky130_fd_sc_hd.tf line 891) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via' and 'met1'. (sky130_fd_sc_hd.tf line 899) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via' and 'met2'. (sky130_fd_sc_hd.tf line 907) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'mcon' and 'li1'. (sky130_fd_sc_hd.tf line 915) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'mcon' and 'met1'. (sky130_fd_sc_hd.tf line 923) (TECH-034)
+Information: Loading technology file '/tech/sky130/libs/sky130_fd_sc_hd/sky130_fd_sc_hd.tf' (FILE-007)
+{cpu_LIB}
+puts "SKY130 libraries loaded successfully"
+SKY130 libraries loaded successfully
+# -----------------------------------------------------------------------------
+# Design Analysis and Elaboration
+# -----------------------------------------------------------------------------
+puts "========== Analyzing and Elaborating Design =========="
+========== Analyzing and Elaborating Design ==========
+# Analyze RTL source files
+analyze -f sv -vcs "-f $FILELIST"
+Information: By default, the HDL template library is 'WORK' (LBR-??).
+Running PRESTO HDLC
+Parsing vcs commands file -f src_detailed.f
+Compiling source file ../../cpu/cpu/cpu.v
+Opening include file ../../cpu//alu/alu.v
+Warning:  ../../cpu//alu/alu.v:47: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:48: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:49: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:50: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:51: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:54: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:55: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:58: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:61: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:62: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:65: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:68: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:90: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:94: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:95: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:98: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../cpu//fpu/fpu.v
+Opening include file ../../cpu//fpu/Addition-Subtraction.v
+Opening include file ../../cpu//fpu/Priority Encoder.v
+Warning:  ../../cpu//alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
+Opening include file ../../cpu//fpu/Multiplication.v
+Opening include file ../../cpu//fpu/Division.v
+Opening include file ../../cpu//fpu/Iteration.v
+Opening include file ../../cpu//fpu/Comparison.v
+Opening include file ../../cpu//fpu/Converter.v
+Opening include file ../../cpu//reg_file/reg_file.v
+Warning:  ../../cpu//reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../cpu//f_reg_file/f_reg_file.v
+Warning:  ../../cpu//reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../cpu//immediate_generation_unit/immediate_generation_unit.v
+Warning:  ../../cpu//f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../../cpu//control_unit/control_unit.v
+Opening include file ../../cpu//support_modules/mux_2to1_3bit.v
+Warning:  ../../cpu//control_unit/control_unit.v:55: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:72: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:77: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:104: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:119: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:136: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:147: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:154: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:155: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:159: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:166: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:167: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:174: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:179: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:196: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:203: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:217: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu//control_unit/control_unit.v:231: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../cpu//branch_control_unit/branch_control_unit.v
+Opening include file ../../cpu//forwarding_units/ex_forward_unit.v
+Warning:  ../../cpu//branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
+Opening include file ../../cpu//forwarding_units/mem_forward_unit.v
+Opening include file ../../cpu//hazard_detection_unit/hazard_detection_unit.v
+Opening include file ../../cpu//pipeline_flush_unit/pipeline_flush_unit.v
+Opening include file ../../cpu//pipeline_registers/pr_if_id.v
+Opening include file ../../cpu//pipeline_registers/pr_id_ex.v
+Warning:  ../../cpu//pipeline_registers/pr_if_id.v:17: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_if_id.v:18: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_if_id.v:22: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_if_id.v:23: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../../cpu//pipeline_registers/pr_ex_mem.v
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:57: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:76: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:77: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:78: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:79: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:80: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:81: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:82: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:83: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:84: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:85: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:86: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:87: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:88: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:89: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:90: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:91: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:92: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:93: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:94: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:96: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_id_ex.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../../cpu//pipeline_registers/pr_mem_wb.v
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:44: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:45: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:46: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_ex_mem.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Opening include file ../../cpu//support_modules/plus_4_adder.v
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:35: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:37: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:38: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:39: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:40: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//pipeline_registers/pr_mem_wb.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu//support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
+Opening include file ../../cpu//support_modules/mux_4to1_32bit.v
+Opening include file ../../cpu//support_modules/mux_2to1_32bit.v
+Presto compilation completed successfully.
+Elapsed = 00:00:00.04, CPU = 00:00:00.04
+1
+# Elaborate the CPU design (not the testbench)
+elaborate cpu
+
+Inferred memory devices in process
+        in routine cpu line 254 in file
+                '../../cpu/cpu/cpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PC_reg        | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (cpu)
+Information: Elaborating HDL template WORK:plus_4_adder instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (plus_4_adder)
+Information: Elaborating HDL template WORK:mux_2to1_32bit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (mux_2to1_32bit)
+Information: Elaborating HDL template WORK:pr_if_id instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine pr_if_id line 13 in file
+                '../../cpu//pipeline_registers/pr_if_id.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| ID_INSTRUCTION_reg  | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      ID_PC_reg      | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (pr_if_id)
+Information: Elaborating HDL template WORK:control_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (control_unit)
+Information: Elaborating HDL template WORK:reg_file instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine reg_file line 19 in file
+                '../../cpu//reg_file/reg_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (reg_file)
+Information: Elaborating HDL template WORK:f_reg_file instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine f_reg_file line 20 in file
+                '../../cpu//f_reg_file/f_reg_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (f_reg_file)
+Information: Elaborating HDL template WORK:immediate_generation_unit instantiated from 'cpu'. (ELAB-193)
+
+Statistics for case statements in always block at line 18 in file
+        '../../cpu//immediate_generation_unit/immediate_generation_unit.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            20            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (immediate_generation_unit)
+Information: Elaborating HDL template WORK:hazard_detection_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (hazard_detection_unit)
+Information: Elaborating HDL template WORK:pipeline_flush_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (pipeline_flush_unit)
+Information: Elaborating HDL template WORK:pr_id_ex instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine pr_id_ex line 45 in file
+                '../../cpu//pipeline_registers/pr_id_ex.v'.
+=============================================================================================
+|           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=============================================================================================
+|      EX_WB_VALUE_SELECT_reg       | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|             EX_PC_reg             | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_REG_DATA1_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_REG_DATA2_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA1_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA2_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA3_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_IMMEDIATE_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_WRITE_ADDR_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR1_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR2_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR3_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_ALU_SELECT_reg         | Flip-flop |   6   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      EX_OPERAND1_SELECT_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      EX_OPERAND2_SELECT_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         EX_FPU_SELECT_reg         | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          EX_REG_TYPE_reg          | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        EX_REG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       EX_FREG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EX_DATA_MEM_WRITE_DATA_SELECT_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       EX_DATA_MEM_WRITE_reg       | Flip-flop |   3   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_DATA_MEM_READ_reg        | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        EX_BRANCH_CTRL_reg         | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+=============================================================================================
+Presto compilation completed successfully. (pr_id_ex)
+Information: Elaborating HDL template WORK:mux_4to1_32bit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (mux_4to1_32bit)
+Information: Elaborating HDL template WORK:alu instantiated from 'cpu'. (ELAB-193)
+Warning:  ../../cpu//alu/alu.v:58: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../cpu//alu/alu.v:68: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../cpu//alu/alu.v:81: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../cpu//alu/alu.v:84: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../cpu//alu/alu.v:94: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../cpu//alu/alu.v:98: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 72 in file
+        '../../cpu//alu/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            75            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 102 in file
+        '../../cpu//alu/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           104            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (alu)
+Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
+
+Statistics for case statements in always block at line 100 in file
+        '../../cpu//fpu/fpu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           102            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (fpu)
+Information: Elaborating HDL template WORK:branch_control_unit instantiated from 'cpu'. (ELAB-193)
+
+Statistics for case statements in always block at line 20 in file
+        '../../cpu//branch_control_unit/branch_control_unit.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            25            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (branch_control_unit)
+Information: Elaborating HDL template WORK:ex_forward_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (ex_forward_unit)
+Information: Elaborating HDL template WORK:pr_ex_mem instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine pr_ex_mem line 37 in file
+                '../../cpu//pipeline_registers/pr_ex_mem.v'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+|      MEM_WB_VALUE_SELECT_reg       | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|             MEM_PC_reg             | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_ALU_OUT_reg           | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         MEM_REG_DATA2_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_FPU_OUT_reg           | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         MEM_FREG_DATA2_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_REG_WRITE_ADDR_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_REG_READ_ADDR2_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_REG_TYPE_reg          | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        MEM_REG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       MEM_FREG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| MEM_DATA_MEM_WRITE_DATA_SELECT_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       MEM_DATA_MEM_WRITE_reg       | Flip-flop |   3   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_DATA_MEM_READ_reg        | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+==============================================================================================
+Presto compilation completed successfully. (pr_ex_mem)
+Information: Elaborating HDL template WORK:mem_forward_unit instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine mem_forward_unit line 17 in file
+                '../../cpu//forwarding_units/mem_forward_unit.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   MEM_FWD_SEL_reg   | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (mem_forward_unit)
+Information: Elaborating HDL template WORK:pr_mem_wb instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine pr_mem_wb line 31 in file
+                '../../cpu//pipeline_registers/pr_mem_wb.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+|  WB_WB_VALUE_SELECT_reg   | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         WB_PC_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      WB_ALU_OUT_reg       | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+| WB_DATA_MEM_READ_DATA_reg | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      WB_FPU_OUT_reg       | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|   WB_REG_WRITE_ADDR_reg   | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|    WB_REG_WRITE_EN_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   WB_FREG_WRITE_EN_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   WB_DATA_MEM_READ_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+=====================================================================================
+Presto compilation completed successfully. (pr_mem_wb)
+Information: Elaborating HDL template WORK:mux_2to1_3bit instantiated from 'control_unit'. (ELAB-193)
+Presto compilation completed successfully. (mux_2to1_3bit)
+Information: Elaborating HDL template WORK:Addition_Subtraction instantiated from 'fpu'. (ELAB-193)
+Presto compilation completed successfully. (Addition_Subtraction)
+Information: Elaborating HDL template WORK:Multiplication instantiated from 'fpu'. (ELAB-193)
+Presto compilation completed successfully. (Multiplication)
+Information: Elaborating HDL template WORK:Division instantiated from 'fpu'. (ELAB-193)
+Presto compilation completed successfully. (Division)
+Information: Elaborating HDL template WORK:Comparison instantiated from 'fpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine Comparison line 15 in file
+                '../../cpu//fpu/Comparison.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     result_reg      | Latch |   1   |  N  | Y  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (Comparison)
+Information: Elaborating HDL template WORK:Floating_Point_to_Integer instantiated from 'fpu'. (ELAB-193)
+
+Inferred memory devices in process
+        in routine Floating_Point_to_Integer line 17 in file
+                '../../cpu//fpu/Converter.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|  Integer_Value_reg  | Latch |  23   |  Y  | Y  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (Floating_Point_to_Integer)
+Information: Elaborating HDL template WORK:priority_encoder instantiated from 'Addition_Subtraction'. (ELAB-193)
+
+Statistics for case statements in always block at line 19 in file
+        '../../cpu//fpu/Priority Encoder.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            21            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (priority_encoder)
+Information: Elaborating HDL template WORK:Iteration instantiated from 'Division'. (ELAB-193)
+Presto compilation completed successfully. (Iteration)
+Information: Design elaboration summary: (FLW-8550)
+Number of modules read: 27
+Top level ports:        171
+Total in all modules
+  Ports:                3210
+  Nets:                 11075
+  Instances:            4923
+Design summary end. (FLW-8551)
+Elapsed = 00:00:00.96, CPU = 00:00:00.91
+1
+puts "Design elaboration completed"
+Design elaboration completed
+# -----------------------------------------------------------------------------
+# Technology Setup and Constraints
+# -----------------------------------------------------------------------------
+puts "========== Loading Technology Setup =========="
+========== Loading Technology Setup ==========
+source tz_setup.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: temp_results_20251206_225538
+Configuration loaded successfully
+  Design: cpu_tb
+  Technology: SKY130 130nm
+  Cores: 8
+  Results directory: temp_results_20251206_225538
+========== SKY130 Technology Setup ==========
+Configuring synthesis flow options...
+Loading SKY130 parasitic technology files...
+SKY130 parasitic models loaded
+Setting up clock gating options for SKY130...
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Clock gating configured for SKY130
+Setting optimization controls...
+Creating operating scenarios...
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option -mode
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option -corners
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option scenario_list
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option scenario_name
+        Use error_info for more info. (CMD-013)
+Operating scenario func@nominal created and set as current
+Loading design constraints...
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option source_objects
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option object_list
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option port_pin_list
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option port_pin_list
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option port_pin_list
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option port_pin_list
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option port_list
+        Use error_info for more info. (CMD-013)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+Error: bad value specified for option objects
+        Use error_info for more info. (CMD-013)
+Clock constraints loaded from ./sdc/clocks.sdc
+========== Setup Status Report ==========
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+========== SKY130 Technology Setup Complete ==========
+# Force timing update after loading constraints
+update_timing
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+# Verify clock constraints were loaded
+puts "========== Verifying Clock Constraints =========="
+========== Verifying Clock Constraints ==========
+set all_clocks [get_clocks -quiet *]
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+if {[llength $all_clocks] == 0} {
+    puts "ERROR: No clocks found after loading constraints!"
+    puts "Checking for clock ports in design..."
+    set clk_ports [get_ports -quiet *CLK*]
+    if {[llength $clk_ports] > 0} {
+        puts "Found clock port(s): [get_object_name $clk_ports]"
+        puts "Attempting to create clock manually..."
+        # Try to create clock on CLK port with default period
+        create_clock -name CLK -period 10.0 [get_ports CLK]
+        set all_clocks [get_clocks -quiet *]
+    }
+    if {[llength $all_clocks] == 0} {
+        puts "FATAL: Unable to create or find clocks. Exiting."
+        exit 1
+    }
+}
+ERROR: No clocks found after loading constraints!
+Checking for clock ports in design...
+Information: Block 'cpu' cannot be auto-linked. (DES-149)
+FATAL: Unable to create or find clocks. Exiting.
+Maximum memory usage for this session: 414.19 MB
+CPU usage for this session:      9 seconds (  0.00 hours)
+Elapsed time for this session:      9 seconds (  0.00 hours)
+Thank you for using RTL Architect.
+

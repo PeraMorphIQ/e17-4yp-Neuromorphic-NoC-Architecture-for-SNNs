@@ -1,0 +1,93 @@
+****************************************
+Report : reference
+Design : cpu
+Version: V-2023.12-SP5-3
+Date   : Sat Dec  6 23:24:59 2025
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model (QTM)
+    s - synthetic operator
+
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+--------------------------------------------------------------------------------
+sky130_fd_sc_hd__buf_12
+                   sky130_fd_sc_hd
+                                     20.02       3         60.06   
+sky130_fd_sc_hd__buf_2
+                   sky130_fd_sc_hd
+                                      5.00       3         15.01   
+sky130_fd_sc_hd__buf_4
+                   sky130_fd_sc_hd
+                                      7.51       2         15.01   
+sky130_fd_sc_hd__buf_6
+                   sky130_fd_sc_hd
+                                     11.26       1         11.26   
+sky130_fd_sc_hd__clkbuf_1
+                   sky130_fd_sc_hd
+                                      3.75       4         15.01   
+sky130_fd_sc_hd__clkinvlp_2
+                   sky130_fd_sc_hd
+                                      5.00       1          5.00   
+sky130_fd_sc_hd__conb_1
+                   sky130_fd_sc_hd
+                                      3.75     112        420.40   
+sky130_fd_sc_hd__macro_sparecell
+                   sky130_fd_sc_hd
+                                     75.07     164      12311.81   
+sky130_fd_sc_hd__nand3_1
+                   sky130_fd_sc_hd
+                                      5.00       1          5.00   
+sky130_fd_sc_hd__nor2b_1
+                   sky130_fd_sc_hd
+                                      6.26      32        200.19   
+sky130_fd_sc_hd__or2_1
+                   sky130_fd_sc_hd
+                                      6.26       1          6.26   
+sky130_fd_sc_hd__or2_2
+                   sky130_fd_sc_hd
+                                      6.26       1          6.26   
+sky130_fd_sc_hd__sdfxtp_1
+                   sky130_fd_sc_hd
+                                     26.28      32        840.81   n
+sky130_fd_sc_hd__sdlclkp_1
+                   sky130_fd_sc_hd
+                                     18.77       2         37.54   n
+alu                              218286.85       1     218286.85   h
+branch_control_unit                 923.39       1        923.39   h
+control_unit                        580.56       1        580.56   h
+ex_forward_unit                     397.88       1        397.88   h
+f_reg_file                        49268.50       1      49268.50   h
+fpu                              256870.11       1     256870.11   h
+hazard_detection_unit               208.95       1        208.95   h
+immediate_generation_unit           320.31       1        320.31   h
+mem_forward_unit                     93.84       1         93.84   h
+mux_2to1_32bit_0                    285.27       1        285.27   h
+mux_2to1_32bit_1                    299.04       1        299.04   h
+mux_2to1_32bit_2                    704.43       1        704.43   h
+mux_2to1_32bit_3                    850.82       1        850.82   h
+mux_2to1_32bit_4                    285.27       1        285.27   h
+mux_2to1_32bit_5                    325.31       1        325.31   h
+mux_4to1_32bit_0                    769.49       1        769.49   h
+mux_4to1_32bit_1                    885.85       1        885.85   h
+mux_4to1_32bit_2                    887.10       1        887.10   h
+mux_4to1_32bit_3                   1492.68       1       1492.68   h
+mux_4to1_32bit_4                    645.62       1        645.62   h
+mux_4to1_32bit_5                   1022.23       1       1022.23   h
+pipeline_flush_unit                  15.01       1         15.01   h
+plus_4_adder                        364.10       1        364.10   h
+plus_4_adder_0                      364.10       1        364.10   h
+pr_ex_mem                          6118.37       1       6118.37   h
+pr_id_ex                           9006.14       1       9006.14   h
+pr_if_id                           2170.83       1       2170.83   h
+pr_mem_wb                          4529.34       1       4529.34   h
+reg_file                          42787.29       1      42787.29   h
+--------------------------------------------------------------------------------
+Total 43 references                                    614708.30
+1

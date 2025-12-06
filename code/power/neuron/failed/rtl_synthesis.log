@@ -1,0 +1,2112 @@
+
+
+
+                               RTL Architect (TM)
+
+               Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
+                           Base build date 11/18/2024
+
+                    Copyright (c) 1988 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+#!/bin/tcsh -f
+# =============================================================================
+# RISC-V CPU RTL Analysis and Synthesis Script for SKY130
+# =============================================================================
+# Description: This script performs RTL analysis, synthesis, and power 
+#              analysis for the RISC-V CPU using SKY130 technology
+# Author: CO502 Group 1
+# Technology: SKY130 130nm Process
+# =============================================================================
+# Load shared configuration
+source config.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: temp_results_20251206_232719
+Configuration loaded successfully
+  Design: neuron
+  Technology: SKY130 130nm
+  Cores: 8
+  Results directory: temp_results_20251206_232719
+# -----------------------------------------------------------------------------
+# Configuration and Setup
+# -----------------------------------------------------------------------------
+puts "========== Starting RTL Analysis and Synthesis =========="
+========== Starting RTL Analysis and Synthesis ==========
+puts "Technology: SKY130 130nm"
+Technology: SKY130 130nm
+puts "Design: RISC-V CPU Pipeline"
+Design: RISC-V CPU Pipeline
+# Configure mismatch handling
+set_current_mismatch_config auto_fix 
+1
+set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
+Warning: Changing current repair(handler) for a mismatch type in between a flow is not recommended. (DMM-011)
+{missing_logical_reference}
+# Set host options for parallel processing
+set_host_options -max_cores $CORES
+1
+puts "Using $CORES cores for parallel processing"
+Using 8 cores for parallel processing
+# Application options
+set_app_options -list {plan.macro.allow_unmapped_design true}
+plan.macro.allow_unmapped_design true
+# -----------------------------------------------------------------------------
+# Library Setup
+# -----------------------------------------------------------------------------
+puts "========== Setting up SKY130 Libraries =========="
+========== Setting up SKY130 Libraries ==========
+# Search paths for libraries and source files
+set search_path $SEARCH_PATHS
+* ./ ../../cpu/ ../../cpu/neuron/ /tech/sky130/libs/sky130_library/ndm
+# Create design library with SKY130 reference libraries
+create_lib $LIB_NAME \
+    -ref_libs "$REF_LIBS" \
+    -technology $TECH_TF
+Information: The command 'create_lib' cleared the undo history. (UNDO-016)
+Warning: sky130_fd_sc_hd.tf line 26, unsupported syntax 'fatWireViaKeepoutMode' in 'Technology' section. It will be ignored. (TECH-002)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 846) (TECH-026)
+Warning: Layer 'via4/met4' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 846) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 854) (TECH-026)
+Warning: Layer 'via4/met5' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 854) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 862) (TECH-026)
+Warning: Layer 'via3/met3' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 862) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 870) (TECH-026)
+Warning: Layer 'via3/met4' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 870) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 878) (TECH-026)
+Warning: Layer 'via2/met2' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 878) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 886) (TECH-026)
+Warning: Layer 'via2/met3' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 886) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 894) (TECH-026)
+Warning: Layer 'via/met1' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 894) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 902) (TECH-026)
+Warning: Layer 'via/met2' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 902) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 910) (TECH-026)
+Warning: Layer 'mcon/li1' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 910) (TECH-026)
+Warning: Section DesignRule '' is missing the attribute 'stackable'. (sky130_fd_sc_hd.tf line 918) (TECH-026)
+Warning: Layer 'mcon/met1' is missing the attribute 'maxStackLevel'. (sky130_fd_sc_hd.tf line 918) (TECH-026)
+Warning: DesignRule is defined with non-consecutive layers 'via4' and 'met4'. (sky130_fd_sc_hd.tf line 851) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via4' and 'met5'. (sky130_fd_sc_hd.tf line 859) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via3' and 'met3'. (sky130_fd_sc_hd.tf line 867) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via3' and 'met4'. (sky130_fd_sc_hd.tf line 875) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via2' and 'met2'. (sky130_fd_sc_hd.tf line 883) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via2' and 'met3'. (sky130_fd_sc_hd.tf line 891) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via' and 'met1'. (sky130_fd_sc_hd.tf line 899) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'via' and 'met2'. (sky130_fd_sc_hd.tf line 907) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'mcon' and 'li1'. (sky130_fd_sc_hd.tf line 915) (TECH-034)
+Warning: DesignRule is defined with non-consecutive layers 'mcon' and 'met1'. (sky130_fd_sc_hd.tf line 923) (TECH-034)
+Information: Loading technology file '/tech/sky130/libs/sky130_fd_sc_hd/sky130_fd_sc_hd.tf' (FILE-007)
+{neuron_LIB}
+puts "SKY130 libraries loaded successfully"
+SKY130 libraries loaded successfully
+# -----------------------------------------------------------------------------
+# Design Analysis and Elaboration
+# -----------------------------------------------------------------------------
+puts "========== Analyzing and Elaborating Design =========="
+========== Analyzing and Elaborating Design ==========
+# Analyze RTL source files
+analyze -f sv -vcs "-f $FILELIST"
+Information: By default, the HDL template library is 'WORK' (LBR-??).
+Running PRESTO HDLC
+Parsing vcs commands file -f src.f
+Compiling source file ../../cpu/neuron/neuron.v
+Opening include file ../../cpu//fpu/Multiplication.v
+Opening include file ../../cpu//fpu/Addition-Subtraction.v
+Opening include file ../../cpu//fpu/Priority Encoder.v
+Opening include file ../../cpu//fpu/Comparison.v
+Warning:  ../../cpu/neuron/neuron.v:56: delays for continuous assignment are ignored. (VER-173)
+Warning:  ../../cpu/neuron/neuron.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu/neuron/neuron.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu/neuron/neuron.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu/neuron/neuron.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu/neuron/neuron.v:73: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Warning:  ../../cpu/neuron/neuron.v:74: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
+Presto compilation completed successfully.
+Elapsed = 00:00:00.01, CPU = 00:00:00.01
+1
+# Elaborate the design
+elaborate $DESIGN_NAME
+
+Inferred memory devices in process
+	in routine neuron line 59 in file
+		'../../cpu/neuron/neuron.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        U_reg        | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        V_reg        | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (neuron)
+Information: Elaborating HDL template WORK:Multiplication per configuration 'neuron'. (ELAB-193)
+Presto compilation completed successfully. (Multiplication)
+Information: Elaborating HDL template WORK:Addition_Subtraction per configuration 'neuron'. (ELAB-193)
+Presto compilation completed successfully. (Addition_Subtraction)
+Information: Elaborating HDL template WORK:Comparison per configuration 'neuron'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine Comparison line 15 in file
+		'../../cpu//fpu/Comparison.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|     result_reg      | Latch |   1   |  N  | Y  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (Comparison)
+Information: Elaborating HDL template WORK:priority_encoder instantiated from 'Addition_Subtraction'. (ELAB-193)
+
+Statistics for case statements in always block at line 19 in file
+	'../../cpu//fpu/Priority Encoder.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            21            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (priority_encoder)
+Information: Design elaboration summary: (FLW-8550)
+Number of modules read: 5
+Top level ports:        163
+Total in all modules
+  Ports:                492
+  Nets:                 1806
+  Instances:            359
+Design summary end. (FLW-8551)
+Elapsed = 00:00:00.18, CPU = 00:00:00.17
+1
+set_top_module $TOP_MODULE
+Information: User units loaded from library 'sky130_fd_sc_hd' (LNK-040)
+Information: Added key list 'DesignWare' to design 'neuron'. (DWS-0216)
+Gensys attachment is created: presto_gensys.attach:neuron_LIB:neuron.design 
+Elapsed = 00:00:00.88, CPU = 00:00:00.85
+1
+puts "Design elaboration completed"
+Design elaboration completed
+# -----------------------------------------------------------------------------
+# Technology Setup and Constraints
+# -----------------------------------------------------------------------------
+puts "========== Loading Technology Setup =========="
+========== Loading Technology Setup ==========
+source tz_setup.tcl
+Loading shared configuration...
+Using environment TEMP_RESULTS_DIR: temp_results_20251206_232719
+Configuration loaded successfully
+  Design: neuron
+  Technology: SKY130 130nm
+  Cores: 8
+  Results directory: temp_results_20251206_232719
+========== SKY130 Technology Setup ==========
+Configuring synthesis flow options...
+Loading SKY130 parasitic technology files...
+SKY130 parasitic models loaded
+Setting up clock gating options for SKY130...
+Warning: This option -max_number_of_levels will be ignored during clock gating insertion/optimizations. (CGT-3003)
+The following clock gating options are applied to: top-level (design)
+Minimum bitwidth: 3
+Maximum fanout: 16
+The following clock gating style is applied to: top-level (design)
+Target: pos_edge_flip_flop 
+Test control position: before
+Observation output: false
+Clock gating configured for SKY130
+Setting optimization controls...
+Creating operating scenarios...
+Created scenario func@nominal for mode func and corner nominal
+All analysis types are activated.
+Scenario func@nominal (mode func corner nominal) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+Operating scenario func@nominal created and set as current
+Loading design constraints...
+Information: Timer using 8 threads
+Clock constraints loaded from ./sdc/clocks.sdc
+========== Setup Status Report ==========
+****************************************
+Report : scenario
+Design : neuron
+Version: V-2023.12-SP5-3
+Date   : Sat Dec  6 23:27:36 2025
+****************************************
+
+                                                                     Leakage  Dynamic                              Cell  Signal
+Name            Mode            Corner          Active  Setup  Hold  Power    Power    Max_tran  Max_cap  Min_cap  EM    EM
+----------------------------------------------------------------------------------------------------------------------------------
+func@nominal *  func            nominal         true    true   false true     true     true      true     true     false false
+
+========== SKY130 Technology Setup Complete ==========
+# Force timing update after loading constraints
+update_timing
+Information: Starting 'update_timing' (FLW-8000)
+Information: Time: 2025-12-06 23:27:36 / Session:  00:00:09 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 466 MB (FLW-8100)
+Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 16000 cells affected for early, 16000 for late. (PVT-031)
+Warning: 161 port driving_cells affected for early, 161 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Warning: No physical information exists for design 'neuron'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'neuron'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "neuron"
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 20825, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 2408. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+Smart Arc Optimization:                    disabled
+************************************************************
+Information: Ending   'update_timing' (FLW-8001)
+Information: Time: 2025-12-06 23:27:36 / Session:  00:00:10 / Command:  00:00:00 / CPU:  00:00:02 / Memory: 498 MB (FLW-8100)
+1
+# Verify clock constraints were loaded
+puts "========== Verifying Clock Constraints =========="
+========== Verifying Clock Constraints ==========
+set all_clocks [get_clocks -quiet *]
+{CLK}
+if {[llength $all_clocks] == 0} {
+    puts "ERROR: No clocks found after loading constraints!"
+    puts "Checking for clock ports in design..."
+    set clk_ports [get_ports -quiet *CLK*]
+    if {[llength $clk_ports] > 0} {
+        puts "Found clock port(s): [get_object_name $clk_ports]"
+        puts "Attempting to create clock manually..."
+        # Try to create clock on CLK port with default period
+        create_clock -name CLK -period 10.0 [get_ports CLK]
+        set all_clocks [get_clocks -quiet *]
+    }
+    if {[llength $all_clocks] == 0} {
+        puts "FATAL: Unable to create or find clocks. Exiting."
+        exit 1
+    }
+}
+puts "Clocks found in design:"
+Clocks found in design:
+foreach clk $all_clocks {
+    set clk_name [get_object_name $clk]
+    set clk_period [get_attribute $clk period]
+    puts "  - $clk_name (period: $clk_period ns)"
+}
+  - CLK (period: 10.000000 ns)
+puts "=============================================="
+==============================================
+# -----------------------------------------------------------------------------
+# RTL Optimization
+# -----------------------------------------------------------------------------
+puts "========== Starting RTL Optimization =========="
+========== Starting RTL Optimization ==========
+rtl_opt
+Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
+Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
+Information: Starting 'rtl_opt' (FLW-8000)
+Information: Time: 2025-12-06 23:27:37 / Session:  00:00:10 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 498 MB (FLW-8100)
+INFO: compile_fusion is running in balanced flow mode.
+INFO: EIO v2 is enabled
+INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
+Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
+****************************************
+Report : report_tbcs
+Version: V-2023.12-SP5-3
+Date   : Sat Dec  6 23:27:37 2025
+****************************************
+INFO: Start environment monitoring: recipes
+INFO: compile_fusion is running in balanced flow mode.
+INFO: EIO v2 is enabled
+INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / conditioning (FLW-8000)
+Information: Time: 2025-12-06 23:27:40 / Session:  00:00:13 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 603 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
+Information: Time: 2025-12-06 23:27:40 / Session:  00:00:13 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 603 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
+Information: Time: 2025-12-06 23:27:40 / Session:  00:00:13 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 613 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / MV Cell Insertion (FLW-8000)
+Information: Time: 2025-12-06 23:27:40 / Session:  00:00:13 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 613 MB (FLW-8100)
+MV related app options set by user:
+Information: Ending   rtl_opt / conditioning / MV Cell Insertion (FLW-8001)
+Information: Time: 2025-12-06 23:27:40 / Session:  00:00:13 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 613 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8000)
+Information: Time: 2025-12-06 23:27:40 / Session:  00:00:13 / Command:  00:00:03 / CPU:  00:00:03 / Memory: 613 MB (FLW-8100)
+Information: Register Bits Before Sharing = 65, After Sharing = 65, Savings = 0 (SQM-2000)
+Information: Ending   rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8001)
+Information: Time: 2025-12-06 23:27:41 / Session:  00:00:15 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 651 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Register Merging (FLW-8000)
+Information: Time: 2025-12-06 23:27:41 / Session:  00:00:15 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 651 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Register Merging (FLW-8001)
+Information: Time: 2025-12-06 23:27:41 / Session:  00:00:15 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 651 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8000)
+Information: Time: 2025-12-06 23:27:41 / Session:  00:00:15 / Command:  00:00:04 / CPU:  00:00:04 / Memory: 651 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8001)
+Information: Time: 2025-12-06 23:27:42 / Session:  00:00:15 / Command:  00:00:04 / CPU:  00:00:05 / Memory: 651 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8000)
+Information: Time: 2025-12-06 23:27:42 / Session:  00:00:15 / Command:  00:00:05 / CPU:  00:00:05 / Memory: 651 MB (FLW-8100)
+Information: Timer using 8 threads
+Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (1) (FLW-8001)
+Information: Time: 2025-12-06 23:27:45 / Session:  00:00:18 / Command:  00:00:08 / CPU:  00:00:17 / Memory: 778 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8000)
+Information: Time: 2025-12-06 23:27:45 / Session:  00:00:18 / Command:  00:00:08 / CPU:  00:00:17 / Memory: 778 MB (FLW-8100)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Information: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: 32 register's output was inverted. Use report_transformed_registers for a list. (SQM-2014)
+Information: Added key list 'DesignWare' to design 'neuron'. (DWS-0216)
+Warning: For sequential element 'result_reg[1]' of module 'Comparison' : No latches available in library with requested scan type. Instance 'CuI/result_reg[1]' is mapped to non-scan latch 'sky130_fd_sc_hd/sky130_fd_sc_hd__dlxtp_1' (SQM-1019)
+Information: 4 out of 5 SQM-1040 messages were not printed due to limit 1 (after 'rtl_opt' at rtla.tcl:102) (MSG-3913)
+Information: 4 out of 5 SQM-1074 messages were not printed due to limit 1 (after 'rtl_opt' at rtla.tcl:102) (MSG-3913)
+Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
+Information: Time: 2025-12-06 23:27:48 / Session:  00:00:21 / Command:  00:00:11 / CPU:  00:00:25 / Memory: 789 MB (FLW-8100)
+Information: RTL multibit banking summary. (SQM-2008)
+	Total candidates in design:65
+	Total candidates ignored:  65
+	Total candidates banked:   0
+	Banking Ratio of this pass:0.00%
+	Banking ratio             :0.00% (Before banking 0.00%)
+	Use report_multibit for details.
+Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
+Information: Time: 2025-12-06 23:27:48 / Session:  00:00:21 / Command:  00:00:11 / CPU:  00:00:25 / Memory: 789 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
+Information: Time: 2025-12-06 23:27:48 / Session:  00:00:21 / Command:  00:00:11 / CPU:  00:00:25 / Memory: 789 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-12-06 23:27:48 / Session:  00:00:21 / Command:  00:00:11 / CPU:  00:00:25 / Memory: 789 MB (FLW-8100)
+Information: Register Bits Before Sharing = 65, After Sharing = 65, Savings = 0 (SQM-2000)
+Information: Starting rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8000)
+Information: Time: 2025-12-06 23:27:49 / Session:  00:00:22 / Command:  00:00:12 / CPU:  00:00:26 / Memory: 827 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Logic Simplification (2) / Constant Propagation and Register Optimization (FLW-8001)
+Information: Time: 2025-12-06 23:27:49 / Session:  00:00:23 / Command:  00:00:12 / CPU:  00:00:27 / Memory: 827 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-12-06 23:27:49 / Session:  00:00:23 / Command:  00:00:12 / CPU:  00:00:27 / Memory: 827 MB (FLW-8100)
+Information: Result of rtl_opt / conditioning / Clock Gate Insertion (FLW-8500)
+--------------------------------------------------------------------------------
+|                             Clock Gating Options                             |
+--------------------------------------------------------------------------------
+|         Objects         |    Minimum Bitwidth     |      Maximum Fanout      |
+--------------------------+-------------------------+---------------------------
+|   top-level (design)    |          3 (d)          |      Unlimited (d)       |
+--------------------------------------------------------------------------------
+
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 3
+---------------------------------------------------------------------------------------------
+                          Tool Gated Register Summary                                        
+---------------------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent | % of Gated 
+                                    | Clock Gates |                | Bitwidth   | Bits       
+---------------------------------------------------------------------------------------------
+Regular Clock Gating                |           0 |              0 |          0 |     0.00%
+---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                 Regular Clock Gating Ungated Register Summary                  
+--------------------------------------------------------------------------------
+ Ungated Reason                                            | Count | Bitwidth   
+--------------------------------------------------------------------------------
+ Enable is Constant One.                                   |    64 |       64
+ Not Processed.                                            |     1 |        1
+--------------------------------------------------------------------------------
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -      99177.62           -       10836              0.01       827
+Information: Ending   rtl_opt / conditioning (FLW-8001)
+Information: Time: 2025-12-06 23:27:49 / Session:  00:00:23 / Command:  00:00:12 / CPU:  00:00:27 / Memory: 827 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / conditioning (FLW-8000)
+Information: Time: 2025-12-06 23:27:49 / Session:  00:00:23 / Command:  00:00:12 / CPU:  00:00:27 / Memory: 827 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
+Information: Time: 2025-12-06 23:27:49 / Session:  00:00:23 / Command:  00:00:12 / CPU:  00:00:27 / Memory: 827 MB (FLW-8100)
+Warning: Auto deriving 'horizontal' routing direction for layer 'li1'. (DMM-115)
+Warning: Auto deriving 'vertical' routing direction for layer 'met1'. (DMM-115)
+Warning: Auto deriving 'horizontal' routing direction for layer 'met2'. (DMM-115)
+Warning: Auto deriving 'vertical' routing direction for layer 'met3'. (DMM-115)
+Warning: Auto deriving 'horizontal' routing direction for layer 'met4'. (DMM-115)
+Warning: Auto deriving 'vertical' routing direction for layer 'met5'. (DMM-115)
+Information: Initializing core and die (AFP-1001)
+Information: Initializing rows (AFP-1003)
+Information: Initializing tracks (AFP-1004)
+Information: Generated core area = 141240.453125 (AFP-2021)
+Information: Generated core boundary = { {0 0} {0 375.36} {376.28 375.36} {376.28 0} } (AFP-2022)
+Information: Change threshold for extractor is reset. (FLW-1300)
+Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 10836 cells affected for early, 10836 for late. (PVT-031)
+Warning: 161 port driving_cells affected for early, 161 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
+Information: Time: 2025-12-06 23:27:50 / Session:  00:00:24 / Command:  00:00:13 / CPU:  00:00:30 / Memory: 827 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8000)
+Information: Time: 2025-12-06 23:27:50 / Session:  00:00:24 / Command:  00:00:13 / CPU:  00:00:30 / Memory: 827 MB (FLW-8100)
+Information: Result of rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 3
+---------------------------------------------------------------------------------------------
+                          Tool Gated Register Summary                                        
+---------------------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent | % of Gated 
+                                    | Clock Gates |                | Bitwidth   | Bits       
+---------------------------------------------------------------------------------------------
+Regular Clock Gating                |           0 |              0 |          0 |     0.00%
+---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                 Regular Clock Gating Ungated Register Summary                  
+--------------------------------------------------------------------------------
+ Ungated Reason                                            | Count | Bitwidth   
+--------------------------------------------------------------------------------
+ Enable is Constant One.                                   |    64 |       64
+ Not Processed.                                            |     1 |        1
+--------------------------------------------------------------------------------
+Information: Ending   rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8001)
+Information: Time: 2025-12-06 23:27:50 / Session:  00:00:24 / Command:  00:00:13 / CPU:  00:00:30 / Memory: 827 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (1) (FLW-8000)
+Information: Time: 2025-12-06 23:27:50 / Session:  00:00:24 / Command:  00:00:13 / CPU:  00:00:30 / Memory: 827 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (1) / Logic Simplification and Register Optimization (FLW-8000)
+Information: Time: 2025-12-06 23:27:51 / Session:  00:00:24 / Command:  00:00:13 / CPU:  00:00:30 / Memory: 827 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Optimization (1) / Logic Simplification and Register Optimization (FLW-8001)
+Information: Time: 2025-12-06 23:27:52 / Session:  00:00:25 / Command:  00:00:15 / CPU:  00:00:32 / Memory: 827 MB (FLW-8100)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Information: Starting rtl_opt / conditioning / Optimization (1) / Timing Optimization and DesignWare Reselection (FLW-8000)
+Information: Time: 2025-12-06 23:27:53 / Session:  00:00:26 / Command:  00:00:16 / CPU:  00:00:34 / Memory: 827 MB (FLW-8100)
+Warning: Net 'add6/pe/significand[0]' is already connected to pin 'add6/pe/significand[0]'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add6/significand_b_add_sub[0]' is already connected to pin 'add6/srl_63/ctmi_11110/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add5/pe/significand[0]' is already connected to pin 'add5/pe/significand[0]'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add4/pe/significand[0]' is already connected to pin 'add4/pe/significand[0]'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add3/pe/significand[0]' is already connected to pin 'add3/pe/significand[0]'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add2/pe/significand[0]' is already connected to pin 'add2/pe/significand[0]'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/pe/significand[0]' is already connected to pin 'add1/pe/significand[0]'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add5/significand_b_add_sub[0]' is already connected to pin 'add5/srl_63/ctmi_10962/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add4/significand_b_add_sub[0]' is already connected to pin 'add4/srl_63/ctmi_10814/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add3/significand_b_add_sub[0]' is already connected to pin 'add3/srl_63/ctmi_10666/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/significand_sub[24]' is already connected to pin 'add1/A293/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add4/N84' is already connected to pin 'add4/add_87/ctmi_12788/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add4/N81' is already connected to pin 'add4/add_87/ctmi_12800/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add2/significand_sub[24]' is already connected to pin 'add2/A291/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/pe/Significand[24]' is already connected to pin 'add1/pe/ctmi_1853/X'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/pe/Significand[0]' is already connected to pin 'add1/pe/ctmi_2021/X'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add2/pe/Significand[24]' is already connected to pin 'add2/pe/ctmi_1853/X'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add2/pe/Significand[0]' is already connected to pin 'add2/pe/ctmi_2021/X'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add3/pe/Significand[24]' is already connected to pin 'add3/pe/ctmi_1853/X'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add3/pe/Significand[0]' is already connected to pin 'add3/pe/ctmi_2021/X'. It may cause loss of switching activity. (POW-116)
+Information: 43 out of 53 POW-116 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:102) (MSG-3913)
+Information: 2 out of 12 POW-116 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:102) (MSG-3913)
+Information: Ending   rtl_opt / conditioning / Optimization (1) / Timing Optimization and DesignWare Reselection (FLW-8001)
+Information: Time: 2025-12-06 23:28:25 / Session:  00:00:58 / Command:  00:00:48 / CPU:  00:02:50 / Memory: 1574 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Optimization (1) (FLW-8001)
+Information: Time: 2025-12-06 23:28:25 / Session:  00:00:58 / Command:  00:00:48 / CPU:  00:02:50 / Memory: 1574 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Register Retiming (FLW-8000)
+Information: Time: 2025-12-06 23:28:25 / Session:  00:00:58 / Command:  00:00:48 / CPU:  00:02:50 / Memory: 1574 MB (FLW-8100)
+Information: Result of rtl_opt / conditioning / Register Retiming (FLW-8500)
+Information: No instance marked for retiming. (RTM-1031)
+Information: Ending   rtl_opt / conditioning / Register Retiming (FLW-8001)
+Information: Time: 2025-12-06 23:28:31 / Session:  00:01:05 / Command:  00:00:54 / CPU:  00:02:56 / Memory: 1574 MB (FLW-8100)
+Information: Register Bits Before Sharing = 0, After Sharing = 0, Savings = 0 (SQM-2000)
+Information: Starting rtl_opt / conditioning / Optimization (2) (FLW-8000)
+Information: Time: 2025-12-06 23:28:34 / Session:  00:01:07 / Command:  00:00:56 / CPU:  00:02:59 / Memory: 1574 MB (FLW-8100)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
+Information: Ending   rtl_opt / conditioning / Optimization (2) (FLW-8001)
+Information: Time: 2025-12-06 23:28:40 / Session:  00:01:13 / Command:  00:01:03 / CPU:  00:03:15 / Memory: 1574 MB (FLW-8100)
+Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
+Information: Design has 17934 unplaced cells after preCond2Placement (FLW-5112)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Information: Starting rtl_opt / conditioning / Optimization (3) (FLW-8000)
+Information: Time: 2025-12-06 23:28:41 / Session:  00:01:14 / Command:  00:01:04 / CPU:  00:03:20 / Memory: 1574 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (3) / Timing Optimization (FLW-8000)
+Information: Time: 2025-12-06 23:28:41 / Session:  00:01:14 / Command:  00:01:04 / CPU:  00:03:20 / Memory: 1574 MB (FLW-8100)
+Warning: Net 'mul2/N91738' is already connected to pin 'mul2/A61888/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add3/ctmn_84414' is already connected to pin 'add3/A57114/X'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'mul1/N93070' is already connected to pin 'mul1/A65455/X'. It may cause loss of switching activity. (POW-116)
+Information: Ending   rtl_opt / conditioning / Optimization (3) / Timing Optimization (FLW-8001)
+Information: Time: 2025-12-06 23:31:45 / Session:  00:04:18 / Command:  00:04:08 / CPU:  00:18:05 / Memory: 1957 MB (FLW-8100)
+Warning: Net 'mul5/mult_36/tmp_net47347' is already connected to pin 'mul5/mult_36/ctmi_30976/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'mul4/mult_36/N100368' is already connected to pin 'mul4/mult_36/A61880/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'mul5/mult_36/ctmn_81188' is already connected to pin 'mul5/mult_36/A45802/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'mul5/mult_36/ctmn_80751' is already connected to pin 'mul5/mult_36/A58838/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'mul5/mult_36/tmp_net47572' is already connected to pin 'mul5/mult_36/A62558/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/N95550' is already connected to pin 'add1/A53460/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/ctmn_81920' is already connected to pin 'add1/A58267/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/operand_a[24]' is already connected to pin 'add1/A47083/X'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/operand_b[25]' is already connected to pin 'add1/ctmi_42957/Y'. It may cause loss of switching activity. (POW-116)
+Warning: Net 'add1/operand_a[27]' is already connected to pin 'add1/ctmi_42917/Y'. It may cause loss of switching activity. (POW-116)
+Information: 111 out of 121 POW-116 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:102) (MSG-3913)
+Information: Ending   rtl_opt / conditioning / Optimization (3) (FLW-8001)
+Information: Time: 2025-12-06 23:31:46 / Session:  00:04:19 / Command:  00:04:09 / CPU:  00:18:10 / Memory: 1957 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (4) (FLW-8000)
+Information: Time: 2025-12-06 23:31:46 / Session:  00:04:19 / Command:  00:04:09 / CPU:  00:18:10 / Memory: 1957 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (4) / Logic Simplification and Register Optimization (FLW-8000)
+Information: Time: 2025-12-06 23:31:46 / Session:  00:04:19 / Command:  00:04:09 / CPU:  00:18:10 / Memory: 1957 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Optimization (4) / Logic Simplification and Register Optimization (FLW-8001)
+Information: Time: 2025-12-06 23:31:47 / Session:  00:04:20 / Command:  00:04:10 / CPU:  00:18:13 / Memory: 1957 MB (FLW-8100)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Information: Ending   rtl_opt / conditioning / Optimization (4) (FLW-8001)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:23 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (5) (FLW-8000)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:23 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (5) / Logic Simplification and Register Optimization (FLW-8000)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:23 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Optimization (5) / Logic Simplification and Register Optimization (FLW-8001)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:23 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Optimization (5) (FLW-8001)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:23 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Auto-Floorplan (2) (FLW-8000)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:23 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Information: Initializing core and die (AFP-1001)
+Information: Initializing rows (AFP-1003)
+Information: Initializing tracks (AFP-1004)
+Removing existing floorplan objects
+Creating core...
+Core utilization ratio = 70.01%
+Unplacing all cells...
+Creating site array...
+Creating routing tracks...
+Initializing floorplan completed.
+Information: Generated core area = 218864.906250 (AFP-2021)
+Information: Generated core boundary = { {0 0} {0 467.84} {467.82 467.84} {467.82 0} } (AFP-2022)
+Information: Shaping unshaped voltage areas (AFP-1011)
+Information: Placing unplaced pins (AFP-1007)
+Load DB...
+CPU Time for load db: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+
+Min routing layer: li1
+Max routing layer: met5
+
+
+CPU Time for Top Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+CPU Time for Leaf Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Number of block ports: 163
+Number of block pin locations assigned from router: 0
+CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Number of PG ports on blocks: 0
+Number of pins created: 163
+CPU Time for Pin Creation: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+Total Pin Placement CPU Time: 00:00:00.02u 00:00:00.00s 00:00:00.03e: 
+Information: Result of rtl_opt / conditioning / Auto-Floorplan (2) (FLW-8500)
+Information: Auto-Floorplan Summary (AFP-2023)
+-------------------------------------------------------------------------------
+              origin           area     boundary
+core  auto-floorplan         218865   { {0 0} {0 467.84} {467.82 467.84} {467.82 0} }
+die   auto-floorplan         218865   { {0 0} {0 467.84} {467.82 467.84} {467.82 0} }
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+objects             total        candidates          modified         preserved                 
+voltage areas           0                 0                 0                 0
+ios                     0                 0                 0                 0
+macros                  0                 0                 0                 0
+pins                  163               163               163                 0
+-------------------------------------------------------------------------------
+Information: Ending   rtl_opt / conditioning / Auto-Floorplan (2) (FLW-8001)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:24 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Secondary PG connections (FLW-8000)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:24 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Information: Secondary PG:  Secondary PG connections skipped because it is not a UPF design (FLW-1247)
+Information: Ending   rtl_opt / conditioning / Secondary PG connections (FLW-8001)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:24 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -     153221.95           -       23291              0.07      1956
+Information: Ending   rtl_opt / conditioning (FLW-8001)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:24 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / estimation (FLW-8000)
+Information: Time: 2025-12-06 23:31:50 / Session:  00:04:24 / Command:  00:04:13 / CPU:  00:18:28 / Memory: 1957 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Timer using 8 threads
+Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 23291 cells affected for early, 23291 for late. (PVT-031)
+Warning: 161 port driving_cells affected for early, 161 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+Smart Arc Optimization:                    disabled
+************************************************************
+Number of Site types in the design = 1
+Setting up Chip Core
+Chip Core shape: (0 0) (4678200 4678400)
+Number of VARs = 1
+Number of unique PDs = 1
+Number of Power Domains = 1
+Number of Voltage Areas = 1
+Number of supply Nets = 2
+Number of used supplies = 0
+Blocked VAs: 
+Information: Change threshold for extractor is reset. (FLW-1300)
+Information: Starting rtl_opt / estimation / Load Design (FLW-8000)
+Information: Time: 2025-12-06 23:31:52 / Session:  00:04:25 / Command:  00:04:15 / CPU:  00:18:34 / Memory: 1957 MB (FLW-8100)
+ Information: Populating compatible release data
+Information: Populating data from multiAnalyze json.
+Information: Running as single analyze flow.
+Warning: DFT IP not instantiated successfully (DFT-2193)
+Information: Starting rtl_opt / estimation / Load Design / Incremental Auto-Floorplan (FLW-8000)
+Information: Time: 2025-12-06 23:31:52 / Session:  00:04:25 / Command:  00:04:15 / CPU:  00:18:34 / Memory: 1957 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Load Design / Incremental Auto-Floorplan (FLW-8001)
+Information: Time: 2025-12-06 23:31:52 / Session:  00:04:25 / Command:  00:04:15 / CPU:  00:18:34 / Memory: 1957 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Load Design (FLW-8001)
+Information: Time: 2025-12-06 23:31:52 / Session:  00:04:25 / Command:  00:04:15 / CPU:  00:18:34 / Memory: 1957 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / pre-placement setup (FLW-8000)
+Information: Time: 2025-12-06 23:31:52 / Session:  00:04:25 / Command:  00:04:15 / CPU:  00:18:34 / Memory: 1957 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / pre-placement setup (FLW-8001)
+Information: Time: 2025-12-06 23:31:52 / Session:  00:04:26 / Command:  00:04:15 / CPU:  00:18:34 / Memory: 1957 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / Initial Placement (FLW-8000)
+Information: Time: 2025-12-06 23:31:52 / Session:  00:04:26 / Command:  00:04:15 / CPU:  00:18:34 / Memory: 1957 MB (FLW-8100)
+----------------------------------------------------------------
+running create_placement
+Corner Scaling is off, multiplier is 1.000000
+Information: timingScenario func@nominal timingCorner nominal.  Using corner nominal for worst leakage corner. (OPT-078)
+Information: Using default layer met3 (Current) (OPT-079)
+new default layer same as orig default layer
+Information: Using default layer met3 (Inferior) (OPT-079)
+Information: Nominal = 0.0819883  Design MT = inf  Target = 0.6559068  MaxRC = 0.155515 Fast Target = 0.799147 (OPT-081)
+nplLib: default vr hor dist = 2777
+nplLib: default vr ver dist = 2777
+nplLib: default vr buf size = 10
+nplLib: default vr buf size = 3
+Placer using max_unbuffered_distance = 2776.95
+Info: embedded eLpp will optimize for scenario func@nominal
+Information: Activity propagation will be performed for scenario func@nominal.
+Information: Doing activity propagation for mode 'func' and corner 'nominal' with effort level 'superlow'. (POW-024)
+Information: Timer-derived activity data is cached on scenario func@nominal (POW-052)
+Information: Running switching activity propagation with 8 threads!
+
+ **** Information : No. of simulation cycles = 2 ****
+Info: e-eLpp used with low effort
+
+Placement Options:
+Effort:                        high_effort         
+Timing Driven:                 false               
+Buffering Aware Timing Driven: false               
+Seed locs:                     false               
+Incremental:                   false               
+Congestion:                    false               
+Fix Macros:                    true                
+Place Macros:                  false               
+Channel Size Macros:           false               
+
+
+Start transferring placement data.
+****** eLpp estimated wire length 
+0.401355% of the net wire length are clock nets
+0% of the clock net wire length has no activity
+Clock net wire length: 4.60752e+06
+Total net wire length: 1.14799e+09
+****** eLpp weights (no caps) (no lengths)
+Number of nets: 24021, of which 24020 non-clock nets
+Number of nets with 0 toggle rate: 2000 (8.32605%)
+Max toggle rate = 0.2, average toggle rate = 0.0282901
+Max non-clock toggle rate = 0.0860352
+eLpp weight range = (0, 7.06961)
+*** 28 nets are filtered out
+****** Net weight manager: report ******
+Weights included: eLpp  Timing  
+Number of nets with non-default weights: 24021
+Amt power = 0.1
+Timing factor = 1
+Non-default weight range: (0.397117, 1.35975)
+                             Min         Max         Avg       Stdev        Skew
+       Toggle Rates            0         0.2   0.0282901   0.0192624    0.360988
+      Power Weights            0     7.06961    0.999998    0.680887    0.360988
+     Timing Weights     0.441241     1.32372           1    0.335794   -0.384158
+      Final Weights     0.397117     1.35975           1    0.304919    -0.59389
+Information: Automatic repeater spreading is enabled.
+Warning: all hierarchy boundaries are restricted! This is expected to reduce CDR's QoR; please disable these restrictions for additional QoR gain
+Warning: hierarchy boundary restrictions detected! This is expected to reduce CDR's QoR; please disable these restrictions for additional QoR gain
+Restructuring in 35 hierarchies
+CGRW: importing permutable pins & pairs, size 8 and above
+Completed transferring placement data.
+Running placement using 8 thread(s)
+Information: Enhanced Auto Density Control is used. (PLACE-098)
+Information: Enhanced auto density configuration is 13179.
+Information: Automatic density control has selected the following settings: max_density 0.55, congestion_driven_max_util 0.87. (PLACE-027)
+Information: HFW control 'off' invoked.
+Creating placement from scratch.
+coarse place 0% done.
+coarse place 8% done.
+coarse place 17% done.
+coarse place 25% done.
+coarse place 33% done.
+coarse place 42% done.
+coarse place 50% done.
+coarse place 58% done.
+coarse place 67% done.
+coarse place 75% done.
+coarse place 83% done.
+coarse place 92% done.
+coarse place 100% done.
+Information: Coarse placer wire length estimate = 489643
+Information: Coarse placer active wire length estimate = 12338.1
+Information: Coarse placer weighted wire length estimate = 450725
+Information: Extraction observers are detached as design net change threshold is reached.
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
+----------------------------------------------------------------
+Non-default App Option report
+All App Options have their default value.
+Information: Ending   rtl_opt / estimation / Initial Placement (FLW-8001)
+Information: Time: 2025-12-06 23:32:04 / Session:  00:04:37 / Command:  00:04:27 / CPU:  00:19:11 / Memory: 1973 MB (FLW-8100)
+Information: Placing unplaced pins (AFP-1007)
+Load DB...
+CPU Time for load db: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+
+Min routing layer: li1
+Max routing layer: met5
+
+
+CPU Time for Top Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+CPU Time for Leaf Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+NEX(Warning): extract.rc_techfile_for_diode_mode_26_thickness not set, will igonre it
+Cell Min-Routing-Layer = li1
+Cell Max-Routing-Layer = met5
+Turn off antenna since no rule is specified
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Note - message 'ZRT-030' limit (10) exceeded. Remainder will be suppressed.
+
+Block Pin Constraint   Min Pin Max Pin Reserve
+                       Layer   Layer   Layer    Feedthroughs
+--------------------   ------  ------  ------   ------------
+neuron                 met1    met5    met5     Not allowed
+
+Wire on layer (met1) needs more than one tracks
+Via on layer (mcon) needs more than one tracks
+Via on layer (via) needs more than one tracks
+Warning: Layer met1 default pitch 0.340 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.355" & "wire/via-up 0.370". (ZRT-026)
+Via on layer (via4) needs more than one tracks
+Warning: Layer met4 default pitch 0.920 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.615" & "wire/via-up 1.040". (ZRT-026)
+Transition layer name: met4(4)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.75 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.75 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Note - message 'ZRT-625' limit (10) exceeded. Remainder will be suppressed.
+Warning: Cell add6/ctmi_44135 is placed overlapping with other cells at {{223.201 135.376} {225.501 138.096}}. (ZRT-763)
+Warning: Cell mul4/mult_36/A60271 is placed overlapping with other cells at {{386.579 332.426} {388.419 335.146}}. (ZRT-763)
+Warning: Cell mul4/mult_36/A67935 is placed overlapping with other cells at {{428.132 373.714} {430.432 376.434}}. (ZRT-763)
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used   46  Alloctr   46  Proc 5365 
+Printing options for 'route.common.*'
+common.clock_topology                                   :	 normal              
+common.single_connection_to_pins                        :	 off                 
+
+Printing options for 'route.global.*'
+global.crosstalk_driven                                 :	 false               
+global.deterministic                                    :	 on                  
+
+Begin global routing.
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (-2.72um,-2.72um,470.54um,470.56um)
+Number of routing layers = 6
+layer li1, dir Hor, min width = 0.17um, min space = 0.17um pitch = 0.46um
+layer met1, dir Ver, min width = 0.14um, min space = 0.14um pitch = 0.34um
+layer met2, dir Hor, min width = 0.14um, min space = 0.14um pitch = 0.46um
+layer met3, dir Ver, min width = 0.3um, min space = 0.3um pitch = 0.68um
+layer met4, dir Hor, min width = 0.3um, min space = 0.3um pitch = 0.92um
+layer met5, dir Ver, min width = 1.6um, min space = 1.6um pitch = 3.4um
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Build Tech Data] Total (MB): Used   50  Alloctr   51  Proc 5365 
+Net statistics:
+Total number of nets to route for block pin placement     = 163
+Number of interface nets to route for block pin placement = 163
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:00 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build All Nets] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Build All Nets] Total (MB): Used   50  Alloctr   52  Proc 5365 
+Net length statistics: 
+Net Count(Ignore Fully Rted) 326, Total Half Perimeter Wire Length (HPWL) 87953 microns
+HPWL   0 ~   50 microns: Net Count      114	Total HPWL         1469 microns
+HPWL  50 ~  100 microns: Net Count        4	Total HPWL          219 microns
+HPWL 100 ~  200 microns: Net Count       18	Total HPWL         2748 microns
+HPWL 200 ~  300 microns: Net Count       26	Total HPWL         6655 microns
+HPWL 300 ~  400 microns: Net Count        0	Total HPWL            0 microns
+HPWL 400 ~  500 microns: Net Count      164	Total HPWL        76862 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL            0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL            0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL            0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL            0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL            0 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL            0 microns
+Number of partitions: 1 (1 x 1)
+Size of partitions: 24 gCells x 24 gCells
+Average gCell capacity  42.83	 on layer (1)	 li1
+Average gCell capacity  57.92	 on layer (2)	 met1
+Average gCell capacity  42.83	 on layer (3)	 met2
+Average gCell capacity  28.92	 on layer (4)	 met3
+Average gCell capacity  21.38	 on layer (5)	 met4
+Average gCell capacity  5.75	 on layer (6)	 met5
+Average number of tracks per gCell 42.92	 on layer (1)	 li1
+Average number of tracks per gCell 58.00	 on layer (2)	 met1
+Average number of tracks per gCell 42.92	 on layer (3)	 met2
+Average number of tracks per gCell 29.00	 on layer (4)	 met3
+Average number of tracks per gCell 21.46	 on layer (5)	 met4
+Average number of tracks per gCell 5.83	 on layer (6)	 met5
+Number of gCells = 3456
+Current Stage stats:
+[End of Build Congestion Map] Elapsed real time: 0:00:00 
+[End of Build Congestion Map] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Congestion Map] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Build Congestion Map] Total (MB): Used   51  Alloctr   52  Proc 5365 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 24 gCells x 24 gCells
+Current Stage stats:
+[End of Add Nets Demand] Elapsed real time: 0:00:00 
+[End of Add Nets Demand] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Add Nets Demand] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Add Nets Demand] Total (MB): Used   51  Alloctr   52  Proc 5365 
+Number of user frozen nets = 0
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:00 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Data] Stage (MB): Used    1  Alloctr    2  Proc    0 
+[End of Build Data] Total (MB): Used   51  Alloctr   52  Proc 5365 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 24 gCells x 24 gCells
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:00 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Blocked Pin Detection] Stage (MB): Used   12  Alloctr   12  Proc    0 
+[End of Blocked Pin Detection] Total (MB): Used   63  Alloctr   64  Proc 5365 
+Information: Using 8 threads for routing. (ZRT-444)
+Information: Buffer distance is estimated to be ~4656.0000um (213 gCells)
+
+Start GR phase 0
+Number of partitions: 1 (1 x 1)
+Size of partitions: 24 gCells x 24 gCells
+[rtTop] Elapsed real time: 0:00:00 
+[rtTop] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:00 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Initial Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Initial Routing] Total (MB): Used   63  Alloctr   65  Proc 5365 
+Initial. Routing result:
+Initial. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
+Initial. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. Both Dirs: Overflow =     0 Max = 0 GRCs =     0 (0.00%)
+Initial. H routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. li1        Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. met1       Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. met2       Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. met3       Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. met4       Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. met5       Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+
+Initial. Total Wire Length = 14255.18
+Initial. Layer li1 wire length = 0.00
+Initial. Layer met1 wire length = 7611.43
+Initial. Layer met2 wire length = 6643.75
+Initial. Layer met3 wire length = 0.00
+Initial. Layer met4 wire length = 0.00
+Initial. Layer met5 wire length = 0.00
+Initial. Total Number of Contacts = 246
+Initial. Via L1M1_PR count = 163
+Initial. Via M1M2_PR count = 83
+Initial. Via M2M3_PR count = 0
+Initial. Via M3M4_PR count = 0
+Initial. Via M4M5_PR count = 0
+Initial. completed.
+[End of Whole Chip Routing] Elapsed real time: 0:00:00 
+[End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Whole Chip Routing] Stage (MB): Used   13  Alloctr   14  Proc    0 
+[End of Whole Chip Routing] Total (MB): Used   63  Alloctr   65  Proc 5365 
+[End of Global Routing] Elapsed real time: 0:00:00 
+[End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Global Routing] Stage (MB): Used   13  Alloctr   14  Proc    0 
+[End of Global Routing] Total (MB): Used   63  Alloctr   64  Proc 5365 
+[End of dbOut] Elapsed real time: 0:00:00 
+[End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of dbOut] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of dbOut] Total (MB): Used   54  Alloctr   55  Proc 5365 
+CPU Time for Global Route: 00:00:00.39u 00:00:00.02s 00:00:00.38e: 
+Number of block ports: 163
+Number of block pin locations assigned from router: 163
+CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Number of PG ports on blocks: 0
+Number of pins created: 163
+CPU Time for Pin Creation: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+Total Pin Placement CPU Time: 00:00:00.41u 00:00:00.02s 00:00:00.40e: 
+Information: Ending   rtl_opt / estimation (FLW-8001)
+Information: Time: 2025-12-06 23:32:04 / Session:  00:04:38 / Command:  00:04:27 / CPU:  00:19:11 / Memory: 1999 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / estimation (FLW-8000)
+Information: Time: 2025-12-06 23:32:04 / Session:  00:04:38 / Command:  00:04:27 / CPU:  00:19:11 / Memory: 1999 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / estimation / Load Design (FLW-8000)
+Information: Time: 2025-12-06 23:32:04 / Session:  00:04:38 / Command:  00:04:27 / CPU:  00:19:11 / Memory: 1999 MB (FLW-8100)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Number of Site types in the design = 1
+Setting up Chip Core
+Chip Core shape: (0 0) (4678200 4678400)
+Number of VARs = 1
+Number of unique PDs = 1
+Number of Power Domains = 1
+Number of Voltage Areas = 1
+Number of supply Nets = 2
+Number of used supplies = 0
+Blocked VAs: 
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
+Total 0.0721 seconds to build cellmap data
+INFO: creating 58(r) x 58(c) GridCells YDim 8.16 XDim 8.16
+INFO: number of GridCells (neuron): 3364
+INFO: creating 58(r) x 58(c) GridCells YDim 8.16 XDim 8.16
+INFO: number of GridCells (neuron): 3364
+Total 0.3535 seconds to load 23289 cell instances into cellmap, 23289 cells are off site row
+Moveable cells: 23289; Application fixed cells: 0; Macro cells: 0; User fixed cells: 0
+Average cell width 2.4181, cell height 2.7200, cell area 6.5771 for total 23289 placed and application fixed cells
+Information: Ending   rtl_opt / estimation / Load Design (FLW-8001)
+Information: Time: 2025-12-06 23:32:06 / Session:  00:04:39 / Command:  00:04:29 / CPU:  00:19:16 / Memory: 1999 MB (FLW-8100)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Information: Starting rtl_opt / estimation / Global Route (FLW-8000)
+Information: Time: 2025-12-06 23:32:07 / Session:  00:04:41 / Command:  00:04:30 / CPU:  00:19:22 / Memory: 1999 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Global Route (FLW-8001)
+Information: Time: 2025-12-06 23:32:07 / Session:  00:04:41 / Command:  00:04:30 / CPU:  00:19:22 / Memory: 1999 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / Automatic Register Splitting (FLW-8000)
+Information: Time: 2025-12-06 23:32:07 / Session:  00:04:41 / Command:  00:04:30 / CPU:  00:19:22 / Memory: 1999 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Automatic Register Splitting (FLW-8001)
+Information: Time: 2025-12-06 23:32:07 / Session:  00:04:41 / Command:  00:04:30 / CPU:  00:19:22 / Memory: 1999 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / High Fanout Synthesis (FLW-8000)
+Information: Time: 2025-12-06 23:32:07 / Session:  00:04:41 / Command:  00:04:30 / CPU:  00:19:22 / Memory: 1999 MB (FLW-8100)
+Warning: Skipping scan synthesis: no DFT setup has been detected. (DFT-1107)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
+min assign layer = met1
+max assign layer = met4
+Corner Scaling is off, multiplier is 1.000000
+Information: timingScenario func@nominal timingCorner nominal.  Using corner nominal for worst leakage corner. (OPT-078)
+Information: Using default layer met3 (Current) (OPT-079)
+new default layer same as orig default layer
+Information: Using default layer met3 (Inferior) (OPT-079)
+Information: Nominal = 0.0819883  Design MT = inf  Target = 0.6559068  MaxRC = 0.155515 Fast Target = 0.799147 (OPT-081)
+Collecting Drivers ...  
+Design max_transition = inf
+Design max_capacitance = inf
+Using layer met3 for buffering distances in roi (originally met3)
+GRE layer bins: None, met1, met3
+Running clock data isolation flow.
+Found 0 buffer-tree drivers
+No violators found
+Running tristate isolation flow.
+TSI: added 0 repeaters
+Running mv isolation flow.
+Found 0 buffer-tree drivers
+No violators found
+Found 43 buffer-tree drivers
+
+Roi-HfsDrc SN: 1798569713 435980330 0 67108865 (1355.282227)
+
+Processing Buffer Trees  (ROI) ... 
+
+    [5]  10% ...
+    [10]  20% ...
+    [15]  30% ...
+    [20]  40% ...
+    [25]  50% ...
+    [30]  60% ...
+    [35]  70% ...
+    [40]  80% ...
+    [43] 100% Done
+
+                  Deleted        Added
+------------ ------------ ------------
+    Buffers:            0           87
+  Inverters:           56           68
+------------ ------------ ------------
+      Total:           56          155
+------------ ------------ ------------
+
+Number of Drivers Sized: 14 [32.56%]
+
+                      P: 14 [32.56%]
+                      N: 0 [0.00%]
+
+Information: The net parasitics of block neuron are cleared. (TIM-123)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Zbuf-RUNTIME (Hr:Min:Sec)  CPU 0 hr : 0 min : 12.62 sec ELAPSE 0 hr : 0 min : 2.97 sec
+Zbuf-RUNTIME         (Min) CPU 0 min ELAPSE 0 min
+ZBuf-MEM(max-mem) total 2047252 K / inuse 1199164 K
+Information: Result of rtl_opt / estimation / High Fanout Synthesis (FLW-8500)
+Information: Top 10 transition violators after high fanout synthesis (HFS-1000)
+Slack     Fanout  Scenario    Driver                                                       
+
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                    1123.57      823.94         -         0     154775.94    91024.74       23388              0.08      1999
+Information: Ending   rtl_opt / estimation / High Fanout Synthesis (FLW-8001)
+Information: Time: 2025-12-06 23:32:12 / Session:  00:04:45 / Command:  00:04:34 / CPU:  00:19:38 / Memory: 1999 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / Congestion/Timing Driven Placement (FLW-8000)
+Information: Time: 2025-12-06 23:32:12 / Session:  00:04:45 / Command:  00:04:34 / CPU:  00:19:38 / Memory: 1999 MB (FLW-8100)
+----------------------------------------------------------------
+running create_placement
+Start transferring placement data.
+Warning: To enable pin track alignment feature, the advanced legalizer has to be turned on using app option "place.legalize.enable_advanced_legalizer".
+Warning: Pin track alignment feature will be disabled in this run
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
+Total 0.0717 seconds to build cellmap data
+Information: Extraction observers are detached as design net change threshold is reached.
+Snapped 23388 standard cells to the nearest cellrow to improve the accuracy of congestion analysis.
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used    7  Alloctr    7  Proc 5461 
+Printing options for 'route.common.*'
+common.clock_topology                                   :	 normal              
+common.single_connection_to_pins                        :	 off                 
+
+Printing options for 'route.global.*'
+global.crosstalk_driven                                 :	 false               
+global.deterministic                                    :	 on                  
+global.timing_driven                                    :	 false               
+
+Begin global routing.
+Cell Min-Routing-Layer = li1
+Cell Max-Routing-Layer = met5
+Turn off antenna since no rule is specified
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Info: number of net_type_blockage: 0 
+Information: Via ladder engine would be activated for pattern must join connection in certain commands. Please refer to man-page for the command list. (ZRT-619)
+Warning: Port  VPWR at {{450.800,467.600} {453.100,468.080}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{458.160,467.600} {460.460,468.080}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{454.480,467.600} {456.780,468.080}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{365.700,-0.240} {368.920,0.240}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{117.300,467.600} {119.140,468.080}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{157.780,467.600} {159.620,468.080}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{172.040,467.600} {174.800,468.080}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{362.480,-0.240} {364.780,0.240}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{383.640,-0.240} {385.480,0.240}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VPWR at {{386.400,-0.240} {388.240,0.240}} is out of boundary. Cannot be routed. (ZRT-720)
+Skipping 264 ectangle_only route guides because they don't cover the design boundary in the layer's  preferred direction.
+Wire on layer (met1) needs more than one tracks
+Via on layer (mcon) needs more than one tracks
+Via on layer (via) needs more than one tracks
+Warning: Layer met1 default pitch 0.340 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.355" & "wire/via-up 0.370". (ZRT-026)
+Via on layer (via4) needs more than one tracks
+Warning: Layer met4 default pitch 0.920 may be too small to handle up/down via. Note, that minimum requirements are "wire/via-down 0.615" & "wire/via-up 1.040". (ZRT-026)
+Transition layer name: met4(4)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.75 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.75 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Cell add2/pe/A57221 is placed overlapping with other cells at {{11.500 24.480} {12.880 27.200}}. (ZRT-763)
+Warning: Cell add3/HFSBUF_424_69650 is placed overlapping with other cells at {{96.600 51.680} {102.120 54.400}}. (ZRT-763)
+Warning: Cell add3/pe/ctmi_37509 is placed overlapping with other cells at {{212.060 59.840} {213.900 62.560}}. (ZRT-763)
+Warning: Cell add2/HFSINV_2731_69559 is placed overlapping with other cells at {{56.120 133.280} {60.260 136.000}}. (ZRT-763)
+Warning: Cell add3/ctmi_43839 is placed overlapping with other cells at {{140.300 89.760} {142.140 92.480}}. (ZRT-763)
+Warning: Cell add4/HFSINV_2351_69553 is placed overlapping with other cells at {{165.140 133.280} {169.280 136.000}}. (ZRT-763)
+Warning: Cell add5/HFSBUF_1213_69663 is placed overlapping with other cells at {{249.320 103.360} {253.460 106.080}}. (ZRT-763)
+Warning: Cell mul5/mult_36/A68230 is placed overlapping with other cells at {{359.260 114.240} {360.640 116.960}}. (ZRT-763)
+Warning: Cell mul5/mult_36/A47399 is placed overlapping with other cells at {{411.700 122.400} {413.080 125.120}}. (ZRT-763)
+Warning: Cell add2/HFSBUF_271_69666 is placed overlapping with other cells at {{58.880 157.760} {63.020 160.480}}. (ZRT-763)
+Warning: Cell add4/pe/ctmi_38130 is placed overlapping with other cells at {{138.000 220.320} {139.840 223.040}}. (ZRT-763)
+Warning: Cell add6/HFSINV_708_69542 is placed overlapping with other cells at {{225.400 163.200} {229.540 165.920}}. (ZRT-763)
+Warning: Cell mul5/HFSINV_317_69560 is placed overlapping with other cells at {{351.440 165.920} {352.820 168.640}}. (ZRT-763)
+Warning: Cell mul5/mult_36/HFSINV_1719_69544 is placed overlapping with other cells at {{445.740 195.840} {448.960 198.560}}. (ZRT-763)
+Warning: Cell add1/HFSINV_389_69554 is placed overlapping with other cells at {{72.220 266.560} {76.360 269.280}}. (ZRT-763)
+Warning: Cell add1/HFSBUF_307_69657 is placed overlapping with other cells at {{87.860 274.720} {92.000 277.440}}. (ZRT-763)
+Warning: Cell HFSBUF_589_69541 is placed overlapping with other cells at {{173.420 301.920} {180.780 304.640}}. (ZRT-763)
+Warning: Cell mul4/mult_36/HFSINV_2150_69572 is placed overlapping with other cells at {{299.000 247.520} {304.980 250.240}}. (ZRT-763)
+Warning: Cell mul4/mult_36/HFSINV_936_69590 is placed overlapping with other cells at {{369.380 255.680} {370.760 258.400}}. (ZRT-763)
+Warning: Cell mul4/mult_36/HFSBUF_867_69679 is placed overlapping with other cells at {{414.000 293.760} {418.140 296.480}}. (ZRT-763)
+Warning: Cell mul3/ctmi_40992 is placed overlapping with other cells at {{31.280 334.560} {32.660 337.280}}. (ZRT-763)
+Warning: Cell mul2/HFSINV_641_69533 is placed overlapping with other cells at {{101.200 331.840} {102.580 334.560}}. (ZRT-763)
+Warning: Cell HFSBUF_495_69618 is placed overlapping with other cells at {{173.880 334.560} {181.240 337.280}}. (ZRT-763)
+Warning: Cell HFSBUF_907_69643 is placed overlapping with other cells at {{307.280 342.720} {312.800 345.440}}. (ZRT-763)
+Warning: Cell mul4/mult_36/HFSINV_116_69616 is placed overlapping with other cells at {{366.160 331.840} {370.300 334.560}}. (ZRT-763)
+Warning: Cell CuI/snps_CMP_27/ctmi_271 is placed overlapping with other cells at {{200.560 410.720} {202.860 413.440}}. (ZRT-763)
+Warning: Cell mul1/A47960 is placed overlapping with other cells at {{242.880 402.560} {244.260 405.280}}. (ZRT-763)
+Warning: Cell mul1/mult_36/A69012 is placed overlapping with other cells at {{391.000 456.960} {392.380 459.680}}. (ZRT-763)
+Current Stage stats:
+[End of Read DB] Elapsed real time: 0:00:00 
+[End of Read DB] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[End of Read DB] Stage (MB): Used   42  Alloctr   43  Proc  -32 
+[End of Read DB] Total (MB): Used   50  Alloctr   51  Proc 5429 
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (0.00um,0.00um,467.82um,467.84um)
+Number of routing layers = 6
+layer li1, dir Hor, min width = 0.17um, min space = 0.17um pitch = 0.46um
+layer met1, dir Ver, min width = 0.14um, min space = 0.14um pitch = 0.34um
+layer met2, dir Hor, min width = 0.14um, min space = 0.14um pitch = 0.46um
+layer met3, dir Ver, min width = 0.3um, min space = 0.3um pitch = 0.68um
+layer met4, dir Hor, min width = 0.3um, min space = 0.3um pitch = 0.92um
+layer met5, dir Ver, min width = 1.6um, min space = 1.6um pitch = 3.4um
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Build Tech Data] Total (MB): Used   51  Alloctr   52  Proc 5429 
+Net statistics:
+Total number of nets     = 24129
+Number of nets to route  = 23966
+Number of single or zero port nets = 26
+134 nets are fully connected,
+ of which 134 are detail routed and 0 are global routed.
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:00 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build All Nets] Stage (MB): Used   17  Alloctr   18  Proc    0 
+[End of Build All Nets] Total (MB): Used   69  Alloctr   71  Proc 5429 
+Net length statistics: 
+Net Count(Ignore Fully Rted) 23969, Total Half Perimeter Wire Length (HPWL) 472947 microns
+HPWL   0 ~   50 microns: Net Count    22272	Total HPWL       284594 microns
+HPWL  50 ~  100 microns: Net Count     1009	Total HPWL        69705 microns
+HPWL 100 ~  200 microns: Net Count      539	Total HPWL        73834 microns
+HPWL 200 ~  300 microns: Net Count      104	Total HPWL        25425 microns
+HPWL 300 ~  400 microns: Net Count       22	Total HPWL         7121 microns
+HPWL 400 ~  500 microns: Net Count       10	Total HPWL         4655 microns
+HPWL 500 ~  600 microns: Net Count       11	Total HPWL         5846 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL            0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL            0 microns
+HPWL 800 ~  900 microns: Net Count        1	Total HPWL          842 microns
+HPWL 900 ~ 1000 microns: Net Count        1	Total HPWL          925 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL            0 microns
+Number of partitions: 1 (1 x 1)
+Size of partitions: 86 gCells x 86 gCells
+Average gCell capacity  0.63	 on layer (1)	 li1
+Average gCell capacity  0.17	 on layer (2)	 met1
+Average gCell capacity  11.80	 on layer (3)	 met2
+Average gCell capacity  7.97	 on layer (4)	 met3
+Average gCell capacity  5.89	 on layer (5)	 met4
+Average gCell capacity  1.58	 on layer (6)	 met5
+Average number of tracks per gCell 11.84	 on layer (1)	 li1
+Average number of tracks per gCell 16.00	 on layer (2)	 met1
+Average number of tracks per gCell 11.84	 on layer (3)	 met2
+Average number of tracks per gCell 8.00	 on layer (4)	 met3
+Average number of tracks per gCell 5.92	 on layer (5)	 met4
+Average number of tracks per gCell 1.60	 on layer (6)	 met5
+Number of gCells = 44376
+Current Stage stats:
+[End of Build Congestion Map] Elapsed real time: 0:00:00 
+[End of Build Congestion Map] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Congestion Map] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Build Congestion Map] Total (MB): Used   70  Alloctr   72  Proc 5429 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 86 gCells x 86 gCells
+Current Stage stats:
+[End of Add Nets Demand] Elapsed real time: 0:00:00 
+[End of Add Nets Demand] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Add Nets Demand] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Add Nets Demand] Total (MB): Used   71  Alloctr   73  Proc 5429 
+Number of user frozen nets = 0
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:00 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Data] Stage (MB): Used   20  Alloctr   21  Proc    0 
+[End of Build Data] Total (MB): Used   71  Alloctr   73  Proc 5429 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 86 gCells x 86 gCells
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:00 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Blocked Pin Detection] Stage (MB): Used  106  Alloctr  106  Proc   64 
+[End of Blocked Pin Detection] Total (MB): Used  177  Alloctr  179  Proc 5493 
+Information: Using 8 threads for routing. (ZRT-444)
+Information: Placement fast mode ON
+Information: Multiple gcell levels ON
+Information: Buffer distance is estimated to be ~4656.0000um (855 gCells)
+
+Start GR phase 0
+Number of partitions: 1 (1 x 1)
+Size of partitions: 86 gCells x 86 gCells
+10% of nets complete Elapsed cpu time: 0:00:00 Elapsed real time: 0:00:00
+20% of nets complete Elapsed cpu time: 0:00:00 Elapsed real time: 0:00:00
+30% of nets complete Elapsed cpu time: 0:00:00 Elapsed real time: 0:00:00
+40% of nets complete Elapsed cpu time: 0:00:00 Elapsed real time: 0:00:00
+50% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+60% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+70% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+80% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+90% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+[rtAllBotParts] Elapsed real time: 0:00:02 
+[rtAllBotParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[rtTop] Elapsed real time: 0:00:00 
+[rtTop] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:02 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[End of Initial Routing] Stage (MB): Used   11  Alloctr   11  Proc    0 
+[End of Initial Routing] Total (MB): Used  188  Alloctr  190  Proc 5493 
+Initial. Routing result:
+Initial. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
+Initial. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. Both Dirs: Overflow =  8889 Max = 5 GRCs = 11191 (19.08%)
+Initial. H routing: Overflow =  3432 Max = 5 (GRCs =  1) GRCs =  4355 (14.85%)
+Initial. V routing: Overflow =  5456 Max = 4 (GRCs =  6) GRCs =  6836 (23.31%)
+Initial. li1        Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. met1       Overflow =    98 Max = 3 (GRCs =  4) GRCs =   124 (0.42%)
+Initial. met2       Overflow =  3360 Max = 5 (GRCs =  1) GRCs =  4189 (14.28%)
+Initial. met3       Overflow =  5306 Max = 4 (GRCs =  6) GRCs =  6650 (22.68%)
+Initial. met4       Overflow =    71 Max = 2 (GRCs =  1) GRCs =   166 (0.57%)
+Initial. met5       Overflow =    51 Max = 1 (GRCs = 62) GRCs =    62 (0.21%)
+
+Initial. Total Wire Length = 414940.09
+Initial. Layer li1 wire length = 1637.03
+Initial. Layer met1 wire length = 302.75
+Initial. Layer met2 wire length = 158347.72
+Initial. Layer met3 wire length = 195548.10
+Initial. Layer met4 wire length = 44834.70
+Initial. Layer met5 wire length = 14269.78
+Initial. Total Number of Contacts = 166609
+Initial. Via L1M1_PR count = 58655
+Initial. Via M1M2_PR count = 58689
+Initial. Via M2M3_PR count = 45024
+Initial. Via M3M4_PR count = 3785
+Initial. Via M4M5_PR count = 456
+Initial. completed.
+
+Start GR phase 1
+Number of partitions: 1 (1 x 1)
+Size of partitions: 86 gCells x 86 gCells
+10% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+20% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+30% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+40% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+50% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+60% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+70% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+80% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+90% of nets complete Elapsed cpu time: 0:00:01 Elapsed real time: 0:00:01
+[rtAllBotParts] Elapsed real time: 0:00:01 
+[rtAllBotParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[rtTop] Elapsed real time: 0:00:00 
+[rtTop] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Number of partitions: 1 (1 x 1)
+Size of partitions: 86 gCells x 86 gCells
+[updNetsDmd] Elapsed real time: 0:00:00 
+[updNetsDmd] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Phase1 Routing] Elapsed real time: 0:00:02 
+[End of Phase1 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:02 total=0:00:02
+[End of Phase1 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Phase1 Routing] Total (MB): Used  189  Alloctr  191  Proc 5493 
+phase1. Routing result:
+phase1. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
+phase1. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. V routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. Both Dirs: Overflow =  4038 Max = 3 GRCs =  5317 (9.07%)
+phase1. H routing: Overflow =   564 Max = 3 (GRCs =  6) GRCs =   788 (2.69%)
+phase1. V routing: Overflow =  3474 Max = 3 (GRCs = 68) GRCs =  4529 (15.44%)
+phase1. li1        Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. met1       Overflow =   226 Max = 3 (GRCs = 12) GRCs =   261 (0.89%)
+phase1. met2       Overflow =   430 Max = 3 (GRCs =  6) GRCs =   536 (1.83%)
+phase1. met3       Overflow =  3206 Max = 3 (GRCs = 56) GRCs =  4192 (14.29%)
+phase1. met4       Overflow =   133 Max = 2 (GRCs = 12) GRCs =   252 (0.86%)
+phase1. met5       Overflow =    42 Max = 1 (GRCs = 76) GRCs =    76 (0.26%)
+
+phase1. Total Wire Length = 435253.05
+phase1. Layer li1 wire length = 1483.47
+phase1. Layer met1 wire length = 391.03
+phase1. Layer met2 wire length = 149055.57
+phase1. Layer met3 wire length = 184461.18
+phase1. Layer met4 wire length = 75258.28
+phase1. Layer met5 wire length = 24603.52
+phase1. Total Number of Contacts = 169844
+phase1. Via L1M1_PR count = 58469
+phase1. Via M1M2_PR count = 58490
+phase1. Via M2M3_PR count = 44583
+phase1. Via M3M4_PR count = 7104
+phase1. Via M4M5_PR count = 1198
+phase1. completed.
+[End of Whole Chip Routing] Elapsed real time: 0:00:05 
+[End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:06 total=0:00:06
+[End of Whole Chip Routing] Stage (MB): Used  138  Alloctr  140  Proc   64 
+[End of Whole Chip Routing] Total (MB): Used  189  Alloctr  191  Proc 5493 
+
+Congestion utilization per direction:
+Average vertical track utilization   = 72.39 %
+Peak    vertical track utilization   = 200.00 %
+Average horizontal track utilization = 54.89 %
+Peak    horizontal track utilization = 133.33 %
+
+[End of Global Routing] Elapsed real time: 0:00:05 
+[End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:06 total=0:00:06
+[End of Global Routing] Stage (MB): Used  138  Alloctr  139  Proc   64 
+[End of Global Routing] Total (MB): Used  188  Alloctr  191  Proc 5493 
+Writing out congestion map...
+Updating congestion ...
+Updating congestion ...
+[End of dbOut] Elapsed real time: 0:00:00 
+[End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of dbOut] Stage (MB): Used  -54  Alloctr  -55  Proc    0 
+[End of dbOut] Total (MB): Used   38  Alloctr   39  Proc 5493 
+Using per-layer congestion maps for congestion reduction.
+Information: 39.61% of design has horizontal routing density above target_routing_density of 0.81.
+Information: 83.20% of design has vertical routing density above target_routing_density of 0.81.
+Completed transferring placement data.
+Running placement using 8 thread(s)
+Information: Enhanced Auto Density Control is used. (PLACE-098)
+Information: Enhanced auto density configuration is 13179.
+Information: Automatic density control has selected the following settings: max_density 0.60, congestion_driven_max_util 0.89. (PLACE-027)
+Information: HFW control 'off' invoked.
+coarse place 100% done.
+Warning: There is insufficient area available to achieve the target routing density of 0.81. Using a value of 0.90 instead. (PLACE-029)
+Information: Reducing cell density for 62.4% of the movable cells to alleviate congestion. This changes the average cell density in non-congested areas from 0.707 to 0.860. (PLACE-030)
+Corner Scaling is off, multiplier is 1.000000
+Information: timingScenario func@nominal timingCorner nominal.  Using corner nominal for worst leakage corner. (OPT-078)
+Information: Using default layer met3 (Current) (OPT-079)
+new default layer same as orig default layer
+Information: Using default layer met3 (Inferior) (OPT-079)
+Information: Nominal = 0.0819883  Design MT = inf  Target = 0.6559068  MaxRC = 0.155515 Fast Target = 0.799147 (OPT-081)
+nplLib: default vr hor dist = 2777
+nplLib: default vr ver dist = 2777
+nplLib: default vr buf size = 10
+nplLib: default vr buf size = 3
+Placer using max_unbuffered_distance = 2776.95
+
+Placement Options:
+Effort:                        medium_effort       
+Timing Driven:                 false               
+Buffering Aware Timing Driven: false               
+Seed locs:                     true                
+Incremental:                   true                
+Congestion:                    true                
+Congestion Effort:             medium              
+Fix Macros:                    true                
+Place Macros:                  false               
+Channel Size Macros:           false               
+
+
+Start transferring placement data.
+****** Net weight manager: report ******
+Weights included: Timing  
+Number of nets with non-default weights: 24101
+Timing factor = 1
+Non-default weight range: (0.437381, 1.31214)
+                             Min         Max         Avg       Stdev        Skew
+     Timing Weights     0.437381     1.31214           1    0.322911   -0.433879
+      Final Weights     0.437381     1.31214           1    0.322911   -0.433879
+Information: Automatic repeater spreading is enabled.
+Information: The net parasitics of block neuron are cleared. (TIM-123)
+Completed transferring placement data.
+Running placement using 8 thread(s)
+Information: Enhanced Auto Density Control is used. (PLACE-098)
+Information: Enhanced auto density configuration is 13179.
+Information: Automatic density control has selected the following settings: max_density 0.60, congestion_driven_max_util 0.89. (PLACE-027)
+Information: HFW control 'off' invoked.
+coarse place 50% done.
+coarse place 67% done.
+coarse place 83% done.
+coarse place 100% done.
+Information: Coarse placer wire length estimate = 495429
+Information: Coarse placer active wire length estimate = 0
+Information: Coarse placer weighted wire length estimate = 465643
+Information: Extraction observers are detached as design net change threshold is reached.
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
+----------------------------------------------------------------
+Non-default App Option report
+All App Options have their default value.
+Information: Ending   rtl_opt / estimation / Congestion/Timing Driven Placement (FLW-8001)
+Information: Time: 2025-12-06 23:32:23 / Session:  00:04:56 / Command:  00:04:46 / CPU:  00:19:57 / Memory: 2063 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation (FLW-8001)
+Information: Time: 2025-12-06 23:32:23 / Session:  00:04:56 / Command:  00:04:46 / CPU:  00:19:57 / Memory: 2063 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / estimation (FLW-8000)
+Information: Time: 2025-12-06 23:32:23 / Session:  00:04:56 / Command:  00:04:46 / CPU:  00:19:57 / Memory: 2063 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+flowStepUpsInPbo:: using optEnvMonitor()
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
+Total 0.0725 seconds to build cellmap data
+INFO: compile_fusion is running in balanced flow mode
+Warning: Cannot find any default max transition constraint on the design. (OPT-070)
+INFO: Leakage Power Aware Optimization Enabled
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+Info: Keeping LAO enabled for UPS flow
+INFO: disable CRPR-based timing. 
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Number of Site types in the design = 1
+Setting up Chip Core
+Chip Core shape: (0 0) (4678200 4678400)
+Number of VARs = 1
+Number of unique PDs = 1
+Number of Power Domains = 1
+Number of Voltage Areas = 1
+Number of supply Nets = 2
+Number of used supplies = 0
+Blocked VAs: 
+
+Info: Keeping LAO enabled for UPS flow
+compile command begin                   CPU:  1211 s (  0.34 hr )  ELAPSE:   298 s (  0.08 hr )  MEM-PEAK:  2063 MB
+Warning: Cannot find any default max transition constraint on the design. (OPT-070)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Info: update em.
+
+compile timing update complete          CPU:  1217 s (  0.34 hr )  ELAPSE:   300 s (  0.08 hr )  MEM-PEAK:  2063 MB
+
+compile initial QoR
+___________________
+Scenario Mapping Table
+1: func@nominal
+
+Pathgroup Mapping Table
+1: **default**
+2: **async_default**
+3: **clock_gating_default**
+4: **in2reg_default**
+5: **reg2out_default**
+6: **in2out_default**
+7: CLK
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+PATHGROUP QOR 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+Scene  PG      WNS        TNS    NSV      WHV        THV    NHV
+    1   1   0.0000     0.0000      0        -          -      -
+    1   2   0.0000     0.0000      0        -          -      -
+    1   3   0.0000     0.0000      0        -          -      -
+    1   4   9.7448   300.4381     32        -          -      -
+    1   5   0.0000     0.0000      0        -          -      -
+    1   6   0.0000     0.0000      0        -          -      -
+    1   7  26.7744  1112.0417     64        -          -      -
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SCENARIO QOR 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Scene  PG      WNS        TNS   R2RTNS    NSV      WHV        THV    NHV  MaxTrnV   MaxTranC  MaxCapV    Leakage
+    1   *  26.7744  1136.3694 835.9312     64        -          -      -        0     0.0000        0  91024.742
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DESIGN QOR 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Scene  PG      WNS        TNS   R2RTNS    NSV      WHV        THV    NHV  MaxTrnV   MaxTranC  MaxCapV    Leakage         Area    InstCnt     BufCnt     InvCnt
+    *   *  26.7744  1136.3694 835.9312     64        -          -      -        0     0.0000        0  91024.742    154775.94      23388         87       3072
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+compile initial QoR Summary       WNS        TNS   R2RTNS    NSV      WHV        THV    NHV  MaxTrnV  MaxCapV    Leakage         Area    InstCnt
+compile initial QoR Summary   26.7744  1136.3694 835.9312     64        -          -      -        0        0  91024.742    154775.94      23388
+Information: The netlist change observers are disabled for incremental extraction. (TIM-126)
+INFO: using 8 threads
+compile initialization complete         CPU:  1225 s (  0.34 hr )  ELAPSE:   301 s (  0.08 hr )  MEM-PEAK:  2063 MB
+compile optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Warning: Cannot find any default max transition constraint on the design. (OPT-070)
+Information: The netlist change observers are enabled for incremental extraction. (TIM-127)
+
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : false
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
+Total 0.0709 seconds to build cellmap data
+INFO: creating 58(r) x 58(c) GridCells YDim 8.16 XDim 8.16
+INFO: number of GridCells (neuron): 3364
+INFO: creating 58(r) x 58(c) GridCells YDim 8.16 XDim 8.16
+INFO: number of GridCells (neuron): 3364
+Total 0.3557 seconds to load 23388 cell instances into cellmap, 23388 cells are off site row
+Moveable cells: 23388; Application fixed cells: 0; Macro cells: 0; User fixed cells: 0
+Average cell width 2.4330, cell height 2.7200, cell area 6.6178 for total 23388 placed and application fixed cells
+Information: Starting rtl_opt / estimation / Optimization (1) (FLW-8000)
+Information: Time: 2025-12-06 23:32:29 / Session:  00:05:02 / Command:  00:04:51 / CPU:  00:20:14 / Memory: 2063 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / Optimization (1) / Timing Optimization (FLW-8000)
+Information: Time: 2025-12-06 23:32:29 / Session:  00:05:02 / Command:  00:04:51 / CPU:  00:20:14 / Memory: 2063 MB (FLW-8100)
+Disable clock slack update for ideal clocks
+ Iter  1                                          1575.27     1156.80         -         -     155609.23    91126.89       23388              0.08      2063
+Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
+Disable clock slack update for ideal clocks
+Corner Scaling is off, multiplier is 1.000000
+Information: Using default layer met3 (Current) (OPT-079)
+new default layer same as orig default layer
+Information: Using default layer met3 (Inferior) (OPT-079)
+ Iter  1                                          1402.22     1039.14         -         -     158778.53    93204.22       23388              0.09      2063
+Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
+
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : false
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro_sparecell.frame is missing supply pins. Its power structure cannot be determined. (LGL-050)
+Total 0.0741 seconds to build cellmap data
+INFO: creating 58(r) x 58(c) GridCells YDim 8.16 XDim 8.16
+INFO: number of GridCells (neuron): 3364
+INFO: creating 58(r) x 58(c) GridCells YDim 8.16 XDim 8.16
+INFO: number of GridCells (neuron): 3364
+Total 0.3568 seconds to load 23828 cell instances into cellmap, 21963 cells are off site row
+Moveable cells: 23828; Application fixed cells: 0; Macro cells: 0; User fixed cells: 0
+Average cell width 2.5291, cell height 2.7200, cell area 6.8791 for total 23828 placed and application fixed cells
+Disable clock slack update for ideal clocks
+Information: NO SCANCHAIN defined in SCANDEF. (DFT-011)
+		Total number of ignored cells which do not have multi-bit equivalent             : 65
+	Physical Banking Summary:
+	Total candidates in design:65
+	Total candidates ignored  :65
+	Total candidates banked   :0
+	Banking Ratio of this pass:0.00%
+	Banking ratio             :0.00% (Before banking 0.00%)
+	Use report_multibit for details
+Disable clock slack update for ideal clocks
+ Iter  1                                          1281.81      961.62         -         -     163914.70    98324.83       23828              0.09      2063
+Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
+Disable clock slack update for ideal clocks
+ Iter  1                                          1089.15      835.23         -         -     171127.88   103792.48       25579              0.09      2063
+Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
+ Iter  1                                           985.62      766.32         -         -     178705.14   109094.80       27007              0.10      2063
+Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
+Disable clock slack update for ideal clocks
+ Iter  1                                           974.81      758.58         -         -     181715.53   112320.73       27023              0.10      2063
+Warning: Restoring scoped app option 'xform.commit_density_threshold' to original value 'unset' (from current value '1', which is different from the scoped value '1.0'). (FLW-2892)
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                     693.83      539.86         -         0     181073.66   111727.27       26919              0.10      2063
+Information: Ending   rtl_opt / estimation / Optimization (1) / Timing Optimization (FLW-8001)
+Information: Time: 2025-12-06 23:33:39 / Session:  00:06:13 / Command:  00:06:02 / CPU:  00:27:47 / Memory: 2063 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Optimization (1) (FLW-8001)
+Information: Time: 2025-12-06 23:33:39 / Session:  00:06:13 / Command:  00:06:02 / CPU:  00:27:47 / Memory: 2063 MB (FLW-8100)
+Information: CTS will work on the following scenarios. (CTS-101)
+Information: CTS will work on all clocks in active scenarios, including 1 master clocks and 0 generated clocks. (CTS-107)
+Information: 'nominal' is identified as primary corner for initial clock tree building. (CTS-103)
+Information: CCD will use corner nominal for honoring max prepone/postpone limits
+Uskew Characterizer: corner: nominal, scalingFactor: 1.000
+Information: 'nominal' is identified as primary corner for initial clock tree building. (CTS-103)
+@ CG solver holdWeight = 1.250000
+@ CG solver setupWeight = 1.000000
+@ CG solver delayCostWeight = 5.000000
+@ CG solver zeroDirWeight = 5.000000
+@ CG solver wnsWeight = 1000.000000
+CCD-Info: The design has concentrated toggle rate data.
+
+Summary of messages during CTS:
+===============================================================
+  Tag   Count  Type           Description
+---------------------------------------------------------------
+CTS-038    1  Warning  No clock routing rule is specified.
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
+Disable clock slack update for ideal clocks
+ Iter  1                                           966.34      759.00         -         -     181073.66   111727.27       26919              0.10      2063
+Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit_range' to original value 'unset' (from current value '-1', which is different from the scoped value '-1.0'). (FLW-2892)
+Disable clock slack update for ideal clocks
+ Iter  1                                           966.34      759.00         -         -     181076.17   111728.99       26919              0.10      2063
+Warning: Cannot find any default max transition constraint on the design. (OPT-070)
+INFO: Leakage Power Aware Optimization Enabled
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+Information: CTS will work on the following scenarios. (CTS-101)
+Information: CTS will work on all clocks in active scenarios, including 1 master clocks and 0 generated clocks. (CTS-107)
+Information: 'nominal' is identified as primary corner for initial clock tree building. (CTS-103)
+Information: CCD will use corner nominal for honoring max prepone/postpone limits
+Information: Useful skew copied/scaled 0 balance points and 0 clock latencies. (CCD-103)
+
+Summary of messages during CTS:
+===============================================================
+  Tag   Count  Type           Description
+---------------------------------------------------------------
+ No error or warning message.
+
+Disable clock slack update for ideal clocks
+
+Disable clock slack update for ideal clocks
+Compile-fusion optimization Phase 0 Iter  1        966.34      759.00         -         -     181076.17   111728.99       26919              0.11      2063
+INFO: cellmap features:  adv-rules=(N), pdc=(N), clock-rules=(Y)
+
+compile optimization Phase 0 Iter  1        966.28      758.98         -         -     181041.12   111709.05       26919              0.11      2063
+INFO: New Levelizer turned on
+compile optimization Phase 0 Iter  2        966.27      758.98         -         -     180888.48   111594.21       26919              0.11      2063
+INFO: New Levelizer turned on
+Information: Starting rtl_opt / estimation / Timing and Congestion Driven Placement (FLW-8000)
+Information: Time: 2025-12-06 23:33:49 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:32 / Memory: 2063 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Timing and Congestion Driven Placement (FLW-8001)
+Information: Time: 2025-12-06 23:33:49 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:32 / Memory: 2063 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / Optimization (2) (FLW-8000)
+Information: Time: 2025-12-06 23:33:49 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:32 / Memory: 2063 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Optimization (2) (FLW-8001)
+Information: Time: 2025-12-06 23:33:49 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:32 / Memory: 2063 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / Scan Synthesis (FLW-8000)
+Information: Time: 2025-12-06 23:33:49 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:32 / Memory: 2063 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Scan Synthesis (FLW-8001)
+Information: Time: 2025-12-06 23:33:49 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:32 / Memory: 2063 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / Incremental High Fanout Synthesis (FLW-8000)
+Information: Time: 2025-12-06 23:33:49 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:32 / Memory: 2063 MB (FLW-8100)
+Isolated 0 ports, skipped 0 ports
+Already Isolated 0 ports, Deleted 0 existing Isolation cells 
+INFO: total number of constant pins: 1116
+INFO: constant pins which are scan-pins: 128
+INFO: constant pins that are not scan-pins: 988
+Information: Ending   rtl_opt / estimation / Incremental High Fanout Synthesis (FLW-8001)
+Information: Time: 2025-12-06 23:33:50 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:33 / Memory: 2063 MB (FLW-8100)
+Information: Starting rtl_opt / estimation / Timing Optimization (FLW-8000)
+Information: Time: 2025-12-06 23:33:50 / Session:  00:06:23 / Command:  00:06:12 / CPU:  00:28:33 / Memory: 2063 MB (FLW-8100)
+Information: Ending   rtl_opt / estimation / Timing Optimization (FLW-8001)
+Information: Time: 2025-12-06 23:33:50 / Session:  00:06:23 / Command:  00:06:13 / CPU:  00:28:33 / Memory: 2063 MB (FLW-8100)
+Information: Summary of UPF Cells (UPF-532)
+*******************************************************************************
+                            Summary of UPF Cells                               
+*******************************************************************************
+This is NOT a UPF design.
+UPF is NOT loaded.
+UPF is NOT committed.
+-------------------------------------------------------------------------------
+*******************************************************************************
+                        End of Summary of UPF Cells                            
+*******************************************************************************
+Information: The net parasitics of block neuron are cleared. (TIM-123)
+Information: Timer using 8 threads
+Warning: Cannot find any default max transition constraint on the design. (OPT-070)
+INFO: Leakage Power Aware Optimization Enabled
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 26994 cells affected for early, 26994 for late. (PVT-031)
+Warning: 161 port driving_cells affected for early, 161 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+Smart Arc Optimization:                    disabled
+************************************************************
+Information: CTS will work on the following scenarios. (CTS-101)
+Information: CTS will work on all clocks in active scenarios, including 1 master clocks and 0 generated clocks. (CTS-107)
+Information: 'nominal' is identified as primary corner for initial clock tree building. (CTS-103)
+Information: CCD will use corner nominal for honoring max prepone/postpone limits
+Information: Useful skew copied/scaled 0 balance points and 0 clock latencies. (CCD-103)
+
+Summary of messages during CTS:
+===============================================================
+  Tag   Count  Type           Description
+---------------------------------------------------------------
+ No error or warning message.
+
+
+
+INFO: Skipping FTB cleanup in end of npo flow.
+Enable dominated scenarios
+Co-efficient Ratio Summary:
+compile command statistics  CPU=522 sec (0.14 hr) ELAPSED=88 sec (0.02 hr) MEM-PEAK=2.015 GB
+Information: Ending   rtl_opt / estimation (FLW-8001)
+Information: Time: 2025-12-06 23:33:53 / Session:  00:06:26 / Command:  00:06:16 / CPU:  00:28:41 / Memory: 2063 MB (FLW-8100)
+Information: The net parasitics of block neuron are cleared. (TIM-123)
+INFO: End environment monitoring: recipes
+INFO: Restored 0 timer status, 7 app options, 0 tcl gvars, 0 env vars
+Information: >>>>>>> 14 unique error and warning message tags while observing fast: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     1     1  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:     1     1  0 DFT-2193  WARNING   Warning: DFT IP not instantiated successfully (DFT-2193)        (MSG-3032)
+Information:     1     1  0 DFT-1107  WARNING   Warning: Skipping scan synthesis: no DFT setup has been dete... (MSG-3032)
+Information:     7     7  0 FLW-2892  WARNING   Warning: Restoring scoped app option 'ropt.rbuf_subtree_crit... (MSG-3032)
+Information:     4     4  0 ZRT-026   WARNING   Warning: Layer met4 default pitch 0.920 may be too small to ... (MSG-3032)
+Information:     1     1  0 PLACE-029 WARNING   Warning: There is insufficient area available to achieve the... (MSG-3032)
+Information:     6     6  0 DMM-115   WARNING   Warning: Auto deriving 'vertical' routing direction for laye... (MSG-3032)
+Information:    33   189 10 POW-116   WARNING   Warning: Net 'add1/operand_a[27]' is already connected to pi... (MSG-3032)
+Information:    10    10  0 ZRT-720   WARNING   Warning: Port  VPWR at {{386.400,-0.240} {388.240,0.240}} is... (MSG-3032)
+Information:    31    31  0 ZRT-763   WARNING   Warning: Cell mul1/mult_36/A69012 is placed overlapping with... (MSG-3032)
+Information:     1     1  0 CTS-038   WARNING   Warning: No clock routing rule is specified. (CTS-038)          (MSG-3032)
+Information:     5     5  0 OPT-070   WARNING   Warning: Cannot find any default max transition constraint o... (MSG-3032)
+Information:     5     5  5 LGL-050   WARNING   Warning: Library cell sky130_fd_sc_hd:sky130_fd_sc_hd__macro... (MSG-3032)
+Information:    12    12  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
+Information:   118   274  3       14  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 274 error&warning MSGs observed during fast (MSG-3103)
+Info: FAST compile completed.
+Information: Ending   'rtl_opt' (FLW-8001)
+Information: Time: 2025-12-06 23:33:53 / Session:  00:06:26 / Command:  00:06:16 / CPU:  00:28:41 / Memory: 2063 MB (FLW-8100)
+1
+puts "RTL optimization completed"
+RTL optimization completed
+# Save the optimized design with a clear label
+puts "========== Saving Design =========="
+========== Saving Design ==========
+set current_blk [current_block]
+{neuron_LIB:neuron.design}
+if {$current_blk ne ""} {
+    puts "Current block: [get_object_name $current_blk]"
+    save_block -label "rtla_optimized" -force
+    save_lib
+    puts "Design saved successfully with label 'rtla_optimized'"
+    
+    # Verify save was successful
+    set saved_blocks [get_blocks *]
+    if {[llength $saved_blocks] > 0} {
+        puts "Saved blocks in library:"
+        foreach b $saved_blocks {
+            puts "  - [get_object_name $b]"
+        }
+    } else {
+        puts "WARNING: No blocks found after save (this may be normal)"
+    }
+} else {
+    puts "ERROR: No current block to save!"
+    exit 1
+}
+Current block: neuron_LIB:neuron.design
+Information: Saving 'neuron_LIB:neuron.design' to 'neuron_LIB:neuron/rtla_optimized.design'. (DES-028)
+Saving library 'neuron_LIB'
+Design saved successfully with label 'rtla_optimized'
+Saved blocks in library:
+  - neuron_LIB:neuron.design
+# -----------------------------------------------------------------------------
+# Power Analysis Setup
+# -----------------------------------------------------------------------------
+puts "========== Setting up Power Analysis =========="
+========== Setting up Power Analysis ==========
+# Create temp results directory if it doesn't exist
+file mkdir $TEMP_RESULTS_DIR
+# Configure RTL power analysis (corrected scenario name)
+set_rtl_power_analysis_options \
+    -scenario $SCENARIO_NAME \
+    -design $DESIGN_NAME \
+    -strip_path $STRIP_PATH \
+    -fsdb $FSDB_FILE \
+    -output_dir $OUTPUT_DIR
+1
+export_power_data
+Information: exporting data
+Information: Created output directory TZ_OUTDIR
+Information: Starting 'update_timing' (FLW-8000)
+Information: Time: 2025-12-06 23:33:53 / Session:  00:06:27 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 2063 MB (FLW-8100)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Information: Design Average RC for design neuron  (NEX-011)
+Information: r = 1.237458 ohm/um, via_r = 4.038463 ohm/cut, c = 0.131967 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 0.518594 ohm/um, via_r = 43.639130 ohm/cut, c = 0.153067 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Information: The RC mode used is VR for design 'neuron'. (NEX-022)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 27690, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 2, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+Information: Ending   'update_timing' (FLW-8001)
+Information: Time: 2025-12-06 23:33:55 / Session:  00:06:28 / Command:  00:00:01 / CPU:  00:00:06 / Memory: 2063 MB (FLW-8100)
+Information: save current design
+Information: Saving block 'neuron_LIB:neuron.design'
+Information: Exporting essential name map file
+Warning: Option '-essential' for command 'saif_map' is deprecated. See the command's man page for alternatives. (CMD-110)
+Warning: '-essential' option should not be specified as it has been deprecated and is enabled by default. (POW-120)
+Information: The stitching and editing of coupling caps is turned OFF for design 'neuron_LIB:neuron.design'. (TIM-125)
+Information: Design Average RC for design neuron  (NEX-011)
+Information: r = 1.237458 ohm/um, via_r = 4.038463 ohm/cut, c = 0.131967 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 0.518594 ohm/um, via_r = 43.639130 ohm/cut, c = 0.153067 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Information: GPD output -mt with 8 threads (NEX-014)
+NEX: write_parasitics command finished
+Information: Explicit supply net connections to isolation and retention cells will be written out. Use mv.upf.save_upf_include_supply_exceptions_for_iso_retn to control this. (UPF-450)
+
+Warning: Multiply cell derates are skipped!
+
+Warning: Multiply net derates are skipped!
+Information: RTL Architect run completed
+Information: Gathering logical hierarchical data
+1
+puts "Power analysis data exported"
+Power analysis data exported
+# -----------------------------------------------------------------------------
+# Maximum Frequency Characterization
+# -----------------------------------------------------------------------------
+puts "========== Characterizing Maximum Operating Frequency =========="
+========== Characterizing Maximum Operating Frequency ==========
+# Update timing for accurate analysis
+update_timing
+Information: Starting 'update_timing' (FLW-8000)
+Information: Time: 2025-12-06 23:34:02 / Session:  00:06:35 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 2063 MB (FLW-8100)
+Information: Ending   'update_timing' (FLW-8001)
+Information: Time: 2025-12-06 23:34:02 / Session:  00:06:35 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 2063 MB (FLW-8100)
+1
+# Find all clocks in the design
+set all_clocks [get_clocks *]
+{CLK}
+if {[llength $all_clocks] == 0} {
+    puts "ERROR: No clocks found in design. Please check your constraints."
+    puts "Available ports: [get_object_name [get_ports *clk*]]"
+    exit 1
+}
+# Get the first clock (or find specific clock pattern)
+set current_clk [lindex $all_clocks 0]
+_sel227
+set clock_name [get_object_name $current_clk]
+CLK
+puts "Found clock: $clock_name"
+Found clock: CLK
+# If there are multiple clocks, list them
+if {[llength $all_clocks] > 1} {
+    puts "Multiple clocks found in design:"
+    foreach clk $all_clocks {
+        puts "  - [get_object_name $clk]"
+    }
+    puts "Using first clock: $clock_name for analysis"
+}
+set current_period [get_attribute $current_clk period]
+10.000000
+puts "Current clock period: $current_period ns"
+Current clock period: 10.000000 ns
+# Get worst negative slack (WNS) and critical path information
+set critical_paths [get_timing_paths -delay_type max -max_paths 1]
+{{path_to_V_reg[29]/D_slack_-16.2781}}
+if {[llength $critical_paths] == 0} {
+    puts "WARNING: No timing paths found"
+    set slack 0.0
+    set data_arrival 0.0
+} else {
+    set slack [get_attribute $critical_paths slack]
+    set data_arrival [get_attribute $critical_paths arrival]
+}
+25.821068
+puts "Current WNS (Worst Negative Slack): $slack ns"
+Current WNS (Worst Negative Slack): -16.278137 ns
+# Calculate minimum period and maximum frequency
+# Validate that we have the necessary data
+if {$current_period == "" || $current_period == 0} {
+    puts "ERROR: Invalid clock period retrieved"
+    exit 1
+}
+# Tmin = Current_Period - Slack (if slack is negative, this adds the violation)
+# If slack is positive, Tmin = Data_Arrival_Time (critical path delay)
+if {$slack >= 0} {
+    # Timing is met - use actual critical path delay
+    set Tmin $data_arrival
+    set timing_status "MET"
+} else {
+    # Timing violated - need to increase period
+    set Tmin [expr {$current_period - $slack}]
+    set timing_status "VIOLATED"
+}
+VIOLATED
+# Sanity check on calculated values
+if {$Tmin <= 0} {
+    puts "ERROR: Invalid critical path delay calculated: $Tmin ns"
+    puts "Current period: $current_period ns"
+    puts "Slack: $slack ns"
+    exit 1
+}
+# Add safety margin (typically 2-5% for publication)
+set MARGIN_PERCENT 2.0
+2.0
+set Tmin_with_margin [expr {$Tmin * (1.0 + $MARGIN_PERCENT/100.0)}]
+26.80369974
+# Calculate frequencies (convert from ns to Hz, then to MHz)
+# Fmax in MHz: 1/ns = 1000 MHz
+set Fmax [expr {1000.0 / $Tmin}]
+38.054448076
+set Fmax_with_margin [expr {1000.0 / $Tmin_with_margin}]
+37.3082824274
+# Format results
+set Fmax_formatted [format "%.2f" $Fmax]
+38.05
+set Fmax_margin_formatted [format "%.2f" $Fmax_with_margin]
+37.31
+set Tmin_formatted [format "%.4f" $Tmin]
+26.2781
+set Tmin_margin_formatted [format "%.4f" $Tmin_with_margin]
+26.8037
+puts "================================================"
+================================================
+puts "MAXIMUM FREQUENCY CHARACTERIZATION RESULTS"
+MAXIMUM FREQUENCY CHARACTERIZATION RESULTS
+puts "================================================"
+================================================
+puts "Timing Status: $timing_status at current period"
+Timing Status: VIOLATED at current period
+puts "Critical Path Delay: $Tmin_formatted ns"
+Critical Path Delay: 26.2781 ns
+puts "Maximum Frequency: $Fmax_formatted MHz"
+Maximum Frequency: 38.05 MHz
+puts "Maximum Frequency (with ${MARGIN_PERCENT}% margin): $Fmax_margin_formatted MHz"
+Maximum Frequency (with 2.0% margin): 37.31 MHz
+puts "Recommended Clock Period: $Tmin_margin_formatted ns"
+Recommended Clock Period: 26.8037 ns
+puts "================================================"
+================================================
+# -----------------------------------------------------------------------------
+# Generate Comprehensive Reports
+# -----------------------------------------------------------------------------
+puts "========== Generating Reports =========="
+========== Generating Reports ==========
+# Basic reports
+report_power > "$TEMP_RESULTS_DIR/report_power.txt"
+report_area > "$TEMP_RESULTS_DIR/report_area.txt" 
+report_qor > "$TEMP_RESULTS_DIR/report_qor.txt"
+# Detailed timing reports
+report_timing -delay_type max -max_paths 1 -path_type full \
+    > "$TEMP_RESULTS_DIR/report_timing_critical_path.txt"
+report_timing -delay_type max -max_paths 10 -path_type full \
+    > "$TEMP_RESULTS_DIR/report_timing_top10_paths.txt"
+report_timing -delay_type max -max_paths 1 -nets -transition_time \
+    -capacitance -input_pins -significant_digits 4 \
+    > "$TEMP_RESULTS_DIR/report_timing_detailed.txt"
+# Constraint and violation reports
+report_constraint -all_violators > "$TEMP_RESULTS_DIR/report_violations.txt"
+# Clock reports
+report_clock -skew > "$TEMP_RESULTS_DIR/report_clock.txt"
+# Additional useful reports for SKY130
+report_reference > "$TEMP_RESULTS_DIR/report_reference.txt"
+report_hierarchy > "$TEMP_RESULTS_DIR/report_hierarchy.txt"
+# Design statistics
+report_design > "$TEMP_RESULTS_DIR/report_design_stats.txt"
+# Process corner information
+report_pvt > "$TEMP_RESULTS_DIR/report_pvt.txt"
+# -----------------------------------------------------------------------------
+# Generate Publication-Ready Summary
+# -----------------------------------------------------------------------------
+puts "========== Generating Publication Summary =========="
+========== Generating Publication Summary ==========
+set summary_file [open "$TEMP_RESULTS_DIR/publication_summary.txt" w]
+file41
+puts $summary_file "================================================================================"
+puts $summary_file "RISC-V CPU - SKY130 130nm - Performance Characterization"
+puts $summary_file "================================================================================"
+puts $summary_file ""
+puts $summary_file "DESIGN INFORMATION:"
+puts $summary_file "  Design Name:           $DESIGN_NAME"
+puts $summary_file "  Top Module:            $TOP_MODULE"
+puts $summary_file "  Technology:            SKY130 130nm"
+puts $summary_file "  Analysis Date:         [clock format [clock seconds] -format "%Y-%m-%d %H:%M:%S"]"
+puts $summary_file ""
+puts $summary_file "TIMING ANALYSIS:"
+puts $summary_file "  Current Clock Period:  $current_period ns"
+puts $summary_file "  Timing Status:         $timing_status"
+puts $summary_file "  Worst Slack (WNS):     $slack ns"
+puts $summary_file ""
+puts $summary_file "MAXIMUM FREQUENCY CHARACTERIZATION:"
+puts $summary_file "  Critical Path Delay:   $Tmin_formatted ns"
+puts $summary_file "  Maximum Frequency:     $Fmax_formatted MHz"
+puts $summary_file ""
+puts $summary_file "RECOMMENDED OPERATING POINT (${MARGIN_PERCENT}% margin):"
+puts $summary_file "  Clock Period:          $Tmin_margin_formatted ns"
+puts $summary_file "  Operating Frequency:   $Fmax_margin_formatted MHz"
+puts $summary_file ""
+# Get critical path details
+if {[llength $critical_paths] > 0} {
+    set startpoint [get_attribute $critical_paths startpoint]
+    set endpoint [get_attribute $critical_paths endpoint]
+    puts $summary_file "CRITICAL PATH:"
+    puts $summary_file "  Startpoint:            [get_object_name $startpoint]"
+    puts $summary_file "  Endpoint:              [get_object_name $endpoint]"
+    puts $summary_file ""
+}
+# Get area and power information
+# set total_area [get_attribute [current_design] area]
+# puts $summary_file "DESIGN METRICS:"
+# puts $summary_file "  Total Area:            [format "%.2f" $total_area] um²"
+# Try to get power information if available
+# if {[catch {get_attribute [current_design] total_power} total_power] == 0} {
+#     puts $summary_file "  Total Power:           [format "%.4f" $total_power] mW"
+# }
+puts $summary_file ""
+puts $summary_file "PROCESS CORNER:"
+puts $summary_file "  Scenario:              $SCENARIO_NAME"
+puts $summary_file "  Corner:                Cmax (Worst Case)"
+puts $summary_file ""
+puts $summary_file "================================================================================"
+puts $summary_file "For detailed timing analysis, see:"
+puts $summary_file "  - report_timing_critical_path.txt (Critical path breakdown)"
+puts $summary_file "  - report_timing_top10_paths.txt (Top 10 critical paths)"
+puts $summary_file "  - report_timing_detailed.txt (Full timing details with nets)"
+puts $summary_file "================================================================================"
+close $summary_file
+# Also create a simple CSV for easy import
+set csv_file [open "$TEMP_RESULTS_DIR/timing_metrics.csv" w]
+file41
+puts $csv_file "Metric,Value,Unit"
+puts $csv_file "Critical_Path_Delay,$Tmin_formatted,ns"
+puts $csv_file "Maximum_Frequency,$Fmax_formatted,MHz"
+puts $csv_file "Recommended_Frequency,$Fmax_margin_formatted,MHz"
+puts $csv_file "Worst_Slack,$slack,ns"
+puts $csv_file "Current_Period,$current_period,ns"
+# puts $csv_file "Total_Area,$total_area,um2"
+close $csv_file
+puts "All reports generated in $TEMP_RESULTS_DIR/ directory"
+All reports generated in temp_results_20251206_232719/ directory
+puts ""
+
+puts "KEY RESULT: Maximum Operating Frequency = $Fmax_formatted MHz"
+KEY RESULT: Maximum Operating Frequency = 38.05 MHz
+puts "RECOMMENDED: Use $Fmax_margin_formatted MHz (with ${MARGIN_PERCENT}% margin)"
+RECOMMENDED: Use 37.31 MHz (with 2.0% margin)
+puts ""
+
+puts "========== RTL Analysis and Synthesis Complete =========="
+========== RTL Analysis and Synthesis Complete ==========
+exit
+Maximum memory usage for this session: 2063.30 MB
+CPU usage for this session:   1750 seconds (  0.49 hours)
+Elapsed time for this session:    396 seconds (  0.11 hours)
+Thank you for using RTL Architect.
