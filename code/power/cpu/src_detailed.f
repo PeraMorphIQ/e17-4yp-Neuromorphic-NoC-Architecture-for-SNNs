@@ -9,13 +9,7 @@ cpu/cpu.v
 # ALU and FPU
 alu/alu.v
 fpu/fpu.v
-fpu/Addition-Subtraction.v
-fpu/Comparison.v
-fpu/Converter.v
-fpu/Division.v
-fpu/Iteration.v
-fpu/Multiplication.v
-"fpu/Priority Encoder.v"
+# Note: fpu.v includes all other FPU files via `include statements
 
 # Register Files
 reg_file/reg_file.v
