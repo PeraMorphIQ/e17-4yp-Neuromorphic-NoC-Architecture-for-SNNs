@@ -43,9 +43,9 @@ cleanup_on_error() {
     fi
     
     # Clean up any partial library files
-    if [ -d "cpu_LIB" ]; then
+    if [ -d "neuron_LIB" ]; then
         echo "Removing partial library directory"
-        rm -rf "cpu_LIB"
+        rm -rf "neuron_LIB"
     fi
     
     echo "========== CLEANUP COMPLETE - FAILED RESULTS SAVED IN $FAILED_DIR =========="
@@ -144,7 +144,7 @@ else
 fi
 
 # Check and optionally remove existing library directory
-LIB_DIR="cpu_LIB"
+LIB_DIR="neuron_LIB"
 if [ -d "$LIB_DIR" ]; then
     echo "Library directory '$LIB_DIR' already exists."
     echo "Removing existing library directory before synthesis to avoid errors..."
