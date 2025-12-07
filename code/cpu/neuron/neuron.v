@@ -1,88 +1,77 @@
+`include "fpu/Multiplication.v"
+`include "fpu/Addition_Subtraction.v"
+`include "fpu/Comparison.v"
+
 `timescale 1ns/100ps
 
-module neuron(CLK, RESET, SPIKED, I, a, b, c, d);
-    // Izhikevich neuron model using fixed-point arithmetic
-    // All values are represented as signed 32-bit fixed point with 16 fractional bits
-    // Format: Q16.16 (16 integer bits, 16 fractional bits)
-    
-    localparam signed [31:0] FIXED_0_04 = 32'h00000A3D;  // 0.04 in Q16.16
-    localparam signed [31:0] FIXED_5    = 32'h00050000;  // 5.0 in Q16.16
-    localparam signed [31:0] FIXED_140  = 32'h008C0000;  // 140.0 in Q16.16
-    localparam signed [31:0] FIXED_30   = 32'h001E0000;  // 30.0 in Q16.16
+module neuron (CLK, RESET, SPIKED, I, a, b, c, d);
+    localparam POINT_ZERO_FOUR = 32'h3d23d70a;
+    localparam FIVE = 32'h40a00000;
+    localparam ONE_FORTY = 32'h430c0000;
+    localparam THIRTY = 32'h41f00000;
 
     input CLK, RESET;
-    input signed [31:0] I, a, b, c, d;  // Fixed-point Q16.16 format
-    output reg SPIKED;
+    input [31:0] I, a, b, c, d;
+    output SPIKED;
 
-    reg signed [31:0] V;   // Membrane potential
-    reg signed [31:0] U;   // Recovery variable
+    reg [31:0] V;   // Membrane potential
+    reg [31:0] U;   // Recovery variable
 
-    // Intermediate calculation wires
-    wire signed [63:0] v_squared_full;
-    wire signed [31:0] v_squared;
-    wire signed [63:0] term1_full, term2_full, term3_full, term4_full;
-    wire signed [31:0] term1, term2, term3;
-    wire signed [31:0] v_prime;
-    
-    wire signed [63:0] u_term1_full, u_term2_full;
-    wire signed [31:0] u_term1, u_term2;
-    wire signed [31:0] u_prime;
+    // Connection wires
+    wire [31:0] POINT_ZERO_FOUR_V, POINT_ZERO_FOUR_V_SQUARED, FIVE_V, B_V, 
+                B_V_MINUS_U, ADD1_OUT, ADD2_OUT, ADD3_OUT, V_NEW, U_NEW, U_PLUS_D;
+
+    wire [1:0] COMPARE_RESULT;
+    wire Mul1_Exception, Mul1_Overflow, Mul1_Underflow,
+         Mul2_Exception, Mul2_Overflow, Mul2_Underflow,
+         Mul3_Exception, Mul3_Overflow, Mul3_Underflow,
+         Mul4_Exception, Mul4_Overflow, Mul4_Underflow,
+         Mul5_Exception, Mul5_Overflow, Mul5_Underflow,
+         Add1_Exception, Add2_Exception, Add3_Exception,
+         Add4_Exception, Add5_Exception, Add6_Exception;
+
 
     /******************************** V' Calculation ********************************/
-    // V' = 0.04*V^2 + 5*V + 140 - U + I
-    
-    // V^2 (multiply and scale back)
-    assign v_squared_full = V * V;
-    assign v_squared = v_squared_full[47:16];  // Extract Q16.16 result
-    
-    // 0.04 * V^2
-    assign term1_full = FIXED_0_04 * v_squared;
-    assign term1 = term1_full[47:16];
-    
-    // 5 * V
-    assign term2_full = FIXED_5 * V;
-    assign term2 = term2_full[47:16];
-    
-    // Combine: 0.04*V^2 + 5*V + 140 - U + I
-    assign term3 = term1 + term2 + FIXED_140 - U + I;
-    assign v_prime = term3;
+    Multiplication mul1 (POINT_ZERO_FOUR, V, Mul1_Exception, Mul1_Overflow, Mul1_Underflow, POINT_ZERO_FOUR_V);
+    Multiplication mul2 (POINT_ZERO_FOUR_V, V, Mul2_Exception, Mul2_Overflow, Mul2_Underflow, POINT_ZERO_FOUR_V_SQUARED);
+
+    Multiplication mul3 (FIVE, V, Mul3_Exception, Mul3_Overflow, Mul3_Underflow, FIVE_V);
+
+    Addition_Subtraction add1 (POINT_ZERO_FOUR_V_SQUARED, FIVE_V, 1'b0, Add1_Exception, ADD1_OUT);
+    Addition_Subtraction add2 (ADD1_OUT, ONE_FORTY, 1'b0, Add2_Exception, ADD2_OUT);
+    Addition_Subtraction add3 (ADD2_OUT, U, 1'b1, Add3_Exception, ADD3_OUT);
+    Addition_Subtraction add4 (ADD3_OUT, I, 1'b0, Add4_Exception, V_NEW);
 
     /******************************** U' Calculation ********************************/
-    // U' = a * (b*V - U)
-    
-    // b * V
-    assign u_term1_full = b * V;
-    assign u_term1 = u_term1_full[47:16];
-    
-    // a * (b*V - U)
-    assign u_term2_full = a * (u_term1 - U);
-    assign u_prime = u_term2_full[47:16];
+    Multiplication mul4 (b, V, Mul4_Exception, Mul4_Overflow, Mul4_Underflow, B_V);
+    Addition_Subtraction add5 (B_V, U, 1'b1, Add5_Exception, B_V_MINUS_U);
 
-    /******************************** Spike Detection ********************************/
-    // Spike when V >= 30
-    wire spike_condition;
-    assign spike_condition = (V >= FIXED_30);
+    Multiplication mul5 (a, B_V_MINUS_U, Mul5_Exception, Mul5_Overflow, Mul5_Underflow, U_NEW);
 
-    /******************************** State Update ********************************/
-    always @ (posedge CLK) begin
-        if (RESET) begin
-            V <= c;  // Initialize to resting potential
-            U <= b;  // Initialize recovery variable
-            SPIKED <= 1'b0;
+    /******************************** U RESET Calculation ********************************/
+    Addition_Subtraction add6 (U, d, 1'b0, Add6_Exception, U_PLUS_D);
+
+    /******************************** SPIKED Calculation ********************************/
+    Comparison CuI (V, THIRTY, COMPARE_RESULT);
+    assign #1 SPIKED = (COMPARE_RESULT == 2'b00) | (COMPARE_RESULT == 2'b01);
+
+
+    always @ (posedge CLK)
+    begin
+        if (RESET)
+        begin
+            V <= #1 c;
+            U <= #1 b;  // Initialize U to b parameter (typical initialization)
         end
-        else begin
-            if (spike_condition) begin
-                // Spike detected - reset
-                V <= c;
-                U <= U + d;
-                SPIKED <= 1'b1;
-            end
-            else begin
-                // Normal update
-                V <= V + v_prime;  // Simple Euler integration
-                U <= U + u_prime;
-                SPIKED <= 1'b0;
-            end
+        else if (SPIKED)
+        begin
+            V <= #1 c;         // Reset V to c when spiked
+            U <= #1 U_PLUS_D;  // Add d to U when spiked
+        end
+        else
+        begin
+            V <= #1 V_NEW;
+            U <= #1 U_NEW;
         end
     end
     
