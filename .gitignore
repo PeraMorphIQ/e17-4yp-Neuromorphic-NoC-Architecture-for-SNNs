@@ -1,3 +1,23 @@
+# Simulation waveform dumps
+*.vcd
+*.fsdb
+
+# Synthesis and VCS logs
+rtl_synthesis.log
+rtl_output.txt
+rtl_command.log
+run_metadata.txt
+vcs_compile.log
+
+# Auto-generated synthesis results
+results/
+
+# Auto-generated directories
+neuron/
+cpu_sky130_fd_sc_hd/
+
+
+
 **/*pth
 
 **/*.vcd
