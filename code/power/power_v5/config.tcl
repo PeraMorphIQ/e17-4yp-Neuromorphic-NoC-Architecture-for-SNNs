@@ -32,7 +32,7 @@ set REF_LIBS   "sky130_fd_sc_hd.ndm"            ;# one or more NDMs (space-separ
 set TECH_TF    "/tech/sky130/libs/sky130_fd_sc_hd/sky130_fd_sc_hd.tf"
 
 # Search paths for libraries and source files
-set SEARCH_PATHS "* ./ ../../accelerator/mesh ../../accelerator/cpu_core/cpu /tech/sky130/libs/sky130_library/ndm"
+set SEARCH_PATHS "* ./ ../../accelerator/mesh ../../accelerator/cpu_core/cpu ../../accelerator/network_interface  /tech/sky130/libs/sky130_library/ndm"
 
 # -----------------------------------------------------------------------------
 # File Locations
