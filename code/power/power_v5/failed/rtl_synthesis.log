@@ -34,12 +34,12 @@
 # Load shared configuration
 source config.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251207_085632
+Using environment TEMP_RESULTS_DIR: temp_results_20251207_193154
 Configuration loaded successfully
   Design: mesh
   Technology: SKY130 130nm
   Cores: 8
-  Results directory: temp_results_20251207_085632
+  Results directory: temp_results_20251207_193154
 # -----------------------------------------------------------------------------
 # Configuration and Setup
 # -----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ puts "========== Setting up SKY130 Libraries =========="
 ========== Setting up SKY130 Libraries ==========
 # Search paths for libraries and source files
 set search_path $SEARCH_PATHS
-* ./ ../../accelerator/mesh ../../accelerator/cpu_core/cpu /tech/sky130/libs/sky130_library/ndm
+* ./ ../../accelerator/mesh ../../accelerator/cpu_core/cpu ../../accelerator/cpu_core/ ../../accelerator/cpu_core/fpu/ ../../accelerator/network_interface  /tech/sky130/libs/sky130_library/ndm
 # Create design library with SKY130 reference libraries
 create_lib $LIB_NAME \
     -ref_libs "$REF_LIBS" \
@@ -108,7 +108,7 @@ Warning: DesignRule is defined with non-consecutive layers 'via' and 'met2'. (sk
 Warning: DesignRule is defined with non-consecutive layers 'mcon' and 'li1'. (sky130_fd_sc_hd.tf line 915) (TECH-034)
 Warning: DesignRule is defined with non-consecutive layers 'mcon' and 'met1'. (sky130_fd_sc_hd.tf line 923) (TECH-034)
 Information: Loading technology file '/tech/sky130/libs/sky130_fd_sc_hd/sky130_fd_sc_hd.tf' (FILE-007)
-{mesh_LIB}
+{cpu_LIB}
 puts "SKY130 libraries loaded successfully"
 SKY130 libraries loaded successfully
 # -----------------------------------------------------------------------------
@@ -143,185 +143,447 @@ Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:95: delays for continuous
 Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:98: delays for continuous assignment are ignored. (VER-173)
 Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:99: delays for continuous assignment are ignored. (VER-173)
 Opening include file ../../accelerator/mesh/../cpu_core/fpu/fpu.v
+Opening include file ../../accelerator/cpu_core//fpu/Addition_Subtraction.v
+Opening include file ../../accelerator/cpu_core//fpu/Priority_Encoder.v
 Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:74: delay controls are ignored for synthesis. (VER-176)
+Warning:  ../../accelerator/cpu_core//fpu/Addition_Subtraction.v:43: the undeclared symbol 'exp_a' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../accelerator/cpu_core//fpu/Addition_Subtraction.v:44: the undeclared symbol 'exp_b' assumed to have the default net type, which is 'wire'. (VER-936)
+Warning:  ../../accelerator/cpu_core//fpu/Addition_Subtraction.v:67: the undeclared symbol 'perform' assumed to have the default net type, which is 'wire'. (VER-936)
+Opening include file ../../accelerator/cpu_core//fpu/Multiplication.v
+Opening include file ../../accelerator/cpu_core//fpu/Division.v
+Opening include file ../../accelerator/cpu_core//fpu/Iteration.v
+Opening include file ../../accelerator/cpu_core//fpu/Comparison.v
+Opening include file ../../accelerator/cpu_core//fpu/Converter.v
 Opening include file ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v
-Warning:  ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v
-Warning:  ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v:25: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/reg_file/reg_file.v:32: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:14: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:15: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:16: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../accelerator/mesh/../cpu_core/immediate_generation_unit/immediate_generation_unit.v
-Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:26: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v:33: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v
-Opening include file ../../accelerator/cpu_core/cpu/../support_modules/mux_2to1_3bit.v
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:59: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:66: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:67: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:76: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:81: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:108: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:123: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:141: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:152: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:159: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:160: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:164: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:171: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:172: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:179: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:184: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:201: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:208: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:222: delays for continuous assignment are ignored. (VER-173)
-Warning:  ../../accelerator/mesh/../cpu_core/control_unit/control_unit.v:236: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v
-Opening include file ../../accelerator/mesh/../cpu_core/forwarding_units/ex_forward_unit.v
-Warning:  ../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v:22: delay controls are ignored for synthesis. (VER-176)
-Opening include file ../../accelerator/mesh/../cpu_core/forwarding_units/mem_forward_unit.v
-Opening include file ../../accelerator/mesh/../cpu_core/hazard_detection_unit/hazard_detection_unit.v
-Opening include file ../../accelerator/mesh/../cpu_core/pipeline_flush_unit/pipeline_flush_unit.v
-Opening include file ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v
-Opening include file ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v:17: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v:18: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v:22: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v:23: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:57: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:58: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:59: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:72: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:73: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:74: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:79: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:80: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:81: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:82: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:83: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:84: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:85: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:86: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:87: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:88: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:89: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:90: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:91: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:92: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:93: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:94: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:95: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:96: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:97: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:98: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:99: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:100: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:101: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:102: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v:103: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:44: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:45: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:46: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:56: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:60: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:61: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:62: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:63: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:64: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:65: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:66: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:67: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:68: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:69: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:70: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:71: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:72: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:73: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:74: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v:75: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Opening include file ../../accelerator/mesh/../cpu_core/support_modules/plus_4_adder.v
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:35: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:36: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:37: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:38: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:39: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:40: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:41: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:42: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:43: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:47: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:48: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:49: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:50: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:51: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:52: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:53: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:54: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v:55: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
-Warning:  ../../accelerator/mesh/../cpu_core/support_modules/plus_4_adder.v:8: delays for continuous assignment are ignored. (VER-173)
-Opening include file ../../accelerator/mesh/../cpu_core/support_modules/mux_4to1_32bit.v
-Opening include file ../../accelerator/mesh/../cpu_core/support_modules/mux_2to1_32bit.v
-Opening include file ../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v
-Opening include file ../../accelerator/mesh/../cpu_core/data_memory/data_memory.v
-Opening include file ../../accelerator/mesh/../network_interface/network_interface.v
-Opening include file fifo.v
-Error:  ../../accelerator/mesh/../network_interface/network_interface.v:1: Unable to open file `fifo.v': No such file or directory. (VER-41)
+Error:  ../../accelerator/mesh/../cpu_core/fpu/fpu.v:100: Variable 'RESULT' is the target of both blocking and nonblocking assignments in the same always block. (VER-134)
+Error:  Cannot recover from previous errors. (VER-518)
 Error:  Too many errors; can't continue. (VER-40)
-*** Presto compilation terminated with 1 errors. ***
+*** Presto compilation terminated with 2 errors. ***
 Error:  Too many errors; can't continue. (VER-40)
 Error: Presto analyze failed 
-Elapsed = 00:00:00.04, CPU = 00:00:00.03
+Elapsed = 00:00:00.02, CPU = 00:00:00.02
 0
 # Elaborate the design
 elaborate $DESIGN_NAME
-Error: In elaborate -hdl_library WORK: Module 'mesh' cannot be found for elaboration. (ELAB-357)
-Elapsed = 00:00:00.06, CPU = 00:00:00.05
-0
+Presto compilation completed successfully. (mesh)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=0}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y0)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=0}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y0)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=1}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y1)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y1)
+Information: Elaborating HDL template WORK:cpu instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine cpu line 308 in file
+		'../../accelerator/mesh/../cpu_core/cpu/cpu.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       PC_reg        | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (cpu)
+Information: Elaborating HDL template WORK:instruction_memory instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Warning:  ../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v:13: The statements in initial blocks are ignored. (VER-281)
+Presto compilation completed successfully. (instruction_memory)
+Information: Elaborating HDL template WORK:data_memory instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Warning:  ../../accelerator/mesh/../cpu_core/data_memory/data_memory.v:29: The statements in initial blocks are ignored. (VER-281)
+
+Statistics for case statements in always block at line 33 in file
+	'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            35            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 59 in file
+	'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            61            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine data_memory line 33 in file
+		'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (data_memory)
+Module: data_memory, Elapsed Time: 00:00:06, CPU Time: 00:00:06, Total Mem: 709.07 MB, Mem: 287.79 MB, Time: Sun Dec  7 19:32:19 2025
+Information: Elaborating HDL template WORK:neuron_bank instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {NUM_NEURONS=4}. (ELAB-193)
+
+Statistics for case statements in always block at line 82 in file
+	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           101            |     no/auto      |
+===============================================
+
+Statistics for case statements in always block at line 119 in file
+	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           122            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine neuron_bank_NUM_NEURONS4 line 82 in file
+		'../../accelerator/mesh/../neuron_bank/neuron_bank.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|  start_updates_reg  | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|  start_resets_reg   | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    params_a_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    params_b_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    params_c_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    params_d_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|   params_vth_reg    | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    inputs_i_reg     | Flip-flop |  128  |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      modes_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (neuron_bank_NUM_NEURONS4)
+Information: Elaborating HDL template WORK:network_interface instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Presto compilation completed successfully. (network_interface)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {ADDR_X=0,ADDR_Y=0}. (ELAB-193)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+
+Inferred memory devices in process
+	in routine router_ADDR_X0_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y0)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y0' with the parameters {ADDR_X=1,ADDR_Y=0}. (ELAB-193)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
+
+Inferred memory devices in process
+	in routine router_ADDR_X1_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y0)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y1' with the parameters {ADDR_X=0,ADDR_Y=1}. (ELAB-193)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
+
+Inferred memory devices in process
+	in routine router_ADDR_X0_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y1)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y1' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
+
+Inferred memory devices in process
+	in routine router_ADDR_X1_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y1)
+Information: Elaborating HDL template WORK:plus_4_adder instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (plus_4_adder)
+Information: Elaborating HDL template WORK:mux_2to1_32bit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (mux_2to1_32bit)
+Information: Elaborating HDL template WORK:pr_if_id instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine pr_if_id line 13 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+| ID_INSTRUCTION_reg  | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      ID_PC_reg      | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (pr_if_id)
+Information: Elaborating HDL template WORK:control_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (control_unit)
+Information: Elaborating HDL template WORK:reg_file instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine reg_file line 19 in file
+		'../../accelerator/mesh/../cpu_core/reg_file/reg_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (reg_file)
+Information: Elaborating HDL template WORK:f_reg_file instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine f_reg_file line 20 in file
+		'../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    REGISTERS_reg    | Flip-flop | 1024  |  Y  | Y  | N  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (f_reg_file)
+Information: Elaborating HDL template WORK:immediate_generation_unit instantiated from 'cpu'. (ELAB-193)
+
+Statistics for case statements in always block at line 18 in file
+	'../../accelerator/mesh/../cpu_core/immediate_generation_unit/immediate_generation_unit.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            20            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (immediate_generation_unit)
+Information: Elaborating HDL template WORK:hazard_detection_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (hazard_detection_unit)
+Information: Elaborating HDL template WORK:pipeline_flush_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (pipeline_flush_unit)
+Information: Elaborating HDL template WORK:pr_id_ex instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine pr_id_ex line 47 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v'.
+=============================================================================================
+|           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=============================================================================================
+|      EX_WB_VALUE_SELECT_reg       | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|             EX_PC_reg             | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_REG_DATA1_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_NET_WRITE_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          EX_NET_READ_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         EX_REG_DATA2_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA1_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA2_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_FREG_DATA3_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_IMMEDIATE_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_WRITE_ADDR_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR1_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR2_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_REG_READ_ADDR3_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         EX_ALU_SELECT_reg         | Flip-flop |   6   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      EX_OPERAND1_SELECT_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|      EX_OPERAND2_SELECT_reg       | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         EX_FPU_SELECT_reg         | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          EX_REG_TYPE_reg          | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        EX_REG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       EX_FREG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| EX_DATA_MEM_WRITE_DATA_SELECT_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       EX_DATA_MEM_WRITE_reg       | Flip-flop |   3   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       EX_DATA_MEM_READ_reg        | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        EX_BRANCH_CTRL_reg         | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+=============================================================================================
+Presto compilation completed successfully. (pr_id_ex)
+Information: Elaborating HDL template WORK:mux_4to1_32bit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (mux_4to1_32bit)
+Information: Elaborating HDL template WORK:alu instantiated from 'cpu'. (ELAB-193)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:58: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:68: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:81: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:84: signed to unsigned conversion occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:94: signed to unsigned assignment occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:98: signed to unsigned assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 72 in file
+	'../../accelerator/mesh/../cpu_core/alu/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            75            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 102 in file
+	'../../accelerator/mesh/../cpu_core/alu/alu.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           104            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (alu)
+Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
+Warning:  File /storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v5/HDL_LIBRARIES/WORK/fpu-verilog.pvl not found, or does not contain a usable description of fpu. (ELAB-320)
+Presto compilation completed successfully.
+Information: Elaborating HDL template WORK:branch_control_unit instantiated from 'cpu'. (ELAB-193)
+
+Statistics for case statements in always block at line 20 in file
+	'../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            25            |    auto/auto     |
+===============================================
+Presto compilation completed successfully. (branch_control_unit)
+Information: Elaborating HDL template WORK:ex_forward_unit instantiated from 'cpu'. (ELAB-193)
+Presto compilation completed successfully. (ex_forward_unit)
+Information: Elaborating HDL template WORK:pr_ex_mem instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine pr_ex_mem line 37 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v'.
+==============================================================================================
+|           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+==============================================================================================
+|      MEM_WB_VALUE_SELECT_reg       | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|             MEM_PC_reg             | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_ALU_OUT_reg           | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         MEM_REG_DATA2_reg          | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_FPU_OUT_reg           | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         MEM_FREG_DATA2_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_REG_WRITE_ADDR_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_REG_READ_ADDR2_reg       | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|          MEM_REG_TYPE_reg          | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|        MEM_REG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       MEM_FREG_WRITE_EN_reg        | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|         MEM_NET_WRITE_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|          MEM_NET_READ_reg          | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+| MEM_DATA_MEM_WRITE_DATA_SELECT_reg | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|       MEM_DATA_MEM_WRITE_reg       | Flip-flop |   3   |  Y  | Y  | N  | N  | N  | N  | N  |
+|       MEM_DATA_MEM_READ_reg        | Flip-flop |   4   |  Y  | Y  | N  | N  | N  | N  | N  |
+==============================================================================================
+Presto compilation completed successfully. (pr_ex_mem)
+Information: Elaborating HDL template WORK:mem_forward_unit instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine mem_forward_unit line 17 in file
+		'../../accelerator/mesh/../cpu_core/forwarding_units/mem_forward_unit.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|   MEM_FWD_SEL_reg   | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
+Presto compilation completed successfully. (mem_forward_unit)
+Information: Elaborating HDL template WORK:pr_mem_wb instantiated from 'cpu'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine pr_mem_wb line 31 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v'.
+=====================================================================================
+|       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+=====================================================================================
+|  WB_WB_VALUE_SELECT_reg   | Flip-flop |   2   |  Y  | Y  | N  | N  | N  | N  | N  |
+|         WB_PC_reg         | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      WB_ALU_OUT_reg       | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+| WB_DATA_MEM_READ_DATA_reg | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      WB_FPU_OUT_reg       | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|   WB_REG_WRITE_ADDR_reg   | Flip-flop |   5   |  Y  | Y  | N  | N  | N  | N  | N  |
+|    WB_REG_WRITE_EN_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   WB_FREG_WRITE_EN_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+|   WB_DATA_MEM_READ_reg    | Flip-flop |   1   |  N  | N  | N  | N  | N  | N  | N  |
+=====================================================================================
+Presto compilation completed successfully. (pr_mem_wb)
+Information: Elaborating HDL template WORK:neuron_core instantiated from 'neuron_bank_NUM_NEURONS4'. (ELAB-193)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:97: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:98: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:104: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:111: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:112: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:140: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:141: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:153: signed to unsigned part selection occurs. (VER-318)
+Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:154: signed to unsigned part selection occurs. (VER-318)
+
+Statistics for case statements in always block at line 59 in file
+	'../../accelerator/mesh/../neuron_core/neuron_core.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            72            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine neuron_core line 59 in file
+		'../../accelerator/mesh/../neuron_core/neuron_core.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   mul_result_reg    | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        v_reg        | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|        u_reg        | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      busy_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+| spike_detected_reg  | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      v_out_reg      | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      u_out_reg      | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      temp1_reg      | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      temp2_reg      | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      temp3_reg      | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (neuron_core)
+Information: Elaborating HDL template WORK:fifo instantiated from 'network_interface' with the parameters {DEPTH=16,DATA_WIDTH=32}. (ELAB-193)
+
+Inferred memory devices in process
+	in routine fifo_DEPTH16_DATA_WIDTH32 line 22 in file
+		'../../accelerator/network_interface/fifo.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       mem_reg       | Flip-flop |  512  |  Y  | Y  | N  | N  | N  | N  | N  |
+|     wr_ptr_reg      | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|     rd_ptr_reg      | Flip-flop |   5   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|      dout_reg       | Flip-flop |  32   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (fifo_DEPTH16_DATA_WIDTH32)
+Information: Elaborating HDL template WORK:mux_2to1_3bit instantiated from 'control_unit'. (ELAB-193)
+Presto compilation completed successfully. (mux_2to1_3bit)
+Information: Design elaboration summary: (FLW-8550)
+Number of modules read: 34
+Top level ports:        2
+Total in all modules
+  Ports:                5777
+  Nets:                 110780
+  Instances:            59716
+Design summary end. (FLW-8551)
+Elapsed = 00:00:11.47, CPU = 00:00:11.23
+1
 set_top_module $TOP_MODULE
-Error: Current block is not defined. (DES-001)
-Error: Current block is not defined. (DES-001)
-Elapsed = 00:00:00.00, CPU = 00:00:00.00
-Error: 0
-      	Use error_info for more info. (CMD-013)
+Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
+Warning:  File /storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v5/HDL_LIBRARIES/WORK/fpu-verilog.pvl not found, or does not contain a usable description of fpu. (ELAB-320)
+Error:  Module 'fpu' cannot be found for elaboration. (ELAB-357)
+Warning: Unable to resolve reference to 'fpu' first referenced from module 'cpu'. (LNK-005)
+Information: User units loaded from library 'sky130_fd_sc_hd' (LNK-040)
+Information: Block 'cpu_LIB:mesh.design' has 1 unbound instances. (LNK-073)
+Information: Block 'cpu_LIB:mesh.design' has 1 unresolved references. (LNK-074)
+Information: Added key list 'DesignWare' to design 'mesh'. (DWS-0216)
+Gensys attachment is created: presto_gensys.attach:cpu_LIB:mesh.design 
+Error: Block 'mesh' failed to properly link during 'set_top_module'. (DES-220)
+Elapsed = 00:00:20.76, CPU = 00:00:20.23
 Information: script '/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v5/rtla.tcl'
             	stopped at line 57 due to error. (CMD-081)
 Extended error info:
-0
+
     while executing
 "set_top_module $TOP_MODULE"
     (file "/storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v5/rtla.tcl" line 57)
