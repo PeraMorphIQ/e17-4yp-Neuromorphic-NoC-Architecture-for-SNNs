@@ -24,8 +24,8 @@ module mesh_tb;
     always #5 clk = ~clk; // 100MHz clock
 
     initial begin
-        $dumpfile("mesh_tb.vcd");
-        $dumpvars(0, mesh_tb);
+        // $dumpfile("mesh_tb.vcd");
+        // $dumpvars(0, mesh_tb);
 
         clk = 0;
         rst = 1;
