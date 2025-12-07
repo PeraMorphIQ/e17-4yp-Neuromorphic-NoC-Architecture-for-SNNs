@@ -1,0 +1,27 @@
+****************************************
+Report : Averaged Power
+	-groups combinational
+Design : neuron
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 19:14:07 2025
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+combinational           7.993e-03    0.0126 1.098e-04    0.0207 (100.00%) 
+
+  Net Switching Power  =    0.0126   (60.84%)
+  Cell Internal Power  = 7.993e-03   (38.63%)
+  Cell Leakage Power   = 1.098e-04   ( 0.53%)
+                         ---------
+Total Power            =    0.0207  (100.00%)
+
+1

@@ -1,0 +1,38 @@
+================================================================================
+RISC-V CPU - SKY130 130nm - Performance Characterization
+================================================================================
+
+DESIGN INFORMATION:
+  Design Name:           neuron
+  Top Module:            neuron
+  Technology:            SKY130 130nm
+  Analysis Date:         2025-12-07 19:13:55
+
+TIMING ANALYSIS:
+  Current Clock Period:  10.000000 ns
+  Timing Status:         VIOLATED
+  Worst Slack (WNS):     -16.278137 ns
+
+MAXIMUM FREQUENCY CHARACTERIZATION:
+  Critical Path Delay:   26.2781 ns
+  Maximum Frequency:     38.05 MHz
+
+RECOMMENDED OPERATING POINT (2.0% margin):
+  Clock Period:          26.8037 ns
+  Operating Frequency:   37.31 MHz
+
+CRITICAL PATH:
+  Startpoint:            V_reg[8]/CLK
+  Endpoint:              V_reg[29]/D
+
+
+PROCESS CORNER:
+  Scenario:              func@nominal
+  Corner:                Cmax (Worst Case)
+
+================================================================================
+For detailed timing analysis, see:
+  - report_timing_critical_path.txt (Critical path breakdown)
+  - report_timing_top10_paths.txt (Top 10 critical paths)
+  - report_timing_detailed.txt (Full timing details with nets)
+================================================================================

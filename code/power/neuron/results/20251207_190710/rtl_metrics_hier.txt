@@ -1,0 +1,25 @@
+****************************************
+Report : report_rtl_metrics
+      -view hier
+Design : neuron
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 19:14:08 2025
+****************************************
+
+
+gated_registers   icg_cells   latch_cells   reg_cells   sequential_cells   combinational_cells   total_power   cell_name
+---------------   ---------   -----------   ---------   ----------------   -------------------   -----------   -----------------------------------
+     0                 0           1            64          65              26932                2.11e-02      neuron
+     0                 0           0             0           0               3411                3.40e-03      neuron/mul2
+     0                 0           0             0           0               3525                2.42e-03      neuron/mul5
+     0                 0           0             0           0               2128                2.32e-03      neuron/add1
+     0                 0           0             0           0               2149                2.28e-03      neuron/add5
+     0                 0           0             0           0               3317                2.25e-03      neuron/mul4
+     0                 0           0             0           0               2892                2.14e-03      neuron/mul1
+     0                 0           0             0           0               2153                1.60e-03      neuron/add2
+     0                 0           0             0           0               2061                1.58e-03      neuron/add3
+     0                 0           0             0           0               1968                1.39e-03      neuron/add4
+     0                 0           0             0           0               1682                4.84e-04      neuron/mul3
+     0                 0           0             0           0               1271                3.92e-04      neuron/add6
+     0                 0           1             0           1                 91                3.35e-05      neuron/CuI
+1

@@ -34,12 +34,12 @@
 # Load shared configuration
 source config.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251206_235715
+Using environment TEMP_RESULTS_DIR: temp_results_20251207_190504
 Configuration loaded successfully
   Design: neuron
   Technology: SKY130 130nm
   Cores: 8
-  Results directory: temp_results_20251206_235715
+  Results directory: temp_results_20251207_190504
 # -----------------------------------------------------------------------------
 # Configuration and Setup
 # -----------------------------------------------------------------------------

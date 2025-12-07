@@ -1,0 +1,92 @@
+****************************************
+Report : Averaged Power
+	-hierarchy
+	-levels 10
+	-verbose
+Design : neuron
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 19:14:07 2025
+****************************************
+
+Library(s) Used:
+
+    sky130_fd_sc_hd__ff_100C_1v65 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_100C_1v65.db)
+    sky130_fd_sc_hd__ff_100C_1v95 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_100C_1v95.db)
+    sky130_fd_sc_hd__ff_n40C_1v56 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v56.db)
+    sky130_fd_sc_hd__ff_n40C_1v65 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v65.db)
+    sky130_fd_sc_hd__ff_n40C_1v76 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v76.db)
+    sky130_fd_sc_hd__ss_100C_1v40 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_100C_1v40.db)
+    sky130_fd_sc_hd__ss_100C_1v60 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_100C_1v60.db)
+    sky130_fd_sc_hd__ss_n40C_1v28 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v28.db)
+    sky130_fd_sc_hd__ss_n40C_1v35 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v35.db)
+    sky130_fd_sc_hd__ss_n40C_1v40 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v40.db)
+    sky130_fd_sc_hd__ss_n40C_1v44 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v44.db)
+    sky130_fd_sc_hd__ss_n40C_1v76 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v76.db)
+    sky130_fd_sc_hd__tt_025C_1v80 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__tt_025C_1v80.db)
+    sky130_fd_sc_hd__tt_100C_1v80 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__tt_100C_1v80.db)
+
+
+Operating Conditions: ff_100C_1v65   Library: sky130_fd_sc_hd__ff_100C_1v65
+Wire Load Model Mode: top
+
+<no wire load model is set>
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+                                      Int      Switch   Leak     Total
+Hierarchy                             Power    Power    Power    Power    %
+----------------------------------------------------------------------------------
+neuron                                8.27e-03 1.27e-02 1.11e-04 2.11e-02 100.0
+  mul1 (Multiplication_0)             8.65e-04 1.27e-03 1.27e-05 2.14e-03  10.2
+    mult_36 (DW_mult_uns_J2782_P0_D1) 6.47e-04 8.37e-04 1.08e-05 1.49e-03   7.1
+    DP_OP_22_291_36538_J4 (DP_OP_22_291_36538_J2781_P0_D0)
+                                      3.28e-05 3.18e-05 3.18e-07 6.49e-05   0.3
+  mul2 (Multiplication_1)             1.44e-03 1.94e-03 1.35e-05 3.40e-03  16.1
+    mult_36 (DW_mult_uns_J2784_P0_D1) 1.25e-03 1.63e-03 1.19e-05 2.90e-03  13.7
+    DP_OP_22_291_36538_J4 (DP_OP_22_291_36538_J2783_P0_D0)
+                                      4.60e-05 5.22e-05 3.24e-07 9.86e-05   0.5
+  mul3 (Multiplication_2)             2.13e-04 2.64e-04 7.40e-06 4.84e-04   2.3
+    DP_OP_22_291_36538_J4 (DP_OP_22_291_36538_J2785_P0_D0)
+                                      2.47e-05 2.78e-05 3.20e-07 5.28e-05   0.3
+    mult_36 (DW_mult_uns_J2786_P0_D1) 1.44e-04 1.90e-04 6.40e-06 3.40e-04   1.6
+  mul4 (Multiplication_3)             9.11e-04 1.32e-03 1.48e-05 2.25e-03  10.7
+    mult_36 (DW_mult_uns_J2842_P0_D1) 7.56e-04 1.04e-03 1.29e-05 1.80e-03   8.6
+    DP_OP_22_291_36538_J4 (DP_OP_22_291_36538_J2841_P0_D0)
+                                      3.26e-05 5.06e-05 3.41e-07 8.35e-05   0.4
+  mul5 (Multiplication)               1.13e-03 1.28e-03 1.46e-05 2.42e-03  11.5
+    mult_36 (DW_mult_uns_J2859_P0_D1) 1.06e-03 1.19e-03 1.30e-05 2.26e-03  10.7
+    DP_OP_22_291_36538_J4 (DP_OP_22_291_36538_J2858_P0_D0)
+                                      2.84e-05 3.10e-05 3.24e-07 5.97e-05   0.3
+  CuI (Comparison)                    1.26e-05 2.07e-05 1.82e-07 3.35e-05   0.2
+  add1 (Addition_Subtraction_0)       8.24e-04 1.49e-03 8.62e-06 2.32e-03  11.0
+    DP_OP_42_61208_6679_J3 (DP_OP_42_61208_6679_J2795_P0_D0)
+                                      3.36e-05 9.17e-05 3.78e-07 1.26e-04   0.6
+    pe (priority_encoder_0)           1.94e-04 3.05e-04 2.63e-06 5.02e-04   2.4
+  add2 (Addition_Subtraction_1)       5.84e-04 1.01e-03 8.15e-06 1.60e-03   7.6
+    DP_OP_42_61208_6679_J3 (DP_OP_42_61208_6679_J2808_P0_D0)
+                                      3.15e-05 8.13e-05 3.85e-07 1.13e-04   0.5
+    pe (priority_encoder_1)           1.51e-04 2.45e-04 2.64e-06 3.99e-04   1.9
+  add3 (Addition_Subtraction_2)       5.40e-04 1.03e-03 8.32e-06 1.58e-03   7.5
+    DP_OP_42_61208_6679_J3 (DP_OP_42_61208_6679_J2823_P0_D0)
+                                      3.77e-05 9.53e-05 3.95e-07 1.33e-04   0.6
+    pe (priority_encoder_2)           1.42e-04 2.51e-04 2.77e-06 3.95e-04   1.9
+  add4 (Addition_Subtraction_3)       5.12e-04 8.70e-04 7.61e-06 1.39e-03   6.6
+    DP_OP_42_61208_6679_J3 (DP_OP_42_61208_6679_J2838_P0_D0)
+                                      3.54e-05 1.04e-04 3.69e-07 1.40e-04   0.7
+    pe (priority_encoder_3)           1.69e-04 2.43e-04 2.29e-06 4.14e-04   2.0
+  add5 (Addition_Subtraction_4)       7.22e-04 1.54e-03 8.59e-06 2.28e-03  10.8
+    DP_OP_42_61208_6679_J3 (DP_OP_42_61208_6679_J2855_P0_D0)
+                                      5.25e-05 1.13e-04 4.39e-07 1.66e-04   0.8
+    pe (priority_encoder_4)           1.59e-04 2.42e-04 2.61e-06 4.04e-04   1.9
+  add6 (Addition_Subtraction)         1.36e-04 2.52e-04 3.81e-06 3.92e-04   1.9
+    DP_OP_42_61208_6679_J3 (DP_OP_42_61208_6679_J2865_P0_D0)
+                                         0.000    0.000 1.96e-07 1.96e-07   0.0
+    pe (priority_encoder)             4.82e-05 6.98e-05 9.84e-07 1.19e-04   0.6
+1
