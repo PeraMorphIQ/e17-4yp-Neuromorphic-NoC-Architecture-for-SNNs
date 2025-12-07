@@ -1,6 +1,6 @@
-`include "fpu/Multiplication.v"
-`include "fpu/Addition_Subtraction.v"
-`include "fpu/Comparison.v"
+// `include "fpu/Multiplication.v"
+// `include "fpu/Addition_Subtraction.v"
+// `include "fpu/Comparison.v"
 
 `timescale 1ns/100ps
 
