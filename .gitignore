@@ -106,3 +106,5 @@ models/smnist_lif_model/experiments/*
 !models/smnist_lif_model/experiments/archive/**
 !models/smnist_lif_model/experiments/experiment_summary.txt
 models/smnist_lif_model/.gitignore
+code/power/power_v5/cpu_LIB/
+code/power/power_v5/cpu_LIB/
