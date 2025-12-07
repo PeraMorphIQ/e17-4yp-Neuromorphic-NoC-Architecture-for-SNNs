@@ -24,7 +24,7 @@ wire [31:0] operand_a,operand_b;
 wire [23:0] significand_a,significand_b;
 wire [7:0] exponent_diff;
 
-
+wire perform;
 wire [23:0] significand_b_add_sub;
 wire [7:0] exponent_b_add_sub;
 
