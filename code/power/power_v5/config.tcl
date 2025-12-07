@@ -27,7 +27,7 @@ set TOP_MODULE  "mesh"
 # Library Configuration
 # -----------------------------------------------------------------------------
 # Library names and references
-set LIB_NAME   "mesh_LIB"
+set LIB_NAME   "cpu_LIB"
 set REF_LIBS   "sky130_fd_sc_hd.ndm"            ;# one or more NDMs (space-separated)
 set TECH_TF    "/tech/sky130/libs/sky130_fd_sc_hd/sky130_fd_sc_hd.tf"
 
