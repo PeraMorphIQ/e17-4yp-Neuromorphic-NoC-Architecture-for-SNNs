@@ -56,6 +56,7 @@ cpu_sky130_fd_sc_hd/
 **/RTLA_WORKSPACE
 **/HDL_LIBRARIES
 **/neuron_LIB
+**/cpu_LIB
 **/blackbox_LIB
 **/mesh_LIB
 **/LIB
