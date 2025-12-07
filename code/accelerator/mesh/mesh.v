@@ -1,8 +1,8 @@
 `include "../node/node.v"
 
 module mesh #(
-    parameter ROWS = 2,
-    parameter COLS = 2,
+    parameter ROWS = 3,
+    parameter COLS = 3,
     parameter DATA_WIDTH = 32
 ) (
     input clk,
