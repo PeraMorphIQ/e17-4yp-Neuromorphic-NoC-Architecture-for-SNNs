@@ -1,0 +1,17 @@
+****************************************
+Report : report_rtl_metrics
+      -view hier
+Design : mesh
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 20:58:57 2025
+****************************************
+
+
+gated_registers   icg_cells   latch_cells   reg_cells   sequential_cells   combinational_cells   total_power   cell_name
+---------------   ---------   -----------   ---------   ----------------   -------------------   -----------   -----------------------------------
+ 52944              5388          96         55412       60900             563979                1.21e-01      mesh
+ 13239              1347          24         13856       15229             140513                3.08e-02      mesh/ROW_LOOP[1].COL_LOOP[1].u_node
+ 13233              1347          24         13850       15221             139461                3.07e-02      mesh/ROW_LOOP[0].COL_LOOP[0].u_node
+ 13236              1347          24         13853       15225             140562                2.96e-02      mesh/ROW_LOOP[0].COL_LOOP[1].u_node
+ 13236              1347          24         13853       15225             139953                2.95e-02      mesh/ROW_LOOP[1].COL_LOOP[0].u_node
+1

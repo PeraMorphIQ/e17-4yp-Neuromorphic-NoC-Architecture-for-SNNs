@@ -1,0 +1,46 @@
+****************************************
+Report : check_rtl_power
+Design : mesh
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 20:59:20 2025
+****************************************
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+Family         Check          Check info                                        Count          Percentage     Count_sbit     Percentage_sbit
+--------------------------------------------------------------------------------------------------------------------------------------------
+ClockGating    CICG           Constant ICG                                      4              0.07           N.A.           N.A.           
+ClockGating    FICG           Floating ICG                                      0              0.00           N.A.           N.A.           
+ClockGating    RICG           Redundant ICG                                     0              0.00           N.A.           N.A.           
+ClockGating    SCECG          Common clock enable ICG                           222            8.81           N.A.           N.A.           
+ClockGating    CENDPT         ICG with max clock enable depth > 5               4868           90.28          N.A.           N.A.           
+ClockGating    UCGREG         Ungated register                                  2468           4.45           2468           4.45           
+ClockGating    UCNREG         Untraced register                                 0              0.00           0              0.00           
+ClockGating    IFRREG         Inferred only gated register                      52944          95.55          52944          95.55          
+ClockGating    INSREG         Instantiated only gated register                  0              0.00           0              0.00           
+ClockGating    BTHREG         Inferred and Instantiated gated register          0              0.00           0              0.00           
+ClockGating    CCGREG         Registers with clock enable depth > 5             0              0.00           0              0.00           
+ClockGating    XORREG         Register with XOR based self gating               0              0.00           0              0.00           
+ClockGating    CECREG         Registers with clock enable condition             0              0.00           0              0.00           
+ConstantInput  ENHREG         Registers with tied-high enable                   0              0.00           0              0.00           
+ConstantInput  ENLREG         Registers with tied-low enable                    12             0.02           12             0.02           
+SeqOpt         DUPREG         Duplicate Registers                               409            1.48           818            1.48           
+Other          SFTREG         Shift Register Chains                             0              0.00           0              0.00           
+ConstantInput  CNTREG         Constant Register                                 132            0.24           132            0.24           
+SeqOpt         CNDREG         Registers optimized due to constant data          136            0.25           N.A.           N.A.           
+SeqOpt         CNRREG         Registers optimized due to constant reset         0              0.00           N.A.           N.A.           
+SeqOpt         UNOREG         Registers Optimized due to unused output          0              0.00           N.A.           N.A.           
+SeqOpt         CNDLCH         Latches optimized due to constant data            4              4.17           N.A.           N.A.           
+SeqOpt         CNRLCH         Latches optimized due to constant reset           0              0.00           N.A.           N.A.           
+SeqOpt         UNOLCH         Latches Optimized due to unused output            0              0.00           N.A.           N.A.           
+Memory         MCCG           Ungated memory clock ports                        0              0.00           N.A.           N.A.           
+Memory         UCGMEM         Ungated memory clock ports                        0              0.00           N.A.           N.A.           
+Memory         CGPMEM         Clock gated memory clock ports                    0              0.00           N.A.           N.A.           
+Memory         ENHMEM         Memories with tied-high enable                    0              0.00           N.A.           N.A.           
+Memory         ENLMEM         Memories with tied-low enable                     0              0.00           N.A.           N.A.           
+Memory         ODCMEM         Memories with ODC condition                       0              0.00           N.A.           N.A.           
+Memory         FOPMEM         Floating memory output ports                      0              0.00           N.A.           N.A.           
+Glitch         OPRMUX         Operator reconvergence                            186            25.41          N.A.           N.A.           
+Glitch         OPRDPT         Operator with input depth difference > 5          1146           156.56         N.A.           N.A.           
+--------------------------------------------------------------------------------------------------------------------------------------------
+1
