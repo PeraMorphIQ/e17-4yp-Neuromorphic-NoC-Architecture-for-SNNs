@@ -1,5 +1,5 @@
                          Chronologic VCS (TM)
-       Version W-2024.09-SP1_Full64 -- Sun Dec  7 19:31:59 2025
+       Version W-2024.09-SP1_Full64 -- Sun Dec  7 22:14:14 2025
 
                     Copyright (c) 1991 - 2024 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -86,19 +86,60 @@ Parsing included file '../router/router.v'.
 Back to file '../node/node.v'.
 Parsing included file '../neuron_bank/neuron_bank.v'.
 Parsing included file '../neuron_core/neuron_core.v'.
+Parsing included file '../../accelerator/cpu_core/fpu/Multiplication.v'.
+
+Error-[MPD] Module previously declared
+  The module was previously declared at: 
+  "../../accelerator/cpu_core/fpu/Multiplication.v", 10
+  It is redeclared later at:
+  "../../accelerator/cpu_core/fpu/Multiplication.v", 10: token is 
+  'Multiplication'
+  module Multiplication(
+                       ^
+  Please remove one of the declarations and compile again.
+
+Back to file '../neuron_core/neuron_core.v'.
+Parsing included file '../../accelerator/cpu_core/fpu/Addition_Subtraction.v'.
+Parsing included file '../../accelerator/cpu_core/fpu/Priority_Encoder.v'.
+
+Error-[MPD] Module previously declared
+  The module was previously declared at: 
+  "../../accelerator/cpu_core/fpu/Priority_Encoder.v", 10
+  It is redeclared later at:
+  "../../accelerator/cpu_core/fpu/Priority_Encoder.v", 10: token is 
+  'priority_encoder'
+  module priority_encoder(
+                         ^
+  Please remove one of the declarations and compile again.
+
+Back to file '../../accelerator/cpu_core/fpu/Addition_Subtraction.v'.
+
+Error-[MPD] Module previously declared
+  The module was previously declared at: 
+  "../../accelerator/cpu_core/fpu/Addition_Subtraction.v", 12
+  It is redeclared later at:
+  "../../accelerator/cpu_core/fpu/Addition_Subtraction.v", 12: token is 
+  'Addition_Subtraction'
+  module Addition_Subtraction(
+                             ^
+  Please remove one of the declarations and compile again.
+
+Back to file '../neuron_core/neuron_core.v'.
+Parsing included file '../../accelerator/cpu_core/fpu/Comparison.v'.
+
+Error-[MPD] Module previously declared
+  The module was previously declared at: 
+  "../../accelerator/cpu_core/fpu/Comparison.v", 9
+  It is redeclared later at:
+  "../../accelerator/cpu_core/fpu/Comparison.v", 9: token is 'Comparison'
+  module Comparison (
+                   ^
+  Please remove one of the declarations and compile again.
+
+Back to file '../neuron_core/neuron_core.v'.
 Back to file '../neuron_bank/neuron_bank.v'.
 Back to file '../node/node.v'.
 Back to file 'mesh.v'.
 Back to file 'mesh_tb.v'.
-Top Level Modules:
-       mesh_tb
-TimeScale is 1 ns / 100 ps
-Starting vcs inline pass...
-9 modules and 0 UDP read.
-	However, due to incremental compilation, no re-compilation is necessary.
-rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/storage/synopsys/vcs/W-2024.09-SP1/linux64/lib -L/storage/synopsys/vcs/W-2024.09-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _425031_archive_1.so _prev_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /storage/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /storage/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_save_restore_new.o /storage/synopsys/verdi/W-2024.09-SP1/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
-../simv up to date
-CPU time: .510 seconds to compile + .255 seconds to elab + .193 seconds to link
-Verdi KDB elaboration done and the database successfully generated
+4 errors
+CPU time: .142 seconds to compile

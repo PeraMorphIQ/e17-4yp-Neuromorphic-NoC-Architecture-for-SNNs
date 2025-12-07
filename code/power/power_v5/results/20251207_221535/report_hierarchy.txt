@@ -1,0 +1,2221 @@
+****************************************
+Report : hierarchy
+Design : mesh
+Version: V-2023.12-SP5-3
+Date   : Sun Dec  7 23:57:39 2025
+****************************************
+
+cpu_LIB:mesh.design
+  DW01_add_J16_D3_D10_D1
+  DW01_add_J16_D3_D11_D1
+  DW01_add_J16_D3_D12_D1
+  DW01_add_J16_D3_D13_D1
+  DW01_add_J16_D3_D14_D1
+  DW01_add_J16_D3_D15_D1
+  DW01_add_J16_D3_D16_D1
+  DW01_add_J16_D3_D17_D1
+  DW01_add_J16_D3_D18_D1
+  DW01_add_J16_D3_D19_D1
+  DW01_add_J16_D3_D20_D1
+  DW01_add_J16_D3_D21_D1
+  DW01_add_J16_D3_D22_D1
+  DW01_add_J16_D3_D23_D1
+  DW01_add_J16_D3_D24_D1
+  DW01_add_J16_D3_D25_D1
+  DW01_add_J16_D3_D26_D1
+  DW01_add_J16_D3_D27_D1
+  DW01_add_J16_D3_D28_D1
+  DW01_add_J16_D3_D29_D1
+  DW01_add_J16_D3_D30_D1
+  DW01_add_J16_D3_D31_D1
+  DW01_add_J16_D3_D32_D1
+  DW01_add_J16_D3_D33_D1
+  DW01_add_J16_D3_D34_D1
+  DW01_add_J16_D3_D4_D1
+  DW01_add_J16_D3_D5_D1
+  DW01_add_J16_D3_D6_D1
+  DW01_add_J16_D3_D7_D1
+  DW01_add_J16_D3_D8_D1
+  DW01_add_J16_D3_D9_D1
+  DW01_add_J17_D3_D10_D1
+  DW01_add_J17_D3_D11_D1
+  DW01_add_J17_D3_D12_D1
+  DW01_add_J17_D3_D13_D1
+  DW01_add_J17_D3_D14_D1
+  DW01_add_J17_D3_D15_D1
+  DW01_add_J17_D3_D16_D1
+  DW01_add_J17_D3_D17_D1
+  DW01_add_J17_D3_D18_D1
+  DW01_add_J17_D3_D19_D1
+  DW01_add_J17_D3_D20_D1
+  DW01_add_J17_D3_D21_D1
+  DW01_add_J17_D3_D22_D1
+  DW01_add_J17_D3_D23_D1
+  DW01_add_J17_D3_D24_D1
+  DW01_add_J17_D3_D25_D1
+  DW01_add_J17_D3_D26_D1
+  DW01_add_J17_D3_D27_D1
+  DW01_add_J17_D3_D28_D1
+  DW01_add_J17_D3_D29_D1
+  DW01_add_J17_D3_D30_D1
+  DW01_add_J17_D3_D31_D1
+  DW01_add_J17_D3_D32_D1
+  DW01_add_J17_D3_D33_D1
+  DW01_add_J17_D3_D3_D1
+  DW01_add_J17_D3_D4_D1
+  DW01_add_J17_D3_D5_D1
+  DW01_add_J17_D3_D6_D1
+  DW01_add_J17_D3_D7_D1
+  DW01_add_J17_D3_D8_D1
+  DW01_add_J17_D3_D9_D1
+  DW01_add_J22_D3_D10_D1
+  DW01_add_J22_D3_D11_D1
+  DW01_add_J22_D3_D12_D1
+  DW01_add_J22_D3_D13_D1
+  DW01_add_J22_D3_D14_D1
+  DW01_add_J22_D3_D15_D1
+  DW01_add_J22_D3_D16_D1
+  DW01_add_J22_D3_D17_D1
+  DW01_add_J22_D3_D18_D1
+  DW01_add_J22_D3_D19_D1
+  DW01_add_J22_D3_D20_D1
+  DW01_add_J22_D3_D21_D1
+  DW01_add_J22_D3_D22_D1
+  DW01_add_J22_D3_D23_D1
+  DW01_add_J22_D3_D24_D1
+  DW01_add_J22_D3_D25_D1
+  DW01_add_J22_D3_D26_D1
+  DW01_add_J22_D3_D27_D1
+  DW01_add_J22_D3_D28_D1
+  DW01_add_J22_D3_D29_D1
+  DW01_add_J22_D3_D30_D1
+  DW01_add_J22_D3_D31_D1
+  DW01_add_J22_D3_D32_D1
+  DW01_add_J22_D3_D33_D1
+  DW01_add_J22_D3_D34_D1
+  DW01_add_J22_D3_D4_D1
+  DW01_add_J22_D3_D5_D1
+  DW01_add_J22_D3_D6_D1
+  DW01_add_J22_D3_D7_D1
+  DW01_add_J22_D3_D8_D1
+  DW01_add_J22_D3_D9_D1
+  DW01_add_J23_D3_D10_D1
+  DW01_add_J23_D3_D11_D1
+  DW01_add_J23_D3_D12_D1
+  DW01_add_J23_D3_D13_D1
+  DW01_add_J23_D3_D14_D1
+  DW01_add_J23_D3_D15_D1
+  DW01_add_J23_D3_D16_D1
+  DW01_add_J23_D3_D17_D1
+  DW01_add_J23_D3_D18_D1
+  DW01_add_J23_D3_D19_D1
+  DW01_add_J23_D3_D20_D1
+  DW01_add_J23_D3_D21_D1
+  DW01_add_J23_D3_D22_D1
+  DW01_add_J23_D3_D23_D1
+  DW01_add_J23_D3_D24_D1
+  DW01_add_J23_D3_D25_D1
+  DW01_add_J23_D3_D26_D1
+  DW01_add_J23_D3_D27_D1
+  DW01_add_J23_D3_D28_D1
+  DW01_add_J23_D3_D29_D1
+  DW01_add_J23_D3_D30_D1
+  DW01_add_J23_D3_D31_D1
+  DW01_add_J23_D3_D32_D1
+  DW01_add_J23_D3_D33_D1
+  DW01_add_J23_D3_D3_D1
+  DW01_add_J23_D3_D4_D1
+  DW01_add_J23_D3_D5_D1
+  DW01_add_J23_D3_D6_D1
+  DW01_add_J23_D3_D7_D1
+  DW01_add_J23_D3_D8_D1
+  DW01_add_J23_D3_D9_D1
+  DW01_add_J49_H16_D3_D4_D1
+  DW01_add_J49_H18_D3_D4_D1
+  DW01_add_J49_H20_D3_D3_D1
+  DW01_add_J49_H20_D3_D4_D1
+  DW01_add_J49_H22_D3_D3_D1
+  DW01_add_J49_H22_D3_D4_D1
+  DW01_add_J49_H40_D3_D4_D1
+  DW01_add_J49_H42_D3_D4_D1
+  DW01_add_J49_H44_D3_D3_D1
+  DW01_add_J49_H44_D3_D4_D1
+  DW01_add_J49_H46_D3_D3_D1
+  DW01_add_J49_H46_D3_D4_D1
+  DW01_add_J4_D3_D3_D1
+  DW01_add_J4_D3_D4_D1
+  DW01_add_J4_D3_D5_D1
+  DW01_add_J50_H32_D3_D4_D1
+  DW01_add_J50_H34_D3_D4_D1
+  DW01_add_J50_H36_D3_D3_D1
+  DW01_add_J50_H36_D3_D4_D1
+  DW01_add_J50_H38_D3_D3_D1
+  DW01_add_J50_H38_D3_D4_D1
+  DW01_add_J50_H40_D3_D4_D1
+  DW01_add_J50_H42_D3_D4_D1
+  DW01_add_J50_H44_D3_D3_D1
+  DW01_add_J50_H44_D3_D4_D1
+  DW01_add_J50_H45_D3_D3_D1
+  DW01_add_J50_H45_D3_D4_D1
+  DW01_add_J52_H32_D3_D4_D1
+  DW01_add_J52_H34_D3_D4_D1
+  DW01_add_J52_H36_D3_D3_D1
+  DW01_add_J52_H36_D3_D4_D1
+  DW01_add_J52_H37_D3_D3_D1
+  DW01_add_J52_H37_D3_D4_D1
+  DW01_add_J55_H6_D3_D10_D1
+  DW01_add_J55_H6_D3_D10_D1_0
+  DW01_add_J55_H6_D3_D10_D1_1
+  DW01_add_J55_H6_D3_D10_D1_2
+  DW01_add_J55_H6_D3_D11_D1
+  DW01_add_J55_H6_D3_D11_D1_0
+  DW01_add_J55_H6_D3_D11_D1_1
+  DW01_add_J55_H6_D3_D11_D1_2
+  DW01_add_J55_H6_D3_D12_D1
+  DW01_add_J55_H6_D3_D12_D1_0
+  DW01_add_J55_H6_D3_D12_D1_1
+  DW01_add_J55_H6_D3_D12_D1_2
+  DW01_add_J55_H6_D3_D13_D1
+  DW01_add_J55_H6_D3_D13_D1_0
+  DW01_add_J55_H6_D3_D13_D1_1
+  DW01_add_J55_H6_D3_D13_D1_2
+  DW01_add_J55_H6_D3_D14_D1
+  DW01_add_J55_H6_D3_D14_D1_0
+  DW01_add_J55_H6_D3_D14_D1_1
+  DW01_add_J55_H6_D3_D14_D1_2
+  DW01_add_J55_H6_D3_D15_D1
+  DW01_add_J55_H6_D3_D15_D1_0
+  DW01_add_J55_H6_D3_D15_D1_1
+  DW01_add_J55_H6_D3_D15_D1_2
+  DW01_add_J55_H6_D3_D16_D1
+  DW01_add_J55_H6_D3_D16_D1_0
+  DW01_add_J55_H6_D3_D16_D1_1
+  DW01_add_J55_H6_D3_D16_D1_2
+  DW01_add_J55_H6_D3_D17_D1
+  DW01_add_J55_H6_D3_D17_D1_0
+  DW01_add_J55_H6_D3_D17_D1_1
+  DW01_add_J55_H6_D3_D17_D1_2
+  DW01_add_J55_H6_D3_D18_D1
+  DW01_add_J55_H6_D3_D18_D1_0
+  DW01_add_J55_H6_D3_D18_D1_1
+  DW01_add_J55_H6_D3_D18_D1_2
+  DW01_add_J55_H6_D3_D19_D1
+  DW01_add_J55_H6_D3_D19_D1_0
+  DW01_add_J55_H6_D3_D19_D1_1
+  DW01_add_J55_H6_D3_D19_D1_2
+  DW01_add_J55_H6_D3_D20_D1
+  DW01_add_J55_H6_D3_D20_D1_0
+  DW01_add_J55_H6_D3_D20_D1_1
+  DW01_add_J55_H6_D3_D20_D1_2
+  DW01_add_J55_H6_D3_D21_D1
+  DW01_add_J55_H6_D3_D21_D1_0
+  DW01_add_J55_H6_D3_D21_D1_1
+  DW01_add_J55_H6_D3_D21_D1_2
+  DW01_add_J55_H6_D3_D22_D1
+  DW01_add_J55_H6_D3_D22_D1_0
+  DW01_add_J55_H6_D3_D22_D1_1
+  DW01_add_J55_H6_D3_D22_D1_2
+  DW01_add_J55_H6_D3_D23_D1
+  DW01_add_J55_H6_D3_D23_D1_0
+  DW01_add_J55_H6_D3_D23_D1_1
+  DW01_add_J55_H6_D3_D23_D1_2
+  DW01_add_J55_H6_D3_D24_D1
+  DW01_add_J55_H6_D3_D24_D1_0
+  DW01_add_J55_H6_D3_D24_D1_1
+  DW01_add_J55_H6_D3_D24_D1_2
+  DW01_add_J55_H6_D3_D25_D1
+  DW01_add_J55_H6_D3_D25_D1_0
+  DW01_add_J55_H6_D3_D25_D1_1
+  DW01_add_J55_H6_D3_D25_D1_2
+  DW01_add_J55_H6_D3_D26_D1
+  DW01_add_J55_H6_D3_D26_D1_0
+  DW01_add_J55_H6_D3_D26_D1_1
+  DW01_add_J55_H6_D3_D26_D1_2
+  DW01_add_J55_H6_D3_D27_D1
+  DW01_add_J55_H6_D3_D27_D1_0
+  DW01_add_J55_H6_D3_D27_D1_1
+  DW01_add_J55_H6_D3_D27_D1_2
+  DW01_add_J55_H6_D3_D28_D1
+  DW01_add_J55_H6_D3_D28_D1_0
+  DW01_add_J55_H6_D3_D28_D1_1
+  DW01_add_J55_H6_D3_D28_D1_2
+  DW01_add_J55_H6_D3_D29_D1
+  DW01_add_J55_H6_D3_D29_D1_0
+  DW01_add_J55_H6_D3_D29_D1_1
+  DW01_add_J55_H6_D3_D29_D1_2
+  DW01_add_J55_H6_D3_D30_D1
+  DW01_add_J55_H6_D3_D30_D1_0
+  DW01_add_J55_H6_D3_D30_D1_1
+  DW01_add_J55_H6_D3_D30_D1_2
+  DW01_add_J55_H6_D3_D31_D1
+  DW01_add_J55_H6_D3_D31_D1_0
+  DW01_add_J55_H6_D3_D31_D1_1
+  DW01_add_J55_H6_D3_D31_D1_2
+  DW01_add_J55_H6_D3_D32_D1
+  DW01_add_J55_H6_D3_D32_D1_0
+  DW01_add_J55_H6_D3_D32_D1_1
+  DW01_add_J55_H6_D3_D32_D1_2
+  DW01_add_J55_H6_D3_D33_D1
+  DW01_add_J55_H6_D3_D33_D1_0
+  DW01_add_J55_H6_D3_D33_D1_1
+  DW01_add_J55_H6_D3_D33_D1_2
+  DW01_add_J55_H6_D3_D34_D1
+  DW01_add_J55_H6_D3_D34_D1_0
+  DW01_add_J55_H6_D3_D34_D1_1
+  DW01_add_J55_H6_D3_D34_D1_2
+  DW01_add_J55_H6_D3_D4_D1
+  DW01_add_J55_H6_D3_D4_D1_0
+  DW01_add_J55_H6_D3_D4_D1_1
+  DW01_add_J55_H6_D3_D4_D1_2
+  DW01_add_J55_H6_D3_D5_D1
+  DW01_add_J55_H6_D3_D5_D1_0
+  DW01_add_J55_H6_D3_D5_D1_1
+  DW01_add_J55_H6_D3_D5_D1_2
+  DW01_add_J55_H6_D3_D6_D1
+  DW01_add_J55_H6_D3_D6_D1_0
+  DW01_add_J55_H6_D3_D6_D1_1
+  DW01_add_J55_H6_D3_D6_D1_2
+  DW01_add_J55_H6_D3_D7_D1
+  DW01_add_J55_H6_D3_D7_D1_0
+  DW01_add_J55_H6_D3_D7_D1_1
+  DW01_add_J55_H6_D3_D7_D1_2
+  DW01_add_J55_H6_D3_D8_D1
+  DW01_add_J55_H6_D3_D8_D1_0
+  DW01_add_J55_H6_D3_D8_D1_1
+  DW01_add_J55_H6_D3_D8_D1_2
+  DW01_add_J55_H6_D3_D9_D1
+  DW01_add_J55_H6_D3_D9_D1_0
+  DW01_add_J55_H6_D3_D9_D1_1
+  DW01_add_J55_H6_D3_D9_D1_2
+  DW01_add_J55_H7_D3_D10_D1
+  DW01_add_J55_H7_D3_D10_D1_0
+  DW01_add_J55_H7_D3_D10_D1_1
+  DW01_add_J55_H7_D3_D10_D1_2
+  DW01_add_J55_H7_D3_D11_D1
+  DW01_add_J55_H7_D3_D11_D1_0
+  DW01_add_J55_H7_D3_D11_D1_1
+  DW01_add_J55_H7_D3_D11_D1_2
+  DW01_add_J55_H7_D3_D12_D1
+  DW01_add_J55_H7_D3_D12_D1_0
+  DW01_add_J55_H7_D3_D12_D1_1
+  DW01_add_J55_H7_D3_D12_D1_2
+  DW01_add_J55_H7_D3_D13_D1
+  DW01_add_J55_H7_D3_D13_D1_0
+  DW01_add_J55_H7_D3_D13_D1_1
+  DW01_add_J55_H7_D3_D13_D1_2
+  DW01_add_J55_H7_D3_D14_D1
+  DW01_add_J55_H7_D3_D14_D1_0
+  DW01_add_J55_H7_D3_D14_D1_1
+  DW01_add_J55_H7_D3_D14_D1_2
+  DW01_add_J55_H7_D3_D15_D1
+  DW01_add_J55_H7_D3_D15_D1_0
+  DW01_add_J55_H7_D3_D15_D1_1
+  DW01_add_J55_H7_D3_D15_D1_2
+  DW01_add_J55_H7_D3_D16_D1
+  DW01_add_J55_H7_D3_D16_D1_0
+  DW01_add_J55_H7_D3_D16_D1_1
+  DW01_add_J55_H7_D3_D16_D1_2
+  DW01_add_J55_H7_D3_D17_D1
+  DW01_add_J55_H7_D3_D17_D1_0
+  DW01_add_J55_H7_D3_D17_D1_1
+  DW01_add_J55_H7_D3_D17_D1_2
+  DW01_add_J55_H7_D3_D18_D1
+  DW01_add_J55_H7_D3_D18_D1_0
+  DW01_add_J55_H7_D3_D18_D1_1
+  DW01_add_J55_H7_D3_D18_D1_2
+  DW01_add_J55_H7_D3_D19_D1
+  DW01_add_J55_H7_D3_D19_D1_0
+  DW01_add_J55_H7_D3_D19_D1_1
+  DW01_add_J55_H7_D3_D19_D1_2
+  DW01_add_J55_H7_D3_D20_D1
+  DW01_add_J55_H7_D3_D20_D1_0
+  DW01_add_J55_H7_D3_D20_D1_1
+  DW01_add_J55_H7_D3_D20_D1_2
+  DW01_add_J55_H7_D3_D21_D1
+  DW01_add_J55_H7_D3_D21_D1_0
+  DW01_add_J55_H7_D3_D21_D1_1
+  DW01_add_J55_H7_D3_D21_D1_2
+  DW01_add_J55_H7_D3_D22_D1
+  DW01_add_J55_H7_D3_D22_D1_0
+  DW01_add_J55_H7_D3_D22_D1_1
+  DW01_add_J55_H7_D3_D22_D1_2
+  DW01_add_J55_H7_D3_D23_D1
+  DW01_add_J55_H7_D3_D23_D1_0
+  DW01_add_J55_H7_D3_D23_D1_1
+  DW01_add_J55_H7_D3_D23_D1_2
+  DW01_add_J55_H7_D3_D24_D1
+  DW01_add_J55_H7_D3_D24_D1_0
+  DW01_add_J55_H7_D3_D24_D1_1
+  DW01_add_J55_H7_D3_D24_D1_2
+  DW01_add_J55_H7_D3_D25_D1
+  DW01_add_J55_H7_D3_D25_D1_0
+  DW01_add_J55_H7_D3_D25_D1_1
+  DW01_add_J55_H7_D3_D25_D1_2
+  DW01_add_J55_H7_D3_D26_D1
+  DW01_add_J55_H7_D3_D26_D1_0
+  DW01_add_J55_H7_D3_D26_D1_1
+  DW01_add_J55_H7_D3_D26_D1_2
+  DW01_add_J55_H7_D3_D27_D1
+  DW01_add_J55_H7_D3_D27_D1_0
+  DW01_add_J55_H7_D3_D27_D1_1
+  DW01_add_J55_H7_D3_D27_D1_2
+  DW01_add_J55_H7_D3_D28_D1
+  DW01_add_J55_H7_D3_D28_D1_0
+  DW01_add_J55_H7_D3_D28_D1_1
+  DW01_add_J55_H7_D3_D28_D1_2
+  DW01_add_J55_H7_D3_D29_D1
+  DW01_add_J55_H7_D3_D29_D1_0
+  DW01_add_J55_H7_D3_D29_D1_1
+  DW01_add_J55_H7_D3_D29_D1_2
+  DW01_add_J55_H7_D3_D30_D1
+  DW01_add_J55_H7_D3_D30_D1_0
+  DW01_add_J55_H7_D3_D30_D1_1
+  DW01_add_J55_H7_D3_D30_D1_2
+  DW01_add_J55_H7_D3_D31_D1
+  DW01_add_J55_H7_D3_D31_D1_0
+  DW01_add_J55_H7_D3_D31_D1_1
+  DW01_add_J55_H7_D3_D31_D1_2
+  DW01_add_J55_H7_D3_D32_D1
+  DW01_add_J55_H7_D3_D32_D1_0
+  DW01_add_J55_H7_D3_D32_D1_1
+  DW01_add_J55_H7_D3_D32_D1_2
+  DW01_add_J55_H7_D3_D33_D1
+  DW01_add_J55_H7_D3_D33_D1_0
+  DW01_add_J55_H7_D3_D33_D1_1
+  DW01_add_J55_H7_D3_D33_D1_2
+  DW01_add_J55_H7_D3_D3_D1
+  DW01_add_J55_H7_D3_D3_D1_0
+  DW01_add_J55_H7_D3_D3_D1_1
+  DW01_add_J55_H7_D3_D3_D1_2
+  DW01_add_J55_H7_D3_D4_D1
+  DW01_add_J55_H7_D3_D4_D1_0
+  DW01_add_J55_H7_D3_D4_D1_1
+  DW01_add_J55_H7_D3_D4_D1_2
+  DW01_add_J55_H7_D3_D5_D1
+  DW01_add_J55_H7_D3_D5_D1_0
+  DW01_add_J55_H7_D3_D5_D1_1
+  DW01_add_J55_H7_D3_D5_D1_2
+  DW01_add_J55_H7_D3_D6_D1
+  DW01_add_J55_H7_D3_D6_D1_0
+  DW01_add_J55_H7_D3_D6_D1_1
+  DW01_add_J55_H7_D3_D6_D1_2
+  DW01_add_J55_H7_D3_D7_D1
+  DW01_add_J55_H7_D3_D7_D1_0
+  DW01_add_J55_H7_D3_D7_D1_1
+  DW01_add_J55_H7_D3_D7_D1_2
+  DW01_add_J55_H7_D3_D8_D1
+  DW01_add_J55_H7_D3_D8_D1_0
+  DW01_add_J55_H7_D3_D8_D1_1
+  DW01_add_J55_H7_D3_D8_D1_2
+  DW01_add_J55_H7_D3_D9_D1
+  DW01_add_J55_H7_D3_D9_D1_0
+  DW01_add_J55_H7_D3_D9_D1_1
+  DW01_add_J55_H7_D3_D9_D1_2
+  DW01_inc_J16_D3_D3_D3_D1
+  DW01_inc_J22_D3_D3_D3_D1
+  DW01_inc_J55_H6_D3_D3_D3_D1
+  DW01_inc_J55_H6_D3_D3_D3_D1_0
+  DW01_inc_J55_H6_D3_D3_D3_D1_1
+  DW01_inc_J55_H6_D3_D3_D3_D1_2
+  DW_inc_J16_D3_D35_D1
+  DW_inc_J16_D3_D36_D1
+  DW_inc_J22_D3_D35_D1
+  DW_inc_J22_D3_D36_D1
+  DW_inc_J55_H6_D3_D35_D1
+  DW_inc_J55_H6_D3_D35_D1_0
+  DW_inc_J55_H6_D3_D35_D1_1
+  DW_inc_J55_H6_D3_D35_D1_2
+  DW_inc_J55_H6_D3_D36_D1
+  DW_inc_J55_H6_D3_D36_D1_0
+  DW_inc_J55_H6_D3_D36_D1_1
+  DW_inc_J55_H6_D3_D36_D1_2
+  node_ADDR_X0_ADDR_Y0
+     cpu_0
+        alu_0
+           DP_OP_54_9164_36193_J37666_P0_D0
+           DW_div_tc_a_width32_b_width32_J37647_P5_D2
+              DW01_absval_width32_J37647_P5_D3_D3_D2
+                 sky130_fd_sc_hd__a31o_2                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__and2_4                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__and3b_1                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__clkinv_2                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__nand2b_4                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__nor2_2                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__nor3b_1                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o21a_2                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o21ai_2                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o22a_2                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o31a_1                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__or3_1                        sky130_fd_sc_hd
+                 sky130_fd_sc_hd__or3b_1                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__or3b_2                       sky130_fd_sc_hd
+              DW01_add_J94793_P0_D1
+                 sky130_fd_sc_hd__clkinvlp_4                   sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o221ai_4                     sky130_fd_sc_hd
+              DW01_add_J94794_P0_D1
+                 sky130_fd_sc_hd__nor2b_2                      sky130_fd_sc_hd
+              DW01_add_J94795_P0_D1
+                 sky130_fd_sc_hd__a31oi_4                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o22ai_2                      sky130_fd_sc_hd
+              DW01_add_J94796_P0_D1
+              DW01_add_J94797_P0_D1
+                 sky130_fd_sc_hd__nor3_2                       sky130_fd_sc_hd
+              DW01_add_J94798_P0_D1
+              DW01_add_J94799_P0_D1
+              DW01_add_J94800_P0_D1
+              DW01_add_J94801_P0_D1
+              DW01_add_J94802_P0_D1
+                 sky130_fd_sc_hd__a21oi_4                      sky130_fd_sc_hd
+              DW01_add_J94803_P0_D1
+              DW01_add_J94804_P0_D1
+                 sky130_fd_sc_hd__o21ai_4                      sky130_fd_sc_hd
+              DW01_add_J94805_P0_D1
+              DW01_add_J94806_P0_D1
+              DW01_add_J94807_P0_D1
+              DW01_add_J94808_P0_D1
+              DW01_add_J94809_P0_D1
+              DW01_add_J94810_P0_D1
+              DW01_add_J94811_P0_D1
+                 sky130_fd_sc_hd__o22a_1                       sky130_fd_sc_hd
+              DW01_add_J94812_P0_D1
+              DW01_add_J94817_P0_D1
+                 sky130_fd_sc_hd__a21boi_2                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__a21oi_2                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__nand2_2                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__nand2b_2                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o211ai_2                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o21a_4                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o21ai_1                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o2bb2a_2                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__xor2_1                       sky130_fd_sc_hd
+              DW01_add_J94824_P0_D1
+                 sky130_fd_sc_hd__a21boi_1                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__or2_0                        sky130_fd_sc_hd
+              DW01_add_J94827_P0_D1
+              DW01_add_J94837_P0_D1
+                 sky130_fd_sc_hd__nand4_2                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__nor4b_1                      sky130_fd_sc_hd
+              DW01_add_J94838_P0_D1
+              DW01_add_J94839_P0_D1
+                 sky130_fd_sc_hd__a221o_1                      sky130_fd_sc_hd
+              DW01_add_J94840_P0_D1
+                 sky130_fd_sc_hd__nand4bb_1                    sky130_fd_sc_hd
+              DW01_add_J94841_P0_D1
+                 sky130_fd_sc_hd__and4bb_1                     sky130_fd_sc_hd
+              DW01_add_J94842_P0_D1
+              DW01_add_J94843_P0_D1
+              DW01_add_J94844_P0_D1
+              DW01_add_J94845_P0_D1
+              DW01_add_J94846_P0_D1
+                 sky130_fd_sc_hd__o221ai_2                     sky130_fd_sc_hd
+              DW01_add_J94847_P0_D1
+              DW01_add_J94848_P0_D1
+                 sky130_fd_sc_hd__and4bb_2                     sky130_fd_sc_hd
+              DW01_add_J94849_P0_D1
+              DW01_add_J94850_P0_D1
+              DW01_add_J94851_P0_D1
+              DW01_add_J94852_P0_D1
+              DW01_add_J94853_P0_D1
+              DW01_add_J94854_P0_D1
+              DW01_add_J94855_P0_D1
+              DW01_add_J94856_P0_D1
+              DW01_add_J94857_P0_D1
+              DW01_add_J94858_P0_D1
+                 sky130_fd_sc_hd__a22o_4                       sky130_fd_sc_hd
+              DW01_add_J94859_P0_D1
+              DW01_add_J94860_P0_D1
+                 sky130_fd_sc_hd__nor3b_2                      sky130_fd_sc_hd
+              DW01_add_J94861_P0_D1
+              DW01_add_J94862_P0_D1
+              DW01_add_J94863_P0_D1
+                 sky130_fd_sc_hd__o211ai_4                     sky130_fd_sc_hd
+              DW01_add_J94864_P0_D1
+              DW01_add_J94865_P0_D1
+              DW01_add_J94866_P0_D1
+              DW01_add_J94867_P0_D1
+              DW01_add_J94868_P0_D1
+              DW01_add_J94869_P0_D1
+              DW01_add_J94870_P0_D1
+              DW01_add_J94871_P0_D1
+              DW01_add_J94872_P0_D1
+              DW01_add_J94873_P0_D1
+              DW01_add_J94874_P0_D1
+                 sky130_fd_sc_hd__and3_2                       sky130_fd_sc_hd
+              DW01_add_J94875_P0_D1
+              DW01_sub_J94828_P0_D1
+                 sky130_fd_sc_hd__a21bo_1                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__and2b_1                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__and2b_4                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__xor2_2                       sky130_fd_sc_hd
+              sky130_fd_sc_hd__a211oi_2                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__a21boi_0                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__a221oi_2                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__a221oi_4                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__a22oi_4                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__a2bb2o_2                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__a2bb2o_4                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__a2bb2oi_2                       sky130_fd_sc_hd
+              sky130_fd_sc_hd__a32oi_2                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__and2_0                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__and3_4                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__and4_4                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__and4b_1                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__buf_1                           sky130_fd_sc_hd
+              sky130_fd_sc_hd__buf_8                           sky130_fd_sc_hd
+              sky130_fd_sc_hd__bufinv_8                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__clkbuf_2                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__inv_8                           sky130_fd_sc_hd
+              sky130_fd_sc_hd__mux2_4                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__mux2i_1                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__mux2i_2                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__mux2i_4                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__nand3b_4                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__nand4_4                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__nor4_2                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__o2111a_1                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__o2111ai_2                       sky130_fd_sc_hd
+              sky130_fd_sc_hd__o211a_2                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__o211a_4                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__o22a_4                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__o2bb2a_1                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__or2_4                           sky130_fd_sc_hd
+              sky130_fd_sc_hd__or2b_4                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__probe_p_8                       sky130_fd_sc_hd
+              sky130_fd_sc_hd__xnor2_2                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__xnor2_4                         sky130_fd_sc_hd
+           DW_div_uns_a_width32_b_width32_J37652_P5_D2
+              DW01_add_J94882_P0_D1
+                 sky130_fd_sc_hd__a22o_2                       sky130_fd_sc_hd
+                 sky130_fd_sc_hd__nand3b_2                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__nor2b_4                      sky130_fd_sc_hd
+                 sky130_fd_sc_hd__o22ai_4                      sky130_fd_sc_hd
+              DW01_add_J94885_P0_D1
+                 sky130_fd_sc_hd__mux2_2                       sky130_fd_sc_hd
+              DW01_add_J94886_P0_D1
+                 sky130_fd_sc_hd__and2_2                       sky130_fd_sc_hd
+              DW01_add_J94903_P0_D1
+              DW01_add_J94904_P0_D1
+              DW01_add_J94905_P0_D1
+              DW01_add_J94906_P0_D1
+              DW01_add_J94907_P0_D1
+              DW01_add_J94908_P0_D1
+              DW01_add_J94909_P0_D1
+              DW01_add_J94910_P0_D1
+              DW01_add_J94911_P0_D1
+              DW01_add_J94912_P0_D1
+              DW01_add_J94913_P0_D1
+                 sky130_fd_sc_hd__o21bai_4                     sky130_fd_sc_hd
+              DW01_add_J94914_P0_D1
+              DW01_add_J94915_P0_D1
+              DW01_add_J94916_P0_D1
+              DW01_add_J94917_P0_D1
+              DW01_add_J94918_P0_D1
+              DW01_add_J94919_P0_D1
+              DW01_add_J94920_P0_D1
+              DW01_add_J94921_P0_D1
+              DW01_add_J94922_P0_D1
+              DW01_add_J94923_P0_D1
+              DW01_add_J94924_P0_D1
+              DW01_add_J94925_P0_D1
+              DW01_add_J94926_P0_D1
+              DW01_add_J94927_P0_D1
+              DW01_add_J94928_P0_D1
+              DW01_add_J94929_P0_D1
+              DW01_add_J94930_P0_D1
+              DW01_add_J94931_P0_D1
+              DW01_add_J94932_P0_D1
+              DW01_add_J94933_P0_D1
+              DW01_add_J94934_P0_D1
+              DW01_add_J94935_P0_D1
+              DW01_add_J94936_P0_D1
+              DW01_add_J94937_P0_D1
+              DW01_add_J94938_P0_D1
+              DW01_add_J94939_P0_D1
+              DW01_add_J94940_P0_D1
+              DW01_add_J94941_P0_D1
+              DW01_add_J94942_P0_D1
+              DW01_add_J94943_P0_D1
+              DW01_add_J94944_P0_D1
+                 sky130_fd_sc_hd__o311a_1                      sky130_fd_sc_hd
+              DW01_add_J94945_P0_D1
+              DW01_add_J94946_P0_D1
+              DW01_add_J94947_P0_D1
+              DW01_add_J94948_P0_D1
+              DW01_add_J94949_P0_D1
+              DW01_add_J94950_P0_D1
+              DW01_add_J94951_P0_D1
+              DW01_add_J94952_P0_D1
+              DW01_add_J94953_P0_D1
+              DW01_add_J94954_P0_D1
+              DW01_add_J94955_P0_D1
+                 sky130_fd_sc_hd__a21bo_4                      sky130_fd_sc_hd
+              DW01_add_J94956_P0_D1
+              DW01_add_J94957_P0_D1
+                 sky130_fd_sc_hd__nor3b_4                      sky130_fd_sc_hd
+              DW01_add_J94958_P0_D1
+              DW01_add_J94959_P0_D1
+              DW01_add_J94960_P0_D1
+              DW01_sub_J94887_P0_D1
+              sky130_fd_sc_hd__a211oi_4                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__a21boi_4                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__a32o_2                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__a32o_4                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__inv_16                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__o2111a_2                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__o2111ai_1                       sky130_fd_sc_hd
+           DW_mult_tc_J122_P0_D1
+              sky130_fd_sc_hd__a32o_1                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__clkdlybuf4s50_1                 sky130_fd_sc_hd
+              sky130_fd_sc_hd__fa_1                            sky130_fd_sc_hd
+              sky130_fd_sc_hd__maj3_1                          sky130_fd_sc_hd
+           DW_mult_uns_J37659_P0_D1
+              sky130_fd_sc_hd__a2bb2o_1                        sky130_fd_sc_hd
+              sky130_fd_sc_hd__or2b_1                          sky130_fd_sc_hd
+           sky130_fd_sc_hd__and4_2                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__buf_16                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__clkdlybuf4s25_1                    sky130_fd_sc_hd
+           sky130_fd_sc_hd__clkinv_16                          sky130_fd_sc_hd
+           sky130_fd_sc_hd__nor3_4                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__o221a_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__or3_2                              sky130_fd_sc_hd
+           sky130_fd_sc_hd__or4b_2                             sky130_fd_sc_hd
+        branch_control_unit_0
+           sky130_fd_sc_hd__a2111oi_0                          sky130_fd_sc_hd
+        control_unit_0
+           mux_2to1_3bit_0
+              sky130_fd_sc_hd__mux2_1                          sky130_fd_sc_hd
+           sky130_fd_sc_hd__a21bo_2                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__a21oi_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__a221oi_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__a31o_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__a31oi_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__a32oi_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__and3_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__and4_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand3_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand3b_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand4_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand4b_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__nor2_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__nor2b_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__nor3_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__nor4_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__o21a_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__o21ai_0                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__o21ba_2                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__o21bai_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__o221ai_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__o22ai_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__o31ai_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__o32a_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__o32ai_1                            sky130_fd_sc_hd
+        ex_forward_unit_0
+        f_reg_file_0
+           sky130_fd_sc_hd__buf_2                              sky130_fd_sc_hd
+        fpu_0
+           Addition_Subtraction_0
+              DP_OP_42_61208_6679_J37671_P0_D0
+              priority_encoder_0
+                 sky130_fd_sc_hd__a2111o_1                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__a2111oi_1                    sky130_fd_sc_hd
+                 sky130_fd_sc_hd__a311oi_1                     sky130_fd_sc_hd
+                 sky130_fd_sc_hd__and3b_2                      sky130_fd_sc_hd
+           Comparison_0
+              sky130_fd_sc_hd__dlxtp_1                         sky130_fd_sc_hd
+              sky130_fd_sc_hd__nor4bb_1                        sky130_fd_sc_hd
+           Division_0
+              Addition_Subtraction_100
+                 DP_OP_42_61208_6679_J37677_P0_D0
+                 priority_encoder_100
+                    sky130_fd_sc_hd__nand4b_2                  sky130_fd_sc_hd
+                    sky130_fd_sc_hd__nand4bb_4                 sky130_fd_sc_hd
+                    sky130_fd_sc_hd__o21bai_2                  sky130_fd_sc_hd
+              DP_OP_7_31631_40608_J689_P0_D0
+              Iteration_0
+                 Addition_Subtraction_104
+                    DP_OP_42_61208_6679_J37687_P0_D0
+                    priority_encoder_104
+                       sky130_fd_sc_hd__and4bb_4               sky130_fd_sc_hd
+                       sky130_fd_sc_hd__nand4b_4               sky130_fd_sc_hd
+                       sky130_fd_sc_hd__o311ai_1               sky130_fd_sc_hd
+                 Multiplication_92
+                    DP_OP_22_291_36538_J37678_P0_D0
+                    DW_mult_uns_J37679_P0_D1
+                    sky130_fd_sc_hd__a41oi_1                   sky130_fd_sc_hd
+                 Multiplication_93
+                    DP_OP_22_291_36538_J37688_P0_D0
+                    DW_mult_uns_J37689_P0_D1
+                       sky130_fd_sc_hd__o31ai_2                sky130_fd_sc_hd
+                    sky130_fd_sc_hd__o211a_1                   sky130_fd_sc_hd
+              Iteration_1
+                 Addition_Subtraction_105
+                    DP_OP_42_61208_6679_J37699_P0_D0
+                    priority_encoder_105
+                 Multiplication_94
+                    DP_OP_22_291_36538_J37690_P0_D0
+                    DW_mult_uns_J37691_P0_D1
+                       sky130_fd_sc_hd__o311ai_2               sky130_fd_sc_hd
+                 Multiplication_95
+                    DP_OP_22_291_36538_J37700_P0_D0
+                    DW_mult_uns_J37701_P0_D1
+                       sky130_fd_sc_hd__fa_2                   sky130_fd_sc_hd
+                       sky130_fd_sc_hd__or2b_2                 sky130_fd_sc_hd
+                    sky130_fd_sc_hd__a41oi_2                   sky130_fd_sc_hd
+              Iteration_2
+                 Addition_Subtraction_106
+                    DP_OP_42_61208_6679_J37711_P0_D0
+                    priority_encoder_106
+                 Multiplication_96
+                    DP_OP_22_291_36538_J37702_P0_D0
+                    DW_mult_uns_J37703_P0_D1
+                       sky130_fd_sc_hd__a31o_4                 sky130_fd_sc_hd
+                 Multiplication_97
+                    DP_OP_22_291_36538_J37712_P0_D0
+                    DW_mult_uns_J37713_P0_D1
+                       sky130_fd_sc_hd__o311a_2                sky130_fd_sc_hd
+              Multiplication_84
+                 DP_OP_22_291_36538_J37674_P0_D0
+                 DW_mult_uns_J37675_P0_D1
+                    sky130_fd_sc_hd__a31oi_2                   sky130_fd_sc_hd
+                    sky130_fd_sc_hd__fah_1                     sky130_fd_sc_hd
+                    sky130_fd_sc_hd__ha_2                      sky130_fd_sc_hd
+                    sky130_fd_sc_hd__ha_4                      sky130_fd_sc_hd
+                    sky130_fd_sc_hd__maj3_2                    sky130_fd_sc_hd
+                    sky130_fd_sc_hd__maj3_4                    sky130_fd_sc_hd
+                    sky130_fd_sc_hd__o21ba_1                   sky130_fd_sc_hd
+                    sky130_fd_sc_hd__o21ba_4                   sky130_fd_sc_hd
+                    sky130_fd_sc_hd__o2bb2ai_2                 sky130_fd_sc_hd
+                    sky130_fd_sc_hd__o2bb2ai_4                 sky130_fd_sc_hd
+                    sky130_fd_sc_hd__xnor3_1                   sky130_fd_sc_hd
+                    sky130_fd_sc_hd__xnor3_2                   sky130_fd_sc_hd
+                    sky130_fd_sc_hd__xor3_2                    sky130_fd_sc_hd
+              Multiplication_85
+                 DP_OP_22_291_36538_J37714_P0_D0
+                 DW_mult_uns_J37715_P0_D1
+                    sky130_fd_sc_hd__o221a_4                   sky130_fd_sc_hd
+           Floating_Point_to_Integer_0
+              sky130_fd_sc_hd__dlxtn_1                         sky130_fd_sc_hd
+           Multiplication_0
+              DP_OP_22_291_36538_J37672_P0_D0
+              DW_mult_uns_J37673_P0_D1
+                 sky130_fd_sc_hd__xor3_1                       sky130_fd_sc_hd
+              sky130_fd_sc_hd__and3b_4                         sky130_fd_sc_hd
+           mux_2to1_32bit_28
+           mux_4to1_32bit_24
+        hazard_detection_unit_0
+           sky130_fd_sc_hd__a211o_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__a211oi_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__o211ai_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__xnor2_1                            sky130_fd_sc_hd
+        immediate_generation_unit_0
+           sky130_fd_sc_hd__a21o_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__and2b_2                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand2b_1                           sky130_fd_sc_hd
+        mem_forward_unit_0
+        mux_2to1_32bit_0
+           sky130_fd_sc_hd__a22o_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__inv_1                              sky130_fd_sc_hd
+        mux_2to1_32bit_1
+           sky130_fd_sc_hd__buf_4                              sky130_fd_sc_hd
+           sky130_fd_sc_hd__o2bb2ai_1                          sky130_fd_sc_hd
+        mux_2to1_32bit_2
+           sky130_fd_sc_hd__a21o_2                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__a21o_4                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__buf_6                              sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand2_8                            sky130_fd_sc_hd
+        mux_2to1_32bit_3
+           sky130_fd_sc_hd__clkinv_8                           sky130_fd_sc_hd
+        mux_2to1_32bit_4
+        mux_2to1_32bit_5
+        mux_2to1_32bit_6
+        mux_4to1_32bit_0
+           sky130_fd_sc_hd__inv_4                              sky130_fd_sc_hd
+           sky130_fd_sc_hd__inv_6                              sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand3_2                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand3_4                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__or2_2                              sky130_fd_sc_hd
+        mux_4to1_32bit_1
+           sky130_fd_sc_hd__a22oi_2                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__buf_12                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__clkinv_4                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__inv_12                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand2_4                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__nor2_4                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__nor2_8                             sky130_fd_sc_hd
+        mux_4to1_32bit_2
+           sky130_fd_sc_hd__a221o_2                            sky130_fd_sc_hd
+        mux_4to1_32bit_3
+           sky130_fd_sc_hd__o2bb2a_4                           sky130_fd_sc_hd
+        mux_4to1_32bit_4
+        mux_4to1_32bit_5
+        pipeline_flush_unit_0
+        plus_4_adder_0
+           sky130_fd_sc_hd__a2bb2oi_1                          sky130_fd_sc_hd
+           sky130_fd_sc_hd__clkinvlp_2                         sky130_fd_sc_hd
+           sky130_fd_sc_hd__ha_1                               sky130_fd_sc_hd
+        plus_4_adder_1
+        pr_ex_mem_0
+        pr_id_ex_0
+           sky130_fd_sc_hd__clkbuf_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__sdfxtp_2                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__sdfxtp_4                           sky130_fd_sc_hd
+        pr_if_id_0
+           sky130_fd_sc_hd__and2_1                             sky130_fd_sc_hd
+           sky130_fd_sc_hd__nand2_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__sdfxtp_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__sdlclkp_1                          sky130_fd_sc_hd
+        pr_mem_wb_0
+        reg_file_0
+           sky130_fd_sc_hd__a222oi_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__a22oi_1                            sky130_fd_sc_hd
+           sky130_fd_sc_hd__clkinv_1                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__inv_2                              sky130_fd_sc_hd
+           sky130_fd_sc_hd__or2_1                              sky130_fd_sc_hd
+           sky130_fd_sc_hd__or4_1                              sky130_fd_sc_hd
+           sky130_fd_sc_hd__sdfrtn_1                           sky130_fd_sc_hd
+        sky130_fd_sc_hd__bufbuf_8                              sky130_fd_sc_hd
+        sky130_fd_sc_hd__clkbuf_4                              sky130_fd_sc_hd
+     data_memory_0
+        sky130_fd_sc_hd__a311o_1                               sky130_fd_sc_hd
+        sky130_fd_sc_hd__clkbuf_8                              sky130_fd_sc_hd
+        sky130_fd_sc_hd__mux4_2                                sky130_fd_sc_hd
+        sky130_fd_sc_hd__nor4_4                                sky130_fd_sc_hd
+        sky130_fd_sc_hd__o31a_2                                sky130_fd_sc_hd
+        sky130_fd_sc_hd__o32a_2                                sky130_fd_sc_hd
+        sky130_fd_sc_hd__o41ai_1                               sky130_fd_sc_hd
+        sky130_fd_sc_hd__o41ai_2                               sky130_fd_sc_hd
+        sky130_fd_sc_hd__o41ai_4                               sky130_fd_sc_hd
+        sky130_fd_sc_hd__or4_2                                 sky130_fd_sc_hd
+        sky130_fd_sc_hd__sdfxbp_1                              sky130_fd_sc_hd
+     instruction_memory_0
+     network_interface_0
+        fifo_DEPTH16_DATA_WIDTH32_0
+           sky130_fd_sc_hd__sdfrbp_2                           sky130_fd_sc_hd
+        fifo_DEPTH16_DATA_WIDTH32_1
+     neuron_bank_NUM_NEURONS4_0
+        neuron_core_0
+           Addition_Subtraction_1
+              DP_OP_42_61208_6679_J37724_P0_D0
+              priority_encoder_1
+           Addition_Subtraction_2
+              DP_OP_42_61208_6679_J37731_P0_D0
+              priority_encoder_2
+                 sky130_fd_sc_hd__or4b_1                       sky130_fd_sc_hd
+           Addition_Subtraction_3
+              DP_OP_42_61208_6679_J37736_P0_D0
+              priority_encoder_3
+                 sky130_fd_sc_hd__or3_4                        sky130_fd_sc_hd
+           Addition_Subtraction_4
+              DP_OP_42_61208_6679_J37739_P0_D0
+              priority_encoder_4
+           Addition_Subtraction_5
+              DP_OP_42_61208_6679_J37744_P0_D0
+              priority_encoder_5
+           Addition_Subtraction_6
+              DP_OP_42_61208_6679_J1277_P0_D0
+              priority_encoder_6
+           Comparison_1
+           Multiplication_1
+              DP_OP_22_291_36538_J37716_P0_D0
+              DW_mult_uns_J37717_P0_D1
+           Multiplication_2
+              DP_OP_22_291_36538_J37718_P0_D0
+              DW_mult_uns_J37719_P0_D1
+              sky130_fd_sc_hd__a41o_2                          sky130_fd_sc_hd
+           Multiplication_3
+              DP_OP_22_291_36538_J37720_P0_D0
+              DW_mult_uns_J37721_P0_D1
+           Multiplication_4
+              DP_OP_22_291_36538_J37740_P0_D0
+              DW_mult_uns_J37741_P0_D1
+           Multiplication_5
+              DP_OP_22_291_36538_J37745_P0_D0
+              DW_mult_uns_J37746_P0_D1
+           sky130_fd_sc_hd__sdfxbp_2                           sky130_fd_sc_hd
+           sky130_fd_sc_hd__sedfxbp_1                          sky130_fd_sc_hd
+           sky130_fd_sc_hd__sedfxtp_1                          sky130_fd_sc_hd
+        neuron_core_1
+           Addition_Subtraction_10
+              DP_OP_42_61208_6679_J37770_P0_D0
+              priority_encoder_10
+           Addition_Subtraction_11
+              DP_OP_42_61208_6679_J37775_P0_D0
+              priority_encoder_11
+           Addition_Subtraction_12
+              DP_OP_42_61208_6679_J1830_P0_D0
+              priority_encoder_12
+           Addition_Subtraction_7
+              DP_OP_42_61208_6679_J37755_P0_D0
+              priority_encoder_7
+           Addition_Subtraction_8
+              DP_OP_42_61208_6679_J37762_P0_D0
+              priority_encoder_8
+           Addition_Subtraction_9
+              DP_OP_42_61208_6679_J37767_P0_D0
+              priority_encoder_9
+           Comparison_2
+           Multiplication_10
+              DP_OP_22_291_36538_J37776_P0_D0
+              DW_mult_uns_J37777_P0_D1
+           Multiplication_6
+              DP_OP_22_291_36538_J37747_P0_D0
+              DW_mult_uns_J37748_P0_D1
+           Multiplication_7
+              DP_OP_22_291_36538_J37749_P0_D0
+              DW_mult_uns_J37750_P0_D1
+                 sky130_fd_sc_hd__o311ai_4                     sky130_fd_sc_hd
+           Multiplication_8
+              DP_OP_22_291_36538_J37751_P0_D0
+              DW_mult_uns_J37752_P0_D1
+           Multiplication_9
+              DP_OP_22_291_36538_J37771_P0_D0
+              DW_mult_uns_J37772_P0_D1
+        neuron_core_2
+           Addition_Subtraction_13
+              DP_OP_42_61208_6679_J37786_P0_D0
+              priority_encoder_13
+                 sky130_fd_sc_hd__nand4bb_2                    sky130_fd_sc_hd
+              sky130_fd_sc_hd__o31a_4                          sky130_fd_sc_hd
+              sky130_fd_sc_hd__o32ai_2                         sky130_fd_sc_hd
+           Addition_Subtraction_14
+              DP_OP_42_61208_6679_J37793_P0_D0
+              priority_encoder_14
+                 sky130_fd_sc_hd__a2111oi_2                    sky130_fd_sc_hd
+           Addition_Subtraction_15
+              DP_OP_42_61208_6679_J37798_P0_D0
+              priority_encoder_15
+           Addition_Subtraction_16
+              DP_OP_42_61208_6679_J37801_P0_D0
+              priority_encoder_16
+           Addition_Subtraction_17
+              DP_OP_42_61208_6679_J37806_P0_D0
+              priority_encoder_17
+           Addition_Subtraction_18
+              DP_OP_42_61208_6679_J2383_P0_D0
+              priority_encoder_18
+           Comparison_3
+           Multiplication_11
+              DP_OP_22_291_36538_J37778_P0_D0
+              DW_mult_uns_J37779_P0_D1
+           Multiplication_12
+              DP_OP_22_291_36538_J37780_P0_D0
+              DW_mult_uns_J37781_P0_D1
+           Multiplication_13
+              DP_OP_22_291_36538_J37782_P0_D0
+              DW_mult_uns_J37783_P0_D1
+           Multiplication_14
+              DP_OP_22_291_36538_J37802_P0_D0
+              DW_mult_uns_J37803_P0_D1
+           Multiplication_15
+              DP_OP_22_291_36538_J37807_P0_D0
+              DW_mult_uns_J37808_P0_D1
+        neuron_core_3
+           Addition_Subtraction_19
+              DP_OP_42_61208_6679_J37817_P0_D0
+              priority_encoder_19
+                 sky130_fd_sc_hd__a211o_2                      sky130_fd_sc_hd
+           Addition_Subtraction_20
+              DP_OP_42_61208_6679_J37824_P0_D0
+              priority_encoder_20
+           Addition_Subtraction_21
+              DP_OP_42_61208_6679_J37829_P0_D0
+              priority_encoder_21
+           Addition_Subtraction_22
+              DP_OP_42_61208_6679_J37832_P0_D0
+              priority_encoder_22
+           Addition_Subtraction_23
+              DP_OP_42_61208_6679_J37837_P0_D0
+              priority_encoder_23
+           Addition_Subtraction_24
+              DP_OP_42_61208_6679_J2936_P0_D0
+              priority_encoder_24
+           Comparison_4
+           Multiplication_16
+              DP_OP_22_291_36538_J37809_P0_D0
+              DW_mult_uns_J37810_P0_D1
+              sky130_fd_sc_hd__or3b_4                          sky130_fd_sc_hd
+           Multiplication_17
+              DP_OP_22_291_36538_J37811_P0_D0
+              DW_mult_uns_J37812_P0_D1
+                 sky130_fd_sc_hd__o311ai_0                     sky130_fd_sc_hd
+           Multiplication_18
+              DP_OP_22_291_36538_J37813_P0_D0
+              DW_mult_uns_J37814_P0_D1
+           Multiplication_19
+              DP_OP_22_291_36538_J37833_P0_D0
+              DW_mult_uns_J37834_P0_D1
+           Multiplication_20
+              DP_OP_22_291_36538_J37838_P0_D0
+              DW_mult_uns_J37839_P0_D1
+        sky130_fd_sc_hd__sdfrtp_1                              sky130_fd_sc_hd
+        sky130_fd_sc_hd__sdfrtp_2                              sky130_fd_sc_hd
+        sky130_fd_sc_hd__sdfrtp_4                              sky130_fd_sc_hd
+     router_ADDR_X0_ADDR_Y0
+        DW_div_uns_a_width4_b_width3_J2985_P7_D2
+        DW_div_uns_a_width4_b_width3_J3041_P7_D2
+        DW_div_uns_a_width4_b_width3_J37852_P7_D2
+        DW_div_uns_a_width4_b_width3_J37855_P7_D2
+        DW_div_uns_a_width4_b_width3_J52_H10_D2
+        DW_div_uns_a_width4_b_width3_J52_H12_D2
+        DW_div_uns_a_width4_b_width3_J52_H14_D2
+        DW_div_uns_a_width4_b_width3_J52_H16_D2
+        DW_div_uns_a_width4_b_width3_J52_H26_D2
+        DW_div_uns_a_width4_b_width3_J52_H28_D2
+        DW_div_uns_a_width4_b_width3_J52_H30_D2
+        DW_div_uns_a_width4_b_width3_J52_H35_D2
+        sky130_fd_sc_hd__a211o_4                               sky130_fd_sc_hd
+        sky130_fd_sc_hd__o221a_2                               sky130_fd_sc_hd
+  node_ADDR_X0_ADDR_Y1
+     cpu_2
+        alu_2
+           DP_OP_54_9164_39948_J38113_P0_D0
+           DW_div_tc_a_width32_b_width32_J38094_P5_D2
+              DW01_absval_width32_J38094_P5_D3_D3_D2
+              DW01_add_J95155_P0_D1
+              DW01_add_J95156_P0_D1
+              DW01_add_J95157_P0_D1
+              DW01_add_J95158_P0_D1
+              DW01_add_J95159_P0_D1
+              DW01_add_J95160_P0_D1
+              DW01_add_J95161_P0_D1
+              DW01_add_J95162_P0_D1
+              DW01_add_J95163_P0_D1
+              DW01_add_J95164_P0_D1
+              DW01_add_J95165_P0_D1
+              DW01_add_J95166_P0_D1
+              DW01_add_J95167_P0_D1
+              DW01_add_J95168_P0_D1
+              DW01_add_J95169_P0_D1
+              DW01_add_J95170_P0_D1
+              DW01_add_J95171_P0_D1
+              DW01_add_J95172_P0_D1
+              DW01_add_J95173_P0_D1
+              DW01_add_J95174_P0_D1
+              DW01_add_J95179_P0_D1
+              DW01_add_J95186_P0_D1
+              DW01_add_J95189_P0_D1
+              DW01_add_J95199_P0_D1
+              DW01_add_J95200_P0_D1
+              DW01_add_J95201_P0_D1
+              DW01_add_J95202_P0_D1
+              DW01_add_J95203_P0_D1
+              DW01_add_J95204_P0_D1
+              DW01_add_J95205_P0_D1
+              DW01_add_J95206_P0_D1
+              DW01_add_J95207_P0_D1
+              DW01_add_J95208_P0_D1
+              DW01_add_J95209_P0_D1
+              DW01_add_J95210_P0_D1
+              DW01_add_J95211_P0_D1
+              DW01_add_J95212_P0_D1
+              DW01_add_J95213_P0_D1
+              DW01_add_J95214_P0_D1
+              DW01_add_J95215_P0_D1
+              DW01_add_J95216_P0_D1
+              DW01_add_J95217_P0_D1
+              DW01_add_J95218_P0_D1
+              DW01_add_J95219_P0_D1
+              DW01_add_J95220_P0_D1
+              DW01_add_J95221_P0_D1
+              DW01_add_J95222_P0_D1
+              DW01_add_J95223_P0_D1
+              DW01_add_J95224_P0_D1
+              DW01_add_J95225_P0_D1
+              DW01_add_J95226_P0_D1
+              DW01_add_J95227_P0_D1
+              DW01_add_J95228_P0_D1
+              DW01_add_J95229_P0_D1
+              DW01_add_J95230_P0_D1
+              DW01_add_J95231_P0_D1
+              DW01_add_J95232_P0_D1
+              DW01_add_J95233_P0_D1
+              DW01_add_J95234_P0_D1
+              DW01_add_J95235_P0_D1
+              DW01_add_J95236_P0_D1
+              DW01_add_J95237_P0_D1
+              DW01_sub_J95190_P0_D1
+              sky130_fd_sc_hd__xor2_4                          sky130_fd_sc_hd
+           DW_div_uns_a_width32_b_width32_J38099_P5_D2
+              DW01_add_J95244_P0_D1
+              DW01_add_J95247_P0_D1
+              DW01_add_J95248_P0_D1
+              DW01_add_J95265_P0_D1
+              DW01_add_J95266_P0_D1
+              DW01_add_J95267_P0_D1
+              DW01_add_J95268_P0_D1
+              DW01_add_J95269_P0_D1
+              DW01_add_J95270_P0_D1
+              DW01_add_J95271_P0_D1
+              DW01_add_J95272_P0_D1
+              DW01_add_J95273_P0_D1
+              DW01_add_J95274_P0_D1
+              DW01_add_J95275_P0_D1
+              DW01_add_J95276_P0_D1
+              DW01_add_J95277_P0_D1
+              DW01_add_J95278_P0_D1
+              DW01_add_J95279_P0_D1
+              DW01_add_J95280_P0_D1
+              DW01_add_J95281_P0_D1
+              DW01_add_J95282_P0_D1
+              DW01_add_J95283_P0_D1
+              DW01_add_J95284_P0_D1
+              DW01_add_J95285_P0_D1
+              DW01_add_J95286_P0_D1
+              DW01_add_J95287_P0_D1
+              DW01_add_J95288_P0_D1
+              DW01_add_J95289_P0_D1
+              DW01_add_J95290_P0_D1
+              DW01_add_J95291_P0_D1
+              DW01_add_J95292_P0_D1
+              DW01_add_J95293_P0_D1
+              DW01_add_J95294_P0_D1
+              DW01_add_J95295_P0_D1
+              DW01_add_J95296_P0_D1
+              DW01_add_J95297_P0_D1
+              DW01_add_J95298_P0_D1
+              DW01_add_J95299_P0_D1
+              DW01_add_J95300_P0_D1
+              DW01_add_J95301_P0_D1
+              DW01_add_J95302_P0_D1
+              DW01_add_J95303_P0_D1
+                 sky130_fd_sc_hd__o311a_4                      sky130_fd_sc_hd
+              DW01_add_J95304_P0_D1
+              DW01_add_J95305_P0_D1
+              DW01_add_J95306_P0_D1
+              DW01_add_J95307_P0_D1
+              DW01_add_J95308_P0_D1
+              DW01_add_J95309_P0_D1
+              DW01_add_J95310_P0_D1
+              DW01_add_J95311_P0_D1
+              DW01_add_J95312_P0_D1
+              DW01_add_J95313_P0_D1
+              DW01_add_J95314_P0_D1
+              DW01_add_J95315_P0_D1
+              DW01_add_J95316_P0_D1
+              DW01_add_J95317_P0_D1
+              DW01_add_J95318_P0_D1
+              DW01_add_J95319_P0_D1
+              DW01_add_J95320_P0_D1
+              DW01_add_J95321_P0_D1
+              DW01_add_J95322_P0_D1
+              DW01_sub_J95249_P0_D1
+           DW_mult_tc_J6079_P0_D1
+           DW_mult_uns_J38106_P0_D1
+        branch_control_unit_2
+        control_unit_2
+           mux_2to1_3bit_2
+        ex_forward_unit_2
+        f_reg_file_2
+        fpu_2
+           Addition_Subtraction_50
+              DP_OP_42_61208_6679_J38118_P0_D0
+              priority_encoder_50
+           Comparison_10
+           Division_2
+              Addition_Subtraction_102
+                 DP_OP_42_61208_6679_J38124_P0_D0
+                 priority_encoder_102
+              DP_OP_7_31631_40608_J6646_P0_D0
+              Iteration_6
+                 Addition_Subtraction_110
+                    DP_OP_42_61208_6679_J38134_P0_D0
+                    priority_encoder_110
+                 Multiplication_104
+                    DP_OP_22_291_36538_J38125_P0_D0
+                    DW_mult_uns_J38126_P0_D1
+                 Multiplication_105
+                    DP_OP_22_291_36538_J38135_P0_D0
+                    DW_mult_uns_J38136_P0_D1
+              Iteration_7
+                 Addition_Subtraction_111
+                    DP_OP_42_61208_6679_J38146_P0_D0
+                    priority_encoder_111
+                 Multiplication_106
+                    DP_OP_22_291_36538_J38137_P0_D0
+                    DW_mult_uns_J38138_P0_D1
+                 Multiplication_107
+                    DP_OP_22_291_36538_J38147_P0_D0
+                    DW_mult_uns_J38148_P0_D1
+              Iteration_8
+                 Addition_Subtraction_112
+                    DP_OP_42_61208_6679_J38158_P0_D0
+                    priority_encoder_112
+                 Multiplication_108
+                    DP_OP_22_291_36538_J38149_P0_D0
+                    DW_mult_uns_J38150_P0_D1
+                       sky130_fd_sc_hd__a311o_2                sky130_fd_sc_hd
+                 Multiplication_109
+                    DP_OP_22_291_36538_J38159_P0_D0
+                    DW_mult_uns_J38160_P0_D1
+              Multiplication_88
+                 DP_OP_22_291_36538_J38121_P0_D0
+                 DW_mult_uns_J38122_P0_D1
+              Multiplication_89
+                 DP_OP_22_291_36538_J38161_P0_D0
+                 DW_mult_uns_J38162_P0_D1
+           Floating_Point_to_Integer_2
+           Multiplication_42
+              DP_OP_22_291_36538_J38119_P0_D0
+              DW_mult_uns_J38120_P0_D1
+           mux_2to1_32bit_30
+           mux_4to1_32bit_26
+        hazard_detection_unit_2
+        immediate_generation_unit_2
+        mem_forward_unit_2
+        mux_2to1_32bit_14
+        mux_2to1_32bit_15
+        mux_2to1_32bit_16
+        mux_2to1_32bit_17
+        mux_2to1_32bit_18
+        mux_2to1_32bit_19
+        mux_2to1_32bit_20
+        mux_4to1_32bit_12
+        mux_4to1_32bit_13
+        mux_4to1_32bit_14
+        mux_4to1_32bit_15
+        mux_4to1_32bit_16
+        mux_4to1_32bit_17
+        pipeline_flush_unit_2
+        plus_4_adder_4
+        plus_4_adder_5
+        pr_ex_mem_2
+        pr_id_ex_2
+        pr_if_id_2
+        pr_mem_wb_2
+        reg_file_2
+     data_memory_2
+     instruction_memory_2
+     network_interface_2
+        fifo_DEPTH16_DATA_WIDTH32_4
+        fifo_DEPTH16_DATA_WIDTH32_5
+     neuron_bank_NUM_NEURONS4_2
+        neuron_core_10
+           Addition_Subtraction_63
+              DP_OP_42_61208_6679_J38233_P0_D0
+              priority_encoder_63
+                 sky130_fd_sc_hd__a2111o_2                     sky130_fd_sc_hd
+           Addition_Subtraction_64
+              DP_OP_42_61208_6679_J38240_P0_D0
+              priority_encoder_64
+           Addition_Subtraction_65
+              DP_OP_42_61208_6679_J38245_P0_D0
+              priority_encoder_65
+           Addition_Subtraction_66
+              DP_OP_42_61208_6679_J38248_P0_D0
+              priority_encoder_66
+           Addition_Subtraction_67
+              DP_OP_42_61208_6679_J38253_P0_D0
+              priority_encoder_67
+           Addition_Subtraction_68
+              DP_OP_42_61208_6679_J8340_P0_D0
+              priority_encoder_68
+           Comparison_13
+           Multiplication_53
+              DP_OP_22_291_36538_J38225_P0_D0
+              DW_mult_uns_J38226_P0_D1
+           Multiplication_54
+              DP_OP_22_291_36538_J38227_P0_D0
+              DW_mult_uns_J38228_P0_D1
+           Multiplication_55
+              DP_OP_22_291_36538_J38229_P0_D0
+              DW_mult_uns_J38230_P0_D1
+           Multiplication_56
+              DP_OP_22_291_36538_J38249_P0_D0
+              DW_mult_uns_J38250_P0_D1
+              sky130_fd_sc_hd__or4b_4                          sky130_fd_sc_hd
+           Multiplication_57
+              DP_OP_22_291_36538_J38254_P0_D0
+              DW_mult_uns_J38255_P0_D1
+        neuron_core_11
+           Addition_Subtraction_69
+              DP_OP_42_61208_6679_J38264_P0_D0
+              priority_encoder_69
+           Addition_Subtraction_70
+              DP_OP_42_61208_6679_J38271_P0_D0
+              priority_encoder_70
+           Addition_Subtraction_71
+              DP_OP_42_61208_6679_J38276_P0_D0
+              priority_encoder_71
+           Addition_Subtraction_72
+              DP_OP_42_61208_6679_J38279_P0_D0
+              priority_encoder_72
+           Addition_Subtraction_73
+              DP_OP_42_61208_6679_J38284_P0_D0
+              priority_encoder_73
+           Addition_Subtraction_74
+              DP_OP_42_61208_6679_J8893_P0_D0
+              priority_encoder_74
+           Comparison_14
+           Multiplication_58
+              DP_OP_22_291_36538_J38256_P0_D0
+              DW_mult_uns_J38257_P0_D1
+           Multiplication_59
+              DP_OP_22_291_36538_J38258_P0_D0
+              DW_mult_uns_J38259_P0_D1
+           Multiplication_60
+              DP_OP_22_291_36538_J38260_P0_D0
+              DW_mult_uns_J38261_P0_D1
+           Multiplication_61
+              DP_OP_22_291_36538_J38280_P0_D0
+              DW_mult_uns_J38281_P0_D1
+           Multiplication_62
+              DP_OP_22_291_36538_J38285_P0_D0
+              DW_mult_uns_J38286_P0_D1
+        neuron_core_8
+           Addition_Subtraction_51
+              DP_OP_42_61208_6679_J38171_P0_D0
+              priority_encoder_51
+           Addition_Subtraction_52
+              DP_OP_42_61208_6679_J38178_P0_D0
+              priority_encoder_52
+           Addition_Subtraction_53
+              DP_OP_42_61208_6679_J38183_P0_D0
+              priority_encoder_53
+           Addition_Subtraction_54
+              DP_OP_42_61208_6679_J38186_P0_D0
+              priority_encoder_54
+              sky130_fd_sc_hd__mux2_8                          sky130_fd_sc_hd
+           Addition_Subtraction_55
+              DP_OP_42_61208_6679_J38191_P0_D0
+              priority_encoder_55
+           Addition_Subtraction_56
+              DP_OP_42_61208_6679_J7234_P0_D0
+              priority_encoder_56
+           Comparison_11
+           Multiplication_43
+              DP_OP_22_291_36538_J38163_P0_D0
+              DW_mult_uns_J38164_P0_D1
+           Multiplication_44
+              DP_OP_22_291_36538_J38165_P0_D0
+              DW_mult_uns_J38166_P0_D1
+           Multiplication_45
+              DP_OP_22_291_36538_J38167_P0_D0
+              DW_mult_uns_J38168_P0_D1
+           Multiplication_46
+              DP_OP_22_291_36538_J38187_P0_D0
+              DW_mult_uns_J38188_P0_D1
+           Multiplication_47
+              DP_OP_22_291_36538_J38192_P0_D0
+              DW_mult_uns_J38193_P0_D1
+        neuron_core_9
+           Addition_Subtraction_57
+              DP_OP_42_61208_6679_J38202_P0_D0
+              priority_encoder_57
+           Addition_Subtraction_58
+              DP_OP_42_61208_6679_J38209_P0_D0
+              priority_encoder_58
+           Addition_Subtraction_59
+              DP_OP_42_61208_6679_J38214_P0_D0
+              priority_encoder_59
+           Addition_Subtraction_60
+              DP_OP_42_61208_6679_J38217_P0_D0
+              priority_encoder_60
+           Addition_Subtraction_61
+              DP_OP_42_61208_6679_J38222_P0_D0
+              priority_encoder_61
+           Addition_Subtraction_62
+              DP_OP_42_61208_6679_J7787_P0_D0
+              priority_encoder_62
+           Comparison_12
+           Multiplication_48
+              DP_OP_22_291_36538_J38194_P0_D0
+              DW_mult_uns_J38195_P0_D1
+           Multiplication_49
+              DP_OP_22_291_36538_J38196_P0_D0
+              DW_mult_uns_J38197_P0_D1
+           Multiplication_50
+              DP_OP_22_291_36538_J38198_P0_D0
+              DW_mult_uns_J38199_P0_D1
+           Multiplication_51
+              DP_OP_22_291_36538_J38218_P0_D0
+              DW_mult_uns_J38219_P0_D1
+           Multiplication_52
+              DP_OP_22_291_36538_J38223_P0_D0
+              DW_mult_uns_J38224_P0_D1
+     router_ADDR_X0_ADDR_Y1
+        DW_div_uns_a_width4_b_width3_J51_H10_D2
+        DW_div_uns_a_width4_b_width3_J51_H12_D2
+        DW_div_uns_a_width4_b_width3_J51_H14_D2
+        DW_div_uns_a_width4_b_width3_J51_H16_D2
+        DW_div_uns_a_width4_b_width3_J51_H18_D2
+        DW_div_uns_a_width4_b_width3_J51_H20_D2
+        DW_div_uns_a_width4_b_width3_J51_H22_D2
+        DW_div_uns_a_width4_b_width3_J51_H24_D2
+        DW_div_uns_a_width4_b_width3_J51_H26_D2
+        DW_div_uns_a_width4_b_width3_J51_H28_D2
+        DW_div_uns_a_width4_b_width3_J51_H30_D2
+        DW_div_uns_a_width4_b_width3_J51_H32_D2
+        DW_div_uns_a_width4_b_width3_J51_H34_D2
+        DW_div_uns_a_width4_b_width3_J51_H36_D2
+        DW_div_uns_a_width4_b_width3_J51_H38_D2
+        DW_div_uns_a_width4_b_width3_J51_H41_D2
+  node_ADDR_X1_ADDR_Y0
+     cpu_1
+        alu_1
+           DP_OP_54_9164_53242_J37876_P0_D0
+           DW_div_tc_a_width32_b_width32_J37857_P5_D2
+              DW01_absval_width32_J37857_P5_D3_D3_D2
+              DW01_add_J94974_P0_D1
+              DW01_add_J94975_P0_D1
+              DW01_add_J94976_P0_D1
+              DW01_add_J94977_P0_D1
+              DW01_add_J94978_P0_D1
+              DW01_add_J94979_P0_D1
+              DW01_add_J94980_P0_D1
+              DW01_add_J94981_P0_D1
+              DW01_add_J94982_P0_D1
+              DW01_add_J94983_P0_D1
+              DW01_add_J94984_P0_D1
+              DW01_add_J94985_P0_D1
+                 sky130_fd_sc_hd__nor4b_2                      sky130_fd_sc_hd
+              DW01_add_J94986_P0_D1
+              DW01_add_J94987_P0_D1
+              DW01_add_J94988_P0_D1
+              DW01_add_J94989_P0_D1
+              DW01_add_J94990_P0_D1
+              DW01_add_J94991_P0_D1
+              DW01_add_J94992_P0_D1
+              DW01_add_J94993_P0_D1
+              DW01_add_J94998_P0_D1
+              DW01_add_J95005_P0_D1
+              DW01_add_J95008_P0_D1
+              DW01_add_J95018_P0_D1
+              DW01_add_J95019_P0_D1
+              DW01_add_J95020_P0_D1
+              DW01_add_J95021_P0_D1
+              DW01_add_J95022_P0_D1
+              DW01_add_J95023_P0_D1
+              DW01_add_J95024_P0_D1
+              DW01_add_J95025_P0_D1
+              DW01_add_J95026_P0_D1
+              DW01_add_J95027_P0_D1
+              DW01_add_J95028_P0_D1
+              DW01_add_J95029_P0_D1
+              DW01_add_J95030_P0_D1
+              DW01_add_J95031_P0_D1
+              DW01_add_J95032_P0_D1
+              DW01_add_J95033_P0_D1
+              DW01_add_J95034_P0_D1
+              DW01_add_J95035_P0_D1
+              DW01_add_J95036_P0_D1
+              DW01_add_J95037_P0_D1
+              DW01_add_J95038_P0_D1
+              DW01_add_J95039_P0_D1
+              DW01_add_J95040_P0_D1
+              DW01_add_J95041_P0_D1
+              DW01_add_J95042_P0_D1
+              DW01_add_J95043_P0_D1
+              DW01_add_J95044_P0_D1
+              DW01_add_J95045_P0_D1
+              DW01_add_J95046_P0_D1
+              DW01_add_J95047_P0_D1
+              DW01_add_J95048_P0_D1
+              DW01_add_J95049_P0_D1
+              DW01_add_J95050_P0_D1
+              DW01_add_J95051_P0_D1
+              DW01_add_J95052_P0_D1
+              DW01_add_J95053_P0_D1
+              DW01_add_J95054_P0_D1
+              DW01_add_J95055_P0_D1
+              DW01_add_J95056_P0_D1
+              DW01_sub_J95009_P0_D1
+           DW_div_uns_a_width32_b_width32_J37862_P5_D2
+              DW01_add_J95063_P0_D1
+              DW01_add_J95066_P0_D1
+              DW01_add_J95067_P0_D1
+              DW01_add_J95084_P0_D1
+              DW01_add_J95085_P0_D1
+              DW01_add_J95086_P0_D1
+              DW01_add_J95087_P0_D1
+              DW01_add_J95088_P0_D1
+              DW01_add_J95089_P0_D1
+              DW01_add_J95090_P0_D1
+              DW01_add_J95091_P0_D1
+              DW01_add_J95092_P0_D1
+              DW01_add_J95093_P0_D1
+              DW01_add_J95094_P0_D1
+              DW01_add_J95095_P0_D1
+              DW01_add_J95096_P0_D1
+              DW01_add_J95097_P0_D1
+              DW01_add_J95098_P0_D1
+              DW01_add_J95099_P0_D1
+              DW01_add_J95100_P0_D1
+              DW01_add_J95101_P0_D1
+              DW01_add_J95102_P0_D1
+              DW01_add_J95103_P0_D1
+              DW01_add_J95104_P0_D1
+              DW01_add_J95105_P0_D1
+              DW01_add_J95106_P0_D1
+              DW01_add_J95107_P0_D1
+              DW01_add_J95108_P0_D1
+              DW01_add_J95109_P0_D1
+              DW01_add_J95110_P0_D1
+              DW01_add_J95111_P0_D1
+              DW01_add_J95112_P0_D1
+              DW01_add_J95113_P0_D1
+              DW01_add_J95114_P0_D1
+              DW01_add_J95115_P0_D1
+              DW01_add_J95116_P0_D1
+              DW01_add_J95117_P0_D1
+              DW01_add_J95118_P0_D1
+              DW01_add_J95119_P0_D1
+              DW01_add_J95120_P0_D1
+              DW01_add_J95121_P0_D1
+              DW01_add_J95122_P0_D1
+              DW01_add_J95123_P0_D1
+              DW01_add_J95124_P0_D1
+              DW01_add_J95125_P0_D1
+              DW01_add_J95126_P0_D1
+              DW01_add_J95127_P0_D1
+              DW01_add_J95128_P0_D1
+              DW01_add_J95129_P0_D1
+              DW01_add_J95130_P0_D1
+              DW01_add_J95131_P0_D1
+              DW01_add_J95132_P0_D1
+              DW01_add_J95133_P0_D1
+              DW01_add_J95134_P0_D1
+              DW01_add_J95135_P0_D1
+              DW01_add_J95136_P0_D1
+              DW01_add_J95137_P0_D1
+              DW01_add_J95138_P0_D1
+              DW01_add_J95139_P0_D1
+              DW01_add_J95140_P0_D1
+              DW01_add_J95141_P0_D1
+              DW01_sub_J95068_P0_D1
+           DW_mult_tc_J3076_P0_D1
+           DW_mult_uns_J37869_P0_D1
+        branch_control_unit_1
+        control_unit_1
+           mux_2to1_3bit_1
+        ex_forward_unit_1
+        f_reg_file_1
+        fpu_1
+           Addition_Subtraction_25
+              DP_OP_42_61208_6679_J37881_P0_D0
+              priority_encoder_25
+           Comparison_5
+           Division_1
+              Addition_Subtraction_101
+                 DP_OP_42_61208_6679_J37887_P0_D0
+                 priority_encoder_101
+              DP_OP_7_31631_40608_J3643_P0_D0
+              Iteration_3
+                 Addition_Subtraction_107
+                    DP_OP_42_61208_6679_J37897_P0_D0
+                    priority_encoder_107
+                 Multiplication_98
+                    DP_OP_22_291_36538_J37888_P0_D0
+                    DW_mult_uns_J37889_P0_D1
+                 Multiplication_99
+                    DP_OP_22_291_36538_J37898_P0_D0
+                    DW_mult_uns_J37899_P0_D1
+              Iteration_4
+                 Addition_Subtraction_108
+                    DP_OP_42_61208_6679_J37909_P0_D0
+                    priority_encoder_108
+                 Multiplication_100
+                    DP_OP_22_291_36538_J37900_P0_D0
+                    DW_mult_uns_J37901_P0_D1
+                 Multiplication_101
+                    DP_OP_22_291_36538_J37910_P0_D0
+                    DW_mult_uns_J37911_P0_D1
+              Iteration_5
+                 Addition_Subtraction_109
+                    DP_OP_42_61208_6679_J37921_P0_D0
+                    priority_encoder_109
+                 Multiplication_102
+                    DP_OP_22_291_36538_J37912_P0_D0
+                    DW_mult_uns_J37913_P0_D1
+                 Multiplication_103
+                    DP_OP_22_291_36538_J37922_P0_D0
+                    DW_mult_uns_J37923_P0_D1
+              Multiplication_86
+                 DP_OP_22_291_36538_J37884_P0_D0
+                 DW_mult_uns_J37885_P0_D1
+              Multiplication_87
+                 DP_OP_22_291_36538_J37924_P0_D0
+                 DW_mult_uns_J37925_P0_D1
+           Floating_Point_to_Integer_1
+           Multiplication_21
+              DP_OP_22_291_36538_J37882_P0_D0
+              DW_mult_uns_J37883_P0_D1
+           mux_2to1_32bit_29
+           mux_4to1_32bit_25
+        hazard_detection_unit_1
+        immediate_generation_unit_1
+        mem_forward_unit_1
+        mux_2to1_32bit_10
+        mux_2to1_32bit_11
+        mux_2to1_32bit_12
+        mux_2to1_32bit_13
+        mux_2to1_32bit_7
+        mux_2to1_32bit_8
+        mux_2to1_32bit_9
+        mux_4to1_32bit_10
+        mux_4to1_32bit_11
+        mux_4to1_32bit_6
+        mux_4to1_32bit_7
+        mux_4to1_32bit_8
+        mux_4to1_32bit_9
+        pipeline_flush_unit_1
+        plus_4_adder_2
+        plus_4_adder_3
+        pr_ex_mem_1
+        pr_id_ex_1
+        pr_if_id_1
+        pr_mem_wb_1
+        reg_file_1
+     data_memory_1
+        sky130_fd_sc_hd__dlygate4sd3_1                         sky130_fd_sc_hd
+     instruction_memory_1
+     network_interface_1
+        fifo_DEPTH16_DATA_WIDTH32_2
+        fifo_DEPTH16_DATA_WIDTH32_3
+     neuron_bank_NUM_NEURONS4_1
+        neuron_core_4
+           Addition_Subtraction_26
+              DP_OP_42_61208_6679_J37934_P0_D0
+              priority_encoder_26
+           Addition_Subtraction_27
+              DP_OP_42_61208_6679_J37941_P0_D0
+              priority_encoder_27
+           Addition_Subtraction_28
+              DP_OP_42_61208_6679_J37946_P0_D0
+              priority_encoder_28
+           Addition_Subtraction_29
+              DP_OP_42_61208_6679_J37949_P0_D0
+              priority_encoder_29
+           Addition_Subtraction_30
+              DP_OP_42_61208_6679_J37954_P0_D0
+              priority_encoder_30
+           Addition_Subtraction_31
+              DP_OP_42_61208_6679_J4231_P0_D0
+              priority_encoder_31
+           Comparison_6
+           Multiplication_22
+              DP_OP_22_291_36538_J37926_P0_D0
+              DW_mult_uns_J37927_P0_D1
+           Multiplication_23
+              DP_OP_22_291_36538_J37928_P0_D0
+              DW_mult_uns_J37929_P0_D1
+           Multiplication_24
+              DP_OP_22_291_36538_J37930_P0_D0
+              DW_mult_uns_J37931_P0_D1
+           Multiplication_25
+              DP_OP_22_291_36538_J37950_P0_D0
+              DW_mult_uns_J37951_P0_D1
+           Multiplication_26
+              DP_OP_22_291_36538_J37955_P0_D0
+              DW_mult_uns_J37956_P0_D1
+        neuron_core_5
+           Addition_Subtraction_32
+              DP_OP_42_61208_6679_J37965_P0_D0
+              priority_encoder_32
+           Addition_Subtraction_33
+              DP_OP_42_61208_6679_J37972_P0_D0
+              priority_encoder_33
+           Addition_Subtraction_34
+              DP_OP_42_61208_6679_J37977_P0_D0
+              priority_encoder_34
+           Addition_Subtraction_35
+              DP_OP_42_61208_6679_J37980_P0_D0
+              priority_encoder_35
+           Addition_Subtraction_36
+              DP_OP_42_61208_6679_J37985_P0_D0
+              priority_encoder_36
+                 sky130_fd_sc_hd__a41o_1                       sky130_fd_sc_hd
+           Addition_Subtraction_37
+              DP_OP_42_61208_6679_J4784_P0_D0
+              priority_encoder_37
+           Comparison_7
+           Multiplication_27
+              DP_OP_22_291_36538_J37957_P0_D0
+              DW_mult_uns_J37958_P0_D1
+           Multiplication_28
+              DP_OP_22_291_36538_J37959_P0_D0
+              DW_mult_uns_J37960_P0_D1
+           Multiplication_29
+              DP_OP_22_291_36538_J37961_P0_D0
+              DW_mult_uns_J37962_P0_D1
+           Multiplication_30
+              DP_OP_22_291_36538_J37981_P0_D0
+              DW_mult_uns_J37982_P0_D1
+           Multiplication_31
+              DP_OP_22_291_36538_J37986_P0_D0
+              DW_mult_uns_J37987_P0_D1
+        neuron_core_6
+           Addition_Subtraction_38
+              DP_OP_42_61208_6679_J37996_P0_D0
+              priority_encoder_38
+           Addition_Subtraction_39
+              DP_OP_42_61208_6679_J38003_P0_D0
+              priority_encoder_39
+           Addition_Subtraction_40
+              DP_OP_42_61208_6679_J38008_P0_D0
+              priority_encoder_40
+           Addition_Subtraction_41
+              DP_OP_42_61208_6679_J38011_P0_D0
+              priority_encoder_41
+              sky130_fd_sc_hd__o31ai_4                         sky130_fd_sc_hd
+           Addition_Subtraction_42
+              DP_OP_42_61208_6679_J38016_P0_D0
+              priority_encoder_42
+           Addition_Subtraction_43
+              DP_OP_42_61208_6679_J5337_P0_D0
+              priority_encoder_43
+           Comparison_8
+           Multiplication_32
+              DP_OP_22_291_36538_J37988_P0_D0
+              DW_mult_uns_J37989_P0_D1
+           Multiplication_33
+              DP_OP_22_291_36538_J37990_P0_D0
+              DW_mult_uns_J37991_P0_D1
+           Multiplication_34
+              DP_OP_22_291_36538_J37992_P0_D0
+              DW_mult_uns_J37993_P0_D1
+           Multiplication_35
+              DP_OP_22_291_36538_J38012_P0_D0
+              DW_mult_uns_J38013_P0_D1
+           Multiplication_36
+              DP_OP_22_291_36538_J38017_P0_D0
+              DW_mult_uns_J38018_P0_D1
+        neuron_core_7
+           Addition_Subtraction_44
+              DP_OP_42_61208_6679_J38027_P0_D0
+              priority_encoder_44
+           Addition_Subtraction_45
+              DP_OP_42_61208_6679_J38034_P0_D0
+              priority_encoder_45
+           Addition_Subtraction_46
+              DP_OP_42_61208_6679_J38039_P0_D0
+              priority_encoder_46
+           Addition_Subtraction_47
+              DP_OP_42_61208_6679_J38042_P0_D0
+              priority_encoder_47
+           Addition_Subtraction_48
+              DP_OP_42_61208_6679_J38047_P0_D0
+              priority_encoder_48
+           Addition_Subtraction_49
+              DP_OP_42_61208_6679_J5890_P0_D0
+              priority_encoder_49
+           Comparison_9
+           Multiplication_37
+              DP_OP_22_291_36538_J38019_P0_D0
+              DW_mult_uns_J38020_P0_D1
+           Multiplication_38
+              DP_OP_22_291_36538_J38021_P0_D0
+              DW_mult_uns_J38022_P0_D1
+           Multiplication_39
+              DP_OP_22_291_36538_J38023_P0_D0
+              DW_mult_uns_J38024_P0_D1
+           Multiplication_40
+              DP_OP_22_291_36538_J38043_P0_D0
+              DW_mult_uns_J38044_P0_D1
+           Multiplication_41
+              DP_OP_22_291_36538_J38048_P0_D0
+              DW_mult_uns_J38049_P0_D1
+     router_ADDR_X1_ADDR_Y0
+        DW_div_uns_a_width4_b_width3_J38061_P7_D2
+        DW_div_uns_a_width4_b_width3_J38089_P7_D2
+        DW_div_uns_a_width4_b_width3_J38092_P7_D2
+        DW_div_uns_a_width4_b_width3_J50_H10_D2
+        DW_div_uns_a_width4_b_width3_J50_H12_D2
+        DW_div_uns_a_width4_b_width3_J50_H14_D2
+        DW_div_uns_a_width4_b_width3_J50_H16_D2
+        DW_div_uns_a_width4_b_width3_J50_H26_D2
+        DW_div_uns_a_width4_b_width3_J50_H28_D2
+        DW_div_uns_a_width4_b_width3_J50_H30_D2
+        DW_div_uns_a_width4_b_width3_J50_H43_D2
+        DW_div_uns_a_width4_b_width3_J5932_P7_D2
+        DW_div_uns_a_width4_b_width3_J6009_P7_D2
+        DW_div_uns_a_width4_b_width3_J6016_P7_D2
+        DW_div_uns_a_width4_b_width3_J6023_P7_D2
+        DW_div_uns_a_width4_b_width3_J6044_P7_D2
+  node_ADDR_X1_ADDR_Y1
+     cpu
+        alu
+           DP_OP_54_9164_27828_J38306_P0_D0
+           DW_div_tc_a_width32_b_width32_J38287_P5_D2
+              DW01_absval_width32_J38287_P5_D3_D3_D2
+              DW01_add_J95336_P0_D1
+              DW01_add_J95337_P0_D1
+              DW01_add_J95338_P0_D1
+              DW01_add_J95339_P0_D1
+              DW01_add_J95340_P0_D1
+              DW01_add_J95341_P0_D1
+              DW01_add_J95342_P0_D1
+              DW01_add_J95343_P0_D1
+              DW01_add_J95344_P0_D1
+              DW01_add_J95345_P0_D1
+              DW01_add_J95346_P0_D1
+              DW01_add_J95347_P0_D1
+              DW01_add_J95348_P0_D1
+              DW01_add_J95349_P0_D1
+              DW01_add_J95350_P0_D1
+              DW01_add_J95351_P0_D1
+              DW01_add_J95352_P0_D1
+              DW01_add_J95353_P0_D1
+              DW01_add_J95354_P0_D1
+              DW01_add_J95355_P0_D1
+              DW01_add_J95360_P0_D1
+              DW01_add_J95367_P0_D1
+              DW01_add_J95370_P0_D1
+              DW01_add_J95380_P0_D1
+              DW01_add_J95381_P0_D1
+              DW01_add_J95382_P0_D1
+              DW01_add_J95383_P0_D1
+              DW01_add_J95384_P0_D1
+              DW01_add_J95385_P0_D1
+              DW01_add_J95386_P0_D1
+              DW01_add_J95387_P0_D1
+              DW01_add_J95388_P0_D1
+              DW01_add_J95389_P0_D1
+              DW01_add_J95390_P0_D1
+              DW01_add_J95391_P0_D1
+              DW01_add_J95392_P0_D1
+              DW01_add_J95393_P0_D1
+              DW01_add_J95394_P0_D1
+              DW01_add_J95395_P0_D1
+              DW01_add_J95396_P0_D1
+              DW01_add_J95397_P0_D1
+              DW01_add_J95398_P0_D1
+              DW01_add_J95399_P0_D1
+              DW01_add_J95400_P0_D1
+              DW01_add_J95401_P0_D1
+              DW01_add_J95402_P0_D1
+              DW01_add_J95403_P0_D1
+              DW01_add_J95404_P0_D1
+              DW01_add_J95405_P0_D1
+              DW01_add_J95406_P0_D1
+              DW01_add_J95407_P0_D1
+              DW01_add_J95408_P0_D1
+              DW01_add_J95409_P0_D1
+              DW01_add_J95410_P0_D1
+              DW01_add_J95411_P0_D1
+              DW01_add_J95412_P0_D1
+              DW01_add_J95413_P0_D1
+              DW01_add_J95414_P0_D1
+              DW01_add_J95415_P0_D1
+              DW01_add_J95416_P0_D1
+              DW01_add_J95417_P0_D1
+              DW01_add_J95418_P0_D1
+              DW01_sub_J95371_P0_D1
+           DW_div_uns_a_width32_b_width32_J38292_P5_D2
+              DW01_add_J95425_P0_D1
+              DW01_add_J95428_P0_D1
+              DW01_add_J95429_P0_D1
+              DW01_add_J95446_P0_D1
+              DW01_add_J95447_P0_D1
+              DW01_add_J95448_P0_D1
+              DW01_add_J95449_P0_D1
+              DW01_add_J95450_P0_D1
+              DW01_add_J95451_P0_D1
+              DW01_add_J95452_P0_D1
+              DW01_add_J95453_P0_D1
+              DW01_add_J95454_P0_D1
+              DW01_add_J95455_P0_D1
+              DW01_add_J95456_P0_D1
+              DW01_add_J95457_P0_D1
+              DW01_add_J95458_P0_D1
+              DW01_add_J95459_P0_D1
+              DW01_add_J95460_P0_D1
+              DW01_add_J95461_P0_D1
+              DW01_add_J95462_P0_D1
+              DW01_add_J95463_P0_D1
+              DW01_add_J95464_P0_D1
+              DW01_add_J95465_P0_D1
+              DW01_add_J95466_P0_D1
+              DW01_add_J95467_P0_D1
+              DW01_add_J95468_P0_D1
+              DW01_add_J95469_P0_D1
+              DW01_add_J95470_P0_D1
+              DW01_add_J95471_P0_D1
+              DW01_add_J95472_P0_D1
+              DW01_add_J95473_P0_D1
+              DW01_add_J95474_P0_D1
+              DW01_add_J95475_P0_D1
+              DW01_add_J95476_P0_D1
+              DW01_add_J95477_P0_D1
+              DW01_add_J95478_P0_D1
+              DW01_add_J95479_P0_D1
+              DW01_add_J95480_P0_D1
+              DW01_add_J95481_P0_D1
+              DW01_add_J95482_P0_D1
+              DW01_add_J95483_P0_D1
+              DW01_add_J95484_P0_D1
+              DW01_add_J95485_P0_D1
+              DW01_add_J95486_P0_D1
+              DW01_add_J95487_P0_D1
+              DW01_add_J95488_P0_D1
+              DW01_add_J95489_P0_D1
+              DW01_add_J95490_P0_D1
+              DW01_add_J95491_P0_D1
+              DW01_add_J95492_P0_D1
+              DW01_add_J95493_P0_D1
+              DW01_add_J95494_P0_D1
+              DW01_add_J95495_P0_D1
+              DW01_add_J95496_P0_D1
+              DW01_add_J95497_P0_D1
+              DW01_add_J95498_P0_D1
+              DW01_add_J95499_P0_D1
+              DW01_add_J95500_P0_D1
+              DW01_add_J95501_P0_D1
+              DW01_add_J95502_P0_D1
+              DW01_add_J95503_P0_D1
+              DW01_sub_J95430_P0_D1
+           DW_mult_tc_J8956_P0_D1
+           DW_mult_uns_J38299_P0_D1
+        branch_control_unit
+        control_unit
+           mux_2to1_3bit
+        ex_forward_unit
+        f_reg_file
+        fpu
+           Addition_Subtraction_75
+              DP_OP_42_61208_6679_J38311_P0_D0
+              priority_encoder_75
+           Comparison_15
+           Division
+              Addition_Subtraction_103
+                 DP_OP_42_61208_6679_J38317_P0_D0
+                 priority_encoder_103
+              DP_OP_7_31631_40608_J9523_P0_D0
+              Iteration
+                 Addition_Subtraction
+                    DP_OP_42_61208_6679_J38351_P0_D0
+                    priority_encoder
+                 Multiplication
+                    DP_OP_22_291_36538_J38352_P0_D0
+                    DW_mult_uns_J38353_P0_D1
+                 Multiplication_114
+                    DP_OP_22_291_36538_J38342_P0_D0
+                    DW_mult_uns_J38343_P0_D1
+              Iteration_10
+                 Addition_Subtraction_114
+                    DP_OP_42_61208_6679_J38339_P0_D0
+                    priority_encoder_114
+                 Multiplication_112
+                    DP_OP_22_291_36538_J38330_P0_D0
+                    DW_mult_uns_J38331_P0_D1
+                 Multiplication_113
+                    DP_OP_22_291_36538_J38340_P0_D0
+                    DW_mult_uns_J38341_P0_D1
+              Iteration_9
+                 Addition_Subtraction_113
+                    DP_OP_42_61208_6679_J38327_P0_D0
+                    priority_encoder_113
+                 Multiplication_110
+                    DP_OP_22_291_36538_J38318_P0_D0
+                    DW_mult_uns_J38319_P0_D1
+                 Multiplication_111
+                    DP_OP_22_291_36538_J38328_P0_D0
+                    DW_mult_uns_J38329_P0_D1
+              Multiplication_90
+                 DP_OP_22_291_36538_J38314_P0_D0
+                 DW_mult_uns_J38315_P0_D1
+              Multiplication_91
+                 DP_OP_22_291_36538_J38354_P0_D0
+                 DW_mult_uns_J38355_P0_D1
+           Floating_Point_to_Integer
+           Multiplication_63
+              DP_OP_22_291_36538_J38312_P0_D0
+              DW_mult_uns_J38313_P0_D1
+           mux_2to1_32bit
+           mux_4to1_32bit
+        hazard_detection_unit
+        immediate_generation_unit
+        mem_forward_unit
+        mux_2to1_32bit_21
+        mux_2to1_32bit_22
+        mux_2to1_32bit_23
+        mux_2to1_32bit_24
+        mux_2to1_32bit_25
+        mux_2to1_32bit_26
+        mux_2to1_32bit_27
+        mux_4to1_32bit_18
+        mux_4to1_32bit_19
+        mux_4to1_32bit_20
+        mux_4to1_32bit_21
+        mux_4to1_32bit_22
+        mux_4to1_32bit_23
+        pipeline_flush_unit
+        plus_4_adder
+        plus_4_adder_6
+        pr_ex_mem
+        pr_id_ex
+        pr_if_id
+        pr_mem_wb
+        reg_file
+     data_memory
+     instruction_memory
+     network_interface
+        fifo_DEPTH16_DATA_WIDTH32
+        fifo_DEPTH16_DATA_WIDTH32_6
+     neuron_bank_NUM_NEURONS4
+        neuron_core
+           Addition_Subtraction_94
+              DP_OP_42_61208_6679_J38457_P0_D0
+              priority_encoder_94
+           Addition_Subtraction_95
+              DP_OP_42_61208_6679_J38464_P0_D0
+              priority_encoder_95
+           Addition_Subtraction_96
+              DP_OP_42_61208_6679_J38469_P0_D0
+              priority_encoder_96
+           Addition_Subtraction_97
+              DP_OP_42_61208_6679_J38472_P0_D0
+              priority_encoder_97
+           Addition_Subtraction_98
+              DP_OP_42_61208_6679_J38477_P0_D0
+              priority_encoder_98
+           Addition_Subtraction_99
+              DP_OP_42_61208_6679_J11770_P0_D0
+              priority_encoder_99
+           Comparison
+           Multiplication_79
+              DP_OP_22_291_36538_J38449_P0_D0
+              DW_mult_uns_J38450_P0_D1
+           Multiplication_80
+              DP_OP_22_291_36538_J38451_P0_D0
+              DW_mult_uns_J38452_P0_D1
+           Multiplication_81
+              DP_OP_22_291_36538_J38453_P0_D0
+              DW_mult_uns_J38454_P0_D1
+           Multiplication_82
+              DP_OP_22_291_36538_J38473_P0_D0
+              DW_mult_uns_J38474_P0_D1
+           Multiplication_83
+              DP_OP_22_291_36538_J38478_P0_D0
+              DW_mult_uns_J38479_P0_D1
+        neuron_core_12
+           Addition_Subtraction_76
+              DP_OP_42_61208_6679_J38364_P0_D0
+              priority_encoder_76
+           Addition_Subtraction_77
+              DP_OP_42_61208_6679_J38371_P0_D0
+              priority_encoder_77
+           Addition_Subtraction_78
+              DP_OP_42_61208_6679_J38376_P0_D0
+              priority_encoder_78
+           Addition_Subtraction_79
+              DP_OP_42_61208_6679_J38379_P0_D0
+              priority_encoder_79
+           Addition_Subtraction_80
+              DP_OP_42_61208_6679_J38384_P0_D0
+              priority_encoder_80
+           Addition_Subtraction_81
+              DP_OP_42_61208_6679_J10111_P0_D0
+              priority_encoder_81
+           Comparison_16
+           Multiplication_64
+              DP_OP_22_291_36538_J38356_P0_D0
+              DW_mult_uns_J38357_P0_D1
+           Multiplication_65
+              DP_OP_22_291_36538_J38358_P0_D0
+              DW_mult_uns_J38359_P0_D1
+           Multiplication_66
+              DP_OP_22_291_36538_J38360_P0_D0
+              DW_mult_uns_J38361_P0_D1
+           Multiplication_67
+              DP_OP_22_291_36538_J38380_P0_D0
+              DW_mult_uns_J38381_P0_D1
+           Multiplication_68
+              DP_OP_22_291_36538_J38385_P0_D0
+              DW_mult_uns_J38386_P0_D1
+        neuron_core_13
+           Addition_Subtraction_82
+              DP_OP_42_61208_6679_J38395_P0_D0
+              priority_encoder_82
+           Addition_Subtraction_83
+              DP_OP_42_61208_6679_J38402_P0_D0
+              priority_encoder_83
+           Addition_Subtraction_84
+              DP_OP_42_61208_6679_J38407_P0_D0
+              priority_encoder_84
+           Addition_Subtraction_85
+              DP_OP_42_61208_6679_J38410_P0_D0
+              priority_encoder_85
+           Addition_Subtraction_86
+              DP_OP_42_61208_6679_J38415_P0_D0
+              priority_encoder_86
+           Addition_Subtraction_87
+              DP_OP_42_61208_6679_J10664_P0_D0
+              priority_encoder_87
+           Comparison_17
+           Multiplication_69
+              DP_OP_22_291_36538_J38387_P0_D0
+              DW_mult_uns_J38388_P0_D1
+           Multiplication_70
+              DP_OP_22_291_36538_J38389_P0_D0
+              DW_mult_uns_J38390_P0_D1
+           Multiplication_71
+              DP_OP_22_291_36538_J38391_P0_D0
+              DW_mult_uns_J38392_P0_D1
+           Multiplication_72
+              DP_OP_22_291_36538_J38411_P0_D0
+              DW_mult_uns_J38412_P0_D1
+           Multiplication_73
+              DP_OP_22_291_36538_J38416_P0_D0
+              DW_mult_uns_J38417_P0_D1
+        neuron_core_14
+           Addition_Subtraction_88
+              DP_OP_42_61208_6679_J38426_P0_D0
+              priority_encoder_88
+              sky130_fd_sc_hd__a2bb2oi_4                       sky130_fd_sc_hd
+           Addition_Subtraction_89
+              DP_OP_42_61208_6679_J38433_P0_D0
+              priority_encoder_89
+           Addition_Subtraction_90
+              DP_OP_42_61208_6679_J38438_P0_D0
+              priority_encoder_90
+           Addition_Subtraction_91
+              DP_OP_42_61208_6679_J38441_P0_D0
+              priority_encoder_91
+           Addition_Subtraction_92
+              DP_OP_42_61208_6679_J38446_P0_D0
+              priority_encoder_92
+                 sky130_fd_sc_hd__a2111oi_4                    sky130_fd_sc_hd
+           Addition_Subtraction_93
+              DP_OP_42_61208_6679_J11217_P0_D0
+              priority_encoder_93
+           Comparison_18
+           Multiplication_74
+              DP_OP_22_291_36538_J38418_P0_D0
+              DW_mult_uns_J38419_P0_D1
+           Multiplication_75
+              DP_OP_22_291_36538_J38420_P0_D0
+              DW_mult_uns_J38421_P0_D1
+           Multiplication_76
+              DP_OP_22_291_36538_J38422_P0_D0
+              DW_mult_uns_J38423_P0_D1
+           Multiplication_77
+              DP_OP_22_291_36538_J38442_P0_D0
+              DW_mult_uns_J38443_P0_D1
+           Multiplication_78
+              DP_OP_22_291_36538_J38447_P0_D0
+              DW_mult_uns_J38448_P0_D1
+     router_ADDR_X1_ADDR_Y1
+        DW_div_uns_a_width4_b_width3_J11868_P7_D2
+        DW_div_uns_a_width4_b_width3_J11875_P7_D2
+        DW_div_uns_a_width4_b_width3_J11889_P7_D2
+        DW_div_uns_a_width4_b_width3_J11903_P7_D2
+        DW_div_uns_a_width4_b_width3_J11910_P7_D2
+        DW_div_uns_a_width4_b_width3_J11917_P7_D2
+        DW_div_uns_a_width4_b_width3_J38505_P7_D2
+        DW_div_uns_a_width4_b_width3_J38533_P7_D2
+        DW_div_uns_a_width4_b_width3_J49_H10_D2
+        DW_div_uns_a_width4_b_width3_J49_H12_D2
+        DW_div_uns_a_width4_b_width3_J49_H14_D2
+        DW_div_uns_a_width4_b_width3_J49_H24_D2
+        DW_div_uns_a_width4_b_width3_J49_H26_D2
+        DW_div_uns_a_width4_b_width3_J49_H28_D2
+        DW_div_uns_a_width4_b_width3_J49_H30_D2
+        DW_div_uns_a_width4_b_width3_J49_H32_D2
+        DW_div_uns_a_width4_b_width3_J49_H34_D2
+        DW_div_uns_a_width4_b_width3_J49_H36_D2
+        DW_div_uns_a_width4_b_width3_J49_H38_D2
+        DW_div_uns_a_width4_b_width3_J49_H49_D2
+  sky130_fd_sc_hd__conb_1                                      sky130_fd_sc_hd
+  sky130_fd_sc_hd__macro_sparecell                             sky130_fd_sc_hd
+
+1
