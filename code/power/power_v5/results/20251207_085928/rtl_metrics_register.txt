@@ -1,0 +1,1517 @@
+****************************************
+Report : report_rtl_metrics
+      -view register
+Design : mesh
+Version: W-2024.09-SP2
+Date   : Sun Dec  7 10:15:37 2025
+****************************************
+
+-----------------------------------------------------------------------------------------------------------------------------
+Register                           Dynamic        Switching      Leakage        Total          Register       Root Clk       
+Name                               Power          Power          Power          Power          Gated          Name           
+                                                                                                                             
+-----------------------------------------------------------------------------------------------------------------------------
+ROW_LOOP[1].COL_LOOP[0].u_node/DMEM/mem[0:5, 12, 14:16, 18:22, 24, 27:28, 31:33, 36:45, 48, 52:1023][0:7]
+                                   0.000396       0              0.0001302      0.0005261      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/DMEM/mem[0:1, 4, 8, 12, 16, 20, 24:29, 31:33, 36:45, 48, 52:1023][0:7]
+                                   0.0003903      0              0.0001295      0.0005198      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/DMEM/mem[1, 3:4, 8, 12, 18, 20, 24:30, 32:33, 36:43, 45, 52:192, 194:208, 210:1023][0:7]
+                                   0.000386       0              0.000129       0.000515       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/DMEM/mem[1:4, 8, 12, 15, 20, 24:30, 32:33, 36:45, 52:1023][0:7]
+                                   0.0003828      0              0.0001295      0.0005123      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_IF_ID/ID_PC[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_IF_ID/ID_INSTRUCTION[0:31]
+                                   0.0002491      9.233e-05      1.011e-06      0.0002502      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_IF_ID/ID_PC[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_IF_ID/ID_INSTRUCTION[0:31]
+                                   0.000249       9.601e-05      1.011e-06      0.00025        True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_IF_ID/ID_PC[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_IF_ID/ID_INSTRUCTION[0:31]
+                                   0.0002486      8.67e-05       1.011e-06      0.0002496      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_IF_ID/ID_PC[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_IF_ID/ID_INSTRUCTION[0:31]
+                                   0.0002479      7.601e-05      1.011e-06      0.000249       True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_ALU_OUT[0:31]
+                                   0.0001389      2.433e-05      5.302e-07      0.0001394      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_ALU_OUT[0:31]
+                                   0.0001355      2.058e-05      5.353e-07      0.000136       False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_IMMEDIATE[0:31]
+                                   0.0001312      3.588e-06      5.178e-07      0.0001317      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_IMMEDIATE[0:31]
+                                   0.0001312      3.443e-06      5.178e-07      0.0001317      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_IMMEDIATE[0:31]
+                                   0.0001309      3.34e-06       5.175e-07      0.0001314      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_IMMEDIATE[0:31]
+                                   0.0001309      3.344e-06      5.176e-07      0.0001314      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PC[0:31]
+                                   0.0001193      3.632e-06      5.035e-07      0.0001198      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PC[0:31]
+                                   0.0001193      3.605e-06      5.035e-07      0.0001198      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PC[0:31]
+                                   0.0001191      3.415e-06      5.035e-07      0.0001196      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PC[0:31]
+                                   0.0001186      2.936e-06      5.035e-07      0.0001191      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_ALU_OUT[0:31]
+                                   0.0001166      2.432e-06      5.224e-07      0.0001171      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_PC[0:31]
+                                   0.0001159      1.695e-06      5.012e-07      0.0001164      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_PC[0:31]
+                                   0.0001157      1.538e-06      5.012e-07      0.0001162      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_PC[0:31]
+                                   0.0001155      1.304e-06      5.012e-07      0.000116       False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_PC[0:31]
+                                   0.0001154      1.232e-06      5.012e-07      0.0001159      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_PC[0:31]
+                                   0.0001154      1.093e-06      5.017e-07      0.0001159      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_ALU_OUT[0:31]
+                                   0.0001153      1.058e-06      5.224e-07      0.0001158      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_PC[0:31]
+                                   0.0001151      8.48e-07       5.017e-07      0.0001156      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_PC[0:31]
+                                   0.0001151      6.725e-07      5.02e-07       0.0001156      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_PC[0:31]
+                                   0.000115       7.68e-07       5.017e-07      0.0001156      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_PC[0:31]
+                                   0.000115       6.331e-07      5.02e-07       0.0001155      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_PC[0:31]
+                                   0.000115       6.982e-07      5.017e-07      0.0001155      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_PC[0:31]
+                                   0.0001149      5.162e-07      5.02e-07       0.0001154      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_PC[0:31]
+                                   0.0001149      4.715e-07      5.02e-07       0.0001154      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_ALU_OUT[0:31]
+                                   0.0001133      3.37e-07       4.994e-07      0.0001138      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_ALU_OUT[0:31]
+                                   0.0001133      2.673e-07      4.994e-07      0.0001138      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_ALU_OUT[0:31]
+                                   0.0001133      2.625e-07      4.994e-07      0.0001138      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_ALU_OUT[0:31]
+                                   0.0001132      2.455e-07      4.994e-07      0.0001137      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FPU_OUT[0:31]
+                                   0.000112       0              4.982e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_FPU_OUT[0:31]
+                                   0.000112       0              4.982e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FPU_OUT[0:31]
+                                   0.000112       0              4.982e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_FPU_OUT[0:31]
+                                   0.000112       0              4.982e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_DATA_MEM_READ_DATA[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_FPU_OUT[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FREG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_DATA1[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_FREG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA1[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA3[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_FPU_OUT[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_DATA_MEM_READ_DATA[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_DATA_MEM_READ_DATA[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA1[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_DATA1[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA3[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA1[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_FREG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_FPU_OUT[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA1[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FREG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA3[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_DATA1[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA3[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_DATA_MEM_READ_DATA[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_FPU_OUT[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_DATA2[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_DATA1[0:31]
+                                   0.000112       0              4.981e-07      0.0001125      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR1[0:4]
+                                   2.719e-05      4.242e-06      8.824e-08      2.728e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR1[0:4]
+                                   2.687e-05      3.93e-06       8.823e-08      2.696e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR1[0:4]
+                                   2.632e-05      4.092e-06      8.576e-08      2.64e-05       False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR1[0:4]
+                                   2.631e-05      3.729e-06      8.626e-08      2.639e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FPU_SELECT[0:4]
+                                   2.377e-05      2.819e-06      7.828e-08      2.384e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR3[0:4]
+                                   2.371e-05      2.863e-06      8.709e-08      2.38e-05       False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR3[0:4]
+                                   2.333e-05      2.494e-06      8.712e-08      2.342e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR3[0:4]
+                                   2.331e-05      2.576e-06      8.6e-08        2.34e-05       False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR3[0:4]
+                                   2.309e-05      2.259e-06      8.715e-08      2.318e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_ALU_SELECT[0:5]
+                                   2.172e-05      4.245e-07      9.511e-08      2.181e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_ALU_SELECT[0:5]
+                                   2.172e-05      4.249e-07      9.508e-08      2.181e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_ALU_SELECT[0:5]
+                                   2.171e-05      4.127e-07      9.509e-08      2.181e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_ALU_SELECT[0:5]
+                                   2.167e-05      3.779e-07      9.51e-08       2.177e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FPU_SELECT[0:4]
+                                   2.133e-05      1.592e-06      7.83e-08       2.141e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_READ[0:3]
+                                   2.078e-05      5.083e-06      6.458e-08      2.084e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_READ[0:3]
+                                   2.018e-05      4.46e-06       6.44e-08       2.025e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FPU_SELECT[0:4]
+                                   1.968e-05      7.642e-07      7.831e-08      1.976e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FPU_SELECT[0:4]
+                                   1.954e-05      6.881e-07      7.832e-08      1.962e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_READ_ADDR2[0:4]
+                                   1.942e-05      8.066e-07      7.924e-08      1.95e-05       False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_REG_WRITE_ADDR[0:4]
+                                   1.94e-05       1.229e-06      8.495e-08      1.948e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_READ_ADDR2[0:4]
+                                   1.94e-05       7.816e-07      7.924e-08      1.947e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_READ_ADDR2[0:4]
+                                   1.939e-05      7.78e-07       7.924e-08      1.947e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_REG_WRITE_ADDR[0:4]
+                                   1.932e-05      8.891e-07      9.055e-08      1.941e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_READ_ADDR2[0:4]
+                                   1.918e-05      5.706e-07      7.925e-08      1.926e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_WRITE_ADDR[0:4]
+                                   1.903e-05      9.813e-07      7.853e-08      1.911e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_WRITE_ADDR[0:4]
+                                   1.897e-05      9.252e-07      7.855e-08      1.905e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_WRITE_ADDR[0:4]
+                                   1.896e-05      9.128e-07      7.853e-08      1.904e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_REG_WRITE_ADDR[0:4]
+                                   1.895e-05      7.887e-07      8.871e-08      1.904e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_WRITE_ADDR[0:4]
+                                   1.891e-05      7.447e-07      8.493e-08      1.9e-05        False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR2[0:4]
+                                   1.887e-05      2.891e-07      7.925e-08      1.895e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_WRITE_ADDR[0:4]
+                                   1.886e-05      8.097e-07      7.854e-08      1.894e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_WRITE_ADDR[0:4]
+                                   1.884e-05      6.675e-07      8.495e-08      1.892e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_REG_WRITE_ADDR[0:4]
+                                   1.881e-05      6.412e-07      8.683e-08      1.889e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR2[0:4]
+                                   1.878e-05      2.058e-07      7.924e-08      1.886e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR2[0:4]
+                                   1.878e-05      2.07e-07       7.925e-08      1.886e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_WRITE_ADDR[0:4]
+                                   1.877e-05      5.979e-07      8.494e-08      1.886e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR2[0:4]
+                                   1.875e-05      1.834e-07      7.924e-08      1.883e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_WRITE_ADDR[0:4]
+                                   1.87e-05       5.338e-07      8.495e-08      1.879e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_WRITE[0:2]
+                                   1.86e-05       6.434e-06      4.883e-08      1.865e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/tx_fifo/rd_ptr[0:4],
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/tx_fifo/dout[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/tx_fifo/mem[0:9, 12:15][0:31]
+                                   9.977e-06      0              8.281e-06      1.826e-05      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/DMEM/mem[0, 2, 5:7, 9:11, 13:17, 19, 21:23, 31, 34:35, 44, 46:51, 193, 209][0:7]
+                                   1.418e-05      0              3.759e-06      1.794e-05      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/tx_fifo/rd_ptr[0:4],
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/tx_fifo/dout[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/tx_fifo/mem[0:9, 12:15][0:31]
+                                   9.056e-06      0              8.278e-06      1.733e-05      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_READ[0:3]
+                                   1.725e-05      1.55e-06       6.457e-08      1.732e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[8][0:31]
+                                   1.627e-05      0              7.088e-07      1.698e-05      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_WRITE[0:2]
+                                   1.685e-05      4.659e-06      4.881e-08      1.69e-05       False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/tx_fifo/rd_ptr[0:4],
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/tx_fifo/dout[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/tx_fifo/mem[0:9, 12:15][0:31]
+                                   8.612e-06      0              8.278e-06      1.689e-05      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/modes[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/start_resets[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/start_updates[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/start_updates[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/start_resets[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/start_updates[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/start_resets[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/modes[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/modes[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/modes[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/start_updates[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/start_resets[0:3]
+                                   1.679e-05      0              8.765e-08      1.687e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_WRITE[0:2]
+                                   1.67e-05       4.567e-06      4.883e-08      1.675e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_READ[0:3]
+                                   1.665e-05      9.83e-07       6.44e-08       1.672e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[8][0:31]
+                                   1.582e-05      0              7.089e-07      1.653e-05      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[8][0:31]
+                                   1.581e-05      0              7.089e-07      1.652e-05      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_READ[0:3]
+                                   1.634e-05      6.537e-07      6.459e-08      1.641e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_READ[0:3]
+                                   1.619e-05      4.596e-07      6.438e-08      1.626e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[8][0:31]
+                                   1.549e-05      0              7.089e-07      1.62e-05       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_BRANCH_CTRL[0:3]
+                                   1.601e-05      7.932e-07      6.445e-08      1.607e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_READ[0:3]
+                                   1.6e-05        3.664e-07      6.44e-08       1.607e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_READ[0:3]
+                                   1.597e-05      3.113e-07      6.458e-08      1.604e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_BRANCH_CTRL[0:3]
+                                   1.596e-05      7.44e-07       6.447e-08      1.602e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_BRANCH_CTRL[0:3]
+                                   1.593e-05      7.215e-07      6.443e-08      1.6e-05        False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_BRANCH_CTRL[0:3]
+                                   1.591e-05      7.003e-07      6.446e-08      1.598e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_WRITE[0:2]
+                                   1.543e-05      3.368e-06      4.84e-08       1.548e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/DMEM/mem[0, 5:7, 9:11, 13:14, 16:19, 21:23, 31, 34:35, 46:51][0:7]
+                                   1.218e-05      0              3.241e-06      1.542e-05      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_WRITE[0:2]
+                                   1.532e-05      3.172e-06      4.883e-08      1.537e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/tx_fifo/rd_ptr[0:4],
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/tx_fifo/dout[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/tx_fifo/mem[0:9, 12:15][0:31]
+                                   5.7e-06        0              8.279e-06      1.398e-05      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_WRITE[0:2]
+                                   1.321e-05      1.137e-06      4.839e-08      1.326e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/DMEM/mem[2:3, 5:7, 9:11, 13:15, 17:19, 21:23, 30, 34:35, 46:47, 49:51][0:7]
+                                   9.673e-06      0              3.24e-06       1.291e-05      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_WRITE[0:2]
+                                   1.247e-05      4.127e-07      4.84e-08       1.252e-05      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_WRITE[0:2]
+                                   1.227e-05      2.395e-07      4.839e-08      1.232e-05      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_WB_VALUE_SELECT[0:1]
+                                   9.712e-06      1.755e-06      3.785e-08      9.749e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/DMEM/mem[6:11, 13, 17, 23, 25:26, 29:30, 34:35, 46:47, 49:51][0:7]
+                                   7.071e-06      0              2.593e-06      9.664e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_OPERAND2_SELECT
+                                   9.02e-06       3.699e-06      1.904e-08      9.039e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_WB_VALUE_SELECT[0:1]
+                                   8.707e-06      1.028e-06      3.62e-08       8.744e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_WB_VALUE_SELECT[0:1]
+                                   8.629e-06      9.524e-07      3.62e-08       8.665e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/rx_fifo/wr_ptr[0:4],
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/rx_fifo/mem[0:15][0:31]
+                                   -1.877e-09     0              8.578e-06      8.576e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/rx_fifo/wr_ptr[0:4],
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/rx_fifo/mem[0:15][0:31]
+                                   -1.91e-09      0              8.578e-06      8.576e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_WB_VALUE_SELECT[0:1]
+                                   8.466e-06      7.913e-07      3.62e-08       8.502e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/rx_fifo/mem[0:14][0:31]
+                                   7.063e-08      0              7.937e-06      8.007e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/rx_fifo/mem[0:5, 7:15][0:31]
+                                   0              0              7.937e-06      7.937e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_WB_VALUE_SELECT[0:1]
+                                   7.887e-06      1.656e-07      3.297e-08      7.92e-06       False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_WB_VALUE_SELECT[0:1]
+                                   7.831e-06      2.579e-07      3.251e-08      7.864e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_WB_VALUE_SELECT[0:1]
+                                   7.826e-06      1.105e-07      3.297e-08      7.859e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_WB_VALUE_SELECT[0:1]
+                                   7.812e-06      9.82e-08       3.297e-08      7.845e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_WB_VALUE_SELECT[0:1]
+                                   7.8e-06        8.726e-08      3.297e-08      7.832e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_WB_VALUE_SELECT[0:1]
+                                   7.72e-06       1.51e-07       3.251e-08      7.752e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_WB_VALUE_SELECT[0:1]
+                                   7.684e-06      1.177e-07      3.251e-08      7.717e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_WB_VALUE_SELECT[0:1]
+                                   7.683e-06      1.174e-07      3.251e-08      7.715e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_OPERAND2_SELECT
+                                   7.419e-06      2.112e-06      1.905e-08      7.438e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_OPERAND2_SELECT
+                                   7.414e-06      2.111e-06      1.905e-08      7.433e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_OPERAND2_SELECT
+                                   7.408e-06      2.112e-06      1.903e-08      7.427e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_TYPE[0:1]
+                                   7.1e-06        0              3.476e-08      7.135e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_TYPE[0:1]
+                                   7.098e-06      0              3.474e-08      7.132e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_TYPE[0:1]
+                                   7.096e-06      0              3.474e-08      7.131e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_TYPE[0:1]
+                                   7.095e-06      0              3.474e-08      7.13e-06       False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_TYPE[0:1]
+                                   6.999e-06      0              3.113e-08      7.03e-06       False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_TYPE[0:1]
+                                   6.999e-06      0              3.113e-08      7.03e-06       False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_TYPE[0:1]
+                                   6.999e-06      0              3.113e-08      7.03e-06       False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_TYPE[0:1]
+                                   6.999e-06      0              3.113e-08      7.03e-06       False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_WRITE_EN
+                                   6.672e-06      2.072e-06      1.695e-08      6.689e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_REG_WRITE_EN
+                                   6.606e-06      1.99e-06       1.694e-08      6.623e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_REG_WRITE_EN
+                                   6.594e-06      1.732e-06      1.743e-08      6.611e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_REG_WRITE_EN
+                                   6.58e-06       1.716e-06      1.743e-08      6.597e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_REG_WRITE_EN
+                                   6.558e-06      1.697e-06      1.743e-08      6.575e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_WRITE_EN
+                                   5.635e-06      1.029e-06      1.695e-08      5.652e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_OPERAND1_SELECT
+                                   5.598e-06      1.228e-06      1.883e-08      5.616e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_WRITE_EN
+                                   5.596e-06      9.909e-07      1.695e-08      5.613e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_OPERAND1_SELECT
+                                   5.558e-06      1.189e-06      1.882e-08      5.577e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_OPERAND1_SELECT
+                                   5.557e-06      1.188e-06      1.882e-08      5.575e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_OPERAND1_SELECT
+                                   5.469e-06      1.101e-06      1.882e-08      5.487e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_REG_WRITE_EN
+                                   5.266e-06      6.648e-07      1.695e-08      5.283e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_WRITE_EN
+                                   5.205e-06      5.739e-07      1.695e-08      5.222e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_WRITE_EN
+                                   5.172e-06      5.425e-07      1.695e-08      5.189e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_WRITE_EN
+                                   5.105e-06      4.78e-07       1.695e-08      5.122e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_REG_WRITE_EN
+                                   5.103e-06      4.78e-07       1.695e-08      5.12e-06       False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[16][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[23][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[22][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[20][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[11][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[21][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[19][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[18][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[17][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[15][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[13][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[14][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[7][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[10][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[6][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[5][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[4][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[12][0:31]
+                                   3.719e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[24][0:31]
+                                   3.718e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[25][0:31]
+                                   3.718e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[28][0:31]
+                                   3.718e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[27][0:31]
+                                   3.718e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[26][0:31]
+                                   3.718e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[31][0:31]
+                                   3.718e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[29][0:31]
+                                   3.718e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[30][0:31]
+                                   3.718e-06      0              7.094e-07      4.428e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/busy
+                                   4.196e-06      0              2.191e-08      4.218e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[12][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[28][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[10][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[11][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[25][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[27][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[24][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[26][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[29][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[30][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[31][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[13][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[15][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[1][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[4][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[9][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[14][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[7][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[23][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[21][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[22][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[16][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[20][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[6][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[18][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[19][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[17][0:31]
+                                   3.409e-06      0              7.094e-07      4.118e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[1][0:31]
+                                   3.401e-06      0              7.094e-07      4.11e-06       True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[3][0:31]
+                                   3.401e-06      0              7.094e-07      4.11e-06       True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[9][0:31]
+                                   3.401e-06      0              7.094e-07      4.11e-06       True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[2][0:31]
+                                   3.401e-06      0              7.094e-07      4.11e-06       True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[17][0:31]
+                                   3.32e-06       0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[21][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[12][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[9][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[15][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[14][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[23][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[13][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[22][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[11][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[8][0:31]
+                                   3.319e-06      0              7.094e-07      4.029e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[28][0:31]
+                                   3.215e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[8][0:31]
+                                   3.215e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[14][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[15][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[13][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[10][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[12][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[11][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[29][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[31][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[30][0:31]
+                                   3.214e-06      0              7.094e-07      3.924e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[9][0:31]
+                                   3.168e-06      0              7.094e-07      3.877e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[20][0:31]
+                                   3.168e-06      0              7.094e-07      3.877e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[21][0:31]
+                                   3.168e-06      0              7.094e-07      3.877e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[22][0:31]
+                                   3.168e-06      0              7.094e-07      3.877e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[23][0:31]
+                                   3.168e-06      0              7.094e-07      3.877e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[5][0:31]
+                                   3.129e-06      0              7.094e-07      3.839e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[3][0:31]
+                                   3.129e-06      0              7.094e-07      3.839e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_REG_FILE/REGISTERS[2][0:31]
+                                   3.129e-06      0              7.094e-07      3.839e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[24][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[25][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[26][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[4][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[27][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[16][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[19][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[3][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[2][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[0][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[18][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[17][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[1][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[7][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[6][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[5][0:31]
+                                   3.122e-06      0              7.094e-07      3.831e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[4][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[3][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[16][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[0][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[20][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[28][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[1][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[17][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[22][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[18][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[23][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[19][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[24][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[7][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[2][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[21][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[5][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[6][0:31]
+                                   3.119e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[9][0:31]
+                                   3.118e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[8][0:31]
+                                   3.118e-06      0              7.094e-07      3.828e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[11][0:31]
+                                   3.116e-06      0              7.094e-07      3.826e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[12][0:31]
+                                   3.116e-06      0              7.094e-07      3.826e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[14][0:31]
+                                   3.116e-06      0              7.094e-07      3.826e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[13][0:31]
+                                   3.116e-06      0              7.094e-07      3.826e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[15][0:31]
+                                   3.116e-06      0              7.094e-07      3.825e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[25][0:31]
+                                   3.045e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[27][0:31]
+                                   3.045e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[29][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[11][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[15][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[14][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[13][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[12][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[30][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[10][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[31][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_FREG_FILE/REGISTERS[26][0:31]
+                                   3.044e-06      0              7.094e-07      3.754e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[27][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[26][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[28][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[19][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[16][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[20][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[18][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[17][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[11][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[29][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[31][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[23][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[22][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[21][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[30][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[9][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[12][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[10][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[24][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[25][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[4][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[3][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[2][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[1][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[5][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[13][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[6][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[14][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[7][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[15][0:31]
+                                   2.93e-06       0              7.094e-07      3.639e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[5][0:31]
+                                   2.906e-06      0              7.094e-07      3.616e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[1][0:31]
+                                   2.906e-06      0              7.094e-07      3.616e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[7][0:31]
+                                   2.906e-06      0              7.094e-07      3.616e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[31][0:31]
+                                   2.906e-06      0              7.094e-07      3.616e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[3][0:31]
+                                   2.906e-06      0              7.094e-07      3.616e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[2][0:31]
+                                   2.906e-06      0              7.094e-07      3.616e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[1][0:31]
+                                   2.89e-06       0              7.094e-07      3.599e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[0][0:31]
+                                   2.89e-06       0              7.094e-07      3.599e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[10][0:31]
+                                   2.89e-06       0              7.094e-07      3.599e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_WRITE_EN
+                                   3.569e-06      0              1.584e-08      3.585e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_WRITE_EN
+                                   3.569e-06      0              1.584e-08      3.585e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_WRITE_EN
+                                   3.569e-06      0              1.585e-08      3.585e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_FREG_WRITE_EN
+                                   3.568e-06      0              1.584e-08      3.584e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[16][0:31]
+                                   2.844e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[24][0:31]
+                                   2.844e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[25][0:31]
+                                   2.844e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[20][0:31]
+                                   2.844e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[23][0:31]
+                                   2.844e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[27][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[21][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[22][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[26][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[18][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[19][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[28][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[14][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[10][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[9][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[11][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[4][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[12][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[15][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[13][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[6][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[17][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[30][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/ID_REG_FILE/REGISTERS[29][0:31]
+                                   2.843e-06      0              7.094e-07      3.553e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/v_out[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/v[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/u_out[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/u[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp3[0:31]
+                                   -5.23e-08      0              3.577e-06      3.525e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/v_out[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/v[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/u_out[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/u[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp3[0:31]
+                                   -5.279e-08     0              3.577e-06      3.524e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_WRITE_DATA_SELECT
+                                   3.509e-06      0              1.56e-08       3.524e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_WRITE_DATA_SELECT
+                                   3.508e-06      0              1.559e-08      3.524e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/v_out[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/v[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/u_out[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/u[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp3[0:31]
+                                   -5.33e-08      0              3.577e-06      3.524e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/v_out[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/v[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/u_out[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/u[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp3[0:31]
+                                   -5.353e-08     0              3.577e-06      3.524e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_NET_WRITE
+                                   3.508e-06      0              1.559e-08      3.524e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_WRITE_DATA_SELECT
+                                   3.508e-06      0              1.559e-08      3.523e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_DATA_MEM_WRITE_DATA_SELECT
+                                   3.508e-06      0              1.559e-08      3.523e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_NET_WRITE
+                                   3.508e-06      0              1.559e-08      3.523e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_NET_WRITE
+                                   3.508e-06      0              1.559e-08      3.523e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/v_out[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/v[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/u_out[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/u[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp3[0:31]
+                                   -5.413e-08     0              3.577e-06      3.523e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/v_out[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/v[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/u_out[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/u[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp3[0:31]
+                                   -5.414e-08     0              3.577e-06      3.523e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_NET_WRITE
+                                   3.507e-06      0              1.559e-08      3.523e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/v_out[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/v[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/u_out[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/u[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp3[0:31]
+                                   -5.432e-08     0              3.577e-06      3.523e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/v_out[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/v[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/u_out[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/u[0:31],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp3[0:31]
+                                   -5.458e-08     0              3.577e-06      3.523e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/v_out[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/v[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/u_out[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/u[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp3[0:31]
+                                   -5.464e-08     0              3.577e-06      3.523e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/v_out[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/v[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/u_out[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/u[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp3[0:31]
+                                   -5.482e-08     0              3.577e-06      3.522e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/v_out[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/v[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/u_out[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/u[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp3[0:31]
+                                   -5.482e-08     0              3.577e-06      3.522e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/v_out[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/v[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/u_out[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/u[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp3[0:31]
+                                   -5.518e-08     0              3.577e-06      3.522e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/v_out[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/v[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/u_out[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/u[0:31],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp3[0:31]
+                                   -5.52e-08      0              3.577e-06      3.522e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/v_out[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/v[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/u_out[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/u[0:31],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp3[0:31]
+                                   -5.52e-08      0              3.577e-06      3.522e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/v_out[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/v[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/u_out[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/u[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp3[0:31]
+                                   -5.545e-08     0              3.577e-06      3.522e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/v_out[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/v[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/u_out[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/u[0:31],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp3[0:31]
+                                   -5.553e-08     0              3.577e-06      3.522e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_NET_READ
+                                   3.504e-06      0              1.558e-08      3.519e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_NET_READ
+                                   3.503e-06      0              1.558e-08      3.519e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_NET_READ
+                                   3.503e-06      0              1.558e-08      3.519e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_ID_EX/EX_NET_READ
+                                   3.503e-06      0              1.558e-08      3.519e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_NET_WRITE
+                                   3.498e-06      0              1.688e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_FREG_WRITE_EN
+                                   3.498e-06      0              1.688e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FREG_WRITE_EN
+                                   3.498e-06      0              1.688e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_NET_READ
+                                   3.498e-06      0              1.688e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_FREG_WRITE_EN
+                                   3.498e-06      0              1.688e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_NET_READ
+                                   3.498e-06      0              1.688e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FREG_WRITE_EN
+                                   3.498e-06      0              1.688e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_NET_WRITE
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_DATA_MEM_READ
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_NET_WRITE
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_WRITE_DATA_SELECT
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_WRITE_DATA_SELECT
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_DATA_MEM_READ
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_DATA_MEM_READ
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_FREG_WRITE_EN
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_DATA_MEM_READ
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_NET_WRITE
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_NET_READ
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_WRITE_DATA_SELECT
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_MEM_WB/WB_FREG_WRITE_EN
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_NET_READ
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_DATA_MEM_WRITE_DATA_SELECT
+                                   3.499e-06      0              1.556e-08      3.515e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[28][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[4][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[2][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[25][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[3][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[5][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[7][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[6][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[24][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[27][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[26][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[20][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[16][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[19][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[18][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[29][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[30][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[31][0:31]
+                                   2.805e-06      0              7.094e-07      3.514e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_FREG_WRITE_EN
+                                   3.494e-06      0              1.877e-08      3.513e-06      False          clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/CPU/PIPE_REG_MEM_WB/WB_FREG_WRITE_EN
+                                   3.494e-06      0              1.877e-08      3.513e-06      False          clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[25][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[30][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[29][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[31][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[28][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[3][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[7][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[26][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[6][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[27][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[24][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[5][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[2][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[4][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[0][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[10][0:31]
+                                   2.74e-06       0              7.094e-07      3.45e-06       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[1][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[9][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[19][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[20][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[21][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[8][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[23][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[22][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[18][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[16][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/CPU/ID_FREG_FILE/REGISTERS[17][0:31]
+                                   2.74e-06       0              7.094e-07      3.449e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/tx_fifo/mem[10:11][0:31]
+                                   1.427e-06      0              1.059e-06      2.486e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/tx_fifo/mem[10:11][0:31]
+                                   1.294e-06      0              1.059e-06      2.354e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/tx_fifo/mem[10:11][0:31]
+                                   1.231e-06      0              1.059e-06      2.291e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/tx_fifo/mem[10:11][0:31]
+                                   8.155e-07      0              1.059e-06      1.875e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_b[0][0:31]
+                                   6.689e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_vth[1][0:31]
+                                   6.688e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_vth[0][0:31]
+                                   6.688e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_c[1][0:31]
+                                   6.688e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/inputs_i[1][0:31]
+                                   6.688e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_a[0][0:31]
+                                   6.688e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_d[1][0:31]
+                                   6.688e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_c[0][0:31]
+                                   6.688e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_a[1][0:31]
+                                   6.686e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_b[1][0:31]
+                                   6.686e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_a[2][0:31]
+                                   6.685e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_d[0][0:31]
+                                   6.685e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/inputs_i[0][0:31]
+                                   6.684e-07      0              7.072e-07      1.376e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_b[3][0:31]
+                                   6.683e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_a[3][0:31]
+                                   6.683e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_vth[3][0:31]
+                                   6.683e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_b[2][0:31]
+                                   6.68e-07       0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_c[2][0:31]
+                                   6.679e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_c[3][0:31]
+                                   6.678e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_vth[2][0:31]
+                                   6.677e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_d[2][0:31]
+                                   6.677e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/inputs_i[2][0:31]
+                                   6.676e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/inputs_i[3][0:31]
+                                   6.676e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/params_d[3][0:31]
+                                   6.674e-07      0              7.072e-07      1.375e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_vth[2][0:31]
+                                   6.263e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_b[1][0:31]
+                                   6.261e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_a[0][0:31]
+                                   6.26e-07       0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_b[0][0:31]
+                                   6.26e-07       0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_a[2][0:31]
+                                   6.26e-07       0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_b[2][0:31]
+                                   6.26e-07       0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_a[3][0:31]
+                                   6.26e-07       0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_b[3][0:31]
+                                   6.26e-07       0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_c[1][0:31]
+                                   6.259e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_a[1][0:31]
+                                   6.259e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_vth[0][0:31]
+                                   6.258e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_vth[3][0:31]
+                                   6.258e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_c[0][0:31]
+                                   6.257e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_vth[1][0:31]
+                                   6.257e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/inputs_i[3][0:31]
+                                   6.257e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_c[3][0:31]
+                                   6.255e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_d[1][0:31]
+                                   6.255e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/inputs_i[1][0:31]
+                                   6.255e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_d[3][0:31]
+                                   6.254e-07      0              7.072e-07      1.333e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_c[2][0:31]
+                                   6.253e-07      0              7.072e-07      1.332e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/inputs_i[0][0:31]
+                                   6.253e-07      0              7.072e-07      1.332e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/inputs_i[3][0:31]
+                                   6.252e-07      0              7.072e-07      1.332e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_d[0][0:31]
+                                   6.252e-07      0              7.072e-07      1.332e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/inputs_i[2][0:31]
+                                   6.251e-07      0              7.072e-07      1.332e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/params_d[2][0:31]
+                                   6.251e-07      0              7.072e-07      1.332e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_d[3][0:31]
+                                   6.216e-07      0              7.072e-07      1.329e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_c[2][0:31]
+                                   6.146e-07      0              7.072e-07      1.322e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_c[3][0:31]
+                                   6.142e-07      0              7.072e-07      1.321e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/inputs_i[2][0:31]
+                                   6.141e-07      0              7.072e-07      1.321e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_d[0][0:31]
+                                   6.14e-07       0              7.072e-07      1.321e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_d[2][0:31]
+                                   6.14e-07       0              7.072e-07      1.321e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/inputs_i[0][0:31]
+                                   6.139e-07      0              7.072e-07      1.321e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_a[2][0:31]
+                                   6.135e-07      0              7.072e-07      1.321e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_vth[2][0:31]
+                                   6.134e-07      0              7.072e-07      1.321e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_b[2][0:31]
+                                   6.068e-07      0              7.072e-07      1.314e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_vth[3][0:31]
+                                   6.038e-07      0              7.072e-07      1.311e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_c[0][0:31]
+                                   6.001e-07      0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_vth[0][0:31]
+                                   6.001e-07      0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_vth[1][0:31]
+                                   6e-07          0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_c[1][0:31]
+                                   6e-07          0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_d[1][0:31]
+                                   5.999e-07      0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/inputs_i[1][0:31]
+                                   5.999e-07      0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_a[1][0:31]
+                                   5.998e-07      0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_b[1][0:31]
+                                   5.997e-07      0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_a[0][0:31]
+                                   5.996e-07      0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_b[0][0:31]
+                                   5.995e-07      0              7.072e-07      1.307e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_b[3][0:31]
+                                   5.964e-07      0              7.072e-07      1.304e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/params_a[3][0:31]
+                                   5.87e-07       0              7.072e-07      1.294e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_c[0][0:31]
+                                   5.71e-07       0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/inputs_i[0][0:31]
+                                   5.71e-07       0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_d[0][0:31]
+                                   5.709e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_vth[0][0:31]
+                                   5.709e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_a[3][0:31]
+                                   5.708e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_vth[1][0:31]
+                                   5.707e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_b[0][0:31]
+                                   5.707e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_b[3][0:31]
+                                   5.707e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_d[1][0:31]
+                                   5.706e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_vth[2][0:31]
+                                   5.705e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/inputs_i[1][0:31]
+                                   5.705e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_b[1][0:31]
+                                   5.705e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_a[1][0:31]
+                                   5.704e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_c[1][0:31]
+                                   5.704e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/inputs_i[3][0:31]
+                                   5.704e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_a[2][0:31]
+                                   5.704e-07      0              7.072e-07      1.278e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_a[0][0:31]
+                                   5.703e-07      0              7.072e-07      1.277e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_b[2][0:31]
+                                   5.703e-07      0              7.072e-07      1.277e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_c[2][0:31]
+                                   5.703e-07      0              7.072e-07      1.277e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_vth[3][0:31]
+                                   5.703e-07      0              7.072e-07      1.277e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_d[3][0:31]
+                                   5.702e-07      0              7.072e-07      1.277e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/inputs_i[2][0:31]
+                                   5.701e-07      0              7.072e-07      1.277e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_d[2][0:31]
+                                   5.701e-07      0              7.072e-07      1.277e-06      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/params_c[3][0:31]
+                                   5.7e-07        0              7.072e-07      1.277e-06      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/rx_fifo/rd_ptr[0:4],
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/rx_fifo/dout[0:31]
+                                   -8.448e-09     0              8.639e-07      8.554e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/rx_fifo/rd_ptr[0:4],
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/rx_fifo/dout[0:31]
+                                   -8.827e-09     0              8.639e-07      8.55e-07       True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/rx_fifo/rd_ptr[0:4],
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/rx_fifo/dout[0:31]
+                                   -8.878e-09     0              8.639e-07      8.55e-07       True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/rx_fifo/rd_ptr[0:4],
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/rx_fifo/dout[0:31]
+                                   -9.547e-09     0              8.639e-07      8.543e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp1[0:31]
+                                   -1.135e-08     0              7.064e-07      6.95e-07       True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp1[0:31]
+                                   -1.138e-08     0              7.064e-07      6.95e-07       True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp2[0:31]
+                                   -1.139e-08     0              7.064e-07      6.95e-07       True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp2[0:31]
+                                   -1.141e-08     0              7.064e-07      6.95e-07       True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp2[0:31]
+                                   -1.156e-08     0              7.064e-07      6.948e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp1[0:31]
+                                   -1.157e-08     0              7.064e-07      6.948e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp1[0:31]
+                                   -1.161e-08     0              7.064e-07      6.948e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp2[0:31]
+                                   -1.162e-08     0              7.064e-07      6.948e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp1[0:31]
+                                   -1.164e-08     0              7.064e-07      6.948e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp2[0:31]
+                                   -1.164e-08     0              7.064e-07      6.948e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp2[0:31]
+                                   -1.164e-08     0              7.064e-07      6.948e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp2[0:31]
+                                   -1.165e-08     0              7.064e-07      6.947e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp2[0:31]
+                                   -1.171e-08     0              7.064e-07      6.947e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp2[0:31]
+                                   -1.171e-08     0              7.064e-07      6.947e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp1[0:31]
+                                   -1.172e-08     0              7.064e-07      6.947e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp2[0:31]
+                                   -1.175e-08     0              7.064e-07      6.946e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp2[0:31]
+                                   -1.177e-08     0              7.064e-07      6.946e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp1[0:31]
+                                   -1.179e-08     0              7.064e-07      6.946e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp1[0:31]
+                                   -1.184e-08     0              7.064e-07      6.946e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp2[0:31]
+                                   -1.184e-08     0              7.064e-07      6.946e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/temp1[0:31]
+                                   -1.188e-08     0              7.064e-07      6.945e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp1[0:31]
+                                   -1.191e-08     0              7.064e-07      6.945e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp1[0:31]
+                                   -1.191e-08     0              7.064e-07      6.945e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp2[0:31]
+                                   -1.192e-08     0              7.064e-07      6.945e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp1[0:31]
+                                   -1.193e-08     0              7.064e-07      6.945e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp1[0:31]
+                                   -1.196e-08     0              7.064e-07      6.944e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/temp1[0:31]
+                                   -1.198e-08     0              7.064e-07      6.944e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp2[0:31]
+                                   -1.2e-08       0              7.064e-07      6.944e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp1[0:31]
+                                   -1.202e-08     0              7.064e-07      6.944e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/temp2[0:31]
+                                   -1.204e-08     0              7.064e-07      6.944e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp2[0:31]
+                                   -1.204e-08     0              7.064e-07      6.944e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/temp1[0:31]
+                                   -1.205e-08     0              7.064e-07      6.943e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/rx_fifo/mem[6][0:31]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/rx_fifo/mem[15][0:31]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/mul_result[16:47]
+                                   0              0              5.291e-07      5.291e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/rr_ptr[0:4][0:2]
+                                   -5.382e-09     0              3.403e-07      3.349e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/rr_ptr[0, 2:4][0:2]
+                                   -3.982e-10     0              2.767e-07      2.763e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/rr_ptr[1:3][0:2]
+                                   8.119e-10      0              2.038e-07      2.046e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr[0, 3][0:2]
+                                   5.925e-09      0              1.359e-07      1.418e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/rx_fifo/wr_ptr[0:4]
+                                   1.178e-08      0              1.122e-07      1.239e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/state[0:3],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/spike_detected
+                                   -1.736e-09     0              1.137e-07      1.119e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/state[0:3],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/spike_detected
+                                   -1.757e-09     0              1.137e-07      1.119e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/state[0:3],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/spike_detected
+                                   -1.792e-09     0              1.137e-07      1.119e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/state[0:3],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/spike_detected
+                                   -1.818e-09     0              1.137e-07      1.119e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/state[0:3],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[0].core/spike_detected
+                                   -1.825e-09     0              1.137e-07      1.119e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/state[0:3],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[1].core/spike_detected
+                                   -1.842e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/state[0:3],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/spike_detected
+                                   -1.846e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/state[0:3],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/spike_detected
+                                   -1.862e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/state[0:3],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[3].core/spike_detected
+                                   -1.864e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/state[0:3],
+ROW_LOOP[1].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/spike_detected
+                                   -1.872e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/state[0:3],
+ROW_LOOP[0].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/spike_detected
+                                   -1.892e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/state[0:3],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[2].core/spike_detected
+                                   -1.901e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/state[0:3],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[0].core/spike_detected
+                                   -1.903e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/state[0:3],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[1].core/spike_detected
+                                   -1.907e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/state[0:3],
+ROW_LOOP[1].COL_LOOP[0].u_node/NEURON_BANK/NEURON_ARRAY[3].core/spike_detected
+                                   -1.91e-09      0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/state[0:3],
+ROW_LOOP[0].COL_LOOP[1].u_node/NEURON_BANK/NEURON_ARRAY[2].core/spike_detected
+                                   -1.913e-09     0              1.137e-07      1.118e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[1].u_node/NI/tx_fifo/wr_ptr[0:4]
+                                   -1.916e-09     0              1.125e-07      1.105e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/rx_fifo/wr_ptr[0:4]
+                                   -1.712e-09     0              1.122e-07      1.104e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/NI/tx_fifo/wr_ptr[0:4]
+                                   -1.83e-09      0              1.122e-07      1.103e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/NI/tx_fifo/wr_ptr[0:4]
+                                   -1.851e-09     0              1.122e-07      1.103e-07      True           clk            
+ROW_LOOP[1].COL_LOOP[1].u_node/NI/tx_fifo/wr_ptr[0:4]
+                                   -1.889e-09     0              1.122e-07      1.103e-07      True           clk            
+ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr[2][0:2]
+                                   -1.138e-09     0              6.8e-08        6.686e-08      True           clk            
+ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/rr_ptr[0][0:2]
+                                   -1.094e-09     0              6.788e-08      6.679e-08      True           clk            
+-----------------------------------------------------------------------------------------------------------------------------
+1

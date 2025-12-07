@@ -1,0 +1,23 @@
+****************************************
+Report : area
+Design : mesh
+Version: V-2023.12-SP5-3
+Date   : Sun Dec  7 10:12:57 2025
+****************************************
+
+Number of ports:                        98677
+Number of nets:                        656000
+Number of cells:                       543628
+Number of combinational cells:         482820
+Number of sequential cells:             60808
+Number of macros/black boxes:               0
+Number of buf/inv:                      53220
+Number of references:                     252
+
+Combinational area:                3549060.08
+Buf/Inv area:                       278913.75
+Noncombinational area:             1634669.03
+Macro/Black Box area:                    0.00
+
+Total cell area:                   5183729.11
+1
