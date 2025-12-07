@@ -1,17 +1,21 @@
+`include "fpu/Multiplication.v"
+`include "fpu/Addition_Subtraction.v"
+`include "fpu/Comparison.v"
+
 `timescale 1ns/100ps
 
 module neuron_core (
     input clk,
     input rst,
     
-    // Configuration (Q16.16 fixed-point format)
-    input signed [31:0] param_a,
-    input signed [31:0] param_b,
-    input signed [31:0] param_c,
-    input signed [31:0] param_d,
-    input signed [31:0] param_vth,
-    input signed [31:0] current_input, // I
-    input mode, // 0: LIF, 1: Izhikevich
+    // Configuration (IEEE-754 floating-point format)
+    input [31:0] param_a,
+    input [31:0] param_b,
+    input [31:0] param_c,
+    input [31:0] param_d,
+    input [31:0] param_vth,
+    input [31:0] current_input, // I
+    input mode, // 0: LIF, 1: Izhikevich (kept for compatibility, always Izhikevich)
     
     // Control
     input start_update,
@@ -20,175 +24,118 @@ module neuron_core (
     output reg spike_detected,
     
     // State monitoring
-    output reg signed [31:0] v_out,
-    output reg signed [31:0] u_out
+    output [31:0] v_out,
+    output [31:0] u_out
 );
 
-    // Internal State (Q16.16 fixed-point)
-    reg signed [31:0] v, u;
-    
-    // Constants (Q16.16 fixed-point format: value * 65536)
-    localparam signed [31:0] FIXED_0_04 = 32'h00000A3D;  // 0.04
-    localparam signed [31:0] FIXED_5_0  = 32'h00050000;  // 5.0
-    localparam signed [31:0] FIXED_140  = 32'h008C0000;  // 140.0
-    localparam signed [31:0] FIXED_1_0  = 32'h00010000;  // 1.0
-    
-    // State Machine
-    localparam IDLE = 0;
-    localparam UPDATE_1 = 1;   // v^2
-    localparam UPDATE_2 = 2;   // 0.04 * v^2
-    localparam UPDATE_3 = 3;   // 5*v
-    localparam UPDATE_4 = 4;   // (0.04v^2 + 5v)
-    localparam UPDATE_5 = 5;   // ... + 140
-    localparam UPDATE_6 = 6;   // ... - u
-    localparam UPDATE_7 = 7;   // ... + I (New v)
-    localparam UPDATE_U_1 = 8; // b*v
-    localparam UPDATE_U_2 = 9; // bv - u
-    localparam UPDATE_U_3 = 10; // a(bv-u)
-    localparam UPDATE_U_4 = 11; // u + ... (New u)
-    localparam CHECK_SPIKE = 12;
-    localparam RESET_1 = 13;
-    localparam RESET_2 = 14;
-    
-    reg [3:0] state;
-    
-    // Temporary registers for calculation
-    reg signed [31:0] temp1, temp2, temp3;
-    reg signed [63:0] mul_result;
+    // IEEE-754 floating-point constants
+    localparam POINT_ZERO_FOUR = 32'h3d23d70a;  // 0.04
+    localparam FIVE = 32'h40a00000;              // 5.0
+    localparam ONE_FORTY = 32'h430c0000;         // 140.0
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            state <= IDLE;
-            v <= 0;
-            u <= 0;
-            busy <= 0;
-            spike_detected <= 0;
-            v_out <= 0;
-            u_out <= 0;
-            temp1 <= 0;
-            temp2 <= 0;
-            temp3 <= 0;
-        end else begin
-            case (state)
-                IDLE: begin
-                    busy <= 0;
-                    if (start_update) begin
-                        busy <= 1;
-                        spike_detected <= 0;
-                        if (mode == 1) state <= UPDATE_1; // Izhikevich
-                        else state <= UPDATE_7; // LIF (simplified)
-                    end else if (start_reset) begin
-                        busy <= 1;
-                        state <= RESET_1;
-                    end
-                end
-                
-                // Izhikevich Update: v' = 0.04v^2 + 5v + 140 - u + I
-                // u' = a(bv - u)
-                
-                // Step 1: Calculate v^2
-                UPDATE_1: begin
-                    mul_result <= v * v;
-                    state <= UPDATE_2;
-                end
-                
-                // Step 2: Calculate 0.04 * v^2
-                UPDATE_2: begin
-                    temp1 <= mul_result[47:16]; // v^2 (Q16.16 from Q32.32)
-                    mul_result <= FIXED_0_04 * mul_result[47:16];
-                    state <= UPDATE_3;
-                end
-                
-                // Step 3: Calculate 5*v
-                UPDATE_3: begin
-                    temp1 <= mul_result[47:16]; // 0.04v^2
-                    mul_result <= FIXED_5_0 * v;
-                    state <= UPDATE_4;
-                end
-                
-                // Step 4: Add 0.04v^2 + 5v
-                UPDATE_4: begin
-                    temp2 <= mul_result[47:16]; // 5v
-                    temp3 <= temp1 + mul_result[47:16]; // 0.04v^2 + 5v
-                    state <= UPDATE_5;
-                end
-                
-                // Step 5: Add 140
-                UPDATE_5: begin
-                    temp1 <= temp3 + FIXED_140; // ... + 140
-                    state <= UPDATE_6;
-                end
-                
-                // Step 6: Subtract u
-                UPDATE_6: begin
-                    temp1 <= temp1 - u; // ... - u
-                    state <= UPDATE_7;
-                end
-                
-                // Step 7: Add I and start u calculation
-                UPDATE_7: begin
-                    temp1 <= temp1 + current_input; // ... + I (this is v')
-                    mul_result <= param_b * v; // Start: b*v
-                    state <= UPDATE_U_1;
-                end
-                
-                // Step 8: Update v and calculate bv - u
-                UPDATE_U_1: begin
-                    v <= temp1; // New v calculated!
-                    v_out <= temp1;
-                    
-                    temp2 <= mul_result[47:16]; // b*v
-                    temp2 <= mul_result[47:16] - u; // bv - u
-                    state <= UPDATE_U_2;
-                end
-                
-                // Step 9: Calculate a * (bv - u)
-                UPDATE_U_2: begin
-                    mul_result <= param_a * temp2;
-                    state <= UPDATE_U_3;
-                end
-                
-                // Step 10: Calculate u + a(bv-u)
-                UPDATE_U_3: begin
-                    temp2 <= mul_result[47:16]; // a(bv-u)
-                    temp2 <= u + mul_result[47:16]; // u + a(bv-u)
-                    state <= UPDATE_U_4;
-                end
-                
-                // Step 11: Update u
-                UPDATE_U_4: begin
-                    u <= temp2; // New u
-                    u_out <= temp2;
-                    state <= CHECK_SPIKE;
-                end
-                
-                // Step 12: Check for spike
-                CHECK_SPIKE: begin
-                    if (v >= param_vth) begin
-                        spike_detected <= 1;
-                    end
-                    busy <= 0;
-                    state <= IDLE;
-                end
-                
-                // Reset states
-                RESET_1: begin
-                    v <= param_c;
-                    v_out <= param_c;
-                    temp1 <= u + param_d; // u + d
-                    state <= RESET_2;
-                end
-                
-                RESET_2: begin
-                    u <= temp1;
-                    u_out <= temp1;
-                    busy <= 0;
-                    state <= IDLE;
-                end
-                
-                default: state <= IDLE;
-            endcase
+    // Internal State (IEEE-754 format)
+    reg [31:0] V;   // Membrane potential
+    reg [31:0] U;   // Recovery variable
+
+    // Connection wires
+    wire [31:0] POINT_ZERO_FOUR_V, POINT_ZERO_FOUR_V_SQUARED, FIVE_V, B_V, 
+                B_V_MINUS_U, ADD1_OUT, ADD2_OUT, ADD3_OUT, V_NEW, U_NEW, U_PLUS_D;
+
+    wire [1:0] COMPARE_RESULT;
+    wire Mul1_Exception, Mul1_Overflow, Mul1_Underflow,
+         Mul2_Exception, Mul2_Overflow, Mul2_Underflow,
+         Mul3_Exception, Mul3_Overflow, Mul3_Underflow,
+         Mul4_Exception, Mul4_Overflow, Mul4_Underflow,
+         Mul5_Exception, Mul5_Overflow, Mul5_Underflow,
+         Add1_Exception, Add2_Exception, Add3_Exception,
+         Add4_Exception, Add5_Exception, Add6_Exception;
+
+
+    /******************************** V' Calculation ********************************/
+    // V' = 0.04*V^2 + 5*V + 140 - U + I
+    Multiplication mul1 (POINT_ZERO_FOUR, V, Mul1_Exception, Mul1_Overflow, Mul1_Underflow, POINT_ZERO_FOUR_V);
+    Multiplication mul2 (POINT_ZERO_FOUR_V, V, Mul2_Exception, Mul2_Overflow, Mul2_Underflow, POINT_ZERO_FOUR_V_SQUARED);
+
+    Multiplication mul3 (FIVE, V, Mul3_Exception, Mul3_Overflow, Mul3_Underflow, FIVE_V);
+
+    Addition_Subtraction add1 (POINT_ZERO_FOUR_V_SQUARED, FIVE_V, 1'b0, Add1_Exception, ADD1_OUT);
+    Addition_Subtraction add2 (ADD1_OUT, ONE_FORTY, 1'b0, Add2_Exception, ADD2_OUT);
+    Addition_Subtraction add3 (ADD2_OUT, U, 1'b1, Add3_Exception, ADD3_OUT);
+    Addition_Subtraction add4 (ADD3_OUT, current_input, 1'b0, Add4_Exception, V_NEW);
+
+    /******************************** U' Calculation ********************************/
+    // U' = a * (b*V - U)
+    Multiplication mul4 (param_b, V, Mul4_Exception, Mul4_Overflow, Mul4_Underflow, B_V);
+    Addition_Subtraction add5 (B_V, U, 1'b1, Add5_Exception, B_V_MINUS_U);
+
+    Multiplication mul5 (param_a, B_V_MINUS_U, Mul5_Exception, Mul5_Overflow, Mul5_Underflow, U_NEW);
+
+    /******************************** U RESET Calculation ********************************/
+    Addition_Subtraction add6 (U, param_d, 1'b0, Add6_Exception, U_PLUS_D);
+
+    /******************************** SPIKED Calculation ********************************/
+    // Compare V with threshold (param_vth)
+    Comparison CuI (V, param_vth, COMPARE_RESULT);
+    wire SPIKED;
+    assign #1 SPIKED = (COMPARE_RESULT == 2'b00) | (COMPARE_RESULT == 2'b01);
+
+    // Output current state
+    assign v_out = V;
+    assign u_out = U;
+
+    // State machine for control
+    reg update_pending;
+    reg reset_pending;
+
+    // State update logic
+    always @ (posedge clk)
+    begin
+        if (rst)
+        begin
+            V <= #1 param_c;
+            U <= #1 param_b;  // Initialize U to b parameter (typical initialization)
+            busy <= #1 1'b0;
+            spike_detected <= #1 1'b0;
+            update_pending <= #1 1'b0;
+            reset_pending <= #1 1'b0;
+        end
+        else if (start_reset)
+        begin
+            busy <= #1 1'b1;
+            reset_pending <= #1 1'b1;
+            update_pending <= #1 1'b0;
+        end
+        else if (start_update)
+        begin
+            busy <= #1 1'b1;
+            update_pending <= #1 1'b1;
+            reset_pending <= #1 1'b0;
+            spike_detected <= #1 1'b0;
+        end
+        else if (reset_pending)
+        begin
+            V <= #1 param_c;
+            U <= #1 param_b;
+            busy <= #1 1'b0;
+            reset_pending <= #1 1'b0;
+        end
+        else if (update_pending)
+        begin
+            if (SPIKED)
+            begin
+                V <= #1 param_c;         // Reset V to c when spiked
+                U <= #1 U_PLUS_D;        // Add d to U when spiked
+                spike_detected <= #1 1'b1;
+            end
+            else
+            begin
+                V <= #1 V_NEW;
+                U <= #1 U_NEW;
+                spike_detected <= #1 1'b0;
+            end
+            busy <= #1 1'b0;
+            update_pending <= #1 1'b0;
         end
     end
-
+    
 endmodule
