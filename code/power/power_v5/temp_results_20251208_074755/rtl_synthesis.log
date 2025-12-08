@@ -34,12 +34,12 @@
 # Load shared configuration
 source config.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251208_074545
+Using environment TEMP_RESULTS_DIR: temp_results_20251208_074755
 Configuration loaded successfully
   Design: mesh
   Technology: SKY130 130nm
   Cores: 1
-  Results directory: temp_results_20251208_074545
+  Results directory: temp_results_20251208_074755
 # -----------------------------------------------------------------------------
 # Configuration and Setup
 # -----------------------------------------------------------------------------
@@ -56,10 +56,10 @@ set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto
 Warning: Changing current repair(handler) for a mismatch type in between a flow is not recommended. (DMM-011)
 {missing_logical_reference}
 # Set host options for parallel processing
-set_host_options -max_cores $CORES
+set_host_options -max_cores 8
 1
-puts "Using $CORES cores for parallel processing"
-Using 1 cores for parallel processing
+puts "Using 8 cores for parallel processing"
+Using 8 cores for parallel processing
 # Application options
 set_app_options -list {plan.macro.allow_unmapped_design true}
 plan.macro.allow_unmapped_design true
@@ -404,7 +404,7 @@ Inferred memory devices in process
 |       mem_reg       | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (data_memory)
-Module: data_memory, Elapsed Time: 00:00:06, CPU Time: 00:00:06, Total Mem: 707.26 MB, Mem: 282.92 MB, Time: Mon Dec  8 07:46:10 2025
+Module: data_memory, Elapsed Time: 00:00:07, CPU Time: 00:00:06, Total Mem: 707.42 MB, Mem: 282.86 MB, Time: Mon Dec  8 07:48:21 2025
 Information: Elaborating HDL template WORK:neuron_bank instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {NUM_NEURONS=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 82 in file
@@ -844,13 +844,13 @@ Total in all modules
   Nets:                 126707
   Instances:            66842
 Design summary end. (FLW-8551)
-Elapsed = 00:00:12.02, CPU = 00:00:11.79
+Elapsed = 00:00:11.98, CPU = 00:00:11.71
 1
 set_top_module $TOP_MODULE
 Information: User units loaded from library 'sky130_fd_sc_hd' (LNK-040)
 Information: Added key list 'DesignWare' to design 'mesh'. (DWS-0216)
 Gensys attachment is created: presto_gensys.attach:cpu_LIB:mesh.design 
-Elapsed = 00:01:08.03, CPU = 00:01:07.37
+Elapsed = 00:01:07.85, CPU = 00:01:07.17
 1
 puts "Design elaboration completed"
 Design elaboration completed
@@ -861,12 +861,12 @@ puts "========== Loading Technology Setup =========="
 ========== Loading Technology Setup ==========
 source tz_setup.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251208_074545
+Using environment TEMP_RESULTS_DIR: temp_results_20251208_074755
 Configuration loaded successfully
   Design: mesh
   Technology: SKY130 130nm
   Cores: 1
-  Results directory: temp_results_20251208_074545
+  Results directory: temp_results_20251208_074755
 ========== SKY130 Technology Setup ==========
 Configuring synthesis flow options...
 Loading SKY130 parasitic technology files...
@@ -888,7 +888,7 @@ All analysis types are activated.
 Scenario func@nominal (mode func corner nominal) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
 Operating scenario func@nominal created and set as current
 Loading design constraints...
-Information: Timer using 1 threads
+Information: Timer using 8 threads
 Error: Nothing matched for port_pin_list (SEL-005)
 Error: Nothing matched for port_pin_list (SEL-005)
 Error: Nothing matched for objects (SEL-005)
@@ -898,7 +898,7 @@ Clock constraints loaded from ./sdc/clocks.sdc
 Report : scenario
 Design : mesh
 Version: V-2023.12-SP5-3
-Date   : Mon Dec  8 07:47:33 2025
+Date   : Mon Dec  8 07:49:43 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -910,4 +910,364 @@ func@nominal *  func            nominal         true    true   false true     tr
 # Force timing update after loading constraints
 update_timing
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-12-08 07:47:33 / Session:  00:01:38 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 3566 MB (FLW-8100)
+Information: Time: 2025-12-08 07:49:43 / Session:  00:01:38 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 3578 MB (FLW-8100)
+Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 954918 cells affected for early, 954918 for late. (PVT-031)
+Warning: 1 port driving_cells affected for early, 1 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:mesh.design'. (TIM-125)
+Warning: No physical information exists for design 'mesh'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'mesh'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "mesh"
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 2249465, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 171393. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+LLE:                                       disabled
+ML Acceleration:                           off
+Smart Arc Optimization:                    disabled
+************************************************************
+Information: Ending   'update_timing' (FLW-8001)
+Information: Time: 2025-12-08 07:51:30 / Session:  00:03:25 / Command:  00:01:47 / CPU:  00:07:11 / Memory: 5874 MB (FLW-8100)
+1
+# Verify clock constraints were loaded
+puts "========== Verifying Clock Constraints =========="
+========== Verifying Clock Constraints ==========
+set all_clocks [get_clocks -quiet *]
+{clk}
+if {[llength $all_clocks] == 0} {
+    puts "ERROR: No clocks found after loading constraints!"
+    puts "Checking for clock ports in design..."
+    set clk_ports [get_ports -quiet *CLK*]
+    if {[llength $clk_ports] > 0} {
+        puts "Found clock port(s): [get_object_name $clk_ports]"
+        puts "Attempting to create clock manually..."
+        # Try to create clock on CLK port with default period
+        create_clock -name CLK -period 10.0 [get_ports CLK]
+        set all_clocks [get_clocks -quiet *]
+    }
+    if {[llength $all_clocks] == 0} {
+        puts "FATAL: Unable to create or find clocks. Exiting."
+        exit 1
+    }
+}
+puts "Clocks found in design:"
+Clocks found in design:
+foreach clk $all_clocks {
+    set clk_name [get_object_name $clk]
+    set clk_period [get_attribute $clk period]
+    puts "  - $clk_name (period: $clk_period ns)"
+}
+  - clk (period: 10.000000 ns)
+puts "=============================================="
+==============================================
+# -----------------------------------------------------------------------------
+# RTL Optimization
+# -----------------------------------------------------------------------------
+puts "========== Starting RTL Optimization =========="
+========== Starting RTL Optimization ==========
+rtl_opt
+Warning: app_option compile.flow.constant_and_unloaded_propagation_with_no_boundary_opt will be set as false during the rtl_opt. (RTLA-800)
+Warning: Ignoring -as_user_default option since application option <opt.mux.rtla_use_xref_signatures> is global scoped. (NDMUI-1004)
+Information: Starting 'rtl_opt' (FLW-8000)
+Information: Time: 2025-12-08 07:51:40 / Session:  00:03:35 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 6184 MB (FLW-8100)
+INFO: compile_fusion is running in balanced flow mode.
+INFO: EIO v2 is enabled
+INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
+Information: Structural Congestion Optimization technology (Early SCO) has been enabled. (SCO-0001)
+****************************************
+Report : report_tbcs
+Version: V-2023.12-SP5-3
+Date   : Mon Dec  8 07:51:41 2025
+****************************************
+INFO: Start environment monitoring: recipes
+INFO: compile_fusion is running in balanced flow mode.
+INFO: EIO v2 is enabled
+INFO: Cost Function Configuration 0.5/0.5/0.5/0.5
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_87' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_87/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_87' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_87/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_87' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_87/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_87' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[0].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_87/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G2/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G2/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G2/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G2/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G3/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_55_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[0].u_node/ROUTER/gt_58_G4/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_14/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_14/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_87' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_87/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_74/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_74/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_87' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_87/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_76/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_14/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_30' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_30/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_30/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_30/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_87' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G2/U0/U_87/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_34/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G4/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G4/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G4/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G4/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76/A2' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_55_G5/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[1].COL_LOOP[2].u_node/ROUTER/gt_58_G5/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[0].u_node/ROUTER/gt_55_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G2/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_30' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_30/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G2/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_14' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_14/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G3/U0/U_34/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_30' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G3/U0/U_30/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_34' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_34/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_87' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_87/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_87/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_55_G5/U0/U_87/X' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_76/B1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[1].u_node/ROUTER/gt_58_G5/U0/U_76/Y' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_74' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_74/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed cell 'ROW_LOOP[2].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_76' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Warning: Removed pin 'ROW_LOOP[2].COL_LOOP[2].u_node/ROUTER/gt_58_G2/U0/U_76/A1' had a constraint.  The constraint is no longer applied. (CSTR-013)
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / conditioning (FLW-8000)
+Information: Time: 2025-12-08 07:52:42 / Session:  00:04:36 / Command:  00:01:01 / CPU:  00:01:01 / Memory: 6184 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Starting rtl_opt / conditioning / Load Design (FLW-8000)
+Information: Time: 2025-12-08 07:52:42 / Session:  00:04:37 / Command:  00:01:02 / CPU:  00:01:01 / Memory: 6184 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
+Information: Time: 2025-12-08 07:52:52 / Session:  00:04:47 / Command:  00:01:12 / CPU:  00:01:11 / Memory: 6184 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / MV Cell Insertion (FLW-8000)
+Information: Time: 2025-12-08 07:52:52 / Session:  00:04:47 / Command:  00:01:12 / CPU:  00:01:11 / Memory: 6184 MB (FLW-8100)
+MV related app options set by user:
+Information: Ending   rtl_opt / conditioning / MV Cell Insertion (FLW-8001)
+Information: Time: 2025-12-08 07:52:52 / Session:  00:04:47 / Command:  00:01:12 / CPU:  00:01:11 / Memory: 6184 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8000)
+Information: Time: 2025-12-08 07:52:52 / Session:  00:04:47 / Command:  00:01:12 / CPU:  00:01:12 / Memory: 6184 MB (FLW-8100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[2].COL_LOOP[2].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[2].COL_LOOP[1].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[2].COL_LOOP[0].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[1].COL_LOOP[2].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[1].COL_LOOP[1].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[1].COL_LOOP[0].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[2].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[1].u_node/CPU/EX_FPU/FuI/Integer_Value_reg[23] is removed as constant '0'. (SQM-4100)
+Information: The register ROW_LOOP[0].COL_LOOP[0].u_node/ROUTER/rr_ptr_reg[4][2] is removed as constant '0'. (SQM-4100)
+Information: 27 registers were removed as constant. Use report_transformed_registers for a list. (SQM-3100)
+Information: 110808 registers were found constant but could not be removed due to restrictions. (SQM-3103)
+Information: Register Bits Before Sharing = 118242, After Sharing = 118242, Savings = 0 (SQM-2000)
+Information: 17 out of 27 SQM-4100 messages were not printed due to limit 10 (after 'rtl_opt' at rtla.tcl:102) (MSG-3913)
+Information: Ending   rtl_opt / conditioning / Constant and Equal Register Detection (FLW-8001)
+Information: Time: 2025-12-08 07:53:50 / Session:  00:05:45 / Command:  00:02:10 / CPU:  00:02:35 / Memory: 6500 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Register Merging (FLW-8000)
+Information: Time: 2025-12-08 07:53:50 / Session:  00:05:45 / Command:  00:02:10 / CPU:  00:02:35 / Memory: 6500 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Register Merging (FLW-8001)
+Information: Time: 2025-12-08 07:53:50 / Session:  00:05:45 / Command:  00:02:10 / CPU:  00:02:35 / Memory: 6500 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8000)
+Information: Time: 2025-12-08 07:53:50 / Session:  00:05:45 / Command:  00:02:10 / CPU:  00:02:35 / Memory: 6500 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Constant Propagation and Register Optimization (FLW-8001)
+Information: Time: 2025-12-08 07:53:59 / Session:  00:05:54 / Command:  00:02:19 / CPU:  00:03:10 / Memory: 6500 MB (FLW-8100)
