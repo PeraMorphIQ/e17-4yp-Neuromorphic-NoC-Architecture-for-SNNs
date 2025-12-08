@@ -1,2 +1,4 @@
 build/
 assembler/__pycache__
+
+**/cpu_LIB
