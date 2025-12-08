@@ -14,7 +14,7 @@ puts "Loading shared configuration..."
 # System Configuration
 # -----------------------------------------------------------------------------
 # Cores for parallel processing
-set CORES 8
+set CORES 1
 
 # -----------------------------------------------------------------------------
 # Design Configuration
