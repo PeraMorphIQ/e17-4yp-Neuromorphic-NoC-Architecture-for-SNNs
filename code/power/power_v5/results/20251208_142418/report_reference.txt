@@ -1,0 +1,61 @@
+****************************************
+Report : reference
+Design : mesh
+Version: V-2023.12-SP5-3
+Date   : Mon Dec  8 17:52:21 2025
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model (QTM)
+    s - synthetic operator
+
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+--------------------------------------------------------------------------------
+sky130_fd_sc_hd__buf_12
+                   sky130_fd_sc_hd
+                                     20.02       1         20.02   
+sky130_fd_sc_hd__buf_4
+                   sky130_fd_sc_hd
+                                      7.51       1          7.51   
+sky130_fd_sc_hd__buf_6
+                   sky130_fd_sc_hd
+                                     11.26       1         11.26   
+sky130_fd_sc_hd__clkbuf_8
+                   sky130_fd_sc_hd
+                                     13.76       1         13.76   
+sky130_fd_sc_hd__clkinv_8
+                   sky130_fd_sc_hd
+                                     16.27       1         16.27   
+sky130_fd_sc_hd__conb_1
+                   sky130_fd_sc_hd
+                                      3.75    1722       6463.70   
+sky130_fd_sc_hd__inv_6
+                   sky130_fd_sc_hd
+                                      8.76       1          8.76   
+sky130_fd_sc_hd__inv_8
+                   sky130_fd_sc_hd
+                                     11.26       2         22.52   
+sky130_fd_sc_hd__macro_sparecell
+                   sky130_fd_sc_hd
+                                     75.07    7650     574300.80   
+sky130_fd_sc_hd__probe_p_8
+                   sky130_fd_sc_hd
+                                     15.01       1         15.01   
+node_ADDR_X0_ADDR_Y0             1761520.69      1    1761520.69   h
+node_ADDR_X0_ADDR_Y1             1769039.15      1    1769039.15   h
+node_ADDR_X0_ADDR_Y2             1767463.89      1    1767463.89   h
+node_ADDR_X1_ADDR_Y0             1767625.29      1    1767625.29   h
+node_ADDR_X1_ADDR_Y1             1770515.56      1    1770515.56   h
+node_ADDR_X1_ADDR_Y2             1768772.64      1    1768772.64   h
+node_ADDR_X2_ADDR_Y0             1770937.22      1    1770937.22   h
+node_ADDR_X2_ADDR_Y1             1771276.29      1    1771276.29   h
+node_ADDR_X2_ADDR_Y2             1770435.49      1    1770435.49   h
+--------------------------------------------------------------------------------
+Total 19 references                                   16498465.84
+1
