@@ -23,8 +23,8 @@ set_current_mismatch_config auto_fix
 set_attribute [get_mismatch_types missing_logical_reference] current_repair(auto_fix) create_blackbox
 
 # Set host options for parallel processing
-set_host_options -max_cores 8
-puts "Using 8 cores for parallel processing"
+set_host_options -max_cores $CORES
+puts "Using $CORES cores for power analysis"
 
 # Application options
 set_app_options -list {plan.macro.allow_unmapped_design true}

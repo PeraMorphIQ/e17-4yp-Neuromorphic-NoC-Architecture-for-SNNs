@@ -33,7 +33,7 @@ puts "Using $CORES cores for power analysis"
 set search_path $SEARCH_PATHS
 
 # Enable clock gating logic clustering for registers
-set_app_var power_rtl_report_register_use_cg_logic_clustering true
+set_app_var power_rtl_report_register_use_cg_logic_clustering false
 
 # -----------------------------------------------------------------------------
 # Load Analysis Data
