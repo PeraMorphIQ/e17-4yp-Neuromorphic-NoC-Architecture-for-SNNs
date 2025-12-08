@@ -3,11 +3,10 @@
 *.fsdb
 
 # Synthesis and VCS logs
-rtl_synthesis.log
-rtl_output.txt
-rtl_command.log
-run_metadata.txt
-vcs_compile.log
+# rtl_synthesis.log
+# rtl_command.log
+# run_metadata.txt
+# vcs_compile.log
 
 # Auto-generated synthesis results
 # results/
