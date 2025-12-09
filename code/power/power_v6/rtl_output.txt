@@ -1190,3 +1190,41 @@ Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 te
 Warning: 549343 cells affected for early, 549343 for late. (PVT-031)
 Warning: 1 port driving_cells affected for early, 1 for late. (PVT-034)
 Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:mesh.design'. (TIM-125)
+Information: Ending   rtl_opt / conditioning / Load Design (FLW-8001)
+Information: Time: 2025-12-09 19:17:44 / Session:  00:10:13 / Command:  00:08:35 / CPU:  00:16:52 / Memory: 5063 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8000)
+Information: Time: 2025-12-09 19:17:44 / Session:  00:10:13 / Command:  00:08:35 / CPU:  00:16:52 / Memory: 5063 MB (FLW-8100)
+Information: Result of rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 3
+---------------------------------------------------------------------------------------------
+                          Tool Gated Register Summary                                        
+---------------------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent | % of Gated 
+                                    | Clock Gates |                | Bitwidth   | Bits       
+---------------------------------------------------------------------------------------------
+Regular Clock Gating                |        4644 |          49856 |      49856 |    95.31%
+---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+                 Regular Clock Gating Ungated Register Summary                  
+--------------------------------------------------------------------------------
+ Ungated Reason                                            | Count | Bitwidth   
+--------------------------------------------------------------------------------
+ Enable is Constant One.                                   |  2436 |     2436
+ Minimum Bitwidth Not Met.                                 |    16 |       16
+ Not Processed.                                            |   112 |      112
+--------------------------------------------------------------------------------
+Information: Ending   rtl_opt / conditioning / Clock Gate Re-structuring (FLW-8001)
+Information: Time: 2025-12-09 19:17:48 / Session:  00:10:18 / Command:  00:08:39 / CPU:  00:16:56 / Memory: 5063 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (1) (FLW-8000)
+Information: Time: 2025-12-09 19:17:48 / Session:  00:10:18 / Command:  00:08:39 / CPU:  00:16:56 / Memory: 5063 MB (FLW-8100)
+Information: Starting rtl_opt / conditioning / Optimization (1) / Logic Simplification and Register Optimization (FLW-8000)
+Information: Time: 2025-12-09 19:17:49 / Session:  00:10:18 / Command:  00:08:39 / CPU:  00:16:57 / Memory: 5063 MB (FLW-8100)
+Information: Ending   rtl_opt / conditioning / Optimization (1) / Logic Simplification and Register Optimization (FLW-8001)
+Information: Time: 2025-12-09 19:17:53 / Session:  00:10:22 / Command:  00:08:43 / CPU:  00:17:01 / Memory: 5063 MB (FLW-8100)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'func@nominal'. (OPT-909)
+Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:mesh.design'. (TIM-125)
+Information: Starting rtl_opt / conditioning / Optimization (1) / Timing Optimization and DesignWare Reselection (FLW-8000)
+Information: Time: 2025-12-09 19:18:05 / Session:  00:10:35 / Command:  00:08:56 / CPU:  00:17:59 / Memory: 5063 MB (FLW-8100)
