@@ -31,12 +31,12 @@ module instruction_memory (CLK, RESET, READ_ADDRESS, READ_DATA, BUSYWAIT);
 
     // For simulation: optionally load from file
     // This is only for simulation and will be ignored by synthesis tools
-    `ifdef SIMULATION
+    // `ifdef SIMULATION
     initial begin
         $readmemh("instruction_mem.hex", memory_array);
         BUSYWAIT = 0;
     end
-    `endif
+    // `endif
 
     always @ (*)
     begin
