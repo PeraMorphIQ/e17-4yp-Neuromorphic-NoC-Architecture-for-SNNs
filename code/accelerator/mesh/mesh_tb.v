@@ -3,8 +3,8 @@
 
 module mesh_tb;
 
-    parameter ROWS = 3;
-    parameter COLS = 3;
+    parameter ROWS = 5;
+    parameter COLS = 5;
     parameter NUM_NEURONS = 4;
     parameter DATA_WIDTH = 32;
 
