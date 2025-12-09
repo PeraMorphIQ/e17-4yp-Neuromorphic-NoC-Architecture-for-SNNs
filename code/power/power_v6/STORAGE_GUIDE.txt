@@ -1,0 +1,331 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║              HOW PARAMETRIC RESULTS ARE STORED                           ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📁 DIRECTORY STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+code/power/power_v6/
+│
+├── parametric_results_20251209_143052/    ← Master directory (timestamped)
+│   │
+│   ├── power_summary.csv                  ← CSV with all results
+│   ├── SUMMARY.txt                        ← Human-readable summary
+│   │
+│   ├── 2x2_N4/                           ← Individual config directory
+│   │   ├── config_info.txt               ← Configuration metadata
+│   │   ├── run.log                       ← Complete execution log
+│   │   ├── report_power.txt              ← Power analysis results
+│   │   ├── report_area.txt               ← Area report
+│   │   ├── report_timing_critical_path.txt
+│   │   ├── rtl_synthesis.log             ← Synthesis details
+│   │   ├── power_restore.log             ← Power tool log
+│   │   ├── vcs_compile.log               ← VCS compilation
+│   │   ├── simulation.log                ← Simulation output
+│   │   ├── power_by_module_2.txt         ← Hierarchical power
+│   │   ├── power_by_module_3.txt
+│   │   ├── power_by_module_5.txt
+│   │   └── ... (20+ detailed reports)
+│   │
+│   ├── 2x2_N8/                           ← Next configuration
+│   │   ├── config_info.txt
+│   │   ├── run.log
+│   │   ├── report_power.txt
+│   │   └── ... (all reports)
+│   │
+│   ├── 2x2_N16/
+│   ├── 2x2_N32/
+│   ├── 3x3_N4/
+│   ├── 3x3_N8/
+│   ├── 3x3_N16/
+│   ├── 3x3_N32/
+│   ├── 4x4_N4/
+│   ├── 4x4_N8/
+│   ├── 4x4_N16/
+│   ├── 4x4_N32/
+│   ├── 5x5_N4/
+│   ├── 5x5_N8/
+│   ├── 5x5_N16/
+│   └── 5x5_N32/                          ← Total: 16 directories
+│
+└── [No previous results overwritten - each run is timestamped]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📄 KEY FILES EXPLAINED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. power_summary.csv (Master Results File)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Format: CSV (Can open in Excel, LibreOffice, Google Sheets)
+   Location: parametric_results_<timestamp>/power_summary.csv
+   
+   Columns:
+   - Configuration      → "2x2_N4", "3x3_N8", etc.
+   - Rows              → 2, 3, 4, 5
+   - Cols              → 2, 3, 4, 5
+   - Neurons           → 4, 8, 16, 32
+   - Total_Nodes       → rows × cols
+   - Total_Neurons     → nodes × neurons
+   - Total_Power(W)    → Total power consumption
+   - Int_Power(W)      → Internal power
+   - Switch_Power(W)   → Switching power
+   - Leak_Power(W)     → Leakage power
+   - Status            → SUCCESS or FAILED
+   - Timestamp         → When this config ran
+   - Duration(s)       → How long it took
+   
+   Example row:
+   2x2_N4,2,2,4,4,16,0.1234,0.0456,0.0678,0.0100,SUCCESS,Mon Dec 9...,127
+
+2. SUMMARY.txt (Human-Readable Report)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Format: Plain text with formatted tables
+   Location: parametric_results_<timestamp>/SUMMARY.txt
+   
+   Contains:
+   - Overview statistics
+   - Success/failure counts
+   - Formatted table of all configs
+   - Power values for each config
+   - Duration for each config
+
+3. config_info.txt (Per-Configuration Metadata)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Format: Plain text
+   Location: parametric_results_<timestamp>/<config_name>/config_info.txt
+   
+   Example content:
+   Configuration: 3x3_N8
+   Timestamp: Mon Dec  9 14:35:42 2025
+   Mesh Dimensions: 3x3
+   Neurons per Node: 8
+   Total Nodes: 9
+   Total Neurons: 72
+
+4. run.log (Complete Execution Log)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Format: Plain text log
+   Location: parametric_results_<timestamp>/<config_name>/run.log
+   
+   Contains: Everything script.sh outputs (stdout + stderr)
+   - Git pull logs
+   - VCS compilation output
+   - Simulation output
+   - RTL synthesis messages
+   - Power analysis output
+   - Any errors or warnings
+
+5. report_power.txt (Detailed Power Report)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Format: Synopsys power report
+   Location: parametric_results_<timestamp>/<config_name>/report_power.txt
+   
+   Contains:
+   - Total power breakdown (Int/Switch/Leak)
+   - Module-by-module power consumption
+   - Operating conditions
+   - Library information
+   
+   This is THE file used to extract power values for CSV
+
+6. power_by_module_*.txt (Hierarchical Power Reports)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Format: Synopsys hierarchical power reports
+   Location: parametric_results_<timestamp>/<config_name>/power_by_module_*.txt
+   
+   Multiple files with different hierarchy depths (2, 3, 5, 10, 20, 100 levels)
+   Shows power for each sub-module (CPUs, routers, neuron banks, etc.)
+
+7. rtl_synthesis.log (Synthesis Details)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Location: parametric_results_<timestamp>/<config_name>/rtl_synthesis.log
+   
+   Contains: Full RTL synthesis flow output from rtl_shell
+
+8. power_restore.log (Power Analysis Details)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   Location: parametric_results_<timestamp>/<config_name>/power_restore.log
+   
+   Contains: Full power analysis flow output from pwr_shell
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 STORAGE FLOW (HOW DATA MOVES)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────┐
+│ START: run_parametric_sweep.sh                              │
+└────────────────────────┬────────────────────────────────────┘
+                         │
+                         ▼
+         ┌───────────────────────────────────┐
+         │ Create Master Directory:          │
+         │ parametric_results_<timestamp>/   │
+         └────────────────┬──────────────────┘
+                         │
+                         ▼
+         ┌───────────────────────────────────┐
+         │ Create power_summary.csv          │
+         │ (with header row)                 │
+         └────────────────┬──────────────────┘
+                         │
+                         ▼
+         ┌───────────────────────────────────┐
+         │ FOR EACH Configuration:           │
+         │ - 2x2_N4, 2x2_N8, ... 5x5_N32    │
+         └────────────────┬──────────────────┘
+                         │
+                         ├──► Create subdirectory: 2x2_N4/
+                         │    
+                         ├──► Update mesh_tb.v parameters
+                         │    
+                         ├──► Set TEMP_RESULTS_DIR=2x2_N4/
+                         │    
+                         ├──► Run script.sh ──┐
+                         │                     │
+                         │    ┌────────────────▼──────────────────┐
+                         │    │ script.sh uses TEMP_RESULTS_DIR   │
+                         │    │ All outputs go to:                │
+                         │    │ parametric_results_*/2x2_N4/      │
+                         │    └────────────────┬──────────────────┘
+                         │                     │
+                         │    ┌────────────────▼──────────────────┐
+                         │    │ Outputs created:                  │
+                         │    │ - vcs_compile.log                 │
+                         │    │ - simulation.log                  │
+                         │    │ - rtl_synthesis.log               │
+                         │    │ - power_restore.log               │
+                         │    │ - report_power.txt                │
+                         │    │ - report_area.txt                 │
+                         │    │ - power_by_module_*.txt           │
+                         │    │ - ... (20+ files)                 │
+                         │    └────────────────┬──────────────────┘
+                         │                     │
+                         ├──► Extract power from report_power.txt
+                         │    
+                         ├──► Append row to power_summary.csv
+                         │    Format: 2x2_N4,2,2,4,4,16,0.123,...
+                         │    
+                         ├──► Restore mesh_tb.v
+                         │    
+                         └──► Next configuration...
+                         
+                         ▼
+         ┌───────────────────────────────────┐
+         │ After ALL configs complete:       │
+         │ Generate SUMMARY.txt              │
+         └────────────────┬──────────────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │ DONE: All results    │
+              │ in timestamped dir   │
+              └──────────────────────┘
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📐 DISK SPACE REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Approximate sizes per configuration:
+  - Log files:           ~5-10 MB
+  - Reports:             ~2-5 MB
+  - Total per config:    ~10-20 MB
+
+Total for 16 configurations:
+  - Small configs (2x2): ~10 MB each = 40 MB
+  - Medium (3x3):        ~15 MB each = 60 MB
+  - Large (4x4, 5x5):    ~20 MB each = 160 MB
+  
+  Total estimated:       ~250-300 MB per full sweep
+
+Multiple runs accumulate:
+  - Run 1: parametric_results_20251209_100000/ (~300 MB)
+  - Run 2: parametric_results_20251209_150000/ (~300 MB)
+  - Run 3: parametric_results_20251210_090000/ (~300 MB)
+  
+  → No overwrites! Each run is separate.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 HOW TO ACCESS RESULTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. View Summary in Terminal:
+   cat parametric_results_20251209_143052/SUMMARY.txt
+
+2. Open CSV in Excel:
+   # Windows: Open Excel → File → Open → power_summary.csv
+   # Linux: libreoffice parametric_results_*/power_summary.csv
+
+3. Check Specific Config:
+   cd parametric_results_20251209_143052/3x3_N8
+   cat config_info.txt
+   cat report_power.txt
+   less run.log
+
+4. Find Failed Configs:
+   grep FAILED parametric_results_*/power_summary.csv
+
+5. Compare Power Values:
+   # Sort by total power
+   sort -t',' -k7 -n parametric_results_*/power_summary.csv
+
+6. View Hierarchical Power:
+   cat parametric_results_*/4x4_N16/power_by_module_2.txt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 EXAMPLE: power_summary.csv Content
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Configuration,Rows,Cols,Neurons,Total_Nodes,Total_Neurons,Total_Power(W),Int_Power(W),Switch_Power(W),Leak_Power(W),Status,Timestamp,Duration(s)
+2x2_N4,2,2,4,4,16,0.1234,0.0456,0.0678,0.0100,SUCCESS,Mon Dec 9 14:30:15 2025,127
+2x2_N8,2,2,8,4,32,0.1856,0.0689,0.1012,0.0155,SUCCESS,Mon Dec 9 14:32:42 2025,145
+2x2_N16,2,2,16,4,64,0.3012,0.1123,0.1645,0.0244,SUCCESS,Mon Dec 9 14:35:18 2025,156
+2x2_N32,2,2,32,4,128,0.5234,0.1956,0.2867,0.0411,SUCCESS,Mon Dec 9 14:37:59 2025,161
+3x3_N4,3,3,4,9,36,0.2789,0.1034,0.1523,0.0232,SUCCESS,Mon Dec 9 14:40:52 2025,173
+3x3_N8,3,3,8,9,72,0.4123,0.1534,0.2256,0.0333,SUCCESS,Mon Dec 9 14:43:58 2025,186
+...
+
+This CSV can be:
+  ✓ Opened in Excel for pivot tables
+  ✓ Imported to Python/MATLAB for plotting
+  ✓ Used in analyze_results.py for auto-visualization
+  ✓ Processed with awk/grep for quick stats
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💾 BACKUP & ARCHIVAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Important Results to Keep:
+  ✓ power_summary.csv           (Most important - has all data)
+  ✓ SUMMARY.txt                 (Human-readable overview)
+  ✓ <config>/report_power.txt   (Detailed power per config)
+  ✓ <config>/config_info.txt    (Configuration metadata)
+
+Can Delete to Save Space:
+  ✗ <config>/vcs_compile.log    (Large, only needed for debug)
+  ✗ <config>/simulation.log     (Large, only needed for debug)
+  ✗ <config>/rtl_synthesis.log  (Very large, synthesis details)
+
+Archiving Command:
+  tar -czf parametric_sweep_20251209.tar.gz parametric_results_20251209_143052/
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 KEY TAKEAWAYS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Each run creates a NEW timestamped directory - no overwrites
+2. All 16 configs stored in separate subdirectories
+3. Master CSV has ALL results in one file (easy to analyze)
+4. Each config has 20+ detailed report files
+5. Total space: ~250-300 MB per full sweep
+6. Results persist - can compare multiple runs
+7. CSV format allows Excel/Python/MATLAB analysis
+8. analyze_results.py generates plots from the CSV
+
+╚══════════════════════════════════════════════════════════════════════════╝
