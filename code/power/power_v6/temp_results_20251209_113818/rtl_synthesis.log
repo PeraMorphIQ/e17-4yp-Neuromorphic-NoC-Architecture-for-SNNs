@@ -1,4 +1,6 @@
- 
+
+
+
                                RTL Architect (TM)
 
                Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
@@ -19,7 +21,7 @@
  Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
-
+ 
 #!/bin/tcsh -f
 # =============================================================================
 # RISC-V CPU RTL Analysis and Synthesis Script for SKY130
@@ -32,12 +34,12 @@
 # Load shared configuration
 source config.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251209_114013
+Using environment TEMP_RESULTS_DIR: temp_results_20251209_113818
 Configuration loaded successfully
   Design: mesh
   Technology: SKY130 130nm
   Cores: 8
-  Results directory: temp_results_20251209_114013
+  Results directory: temp_results_20251209_113818
 # -----------------------------------------------------------------------------
 # Configuration and Setup
 # -----------------------------------------------------------------------------
@@ -337,7 +339,7 @@ Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:134: Intraassignme
 Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:136: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Warning:  ../../accelerator/mesh/../neuron_core/neuron_core.v:137: Intraassignment delays for nonblocking assignments are ignored. (VER-130)
 Presto compilation completed successfully.
-Elapsed = 00:00:00.07, CPU = 00:00:00.07
+Elapsed = 00:00:00.07, CPU = 00:00:00.06
 1
 # Elaborate the design
 elaborate $DESIGN_NAME
@@ -353,8 +355,8 @@ Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y1_NUM_NEURONS4)
 Information: Elaborating HDL template WORK:cpu instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine cpu line 308 in file
-                '../../accelerator/mesh/../cpu_core/cpu/cpu.v'.
+	in routine cpu line 308 in file
+		'../../accelerator/mesh/../cpu_core/cpu/cpu.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -364,19 +366,20 @@ Presto compilation completed successfully. (cpu)
 Information: Elaborating HDL template WORK:instruction_memory instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine instruction_memory line 13 in file
-                '../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v'.
+	in routine instruction_memory line 13 in file
+		'../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
 |    BUSYWAIT_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+|  memory_array_reg   | Latch | 8192  |  Y  | Y  | N  | N  | -  | -  | -  |
 ===========================================================================
 Presto compilation completed successfully. (instruction_memory)
 Information: Elaborating HDL template WORK:data_memory instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4'. (ELAB-193)
 Warning:  ../../accelerator/mesh/../cpu_core/data_memory/data_memory.v:29: The statements in initial blocks are ignored. (VER-281)
 
 Statistics for case statements in always block at line 33 in file
-        '../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
+	'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -384,7 +387,7 @@ Statistics for case statements in always block at line 33 in file
 ===============================================
 
 Statistics for case statements in always block at line 59 in file
-        '../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
+	'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -392,19 +395,19 @@ Statistics for case statements in always block at line 59 in file
 ===============================================
 
 Inferred memory devices in process
-        in routine data_memory line 33 in file
-                '../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'.
+	in routine data_memory line 33 in file
+		'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
 |       mem_reg       | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (data_memory)
-Module: data_memory, Elapsed Time: 00:00:07, CPU Time: 00:00:06, Total Mem: 704.72 MB, Mem: 282.99 MB, Time: Tue Dec  9 11:40:38 2025
+Module: data_memory, Elapsed Time: 00:00:07, CPU Time: 00:00:07, Total Mem: 730.72 MB, Mem: 251.88 MB, Time: Tue Dec  9 11:38:45 2025
 Information: Elaborating HDL template WORK:neuron_bank instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4' with the parameters {NUM_NEURONS=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 82 in file
-        '../../accelerator/mesh/../neuron_bank/neuron_bank.v'
+	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -412,7 +415,7 @@ Statistics for case statements in always block at line 82 in file
 ===============================================
 
 Statistics for case statements in always block at line 119 in file
-        '../../accelerator/mesh/../neuron_bank/neuron_bank.v'
+	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -420,8 +423,8 @@ Statistics for case statements in always block at line 119 in file
 ===============================================
 
 Inferred memory devices in process
-        in routine neuron_bank_NUM_NEURONS4 line 82 in file
-                '../../accelerator/mesh/../neuron_bank/neuron_bank.v'.
+	in routine neuron_bank_NUM_NEURONS4 line 82 in file
+		'../../accelerator/mesh/../neuron_bank/neuron_bank.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -451,8 +454,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X0_ADDR_Y0 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X0_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -467,8 +470,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X1_ADDR_Y0 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X1_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -483,8 +486,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X0_ADDR_Y1 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X0_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -494,8 +497,8 @@ Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y1)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y1_NUM_NEURONS4' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X1_ADDR_Y1 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X1_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -509,8 +512,8 @@ Presto compilation completed successfully. (mux_2to1_32bit)
 Information: Elaborating HDL template WORK:pr_if_id instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_if_id line 13 in file
-                '../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v'.
+	in routine pr_if_id line 13 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -523,8 +526,8 @@ Presto compilation completed successfully. (control_unit)
 Information: Elaborating HDL template WORK:reg_file instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine reg_file line 19 in file
-                '../../accelerator/mesh/../cpu_core/reg_file/reg_file.v'.
+	in routine reg_file line 19 in file
+		'../../accelerator/mesh/../cpu_core/reg_file/reg_file.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -534,8 +537,8 @@ Presto compilation completed successfully. (reg_file)
 Information: Elaborating HDL template WORK:f_reg_file instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine f_reg_file line 20 in file
-                '../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v'.
+	in routine f_reg_file line 20 in file
+		'../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -545,7 +548,7 @@ Presto compilation completed successfully. (f_reg_file)
 Information: Elaborating HDL template WORK:immediate_generation_unit instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 18 in file
-        '../../accelerator/mesh/../cpu_core/immediate_generation_unit/immediate_generation_unit.v'
+	'../../accelerator/mesh/../cpu_core/immediate_generation_unit/immediate_generation_unit.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -559,8 +562,8 @@ Presto compilation completed successfully. (pipeline_flush_unit)
 Information: Elaborating HDL template WORK:pr_id_ex instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_id_ex line 47 in file
-                '../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v'.
+	in routine pr_id_ex line 47 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v'.
 =============================================================================================
 |           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =============================================================================================
@@ -602,7 +605,7 @@ Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:94: signed to unsigned as
 Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:98: signed to unsigned assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 72 in file
-        '../../accelerator/mesh/../cpu_core/alu/alu.v'
+	'../../accelerator/mesh/../cpu_core/alu/alu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -610,7 +613,7 @@ Statistics for case statements in always block at line 72 in file
 ===============================================
 
 Statistics for case statements in always block at line 102 in file
-        '../../accelerator/mesh/../cpu_core/alu/alu.v'
+	'../../accelerator/mesh/../cpu_core/alu/alu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -620,7 +623,7 @@ Presto compilation completed successfully. (alu)
 Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 100 in file
-        '../../accelerator/mesh/../cpu_core/fpu/fpu.v'
+	'../../accelerator/mesh/../cpu_core/fpu/fpu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -630,7 +633,7 @@ Presto compilation completed successfully. (fpu)
 Information: Elaborating HDL template WORK:branch_control_unit instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 20 in file
-        '../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v'
+	'../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -642,8 +645,8 @@ Presto compilation completed successfully. (ex_forward_unit)
 Information: Elaborating HDL template WORK:pr_ex_mem instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_ex_mem line 37 in file
-                '../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v'.
+	in routine pr_ex_mem line 37 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v'.
 ==============================================================================================
 |           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ==============================================================================================
@@ -668,8 +671,8 @@ Presto compilation completed successfully. (pr_ex_mem)
 Information: Elaborating HDL template WORK:mem_forward_unit instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine mem_forward_unit line 17 in file
-                '../../accelerator/mesh/../cpu_core/forwarding_units/mem_forward_unit.v'.
+	in routine mem_forward_unit line 17 in file
+		'../../accelerator/mesh/../cpu_core/forwarding_units/mem_forward_unit.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -679,8 +682,8 @@ Presto compilation completed successfully. (mem_forward_unit)
 Information: Elaborating HDL template WORK:pr_mem_wb instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_mem_wb line 31 in file
-                '../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v'.
+	in routine pr_mem_wb line 31 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v'.
 =====================================================================================
 |       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =====================================================================================
@@ -698,8 +701,8 @@ Presto compilation completed successfully. (pr_mem_wb)
 Information: Elaborating HDL template WORK:neuron_core instantiated from 'neuron_bank_NUM_NEURONS4'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine neuron_core line 91 in file
-                '../../accelerator/mesh/../neuron_core/neuron_core.v'.
+	in routine neuron_core line 91 in file
+		'../../accelerator/mesh/../neuron_core/neuron_core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -714,8 +717,8 @@ Presto compilation completed successfully. (neuron_core)
 Information: Elaborating HDL template WORK:fifo instantiated from 'network_interface' with the parameters {DEPTH=16,DATA_WIDTH=32}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine fifo_DEPTH16_DATA_WIDTH32 line 22 in file
-                '../../accelerator/network_interface/fifo.v'.
+	in routine fifo_DEPTH16_DATA_WIDTH32 line 22 in file
+		'../../accelerator/network_interface/fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -736,8 +739,8 @@ Presto compilation completed successfully. (Division)
 Information: Elaborating HDL template WORK:Comparison instantiated from 'fpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine Comparison line 15 in file
-                '../../accelerator/cpu_core//fpu/Comparison.v'.
+	in routine Comparison line 15 in file
+		'../../accelerator/cpu_core//fpu/Comparison.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -747,8 +750,8 @@ Presto compilation completed successfully. (Comparison)
 Information: Elaborating HDL template WORK:Floating_Point_to_Integer instantiated from 'fpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine Floating_Point_to_Integer line 17 in file
-                '../../accelerator/cpu_core//fpu/Converter.v'.
+	in routine Floating_Point_to_Integer line 17 in file
+		'../../accelerator/cpu_core//fpu/Converter.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -758,7 +761,7 @@ Presto compilation completed successfully. (Floating_Point_to_Integer)
 Information: Elaborating HDL template WORK:priority_encoder instantiated from 'Addition_Subtraction'. (ELAB-193)
 
 Statistics for case statements in always block at line 19 in file
-        '../../accelerator/cpu_core//fpu/Priority_Encoder.v'
+	'../../accelerator/cpu_core//fpu/Priority_Encoder.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -772,73 +775,10 @@ Number of modules read: 42
 Top level ports:        2
 Total in all modules
   Ports:                6496
-  Nets:                 112939
-  Instances:            60253
+  Nets:                 122512
+  Instances:            69817
 Design summary end. (FLW-8551)
-Elapsed = 00:00:11.31, CPU = 00:00:11.09
+Elapsed = 00:00:12.72, CPU = 00:00:12.48
 1
 set_top_module $TOP_MODULE
 Information: User units loaded from library 'sky130_fd_sc_hd' (LNK-040)
-Information: Added key list 'DesignWare' to design 'mesh'. (DWS-0216)
-Gensys attachment is created: presto_gensys.attach:cpu_LIB:mesh.design 
-Elapsed = 00:00:24.89, CPU = 00:00:24.62
-1
-puts "Design elaboration completed"
-Design elaboration completed
-# -----------------------------------------------------------------------------
-# Technology Setup and Constraints
-# -----------------------------------------------------------------------------
-puts "========== Loading Technology Setup =========="
-========== Loading Technology Setup ==========
-source tz_setup.tcl
-Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251209_114013
-Configuration loaded successfully
-  Design: mesh
-  Technology: SKY130 130nm
-  Cores: 8
-  Results directory: temp_results_20251209_114013
-========== SKY130 Technology Setup ==========
-Configuring synthesis flow options...
-Loading SKY130 parasitic technology files...
-SKY130 parasitic models loaded
-Setting up clock gating options for SKY130...
-Warning: This option -max_number_of_levels will be ignored during clock gating insertion/optimizations. (CGT-3003)
-The following clock gating options are applied to: top-level (design)
-Minimum bitwidth: 3
-Maximum fanout: 16
-The following clock gating style is applied to: top-level (design)
-Target: pos_edge_flip_flop 
-Test control position: before
-Observation output: false
-Clock gating configured for SKY130
-Setting optimization controls...
-Creating operating scenarios...
-Created scenario func@nominal for mode func and corner nominal
-All analysis types are activated.
-Scenario func@nominal (mode func corner nominal) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
-Operating scenario func@nominal created and set as current
-Loading design constraints...
-Information: Timer using 8 threads
-Error: Nothing matched for port_pin_list (SEL-005)
-Error: Nothing matched for port_pin_list (SEL-005)
-Error: Nothing matched for objects (SEL-005)
-Clock constraints loaded from ./sdc/clocks.sdc
-========== Setup Status Report ==========
-****************************************
-Report : scenario
-Design : mesh
-Version: V-2023.12-SP5-3
-Date   : Tue Dec  9 11:41:12 2025
-****************************************
-
-                                                                     Leakage  Dynamic                              Cell  Signal
-Name            Mode            Corner          Active  Setup  Hold  Power    Power    Max_tran  Max_cap  Min_cap  EM    EM
-----------------------------------------------------------------------------------------------------------------------------------
-func@nominal *  func            nominal         true    true   false true     true     true      true     true     false false
-
-========== SKY130 Technology Setup Complete ==========
-# Force timing update after loading constraints
-update_timing
-Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-12-09 11:41:12 / Session:  00:00:49 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1962 MB (FLW-8100)
