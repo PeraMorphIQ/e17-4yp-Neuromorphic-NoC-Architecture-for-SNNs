@@ -52,11 +52,21 @@ puts "========== Analyzing and Elaborating Design =========="
 # Analyze RTL source files
 analyze -f sv -vcs "-f $FILELIST"
 
-# Elaborate the design
-elaborate $DESIGN_NAME
+# Get configuration parameters from environment if available
+if {[info exists ::env(CONFIG_NEURONS)]} {
+    set NUM_NEURONS $::env(CONFIG_NEURONS)
+    puts "Using NUM_NEURONS from environment: $NUM_NEURONS"
+} else {
+    set NUM_NEURONS 4
+    puts "Using default NUM_NEURONS: $NUM_NEURONS"
+}
+
+# Elaborate the design with parameters
+puts "Elaborating design with NUM_NEURONS=$NUM_NEURONS"
+elaborate $DESIGN_NAME -parameters "NUM_NEURONS=$NUM_NEURONS"
 set_top_module $TOP_MODULE
 
-puts "Design elaboration completed"
+puts "Design elaboration completed with NUM_NEURONS=$NUM_NEURONS"
 
 # -----------------------------------------------------------------------------
 # Technology Setup and Constraints
