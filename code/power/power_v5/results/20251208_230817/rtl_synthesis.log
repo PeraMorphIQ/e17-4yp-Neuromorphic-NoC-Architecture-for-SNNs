@@ -1,4 +1,6 @@
- 
+
+
+
                                RTL Architect (TM)
 
                Version V-2023.12-SP5-3 for linux64 - Dec 17, 2024
@@ -19,7 +21,7 @@
  Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
-
+ 
 #!/bin/tcsh -f
 # =============================================================================
 # RISC-V CPU RTL Analysis and Synthesis Script for SKY130
@@ -377,8 +379,8 @@ Presto compilation completed successfully. (node_ADDR_X3_ADDR_Y3)
 Information: Elaborating HDL template WORK:cpu instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine cpu line 308 in file
-                '../../accelerator/mesh/../cpu_core/cpu/cpu.v'.
+	in routine cpu line 308 in file
+		'../../accelerator/mesh/../cpu_core/cpu/cpu.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -392,7 +394,7 @@ Information: Elaborating HDL template WORK:data_memory instantiated from 'node_A
 Warning:  ../../accelerator/mesh/../cpu_core/data_memory/data_memory.v:29: The statements in initial blocks are ignored. (VER-281)
 
 Statistics for case statements in always block at line 33 in file
-        '../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
+	'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -400,7 +402,7 @@ Statistics for case statements in always block at line 33 in file
 ===============================================
 
 Statistics for case statements in always block at line 59 in file
-        '../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
+	'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -408,8 +410,8 @@ Statistics for case statements in always block at line 59 in file
 ===============================================
 
 Inferred memory devices in process
-        in routine data_memory line 33 in file
-                '../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'.
+	in routine data_memory line 33 in file
+		'../../accelerator/mesh/../cpu_core/data_memory/data_memory.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -420,7 +422,7 @@ Module: data_memory, Elapsed Time: 00:00:06, CPU Time: 00:00:06, Total Mem: 711.
 Information: Elaborating HDL template WORK:neuron_bank instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {NUM_NEURONS=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 82 in file
-        '../../accelerator/mesh/../neuron_bank/neuron_bank.v'
+	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -428,7 +430,7 @@ Statistics for case statements in always block at line 82 in file
 ===============================================
 
 Statistics for case statements in always block at line 119 in file
-        '../../accelerator/mesh/../neuron_bank/neuron_bank.v'
+	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -436,8 +438,8 @@ Statistics for case statements in always block at line 119 in file
 ===============================================
 
 Inferred memory devices in process
-        in routine neuron_bank_NUM_NEURONS4 line 82 in file
-                '../../accelerator/mesh/../neuron_bank/neuron_bank.v'.
+	in routine neuron_bank_NUM_NEURONS4 line 82 in file
+		'../../accelerator/mesh/../neuron_bank/neuron_bank.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -467,8 +469,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X0_ADDR_Y0 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X0_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -483,8 +485,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X1_ADDR_Y0 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X1_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -499,8 +501,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X2_ADDR_Y0 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X2_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -515,8 +517,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X3_ADDR_Y0 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X3_ADDR_Y0 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -531,8 +533,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X0_ADDR_Y1 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X0_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -542,8 +544,8 @@ Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y1)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y1' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X1_ADDR_Y1 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X1_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -553,8 +555,8 @@ Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y1)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X2_ADDR_Y1' with the parameters {ADDR_X=2,ADDR_Y=1}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X2_ADDR_Y1 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X2_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -564,8 +566,8 @@ Presto compilation completed successfully. (router_ADDR_X2_ADDR_Y1)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X3_ADDR_Y1' with the parameters {ADDR_X=3,ADDR_Y=1}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X3_ADDR_Y1 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X3_ADDR_Y1 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -580,8 +582,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X0_ADDR_Y2 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X0_ADDR_Y2 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -591,8 +593,8 @@ Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y2)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y2' with the parameters {ADDR_X=1,ADDR_Y=2}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X1_ADDR_Y2 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X1_ADDR_Y2 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -602,8 +604,8 @@ Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y2)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X2_ADDR_Y2' with the parameters {ADDR_X=2,ADDR_Y=2}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X2_ADDR_Y2 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X2_ADDR_Y2 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -613,8 +615,8 @@ Presto compilation completed successfully. (router_ADDR_X2_ADDR_Y2)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X3_ADDR_Y2' with the parameters {ADDR_X=3,ADDR_Y=2}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X3_ADDR_Y2 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X3_ADDR_Y2 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -629,8 +631,8 @@ Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (B
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
 
 Inferred memory devices in process
-        in routine router_ADDR_X0_ADDR_Y3 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X0_ADDR_Y3 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -640,8 +642,8 @@ Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y3)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y3' with the parameters {ADDR_X=1,ADDR_Y=3}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X1_ADDR_Y3 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X1_ADDR_Y3 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -651,8 +653,8 @@ Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y3)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X2_ADDR_Y3' with the parameters {ADDR_X=2,ADDR_Y=3}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X2_ADDR_Y3 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X2_ADDR_Y3 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -662,8 +664,8 @@ Presto compilation completed successfully. (router_ADDR_X2_ADDR_Y3)
 Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X3_ADDR_Y3' with the parameters {ADDR_X=3,ADDR_Y=3}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine router_ADDR_X3_ADDR_Y3 line 85 in file
-                '../../accelerator/mesh/../router/router.v'.
+	in routine router_ADDR_X3_ADDR_Y3 line 85 in file
+		'../../accelerator/mesh/../router/router.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -677,8 +679,8 @@ Presto compilation completed successfully. (mux_2to1_32bit)
 Information: Elaborating HDL template WORK:pr_if_id instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_if_id line 13 in file
-                '../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v'.
+	in routine pr_if_id line 13 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_if_id.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -691,8 +693,8 @@ Presto compilation completed successfully. (control_unit)
 Information: Elaborating HDL template WORK:reg_file instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine reg_file line 19 in file
-                '../../accelerator/mesh/../cpu_core/reg_file/reg_file.v'.
+	in routine reg_file line 19 in file
+		'../../accelerator/mesh/../cpu_core/reg_file/reg_file.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -702,8 +704,8 @@ Presto compilation completed successfully. (reg_file)
 Information: Elaborating HDL template WORK:f_reg_file instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine f_reg_file line 20 in file
-                '../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v'.
+	in routine f_reg_file line 20 in file
+		'../../accelerator/mesh/../cpu_core/f_reg_file/f_reg_file.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -713,7 +715,7 @@ Presto compilation completed successfully. (f_reg_file)
 Information: Elaborating HDL template WORK:immediate_generation_unit instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 18 in file
-        '../../accelerator/mesh/../cpu_core/immediate_generation_unit/immediate_generation_unit.v'
+	'../../accelerator/mesh/../cpu_core/immediate_generation_unit/immediate_generation_unit.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -727,8 +729,8 @@ Presto compilation completed successfully. (pipeline_flush_unit)
 Information: Elaborating HDL template WORK:pr_id_ex instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_id_ex line 47 in file
-                '../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v'.
+	in routine pr_id_ex line 47 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_id_ex.v'.
 =============================================================================================
 |           Register Name           |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =============================================================================================
@@ -770,7 +772,7 @@ Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:94: signed to unsigned as
 Warning:  ../../accelerator/mesh/../cpu_core/alu/alu.v:98: signed to unsigned assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 72 in file
-        '../../accelerator/mesh/../cpu_core/alu/alu.v'
+	'../../accelerator/mesh/../cpu_core/alu/alu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -778,7 +780,7 @@ Statistics for case statements in always block at line 72 in file
 ===============================================
 
 Statistics for case statements in always block at line 102 in file
-        '../../accelerator/mesh/../cpu_core/alu/alu.v'
+	'../../accelerator/mesh/../cpu_core/alu/alu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -788,7 +790,7 @@ Presto compilation completed successfully. (alu)
 Information: Elaborating HDL template WORK:fpu instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 100 in file
-        '../../accelerator/mesh/../cpu_core/fpu/fpu.v'
+	'../../accelerator/mesh/../cpu_core/fpu/fpu.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -798,7 +800,7 @@ Presto compilation completed successfully. (fpu)
 Information: Elaborating HDL template WORK:branch_control_unit instantiated from 'cpu'. (ELAB-193)
 
 Statistics for case statements in always block at line 20 in file
-        '../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v'
+	'../../accelerator/mesh/../cpu_core/branch_control_unit/branch_control_unit.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -810,8 +812,8 @@ Presto compilation completed successfully. (ex_forward_unit)
 Information: Elaborating HDL template WORK:pr_ex_mem instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_ex_mem line 37 in file
-                '../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v'.
+	in routine pr_ex_mem line 37 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_ex_mem.v'.
 ==============================================================================================
 |           Register Name            |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ==============================================================================================
@@ -836,8 +838,8 @@ Presto compilation completed successfully. (pr_ex_mem)
 Information: Elaborating HDL template WORK:mem_forward_unit instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine mem_forward_unit line 17 in file
-                '../../accelerator/mesh/../cpu_core/forwarding_units/mem_forward_unit.v'.
+	in routine mem_forward_unit line 17 in file
+		'../../accelerator/mesh/../cpu_core/forwarding_units/mem_forward_unit.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -847,8 +849,8 @@ Presto compilation completed successfully. (mem_forward_unit)
 Information: Elaborating HDL template WORK:pr_mem_wb instantiated from 'cpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine pr_mem_wb line 31 in file
-                '../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v'.
+	in routine pr_mem_wb line 31 in file
+		'../../accelerator/mesh/../cpu_core/pipeline_registers/pr_mem_wb.v'.
 =====================================================================================
 |       Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =====================================================================================
@@ -866,8 +868,8 @@ Presto compilation completed successfully. (pr_mem_wb)
 Information: Elaborating HDL template WORK:neuron_core instantiated from 'neuron_bank_NUM_NEURONS4'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine neuron_core line 91 in file
-                '../../accelerator/mesh/../neuron_core/neuron_core.v'.
+	in routine neuron_core line 91 in file
+		'../../accelerator/mesh/../neuron_core/neuron_core.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -882,8 +884,8 @@ Presto compilation completed successfully. (neuron_core)
 Information: Elaborating HDL template WORK:fifo instantiated from 'network_interface' with the parameters {DEPTH=16,DATA_WIDTH=32}. (ELAB-193)
 
 Inferred memory devices in process
-        in routine fifo_DEPTH16_DATA_WIDTH32 line 22 in file
-                '../../accelerator/network_interface/fifo.v'.
+	in routine fifo_DEPTH16_DATA_WIDTH32 line 22 in file
+		'../../accelerator/network_interface/fifo.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -904,8 +906,8 @@ Presto compilation completed successfully. (Division)
 Information: Elaborating HDL template WORK:Comparison instantiated from 'fpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine Comparison line 15 in file
-                '../../accelerator/cpu_core//fpu/Comparison.v'.
+	in routine Comparison line 15 in file
+		'../../accelerator/cpu_core//fpu/Comparison.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -915,8 +917,8 @@ Presto compilation completed successfully. (Comparison)
 Information: Elaborating HDL template WORK:Floating_Point_to_Integer instantiated from 'fpu'. (ELAB-193)
 
 Inferred memory devices in process
-        in routine Floating_Point_to_Integer line 17 in file
-                '../../accelerator/cpu_core//fpu/Converter.v'.
+	in routine Floating_Point_to_Integer line 17 in file
+		'../../accelerator/cpu_core//fpu/Converter.v'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
@@ -926,7 +928,7 @@ Presto compilation completed successfully. (Floating_Point_to_Integer)
 Information: Elaborating HDL template WORK:priority_encoder instantiated from 'Addition_Subtraction'. (ELAB-193)
 
 Statistics for case statements in always block at line 19 in file
-        '../../accelerator/cpu_core//fpu/Priority_Encoder.v'
+	'../../accelerator/cpu_core//fpu/Priority_Encoder.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -1867,12 +1869,12 @@ Information: 296 out of 306 UNG-1002 messages were not printed due to limit 10  
 Information: Ending   rtl_opt / conditioning / High-Level Optimization and Technology Mapping (2) (FLW-8001)
 Information: Time: 2025-12-08 23:35:42 / Session:  00:27:15 / Command:  00:19:31 / CPU:  00:29:28 / Memory: 13200 MB (FLW-8100)
 Information: RTL multibit banking summary. (SQM-2008)
-        Total candidates in design:210216
-        Total candidates ignored:  209704
-        Total candidates banked:   0
-        Banking Ratio of this pass:0.00%
-        Banking ratio             :0.00% (Before banking 0.00%)
-        Use report_multibit for details.
+	Total candidates in design:210216
+	Total candidates ignored:  209704
+	Total candidates banked:   0
+	Banking Ratio of this pass:0.00%
+	Banking ratio             :0.00% (Before banking 0.00%)
+	Use report_multibit for details.
 Information: Starting rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8000)
 Information: Time: 2025-12-08 23:35:44 / Session:  00:27:16 / Command:  00:19:32 / CPU:  00:29:29 / Memory: 13200 MB (FLW-8100)
 Information: Ending   rtl_opt / conditioning / DFT Core Wrapper Analysis (FLW-8001)
@@ -10139,6 +10141,38 @@ Warning: Net 'ROW_LOOP[2].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmn_126464
 Warning: Net 'ROW_LOOP[2].COL_LOOP[3].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmn_12645594' is already connected to pin 'ROW_LOOP[2].COL_LOOP[3].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmi_5408849/Y'. It may cause loss of switching activity. (POW-116)
 Information: Ending   rtl_opt / conditioning / Optimization (3) / Timing Optimization (FLW-8001)
 Information: Time: 2025-12-09 01:14:49 / Session:  02:06:21 / Command:  01:58:37 / CPU:  07:13:44 / Memory: 30201 MB (FLW-8100)
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
+reset counter ex blocks
 Warning: Net 'ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_ALU/snps_DIVREM_33/u_div/tmp_net3530784' is already connected to pin 'ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_ALU/snps_DIVREM_33/A5732605/Y'. It may cause loss of switching activity. (POW-116)
 Warning: Net 'ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_ALU/snps_DIVREM_33/ctmn_11981130' is already connected to pin 'ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_ALU/snps_DIVREM_33/ctmi_3576474/Y'. It may cause loss of switching activity. (POW-116)
 Warning: Net 'ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_ALU/snps_DIVREM_33/N13362174' is already connected to pin 'ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_ALU/snps_DIVREM_33/A5731683/Y'. It may cause loss of switching activity. (POW-116)
@@ -10497,12 +10531,12 @@ Start Global Route ...
 [Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
 [Init] Total (MB): Used   75  Alloctr   76  Proc 34312 
 Printing options for 'route.common.*'
-common.clock_topology                                   :        normal              
-common.single_connection_to_pins                        :        off                 
+common.clock_topology                                   :	 normal              
+common.single_connection_to_pins                        :	 off                 
 
 Printing options for 'route.global.*'
-global.crosstalk_driven                                 :        false               
-global.deterministic                                    :        on                  
+global.crosstalk_driven                                 :	 false               
+global.deterministic                                    :	 on                  
 
 Begin global routing.
 Constructing data structure ...
@@ -10530,32 +10564,32 @@ Current Stage stats:
 [End of Build All Nets] Total (MB): Used   92  Alloctr   93  Proc 34312 
 Net length statistics: 
 Net Count(Ignore Fully Rted) 4, Total Half Perimeter Wire Length (HPWL) 34869 microns
-HPWL   0 ~   50 microns: Net Count        0     Total HPWL            0 microns
-HPWL  50 ~  100 microns: Net Count        0     Total HPWL            0 microns
-HPWL 100 ~  200 microns: Net Count        0     Total HPWL            0 microns
-HPWL 200 ~  300 microns: Net Count        0     Total HPWL            0 microns
-HPWL 300 ~  400 microns: Net Count        0     Total HPWL            0 microns
-HPWL 400 ~  500 microns: Net Count        0     Total HPWL            0 microns
-HPWL 500 ~  600 microns: Net Count        0     Total HPWL            0 microns
-HPWL 600 ~  700 microns: Net Count        0     Total HPWL            0 microns
-HPWL 700 ~  800 microns: Net Count        0     Total HPWL            0 microns
-HPWL 800 ~  900 microns: Net Count        0     Total HPWL            0 microns
-HPWL 900 ~ 1000 microns: Net Count        0     Total HPWL            0 microns
-HPWL     > 1000 microns: Net Count        4     Total HPWL        34869 microns
+HPWL   0 ~   50 microns: Net Count        0	Total HPWL            0 microns
+HPWL  50 ~  100 microns: Net Count        0	Total HPWL            0 microns
+HPWL 100 ~  200 microns: Net Count        0	Total HPWL            0 microns
+HPWL 200 ~  300 microns: Net Count        0	Total HPWL            0 microns
+HPWL 300 ~  400 microns: Net Count        0	Total HPWL            0 microns
+HPWL 400 ~  500 microns: Net Count        0	Total HPWL            0 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL            0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL            0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL            0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL            0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL            0 microns
+HPWL     > 1000 microns: Net Count        4	Total HPWL        34869 microns
 Number of partitions: 4 (2 x 2)
 Size of partitions: 160 gCells x 160 gCells
-Average gCell capacity  46.91    on layer (1)    li1
-Average gCell capacity  63.49    on layer (2)    met1
-Average gCell capacity  46.91    on layer (3)    met2
-Average gCell capacity  31.74    on layer (4)    met3
-Average gCell capacity  23.45    on layer (5)    met4
-Average gCell capacity  6.34     on layer (6)    met5
-Average number of tracks per gCell 46.91         on layer (1)    li1
-Average number of tracks per gCell 63.49         on layer (2)    met1
-Average number of tracks per gCell 46.91         on layer (3)    met2
-Average number of tracks per gCell 31.75         on layer (4)    met3
-Average number of tracks per gCell 23.46         on layer (5)    met4
-Average number of tracks per gCell 6.35  on layer (6)    met5
+Average gCell capacity  46.91	 on layer (1)	 li1
+Average gCell capacity  63.49	 on layer (2)	 met1
+Average gCell capacity  46.91	 on layer (3)	 met2
+Average gCell capacity  31.74	 on layer (4)	 met3
+Average gCell capacity  23.45	 on layer (5)	 met4
+Average gCell capacity  6.34	 on layer (6)	 met5
+Average number of tracks per gCell 46.91	 on layer (1)	 li1
+Average number of tracks per gCell 63.49	 on layer (2)	 met1
+Average number of tracks per gCell 46.91	 on layer (3)	 met2
+Average number of tracks per gCell 31.75	 on layer (4)	 met3
+Average number of tracks per gCell 23.46	 on layer (5)	 met4
+Average number of tracks per gCell 6.35	 on layer (6)	 met5
 Number of gCells = 487350
 Current Stage stats:
 [End of Build Congestion Map] Elapsed real time: 0:00:00 
@@ -10865,13 +10899,13 @@ Start Global Route ...
 [Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
 [Init] Total (MB): Used    8  Alloctr    8  Proc 34397 
 Printing options for 'route.common.*'
-common.clock_topology                                   :        normal              
-common.single_connection_to_pins                        :        off                 
+common.clock_topology                                   :	 normal              
+common.single_connection_to_pins                        :	 off                 
 
 Printing options for 'route.global.*'
-global.crosstalk_driven                                 :        false               
-global.deterministic                                    :        on                  
-global.timing_driven                                    :        false               
+global.crosstalk_driven                                 :	 false               
+global.deterministic                                    :	 on                  
+global.timing_driven                                    :	 false               
 
 Begin global routing.
 Cell Min-Routing-Layer = li1
@@ -11836,32 +11870,32 @@ Current Stage stats:
 [End of Build All Nets] Total (MB): Used 6644  Alloctr 6674  Proc 34365 
 Net length statistics: 
 Net Count(Ignore Fully Rted) 3257121, Total Half Perimeter Wire Length (HPWL) 118021335 microns
-HPWL   0 ~   50 microns: Net Count  2813498     Total HPWL     40699709 microns
-HPWL  50 ~  100 microns: Net Count   217594     Total HPWL     15105807 microns
-HPWL 100 ~  200 microns: Net Count   115517     Total HPWL     16202725 microns
-HPWL 200 ~  300 microns: Net Count    45476     Total HPWL     11183634 microns
-HPWL 300 ~  400 microns: Net Count    27399     Total HPWL      9427753 microns
-HPWL 400 ~  500 microns: Net Count    12265     Total HPWL      5459350 microns
-HPWL 500 ~  600 microns: Net Count     7623     Total HPWL      4159441 microns
-HPWL 600 ~  700 microns: Net Count     5056     Total HPWL      3274400 microns
-HPWL 700 ~  800 microns: Net Count     3880     Total HPWL      2905369 microns
-HPWL 800 ~  900 microns: Net Count     3344     Total HPWL      2831155 microns
-HPWL 900 ~ 1000 microns: Net Count     1742     Total HPWL      1648460 microns
-HPWL     > 1000 microns: Net Count     3727     Total HPWL      5123532 microns
+HPWL   0 ~   50 microns: Net Count  2813498	Total HPWL     40699709 microns
+HPWL  50 ~  100 microns: Net Count   217594	Total HPWL     15105807 microns
+HPWL 100 ~  200 microns: Net Count   115517	Total HPWL     16202725 microns
+HPWL 200 ~  300 microns: Net Count    45476	Total HPWL     11183634 microns
+HPWL 300 ~  400 microns: Net Count    27399	Total HPWL      9427753 microns
+HPWL 400 ~  500 microns: Net Count    12265	Total HPWL      5459350 microns
+HPWL 500 ~  600 microns: Net Count     7623	Total HPWL      4159441 microns
+HPWL 600 ~  700 microns: Net Count     5056	Total HPWL      3274400 microns
+HPWL 700 ~  800 microns: Net Count     3880	Total HPWL      2905369 microns
+HPWL 800 ~  900 microns: Net Count     3344	Total HPWL      2831155 microns
+HPWL 900 ~ 1000 microns: Net Count     1742	Total HPWL      1648460 microns
+HPWL     > 1000 microns: Net Count     3727	Total HPWL      5123532 microns
 Number of partitions: 36 (6 x 6)
 Size of partitions: 192 gCells x 192 gCells
-Average gCell capacity  1.19     on layer (1)    li1
-Average gCell capacity  0.23     on layer (2)    met1
-Average gCell capacity  11.81    on layer (3)    met2
-Average gCell capacity  7.98     on layer (4)    met3
-Average gCell capacity  5.89     on layer (5)    met4
-Average gCell capacity  1.59     on layer (6)    met5
-Average number of tracks per gCell 11.82         on layer (1)    li1
-Average number of tracks per gCell 16.00         on layer (2)    met1
-Average number of tracks per gCell 11.82         on layer (3)    met2
-Average number of tracks per gCell 8.00  on layer (4)    met3
-Average number of tracks per gCell 5.91  on layer (5)    met4
-Average number of tracks per gCell 1.60  on layer (6)    met5
+Average gCell capacity  1.19	 on layer (1)	 li1
+Average gCell capacity  0.23	 on layer (2)	 met1
+Average gCell capacity  11.81	 on layer (3)	 met2
+Average gCell capacity  7.98	 on layer (4)	 met3
+Average gCell capacity  5.89	 on layer (5)	 met4
+Average gCell capacity  1.59	 on layer (6)	 met5
+Average number of tracks per gCell 11.82	 on layer (1)	 li1
+Average number of tracks per gCell 16.00	 on layer (2)	 met1
+Average number of tracks per gCell 11.82	 on layer (3)	 met2
+Average number of tracks per gCell 8.00	 on layer (4)	 met3
+Average number of tracks per gCell 5.91	 on layer (5)	 met4
+Average number of tracks per gCell 1.60	 on layer (6)	 met5
 Number of gCells = 7661400
 Current Stage stats:
 [End of Build Congestion Map] Elapsed real time: 0:00:22 
@@ -12251,14 +12285,14 @@ Moveable cells: 3145562; Application fixed cells: 0; Macro cells: 0; User fixed 
 Average cell width 3.2538, cell height 2.7200, cell area 8.8502 for total 3145562 placed and application fixed cells
 Disable clock slack update for ideal clocks
 Information: NO SCANCHAIN defined in SCANDEF. (DFT-011)
-                Total number of ignored cells which do not have multi-bit equivalent             : 209704
-        Physical Banking Summary:
-        Total candidates in design:209704
-        Total candidates ignored  :209704
-        Total candidates banked   :0
-        Banking Ratio of this pass:0.00%
-        Banking ratio             :0.00% (Before banking 0.00%)
-        Use report_multibit for details
+		Total number of ignored cells which do not have multi-bit equivalent             : 209704
+	Physical Banking Summary:
+	Total candidates in design:209704
+	Total candidates ignored  :209704
+	Total candidates banked   :0
+	Banking Ratio of this pass:0.00%
+	Banking ratio             :0.00% (Before banking 0.00%)
+	Use report_multibit for details
 Disable clock slack update for ideal clocks
  Iter  1                                        459288.00   457283.53         -         -   27838956.00  15687035.00     3145562              4.78     31749
 Still running [2] (Session: 4.95 hr / Command: 4.83 hr / Memory: 31749.25 MB) (MSG-3999)
@@ -12722,4 +12756,3 @@ Maximum memory usage for this session: 31749.25 MB
 CPU usage for this session:  86943 seconds ( 24.15 hours)
 Elapsed time for this session:  22458 seconds (  6.24 hours)
 Thank you for using RTL Architect.
-

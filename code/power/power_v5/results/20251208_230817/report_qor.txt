@@ -1,0 +1,87 @@
+****************************************
+Report : qor
+Design : mesh
+Version: V-2023.12-SP5-3
+Date   : Tue Dec  9 05:21:20 2025
+****************************************
+Information: Timer using 'Estimated Delay Calculation'. (TIM-050)
+
+
+Scenario           'func@nominal'
+Timing Path Group  '**in2reg_default**'
+----------------------------------------
+Levels of Logic:                      8
+Critical Path Length:              3.18
+Critical Path Slack:               0.81
+Critical Path Clk Period:         10.00
+Total Negative Slack:              0.00
+No. of Violating Paths:               0
+----------------------------------------
+
+Scenario           'func@nominal'
+Timing Path Group  'clk'
+----------------------------------------
+Levels of Logic:                    539
+Critical Path Length:             50.01
+Critical Path Slack:             -40.64
+Critical Path Clk Period:         10.00
+Total Negative Slack:        -197846.92
+No. of Violating Paths:           13837
+----------------------------------------
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:           6080
+Hierarchical Port Count:         596942
+Leaf Cell Count:                3324245
+Buf/Inv Cell Count:              355284
+Buf Cell Count:                   59969
+Inv Cell Count:                  295315
+Combinational Cell Count:       3093733
+   Single-bit Isolation Cell Count:                        0
+   Multi-bit Isolation Cell Count:                         0
+   Isolation Cell Banking Ratio:                           0.00%
+   Single-bit Level Shifter Cell Count:                    0
+   Multi-bit Level Shifter Cell Count:                     0
+   Level Shifter Cell Banking Ratio:                       0.00%
+   Single-bit ELS Cell Count:                              0
+   Multi-bit ELS Cell Count:                               0
+   ELS Cell Banking Ratio:                                 0.00%
+Sequential Cell Count:           230512
+   Integrated Clock-Gating Cell Count:                     20808
+   Sequential Macro Cell Count:                            0
+   Single-bit Sequential Cell Count:                       209704
+   Multi-bit Sequential Cell Count:                        0
+   Sequential Cell Banking Ratio:                          0.00%
+   BitsPerflop:                                            1.00
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:          23175817.45
+Noncombinational Area:       6152012.77
+Buf/Inv Area:                1785357.30
+Total Buffer Area:            477325.29
+Total Inverter Area:         1308032.01
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                 67487678.92
+Net YLength:                 68653861.20
+----------------------------------------
+Cell Area (netlist):                        29327830.21
+Cell Area (netlist and physical only):      29327830.21
+Net Length:                  136141540.12
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:           3551240
+Nets with Violations:              1946
+Max Trans Violations:                 0
+Max Cap Violations:                1946
+----------------------------------------
+
+1
