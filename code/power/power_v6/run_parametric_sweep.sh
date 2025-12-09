@@ -12,6 +12,10 @@
 set -e
 trap 'cleanup_on_error' ERR
 
+# Get the directory where this script is located
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR"
+
 # Color codes for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -22,6 +26,9 @@ NC='\033[0m' # No Color
 # Configuration arrays
 MESH_SIZES=(2 3 4 5)           # 2x2, 3x3, 4x4, 5x5
 NEURON_COUNTS=(4 8 16 32)      # Different neuron counts per node
+
+# Design name for power extraction
+DESIGN_NAME="mesh"
 
 # Master results directory
 MASTER_RESULTS_DIR="parametric_results_$(date +"%Y%m%d_%H%M%S")"
