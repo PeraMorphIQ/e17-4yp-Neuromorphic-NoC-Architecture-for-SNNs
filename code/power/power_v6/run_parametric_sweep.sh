@@ -149,8 +149,9 @@ Total Neurons: $total_neurons
 EOF
     
     # Run the synthesis and power analysis
+    # Output goes to both terminal (via tee) and log file
     local status="FAILED"
-    if ./script.sh "Parametric sweep: $config_name" > "$config_dir/run.log" 2>&1; then
+    if ./script.sh "Parametric sweep: $config_name" 2>&1 | tee "$config_dir/run.log"; then
         status="SUCCESS"
         print_success "Configuration $config_name completed successfully"
         
