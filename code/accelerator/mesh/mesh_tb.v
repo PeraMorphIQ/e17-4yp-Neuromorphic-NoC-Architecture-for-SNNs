@@ -3,8 +3,9 @@
 
 module mesh_tb;
 
-    parameter ROWS = 4;
-    parameter COLS = 4;
+    parameter ROWS = 2;
+    parameter COLS = 2;
+    parameter NUM_NEURONS = 4;
     parameter DATA_WIDTH = 32;
 
     reg clk;
@@ -14,7 +15,8 @@ module mesh_tb;
     mesh #(
         .ROWS(ROWS),
         .COLS(COLS),
-        .DATA_WIDTH(DATA_WIDTH)
+        .DATA_WIDTH(DATA_WIDTH),
+        .NUM_NEURONS(NUM_NEURONS)
     ) u_mesh (
         .clk(clk),
         .rst(rst)
