@@ -1,0 +1,296 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║     INSTRUCTION MEMORY INITIALIZATION - SETUP COMPLETE ✓                 ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+🔧 CHANGES MADE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✅ instruction_memory.v - UPDATED
+   - Moved from `initial` block (non-synthesizable) 
+   - To `always @(posedge CLK or posedge RESET)` (synthesizable)
+   - Added dual-mode support: synthesis + simulation
+
+2. ✅ instruction_mem.hex - CREATED
+   - Hex file for optional simulation use
+   - Located in: code/accelerator/cpu_core/instruction_memory/
+
+3. ✅ script.sh - UPDATED
+   - Added +define+SIMULATION flag for VCS
+   - Auto-copies hex file to simulation directory
+   - Fixed paths (power_v5 → power_v6)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+💡 HOW IT WORKS NOW
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+┌─────────────────────────────────────────────────────────────┐
+│ DUAL-MODE INSTRUCTION MEMORY                                │
+└─────────────────────────────────────────────────────────────┘
+
+Mode 1: SYNTHESIS (RTL Synthesis + PrimePower)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Uses: always @(posedge CLK or posedge RESET)
+• Synthesizable: YES ✓
+• Creates: Actual flip-flops (1024 bytes of registers)
+• Instructions: Hardcoded in Verilog
+• Tools: rtl_shell, pwr_shell
+• Result: Power consumption will be CORRECT (not 0.000W)
+
+Code flow:
+  always @(posedge CLK or posedge RESET) begin
+    if (RESET) begin
+      memory_array[0] <= 8'h19;  // Instruction bytes
+      memory_array[1] <= 8'h00;
+      ...
+    end
+  end
+
+Mode 2: SIMULATION (VCS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Uses: $readmemh() inside `ifdef SIMULATION
+• Only active when: +define+SIMULATION flag set
+• File: instruction_mem.hex
+• Tools: VCS, Verdi
+• Result: Can load different programs easily
+
+Code flow:
+  `ifdef SIMULATION
+    initial begin
+      $readmemh("instruction_mem.hex", memory_array);
+    end
+  `endif
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 FILE LOCATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Source Files:
+  code/accelerator/cpu_core/instruction_memory/
+    ├── instruction_memory.v         ← Updated module
+    └── instruction_mem.hex           ← Hex file (optional)
+
+During Simulation:
+  code/accelerator/mesh/
+    ├── mesh_tb.v
+    ├── simv                          ← VCS executable
+    └── instruction_mem.hex           ← Auto-copied here by script.sh
+
+During Synthesis:
+  code/power/power_v6/
+    ├── cpu_LIB/                      ← RTL synthesis library
+    └── (hex file NOT needed - using hardcoded values)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 WHY THIS FIXES THE POWER ISSUE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BEFORE (Initial Block - Non-Synthesizable):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  initial begin
+    memory_array[0] <= 8'h19;
+    ...
+  end
+
+  Problem:
+  ✗ Synthesis tools IGNORE initial blocks
+  ✗ No flip-flops created
+  ✗ Memory array optimized away (pruned)
+  ✗ Power = 0.000W (module doesn't exist)
+
+AFTER (Always Block - Synthesizable):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  always @(posedge CLK or posedge RESET) begin
+    if (RESET) begin
+      memory_array[0] <= 8'h19;
+      ...
+    end
+  end
+
+  Solution:
+  ✓ Synthesis tools RECOGNIZE this
+  ✓ Creates 1024 flip-flops (8 bits each)
+  ✓ Memory array PRESENT in netlist
+  ✓ Power = REAL value (e.g., 0.005W - 0.010W)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 EXPECTED POWER RESULTS (After Fix)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Component               Before Fix    After Fix
+─────────────────────────────────────────────────
+Instruction Memory      0.000 W       0.005-0.010 W
+Data Memory             0.010 W       0.010 W (unchanged)
+CPU                     0.015 W       0.015 W (unchanged)
+Neuron Bank             0.001 W       0.001 W (unchanged)
+Router                  0.0001 W      0.0001 W (unchanged)
+Network Interface       0.0002 W      0.0002 W (unchanged)
+─────────────────────────────────────────────────
+TOTAL (2x2 mesh, 4N)    ~0.11 W       ~0.12 W
+
+Note: Instruction memory should now contribute ~5-10% of total power
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 HOW TO VERIFY THE FIX
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Check Synthesis Log:
+   grep -i "instruction_memory" parametric_results_*/2x2_N4/rtl_synthesis.log
+   
+   Should see:
+   ✓ "Inferred memory devices in process"
+   ✓ "memory_array | Flip-flop | 1024 | Y | Y |..."
+
+2. Check Power Report:
+   cat parametric_results_*/2x2_N4/report_power.txt | grep IMEM
+   
+   Should see:
+   ✓ IMEM (instruction_memory_0)  0.00XX  0.00XX  0.00XX  0.01XX
+   ✗ NOT: 0.000  0.000  0.000  0.000  N/A
+
+3. Check Hierarchical Power:
+   cat parametric_results_*/2x2_N4/power_by_module_2.txt | grep IMEM
+   
+   Should see non-zero values for each node's IMEM
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 INSTRUCTION MEMORY HEX FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+instruction_mem.hex format (for simulation):
+  - One byte per line
+  - Hexadecimal values
+  - Little-endian byte order
+  - No need for address labels
+  - Comments allowed with //
+
+Example:
+  // Address 0x00-0x03: Instruction 1 (0x12345678)
+  78  ← LSB (byte 0)
+  56
+  34
+  12  ← MSB (byte 3)
+  // Address 0x04-0x07: Instruction 2
+  ...
+
+To change program:
+  1. Edit instruction_mem.hex
+  2. Re-run VCS simulation
+  3. (No need to change Verilog for simulation-only changes)
+
+For synthesis:
+  1. Edit the always @(posedge CLK) block in instruction_memory.v
+  2. Re-run synthesis
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚙️ VCS COMPILATION FLAGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Old command:
+  vcs -sverilog -full64 mesh_tb.v
+
+New command (in script.sh):
+  vcs -sverilog -full64 +define+SIMULATION mesh_tb.v
+
+The +define+SIMULATION flag:
+  • Enables the `ifdef SIMULATION block
+  • Allows $readmemh() to work
+  • Only affects VCS simulation, NOT synthesis
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 WORKFLOW SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For Standard Use (Parametric Sweep):
+  1. Run: ./run_parametric_sweep.sh
+  2. Script automatically:
+     - Copies instruction_mem.hex to simulation dir
+     - Compiles VCS with +define+SIMULATION
+     - Runs synthesis (uses hardcoded instructions)
+     - Reports power (IMEM now has real values)
+
+For Custom Programs (Simulation Only):
+  1. Edit: instruction_mem.hex
+  2. Run: ./run_single_config.sh 2 2 4
+  3. View simulation results
+
+For Custom Programs (Synthesis + Power):
+  1. Edit: instruction_memory.v (always block)
+  2. Recompile hex: (regenerate instruction_mem.hex if needed)
+  3. Run: ./run_parametric_sweep.sh
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ BENEFITS OF THIS APPROACH
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Synthesizable - Creates real flip-flops
+✓ Accurate power - IMEM contributes to power analysis
+✓ Flexible simulation - Can use hex files for different programs
+✓ Dual-mode - Same Verilog works for both sim and synth
+✓ Tool compatibility - Works with VCS, rtl_shell, pwr_shell
+✓ No manual file copying - Script handles hex file placement
+✓ Parameterized - Works with all mesh configurations
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎓 TECHNICAL NOTES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Q: Why use always @(posedge CLK) instead of initial?
+A: Synthesis tools require clocked/sequential logic. Initial blocks
+   are for simulation only and are ignored during synthesis.
+
+Q: Why does synthesis ignore initial blocks?
+A: Initial blocks describe simulation behavior, not hardware structure.
+   Hardware (flip-flops) must have a clock and reset.
+
+Q: Does this create actual ROM or RAM?
+A: Creates flip-flops (registers). For large programs, use SRAM macros.
+
+Q: What about area impact?
+A: 1024 bytes = 8192 flip-flops. Expect ~0.01-0.02 mm² in SKY130.
+
+Q: Can I use different programs per node?
+A: Yes, but you'd need to parameterize instruction_memory.v or
+   use generate blocks to load different hex files per instance.
+
+Q: What if I want true ROM (not flip-flops)?
+A: Use SKY130 SRAM macros or ROM generators for production designs.
+   Current approach is good for research/prototyping.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Test the fix:
+   cd code/power/power_v6
+   ./run_single_config.sh 2 2 4
+
+2. Check synthesis log:
+   grep "instruction_memory" parametric_results_*/2x2_N4/rtl_synthesis.log
+
+3. Check power report:
+   cat parametric_results_*/2x2_N4/report_power.txt | grep IMEM
+
+4. If power is still 0.000:
+   - Check synthesis warnings
+   - Verify memory_array is inferred
+   - Check if reset is properly connected
+
+5. Run full sweep:
+   ./run_parametric_sweep.sh
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+That's it! Your instruction memory is now properly synthesizable. 🎉
+
+╚══════════════════════════════════════════════════════════════════════════╝

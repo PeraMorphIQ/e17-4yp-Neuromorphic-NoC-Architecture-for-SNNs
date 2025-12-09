@@ -130,12 +130,20 @@ fi
 echo "========== STEP 1: VCS Compile (CPU) =========="
 if [ -d "$RTL_CPU_PATH" ]; then
     pushd "$RTL_CPU_PATH" > /dev/null
-    vcs -sverilog -full64 -kdb -debug_access+all -f ../../power/power_v4/mesh_sim.f mesh_tb.v +vcs+fsdbon -o simv | tee "../../power/power_v5/$TEMP_RESULTS_DIR/vcs_compile.log"
+    
+    # Copy instruction memory hex file to simulation directory
+    if [ -f "../cpu_core/instruction_memory/instruction_mem.hex" ]; then
+        cp ../cpu_core/instruction_memory/instruction_mem.hex ./
+        echo "Copied instruction_mem.hex to simulation directory"
+    fi
+    
+    # Compile with SIMULATION define for $readmemh support
+    vcs -sverilog -full64 -kdb -debug_access+all +define+SIMULATION -f ../../power/power_v4/mesh_sim.f mesh_tb.v +vcs+fsdbon -o simv | tee "../../power/power_v6/$TEMP_RESULTS_DIR/vcs_compile.log"
     echo "VCS compilation completed successfully"
     
     # Step 2: Run Simulation
     echo "========== STEP 2: Run Simulation =========="
-    ./simv +fsdb+all=on +fsdb+delta | tee "../../power/power_v5/$TEMP_RESULTS_DIR/simulation.log"
+    ./simv +fsdb+all=on +fsdb+delta | tee "../../power/power_v6/$TEMP_RESULTS_DIR/simulation.log"
     echo "Simulation completed successfully"
     popd > /dev/null
 else
