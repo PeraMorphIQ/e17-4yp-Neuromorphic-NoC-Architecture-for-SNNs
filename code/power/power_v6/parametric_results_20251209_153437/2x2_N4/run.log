@@ -11698,3 +11698,50 @@ Successful results saved to: results/20251209_153437
 Cleaning up old temporary files...
 Temporary files cleaned up
 ========== STEP 6: Git Commit and Push ==========
+Files staged successfully
+[dev1 61dbd3a] Auto commit: Parametric sweep: 2x2_N4 - 20251209_153437
+ 44 files changed, 77180 insertions(+), 873 deletions(-)
+ create mode 100644 code/power/power_v6/parametric_results_20251209_153437/2x2_N4/config_info.txt
+ create mode 100644 code/power/power_v6/parametric_results_20251209_153437/2x2_N4/run.log
+ create mode 100644 code/power/power_v6/parametric_results_20251209_153437/power_summary.csv
+ create mode 100644 code/power/power_v6/results/20251209_153437/check_rtl_power.txt
+ rename code/power/power_v6/{temp_results_20251209_114013 => results/20251209_153437}/git_pull.log (100%)
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_analysis_summary.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_black_box.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_by_module_10.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_by_module_100.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_by_module_2.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_by_module_20.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_by_module_3.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_by_module_5.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_by_module_complete.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_combinational.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_io_pad.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_register.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_restore.log
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_sequential.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/power_summary_detailed.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/publication_summary.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_area.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_clock.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_design_stats.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_hierarchy.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_power.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_pvt.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_qor.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_reference.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_timing_critical_path.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_timing_detailed.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_timing_top10_paths.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/report_violations.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/rtl_metrics_hier.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/rtl_metrics_list.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/rtl_metrics_register.txt
+ create mode 100644 code/power/power_v6/results/20251209_153437/rtl_synthesis.log
+ rename code/power/power_v6/{temp_results_20251209_114013 => results/20251209_153437}/run_metadata.txt (87%)
+ create mode 100644 code/power/power_v6/results/20251209_153437/timing_metrics.csv
+ rename code/power/power_v6/{temp_results_20251209_114013 => results/20251209_153437}/vcs_compile.log (86%)
+ delete mode 100644 code/power/power_v6/temp_results_20251209_114013/rtl_synthesis.log
+Commit created successfully
+From github.com:PeraMorphIQ/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs
+ * branch            main       -> FETCH_HEAD
