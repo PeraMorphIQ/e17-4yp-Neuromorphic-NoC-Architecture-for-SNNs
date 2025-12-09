@@ -1,7 +1,0 @@
-Version : V-2023.12-SP5-3 BuildDate : Dec 17, 2024
-Error: Failed to checkout license for feature(s): RTL-Architect (SEC-21)
-Unable to get shell start-up license keys. Cannot invoke shell. Following license(s) must be available for check-out : RTL-Architect. 
-Maximum memory usage for this session: 99.52 MB
-CPU usage for this session:      5 seconds (  0.00 hours)
-Elapsed time for this session:      5 seconds (  0.00 hours)
-Thank you for using RTL Architect.
