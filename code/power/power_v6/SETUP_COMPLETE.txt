@@ -1,0 +1,261 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║     PARAMETRIC POWER ANALYSIS AUTOMATION - SETUP COMPLETE ✓              ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📦 NEW FILES CREATED IN power_v6/
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. run_parametric_sweep.sh
+   Main automation script - runs all configuration combinations
+   • Automatic mesh size: 2x2, 3x3, 4x4, 5x5
+   • Automatic neurons: 4, 8, 16, 32 per node
+   • Total: 16 configurations tested automatically
+   • Output: Timestamped results directory with CSV summary
+
+2. run_single_config.sh
+   Quick test script for individual configurations
+   • Usage: ./run_single_config.sh <rows> <cols> <neurons>
+   • Perfect for testing before full sweep
+   • Faster execution (~2-5 min per config)
+
+3. analyze_results.py
+   Post-processing visualization tool
+   • Generates 5 types of plots
+   • Creates comparison tables (TXT + Excel)
+   • Statistical analysis
+   • Usage: python3 analyze_results.py <results_dir>
+
+4. README_PARAMETRIC.md
+   Comprehensive documentation
+   • Full usage instructions
+   • Configuration customization
+   • Troubleshooting guide
+   • Workflow diagrams
+
+5. QUICK_GUIDE.sh
+   Quick reference card
+   • Common commands
+   • Configuration examples
+   • Expected results
+   • Run: ./QUICK_GUIDE.sh
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🚀 QUICK START (3 STEPS)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Step 1: Make scripts executable (Linux/WSL)
+   chmod +x *.sh
+
+Step 2: Test single configuration first
+   ./run_single_config.sh 2 2 4
+
+Step 3: Run full parametric sweep
+   ./run_parametric_sweep.sh
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚙️  HOW IT WORKS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For Each Configuration:
+  1. Backup original mesh_tb.v
+  2. Update parameters (ROWS, COLS, NUM_NEURONS)
+  3. Run VCS compile & simulate
+  4. Run RTL synthesis
+  5. Run power analysis
+  6. Extract power metrics
+  7. Save to individual directory
+  8. Restore original testbench
+  9. Append summary to CSV
+
+All Automatic - Just Run and Wait!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📊 OUTPUT STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+parametric_results_<timestamp>/
+├── power_summary.csv              # Machine-readable CSV
+├── SUMMARY.txt                    # Human-readable summary
+├── 2x2_N4/
+│   ├── config_info.txt           # Configuration metadata
+│   ├── run.log                   # Complete execution log
+│   ├── report_power.txt          # Power analysis results
+│   ├── rtl_synthesis.log         # Synthesis details
+│   └── power_restore.log         # Power tool log
+├── 2x2_N8/
+├── 2x2_N16/
+├── 2x2_N32/
+├── 3x3_N4/
+... (16 total configurations)
+
+After analyze_results.py:
+├── power_vs_neurons.png          # Power scaling
+├── power_breakdown.png           # Component breakdown
+├── power_heatmap.png            # 2D visualization
+├── power_efficiency.png         # Power per neuron
+├── execution_duration.png       # Runtime comparison
+└── comparison_table.txt/xlsx    # Detailed tables
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 DEFAULT CONFIGURATIONS TESTED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Config      Nodes   Neurons/Node   Total Neurons   Est. Power
+─────────────────────────────────────────────────────────────
+2x2_N4      4       4              16              ~0.10W
+2x2_N8      4       8              32              ~0.15W
+2x2_N16     4       16             64              ~0.25W
+2x2_N32     4       32             128             ~0.45W
+
+3x3_N4      9       4              36              ~0.25W
+3x3_N8      9       8              72              ~0.40W
+3x3_N16     9       16             144             ~0.65W
+3x3_N32     9       32             288             ~1.10W
+
+4x4_N4      16      4              64              ~0.45W
+4x4_N8      16      8              128             ~0.70W
+4x4_N16     16      16             256             ~1.15W
+4x4_N32     16      32             512             ~2.00W
+
+5x5_N4      25      4              100             ~0.70W
+5x5_N8      25      8              200             ~1.10W
+5x5_N16     25      16             400             ~1.80W
+5x5_N32     25      32             800             ~3.20W
+
+Total: 16 configurations
+Estimated total runtime: 30-60 minutes
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔧 CUSTOMIZATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Edit run_parametric_sweep.sh (lines 17-18):
+
+MESH_SIZES=(2 3 4 5)           # Change mesh dimensions
+NEURON_COUNTS=(4 8 16 32)      # Change neuron counts
+
+Examples:
+
+# Test only 2x2 and 3x3
+MESH_SIZES=(2 3)
+NEURON_COUNTS=(4 8 16 32)
+
+# Test high neuron counts only
+MESH_SIZES=(2 3 4 5)
+NEURON_COUNTS=(16 32 64)
+
+# Quick test - minimal configs
+MESH_SIZES=(2)
+NEURON_COUNTS=(4 8)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📝 CSV OUTPUT FORMAT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+power_summary.csv contains:
+
+- Configuration name (e.g., "2x2_N4")
+- Rows, Cols, Neurons per node
+- Total nodes, Total neurons
+- Total Power (W)
+- Internal Power (W)
+- Switching Power (W)
+- Leakage Power (W)
+- Status (SUCCESS/FAILED)
+- Timestamp
+- Duration (seconds)
+
+Can be opened in Excel/LibreOffice for further analysis!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚡ PERFORMANCE TIPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+• Runs are sequential (safe, no conflicts)
+• Larger meshes take significantly longer
+• Test single config first to verify setup
+• Monitor system resources during sweep
+• Results are timestamped (no overwrites)
+• Original testbench auto-backed up
+• Failed runs saved for debugging
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🐛 TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Permission denied:
+  chmod +x *.sh
+
+Python missing:
+  pip3 install pandas matplotlib seaborn openpyxl
+
+Testbench not restored:
+  cd ../../accelerator/mesh
+  mv mesh_tb.v.original mesh_tb.v
+
+Check failed config:
+  cat parametric_results_*/2x2_N4/run.log
+
+View quick guide:
+  ./QUICK_GUIDE.sh
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ BENEFITS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ Fully automated - no manual parameter editing
+✓ Safe - automatic backup and restore
+✓ Comprehensive - tests all combinations
+✓ Organized - individual directories per config
+✓ Traceable - CSV summary + detailed logs
+✓ Visualized - automatic plot generation
+✓ Flexible - easy to customize configurations
+✓ Reliable - error handling and failed run tracking
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📚 DOCUMENTATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+README_PARAMETRIC.md  - Full documentation
+QUICK_GUIDE.sh        - Quick reference
+script.sh             - Original single-run script (still works)
+config.tcl            - Shared configuration
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Navigate to power_v6:
+   cd code/power/power_v6
+
+2. Make scripts executable:
+   chmod +x *.sh
+
+3. View quick guide:
+   ./QUICK_GUIDE.sh
+
+4. Test single config:
+   ./run_single_config.sh 2 2 4
+
+5. Run full sweep:
+   ./run_parametric_sweep.sh
+
+6. Analyze results:
+   python3 analyze_results.py parametric_results_<timestamp>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+That's it! The automation is ready to use. 🚀
+
+╚══════════════════════════════════════════════════════════════════════════╝
