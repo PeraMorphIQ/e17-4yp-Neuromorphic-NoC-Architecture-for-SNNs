@@ -1,0 +1,77 @@
+****************************************
+Report : reference
+Design : mesh
+Version: V-2023.12-SP5-3
+Date   : Tue Dec  9 05:22:30 2025
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model (QTM)
+    s - synthetic operator
+
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+--------------------------------------------------------------------------------
+sky130_fd_sc_hd__buf_12
+                   sky130_fd_sc_hd
+                                     20.02       3         60.06   
+sky130_fd_sc_hd__buf_4
+                   sky130_fd_sc_hd
+                                      7.51       2         15.01   
+sky130_fd_sc_hd__buf_6
+                   sky130_fd_sc_hd
+                                     11.26       3         33.78   
+sky130_fd_sc_hd__buf_8
+                   sky130_fd_sc_hd
+                                     15.01       2         30.03   
+sky130_fd_sc_hd__bufbuf_8
+                   sky130_fd_sc_hd
+                                     18.77       1         18.77   
+sky130_fd_sc_hd__bufinv_8
+                   sky130_fd_sc_hd
+                                     17.52       1         17.52   
+sky130_fd_sc_hd__clkbuf_8
+                   sky130_fd_sc_hd
+                                     13.76       2         27.53   
+sky130_fd_sc_hd__conb_1
+                   sky130_fd_sc_hd
+                                      3.75    3119      11707.48   
+sky130_fd_sc_hd__inv_12
+                   sky130_fd_sc_hd
+                                     16.27       1         16.27   
+sky130_fd_sc_hd__inv_16
+                   sky130_fd_sc_hd
+                                     20.02       2         40.04   
+sky130_fd_sc_hd__inv_8
+                   sky130_fd_sc_hd
+                                     11.26       1         11.26   
+sky130_fd_sc_hd__macro_sparecell
+                   sky130_fd_sc_hd
+                                     75.07   13726    1030438.27   
+sky130_fd_sc_hd__probe_p_8
+                   sky130_fd_sc_hd
+                                     15.01       2         30.03   
+node_ADDR_X0_ADDR_Y0             1758475.27      1    1758475.27   h
+node_ADDR_X0_ADDR_Y1             1766108.84      1    1766108.84   h
+node_ADDR_X0_ADDR_Y2             1768239.63      1    1768239.63   h
+node_ADDR_X0_ADDR_Y3             1766526.74      1    1766526.74   h
+node_ADDR_X1_ADDR_Y0             1764098.16      1    1764098.16   h
+node_ADDR_X1_ADDR_Y1             1773191.88      1    1773191.88   h
+node_ADDR_X1_ADDR_Y2             1769330.68      1    1769330.68   h
+node_ADDR_X1_ADDR_Y3             1770427.98      1    1770427.98   h
+node_ADDR_X2_ADDR_Y0             1766320.29      1    1766320.29   h
+node_ADDR_X2_ADDR_Y1             1767731.64      1    1767731.64   h
+node_ADDR_X2_ADDR_Y2             1770530.58      1    1770530.58   h
+node_ADDR_X2_ADDR_Y3             1769084.19      1    1769084.19   h
+node_ADDR_X3_ADDR_Y0             1765943.68      1    1765943.68   h
+node_ADDR_X3_ADDR_Y1             1771619.12      1    1771619.12   h
+node_ADDR_X3_ADDR_Y2             1771549.06      1    1771549.06   h
+node_ADDR_X3_ADDR_Y3             1766206.43      1    1766206.43   h
+--------------------------------------------------------------------------------
+Total 29 references                                   29327830.21
+1
