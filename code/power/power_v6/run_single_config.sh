@@ -47,7 +47,10 @@ echo "✓ Parameters updated"
 echo ""
 
 # Run synthesis and power analysis
+# Output shown directly in terminal (no redirection)
 echo "Running synthesis and power analysis..."
+echo "Output will be displayed in real-time..."
+echo ""
 ./script.sh "Single config test: $CONFIG_NAME"
 
 # Restore testbench
