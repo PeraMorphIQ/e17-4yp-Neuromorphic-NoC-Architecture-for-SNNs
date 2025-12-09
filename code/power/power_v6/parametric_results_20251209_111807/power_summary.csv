@@ -1,4 +1,0 @@
-Configuration,Rows,Cols,Neurons,Total_Nodes,Total_Neurons,Total_Power(W),Int_Power(W),Switch_Power(W),Leak_Power(W),Status,Timestamp,Duration(s)
-2x2_N4,2,2,4,4,16,N/A,N/A,N/A,N/A,FAILED,Tue Dec  9 11:18:07 +0530 2025,0
-2x2_N8,2,2,8,4,32,N/A,N/A,N/A,N/A,FAILED,Tue Dec  9 11:18:09 +0530 2025,0
-2x2_N16,2,2,16,4,64,N/A,N/A,N/A,N/A,FAILED,Tue Dec  9 11:18:11 +0530 2025,0

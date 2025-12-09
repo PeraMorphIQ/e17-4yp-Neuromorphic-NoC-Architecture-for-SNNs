@@ -1,6 +1,0 @@
-Configuration: 2x2_N4
-Timestamp: Tue Dec  9 11:21:16 +0530 2025
-Mesh Dimensions: 2x2
-Neurons per Node: 4
-Total Nodes: 4
-Total Neurons: 16
