@@ -1,5 +1,5 @@
                          Chronologic VCS (TM)
-       Version W-2024.09-SP1_Full64 -- Tue Dec  9 11:40:17 2025
+       Version W-2024.09-SP1_Full64 -- Tue Dec  9 15:34:42 2025
 
                     Copyright (c) 1991 - 2024 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -95,14 +95,19 @@ Top Level Modules:
 TimeScale is 1 ns / 100 ps
 Starting vcs inline pass...
 9 modules and 0 UDP read.
+recompiling module Addition_Subtraction
+recompiling module Multiplication
+recompiling module Comparison
+recompiling module mux_4to1_32bit
+recompiling module mux_2to1_32bit
 recompiling module router
+recompiling module neuron_core
 recompiling module node
 recompiling module mesh_tb
-3 of 9 modules done
-	However, due to incremental compilation, only 3 modules need to be compiled. 
+All of 9 modules done
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/storage/synopsys/vcs/W-2024.09-SP1/linux64/lib -L/storage/synopsys/vcs/W-2024.09-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _201167_archive_1.so _prev_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /storage/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /storage/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_save_restore_new.o /storage/synopsys/verdi/W-2024.09-SP1/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/storage/synopsys/vcs/W-2024.09-SP1/linux64/lib -L/storage/synopsys/vcs/W-2024.09-SP1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _250792_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /storage/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /storage/synopsys/vcs/W-2024.09-SP1/linux64/lib/vcs_save_restore_new.o /storage/synopsys/verdi/W-2024.09-SP1/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
-CPU time: .645 seconds to compile + .261 seconds to elab + .195 seconds to link
+CPU time: .668 seconds to compile + .260 seconds to elab + .189 seconds to link
 Verdi KDB elaboration done and the database successfully generated
