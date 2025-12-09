@@ -64,7 +64,11 @@ if {[info exists ::env(CONFIG_NEURONS)]} {
 # Elaborate the design with parameters
 puts "Elaborating design with NUM_NEURONS=$NUM_NEURONS"
 elaborate $DESIGN_NAME -parameters "NUM_NEURONS=$NUM_NEURONS"
-set_top_module $TOP_MODULE
+
+# After elaboration with parameters, the design name changes to include parameter values
+set ELABORATED_DESIGN "${DESIGN_NAME}_NUM_NEURONS${NUM_NEURONS}"
+puts "Elaborated design name: $ELABORATED_DESIGN"
+current_design $ELABORATED_DESIGN
 
 puts "Design elaboration completed with NUM_NEURONS=$NUM_NEURONS"
 
