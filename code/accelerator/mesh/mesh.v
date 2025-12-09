@@ -1,9 +1,10 @@
 `include "../node/node.v"
 
 module mesh #(
-    parameter ROWS = 4,
-    parameter COLS = 4,
-    parameter DATA_WIDTH = 32
+    parameter ROWS = 2,
+    parameter COLS = 2,
+    parameter DATA_WIDTH = 32,
+    parameter NUM_NEURONS = 4
 ) (
     input clk,
     input rst
@@ -57,7 +58,8 @@ module mesh #(
                 // Instantiate Node
                 node #(
                     .ADDR_X(x),
-                    .ADDR_Y(y)
+                    .ADDR_Y(y),
+                    .NUM_NEURONS(NUM_NEURONS)
                 ) u_node (
                     .clk(clk),
                     .rst(rst),

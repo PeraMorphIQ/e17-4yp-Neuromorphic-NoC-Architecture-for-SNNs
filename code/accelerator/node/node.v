@@ -9,7 +9,8 @@
 
 module node #(
     parameter ADDR_X = 0,
-    parameter ADDR_Y = 0
+    parameter ADDR_Y = 0,
+    parameter NUM_NEURONS = 4
 ) (
     input clk,
     input rst,
@@ -129,7 +130,7 @@ module node #(
 
     // Neuron Bank
     neuron_bank #(
-        .NUM_NEURONS(4)
+        .NUM_NEURONS(NUM_NEURONS)
     ) NEURON_BANK (
         .clk(clk),
         .rst(rst),
