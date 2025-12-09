@@ -5,7 +5,7 @@ Information: Derived library resistance unit is 1.000000 Kohm (Time unit is 1 ns
 Report : read_parasitics /storage/e19129/projects/neuromorphic/e17-4yp-Neuromorphic-NoC-Architecture-for-SNNs/code/power/power_v6/TZ_OUTDIR/mesh.gpd
 Design : mesh
 Version: W-2024.09-SP2
-Date   : Tue Dec  9 17:15:55 2025
+Date   : Tue Dec  9 19:02:32 2025
 ****************************************
 
         0 error(s)
