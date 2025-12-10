@@ -34,12 +34,12 @@
 # Load shared configuration
 source config.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251208_074545
+Using environment TEMP_RESULTS_DIR: temp_results_20251209_214334
 Configuration loaded successfully
   Design: mesh
   Technology: SKY130 130nm
-  Cores: 1
-  Results directory: temp_results_20251208_074545
+  Cores: 8
+  Results directory: temp_results_20251209_214334
 # -----------------------------------------------------------------------------
 # Configuration and Setup
 # -----------------------------------------------------------------------------
@@ -58,8 +58,8 @@ Warning: Changing current repair(handler) for a mismatch type in between a flow 
 # Set host options for parallel processing
 set_host_options -max_cores $CORES
 1
-puts "Using $CORES cores for parallel processing"
-Using 1 cores for parallel processing
+puts "Using $CORES cores for power analysis"
+Using 8 cores for power analysis
 # Application options
 set_app_options -list {plan.macro.allow_unmapped_design true}
 plan.macro.allow_unmapped_design true
@@ -344,25 +344,15 @@ Elapsed = 00:00:00.07, CPU = 00:00:00.06
 # Elaborate the design
 elaborate $DESIGN_NAME
 Presto compilation completed successfully. (mesh)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=0}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y0)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=0}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y0)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=2,ADDR_Y=0}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X2_ADDR_Y0)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=1}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y1)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y1)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=2,ADDR_Y=1}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X2_ADDR_Y1)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=2}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y2)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=2}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y2)
-Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=2,ADDR_Y=2}. (ELAB-193)
-Presto compilation completed successfully. (node_ADDR_X2_ADDR_Y2)
-Information: Elaborating HDL template WORK:cpu instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=0,NUM_NEURONS=4}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y0_NUM_NEURONS4)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=0,NUM_NEURONS=4}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y0_NUM_NEURONS4)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=0,ADDR_Y=1,NUM_NEURONS=4}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X0_ADDR_Y1_NUM_NEURONS4)
+Information: Elaborating HDL template WORK:node instantiated from 'mesh' with the parameters {ADDR_X=1,ADDR_Y=1,NUM_NEURONS=4}. (ELAB-193)
+Presto compilation completed successfully. (node_ADDR_X1_ADDR_Y1_NUM_NEURONS4)
+Information: Elaborating HDL template WORK:cpu instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4'. (ELAB-193)
 
 Inferred memory devices in process
 	in routine cpu line 308 in file
@@ -373,10 +363,19 @@ Inferred memory devices in process
 |       PC_reg        | Flip-flop |  32   |  Y  | Y  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (cpu)
-Information: Elaborating HDL template WORK:instruction_memory instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
-Warning:  ../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v:13: The statements in initial blocks are ignored. (VER-281)
+Information: Elaborating HDL template WORK:instruction_memory instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4'. (ELAB-193)
+Warning:  ../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v:36: The statements in initial blocks are ignored. (VER-281)
+
+Inferred memory devices in process
+	in routine instruction_memory line 13 in file
+		'../../accelerator/mesh/../cpu_core/instruction_memory/instruction_memory.v'.
+===========================================================================
+|    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
+===========================================================================
+|    BUSYWAIT_reg     | Latch |   1   |  N  | N  | N  | N  | -  | -  | -  |
+===========================================================================
 Presto compilation completed successfully. (instruction_memory)
-Information: Elaborating HDL template WORK:data_memory instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Information: Elaborating HDL template WORK:data_memory instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4'. (ELAB-193)
 Warning:  ../../accelerator/mesh/../cpu_core/data_memory/data_memory.v:29: The statements in initial blocks are ignored. (VER-281)
 
 Statistics for case statements in always block at line 33 in file
@@ -404,8 +403,8 @@ Inferred memory devices in process
 |       mem_reg       | Flip-flop | 8192  |  Y  | Y  | N  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (data_memory)
-Module: data_memory, Elapsed Time: 00:00:06, CPU Time: 00:00:06, Total Mem: 707.26 MB, Mem: 282.92 MB, Time: Mon Dec  8 07:46:10 2025
-Information: Elaborating HDL template WORK:neuron_bank instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {NUM_NEURONS=4}. (ELAB-193)
+Module: data_memory, Elapsed Time: 00:00:06, CPU Time: 00:00:06, Total Mem: 704.52 MB, Mem: 282.98 MB, Time: Tue Dec  9 21:44:07 2025
+Information: Elaborating HDL template WORK:neuron_bank instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4' with the parameters {NUM_NEURONS=4}. (ELAB-193)
 
 Statistics for case statements in always block at line 82 in file
 	'../../accelerator/mesh/../neuron_bank/neuron_bank.v'
@@ -440,9 +439,9 @@ Inferred memory devices in process
 |      modes_reg      | Flip-flop |   4   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (neuron_bank_NUM_NEURONS4)
-Information: Elaborating HDL template WORK:network_interface instantiated from 'node_ADDR_X0_ADDR_Y0'. (ELAB-193)
+Information: Elaborating HDL template WORK:network_interface instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4'. (ELAB-193)
 Presto compilation completed successfully. (network_interface)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y0' with the parameters {ADDR_X=0,ADDR_Y=0}. (ELAB-193)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y0_NUM_NEURONS4' with the parameters {ADDR_X=0,ADDR_Y=0}. (ELAB-193)
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
@@ -463,7 +462,7 @@ Inferred memory devices in process
 |     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y0)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y0' with the parameters {ADDR_X=1,ADDR_Y=0}. (ELAB-193)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y0_NUM_NEURONS4' with the parameters {ADDR_X=1,ADDR_Y=0}. (ELAB-193)
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
 Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
@@ -479,23 +478,7 @@ Inferred memory devices in process
 |     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y0)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X2_ADDR_Y0' with the parameters {ADDR_X=2,ADDR_Y=0}. (ELAB-193)
-Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../accelerator/mesh/../router/router.v:57: Statement unreachable (Branch condition impossible to meet). (VER-61)
-
-Inferred memory devices in process
-	in routine router_ADDR_X2_ADDR_Y0 line 85 in file
-		'../../accelerator/mesh/../router/router.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (router_ADDR_X2_ADDR_Y0)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y1' with the parameters {ADDR_X=0,ADDR_Y=1}. (ELAB-193)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y1_NUM_NEURONS4' with the parameters {ADDR_X=0,ADDR_Y=1}. (ELAB-193)
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
 Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
@@ -511,7 +494,7 @@ Inferred memory devices in process
 |     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y1)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y1' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
+Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y1_NUM_NEURONS4' with the parameters {ADDR_X=1,ADDR_Y=1}. (ELAB-193)
 
 Inferred memory devices in process
 	in routine router_ADDR_X1_ADDR_Y1 line 85 in file
@@ -522,55 +505,6 @@ Inferred memory devices in process
 |     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y1)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X2_ADDR_Y1' with the parameters {ADDR_X=2,ADDR_Y=1}. (ELAB-193)
-
-Inferred memory devices in process
-	in routine router_ADDR_X2_ADDR_Y1 line 85 in file
-		'../../accelerator/mesh/../router/router.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (router_ADDR_X2_ADDR_Y1)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X0_ADDR_Y2' with the parameters {ADDR_X=0,ADDR_Y=2}. (ELAB-193)
-Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
-Warning:  ../../accelerator/mesh/../router/router.v:54: Statement unreachable (Branch condition impossible to meet). (VER-61)
-
-Inferred memory devices in process
-	in routine router_ADDR_X0_ADDR_Y2 line 85 in file
-		'../../accelerator/mesh/../router/router.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (router_ADDR_X0_ADDR_Y2)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X1_ADDR_Y2' with the parameters {ADDR_X=1,ADDR_Y=2}. (ELAB-193)
-
-Inferred memory devices in process
-	in routine router_ADDR_X1_ADDR_Y2 line 85 in file
-		'../../accelerator/mesh/../router/router.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (router_ADDR_X1_ADDR_Y2)
-Information: Elaborating HDL template WORK:router instantiated from 'node_ADDR_X2_ADDR_Y2' with the parameters {ADDR_X=2,ADDR_Y=2}. (ELAB-193)
-
-Inferred memory devices in process
-	in routine router_ADDR_X2_ADDR_Y2 line 85 in file
-		'../../accelerator/mesh/../router/router.v'.
-===============================================================================
-|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
-===============================================================================
-|     rr_ptr_reg      | Flip-flop |  15   |  Y  | Y  | Y  | N  | N  | N  | N  |
-===============================================================================
-Presto compilation completed successfully. (router_ADDR_X2_ADDR_Y2)
 Information: Elaborating HDL template WORK:plus_4_adder instantiated from 'cpu'. (ELAB-193)
 Presto compilation completed successfully. (plus_4_adder)
 Information: Elaborating HDL template WORK:mux_2to1_32bit instantiated from 'cpu'. (ELAB-193)
@@ -837,20 +771,20 @@ Presto compilation completed successfully. (priority_encoder)
 Information: Elaborating HDL template WORK:Iteration instantiated from 'Division'. (ELAB-193)
 Presto compilation completed successfully. (Iteration)
 Information: Design elaboration summary: (FLW-8550)
-Number of modules read: 52
+Number of modules read: 42
 Top level ports:        2
 Total in all modules
-  Ports:                9576
-  Nets:                 126707
-  Instances:            66842
+  Ports:                6496
+  Nets:                 112939
+  Instances:            60253
 Design summary end. (FLW-8551)
-Elapsed = 00:00:12.02, CPU = 00:00:11.79
+Elapsed = 00:00:11.32, CPU = 00:00:11.09
 1
 set_top_module $TOP_MODULE
 Information: User units loaded from library 'sky130_fd_sc_hd' (LNK-040)
 Information: Added key list 'DesignWare' to design 'mesh'. (DWS-0216)
 Gensys attachment is created: presto_gensys.attach:cpu_LIB:mesh.design 
-Elapsed = 00:01:08.03, CPU = 00:01:07.37
+Elapsed = 00:00:25.29, CPU = 00:00:24.70
 1
 puts "Design elaboration completed"
 Design elaboration completed
@@ -861,12 +795,12 @@ puts "========== Loading Technology Setup =========="
 ========== Loading Technology Setup ==========
 source tz_setup.tcl
 Loading shared configuration...
-Using environment TEMP_RESULTS_DIR: temp_results_20251208_074545
+Using environment TEMP_RESULTS_DIR: temp_results_20251209_214334
 Configuration loaded successfully
   Design: mesh
   Technology: SKY130 130nm
-  Cores: 1
-  Results directory: temp_results_20251208_074545
+  Cores: 8
+  Results directory: temp_results_20251209_214334
 ========== SKY130 Technology Setup ==========
 Configuring synthesis flow options...
 Loading SKY130 parasitic technology files...
@@ -888,7 +822,7 @@ All analysis types are activated.
 Scenario func@nominal (mode func corner nominal) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
 Operating scenario func@nominal created and set as current
 Loading design constraints...
-Information: Timer using 1 threads
+Information: Timer using 8 threads
 Error: Nothing matched for port_pin_list (SEL-005)
 Error: Nothing matched for port_pin_list (SEL-005)
 Error: Nothing matched for objects (SEL-005)
@@ -898,7 +832,7 @@ Clock constraints loaded from ./sdc/clocks.sdc
 Report : scenario
 Design : mesh
 Version: V-2023.12-SP5-3
-Date   : Mon Dec  8 07:47:33 2025
+Date   : Tue Dec  9 21:44:41 2025
 ****************************************
 
                                                                      Leakage  Dynamic                              Cell  Signal
@@ -910,4 +844,11 @@ func@nominal *  func            nominal         true    true   false true     tr
 # Force timing update after loading constraints
 update_timing
 Information: Starting 'update_timing' (FLW-8000)
-Information: Time: 2025-12-08 07:47:33 / Session:  00:01:38 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 3566 MB (FLW-8100)
+Information: Time: 2025-12-09 21:44:41 / Session:  00:00:50 / Command:  00:00:00 / CPU:  00:00:00 / Memory: 1963 MB (FLW-8100)
+Warning: Corner nominal:  0 process number, 1 process label, 0 voltage, and 0 temperature mismatches. (PVT-030)
+Warning: 424408 cells affected for early, 424408 for late. (PVT-031)
+Warning: 1 port driving_cells affected for early, 1 for late. (PVT-034)
+Information: The stitching and editing of coupling caps is turned OFF for design 'cpu_LIB:mesh.design'. (TIM-125)
+Warning: No physical information exists for design 'mesh'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'mesh'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "mesh"
