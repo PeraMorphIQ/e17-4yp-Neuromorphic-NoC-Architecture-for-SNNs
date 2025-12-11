@@ -1,0 +1,117 @@
+****************************************
+Report : reference
+Design : mesh
+Version: V-2023.12-SP5-3
+Date   : Thu Dec 11 19:59:22 2025
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model (QTM)
+    s - synthetic operator
+
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+--------------------------------------------------------------------------------
+sky130_fd_sc_hd__buf_12
+                   sky130_fd_sc_hd
+                                     20.02       7        140.13   
+sky130_fd_sc_hd__buf_16
+                   sky130_fd_sc_hd
+                                     27.53       4        110.11   
+sky130_fd_sc_hd__buf_4
+                   sky130_fd_sc_hd
+                                      7.51       2         15.01   
+sky130_fd_sc_hd__buf_6
+                   sky130_fd_sc_hd
+                                     11.26       7         78.83   
+sky130_fd_sc_hd__buf_8
+                   sky130_fd_sc_hd
+                                     15.01       1         15.01   
+sky130_fd_sc_hd__bufbuf_8
+                   sky130_fd_sc_hd
+                                     18.77       1         18.77   
+sky130_fd_sc_hd__bufinv_8
+                   sky130_fd_sc_hd
+                                     17.52       2         35.03   
+sky130_fd_sc_hd__clkbuf_1
+                   sky130_fd_sc_hd
+                                      3.75       1          3.75   
+sky130_fd_sc_hd__clkinv_16
+                   sky130_fd_sc_hd
+                                     30.03       1         30.03   
+sky130_fd_sc_hd__conb_1
+                   sky130_fd_sc_hd
+                                      3.75    4837      18156.16   
+sky130_fd_sc_hd__inv_12
+                   sky130_fd_sc_hd
+                                     16.27       3         48.80   
+sky130_fd_sc_hd__inv_16
+                   sky130_fd_sc_hd
+                                     20.02       2         40.04   
+sky130_fd_sc_hd__inv_8
+                   sky130_fd_sc_hd
+                                     11.26       1         11.26   
+sky130_fd_sc_hd__macro_sparecell
+                   sky130_fd_sc_hd
+                                     75.07   21126    1585971.07   
+sky130_fd_sc_hd__probe_p_8
+                   sky130_fd_sc_hd
+                                     15.01       1         15.01   
+node_ADDR_X0_ADDR_Y0_NUM_NEURONS4
+                                 1769898.72      1    1769898.72   h
+node_ADDR_X0_ADDR_Y1_NUM_NEURONS4
+                                 1762835.70      1    1762835.70   h
+node_ADDR_X0_ADDR_Y2_NUM_NEURONS4
+                                 1770360.42      1    1770360.42   h
+node_ADDR_X0_ADDR_Y3_NUM_NEURONS4
+                                 1771763.01      1    1771763.01   h
+node_ADDR_X0_ADDR_Y4_NUM_NEURONS4
+                                 1769908.73      1    1769908.73   h
+node_ADDR_X1_ADDR_Y0_NUM_NEURONS4
+                                 1771624.13      1    1771624.13   h
+node_ADDR_X1_ADDR_Y1_NUM_NEURONS4
+                                 1775251.36      1    1775251.36   h
+node_ADDR_X1_ADDR_Y2_NUM_NEURONS4
+                                 1771473.98      1    1771473.98   h
+node_ADDR_X1_ADDR_Y3_NUM_NEURONS4
+                                 1767575.24      1    1767575.24   h
+node_ADDR_X1_ADDR_Y4_NUM_NEURONS4
+                                 1767460.13      1    1767460.13   h
+node_ADDR_X2_ADDR_Y0_NUM_NEURONS4
+                                 1766957.15      1    1766957.15   h
+node_ADDR_X2_ADDR_Y1_NUM_NEURONS4
+                                 1765928.67      1    1765928.67   h
+node_ADDR_X2_ADDR_Y2_NUM_NEURONS4
+                                 1770860.90      1    1770860.90   h
+node_ADDR_X2_ADDR_Y3_NUM_NEURONS4
+                                 1773279.47      1    1773279.47   h
+node_ADDR_X2_ADDR_Y4_NUM_NEURONS4
+                                 1764531.08      1    1764531.08   h
+node_ADDR_X3_ADDR_Y0_NUM_NEURONS4
+                                 1764897.68      1    1764897.68   h
+node_ADDR_X3_ADDR_Y1_NUM_NEURONS4
+                                 1767846.76      1    1767846.76   h
+node_ADDR_X3_ADDR_Y2_NUM_NEURONS4
+                                 1776333.64      1    1776333.64   h
+node_ADDR_X3_ADDR_Y3_NUM_NEURONS4
+                                 1774047.70      1    1774047.70   h
+node_ADDR_X3_ADDR_Y4_NUM_NEURONS4
+                                 1769519.61      1    1769519.61   h
+node_ADDR_X4_ADDR_Y0_NUM_NEURONS4
+                                 1767825.48      1    1767825.48   h
+node_ADDR_X4_ADDR_Y1_NUM_NEURONS4
+                                 1766964.66      1    1766964.66   h
+node_ADDR_X4_ADDR_Y2_NUM_NEURONS4
+                                 1767201.14      1    1767201.14   h
+node_ADDR_X4_ADDR_Y3_NUM_NEURONS4
+                                 1767810.47      1    1767810.47   h
+node_ADDR_X4_ADDR_Y4_NUM_NEURONS4
+                                 1763248.60      1    1763248.60   h
+--------------------------------------------------------------------------------
+Total 40 references                                   45830093.44
+1

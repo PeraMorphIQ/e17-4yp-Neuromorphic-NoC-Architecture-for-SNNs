@@ -1,0 +1,38 @@
+****************************************
+Report : report_rtl_metrics
+      -view hier
+Design : mesh
+Version: W-2024.09-SP2
+Date   : Thu Dec 11 20:20:58 2025
+****************************************
+
+
+gated_registers   icg_cells   latch_cells   reg_cells   sequential_cells   combinational_cells   total_power   cell_name
+---------------   ---------   -----------   ---------   ----------------   -------------------   -----------   -----------------------------------
+311645             32505         700        326970      360185             4812726               1.27e+00      mesh
+ 12467              1300          28         13080       14409             190972                5.23e-02      mesh/ROW_LOOP[4].COL_LOOP[1].u_node
+ 12464              1299          28         13077       14405             191047                5.19e-02      mesh/ROW_LOOP[4].COL_LOOP[0].u_node
+ 12464              1300          28         13077       14405             191966                5.18e-02      mesh/ROW_LOOP[3].COL_LOOP[0].u_node
+ 12467              1300          28         13080       14409             191738                5.17e-02      mesh/ROW_LOOP[4].COL_LOOP[3].u_node
+ 12464              1300          28         13077       14405             191303                5.14e-02      mesh/ROW_LOOP[0].COL_LOOP[2].u_node
+ 12467              1300          28         13080       14409             190163                5.13e-02      mesh/ROW_LOOP[4].COL_LOOP[2].u_node
+ 12464              1299          28         13077       14405             191329                5.11e-02      mesh/ROW_LOOP[0].COL_LOOP[4].u_node
+ 12467              1301          28         13080       14409             191509                5.10e-02      mesh/ROW_LOOP[3].COL_LOOP[1].u_node
+ 12467              1300          28         13080       14409             191632                5.09e-02      mesh/ROW_LOOP[2].COL_LOOP[4].u_node
+ 12467              1301          28         13080       14409             192156                5.08e-02      mesh/ROW_LOOP[2].COL_LOOP[2].u_node
+ 12464              1300          28         13077       14405             191385                5.08e-02      mesh/ROW_LOOP[2].COL_LOOP[0].u_node
+ 12467              1299          28         13080       14409             189895                5.07e-02      mesh/ROW_LOOP[4].COL_LOOP[4].u_node
+ 12467              1301          28         13080       14409             192071                5.07e-02      mesh/ROW_LOOP[2].COL_LOOP[3].u_node
+ 12467              1301          28         13080       14409             191493                5.05e-02      mesh/ROW_LOOP[1].COL_LOOP[2].u_node
+ 12467              1301          28         13080       14409             192383                5.05e-02      mesh/ROW_LOOP[1].COL_LOOP[1].u_node
+ 12467              1301          28         13080       14409             191343                5.04e-02      mesh/ROW_LOOP[3].COL_LOOP[3].u_node
+ 12467              1301          28         13080       14409             192574                5.02e-02      mesh/ROW_LOOP[3].COL_LOOP[2].u_node
+ 12467              1300          28         13080       14409             191772                5.02e-02      mesh/ROW_LOOP[1].COL_LOOP[4].u_node
+ 12467              1301          28         13080       14409             191186                5.01e-02      mesh/ROW_LOOP[1].COL_LOOP[3].u_node
+ 12467              1300          28         13080       14409             191162                5.01e-02      mesh/ROW_LOOP[3].COL_LOOP[4].u_node
+ 12464              1300          28         13077       14405             190880                5.01e-02      mesh/ROW_LOOP[1].COL_LOOP[0].u_node
+ 12464              1300          28         13077       14405             192167                5.00e-02      mesh/ROW_LOOP[0].COL_LOOP[1].u_node
+ 12461              1299          28         13074       14401             191249                4.98e-02      mesh/ROW_LOOP[0].COL_LOOP[0].u_node
+ 12467              1301          28         13080       14409             192185                4.96e-02      mesh/ROW_LOOP[2].COL_LOOP[1].u_node
+ 12464              1300          28         13077       14405             191169                4.96e-02      mesh/ROW_LOOP[0].COL_LOOP[3].u_node
+1
