@@ -3,9 +3,9 @@
 
 module mesh_tb;
 
-    parameter ROWS = 5;
-    parameter COLS = 5;
-    parameter NUM_NEURONS = 4;
+    parameter ROWS = 2;
+    parameter COLS = 2;
+    parameter NUM_NEURONS = 8;
     parameter DATA_WIDTH = 32;
 
     reg clk;
