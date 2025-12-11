@@ -1,3 +1,10 @@
+cpu_LIB/
+*.ndm
+*.gz
+*.sym
+*.pintrf
+
+
 # Simulation waveform dumps
 *.vcd
 *.fsdb
