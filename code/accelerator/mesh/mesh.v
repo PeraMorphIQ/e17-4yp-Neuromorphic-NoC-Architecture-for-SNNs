@@ -1,8 +1,8 @@
 `include "../node/node.v"
 
 module mesh #(
-    parameter ROWS = 2,
-    parameter COLS = 2,
+    parameter ROWS = 5,
+    parameter COLS = 5,
     parameter DATA_WIDTH = 32,
     parameter NUM_NEURONS = 4
 ) (
