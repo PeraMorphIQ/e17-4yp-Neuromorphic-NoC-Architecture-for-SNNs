@@ -1,0 +1,6 @@
+Metric,Value,Unit
+Critical_Path_Delay,51.4222,ns
+Maximum_Frequency,19.45,MHz
+Recommended_Frequency,19.07,MHz
+Worst_Slack,-41.422207,ns
+Current_Period,10.000000,ns

@@ -1,0 +1,27 @@
+****************************************
+Report : Averaged Power
+	-groups register
+Design : mesh
+Version: W-2024.09-SP2
+Date   : Thu Dec 11 20:20:07 2025
+****************************************
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+register                   0.0330 4.519e-03 5.882e-03    0.0434 (100.00%) 
+
+  Net Switching Power  = 4.519e-03   (10.40%)
+  Cell Internal Power  =    0.0330   (76.05%)
+  Cell Leakage Power   = 5.882e-03   (13.54%)
+                         ---------
+Total Power            =    0.0434  (100.00%)
+
+1
