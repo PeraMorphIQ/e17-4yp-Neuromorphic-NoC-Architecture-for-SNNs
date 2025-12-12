@@ -1,0 +1,557 @@
+****************************************
+Report : Averaged Power
+	-hierarchy
+	-levels 3
+	-verbose
+Design : mesh
+Version: W-2024.09-SP2
+Date   : Fri Dec 12 11:02:34 2025
+****************************************
+
+Library(s) Used:
+
+    sky130_fd_sc_hd__ff_100C_1v65 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_100C_1v65.db)
+    sky130_fd_sc_hd__ff_100C_1v95 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_100C_1v95.db)
+    sky130_fd_sc_hd__ff_n40C_1v56 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v56.db)
+    sky130_fd_sc_hd__ff_n40C_1v65 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v65.db)
+    sky130_fd_sc_hd__ff_n40C_1v76 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v76.db)
+    sky130_fd_sc_hd__ss_100C_1v40 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_100C_1v40.db)
+    sky130_fd_sc_hd__ss_100C_1v60 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_100C_1v60.db)
+    sky130_fd_sc_hd__ss_n40C_1v28 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v28.db)
+    sky130_fd_sc_hd__ss_n40C_1v35 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v35.db)
+    sky130_fd_sc_hd__ss_n40C_1v40 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v40.db)
+    sky130_fd_sc_hd__ss_n40C_1v44 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v44.db)
+    sky130_fd_sc_hd__ss_n40C_1v76 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v76.db)
+    sky130_fd_sc_hd__tt_025C_1v80 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__tt_025C_1v80.db)
+    sky130_fd_sc_hd__tt_100C_1v80 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__tt_100C_1v80.db)
+
+
+Operating Conditions: ff_100C_1v65   Library: sky130_fd_sc_hd__ff_100C_1v65
+Wire Load Model Mode: top
+
+<no wire load model is set>
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+                                      Int      Switch   Leak     Total
+Hierarchy                             Power    Power    Power    Power    %
+----------------------------------------------------------------------------------
+mesh                                  8.73e-02    0.111 6.96e-03    0.206 100.0
+  ROW_LOOP[0].COL_LOOP[0].u_node (node_ADDR_X0_ADDR_Y0_NUM_NEURONS16)
+                                      2.18e-02 2.85e-02 1.74e-03 5.20e-02  25.3
+    IMEM (instruction_memory_0)          0.000    0.000    0.000    0.000   N/A
+    NEURON_BANK (neuron_bank_NUM_NEURONS16_0)
+                                      4.93e-04 5.29e-05 1.08e-03 1.62e-03   0.8
+      NEURON_ARRAY[13].core (neuron_core_13)
+                                      1.82e-05 1.79e-06 6.44e-05 8.45e-05   0.0
+      NEURON_ARRAY[6].core (neuron_core_6)
+                                      1.73e-05 1.63e-06 6.42e-05 8.31e-05   0.0
+      NEURON_ARRAY[14].core (neuron_core_14)
+                                      1.64e-05 1.28e-06 6.46e-05 8.22e-05   0.0
+      NEURON_ARRAY[7].core (neuron_core_7)
+                                      1.80e-05 1.80e-06 6.43e-05 8.40e-05   0.0
+      NEURON_ARRAY[0].core (neuron_core_0)
+                                      1.74e-05 1.67e-06 7.13e-05 9.04e-05   0.0
+      NEURON_ARRAY[15].core (neuron_core_15)
+                                      1.77e-05 1.78e-06 6.49e-05 8.44e-05   0.0
+      NEURON_ARRAY[8].core (neuron_core_8)
+                                      1.72e-05 1.67e-06 6.41e-05 8.29e-05   0.0
+      NEURON_ARRAY[1].core (neuron_core_1)
+                                      1.77e-05 1.71e-06 7.13e-05 9.07e-05   0.0
+      NEURON_ARRAY[9].core (neuron_core_9)
+                                      1.74e-05 1.69e-06 6.45e-05 8.36e-05   0.0
+      NEURON_ARRAY[2].core (neuron_core_2)
+                                      1.72e-05 1.76e-06 6.96e-05 8.86e-05   0.0
+      NEURON_ARRAY[10].core (neuron_core_10)
+                                      1.71e-05 1.55e-06 6.46e-05 8.33e-05   0.0
+      NEURON_ARRAY[3].core (neuron_core_3)
+                                      1.69e-05 1.68e-06 7.12e-05 8.98e-05   0.0
+      NEURON_ARRAY[11].core (neuron_core_11)
+                                      1.76e-05 1.67e-06 6.43e-05 8.36e-05   0.0
+      NEURON_ARRAY[4].core (neuron_core_4)
+                                      1.68e-05 1.58e-06 6.43e-05 8.27e-05   0.0
+      NEURON_ARRAY[12].core (neuron_core_12)
+                                      1.79e-05 1.98e-06 6.43e-05 8.42e-05   0.0
+      NEURON_ARRAY[5].core (neuron_core_5)
+                                      1.67e-05 1.43e-06 6.42e-05 8.23e-05   0.0
+    CPU (cpu_0)                       1.18e-02 1.48e-02 3.79e-04 2.69e-02  13.1
+      PC_SELECT_MUX (mux_2to1_32bit_0)
+                                      4.61e-06 1.87e-06 1.38e-07 6.62e-06   0.0
+      ID_FREG_FILE (f_reg_file_0)     2.96e-04 4.08e-04 3.01e-05 7.34e-04   0.4
+      ID_IMMEDIATE_GENERATION_UNIT (immediate_generation_unit_0)
+                                      1.83e-05 2.28e-05 2.68e-07 4.13e-05   0.0
+      PIPE_REG_ID_EX (pr_id_ex_0)     1.05e-03 7.69e-05 5.68e-06 1.13e-03   0.5
+      EX_OP2_FWD_MUX (mux_4to1_32bit_1)
+                                      2.34e-06 7.29e-06 6.88e-07 1.03e-05   0.0
+      EX_OP2_SELECT_MUX (mux_2to1_32bit_3)
+                                      3.30e-05 2.43e-04 6.67e-07 2.77e-04   0.1
+      PIPE_REG_MEM_WB (pr_mem_wb_0)   5.03e-04 2.10e-05 2.77e-06 5.27e-04   0.3
+      MEM_READ_DATA_MUX (mux_2to1_32bit_6)
+                                      7.69e-08 8.83e-07 1.62e-07 1.12e-06   0.0
+      PIPE_REG_EX_MEM (pr_ex_mem_0)   6.91e-04 7.49e-05 3.90e-06 7.70e-04   0.4
+      EX_ALU (alu_0)                  8.23e-03 1.27e-02 1.32e-04 2.11e-02  10.3
+      ID_HAZ_DETECT_UNIT (hazard_detection_unit_0)
+                                      1.46e-05 6.53e-06 7.11e-08 2.12e-05   0.0
+      EX_BRANCH_CTRL_UNIT (branch_control_unit_0)
+                                      2.18e-05 2.24e-05 3.16e-07 4.45e-05   0.0
+      MEM_PC_PLUS_4_ADDER (plus_4_adder_1)
+                                      1.80e-06 2.50e-06 3.38e-07 4.63e-06   0.0
+      BRANCH_SELECT_MUX (mux_2to1_32bit_1)
+                                      6.17e-06 3.92e-06 1.47e-07 1.02e-05   0.0
+      EX_FOP2_FWD_MUX (mux_4to1_32bit_3)
+                                      3.53e-08 5.05e-08 7.29e-07 8.14e-07   0.0
+      ID_CONTROL_UNIT (control_unit_0)
+                                      1.82e-05 3.15e-05 2.92e-07 5.00e-05   0.0
+      ID_REG_FILE (reg_file_0)        3.70e-04 3.30e-04 2.74e-05 7.28e-04   0.4
+      IF_PC_PLUS_4_ADDER (plus_4_adder_0)
+                                      2.14e-06 2.48e-06 3.37e-07 4.95e-06   0.0
+      EX_OP1_FWD_MUX (mux_4to1_32bit_0)
+                                      4.36e-06 2.09e-05 3.87e-07 2.57e-05   0.0
+      EX_FOP3_FWD_MUX (mux_4to1_32bit_4)
+                                      -2.6e-09    0.000 2.80e-07 2.78e-07   0.0
+      PIPE_REG_IF_ID (pr_if_id_0)     1.62e-04 1.70e-04 1.35e-06 3.33e-04   0.2
+      ID_PR_FLUSH_UNIT (pipeline_flush_unit_0)
+                                      1.53e-07 9.08e-08 8.98e-09 2.53e-07   0.0
+      EX_FPU (fpu_0)                  1.53e-04 2.23e-04 1.67e-04 5.43e-04   0.3
+      MEM_WRITE_DATA_FWD_MUX (mux_2to1_32bit_5)
+                                      6.12e-06 1.26e-04 2.78e-07 1.32e-04   0.1
+      MEM_WRITE_DATA_SEL_MUX (mux_2to1_32bit_4)
+                                      1.21e-06 1.19e-06 1.39e-07 2.54e-06   0.0
+      EX_OP1_SELECT_MUX (mux_2to1_32bit_2)
+                                      6.89e-06 6.94e-05 5.80e-07 7.69e-05   0.0
+      EX_FWD_UNIT (ex_forward_unit_0) 1.46e-05 1.39e-05 1.88e-07 2.87e-05   0.0
+      EX_FOP1_FWD_MUX (mux_4to1_32bit_2)
+                                      3.43e-06 2.32e-05 4.74e-07 2.71e-05   0.0
+      MEM_FWD_UNIT (mem_forward_unit_0)
+                                      3.89e-06 2.23e-06 4.41e-08 6.17e-06   0.0
+      WB_WB_VALUE_SELECT_MUX (mux_4to1_32bit_5)
+                                      7.22e-06 2.48e-05 8.42e-07 3.29e-05   0.0
+    ROUTER (router_ADDR_X0_ADDR_Y0)   7.45e-06 2.90e-07 4.96e-06 1.27e-05   0.0
+      rem_106_I3 (DW_div_uns_a_width4_b_width3_J52_H26_D2)
+                                         0.000    0.000 4.86e-08 4.86e-08   0.0
+      rem_106_I4 (DW_div_uns_a_width4_b_width3_J9005_P7_D2)
+                                         0.000    0.000 5.10e-08 5.10e-08   0.0
+      rem_105 (DW_div_uns_a_width4_b_width3_J52_H35_D2)
+                                         0.000    0.000 5.16e-08 5.16e-08   0.0
+      rem_106 (DW_div_uns_a_width4_b_width3_J52_H10_D2)
+                                         0.000    0.000 4.86e-08 4.86e-08   0.0
+      rem_107 (DW_div_uns_a_width4_b_width3_J52_H12_D2)
+                                         0.000    0.000 8.48e-08 8.48e-08   0.0
+      rem_108 (DW_div_uns_a_width4_b_width3_J52_H14_D2)
+                                         0.000    0.000 3.97e-08 3.97e-08   0.0
+      rem_107_I3 (DW_div_uns_a_width4_b_width3_J52_H28_D2)
+                                         0.000    0.000 8.54e-08 8.54e-08   0.0
+      rem_107_I4 (DW_div_uns_a_width4_b_width3_J8949_P7_D2)
+                                         0.000    0.000 5.18e-08 5.18e-08   0.0
+      rem_108_I3 (DW_div_uns_a_width4_b_width3_J52_H30_D2)
+                                         0.000    0.000 3.97e-08 3.97e-08   0.0
+      rem_108_I4 (DW_div_uns_a_width4_b_width3_J65836_P7_D2)
+                                         0.000    0.000 6.06e-08 6.06e-08   0.0
+      rem_105_I3 (DW_div_uns_a_width4_b_width3_J52_H16_D2)
+                                         0.000    0.000 5.16e-08 5.16e-08   0.0
+      rem_105_I4 (DW_div_uns_a_width4_b_width3_J65839_P7_D2)
+                                         0.000    0.000 6.77e-08 6.77e-08   0.0
+    NI (network_interface_0)          2.05e-04 8.06e-07 2.19e-05 2.28e-04   0.1
+      rx_fifo (fifo_DEPTH16_DATA_WIDTH32_1)
+                                      8.80e-05 4.06e-07 1.10e-05 9.93e-05   0.0
+      tx_fifo (fifo_DEPTH16_DATA_WIDTH32_0)
+                                      1.17e-04 3.89e-07 1.09e-05 1.29e-04   0.1
+    DMEM (data_memory_0)              9.35e-03 1.35e-02 2.62e-04 2.31e-02  11.2
+  ROW_LOOP[0].COL_LOOP[1].u_node (node_ADDR_X1_ADDR_Y0_NUM_NEURONS16)
+                                      2.18e-02 2.79e-02 1.74e-03 5.15e-02  25.0
+    IMEM (instruction_memory_1)          0.000    0.000    0.000    0.000   N/A
+    NEURON_BANK (neuron_bank_NUM_NEURONS16_1)
+                                      4.96e-04 4.71e-05 1.08e-03 1.62e-03   0.8
+      NEURON_ARRAY[13].core (neuron_core_29)
+                                      1.78e-05 1.77e-06 6.46e-05 8.42e-05   0.0
+      NEURON_ARRAY[6].core (neuron_core_22)
+                                      1.75e-05 1.65e-06 6.43e-05 8.34e-05   0.0
+      NEURON_ARRAY[14].core (neuron_core_30)
+                                      1.78e-05 1.92e-06 6.42e-05 8.40e-05   0.0
+      NEURON_ARRAY[7].core (neuron_core_23)
+                                      1.80e-05 1.80e-06 6.42e-05 8.41e-05   0.0
+      NEURON_ARRAY[0].core (neuron_core_16)
+                                      1.73e-05 1.89e-06 7.10e-05 9.03e-05   0.0
+      NEURON_ARRAY[15].core (neuron_core_31)
+                                      1.80e-05 1.80e-06 6.41e-05 8.39e-05   0.0
+      NEURON_ARRAY[8].core (neuron_core_24)
+                                      1.65e-05 1.36e-06 6.40e-05 8.19e-05   0.0
+      NEURON_ARRAY[1].core (neuron_core_17)
+                                      1.81e-05 1.92e-06 7.09e-05 9.10e-05   0.0
+      NEURON_ARRAY[9].core (neuron_core_25)
+                                      1.78e-05 1.75e-06 6.44e-05 8.40e-05   0.0
+      NEURON_ARRAY[2].core (neuron_core_18)
+                                      1.73e-05 1.71e-06 7.16e-05 9.06e-05   0.0
+      NEURON_ARRAY[10].core (neuron_core_26)
+                                      1.70e-05 1.49e-06 6.40e-05 8.25e-05   0.0
+      NEURON_ARRAY[3].core (neuron_core_19)
+                                      1.86e-05 2.31e-06 7.08e-05 9.17e-05   0.0
+      NEURON_ARRAY[11].core (neuron_core_27)
+                                      1.72e-05 1.49e-06 6.42e-05 8.29e-05   0.0
+      NEURON_ARRAY[4].core (neuron_core_20)
+                                      1.77e-05 1.71e-06 6.43e-05 8.37e-05   0.0
+      NEURON_ARRAY[12].core (neuron_core_28)
+                                      1.80e-05 1.94e-06 6.43e-05 8.42e-05   0.0
+      NEURON_ARRAY[5].core (neuron_core_21)
+                                      1.72e-05 1.50e-06 6.46e-05 8.33e-05   0.0
+    CPU (cpu_1)                       1.17e-02 1.42e-02 3.75e-04 2.63e-02  12.8
+      ID_REG_FILE (reg_file_1)        3.63e-04 3.34e-04 2.74e-05 7.25e-04   0.4
+      ID_PR_FLUSH_UNIT (pipeline_flush_unit_1)
+                                      1.40e-07 5.20e-08 8.99e-09 2.01e-07   0.0
+      ID_IMMEDIATE_GENERATION_UNIT (immediate_generation_unit_1)
+                                      1.80e-05 2.17e-05 2.68e-07 3.99e-05   0.0
+      EX_OP2_FWD_MUX (mux_4to1_32bit_7)
+                                      1.77e-06 5.94e-06 6.42e-07 8.34e-06   0.0
+      EX_BRANCH_CTRL_UNIT (branch_control_unit_1)
+                                      2.20e-05 2.25e-05 3.16e-07 4.48e-05   0.0
+      WB_WB_VALUE_SELECT_MUX (mux_4to1_32bit_11)
+                                      8.21e-06 2.84e-05 8.45e-07 3.75e-05   0.0
+      EX_OP1_SELECT_MUX (mux_2to1_32bit_9)
+                                      6.73e-06 4.22e-05 5.47e-07 4.95e-05   0.0
+      ID_CONTROL_UNIT (control_unit_1)
+                                      1.75e-05 3.04e-05 2.92e-07 4.83e-05   0.0
+      PIPE_REG_MEM_WB (pr_mem_wb_1)   5.03e-04 1.75e-05 2.77e-06 5.23e-04   0.3
+      ID_HAZ_DETECT_UNIT (hazard_detection_unit_1)
+                                      1.40e-05 6.41e-06 7.62e-08 2.05e-05   0.0
+      PC_SELECT_MUX (mux_2to1_32bit_7)
+                                      4.63e-06 1.79e-06 1.38e-07 6.56e-06   0.0
+      EX_ALU (alu_1)                  8.14e-03 1.23e-02 1.33e-04 2.06e-02  10.0
+      EX_FOP1_FWD_MUX (mux_4to1_32bit_8)
+                                      3.64e-06 2.40e-05 5.02e-07 2.81e-05   0.0
+      IF_PC_PLUS_4_ADDER (plus_4_adder_2)
+                                      1.94e-06 2.15e-06 3.37e-07 4.43e-06   0.0
+      MEM_FWD_UNIT (mem_forward_unit_1)
+                                      3.90e-06 2.67e-06 4.41e-08 6.61e-06   0.0
+      MEM_PC_PLUS_4_ADDER (plus_4_adder_3)
+                                      1.91e-06 2.66e-06 3.38e-07 4.91e-06   0.0
+      PIPE_REG_EX_MEM (pr_ex_mem_1)   6.91e-04 7.64e-05 3.92e-06 7.71e-04   0.4
+      MEM_WRITE_DATA_FWD_MUX (mux_2to1_32bit_12)
+                                      6.50e-06 1.21e-04 2.55e-07 1.28e-04   0.1
+      EX_FWD_UNIT (ex_forward_unit_1) 1.47e-05 1.51e-05 1.78e-07 3.00e-05   0.0
+      EX_FPU (fpu_1)                  1.50e-04 2.18e-04 1.63e-04 5.31e-04   0.3
+      EX_FOP3_FWD_MUX (mux_4to1_32bit_10)
+                                      -2.6e-09    0.000 2.80e-07 2.78e-07   0.0
+      PIPE_REG_ID_EX (pr_id_ex_1)     1.05e-03 5.69e-05 5.68e-06 1.11e-03   0.5
+      ID_FREG_FILE (f_reg_file_1)     2.99e-04 3.89e-04 3.01e-05 7.19e-04   0.3
+      BRANCH_SELECT_MUX (mux_2to1_32bit_8)
+                                      5.74e-06 3.67e-06 1.42e-07 9.55e-06   0.0
+      EX_OP2_SELECT_MUX (mux_2to1_32bit_10)
+                                      2.60e-05 1.40e-04 5.56e-07 1.66e-04   0.1
+      EX_FOP2_FWD_MUX (mux_4to1_32bit_9)
+                                      1.63e-07 2.59e-07 8.23e-07 1.25e-06   0.0
+      MEM_WRITE_DATA_SEL_MUX (mux_2to1_32bit_11)
+                                      1.19e-06 5.88e-07 1.41e-07 1.92e-06   0.0
+      MEM_READ_DATA_MUX (mux_2to1_32bit_13)
+                                      8.04e-08 1.47e-06 1.65e-07 1.71e-06   0.0
+      EX_OP1_FWD_MUX (mux_4to1_32bit_6)
+                                      4.63e-06 2.15e-05 3.84e-07 2.65e-05   0.0
+      PIPE_REG_IF_ID (pr_if_id_1)     1.75e-04 1.68e-04 1.35e-06 3.44e-04   0.2
+    ROUTER (router_ADDR_X1_ADDR_Y0)   9.77e-06 2.08e-07 5.18e-06 1.52e-05   0.0
+      rem_105 (DW_div_uns_a_width4_b_width3_J50_H43_D2)
+                                         0.000    0.000 4.95e-08 4.95e-08   0.0
+      rem_106 (DW_div_uns_a_width4_b_width3_J50_H10_D2)
+                                         0.000    0.000 4.64e-08 4.64e-08   0.0
+      rem_107 (DW_div_uns_a_width4_b_width3_J50_H12_D2)
+                                         0.000    0.000 8.54e-08 8.54e-08   0.0
+      rem_108 (DW_div_uns_a_width4_b_width3_J50_H14_D2)
+                                         0.000    0.000 3.97e-08 3.97e-08   0.0
+      rem_106_I3 (DW_div_uns_a_width4_b_width3_J50_H26_D2)
+                                         0.000    0.000 8.78e-08 8.78e-08   0.0
+      rem_106_I4 (DW_div_uns_a_width4_b_width3_J17944_P7_D2)
+                                         0.000    0.000 1.54e-07 1.54e-07   0.0
+      rem_106_I5 (DW_div_uns_a_width4_b_width3_J17972_P7_D2)
+                                         0.000    0.000 5.13e-08 5.13e-08   0.0
+      rem_107_I3 (DW_div_uns_a_width4_b_width3_J50_H28_D2)
+                                         0.000    0.000 8.68e-08 8.68e-08   0.0
+      rem_107_I4 (DW_div_uns_a_width4_b_width3_J17951_P7_D2)
+                                         0.000    0.000 1.24e-07 1.24e-07   0.0
+      rem_107_I5 (DW_div_uns_a_width4_b_width3_J17860_P7_D2)
+                                         0.000    0.000 5.58e-08 5.58e-08   0.0
+      rem_108_I3 (DW_div_uns_a_width4_b_width3_J50_H30_D2)
+                                         0.000    0.000 3.70e-08 3.70e-08   0.0
+      rem_108_I4 (DW_div_uns_a_width4_b_width3_J66614_P7_D2)
+                                         0.000    0.000 6.15e-08 6.15e-08   0.0
+      rem_108_I5 (DW_div_uns_a_width4_b_width3_J66586_P7_D2)
+                                         0.000    0.000 6.05e-08 6.05e-08   0.0
+      rem_105_I3 (DW_div_uns_a_width4_b_width3_J50_H16_D2)
+                                         0.000    0.000 8.75e-08 8.75e-08   0.0
+      rem_105_I4 (DW_div_uns_a_width4_b_width3_J17937_P7_D2)
+                                         0.000    0.000 1.06e-07 1.06e-07   0.0
+      rem_105_I5 (DW_div_uns_a_width4_b_width3_J66617_P7_D2)
+                                         0.000    0.000 5.93e-08 5.93e-08   0.0
+    NI (network_interface_1)          2.09e-04 7.41e-07 2.20e-05 2.31e-04   0.1
+      rx_fifo (fifo_DEPTH16_DATA_WIDTH32_3)
+                                      8.78e-05 3.73e-07 1.09e-05 9.91e-05   0.0
+      tx_fifo (fifo_DEPTH16_DATA_WIDTH32_2)
+                                      1.21e-04 3.68e-07 1.10e-05 1.32e-04   0.1
+    DMEM (data_memory_1)              9.40e-03 1.35e-02 2.62e-04 2.32e-02  11.3
+  ROW_LOOP[1].COL_LOOP[0].u_node (node_ADDR_X0_ADDR_Y1_NUM_NEURONS16)
+                                      2.18e-02 2.75e-02 1.74e-03 5.10e-02  24.8
+    IMEM (instruction_memory_2)          0.000    0.000    0.000    0.000   N/A
+    NEURON_BANK (neuron_bank_NUM_NEURONS16_2)
+                                      4.91e-04 4.28e-05 1.07e-03 1.61e-03   0.8
+      NEURON_ARRAY[13].core (neuron_core_45)
+                                      1.72e-05 1.69e-06 6.41e-05 8.30e-05   0.0
+      NEURON_ARRAY[6].core (neuron_core_38)
+                                      1.71e-05 1.53e-06 6.49e-05 8.36e-05   0.0
+      NEURON_ARRAY[14].core (neuron_core_46)
+                                      1.74e-05 1.66e-06 6.47e-05 8.37e-05   0.0
+      NEURON_ARRAY[7].core (neuron_core_39)
+                                      1.74e-05 1.65e-06 6.42e-05 8.32e-05   0.0
+      NEURON_ARRAY[0].core (neuron_core_32)
+                                      1.75e-05 1.98e-06 7.04e-05 8.99e-05   0.0
+      NEURON_ARRAY[15].core (neuron_core_47)
+                                      1.69e-05 1.52e-06 6.39e-05 8.24e-05   0.0
+      NEURON_ARRAY[8].core (neuron_core_40)
+                                      1.74e-05 1.77e-06 6.47e-05 8.39e-05   0.0
+      NEURON_ARRAY[1].core (neuron_core_33)
+                                      1.72e-05 1.73e-06 6.97e-05 8.86e-05   0.0
+      NEURON_ARRAY[9].core (neuron_core_41)
+                                      1.71e-05 1.54e-06 6.42e-05 8.28e-05   0.0
+      NEURON_ARRAY[2].core (neuron_core_34)
+                                      1.81e-05 1.93e-06 7.10e-05 9.10e-05   0.0
+      NEURON_ARRAY[10].core (neuron_core_42)
+                                      1.75e-05 1.73e-06 6.46e-05 8.38e-05   0.0
+      NEURON_ARRAY[3].core (neuron_core_35)
+                                      1.77e-05 2.04e-06 7.04e-05 9.01e-05   0.0
+      NEURON_ARRAY[11].core (neuron_core_43)
+                                      1.72e-05 1.58e-06 6.38e-05 8.26e-05   0.0
+      NEURON_ARRAY[4].core (neuron_core_36)
+                                      1.73e-05 1.68e-06 6.44e-05 8.34e-05   0.0
+      NEURON_ARRAY[12].core (neuron_core_44)
+                                      1.74e-05 1.53e-06 6.40e-05 8.29e-05   0.0
+      NEURON_ARRAY[5].core (neuron_core_37)
+                                      1.75e-05 1.87e-06 6.41e-05 8.35e-05   0.0
+    CPU (cpu_2)                       1.17e-02 1.40e-02 3.72e-04 2.60e-02  12.6
+      ID_REG_FILE (reg_file_2)        3.73e-04 3.37e-04 2.74e-05 7.38e-04   0.4
+      ID_PR_FLUSH_UNIT (pipeline_flush_unit_2)
+                                      1.50e-07 4.58e-07 8.98e-09 6.17e-07   0.0
+      ID_IMMEDIATE_GENERATION_UNIT (immediate_generation_unit_2)
+                                      1.81e-05 2.06e-05 2.68e-07 3.90e-05   0.0
+      EX_OP2_FWD_MUX (mux_4to1_32bit_13)
+                                      2.00e-06 5.00e-06 6.47e-07 7.65e-06   0.0
+      EX_BRANCH_CTRL_UNIT (branch_control_unit_2)
+                                      2.18e-05 2.41e-05 3.17e-07 4.62e-05   0.0
+      WB_WB_VALUE_SELECT_MUX (mux_4to1_32bit_17)
+                                      7.98e-06 2.63e-05 8.59e-07 3.51e-05   0.0
+      EX_OP1_SELECT_MUX (mux_2to1_32bit_16)
+                                      6.64e-06 4.28e-05 5.58e-07 5.00e-05   0.0
+      ID_CONTROL_UNIT (control_unit_2)
+                                      1.78e-05 2.95e-05 2.92e-07 4.76e-05   0.0
+      PIPE_REG_MEM_WB (pr_mem_wb_2)   5.03e-04 2.00e-05 2.77e-06 5.25e-04   0.3
+      ID_HAZ_DETECT_UNIT (hazard_detection_unit_2)
+                                      1.42e-05 7.42e-06 7.90e-08 2.17e-05   0.0
+      PC_SELECT_MUX (mux_2to1_32bit_14)
+                                      4.66e-06 2.19e-06 1.39e-07 6.98e-06   0.0
+      EX_ALU (alu_2)                  8.10e-03 1.21e-02 1.33e-04 2.03e-02   9.9
+      EX_FOP1_FWD_MUX (mux_4to1_32bit_14)
+                                      3.79e-06 2.41e-05 5.10e-07 2.84e-05   0.0
+      IF_PC_PLUS_4_ADDER (plus_4_adder_4)
+                                      2.05e-06 2.27e-06 3.37e-07 4.66e-06   0.0
+      MEM_FWD_UNIT (mem_forward_unit_2)
+                                      3.94e-06 2.79e-06 4.41e-08 6.77e-06   0.0
+      MEM_PC_PLUS_4_ADDER (plus_4_adder_5)
+                                      1.46e-06 1.58e-06 3.38e-07 3.37e-06   0.0
+      PIPE_REG_EX_MEM (pr_ex_mem_2)   6.91e-04 7.90e-05 3.86e-06 7.74e-04   0.4
+      MEM_WRITE_DATA_FWD_MUX (mux_2to1_32bit_19)
+                                      4.36e-06 1.12e-04 2.15e-07 1.16e-04   0.1
+      EX_FWD_UNIT (ex_forward_unit_2) 1.43e-05 1.35e-05 1.57e-07 2.80e-05   0.0
+      EX_FPU (fpu_2)                  1.47e-04 2.10e-04 1.60e-04 5.17e-04   0.3
+      EX_FOP3_FWD_MUX (mux_4to1_32bit_16)
+                                      -2.6e-09    0.000 2.81e-07 2.79e-07   0.0
+      PIPE_REG_ID_EX (pr_id_ex_2)     1.05e-03 6.98e-05 5.67e-06 1.12e-03   0.5
+      ID_FREG_FILE (f_reg_file_2)     3.05e-04 4.00e-04 3.01e-05 7.35e-04   0.4
+      BRANCH_SELECT_MUX (mux_2to1_32bit_15)
+                                      5.38e-06 4.02e-06 1.40e-07 9.55e-06   0.0
+      EX_OP2_SELECT_MUX (mux_2to1_32bit_17)
+                                      3.13e-05 1.78e-04 6.18e-07 2.10e-04   0.1
+      EX_FOP2_FWD_MUX (mux_4to1_32bit_15)
+                                      8.80e-07 9.80e-07 8.43e-07 2.70e-06   0.0
+      MEM_WRITE_DATA_SEL_MUX (mux_2to1_32bit_18)
+                                      1.22e-06 1.38e-06 1.41e-07 2.74e-06   0.0
+      MEM_READ_DATA_MUX (mux_2to1_32bit_20)
+                                      9.03e-08 1.11e-06 1.71e-07 1.37e-06   0.0
+      EX_OP1_FWD_MUX (mux_4to1_32bit_12)
+                                      4.76e-06 2.24e-05 4.17e-07 2.76e-05   0.0
+      PIPE_REG_IF_ID (pr_if_id_2)     1.72e-04 1.59e-04 1.35e-06 3.33e-04   0.2
+    ROUTER (router_ADDR_X0_ADDR_Y1)   9.73e-06 2.28e-07 5.27e-06 1.52e-05   0.0
+      rem_105 (DW_div_uns_a_width4_b_width3_J51_H41_D2)
+                                         0.000    0.000 4.95e-08 4.95e-08   0.0
+      rem_106 (DW_div_uns_a_width4_b_width3_J51_H10_D2)
+                                         0.000    0.000 4.62e-08 4.62e-08   0.0
+      rem_107 (DW_div_uns_a_width4_b_width3_J51_H12_D2)
+                                         0.000    0.000 8.54e-08 8.54e-08   0.0
+      rem_108 (DW_div_uns_a_width4_b_width3_J51_H14_D2)
+                                         0.000    0.000 3.97e-08 3.97e-08   0.0
+      rem_106_I2 (DW_div_uns_a_width4_b_width3_J51_H18_D2)
+                                         0.000    0.000 4.64e-08 4.64e-08   0.0
+      rem_106_I3 (DW_div_uns_a_width4_b_width3_J51_H26_D2)
+                                         0.000    0.000 4.64e-08 4.64e-08   0.0
+      rem_106_I4 (DW_div_uns_a_width4_b_width3_J51_H34_D2)
+                                         0.000    0.000 8.78e-08 8.78e-08   0.0
+      rem_107_I2 (DW_div_uns_a_width4_b_width3_J51_H20_D2)
+                                         0.000    0.000 8.61e-08 8.61e-08   0.0
+      rem_107_I3 (DW_div_uns_a_width4_b_width3_J51_H28_D2)
+                                         0.000    0.000 8.54e-08 8.54e-08   0.0
+      rem_107_I4 (DW_div_uns_a_width4_b_width3_J51_H36_D2)
+                                         0.000    0.000 8.68e-08 8.68e-08   0.0
+      rem_108_I2 (DW_div_uns_a_width4_b_width3_J51_H22_D2)
+                                         0.000    0.000 3.97e-08 3.97e-08   0.0
+      rem_108_I3 (DW_div_uns_a_width4_b_width3_J51_H30_D2)
+                                         0.000    0.000 3.97e-08 3.97e-08   0.0
+      rem_108_I4 (DW_div_uns_a_width4_b_width3_J51_H38_D2)
+                                         0.000    0.000 3.66e-08 3.66e-08   0.0
+      rem_105_I2 (DW_div_uns_a_width4_b_width3_J51_H16_D2)
+                                         0.000    0.000 4.95e-08 4.95e-08   0.0
+      rem_105_I3 (DW_div_uns_a_width4_b_width3_J51_H24_D2)
+                                         0.000    0.000 4.95e-08 4.95e-08   0.0
+      rem_105_I4 (DW_div_uns_a_width4_b_width3_J51_H32_D2)
+                                         0.000    0.000 8.75e-08 8.75e-08   0.0
+    NI (network_interface_2)          2.04e-04 7.20e-07 2.19e-05 2.27e-04   0.1
+      rx_fifo (fifo_DEPTH16_DATA_WIDTH32_5)
+                                      8.78e-05 3.93e-07 1.10e-05 9.92e-05   0.0
+      tx_fifo (fifo_DEPTH16_DATA_WIDTH32_4)
+                                      1.16e-04 3.27e-07 1.10e-05 1.28e-04   0.1
+    DMEM (data_memory_2)              9.39e-03 1.33e-02 2.63e-04 2.29e-02  11.1
+  ROW_LOOP[1].COL_LOOP[1].u_node (node_ADDR_X1_ADDR_Y1_NUM_NEURONS16)
+                                      2.19e-02 2.76e-02 1.74e-03 5.12e-02  24.9
+    IMEM (instruction_memory)            0.000    0.000    0.000    0.000   N/A
+    NEURON_BANK (neuron_bank_NUM_NEURONS16)
+                                      4.90e-04 4.28e-05 1.08e-03 1.61e-03   0.8
+      NEURON_ARRAY[13].core (neuron_core_61)
+                                      1.75e-05 1.61e-06 6.44e-05 8.35e-05   0.0
+      NEURON_ARRAY[6].core (neuron_core_54)
+                                      1.71e-05 1.54e-06 6.43e-05 8.30e-05   0.0
+      NEURON_ARRAY[14].core (neuron_core_62)
+                                      1.73e-05 1.59e-06 6.41e-05 8.30e-05   0.0
+      NEURON_ARRAY[7].core (neuron_core_55)
+                                      1.75e-05 1.75e-06 6.39e-05 8.32e-05   0.0
+      NEURON_ARRAY[0].core (neuron_core_48)
+                                      1.74e-05 1.69e-06 7.16e-05 9.07e-05   0.0
+      NEURON_ARRAY[15].core (neuron_core)
+                                      1.80e-05 1.91e-06 6.43e-05 8.42e-05   0.0
+      NEURON_ARRAY[8].core (neuron_core_56)
+                                      1.76e-05 1.65e-06 6.44e-05 8.36e-05   0.0
+      NEURON_ARRAY[1].core (neuron_core_49)
+                                      1.71e-05 1.66e-06 7.03e-05 8.90e-05   0.0
+      NEURON_ARRAY[9].core (neuron_core_57)
+                                      1.87e-05 1.91e-06 6.46e-05 8.53e-05   0.0
+      NEURON_ARRAY[2].core (neuron_core_50)
+                                      1.77e-05 1.77e-06 6.99e-05 8.94e-05   0.0
+      NEURON_ARRAY[10].core (neuron_core_58)
+                                      1.79e-05 1.69e-06 6.42e-05 8.38e-05   0.0
+      NEURON_ARRAY[3].core (neuron_core_51)
+                                      1.72e-05 1.69e-06 7.11e-05 9.00e-05   0.0
+      NEURON_ARRAY[11].core (neuron_core_59)
+                                      1.73e-05 1.58e-06 6.43e-05 8.32e-05   0.0
+      NEURON_ARRAY[4].core (neuron_core_52)
+                                      1.66e-05 1.38e-06 6.46e-05 8.25e-05   0.0
+      NEURON_ARRAY[12].core (neuron_core_60)
+                                      1.71e-05 1.50e-06 6.44e-05 8.30e-05   0.0
+      NEURON_ARRAY[5].core (neuron_core_53)
+                                      1.78e-05 1.83e-06 6.45e-05 8.41e-05   0.0
+    CPU (cpu)                         1.18e-02 1.43e-02 3.75e-04 2.64e-02  12.8
+      ID_REG_FILE (reg_file)          3.68e-04 3.32e-04 2.74e-05 7.27e-04   0.4
+      ID_PR_FLUSH_UNIT (pipeline_flush_unit)
+                                      1.19e-07 1.36e-07 8.99e-09 2.64e-07   0.0
+      ID_IMMEDIATE_GENERATION_UNIT (immediate_generation_unit)
+                                      1.79e-05 1.95e-05 2.68e-07 3.77e-05   0.0
+      EX_OP2_FWD_MUX (mux_4to1_32bit_19)
+                                      2.83e-06 5.92e-06 6.52e-07 9.40e-06   0.0
+      EX_BRANCH_CTRL_UNIT (branch_control_unit)
+                                      2.17e-05 2.23e-05 3.15e-07 4.43e-05   0.0
+      WB_WB_VALUE_SELECT_MUX (mux_4to1_32bit_23)
+                                      7.21e-06 2.64e-05 8.41e-07 3.44e-05   0.0
+      EX_OP1_SELECT_MUX (mux_2to1_32bit_23)
+                                      6.57e-06 3.34e-05 5.55e-07 4.05e-05   0.0
+      ID_CONTROL_UNIT (control_unit)  1.79e-05 2.96e-05 2.92e-07 4.77e-05   0.0
+      PIPE_REG_MEM_WB (pr_mem_wb)     5.02e-04 1.64e-05 2.76e-06 5.21e-04   0.3
+      ID_HAZ_DETECT_UNIT (hazard_detection_unit)
+                                      1.42e-05 6.45e-06 7.35e-08 2.08e-05   0.0
+      PC_SELECT_MUX (mux_2to1_32bit_21)
+                                      4.62e-06 2.07e-06 1.38e-07 6.83e-06   0.0
+      EX_ALU (alu)                    8.21e-03 1.23e-02 1.33e-04 2.07e-02  10.1
+      EX_FOP1_FWD_MUX (mux_4to1_32bit_20)
+                                      3.15e-06 2.13e-05 4.56e-07 2.49e-05   0.0
+      IF_PC_PLUS_4_ADDER (plus_4_adder_6)
+                                      2.08e-06 2.44e-06 3.37e-07 4.85e-06   0.0
+      MEM_FWD_UNIT (mem_forward_unit) 3.90e-06 2.21e-06 4.41e-08 6.15e-06   0.0
+      MEM_PC_PLUS_4_ADDER (plus_4_adder)
+                                      1.55e-06 1.86e-06 3.38e-07 3.75e-06   0.0
+      PIPE_REG_EX_MEM (pr_ex_mem)     6.91e-04 8.85e-05 3.88e-06 7.83e-04   0.4
+      MEM_WRITE_DATA_FWD_MUX (mux_2to1_32bit_26)
+                                      4.18e-06 1.27e-04 2.25e-07 1.32e-04   0.1
+      EX_FWD_UNIT (ex_forward_unit)   1.48e-05 1.62e-05 1.85e-07 3.12e-05   0.0
+      EX_FPU (fpu)                    1.49e-04 2.13e-04 1.62e-04 5.23e-04   0.3
+      EX_FOP3_FWD_MUX (mux_4to1_32bit_22)
+                                      -2.6e-09    0.000 2.80e-07 2.78e-07   0.0
+      PIPE_REG_ID_EX (pr_id_ex)       1.05e-03 6.58e-05 5.66e-06 1.12e-03   0.5
+      ID_FREG_FILE (f_reg_file)       3.03e-04 3.96e-04 3.01e-05 7.29e-04   0.4
+      BRANCH_SELECT_MUX (mux_2to1_32bit_22)
+                                      5.54e-06 3.97e-06 1.40e-07 9.65e-06   0.0
+      EX_OP2_SELECT_MUX (mux_2to1_32bit_24)
+                                      2.85e-05 1.14e-04 5.84e-07 1.43e-04   0.1
+      EX_FOP2_FWD_MUX (mux_4to1_32bit_21)
+                                      2.17e-07 3.23e-07 8.55e-07 1.39e-06   0.0
+      MEM_WRITE_DATA_SEL_MUX (mux_2to1_32bit_25)
+                                      1.23e-06 1.62e-06 1.41e-07 3.00e-06   0.0
+      MEM_READ_DATA_MUX (mux_2to1_32bit_27)
+                                      8.16e-08 7.09e-07 1.60e-07 9.51e-07   0.0
+      EX_OP1_FWD_MUX (mux_4to1_32bit_18)
+                                      4.97e-06 2.16e-05 3.82e-07 2.69e-05   0.0
+      PIPE_REG_IF_ID (pr_if_id)       1.73e-04 1.69e-04 1.35e-06 3.43e-04   0.2
+    ROUTER (router_ADDR_X1_ADDR_Y1)   1.21e-05 1.75e-07 5.13e-06 1.74e-05   0.0
+      rem_105 (DW_div_uns_a_width4_b_width3_J49_H49_D2)
+                                         0.000    0.000 4.95e-08 4.95e-08   0.0
+      rem_106 (DW_div_uns_a_width4_b_width3_J49_H10_D2)
+                                         0.000    0.000 4.64e-08 4.64e-08   0.0
+      rem_107 (DW_div_uns_a_width4_b_width3_J49_H12_D2)
+                                         0.000    0.000 8.54e-08 8.54e-08   0.0
+      rem_108 (DW_div_uns_a_width4_b_width3_J49_H14_D2)
+                                         0.000    0.000 3.97e-08 3.97e-08   0.0
+      rem_106_I2 (DW_div_uns_a_width4_b_width3_J68676_P7_D2)
+                                         0.000    0.000 4.79e-08 4.79e-08   0.0
+      rem_106_I3 (DW_div_uns_a_width4_b_width3_J49_H26_D2)
+                                         0.000    0.000 8.78e-08 8.78e-08   0.0
+      rem_106_I4 (DW_div_uns_a_width4_b_width3_J49_H34_D2)
+                                         0.000    0.000 8.78e-08 8.78e-08   0.0
+      rem_106_I5 (DW_div_uns_a_width4_b_width3_J68711_P7_D2)
+                                         0.000    0.000 4.64e-08 4.64e-08   0.0
+      rem_107_I2 (DW_div_uns_a_width4_b_width3_J68690_P7_D2)
+                                         0.000    0.000 6.77e-08 6.77e-08   0.0
+      rem_107_I3 (DW_div_uns_a_width4_b_width3_J49_H28_D2)
+                                         0.000    0.000 8.68e-08 8.68e-08   0.0
+      rem_107_I4 (DW_div_uns_a_width4_b_width3_J49_H36_D2)
+                                         0.000    0.000 8.68e-08 8.68e-08   0.0
+      rem_107_I5 (DW_div_uns_a_width4_b_width3_J68718_P7_D2)
+                                         0.000    0.000 5.08e-08 5.08e-08   0.0
+      rem_108_I2 (DW_div_uns_a_width4_b_width3_J78224_P7_D2)
+                                         0.000    0.000 5.00e-08 5.00e-08   0.0
+      rem_108_I3 (DW_div_uns_a_width4_b_width3_J49_H30_D2)
+                                         0.000    0.000 3.66e-08 3.66e-08   0.0
+      rem_108_I4 (DW_div_uns_a_width4_b_width3_J49_H38_D2)
+                                         0.000    0.000 3.66e-08 3.66e-08   0.0
+      rem_108_I5 (DW_div_uns_a_width4_b_width3_J78252_P7_D2)
+                                         0.000    0.000 5.02e-08 5.02e-08   0.0
+      rem_105_I2 (DW_div_uns_a_width4_b_width3_J68669_P7_D2)
+                                         0.000    0.000 6.13e-08 6.13e-08   0.0
+      rem_105_I3 (DW_div_uns_a_width4_b_width3_J49_H24_D2)
+                                         0.000    0.000 8.75e-08 8.75e-08   0.0
+      rem_105_I4 (DW_div_uns_a_width4_b_width3_J49_H32_D2)
+                                         0.000    0.000 8.75e-08 8.75e-08   0.0
+      rem_105_I5 (DW_div_uns_a_width4_b_width3_J68704_P7_D2)
+                                         0.000    0.000 5.67e-08 5.67e-08   0.0
+    NI (network_interface)            2.14e-04 6.52e-07 2.20e-05 2.36e-04   0.1
+      rx_fifo (fifo_DEPTH16_DATA_WIDTH32)
+                                      8.78e-05 3.29e-07 1.10e-05 9.92e-05   0.0
+      tx_fifo (fifo_DEPTH16_DATA_WIDTH32_6)
+                                      1.26e-04 3.23e-07 1.10e-05 1.37e-04   0.1
+    DMEM (data_memory)                9.41e-03 1.33e-02 2.62e-04 2.29e-02  11.1
+1
