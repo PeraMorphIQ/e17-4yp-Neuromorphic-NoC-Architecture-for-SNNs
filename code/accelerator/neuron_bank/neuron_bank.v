@@ -77,6 +77,16 @@ module neuron_bank #(
         end
     endgenerate
 
+    initial begin
+    $display("===========================================");
+    $display("Mesh Configuration:");
+    $display("  ROWS: %0d", ROWS);
+    $display("  COLS: %0d", COLS);
+    $display("  NUM_NEURONS per node: %0d", NUM_NEURONS);
+    $display("  Total neurons: %0d", ROWS * COLS * NUM_NEURONS);
+    $display("===========================================");
+    end 
+
     // Write Logic
     integer j;
     always @(posedge clk or posedge rst) begin
