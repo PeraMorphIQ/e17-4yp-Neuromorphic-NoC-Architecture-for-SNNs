@@ -80,10 +80,7 @@ module neuron_bank #(
     initial begin
     $display("===========================================");
     $display("Mesh Configuration:");
-    $display("  ROWS: %0d", ROWS);
-    $display("  COLS: %0d", COLS);
     $display("  NUM_NEURONS per node: %0d", NUM_NEURONS);
-    $display("  Total neurons: %0d", ROWS * COLS * NUM_NEURONS);
     $display("===========================================");
     end 
 
