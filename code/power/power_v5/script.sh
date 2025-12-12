@@ -130,7 +130,7 @@ fi
 echo "========== STEP 1: VCS Compile (CPU) =========="
 if [ -d "$RTL_CPU_PATH" ]; then
     pushd "$RTL_CPU_PATH" > /dev/null
-    vcs -sverilog -full64 -kdb -debug_access+all -f mesh_sim.f mesh_tb.v +vcs+fsdbon -o simv | tee "../../power/power_v5/$TEMP_RESULTS_DIR/vcs_compile.log"
+    vcs -sverilog -full64 -kdb -debug_access+all -f ../../power/power_v5/mesh_sim.f mesh_tb.v +vcs+fsdbon -o simv | tee "../../power/power_v5/$TEMP_RESULTS_DIR/vcs_compile.log"
     echo "VCS compilation completed successfully"
     
     # Step 2: Run Simulation
