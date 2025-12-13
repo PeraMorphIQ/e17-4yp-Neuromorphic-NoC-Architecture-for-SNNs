@@ -1,0 +1,1154 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : mesh
+Version: V-2023.12-SP5-3
+Date   : Sat Dec 13 13:57:55 2025
+****************************************
+Information: Timer using 'Estimated Delay Calculation'. (TIM-050)
+
+  Startpoint: ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR3_reg[3] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FPU_OUT_reg[10] (rising edge-triggered flip-flop clocked by clk)
+  Mode: func
+  Corner: nominal
+  Scenario: func@nominal
+  Path Group: clk
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock clk (rise edge)                            0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR3_reg[3]/CLK (sky130_fd_sc_hd__sdfxtp_2)
+                                                   0.00      0.00 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_ID_EX/EX_REG_READ_ADDR3_reg[3]/Q (sky130_fd_sc_hd__sdfxtp_2)
+                                                   0.32      0.32 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FWD_UNIT/A4475984/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16      0.48 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FWD_UNIT/ctmTdsLR_1_4881084/X (sky130_fd_sc_hd__and3_4)
+                                                   0.13      0.61 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FWD_UNIT/ctmTdsLR_4_4839342/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.04      0.65 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FWD_UNIT/ctmTdsLR_5_4839343/Y (sky130_fd_sc_hd__clkinv_8)
+                                                   0.13      0.78 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FOP2_FWD_MUX/ctmTdsLR_1_4915491/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.04      0.82 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FOP2_FWD_MUX/ctmTdsLR_2_4915492/Y (sky130_fd_sc_hd__nor2_8)
+                                                   0.29      1.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FOP2_FWD_MUX/ctmi_3833672/Y (sky130_fd_sc_hd__a22oi_1)
+                                                   0.05      1.16 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FOP2_FWD_MUX/ctmTdsLR_4_4752759/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06      1.22 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FOP2_FWD_MUX/ZBUF_1341_inst_4643228/X (sky130_fd_sc_hd__buf_12)
+                                                   0.16      1.38 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/HFSBUF_1688_4598633/X (sky130_fd_sc_hd__buf_6)
+                                                   0.11      1.49 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmi_3182534/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.12      1.61 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmi_3182533/Y (sky130_fd_sc_hd__o22ai_2)
+                                                   0.16      1.77 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/A4490793/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06      1.82 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/A4490806/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05      1.87 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_4752649/X (sky130_fd_sc_hd__o21a_2)
+                                                   0.11      1.98 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/A4530421/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.13      2.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/A4530426/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.13      2.24 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_4875927/Y (sky130_fd_sc_hd__o21bai_1)
+                                                   0.10      2.35 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_4875926/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05      2.40 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/A4530794/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.12      2.53 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_4752515/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04      2.57 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_4752516/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06      2.62 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/A4530796/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16      2.78 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/A4518485/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16      2.95 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/A4518487/Y (sky130_fd_sc_hd__nor2_4)
+                                                   0.06      3.01 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_4666306/Y (sky130_fd_sc_hd__o211ai_2)
+                                                   0.18      3.18 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_4939335/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04      3.22 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_4941163/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.08      3.30 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_4941164/Y (sky130_fd_sc_hd__nor2_4)
+                                                   0.03      3.34 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_3_4684935/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.10      3.44 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_4735605/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      3.49 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_3_4735607/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06      3.54 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_1_4923981/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04      3.59 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/mult_36/ctmTdsLR_2_4923982/Y (sky130_fd_sc_hd__clkinv_4)
+                                                   0.07      3.66 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/HFSBUF_332_4598257/X (sky130_fd_sc_hd__buf_12)
+                                                   0.21      3.87 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_1_4885970/X (sky130_fd_sc_hd__o21a_4)
+                                                   0.10      3.97 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_4_4788433/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.10      4.07 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_1_4666196/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.06      4.13 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_1_4752263/Y (sky130_fd_sc_hd__nand2b_1)
+                                                   0.05      4.18 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_2_4806804/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.11      4.29 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_1_4888904/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      4.33 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_3_4888906/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07      4.40 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_1_4928244/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      4.44 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_3_4939317/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06      4.51 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_4_4939318/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04      4.54 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_4_4908744/Y (sky130_fd_sc_hd__nand4_1)
+                                                   0.06      4.60 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmTdsLR_7_4710150/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.04      4.64 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmi_4377583/Y (sky130_fd_sc_hd__nand2b_4)
+                                                   0.11      4.75 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ZBUF_742_inst_4642460/X (sky130_fd_sc_hd__buf_8)
+                                                   0.13      4.88 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/x0/ctmi_4377592/Y (sky130_fd_sc_hd__nor2_4)
+                                                   0.14      5.02 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmi_3183889/Y (sky130_fd_sc_hd__o22ai_1)
+                                                   0.06      5.08 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmi_3183888/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08      5.16 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_1_4875795/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      5.20 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_3_4875797/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06      5.26 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_4_4875798/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04      5.30 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmi_3183886/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.11      5.41 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_1_4666160/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04      5.45 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_3_4666162/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.09      5.54 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/HFSBUF_545_4622392/X (sky130_fd_sc_hd__buf_12)
+                                                   0.20      5.74 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmi_4305383/Y (sky130_fd_sc_hd__o2bb2ai_4)
+                                                   0.16      5.90 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/DP_OP_42_61208_6679_J18/ctmTdsLR_2_4818812/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04      5.94 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4818811/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06      5.99 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4666153/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.05      6.04 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/DP_OP_42_61208_6679_J18/A4493279/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08      6.12 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/DP_OP_42_61208_6679_J18/A4493280/X (sky130_fd_sc_hd__a21o_2)
+                                                   0.07      6.19 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/DP_OP_42_61208_6679_J18/ZBUF_2238_inst_4643243/X (sky130_fd_sc_hd__buf_12)
+                                                   0.22      6.41 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/A4445226/Y (sky130_fd_sc_hd__mux2i_2)
+                                                   0.24      6.65 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/A4483351/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      6.70 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/A4483353/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.07      6.77 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_1_4935259/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      6.81 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_2_4935260/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08      6.90 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_3_4935261/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      6.94 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_1_4710068/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.10      7.04 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_1_4710060/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.06      7.10 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_1_4666042/Y (sky130_fd_sc_hd__nor2_8)
+                                                   0.19      7.29 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/A4534622/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.10      7.39 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmi_3184399/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06      7.44 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmi_3184397/Y (sky130_fd_sc_hd__nand3b_4)
+                                                   0.08      7.52 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/A4537725/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.11      7.63 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_3_4665992/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04      7.67 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_3_4838969/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.07      7.74 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_1_4869473/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      7.79 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_3_4888866/Y (sky130_fd_sc_hd__o22ai_2)
+                                                   0.12      7.90 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/A4526969/Y (sky130_fd_sc_hd__a21oi_2)
+                                                   0.03      7.93 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/A4483086/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.11      8.05 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_1_4883616/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      8.09 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmTdsLR_2_4883617/X (sky130_fd_sc_hd__o211a_2)
+                                                   0.13      8.22 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/pe/ctmTdsLR_1_4709910/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05      8.27 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/pe/ctmTdsLR_3_4878205/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.07      8.34 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/pe/ctmTdsLR_2_4872910/Y (sky130_fd_sc_hd__nor2_4)
+                                                   0.11      8.45 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/pe/A4537007/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.11      8.55 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/pe/ctmTdsLR_2_4709792/Y (sky130_fd_sc_hd__nor2_8)
+                                                   0.26      8.82 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/pe/A4541944/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.05      8.86 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/pe/A4541946/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06      8.93 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/pe/ctmTdsLR_1_4921952/X (sky130_fd_sc_hd__a211o_1)
+                                                   0.08      9.00 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X0/ctmi_3184622/X (sky130_fd_sc_hd__a21o_4)
+                                                   0.12      9.12 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/HFSBUF_509_4600269/X (sky130_fd_sc_hd__buf_12)
+                                                   0.15      9.27 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmi_2611377/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.12      9.39 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4735003/Y (sky130_fd_sc_hd__o22ai_2)
+                                                   0.15      9.54 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4872799/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.04      9.59 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4872800/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08      9.67 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_4872801/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      9.71 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4894791/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.09      9.80 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4880738/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04      9.84 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4880739/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07      9.90 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4875618/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04      9.95 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4875617/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     10.00 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_4872787/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     10.05 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/U_883/COUT (sky130_fd_sc_hd__fah_1)
+                                                   0.23     10.28 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/A4463363/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.11     10.39 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4751756/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     10.42 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4751757/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.07     10.49 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/A4537631/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.16     10.66 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4904565/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.05     10.71 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4915202/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     10.77 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4906474/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     10.81 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4906475/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.08     10.89 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4751627/X (sky130_fd_sc_hd__xor2_2)
+                                                   0.23     11.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/A4537991/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     11.16 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4880642/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.06     11.22 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_4935054/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     11.27 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4935052/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.07     11.34 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4913020/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     11.38 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4913021/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.06     11.44 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_4913022/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.05     11.49 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/A4523203/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.13     11.62 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_1_4878006/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04     11.66 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_3_4878008/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     11.72 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/mult_36/ctmTdsLR_2_4875494/Y (sky130_fd_sc_hd__nand3_4)
+                                                   0.07     11.79 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/HFSBUF_154_4600749/X (sky130_fd_sc_hd__buf_12)
+                                                   0.16     11.95 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_2_4910883/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     12.01 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/A4451568/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.05     12.05 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_1_4751505/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.06     12.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_1_4877954/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.09     12.20 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_1_4921794/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.08     12.28 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_2_4869077/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.07     12.36 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/A4562486/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16     12.52 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_1_4912995/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04     12.56 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_2_4912996/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06     12.62 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_3_4912997/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04     12.66 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmTdsLR_3_4897140/Y (sky130_fd_sc_hd__nand3_4)
+                                                   0.09     12.75 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/A4492618/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.12     12.87 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M1/ctmi_3711848/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.12     12.99 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmi_3187086/Y (sky130_fd_sc_hd__o211ai_2)
+                                                   0.05     13.05 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmi_3187085/Y (sky130_fd_sc_hd__a21oi_2)
+                                                   0.11     13.16 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmi_3187084/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.05     13.21 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmi_3187080/X (sky130_fd_sc_hd__a21o_1)
+                                                   0.15     13.36 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_2_4765759/Y (sky130_fd_sc_hd__nand4_4)
+                                                   0.08     13.44 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4869052/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.16     13.60 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmi_4303115/X (sky130_fd_sc_hd__o2bb2a_4)
+                                                   0.24     13.84 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_2_4787249/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04     13.87 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4872537/Y (sky130_fd_sc_hd__a21oi_1)
+                                                   0.14     14.01 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4930374/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     14.05 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4940916/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     14.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_4_4940919/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     14.15 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_5_4940920/Y (sky130_fd_sc_hd__inv_8)
+                                                   0.18     14.33 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmi_3187219/Y (sky130_fd_sc_hd__mux2i_1)
+                                                   0.24     14.58 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4665088/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.05     14.63 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_3_4902196/Y (sky130_fd_sc_hd__o22ai_2)
+                                                   0.12     14.75 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4932628/X (sky130_fd_sc_hd__o21a_2)
+                                                   0.10     14.85 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_2_4932629/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     14.89 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_3_4806150/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     14.95 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/A4461902/Y (sky130_fd_sc_hd__nand4_4)
+                                                   0.10     15.05 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4899808/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     15.10 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_3_4899810/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.05     15.15 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_4_4899811/Y (sky130_fd_sc_hd__inv_8)
+                                                   0.12     15.27 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4664972/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     15.31 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_2_4664973/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     15.37 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmi_3187470/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.07     15.44 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/A4539923/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.09     15.53 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/A4526633/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.05     15.58 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/A4484286/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.11     15.69 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4838357/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     15.73 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_2_4838358/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.06     15.79 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4883191/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.05     15.85 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4765666/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     15.90 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4683561/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.06     15.96 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_3_4683563/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.12     16.08 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4818220/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     16.13 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_1_4875361/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     16.18 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_2_4875362/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.06     16.24 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmTdsLR_3_4875363/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.09     16.33 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/A4515824/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.06     16.39 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/A4527059/Y (sky130_fd_sc_hd__nand3_4)
+                                                   0.11     16.50 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/ctmTdsLR_1_4904408/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04     16.54 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/ctmTdsLR_3_4904410/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     16.60 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/ctmTdsLR_4_4904411/Y (sky130_fd_sc_hd__inv_6)
+                                                   0.12     16.72 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/ctmTdsLR_1_4838301/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     16.78 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/ctmTdsLR_2_4838302/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06     16.84 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/ctmTdsLR_3_4838303/Y (sky130_fd_sc_hd__a21oi_1)
+                                                   0.07     16.90 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/pe/ctmTdsLR_4_4818107/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.06     16.96 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ctmi_3187750/X (sky130_fd_sc_hd__a21o_1)
+                                                   0.15     17.11 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/A1/ZBUF_995_inst_4646787/X (sky130_fd_sc_hd__buf_12)
+                                                   0.14     17.25 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmi_2597450/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.16     17.41 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmi_2597449/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.07     17.48 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/A4476600/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.11     17.59 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_4786774/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     17.63 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_4925620/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     17.69 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_4925621/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     17.73 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_5_4912866/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.07     17.80 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_4908260/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.19     17.99 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_9_4682202/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.13     18.12 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_10_4682203/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16     18.28 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_4681949/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     18.34 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_4868707/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07     18.41 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_4681766/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     18.44 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_4681765/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     18.50 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/A4447019/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     18.56 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_4908228/Y (sky130_fd_sc_hd__nor2b_1)
+                                                   0.09     18.66 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_4899644/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     18.70 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_6_4872206/Y (sky130_fd_sc_hd__o211ai_2)
+                                                   0.09     18.79 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_4883003/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     18.83 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_4664794/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.09     18.92 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmi_4511912/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.16     19.08 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmi_2596763/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     19.15 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/A4447383/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.13     19.28 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_1_4896939/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     19.32 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_2_4896940/X (sky130_fd_sc_hd__o21a_2)
+                                                   0.09     19.40 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/A4554268/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.10     19.51 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_3_4765135/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     19.55 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/ctmTdsLR_4_4765136/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     19.61 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/mult_36/A4530362/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.23     19.84 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/A4448165/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     19.90 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_2_4817309/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.06     19.96 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_1_4914865/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     20.00 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_2_4914866/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     20.05 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_2_4785871/Y (sky130_fd_sc_hd__nand4_1)
+                                                   0.06     20.11 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_1_4785870/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.07     20.18 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_1_4875017/X (sky130_fd_sc_hd__and3_4)
+                                                   0.17     20.35 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_1_4880291/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     20.40 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_1_4888084/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     20.46 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/A4519031/Y (sky130_fd_sc_hd__nand4_1)
+                                                   0.08     20.53 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_1_4919165/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08     20.62 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_2_4880277/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.07     20.69 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_1_4906239/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.15     20.84 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ZBUF_318_inst_4641538/X (sky130_fd_sc_hd__clkbuf_1)
+                                                   0.07     20.91 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_1_4707311/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04     20.95 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_3_4707313/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.06     21.01 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X1/M2/ctmTdsLR_4_4707314/Y (sky130_fd_sc_hd__inv_12)
+                                                   0.11     21.12 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ZBUF_184_inst_4641579/X (sky130_fd_sc_hd__buf_6)
+                                                   0.09     21.21 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmi_3964947/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.10     21.31 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmi_3964954/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     21.36 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmi_2603596/Y (sky130_fd_sc_hd__o22ai_2)
+                                                   0.12     21.48 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmi_2603586/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.04     21.52 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_4901694/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     21.57 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4901695/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     21.62 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmi_2603612/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.16     21.78 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/A4486861/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     21.82 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4732087/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07     21.88 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/A4524852/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     21.93 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/A4524854/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16     22.09 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_4867703/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     22.14 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_4882694/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07     22.21 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/A4524858/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     22.25 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4906151/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     22.31 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_4914740/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     22.36 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_4925324/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.13     22.49 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4925325/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.12     22.61 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_4749255/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.05     22.66 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4749256/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.08     22.73 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_4706370/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     22.79 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4706371/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     22.85 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4891031/Y (sky130_fd_sc_hd__a21oi_1)
+                                                   0.11     22.96 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4804246/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.06     23.03 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4678511/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08     23.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_1_4763753/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     23.15 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/mult_36/ctmTdsLR_2_4925308/Y (sky130_fd_sc_hd__a22oi_4)
+                                                   0.13     23.28 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/HFSBUF_278_4598443/X (sky130_fd_sc_hd__buf_12)
+                                                   0.20     23.48 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4678372/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     23.52 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4882621/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     23.58 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_2_4835341/Y (sky130_fd_sc_hd__nand3_4)
+                                                   0.10     23.68 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_2_4663140/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.05     23.73 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_2_4730540/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.09     23.82 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_2_4803915/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.06     23.88 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4835268/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     23.92 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/A4531150/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.08     24.00 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4851511/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     24.04 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4874794/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     24.10 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_4_4783500/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     24.15 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4677964/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.11     24.26 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4885189/X (sky130_fd_sc_hd__and2_4)
+                                                   0.10     24.36 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4882549/Y (sky130_fd_sc_hd__nand3_4)
+                                                   0.06     24.42 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/A4526624/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.16     24.58 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/A4493701/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.07     24.65 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_1_4783182/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     24.71 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M1/ctmTdsLR_3_4783184/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.08     24.79 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmi_3190939/Y (sky130_fd_sc_hd__a22oi_2)
+                                                   0.14     24.93 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4918897/Y (sky130_fd_sc_hd__nand4_1)
+                                                   0.08     25.01 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4916716/Y (sky130_fd_sc_hd__clkinv_2)
+                                                   0.05     25.06 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4914652/Y (sky130_fd_sc_hd__nand3_4)
+                                                   0.06     25.12 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4661662/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.18     25.30 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmi_3190964/X (sky130_fd_sc_hd__mux2_4)
+                                                   0.31     25.61 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4907900/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.05     25.66 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_2_4705250/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.06     25.72 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_2_4677500/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.18     25.90 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/A4500345/Y (sky130_fd_sc_hd__mux2i_1)
+                                                   0.24     26.14 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_4_4904007/Y (sky130_fd_sc_hd__nand2b_1)
+                                                   0.06     26.20 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_3_4904006/Y (sky130_fd_sc_hd__o211ai_1)
+                                                   0.06     26.26 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4925237/X (sky130_fd_sc_hd__o211a_2)
+                                                   0.11     26.38 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4851004/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     26.42 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_2_4851005/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     26.47 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_2_4879944/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.09     26.55 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/A4518917/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.06     26.61 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/A4448905/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     26.67 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmi_3191306/Y (sky130_fd_sc_hd__a21oi_2)
+                                                   0.06     26.73 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/A4449332/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.12     26.85 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4661077/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.05     26.91 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/A4449337/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.13     27.04 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/A4496177/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     27.10 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4728937/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     27.16 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_3_4728939/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     27.20 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_3_4879918/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     27.26 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_5_4728941/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     27.32 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/A4526391/Y (sky130_fd_sc_hd__a21oi_4)
+                                                   0.22     27.54 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4923259/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     27.58 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_3_4923261/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.06     27.64 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_1_4660372/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.09     27.73 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_6_4890826/Y (sky130_fd_sc_hd__a21oi_2)
+                                                   0.11     27.85 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_7_4890827/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     27.89 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmTdsLR_8_4890828/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.11     28.00 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_1_4704456/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     28.04 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_1_4921051/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     28.09 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_3_4921053/Y (sky130_fd_sc_hd__nor2_4)
+                                                   0.03     28.13 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_2_4660167/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.14     28.26 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_1_4728372/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.04     28.30 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_3_4728374/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.06     28.36 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_4_4728375/Y (sky130_fd_sc_hd__inv_8)
+                                                   0.11     28.47 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_1_4934336/Y (sky130_fd_sc_hd__a21oi_1)
+                                                   0.11     28.59 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_1_4927259/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06     28.65 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/pe/ctmTdsLR_1_4929769/X (sky130_fd_sc_hd__a21o_1)
+                                                   0.10     28.75 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ctmi_3191603/X (sky130_fd_sc_hd__a21o_1)
+                                                   0.15     28.90 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/A1/ZBUF_1496_inst_4642921/X (sky130_fd_sc_hd__buf_12)
+                                                   0.14     29.04 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmi_3963890/Y (sky130_fd_sc_hd__a2bb2oi_1)
+                                                   0.12     29.16 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/A4515315/Y (sky130_fd_sc_hd__o2bb2ai_1)
+                                                   0.10     29.26 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/A4515316/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.11     29.37 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4659360/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     29.41 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_4659361/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     29.46 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/A4486449/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.12     29.58 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4676004/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08     29.66 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_4676005/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.06     29.72 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4745766/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     29.77 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_4745767/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     29.82 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_4675831/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.07     29.89 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/A4522019/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16     30.05 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4814017/X (sky130_fd_sc_hd__xor2_1)
+                                                   0.19     30.24 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_4814019/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.07     30.31 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4760806/X (sky130_fd_sc_hd__o21a_2)
+                                                   0.17     30.48 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4876911/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     30.53 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_4876912/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.05     30.58 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4882124/Y (sky130_fd_sc_hd__o21bai_1)
+                                                   0.10     30.69 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_4882125/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     30.75 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4779186/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08     30.83 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/A4488002/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.04     30.87 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4863758/Y (sky130_fd_sc_hd__a21oi_2)
+                                                   0.11     30.99 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_2_4863759/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.09     31.08 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4898771/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     31.14 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_3_4898773/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     31.19 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4903590/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     31.25 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_1_4879570/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     31.29 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/mult_36/ctmTdsLR_5_4674477/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.08     31.37 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ZBUF_3539_inst_4643758/X (sky130_fd_sc_hd__buf_12)
+                                                   0.22     31.59 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_1_4876791/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     31.63 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_2_4876792/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.11     31.74 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_1_4724895/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     31.77 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_3_4724897/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     31.83 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_4_4724898/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.08     31.91 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_2_4702241/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07     31.98 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/A4575714/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     32.02 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/A4526500/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     32.08 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_2_4778068/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     32.12 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/A4530372/Y (sky130_fd_sc_hd__a211oi_1)
+                                                   0.21     32.34 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_1_4830007/Y (sky130_fd_sc_hd__nand4_1)
+                                                   0.06     32.40 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_3_4830009/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     32.46 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ZBUF_2249_inst_4643812/X (sky130_fd_sc_hd__buf_12)
+                                                   0.16     32.62 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ZBUF_1604_inst_4643811/X (sky130_fd_sc_hd__buf_12)
+                                                   0.14     32.75 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X2/M2/ctmTdsLR_1_4701987/Y (sky130_fd_sc_hd__nor2_4)
+                                                   0.05     32.80 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/HFSBUF_872_4609065/X (sky130_fd_sc_hd__buf_12)
+                                                   0.15     32.95 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/A4533537/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.16     33.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/A4533538/Y (sky130_fd_sc_hd__o22ai_1)
+                                                   0.05     33.16 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4674201/X (sky130_fd_sc_hd__or2_1)
+                                                   0.18     33.34 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/A4533542/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     33.40 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/A4533543/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.12     33.52 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/A4533551/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.12     33.64 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4812650/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     33.68 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_4812651/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06     33.74 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_4_4759644/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     33.80 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/A4446861/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.12     33.93 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4655514/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     33.97 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_4655515/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     34.02 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/A4446864/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.16     34.19 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4759136/Y (sky130_fd_sc_hd__nand2b_1)
+                                                   0.05     34.23 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4759117/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     34.29 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_4776494/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.05     34.34 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/A4533743/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.12     34.46 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4700701/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.04     34.50 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4881912/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     34.56 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4895888/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     34.60 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_4895889/X (sky130_fd_sc_hd__and2_2)
+                                                   0.13     34.73 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_3_4876630/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     34.79 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_1_4887170/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     34.83 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_4887171/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     34.88 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_4881900/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     34.93 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_3_4655198/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     34.98 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_2_4847122/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     35.03 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/mult_36/ctmTdsLR_6_4655201/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.08     35.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/HFSBUF_357_4598254/X (sky130_fd_sc_hd__buf_12)
+                                                   0.20     35.31 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_2_4828046/Y (sky130_fd_sc_hd__a21oi_2)
+                                                   0.03     35.34 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4700472/Y (sky130_fd_sc_hd__clkinv_2)
+                                                   0.05     35.39 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_3_4846839/Y (sky130_fd_sc_hd__nand3_4)
+                                                   0.07     35.46 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_3_4700474/Y (sky130_fd_sc_hd__inv_6)
+                                                   0.12     35.58 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4879321/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     35.64 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_2_4890002/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.07     35.71 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_2_4903355/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06     35.77 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4721503/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07     35.83 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4916071/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06     35.90 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_2_4903329/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     35.94 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4797360/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.07     36.02 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4757539/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08     36.10 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4846005/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.07     36.17 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4775006/X (sky130_fd_sc_hd__and2_4)
+                                                   0.14     36.32 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_1_4699455/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     36.37 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M1/ctmTdsLR_2_4719442/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.08     36.45 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmi_3194006/Y (sky130_fd_sc_hd__a22oi_2)
+                                                   0.13     36.58 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmi_3194019/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     36.63 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmi_3194018/Y (sky130_fd_sc_hd__nor2_4)
+                                                   0.11     36.74 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4879217/Y (sky130_fd_sc_hd__nand3_4)
+                                                   0.06     36.80 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4718229/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.18     36.98 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmi_3194048/X (sky130_fd_sc_hd__mux2_4)
+                                                   0.30     37.29 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4653221/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.06     37.35 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4907324/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     37.39 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_3_4741091/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.07     37.46 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4909561/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     37.50 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4907311/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.05     37.55 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J18/A4461013/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     37.60 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J18/ctmTdsLR_1_4671135/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.05     37.65 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/DP_OP_42_61208_6679_J18/ZBUF_3559_inst_4643059/X (sky130_fd_sc_hd__buf_12)
+                                                   0.22     37.87 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4825197/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     37.91 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_2_4825198/X (sky130_fd_sc_hd__and2_4)
+                                                   0.13     38.04 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4873831/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.11     38.14 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_2_4907216/Y (sky130_fd_sc_hd__o2bb2ai_1)
+                                                   0.05     38.20 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_2_4922653/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.09     38.28 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4859549/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     38.33 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_3_4859551/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.14     38.47 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_2_4652813/X (sky130_fd_sc_hd__and3_4)
+                                                   0.16     38.62 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/A4543410/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.11     38.74 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/A4487894/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08     38.82 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmi_3194499/Y (sky130_fd_sc_hd__nand3b_1)
+                                                   0.08     38.90 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4772823/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     38.94 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_2_4772824/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.12     39.06 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4794633/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     39.10 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_2_4794634/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07     39.17 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4844199/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.03     39.20 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_2_4886865/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     39.26 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_3_4886866/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     39.31 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4903151/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.07     39.38 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_1_4716427/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.09     39.47 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_2_4772434/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.11     39.57 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_3_4696275/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     39.62 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmTdsLR_4_4696276/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.11     39.73 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_4873776/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.03     39.76 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_3_4823851/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     39.82 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_4_4823852/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     39.87 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_4772210/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.09     39.95 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_4695662/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.06     40.01 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_4695661/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.09     40.10 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_4810013/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.06     40.16 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_4810014/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.10     40.26 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_4794148/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     40.30 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_4858797/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.09     40.38 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_4905252/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     40.42 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_4905251/Y (sky130_fd_sc_hd__nand2b_1)
+                                                   0.06     40.48 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_4876289/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.07     40.56 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_4909319/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     40.61 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_4909320/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.10     40.71 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/A4542414/X (sky130_fd_sc_hd__o31a_1)
+                                                   0.23     40.94 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_2_4652425/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     41.00 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmTdsLR_1_4892747/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     41.06 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmi_3570122/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     41.12 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/pe/ctmi_3570121/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.10     41.21 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/A1/ctmi_3194636/X (sky130_fd_sc_hd__a21o_1)
+                                                   0.17     41.38 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_1_4902998/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.08     41.46 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_2_4691246/X (sky130_fd_sc_hd__and2_4)
+                                                   0.10     41.56 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_3_4691247/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.15     41.71 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmi_2590060/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.12     41.83 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmi_2590059/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.15     41.98 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_4886491/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.13     42.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_2_4886492/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.13     42.23 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_2_4884156/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.16     42.40 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmi_2589214/Y (sky130_fd_sc_hd__nor2b_2)
+                                                   0.15     42.54 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_2_4754511/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.03     42.58 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_3_4754512/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.08     42.66 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_4889384/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     42.70 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_2_4889385/X (sky130_fd_sc_hd__o21a_1)
+                                                   0.16     42.86 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_1_4917797/Y (sky130_fd_sc_hd__a2bb2oi_4)
+                                                   0.11     42.97 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/mult_36/ctmTdsLR_3_4713783/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.14     43.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ZBUF_1437_inst_4642225/X (sky130_fd_sc_hd__buf_12)
+                                                   0.19     43.30 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/A4523412/Y (sky130_fd_sc_hd__mux2i_1)
+                                                   0.24     43.54 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/A4516175/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     43.59 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_1_4791846/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.05     43.63 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_3_4791848/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.07     43.70 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_1_4884095/Y (sky130_fd_sc_hd__xnor2_1)
+                                                   0.10     43.80 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_2_4884096/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     43.86 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_3_4884097/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.04     43.90 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_2_4935614/Y (sky130_fd_sc_hd__nand4_2)
+                                                   0.07     43.96 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_2_4913628/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.03     44.00 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_3_4913629/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.06     44.06 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_1_4870167/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.05     44.12 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ZBUF_1215_inst_4642293/X (sky130_fd_sc_hd__buf_12)
+                                                   0.13     44.25 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/X3/M2/ctmTdsLR_2_4669808/Y (sky130_fd_sc_hd__nor2_4)
+                                                   0.20     44.45 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ZBUF_362_inst_4643160/X (sky130_fd_sc_hd__buf_12)
+                                                   0.14     44.58 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmi_2756836/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16     44.75 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_2_4924270/Y (sky130_fd_sc_hd__o21bai_4)
+                                                   0.09     44.83 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_2_4922277/X (sky130_fd_sc_hd__a21o_1)
+                                                   0.15     44.98 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_4_4922279/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     45.04 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_9_4911511/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.06     45.10 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_2_4650132/X (sky130_fd_sc_hd__xor2_1)
+                                                   0.14     45.25 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/A4452045/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.19     45.44 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_1_4881200/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.04     45.47 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/A4529796/Y (sky130_fd_sc_hd__o21ai_2)
+                                                   0.13     45.60 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/A4542057/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.16     45.77 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/A4531322/X (sky130_fd_sc_hd__xor2_1)
+                                                   0.23     45.99 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_1_4668039/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     46.04 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_2_4668040/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07     46.11 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_1_4855471/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.04     46.14 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/A4517554/Y (sky130_fd_sc_hd__nor2_2)
+                                                   0.14     46.28 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/A4495461/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.03     46.32 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_1_4685773/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     46.38 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_3_4685775/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.05     46.43 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_1_4736659/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.06     46.49 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_1_4915525/Y (sky130_fd_sc_hd__o21ai_1)
+                                                   0.05     46.54 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_2_4915526/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     46.59 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_2_4649085/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.13     46.72 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/A4493348/Y (sky130_fd_sc_hd__a21oi_2)
+                                                   0.11     46.83 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/mult_36/ctmTdsLR_3_4908961/Y (sky130_fd_sc_hd__xnor2_2)
+                                                   0.21     47.05 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_1_4648691/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     47.09 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_4_4710859/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     47.14 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_3_4767196/Y (sky130_fd_sc_hd__nand3_2)
+                                                   0.09     47.23 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_4_4839512/Y (sky130_fd_sc_hd__clkinv_1)
+                                                   0.05     47.28 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_2_4839510/Y (sky130_fd_sc_hd__nand2_2)
+                                                   0.04     47.32 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_1_4839509/Y (sky130_fd_sc_hd__inv_4)
+                                                   0.10     47.42 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_1_4819224/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     47.47 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_2_4819225/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.07     47.54 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_1_4752839/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.04     47.58 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_3_4892285/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.05     47.63 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_1_4892283/X (sky130_fd_sc_hd__o211a_1)
+                                                   0.11     47.74 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_1_4913432/Y (sky130_fd_sc_hd__nand3_1)
+                                                   0.06     47.80 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_2_4913433/Y (sky130_fd_sc_hd__inv_2)
+                                                   0.05     47.85 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/ctmTdsLR_2_4788812/Y (sky130_fd_sc_hd__nand2_4)
+                                                   0.08     47.93 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/A4493662/Y (sky130_fd_sc_hd__nand2_8)
+                                                   0.17     48.10 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/DuI/END/A4482389/Y (sky130_fd_sc_hd__nor2_1)
+                                                   0.04     48.13 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/EX_FPU/ctmTdsLR_2_4897667/X (sky130_fd_sc_hd__a21o_1)
+                                                   0.15     48.28 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/ctmTdsLR_2_4648013/Y (sky130_fd_sc_hd__nand2_1)
+                                                   0.06     48.34 r
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/ctmTdsLR_3_4648014/Y (sky130_fd_sc_hd__inv_1)
+                                                   0.04     48.37 f
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FPU_OUT_reg[10]/D (sky130_fd_sc_hd__sdfxtp_1)
+                                                   0.00     48.37 f
+  data arrival time                                         48.37
+
+  clock clk (rise edge)                           10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  ROW_LOOP[0].COL_LOOP[0].u_node/CPU/PIPE_REG_EX_MEM/MEM_FPU_OUT_reg[10]/CLK (sky130_fd_sc_hd__sdfxtp_1)
+                                                   0.00     10.00 r
+  clock uncertainty                               -0.50      9.50
+  library setup time                              -0.13      9.37
+  data required time                                         9.37
+  ------------------------------------------------------------------------
+  data required time                                         9.37
+  data arrival time                                        -48.37
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                         -39.01
+
+
+1

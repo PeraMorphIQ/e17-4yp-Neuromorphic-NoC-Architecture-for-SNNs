@@ -1,0 +1,83 @@
+****************************************
+Report : Averaged Power
+	-hierarchy
+	-levels 2
+	-verbose
+Design : mesh
+Version: W-2024.09-SP2
+Date   : Sat Dec 13 14:08:30 2025
+****************************************
+
+Library(s) Used:
+
+    sky130_fd_sc_hd__ff_100C_1v65 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_100C_1v65.db)
+    sky130_fd_sc_hd__ff_100C_1v95 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_100C_1v95.db)
+    sky130_fd_sc_hd__ff_n40C_1v56 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v56.db)
+    sky130_fd_sc_hd__ff_n40C_1v65 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v65.db)
+    sky130_fd_sc_hd__ff_n40C_1v76 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ff_n40C_1v76.db)
+    sky130_fd_sc_hd__ss_100C_1v40 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_100C_1v40.db)
+    sky130_fd_sc_hd__ss_100C_1v60 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_100C_1v60.db)
+    sky130_fd_sc_hd__ss_n40C_1v28 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v28.db)
+    sky130_fd_sc_hd__ss_n40C_1v35 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v35.db)
+    sky130_fd_sc_hd__ss_n40C_1v40 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v40.db)
+    sky130_fd_sc_hd__ss_n40C_1v44 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v44.db)
+    sky130_fd_sc_hd__ss_n40C_1v76 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__ss_n40C_1v76.db)
+    sky130_fd_sc_hd__tt_025C_1v80 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__tt_025C_1v80.db)
+    sky130_fd_sc_hd__tt_100C_1v80 (File: /remote/cae1107/libraries/google-skywater/ronaldv_workspace/skywater-pdk.latest_official/vendor/synopsys/results/lib/sky130_fd_sc_hd/db_nldm/sky130_fd_sc_hd__tt_100C_1v80.db)
+
+
+Operating Conditions: ff_100C_1v65   Library: sky130_fd_sc_hd__ff_100C_1v65
+Wire Load Model Mode: top
+
+<no wire load model is set>
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 1 pf
+    Time Units = 1 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+                                      Int      Switch   Leak     Total
+Hierarchy                             Power    Power    Power    Power    %
+----------------------------------------------------------------------------------
+mesh                                  8.80e-02    0.112 1.11e-02    0.211 100.0
+  ROW_LOOP[1].COL_LOOP[0].u_node (node_ADDR_X0_ADDR_Y1_NUM_NEURONS32)
+                                      2.18e-02 2.76e-02 2.78e-03 5.22e-02  24.7
+    IMEM (instruction_memory_2)          0.000    0.000    0.000    0.000   N/A
+    NEURON_BANK (neuron_bank_NUM_NEURONS32_2)
+                                      7.70e-04 8.37e-05 2.11e-03 2.97e-03   1.4
+    CPU (cpu_2)                       1.16e-02 1.41e-02 3.82e-04 2.61e-02  12.4
+    ROUTER (router_ADDR_X0_ADDR_Y1)   9.75e-06 2.55e-07 5.35e-06 1.54e-05   0.0
+    NI (network_interface_2)          2.09e-04 7.60e-07 2.20e-05 2.31e-04   0.1
+    DMEM (data_memory_2)              9.20e-03 1.33e-02 2.61e-04 2.27e-02  10.8
+  ROW_LOOP[0].COL_LOOP[1].u_node (node_ADDR_X1_ADDR_Y0_NUM_NEURONS32)
+                                      2.21e-02 2.80e-02 2.79e-03 5.29e-02  25.0
+    IMEM (instruction_memory_1)          0.000    0.000    0.000    0.000   N/A
+    NEURON_BANK (neuron_bank_NUM_NEURONS32_1)
+                                      7.68e-04 7.19e-05 2.11e-03 2.95e-03   1.4
+    CPU (cpu_1)                       1.17e-02 1.43e-02 3.81e-04 2.63e-02  12.5
+    ROUTER (router_ADDR_X1_ADDR_Y0)   9.78e-06 2.92e-07 5.62e-06 1.57e-05   0.0
+    NI (network_interface_1)          2.05e-04 6.94e-07 2.20e-05 2.28e-04   0.1
+    DMEM (data_memory_1)              9.39e-03 1.35e-02 2.63e-04 2.31e-02  11.0
+  ROW_LOOP[0].COL_LOOP[0].u_node (node_ADDR_X0_ADDR_Y0_NUM_NEURONS32)
+                                      2.18e-02 2.79e-02 2.78e-03 5.25e-02  24.9
+    IMEM (instruction_memory_0)          0.000    0.000    0.000    0.000   N/A
+    NEURON_BANK (neuron_bank_NUM_NEURONS32_0)
+                                      7.69e-04 7.65e-05 2.11e-03 2.96e-03   1.4
+    CPU (cpu_0)                       1.16e-02 1.42e-02 3.80e-04 2.62e-02  12.4
+    ROUTER (router_ADDR_X0_ADDR_Y0)   7.41e-06 2.49e-07 4.76e-06 1.24e-05   0.0
+    NI (network_interface_0)          2.05e-04 7.78e-07 2.19e-05 2.27e-04   0.1
+    DMEM (data_memory_0)              9.21e-03 1.35e-02 2.62e-04 2.29e-02  10.9
+  ROW_LOOP[1].COL_LOOP[1].u_node (node_ADDR_X1_ADDR_Y1_NUM_NEURONS32)
+                                      2.23e-02 2.86e-02 2.78e-03 5.36e-02  25.4
+    IMEM (instruction_memory)            0.000    0.000    0.000    0.000   N/A
+    NEURON_BANK (neuron_bank_NUM_NEURONS32)
+                                      7.73e-04 8.39e-05 2.11e-03 2.97e-03   1.4
+    CPU (cpu)                         1.21e-02 1.50e-02 3.81e-04 2.75e-02  13.0
+    ROUTER (router_ADDR_X1_ADDR_Y1)   1.21e-05 1.84e-07 5.29e-06 1.76e-05   0.0
+    NI (network_interface)            2.07e-04 7.16e-07 2.19e-05 2.29e-04   0.1
+    DMEM (data_memory)                9.15e-03 1.34e-02 2.62e-04 2.28e-02  10.8
+1

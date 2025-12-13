@@ -1,0 +1,42 @@
+****************************************
+Report : reference
+Design : mesh
+Version: V-2023.12-SP5-3
+Date   : Sat Dec 13 13:58:31 2025
+****************************************
+
+Attributes
+    b - black-box (unknown)
+    h - hierarchical
+    n - noncombinational
+    u - contains unmapped logic
+    E - extracted timing model
+    Q - Quick timing model (QTM)
+    s - synthetic operator
+
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+--------------------------------------------------------------------------------
+sky130_fd_sc_hd__buf_6
+                   sky130_fd_sc_hd
+                                     11.26       1         11.26   
+sky130_fd_sc_hd__clkbuf_4
+                   sky130_fd_sc_hd
+                                      7.51       1          7.51   
+sky130_fd_sc_hd__conb_1
+                   sky130_fd_sc_hd
+                                      3.75    3391      12728.46   
+sky130_fd_sc_hd__macro_sparecell
+                   sky130_fd_sc_hd
+                                     75.07   10233     768211.78   
+node_ADDR_X0_ADDR_Y0_NUM_NEURONS32
+                                 5307467.78      1    5307467.78   h
+node_ADDR_X0_ADDR_Y1_NUM_NEURONS32
+                                 5313293.37      1    5313293.37   h
+node_ADDR_X1_ADDR_Y0_NUM_NEURONS32
+                                 5313873.93      1    5313873.93   h
+node_ADDR_X1_ADDR_Y1_NUM_NEURONS32
+                                 5306056.43      1    5306056.43   h
+--------------------------------------------------------------------------------
+Total 8 references                                    22021650.51
+1
