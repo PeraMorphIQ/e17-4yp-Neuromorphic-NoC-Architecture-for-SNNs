@@ -1,0 +1,7 @@
+Updating 5d68f3b..76ea783
+Fast-forward
+ code/power/power_v5/.gitignore             |    1 +
+ code/power/power_v5/parasitics_command.log |   10 +
+ code/power/power_v5/rtl_command.log        |    4 +
+ code/power/power_v5/rtl_output.txt         | 2170 ++++++++++++++++++++++++++++
+ 4 files changed, 2185 insertions(+)
